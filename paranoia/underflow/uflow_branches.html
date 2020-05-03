@@ -1,0 +1,822 @@
+﻿A Brief History of Underflow
+Version 0.2, 16 Apr 2020, J. Coonen
+
+
+[This draft “chapter” picks up the story of Paranoia way down the path. For more
+context, you may scroll down to the comments in the Postscript. Or just read
+on.]
+
+Much ado about almost nothing is one way to characterize the historical
+treatment of tiny values in floating point arithmetic. It has been far the most
+hotly debated topic in the IEEE 754 committees. This section of Paranoia
+investigates the behavior of arithmetic on tiny values. But this is a brief
+history. It tells the story of underflow through Paranoia’s exploration. It
+leaves the more complete discussion to pages dedicated to the topic. Background
+As values get tinier and tinier, perhaps by successive division by 2,
+
+they eventually become too small to represent in the form
+
+where  is the radix and the  are digits in that radix. The exponent  is bounded
+by the limitations of the representation of the number format. The exponent
+usually falls in a simple range, such as [–126, 127] for IEEE 754 single format.
+Some arithmetics will sacrifice significant digits to extend the exponent range
+as values get huge or small. IEEE 754 supports gradual underflow, allowing the
+leading digits in the expression above to become 0, thereby supporting smaller
+and smaller values all with the same exponent . There are more extreme designs,
+extending the representation as needed to support an exponent of any conceivable
+size.
+
+
+Paranoia features many loops that terminate when a magnitude shrinks to zero or
+to a tiny epsilon value that remains the same when doubled. Faced with
+arithmetic that will not underflow, automatically extending the range to within
+the limits of the host computer, Paranoia will loop without end. The code The
+underflow investigation opens with a deceptively simple message about the
+objects of the search: * the underflow threshold – the smallest positive value
+that exhibits no surprises in arithmetic * the smallest nonzero value – the
+smallest positive value discovered, though it may behave badly in some
+operations, for example,  may result in zero if  even though  * an underflowed
+value – a computed result so tiny it has underflowed, usually to zero The
+various tests print messages along the way, especially when they discover
+anomalies.
+
+This diagram illustrates the three values as will be discovered in arithmetic
+compliant with IEEE 754. The two nonzero values have the minimum exponent for
+the number format.
+
+Paranoia starts with powers of the radix. See the discussion of
+tiny_powers_of_B() for details about the triple of returned values. Typically,
+too_tiny_B has underflowed to zero. A description of H and C can be found in the
+discussion of the fundamental constants of the arithmetic.
+
+
+milestone = 110   #==============================
+# UNDERFLOW AND THE BEHAVIOR OF TINY VALUES
+# Starts at Basic 4330
+print("Seeking three values related to Underflow:")
+print("    underflow_threshold = smallest well-behaved value")
+print("    min_positive = smallest nonzero value discovered")
+print("    too_tiny_x = a value underflowed to zero or a pseudo-zero")
+# First step: compute tiny powers of the radix. H and C are two useful
+# constants.
+# H = min(1/B, 1/2); ONE_OVER_H = max(B, 2)
+# C = 1/B**k, not too close to the underflow thereshold; ONE_OVER_C = B**k
+less_tiny_B, tiny_B, too_tiny_B = tiny_powers_of_B(C)
+
+
+Powers of the radix don’t tell the whole story, so Paranoia computes a parallel
+set of tiny values with nonzero low-order digits. Just adding a useful number of
+units in the last place is a challenge, so read about SAFE_ULPS_OF_ONE in the
+section on constants. The function tiny_values_and_difference(), returns seven
+values to be used in the following tests. They are explained in the discussion
+of the function.
+
+
+# Constant SAFE_ULPS_OF_ONE = B OR 1 * ULP_OF_ONE_PLUS should have
+# enough units in the last place of 1 to leave something nonzero
+# in multiplication, even if there's no guard digit.
+one_plus_safe = ONE + SAFE_ULPS_OF_ONE
+
+
+# Compute a rich set of values analogous to the tiniest powers of B, but with
+# nonzero low-order bits and attention to the differences of small values.
+(less_tiny_x, tiny_x, too_tiny_x, underflow_threshold, add_sub_tiny,
+ add_sub_hi, add_sub_lo) = tiny_values_and_difference(one_plus_safe)
+
+
+The next big comment puts the two sets of tiny values in context. Paranoia
+introduces the concept of pseudo zero, for values that compare unequal to zero
+yet may behave like zero in some operations. The Control Data CDC 6000 series of
+machines had such tiny, seemingly nonzero values that infallibly behaved like
+zero in multiplication and division. They were encoded with the smallest
+representable exponent – the same exponent as true zero – so the designers saved
+a bit of hardware by simply treating all such numbers as zero during
+multiplication and division. They behaved correctly in addition and subtraction.
+This flaw lived on into Cray supercomputers, too.
+
+
+[Insert Jamie Sethian example. Ponder whether to libel Seymour Cray here, even politely.]
+
+
+After the comment, the call to test_for_pseudo_zero() is made strictly for the side effect.
+
+
+# The two sets of tiny values characterize the underflow behavior.
+# The following comments mirror Basic comments 4530-4560. The relational ">~"
+# may be loosely read "greater than or kind of equal to". It refers to the odd
+# behavior of some arithmetics near 0, where some "pseudo zero" values behave
+# like zero in some contexts and nonzero in others.
+#
+# 1  >>  C = 1/B^k  >=  less_tiny_B  >  tiny_B  >~  too_tiny_B  >~  0
+#   where the tiny values differ by a factor of H
+#
+# 1  >>  d = (1+SAFE_ULPS_OF_ONE)*C  >=  underflow_threshold
+#        >= add_sub_hi  >=  less_tiny_x  >  tiny_x  >~ too_tiny_x  >~  0
+#   where underflow_threshold = d * H^k is the first to violate (x*H)/H = x
+#       else underflow_threshold = 0
+#   and where add_sub_hi = underflow_threshold * H^k is the first to satisfy
+#       add_sub_tiny <- |(x*H)/H - x| > 0 else add_sub_hi = less_tiny_x
+test_for_pseudo_zero(too_tiny_x)
+
+
+In order to compare the tiny values from two sources, Paranoia scales the values
+up by a large power of the radix. This defends against faulty comparisons, again
+on the CDD 6000 class. In this case, the values are not so small that they
+behave like zero in multiplication, but they do all compare equal to each other.
+
+
+milestone = 120   #==============================
+# less_tiny_B and less_tiny_x result from similar loops, one starting
+# with C, the other with (1 + SAFE_ULPS_OF_ONE) * C.
+# Check to see who is the tiniest of them all, but scale up
+# to avoid faulty comparisons as on CDC 6000.
+# If the number encoding is such that what "looks like" the smallest power
+# of the radix is interpreted as zero, then the smallest nonzero values
+# will not be power of B. This test catches that case. The value h_fact
+# records that the smallest power of B is too big by nearly a factor of H.
+if ONE_OVER_C * less_tiny_B > ONE_OVER_C * less_tiny_x:
+    h_fact = H
+    min_positive = tiny_x
+else:
+    h_fact = ONE
+    min_positive = tiny_B
+
+
+The next test is more subtle. It asks whether the difference between two tiny
+values can be a number smaller than values reached by just scaling by powers of
+the radix.
+
+
+[QUESTION: Is “Products underflow at a higher threshold…” really a correct
+report? What’s being compared are two different beasts: one is a simple
+scaled-down value while the other is the nonzero difference between two such
+values. It is interesting that we can obtain a smaller value from a difference
+than from a product, but to talk about the underflow threshold, we should talk
+about the values producing the difference.]
+
+
+# Compared here are min_positive, the smallest nonzero value
+# gotten by successively multiplying by H, and add_sub_tiny,
+# which is |x - (x*H)/H| for a tiny x.
+if (add_sub_tiny != ZERO) and (add_sub_tiny != min_positive):
+    BadCond(err_defect, "")
+    if (add_sub_tiny < min_positive):
+        print("Products underflow at a higher", end="")
+        print(" threshold than differences.")
+        if too_tiny_x == ZERO:   # Only if there are NO pseudo-zeros.
+            # Don't admit add_sub_tiny if it could be a pseudo-zero.
+            min_positive = add_sub_tiny
+    else:
+        print("Difference underflows at a higher", end="")
+        print(" threshold than products.")
+print("Smallest strictly positive number found is min_positive = {:g} .".
+      format(min_positive))
+
+
+Paranoia sets a reliable value base_iny which is used in the summary of
+arithmetic without gradual underflow. The utility does_tiny_value_misbehave()
+gives some assurance of a well-behaved value.
+
+
+# Now consolidate the three triples of tiny results into the values
+# from the loop computation. Break into several cases...
+# This defines base_tiny, which may be needed as a final result in some
+# anomalous arithmetics.
+if does_tiny_value_misbehave(min_positive):
+    base_tiny = less_tiny_B   # Back up by a factor of 1/H, for CDC 7600
+else:
+    base_tiny = min_positive
+
+
+The next comment explains the division into four classes of arithmetic, relative
+to underflow. Value add_sub_tiny is nonzero when the arithmetic supports tiny,
+usually unnormalized, values. This is the case in arithmetic compliant with IEEE
+754. Value underflow_threshold is set thus far by the call to
+tiny_values_and_difference(). It is zero if the arithmetic flushes underflowed
+values to zero, so Paranoia will set it as needed. It is nonzero when the
+arithmetic has a well-defined, usually normalized, value below which the
+arithmetic degrades to nonzero values, with some loss of precision.
+
+
+[TODO: give examples of all four.]
+
+
+# The Basic code switches on four cases depending on whether two values are
+# zero or nonzero.
+#   add_sub_tiny -- the difference between two tiny unequal values may
+#       underflow to zero
+#   underflow_threshold -- intended to be the smallest normal number
+#       unaffected by underflow, but will not have been set yet for
+#       arithmetic flushes underflow abruptly to zero
+#
+# -----------CASES----      4      3      2     1
+#         add_sub_tiny    non0   non0     0     0
+# underflow_threshold     non0     0    non0    0
+#
+# In high-quality arithmetic, both values are nonzero, so it's just a matter
+# of checking for gradual underflow and its quality.
+# If on the other hand, either value is zero, a specific action is taken and
+# then all three cases fall into an explicit check for differences of zero
+# arising from unequal values.
+
+
+Paranoia in Python skips the cases and tests the values directly. Case 4
+includes IEEE 754 arithmetic. In the elaborate compound test below, add_sub_hi
+is the value below which precision degrades, so it must match the computed
+underflow_threshold. Similarly, the tiniest difference should match the smallest
+nonzero value detected. The key to the third expression is the ratio
+add_sub_tiny / SAFE_ULPS_OF_ONE, which should match underflow_threshold.
+
+
+[QUESTION: Why isn’t that test for zero? Is this just a “tiny enough” idiom,
+which is safer than testing for true zero?]
+
+
+if add_sub_tiny and underflow_threshold:
+    # Basic case 4
+    if ((add_sub_hi == underflow_threshold) and (add_sub_tiny == min_positive)
+            and (FABS( underflow_threshold - add_sub_tiny / SAFE_ULPS_OF_ONE)
+                 <= add_sub_tiny)):
+        flags["IEEE"] = is_gradual_underflow_IEEE(min_positive)
+
+
+Case 3 falls through without comment to a final test. Its nonzero underflow_threshold indicates that it underflows to nonzero values, but the arithmetic is unable to represent the differences, so add_sub_hi is zero.
+
+
+ Case 2 is anomalous, as the messages indicate, because very tiny values compare equal yet don’t subtract to zero. Value underflow_threshold is set to a tiny value known to behave well and below which the arithmetic misbehaves.
+
+
+else:
+    # Basic cases 1-3. Case 3 falls through to a final test.
+    if underflow_threshold == ZERO:   # Cases 1-2
+        if add_sub_tiny:
+            # Case 2
+            underflow_threshold = add_sub_hi   # last good behavior
+            BadCond(err_failure,
+                    "Underflow confuses Comparison, which alleges that")
+            print("add_sub_hi == add_sub_lo while denying that |add_sub_hi"
+                  + " - add_sub_lo| == 0; these values")
+            print("print out as add_sub_hi = {:0.17e}, "
+                  + "add_sub_lo ={:0.17e} .".format(add_sub_hi, add_sub_lo))
+            print("|add_sub_hi - add_sub_lo| = {:0.17e} ."
+                  .format(FABS(add_sub_hi - add_sub_lo)))
+            # BUG: C lacks the following message.
+            print("and add_sub_hi / add_sub_lo| = 1.0 + {:0.17e} ."
+                  .format((add_sub_hi / add_sub_lo - ONE_HALF) - ONE_HALF))
+
+
+Case 1 arises in arithmetic that flushes underflows to zero. The comment explains that the underflow threshold is backed up to the next power of B if the computation of add_sub_hi cannot be reproduced, indicating some anomaly.
+
+
+The call to test_tiny_differences() explores whether the differences between
+unequal values are zero. It applies to all of cases 1-3.
+
+
+        else:
+            # Case 1
+            underflow_threshold = base_tiny   # Behaves like powers of B
+            # A sanity check determines that the result from
+            # tiny_x_and_difference() matches expectation, based on the
+            # loop on powers of B. The factor one_plus_safe accounts for
+            # the difference between the tiny_B and tiny_x loops.
+            # h_fact accounts for the case that what ought to be the
+            # tiniest power of B in the representation is given the value
+            # zero. If these don't match, the threshold is backed up a
+            # factor of B.
+            if ((ONE_OVER_C * add_sub_hi)
+                    != ((ONE_OVER_C * less_tiny_B) * one_plus_safe * h_fact)):
+                underflow_threshold = less_tiny_B
+                BadCond(err_failure,
+                        "Either accuracy deteriorates as numbers\n")
+                print("approach a threshold = {:0.17e}"
+                      .format(underflow_threshold))
+                print(" coming down from {:0.17e}".format(C))
+                print(" or else multiplication gets too many ", end="")
+                print("last digits wrong.")
+                Pause()
+    # Cases 1-3 fall through to a final test for zero differences.
+    test_tiny_differences()
+
+
+The underflow analysis closes with a message about the underflow threshold and
+two final tests. Paranoia looks for an exponent range that’s too narrow relative
+to the precision, and tries to compute a value way below the underflow
+threshold.
+
+
+print("The Underflow threshold is {:0.17e}, below which"
+      .format(underflow_threshold))
+print("calculation may suffer larger Relative error than ", end="")
+print("merely roundoff.")
+test_for_narrow_range()
+milestone = 130   #==============================
+test_extreme_underflow(underflow_threshold)
+
+
+The next sections discuss the utility functions that support the underflow
+exploration. Much of this logic is in-line in the Basic code, often very tersely
+so, but the program is more malleable and readable when discussed in natural
+blocks.
+
+
+
+tiny_powers_of_B
+The Python code comments this walk toward the underflow threshold and, ultimately, zero by factors of the radix. The result is a triple, which reflects how murky matters can be for tiny numbers. These are all simple powers of the radix, so their trailing digits are all zero.
+
+
+The diagram below captures the action in binary as tiny reaches the smallest normal number. It’s the full precision value with the smallest representable exponent. Value z, which is half that, is exactly representable as a subnormal on an IEEE 754 system. On most other machines, z flushes to zero, terminating the loop.
+With subnormal numbers, tiny reaches the tiniest representable value, as z underflows to zero. It is the first inexact result returned. Can you see that decimal arithmetic compatible with IEEE 754 2019 would behave the same way, with division by 10 at each step?
+
+
+The termination criterion
+        if (tiny_delta <= z) or (z + z <= z):
+detects several conditions:
+   * z pins at a tiny nonzero number, never underflowing to zero
+   * z reaches zero
+   * z underflows to a nonzero “epsilon” value, named for the Greek letter ε; epsilons are featured in a section of their own
+[Epsilons are not in this chapter.
+SUGGESTION: Add a “verbose” flag to the code, controlling extra output, such as is given here. Such additions to original Paranoia output are marked by “***”.  The original code reflected the era, restricting output to 80 columns by 24 rows, enabling users to take screen shots.]
+
+
+def tiny_powers_of_B(c):
+    """Return tiny values, stepping toward zero by factors of radix or 2.
+
+
+    Starting with a value like C = 1/B**k close to the underflow
+    threshold, walk down by factors of H = min(1/B, 1/2). Compute
+    less_tiny, less_tiny, and z differing by factors of H.
+    Value less_tiny avoids anomalies. Value z typically falls to
+    zero. The factor H protects against B=1.
+
+
+    Args:
+        c -- 1/B**k, expected to be the constant C or comparable
+
+
+    Returns:
+        less_tiny -- next tiniest positive value, by a factor of H
+        tiny -- tiniest positive value
+        z -- too tiny value, that underflows to zero or a pseudo-zero
+
+
+    Basic 4430-4440
+    """
+
+
+    tiny = c
+    z = tiny * H
+    while True:
+        less_tiny = tiny
+        tiny = z
+        z = z * H
+        # Terminate if z pins at a nonzero minimal value or
+        # if z falls to an epsilon or 0.
+        if (tiny <= z) or (z + z <= z): break
+    print("***Approaching underflow by powers of the radix:")
+    print("***    less_tiny =  {:.7e}, tiny =  {:.7e},"
+          + "z = {:.7e}".format(less_tiny, tiny, z))
+    return less_tiny, tiny, z
+tiny_values_and_difference
+This function explores tiny values with nonzero low-order digits, and it looks at the differences between them. The loop has two layers, skipping over the inner layer as soon as the difference between tiny values fails the test
+        if (tiny_delta + tiny_delta) <= tiny_delta:
+which says tiny_delta has taken a nonzero and non-𝛜 value. This indicates there is some loss of information due to underflow.
+
+
+While too_tiny is in the range of normal numbers, tinier scales back to tiny by 1/H exactly. This diagram shows the situation in binary in the typical case that multiplication is accurate enough that a single unit in the last place will detect differences between two nearly similar values after scaling by 1/H.
+
+
+If too_tiny underflows to zero, the loop ends with tiny_delta still zero. But with any form of gradual underflow, the loss of precision is detected. Depending on the design of the arithmetic and which mode of rounding is selected, the low-order bit of tinier may be 0 or 1. This explains the use of the absolute value in computing tiny_delta.
+
+
+The code sets the underflow threshold value to tiny the first time this behavior is discovered.
+
+
+[TODO: Provide an example of an arithmetic with multiplication so bad that it falls back to default values.]
+
+
+def tiny_values_and_difference(one_plus):
+   """Compute the tiniest values from a starting value with nonzero
+   low-order bits. This function is parallel to tiny_powers_of_B(),
+   but looks for nonzero differences of tiny values, which are
+   evidence of gradual underflow.
+
+
+   If multiplication is too inaccurate, raise an error and return default
+   values, shown in parens under Returns.
+
+
+   Args:
+       one_plus -- 1 plus enough ulps that they shouldn't be lost when
+           multiplied by a power of B
+
+
+   Returns:
+       tiny -- smallest well-behaved value (0)   *** why not tiny_B?
+       tinier -- first value to exhibit underflow (tiny_B)
+       too_tiny -- underflows to 0 or an epsilon value (too_tiny_B)
+       u_threshold -- smallest well-behaved value, if underflow degrades
+           into nonzero values, or 0 if underflow flushes to 0 (tiny_B)
+       tiny_delta -- difference between two values caused by underflow (0)
+       save_tiny1 -- value of tiny where tiny_delta computed (0)
+       save_tiny2 -- recomputed tiny where tiny_delta computed (0)
+
+
+    Basic 4450-4520
+   """
+
+
+   d = C * one_plus
+   # 1 + SAFE_ULPS_OF_ONE should be enough ulps of 1 that d > C.
+   if d <= C:
+       # But if not, we punt with default values.
+       BadCond(err_failure,
+               "multiplication gets too many last digits wrong.")
+       Pause()
+       return 0, tiny_B, too_tiny_B, tiny_B, 0, 0, 0
+   else:
+       tinier = d
+       too_tiny = tinier * H
+       u_threshold = ZERO
+       tiny_delta = ZERO  # indicates no value computed yet
+       save_tiny1 = ZERO
+       save_tiny2 = ZERO
+       while True:
+           tiny = tinier
+           tinier = too_tiny
+           # This loop mirrors the computation in tiny_powers_of_B(),
+           # except that the launch point is C*s with nonzero low-order
+           # bits, versus C, which is just a power of the radix.
+           if (tiny_delta + tiny_delta) <= tiny_delta:
+               print("***Uflow loop -- within if: tinier = {:.7e}"
+                     .format(tinier))
+               save_tiny2 = tinier * ONE_OVER_H
+               tiny_delta = FABS(tiny - save_tiny2)   # may underflow to 0
+               save_tiny1 = tiny
+               if (u_threshold == ZERO) and (tiny != save_tiny2):
+                   # Test for 0 captures first time through, in case
+                   # tiny_delta underflows to 0.
+                   u_threshold = tiny
+           # Placing this statement after the (tiny*H)/H test above
+           # emphasizes that only nonzero values of tinier qualify for
+           # values degraded by underflow.
+           too_tiny = too_tiny * H
+           print("***Uflow loop -- new too_tiny = {:.7e}".format(too_tiny))
+           if ((tinier <= too_tiny)
+                   or (too_tiny + too_tiny <= too_tiny)): break
+       return (tiny, tinier, too_tiny, u_threshold,
+               tiny_delta, save_tiny1, save_tiny2)
+
+
+
+
+test_for_pseudo_zero
+Paranoia tests the too_tiny result from tiny_values_and_difference(). It looks for three outcomes of a nonnegative value that has underflowed beyond the representable numbers:
+   * zero – the benign typical case
+   * negative number
+   * epsilon value with behavior such as
+It closes with a call to a function to test for other misbehavior.
+
+
+def test_for_pseudo_zero(pseudo):
+    """Test for a nonzero value that violates basic numerical laws.
+
+
+    Args:
+        pseudo -- tiny value that might misbehave
+
+    Basic 4580-4630
+    """
+
+
+    if (pseudo == ZERO):
+        return
+    print("")
+    # Test pseudo for "phoney-zero" behavior, violating either
+    # pseudo < tiny_x or pseudo < pseudo + pseudo
+    # These are the loop termination tests in tiny_values_and_difference().
+    if (pseudo <= ZERO):
+        BadCond(err_failure, "Positive expressions can underflow to an " +
+                "allegedly negative value\n")
+        print("pseudo that prints out as: {:g} .".format(pseudo))
+        x = -pseudo
+        if x <= ZERO:
+            print("But -pseudo, which should be", end="")
+            print("positive, isn't; it prints out as  {:g} .".
+                  format(x))
+    else:
+        BadCond(err_flaw, "Underflow can stick at an allegedly positive\n")
+        print("value pseudo that prints out as {:g} .".
+              format(pseudo))
+    # One final test for strangeness around the underflow threshold.
+    # The test is made just for the side-effects, not the reulst value.
+    discard = does_tiny_value_misbehave(pseudo)
+    return
+does_tiny_value_misbehave
+This function is called from three sites in the code, sometimes with a value believed to be zero , sometimes with a value that might be tiny or zero. If the value is nonzero, Paranoia checks that it remains unchanged when multiplied or divided by one, and that it satisfies .
+
+
+As is tested elsewhere in Paranoia, multiplication or division by one can cause a value to change in its low-order digit. Near the underflow threshold, the story gets more interesting. Nonzero values may behave like zero (CDC and Cray) leading to an undeserved zero result or a division by zero in the formula in the last paragraph.
+
+
+The function returns a boolean reply, but is used just for its side-effects in two instances.
+
+
+def does_tiny_value_misbehave(z):
+   """Check for abnormal behavior of a value presumed
+   to be tiny or zero.
+
+
+   Given a value z, check that (z + z)/z is 2.0 or very close, and that
+   1.0*z = z*1.0 = z/1.0 = z. This is especially interesting near the
+   underflow threshold, but the function should work unless z is so
+   huge that doubling it overflows.
+
+
+   Args:
+       z - test value
+
+
+   Returns:
+       boolean reply to the question
+
+
+    Basic 4640-4680
+   """
+
+
+   reply = False
+   if z == ZERO:   # nothing complex to test in the easy case
+       return reply
+   print("Since comparison denies z = 0, evaluating ", end="")
+   print("(z + z) / z should be safe.")
+   z_quo = ONE
+   try:
+       z_quo = (z + z) / z
+   except:
+       reply = True
+       error_count[err_serious] = error_count[err_serious] + 1
+       print("But the division triggered an exception.")
+       print("This is a VERY SERIOUS DEFECT!")
+
+
+   print("What the machine gets for (z + z) / z is  {:0.17e} .".
+         format(z_quo))
+   if FABS(z_quo - TWO) < B * ULP_OF_ONE_PLUS:
+       print("This is O.K., provided Over/Underflow", end="")
+       print(" has NOT just been signaled.")
+   else:
+       reply = True
+       if (z_quo < ONE) or (z_quo > TWO):
+           error_count[err_serious] = error_count[err_serious] + 1
+           print("This is a VERY SERIOUS DEFECT!")
+       else:
+           error_count[err_defect] = error_count[err_defect] + 1
+           print("This is a DEFECT!")
+   r1 = z * ONE
+   r2 = ONE * z
+   r3 = z / ONE
+   if (z == r1) and (z == r2) and (z == r3):
+       if reply:
+           Pause()
+   else:
+       reply = True
+       BadCond(err_defect, "What prints as z = ", end="")
+       print("{:0.17e}\n\tcompares different from  ".format(z))
+       if z != r1:
+           print("z * 1 = {:0.17e} ".format(r1))
+       if (z != r2) and (r2 != r1):
+           print("1 * z == {:0.17e}".format(r2))
+       if z != r3:
+           print("z / 1 = {:0.17e}".format(r3))
+       if r2 != r1:
+           error_count[err_defect] = error_count[err_defect] + 1
+           BadCond(err_defect, "Multiplication does not commute!\n")
+           print("\tComparison alleges that 1 * z = {:0.17e}".
+                 format(r2))
+           print("\tdiffers from z * 1 = {:0.17e}".format(r1))
+       Pause()
+   return reply
+
+
+is_gradual_underflow_IEEE
+This test looks for a correctly-rounded quotient, according to IEEE 754, at the very bottom of the range of positive numbers. The specific case detects double-rounding, that is, rounding first to a higher intermediate precision and then rounding to the target precision.
+
+
+The diagram shows the artful selection of numerator and denominator so that when the quotient underflows and is denormalized, a nearly halfway case arises. The computation in binary leaves a string of 1 bits just beyond the half-ulp bit position, so that an intermediate rounding, even to doubled precision, would cause a rounding up to a pure halfway case. That halfway case will round up, giving a different result from the correctly rounded value.
+
+
+The scale factor 1/C is a large value intended to keep the intermediate values away from the underflow threshold. The quotient has the magnitude of the tiniest positive value.
+
+
+To see how this works, expand the ratio as a power series:
+
+
+Here,  is an ulp of one so subtracting the scaled  produces the string of 1 bits.
+
+
+def is_gradual_underflow_IEEE(t):
+    """Test gradual underflow for IEEE compatibility.
+
+
+    Args:
+        t - tiniest nonzero number discovered
+
+
+    Returns:
+        boolean reply to question
+
+
+    Basic 5150
+    """
+
+
+    print("Underflow is gradual; it incurs Absolute Error =")
+    print("(roundoff in underflow_threshold) < min_positive.")
+    # Test for IEEE rounding at the very bottom of the range.
+    # The test looks for a double rounding, first to a
+    # higher precision, then the target. The computation is just
+    # under half an ulp, but an extra rounding will push it to a
+    # half-way case that will round up.
+    # y = t/C * (3/2 + u)
+    # x = 1/C * (1 + u)
+    # y/x = t * (3/2 + u) * (1 - u + u**2 - ...)
+    #     = t * (1 + 1/2 - u/2 + u**2/2 - ...)
+    #     = t, barely rounding down
+    y = t * ONE_OVER_C
+    y = y * (ONE_AND_HALF + ULP_OF_ONE_PLUS)
+    x = ONE_OVER_C * (ONE + ULP_OF_ONE_PLUS)
+    y = y / x
+    return (y == t)
+test_tiny_differences
+The code comment tells most of the story of this function’s use. The diagram below illustrates the creation of some low-order bits in x. The values are clearly unequal, and most arithmetics would say so, but their difference is too small to represent in the system, so it evaluates to zero. This function detects the case and raises the alarm.
+
+
+
+
+There is some subtlety in the factor r. When there are nonzero values smaller than the underflow threshold, r can be used to find the geometric mean of base_tiny and underflow_threshold, that is, a value whose radix point is halfway between the position in those two values.
+
+
+def test_tiny_differences():
+    """"With no gradual underflow, look for x != z but x-z = 0.
+    This function is called after cases 1, 2, and 3 of underflow
+    triage, where case 4 captures gradual underflow. The idea is
+    to show how the nonzero differences between tiny numbers are
+    not representable in the arithmetic.
+
+
+    Usually, base_tiny == underflow_threshold but if it's smaller,
+    then r * underflow_threshold is the geometric mean of the two.
+    In the typical non-gradual-underflow cases when tiny_x and
+    underflow_threshold differ by  a factor of 1 or H, the else
+    clause below is taken.
+
+
+    Basic 5000-5080
+    """
+
+
+    print("")
+    try:
+        r = SQRT(base_tiny / underflow_threshold)
+    except:
+        print("base_tiny / underflow_threshold failed!")
+        r = H + H   # fall through to else case below
+    if r <= H:
+        z = r * underflow_threshold
+        x = z * (ONE + r * H * (ONE + H))
+    else:
+        z = underflow_threshold
+        x = z * (ONE + H * H * (ONE + H))
+
+
+    if (x != z) and (x - z == ZERO):
+        BadCond(err_flaw, "")
+        print("x = {:0.17e}\n\tis not equal to z = {:0.17e} .".
+              format(x, z))
+        w = x - z
+        print("yet x - z yields {:0.17e} .".format(w))
+        print("    Should this NOT signal Underflow, ")
+        print("this is a SERIOUS DEFECT\nthat causes ")
+        print("confusion when innocent statements like");
+        print("    if (x == z)  ...  else")
+        print("  ... (f(x) - f(z)) / (x - z) ...")
+        print("encounter Division by ZERO although actually")
+        try:
+            print("x / z = 1 + {:g} .".format((x / z - ONE_HALF) - ONE_HALF))
+        except:
+            print("x / z fails!")
+    return
+
+
+test_for_narrow_range
+This is a sanity check that the number system has adequate range relative to its precision. It raises half a unit in the last place of one to the 4th and 5th powers. As an example, in IEEE 754 single format half an ulp of one is 2**-24. That value to the 5th power is 2**-120, which is well above the underflow threshold. Here is a diagram of half an ulp of one:
+
+
+As another example, the half float format recommended by IEEE 754 2019 has just a 5-bit exponent and 10-bit significand. Half an ulp of 1 is 2**-11, which is 2**-55 when raised to the 5th. But the underflow threshold is just 2**-14, making this arithmetic far out of spec, relative to this test.
+
+
+[RESOLVE: The message “X underflows” doesn’t jibe with the inner comparison against min_positive, which matches the Basic code.]
+
+
+def test_for_narrow_range():
+   """Test that the 5th power of half an ulp of 1 doesn't underflow.
+   Basic 5170-5210
+   """
+
+
+   y2 = ULP_OF_ONE_MINUS * ULP_OF_ONE_MINUS
+   y = y2 * y2
+   y2 = y * ULP_OF_ONE_MINUS
+   if y2 <= underflow_threshold:
+       # ***ISSUE: Should this be > underflow_threshold, given message?
+       if y > min_positive:
+           BadCond(err_defect, "")
+           i = 5
+       else:
+           BadCond(err_serious, "")
+           i = 4
+       print("Range is too narrow; ULP_OF_ONE_MINUS^{:d} Underflows."
+             .format(i))
+   return
+
+
+test_extreme_underflow
+The final test of underflow behavior looks at the square of the underflow threshold, a value most arithmetics would flush to zero. Why should anything be as simple as multiplying a previously computed value by itself? Paranoia side-steps any misbehavior of tiny numbers by computing the square as a power of the radix.
+
+
+The target is a value that might be thought of as
+    y2 = B ** (2 * log_base_B(underflow_threshold))
+The elaborate expression for the log of the underflow threshold amounts to
+    y = rounded(240 * log(underflow_threshold) / log(B)) / 240
+The factor 240 is a Paranoia idiom used to pick up any fractional digits. See the Peculiar Encodings discussion for more detail. The code adds half and chops, adjusting the sign suitably, and then divides the 240 back out. The value y will be a whole number if the underflow threshold is a simple power of the radix, as in most number systems.
+
+
+[TODO: ensure there are eventually sections covering Peculiar Encodings, Epsilons, etc.]
+
+
+def test_extreme_underflow(ut):
+   """Test the behavior of underflow_threshold**2.
+   The code computes
+       ut+ = ut * (1 + eps)
+       ut++ = ut * B * (1 + eps)
+   and then determines where the ultra-small product lies on the line
+   ---------- 0 ---------- ut+ ---------- ut++ ----------
+    serious         OK           defect          serious
+
+
+   Args:
+       ut -- expect underflow_threshold, but works with any tiny value
+
+
+   Basic 5230-5300
+   """
+
+
+   # Compute log(ut) base 1/H, where H=min(1/B, 1/2), so it's
+   # log base 2, 8, 10 or 16. Use the 240 factor to pick up
+   # fractional digits base 8, 10, or 16.
+   y = (-FLOOR(ONE_HALF - TWOFORTY * LOG(ut) / LOG(ONE_OVER_H))
+        / TWOFORTY)
+   y2 = y + y
+   print("Since underflow occurs below the threshold")
+   print("threshold = ({:0.17e}) ^ ({:0.17e})\nonly underflow "
+         .format(ONE_OVER_H, y), end="")
+   print("should afflict the expression\n\t({:0.17e}) ^ ({:0.17e});"
+         .format(ONE_OVER_H, y2))
+   print("actually calculating yields:", end="")
+   try:
+       ultra = POW(ONE_OVER_H, y2)
+   except:
+       BadCond(err_serious, " trap on underflow.\n")
+   print(" {:0.17e} .".format(ultra))
+   # Note use of SAFE_ULPS_OF_ONE versus ULP_OF_ONE_PLUS to ensure
+   # multiplication doesn't lose the low bits, for lack of a
+   # guard digit or worse.
+   if (ultra < ZERO) or (ultra > (B + B * SAFE_ULPS_OF_ONE) * ut):
+       BadCond(err_serious, "this is not between 0 and underflow\n")
+       print("   threshold = {:0.17e} .".format(ut))
+   elif not (ultra > ut * (ONE + SAFE_ULPS_OF_ONE)):
+       print("This computed value is O.K.")
+   else:
+       BadCond(err_defect, "this is not between 0 and underflow\n")
+       print("   threshold = {:0.17e} .".format(ut))
+   return
+
+
+[Postscript: “Paranoia in Python” is the first exhibit in Arithmazium, a web site devoted to topics in computer arithmetic.
+
+
+This PDF document is draft  content intended for a dozen or more web pages. While that structure is being sorted out, this form provides a way to see many pieces at once, and to experiment with different kinds of layout.
+
+
+Here are several design elements:
+      1. While Paranoia has its own cult following of experts in the business, this content targets a less sophisticated, presumably younger, audience interested in some exposure to the vagaries of arithmetic.
+      2. Finding the right level of vocabulary and sentence structure is one of the challenges, especially in reaching non-native speakers.
+      3. Arithmazium will present computer arithmetic from the basics. Paranoia in Python must contain sufficient background to get the reader engaged, but it will not tell the whole story of floating point. For example, Paranoia makes no attempt to discover the encoding subtleties of the arithmetic.
+      4. While the Python version refers to the original BASIC code by line number, the point is to present the techniques and logic of the code in more accessible Python.
+      5. Interested readers are, of course, encouraged to look at the original, and there will be a section describing the mapping from Basic to Python.
+      6. As just seen, we’ll use “Basic” to name the language, as less jarring to the eye. Unix authors have done this for years.
+      7. This particular effort intersects Don Knuth’s Literate Programming – writing software for humans as well as computers. The conflict for me, but I’m still researching, is that I want to write for the Web, not for print. This is still work in progress.
+      8. This might perhaps be called an exercise Semiliterate Programming. In an effort to ensure that the code described is the code executed, a simple script slices and dices the Python into snippets to be inserted into the discussion.
+      9. One artifact of the semiliterate approach is that the commentary is split between the native code and the surrounding discussion. The intention here is that the Paranoia code be adequately documented on its own, with readability enhanced by diagrams and elaboration outside the Python.
+      10. Throughout the document, bold serif comments like this raise issues to be resolved by Prof. Kahan, other reviewers, and me, but the reader knows that by now.]

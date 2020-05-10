@@ -107,7 +107,30 @@ svg {
   width: "100%";
   height: "auto";
 }
+/* ***********************
+rect.home-box {
+  fill: lightgreen;
+  stroke: black;
+  stroke-width: 10;
+}
 
+polygon.home-walls {
+  fill: antiquewhite;
+  stroke: black;
+  stroke-width: 6;
+}
+
+polygon.home-room {
+  fill: antiquewhite;
+  stroke: black;
+  stroke-width: 6;
+}
+
+line.home-grid {
+  stroke: darkslategray;
+  stroke-width: 1;
+}
+*********************************/
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -272,4 +295,3 @@ svg {
     page-break-after: avoid;
   }
 }
-

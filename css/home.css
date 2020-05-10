@@ -1,0 +1,30 @@
+/* home.css -- style for the home page */
+
+/* Styles for the room layout, patterns, and fonts */
+
+rect.home-box {
+  fill: lightgreen;
+  stroke: black;
+  stroke-width: 10;
+}
+
+line.home-grid {
+  stroke: darkslategray;
+  stroke-width: 1;
+}
+
+polygon.home-walls {
+  fill: antiquewhite;
+  stroke: black;
+  stroke-width: 6;
+}
+
+polygon.home-room {
+  fill: antiquewhite;
+  stroke: black;
+  stroke-width: 6;
+}
+
+polygon.home-para {
+  fill: lime;
+}

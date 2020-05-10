@@ -25,6 +25,37 @@ polygon.home-room {
   stroke-width: 6;
 }
 
+text.home-room {
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
 polygon.home-para {
   fill: lime;
+}
+
+text.home-para {
+  font-size: 56px;
+  font-weight: bold;
+  font-family: Atma;
+}
+
+polygon.home-entry {
+  fill: aqua;
+}
+
+text.home-entry {
+  font-size: 56px;
+  font-weight: normal;
+  font-family: Bevan;
+}
+
+polygon.home-lib {
+  fill: coral;
+}
+
+text.home-lib {
+  font-size: 56px;
+  font-weight: normal;
+  font-family: "Cherry Swash";
 }

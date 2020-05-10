@@ -37,7 +37,7 @@ polygon.home-para {
 text.home-para {
   font-size: 56px;
   font-weight: bold;
-  font-family: Atma;
+  font-family: Atma, Georgia, serif;
 }
 
 polygon.home-entry {
@@ -47,7 +47,7 @@ polygon.home-entry {
 text.home-entry {
   font-size: 56px;
   font-weight: normal;
-  font-family: Bevan;
+  font-family: Bevan, "Arial Black", Gadget, sans-serif;
 }
 
 polygon.home-lib {
@@ -57,5 +57,5 @@ polygon.home-lib {
 text.home-lib {
   font-size: 56px;
   font-weight: normal;
-  font-family: "Cherry Swash";
+  font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
 }

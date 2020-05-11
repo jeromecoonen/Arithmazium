@@ -27,7 +27,7 @@ polygon.home-room {
 
 text.home-room {
   text-anchor: middle;
-  dominant-baseline: central;
+  alignment-baseline: center;
 }
 
 polygon.home-para {
@@ -51,11 +51,85 @@ text.home-entry {
 }
 
 polygon.home-lib {
-  fill: coral;
+  fill: violet;
 }
 
 text.home-lib {
   font-size: 56px;
-  font-weight: normal;
+  font-weight: bold;
   font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
+}
+
+polygon.home-study {
+  fill: coral;
+}
+
+text.home-study {
+  font-size: 48px;
+  font-weight: bold;
+  font-family: "Days One", "lucida Console", Monaco, monospace;
+}
+
+polygon.home-core {
+  fill: slategray;
+  stroke-width: 0;
+}
+
+text.home-core {
+  fill: white;
+  font-size: 48px;
+  font-weight: normal;
+  font-family: "Fontdiner Swanky", "lucida Console", Monaco, monospace;
+}
+
+
+polygon.home-lab {
+  fill: deepskyblue;
+}
+
+text.home-lab {
+  font-size: 56px;
+  font-weight: bolder;
+  font-family: "Orbitron", "lucida Console", Monaco, monospace;
+}
+
+polygon.home-class {
+  fill: salmon;
+}
+
+text.home-class {
+  font-size: 44px;
+  font-weight: bolder;
+  font-family: "Petit Formal Script", "lucida Console", Monaco, monospace;
+}
+
+polygon.home-fit {
+  fill: chocolate;
+}
+
+text.home-fit {
+  font-size: 52px;
+  font-weight: bold;
+  font-family: "Allerta Stencil", "lucida Console", Monaco, monospace;
+}
+
+polygon.home-dino {
+  fill: gold;
+}
+
+text.home-dino {
+  font-size: 52px;
+  font-weight: bold;
+  font-family: "Passero One", "lucida Console", Monaco, monospace;
+}
+
+
+polygon.home-nurse {
+  fill: olive;
+}
+
+text.home-nurse {
+  font-size: 64px;
+  font-weight: bold;
+  font-family: "Nanum Pen Script", "lucida Console", Monaco, monospace;
 }

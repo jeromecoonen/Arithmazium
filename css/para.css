@@ -1,0 +1,31 @@
+/* para.css -- style for the paranoia section */
+
+p {
+  font-family: "Work Sans", Arial, sans-serif;
+  margin-top: 0.0em;
+  margin-bottom: 0.0em;
+}
+
+p.el1 {
+  margin-left: 0;
+  font-family: "Days One", Arial, sans-serif;
+}
+
+p.el2 {
+  margin-left: 3em;
+  font-family: "Days One", Arial, sans-serif;
+}
+
+p.el3 {
+  margin-left: 6em;
+  font-family: "Days One", Arial, sans-serif;
+}
+
+p.el4 {
+  margin-left: 9em;
+  font-family: "Days One", Arial, sans-serif;
+}
+
+a.toc-link {
+  text-decoration-line: none;
+}

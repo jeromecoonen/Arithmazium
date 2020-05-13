@@ -1,6 +1,17 @@
 /* home.css -- style for the home page */
 
 /* Styles for the room layout, patterns, and fonts */
+/* These are the experimental fonts, saved here for now. */
+/* Paranoia -- Atma */
+/* Entrance -- Bevan */
+/* Library -- Cherry Swash */
+/* Study -- Days One */
+/* Core -- Fontdiner Swanky */
+/* Laboratory -- Orbitron */
+/* Classroom -- Petit Formal Script */
+/* Fitness -- Allerta Stencil */
+/* Dinosaur -- Passero One */
+/* Nursery -- Nanum Pen Script */
 
 rect.home-box {
   fill: lightgreen;

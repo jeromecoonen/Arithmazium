@@ -100,37 +100,25 @@ textarea {
 body {
   margin-left: 10%;
   margin-right: 10%;
-  font-family: sans-serif;
+  font-family: "Work Sans", Arial, sans-serif;
 }
 
 svg {
   width: "100%";
   height: "auto";
 }
-/* ***********************
-rect.home-box {
-  fill: lightgreen;
-  stroke: black;
-  stroke-width: 10;
+
+code,
+pre {
+  font-family: "Roboto Mono", Courier, monospace;
+  font-size: smaller;
 }
 
-polygon.home-walls {
-  fill: antiquewhite;
-  stroke: black;
-  stroke-width: 6;
+pre {
+  margin-left: 1em;
+  background-color: wheat;
 }
 
-polygon.home-room {
-  fill: antiquewhite;
-  stroke: black;
-  stroke-width: 6;
-}
-
-line.home-grid {
-  stroke: darkslategray;
-  stroke-width: 1;
-}
-*********************************/
 /* ==========================================================================
    Helper classes
    ========================================================================== */

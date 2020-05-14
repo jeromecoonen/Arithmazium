@@ -112,11 +112,11 @@ code,
 pre {
   font-family: "Roboto Mono", Courier, monospace;
   font-size: smaller;
+  background-color: rgba(245, 222, 179, 0.8);
 }
 
 pre {
   margin-left: 1em;
-  background-color: wheat;
 }
 
 /* ==========================================================================

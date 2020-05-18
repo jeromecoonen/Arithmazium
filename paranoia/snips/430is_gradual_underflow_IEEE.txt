@@ -1,0 +1,7 @@
+    print("Underflow is gradual; it incurs Absolute Error =")
+    print("(roundoff in underflow_threshold) < min_positive.")
+    # Test for IEEE rounding at the very bottom of the range.
+    # The test looks for a double rounding, first to a
+    # higher precision, then the target. The computation is just
+    # under half an ulp, but an extra rounding will push it to a
+    # half-way case that will round up.

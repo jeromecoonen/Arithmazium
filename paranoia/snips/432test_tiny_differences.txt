@@ -13,36 +13,3 @@ def test_tiny_differences():
 
     Basic 5000-5080
     """
-# ~~~~~~~ 433test_tiny_differences_2
-    print("")
-    try:
-        r = SQRT(base_tiny / underflow_threshold)
-    except:
-        print("base_tiny / underflow_threshold failed!")
-        r = H + H   # fall through to else case below
-    if r <= H:
-        z = r * underflow_threshold
-        x = z * (ONE + r * H * (ONE + H))
-    else:
-        z = underflow_threshold
-        x = z * (ONE + H * H * (ONE + H))
-# ~~~~~~~ test_tiny_differences_3
-    if (x != z) and (x - z == ZERO):
-        BadCond(err_flaw, "")
-        print("x = {:0.17e}\n\tis not equal to z = {:0.17e} .".
-              format(x, z))
-        w = x - z
-        print("yet x - z yields {:0.17e} .".format(w))
-        print("    Should this NOT signal Underflow, ")
-        print("this is a SERIOUS DEFECT\nthat causes ")
-        print("confusion when innocent statements like");
-        print("    if (x == z)  ...  else")
-        print("  ... (f(x) - f(z)) / (x - z) ...")
-        print("encounter Division by ZERO although actually")
-        try:
-            print("x / z = 1 + {:g} .".format((x / z - ONE_HALF) - ONE_HALF))
-        except:
-            print("x / z fails!")
-    return
-
-

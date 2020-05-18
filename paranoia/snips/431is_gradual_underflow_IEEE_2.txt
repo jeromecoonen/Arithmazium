@@ -1,0 +1,12 @@
+    # y = t/C * (3/2 + u)
+    # x = 1/C * (1 + u)
+    # y/x = t * (3/2 + u) * (1 - u + u**2 - ...)
+    #     = t * (1 + 1/2 - u/2 + u**2/2 - ...)
+    #     = t, barely rounding down
+    y = t * ONE_OVER_C
+    y = y * (ONE_AND_HALF + ULP_OF_ONE_PLUS)
+    x = ONE_OVER_C * (ONE + ULP_OF_ONE_PLUS)
+    y = y / x
+    return (y == t)
+
+

@@ -1,0 +1,15 @@
+    tiny = c
+    z = tiny * H
+    while True:
+        less_tiny = tiny
+        tiny = z
+        z = z * H
+        # Terminate if z pins at a nonzero minimal value or
+        # if z falls to an epsilon or 0.
+        if (tiny <= z) or (z + z <= z): break
+    print("***Approaching underflow by powers of the radix:")
+    print("***    less_tiny =  {:.7e}, tiny =  {:.7e},"
+          + "z = {:.7e}".format(less_tiny, tiny, z))
+    return less_tiny, tiny, z
+
+

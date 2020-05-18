@@ -6,30 +6,3 @@ def test_for_pseudo_zero(pseudo):
 
     Basic 4580-4630
     """
-# ~~~~~~~ 441test_for_pseudo_zero_2
-    if (pseudo == ZERO):
-        return
-    print("")
-    # Test pseudo for "phoney-zero" behavior, violating either
-    # pseudo < tiny_x or pseudo < pseudo + pseudo
-    # These are the loop termination tests in tiny_values_and_difference().
-    if (pseudo <= ZERO):
-        BadCond(err_failure, "Positive expressions can underflow to an " +
-                "allegedly negative value\n")
-        print("pseudo that prints out as: {:g} .".format(pseudo))
-        x = -pseudo
-        if x <= ZERO:
-            print("But -pseudo, which should be", end="")
-            print("positive, isn't; it prints out as  {:g} .".
-                  format(x))
-# ~~~~~~~ 442test_for_pseudo_zero_3
-    else:
-        BadCond(err_flaw, "Underflow can stick at an allegedly positive\n")
-        print("value pseudo that prints out as {:g} .".
-              format(pseudo))
-    # One final test for strangeness around the underflow threshold.
-    # The test is made just for the side-effects, not the reulst value.
-    discard = does_tiny_value_misbehave(pseudo)
-    return
-
-

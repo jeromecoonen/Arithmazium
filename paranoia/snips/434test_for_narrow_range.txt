@@ -2,20 +2,3 @@ def test_for_narrow_range():
     """Test that the 5th power of half an ulp of 1 doesn't underflow.
     Basic 5170-5210
     """
-# ~~~~~~~ 435test_for_narrow_range_2
-    y2 = ULP_OF_ONE_MINUS * ULP_OF_ONE_MINUS
-    y = y2 * y2
-    y2 = y * ULP_OF_ONE_MINUS
-    if y2 <= underflow_threshold:
-        # ***ISSUE: Should this be > underflow_threshold, given message?
-        if y > min_positive:
-            BadCond(err_defect, "")
-            i = 5
-        else:
-            BadCond(err_serious, "")
-            i = 4
-        print("Range is too narrow; ULP_OF_ONE_MINUS^{:d} Underflows."
-              .format(i))
-    return
-
-

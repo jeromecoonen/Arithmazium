@@ -1,0 +1,15 @@
+    if (pseudo == ZERO):
+        return
+    print("")
+    # Test pseudo for "phoney-zero" behavior, violating either
+    # pseudo < tiny_x or pseudo < pseudo + pseudo
+    # These are the loop termination tests in tiny_values_and_difference().
+    if (pseudo <= ZERO):
+        BadCond(err_failure, "Positive expressions can underflow to an " +
+                "allegedly negative value\n")
+        print("pseudo that prints out as: {:g} .".format(pseudo))
+        x = -pseudo
+        if x <= ZERO:
+            print("But -pseudo, which should be", end="")
+            print("positive, isn't; it prints out as  {:g} .".
+                  format(x))

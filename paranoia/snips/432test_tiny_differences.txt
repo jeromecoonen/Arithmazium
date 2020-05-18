@@ -13,7 +13,7 @@ def test_tiny_differences():
 
     Basic 5000-5080
     """
-# ~~~~~~~ test_tiny_differences_2
+# ~~~~~~~ 433test_tiny_differences_2
     print("")
     try:
         r = SQRT(base_tiny / underflow_threshold)

@@ -15,7 +15,7 @@ def does_tiny_value_misbehave(z):
 
     Basic 4640-4680
     """
-# ~~~~~~~ does_tiny_value_misbehave_2
+# ~~~~~~~ 427does_tiny_value_misbehave_2
     reply = False
     if z == ZERO:   # nothing complex to test in the easy case
         return reply
@@ -43,7 +43,7 @@ def does_tiny_value_misbehave(z):
         else:
             error_count[err_defect] = error_count[err_defect] + 1
             print("This is a DEFECT!")
-# ~~~~~~~ does_tiny_value_misbehave_3
+# ~~~~~~~ 428does_tiny_value_misbehave_3
     r1 = z * ONE
     r2 = ONE * z
     r3 = z / ONE

@@ -20,7 +20,7 @@ def tiny_powers_of_B(c):
 
     Basic 4430-4440
     """
-# ~~~~~~~ tiny_powers_of_B_2
+# ~~~~~~~ 421tiny_powers_of_B_2
     tiny = c
     z = tiny * H
     while True:

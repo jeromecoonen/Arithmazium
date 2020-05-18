@@ -2,7 +2,7 @@ def test_for_narrow_range():
     """Test that the 5th power of half an ulp of 1 doesn't underflow.
     Basic 5170-5210
     """
-# ~~~~~~~ test_for_narrow_range_2
+# ~~~~~~~ 435test_for_narrow_range_2
     y2 = ULP_OF_ONE_MINUS * ULP_OF_ONE_MINUS
     y = y2 * y2
     y2 = y * ULP_OF_ONE_MINUS

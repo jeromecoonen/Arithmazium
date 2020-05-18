@@ -10,7 +10,7 @@
 
     Basic 4450-4520
     """
-# ~~~~~~~ tiny_values_and_difference_3
+# ~~~~~~~ 424tiny_values_and_difference_3
     d = C * one_plus
     # 1 + SAFE_ULPS_OF_ONE should be enough ulps of 1 that d > C.
     if d <= C:
@@ -19,7 +19,7 @@
                 "multiplication gets too many last digits wrong.")
         Pause()
         return 0, tiny_B, too_tiny_B, tiny_B, 0, 0, 0
-# ~~~~~~~ tiny_values_and_difference_4
+# ~~~~~~~ 425tiny_values_and_difference_4
     else:
         tinier = d
         too_tiny = tinier * H

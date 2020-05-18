@@ -9,7 +9,7 @@ def is_gradual_underflow_IEEE(t):
 
     Basic 5150
     """
-# ~~~~~~~ is_gradual_underflow_IEEE
+# ~~~~~~~ 430is_gradual_underflow_IEEE
     print("Underflow is gradual; it incurs Absolute Error =")
     print("(roundoff in underflow_threshold) < min_positive.")
     # Test for IEEE rounding at the very bottom of the range.
@@ -17,7 +17,7 @@ def is_gradual_underflow_IEEE(t):
     # higher precision, then the target. The computation is just
     # under half an ulp, but an extra rounding will push it to a
     # half-way case that will round up.
-# ~~~~~~~ is_gradual_underflow_IEEE_2
+# ~~~~~~~ 431is_gradual_underflow_IEEE_2
     # y = t/C * (3/2 + u)
     # x = 1/C * (1 + u)
     # y/x = t * (3/2 + u) * (1 - u + u**2 - ...)

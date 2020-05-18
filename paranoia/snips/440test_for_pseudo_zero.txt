@@ -6,7 +6,7 @@ def test_for_pseudo_zero(pseudo):
 
     Basic 4580-4630
     """
-# ~~~~~~~ test_for_pseudo_zero_2
+# ~~~~~~~ 441test_for_pseudo_zero_2
     if (pseudo == ZERO):
         return
     print("")
@@ -22,7 +22,7 @@ def test_for_pseudo_zero(pseudo):
             print("But -pseudo, which should be", end="")
             print("positive, isn't; it prints out as  {:g} .".
                   format(x))
-# ~~~~~~~ test_for_pseudo_zero_3
+# ~~~~~~~ 442test_for_pseudo_zero_3
     else:
         BadCond(err_flaw, "Underflow can stick at an allegedly positive\n")
         print("value pseudo that prints out as {:g} .".

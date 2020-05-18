@@ -100,6 +100,31 @@ textarea {
 :root {
   --but-color: cornflowerblue;
 }
+
+rect.arith-ban-box {
+  fill: var(--but-color);
+  stroke: black;
+  stroke-width: 0;
+}
+
+.arith-ban-back {
+  fill: rgba(80, 129, 217, 0.9);
+  font-size: 80px;
+  font-weight: bold;
+  font-family: "Roboto Mono", "lucida Console", Monaco, monospace;
+}
+
+text.arith-ban-front {
+  fill: white;
+  font-size: 56px;
+  font-weight: 800;
+  font-family: "Work Sans", "lucida Console", Monaco, monospace;
+}
+
+h1 {
+  margin-top: 0;
+}
+
 body {
   margin-left: 10%;
   margin-right: 10%;

@@ -108,10 +108,10 @@ rect.arith-ban-box {
 }
 
 .arith-ban-back {
-  fill: rgba(80, 129, 217, 0.9);
-  font-size: 80px;
-  font-weight: bold;
-  font-family: "Roboto Mono", "lucida Console", Monaco, monospace;
+  fill: rgba(85, 134, 222, 0.9);
+  font-size: 86px;
+  font-weight: normal;
+  font-family: "Courier", "lucida Console", Monaco, monospace;
 }
 
 text.arith-ban-front {

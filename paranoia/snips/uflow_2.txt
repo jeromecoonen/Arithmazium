@@ -1,0 +1,16 @@
+# The two sets of tiny values characterize the underflow behavior.
+# The following comments mirror BASIC comments 4530-4560. The relational ">~"
+# may be loosely read "greater than or kind of equal to". It refers to the odd
+# behavior of some arithmetics near 0, where some "pseudo zero" values behave
+# like zero in some contexts and nonzero in others.
+#
+# 1  >>  C = 1/B^k  >=  less_tiny_B  >  tiny_B  >~  too_tiny_B  >~  0
+#   where the tiny values differ by a factor of H
+#
+# 1  >>  d = (1+SAFE_ULPS_OF_ONE)*C  >=  underflow_threshold
+#        >= add_sub_hi  >=  less_tiny_x  >  tiny_x  >~ too_tiny_x  >~  0
+#   where underflow_threshold = d * H^k is the first NONZERO value to
+#       violate (x*H)/H = x else underflow_threshold = 0
+#   and where add_sub_hi = underflow_threshold * H^k is the first to satisfy
+#       add_sub_tiny <- |(x*H)/H - x| > 0 else add_sub_hi = less_tiny_x
+test_for_pseudo_zero(too_tiny_x)

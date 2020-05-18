@@ -1,0 +1,12 @@
+milestone = 110   #==============================
+# UNDERFLOW AND THE BEHAVIOR OF TINY VALUES
+# Starts at Basic 4330
+print("Seeking three values related to Underflow:")
+print("    underflow_threshold = smallest well-behaved value")
+print("    min_positive = smallest nonzero value discovered")
+print("    too_tiny_x = a value underflowed to zero or a pseudo-zero")
+# First step: compute tiny powers of the radix. H and C are two useful
+# constants.
+# H = min(1/B, 1/2); ONE_OVER_H = max(B, 2)
+# C = 1/B**k, not too close to the underflow thereshold; ONE_OVER_C = B**k
+less_tiny_B, tiny_B, too_tiny_B = tiny_powers_of_B(C)

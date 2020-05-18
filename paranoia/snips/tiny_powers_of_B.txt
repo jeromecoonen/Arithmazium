@@ -1,0 +1,38 @@
+#=============================================
+# Tests for underflow behavior.
+#=============================================
+def tiny_powers_of_B(c):
+    """Return tiny values, stepping toward zero by factors of radix or 2.
+
+    Starting with a value like C = 1/B**k close to the underflow
+    threshold, walk down by factors of H = min(1/B, 1/2). Compute
+    less_tiny, less_tiny, and z differing by factors of H.
+    Value less_tiny avoids anomalies. Value z typically falls to
+    zero. The factor H protects against B=1.
+
+    Args:
+        c -- 1/B**k, expected to be the constant C or comparable
+
+    Returns:
+        less_tiny -- next tiniest positive value, by a factor of H
+        tiny -- tiniest positive value
+        z -- too tiny value, that underflows to zero or a pseudo-zero
+
+    Basic 4430-4440
+    """
+# ~~~~~~~ tiny_powers_of_B_2
+    tiny = c
+    z = tiny * H
+    while True:
+        less_tiny = tiny
+        tiny = z
+        z = z * H
+        # Terminate if z pins at a nonzero minimal value or
+        # if z falls to an epsilon or 0.
+        if (tiny <= z) or (z + z <= z): break
+    print("***Approaching underflow by powers of the radix:")
+    print("***    less_tiny =  {:.7e}, tiny =  {:.7e},"
+          + "z = {:.7e}".format(less_tiny, tiny, z))
+    return less_tiny, tiny, z
+
+

@@ -20,15 +20,18 @@
 </head>
 
 <body>
-  <h1>tiny_powers_of_B</h1>
+<h1>tiny_powers_of_B</h1>
 
-  <p>The Python comments this walk toward the underflow threshold and,
+<p>
+  The Python comments this walk toward the underflow threshold and,
   ultimately, to zero by factors of the radix. The result is a triple – small,
   smaller, smallest – which
   reflects how murky matters can be for tiny numbers. These are all simple
   powers of the radix, so their trailing digits are all zero.
+</p>
 
-  <p>The diagram below captures the action in binary as <code>tiny</code>
+<p>
+  The diagram below captures the action in binary as <code>tiny</code>
   reaches the smallest
   normal number. It’s the value with full precision
   that has the smallest representable
@@ -37,28 +40,36 @@
   on an IEEE 754 system. On most other machines, <code>z</code> flushes
   to zero, terminating
   the loop.
+</p>
 
-  <br>
-  <img src="img/tiny_B_a.svg"
-      alt="Tiny powers of the radix" title="Google drawing">
-  <br>
+<p>
+<img src="img/tiny_B_a.svg"
+    alt="Tiny powers of the radix" title="Google drawing">
+</p>
 
-  <p>With subnormal numbers, <code>tiny</code>
+<p>
+  With subnormal numbers, <code>tiny</code>
   reaches the tiniest representable
   value, as <code>z</code> underflows to zero.
   It is the first inexact result returned. Can
   you see that decimal arithmetic compatible with
   IEEE 754 2019 would behave the
   same way, with division by 10 at each step?
+</p>
 
-  <br>
-  <img src="img/tiny_B_b.svg"
-      alt="Tiny powers of the radix" title="Google drawing">
-  <br>
+<p>
+<img src="img/tiny_B_b.svg"
+    alt="Tiny powers of the radix" title="Google drawing">
+</p>
 
-  <p>The termination criterion
-  <pre>if (tiny_delta <= z) or (z + z <= z):</pre>
-  <p>detects several conditions:
+<p>
+  The termination criterion
+</p>
+
+<pre><code>if (tiny_delta <= z) or (z + z <= z):</code></pre>
+
+<p>
+  detects several conditions:
   <ul>
     <li><code>z</code> pins at a tiny nonzero number,
       never underflowing to zero</li>
@@ -67,47 +78,52 @@
       named for the Greek letter &epsilon;;
       epsilons are featured in a section of their own
   </ul>
-  <p><em>[Epsilons are introduced elsewhere.
+</p>
+
+<p><em>
+  [Epsilons are introduced elsewhere.
   <br>
   SUGGESTION: Add a <code>verbose</code> flag to the code, controlling extra output,
   such as is given here. Such additions to original Paranoia output are marked
   by “***”.  The original code reflected the era, restricting output to 80
-  columns by 24 rows, enabling users to take screen shots.]</em></p>
+  columns by 24 rows, enabling users to take screen shots.]
+</em></p>
 
-  <pre>def tiny_powers_of_B(c):
-      """Return tiny values, stepping toward zero by factors of radix or 2.
+<pre><code>def tiny_powers_of_B(c):
+  """Return tiny values, stepping toward zero by factors of radix or 2.
 
-      Starting with a value like C = 1/B**k close to the underflow
-      threshold, walk down by factors of H = min(1/B, 1/2). Compute
-      less_tiny, less_tiny, and z differing by factors of H.
-      Value less_tiny avoids anomalies. Value z typically falls to
-      zero. The factor H protects against B=1.
+  Starting with a value like C = 1/B**k close to the underflow
+  threshold, walk down by factors of H = min(1/B, 1/2). Compute
+  less_tiny, less_tiny, and z differing by factors of H.
+  Value less_tiny avoids anomalies. Value z typically falls to
+  zero. The factor H protects against B=1.
 
-      Args:
-          c -- 1/B**k, expected to be the constant C or comparable
+  Args:
+      c -- 1/B**k, expected to be the constant C or comparable
 
-      Returns:
-          less_tiny -- next tiniest positive value, by a factor of H
-          tiny -- tiniest positive value
-          z -- too tiny value, that underflows to zero or a pseudo-zero
+  Returns:
+      less_tiny -- next tiniest positive value, by a factor of H
+      tiny -- tiniest positive value
+      z -- too tiny value, that underflows to zero or a pseudo-zero
 
-      Basic 4430-4440
-      """
+  Basic 4430-4440
+  """
 
-      tiny = c
-      z = tiny * H
-      while True:
-          less_tiny = tiny
-          tiny = z
-          z = z * H
-          # Terminate if z pins at a nonzero minimal value or
-          # if z falls to an epsilon or 0.
-          if (tiny <= z) or (z + z <= z): break
-      print("***Approaching underflow by powers of the radix:")
-      print("***    less_tiny =  {:.7e}, tiny =  {:.7e},"
-            + "z = {:.7e}".format(less_tiny, tiny, z))
-      return less_tiny, tiny, z
-</pre>
+  tiny = c
+  z = tiny * H
+  while True:
+      less_tiny = tiny
+      tiny = z
+      z = z * H
+      # Terminate if z pins at a nonzero minimal value or
+      # if z falls to an epsilon or 0.
+      if (tiny <= z) or (z + z <= z): break
+  print("***Approaching underflow by powers of the radix:")
+  print("***    less_tiny =  {:.7e}, tiny =  {:.7e},"
+        + "z = {:.7e}".format(less_tiny, tiny, z))
+  return less_tiny, tiny, z
+</code></pre>
+
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 

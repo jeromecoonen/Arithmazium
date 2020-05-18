@@ -1,0 +1,15 @@
+milestone = 120   #==============================
+# less_tiny_B and less_tiny_x result from similar loops, one starting
+# with C, the other with (1 + SAFE_ULPS_OF_ONE) * C.
+# Check to see who is the tiniest of them all, but scale up
+# to avoid faulty comparisons as on CDC 6000.
+# If the number encoding is such that what "looks like" the smallest power
+# of the radix is interpreted as zero, then the smallest nonzero values
+# will not be power of B. This test catches that case. The value h_fact
+# records that the smallest power of B is too big by nearly a factor of H.
+if ONE_OVER_C * less_tiny_B > ONE_OVER_C * less_tiny_x:
+    h_fact = H
+    min_positive = tiny_x
+else:
+    h_fact = ONE
+    min_positive = tiny_B

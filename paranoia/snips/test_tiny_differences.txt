@@ -1,0 +1,48 @@
+def test_tiny_differences():
+    """"With no gradual underflow, look for x != z but x-z = 0.
+    This function is called after cases 1, 2, and 3 of underflow
+    triage, where case 4 captures gradual underflow. The idea is
+    to show how the nonzero differences between tiny numbers are
+    not representable in the arithmetic.
+
+    Usually, base_tiny == underflow_threshold but if it's smaller,
+    then r * underflow_threshold is the geometric mean of the two.
+    In the typical non-gradual-underflow cases when tiny_x and
+    underflow_threshold differ by  a factor of 1 or H, the else
+    clause below is taken.
+
+    Basic 5000-5080
+    """
+# ~~~~~~~ test_tiny_differences_2
+    print("")
+    try:
+        r = SQRT(base_tiny / underflow_threshold)
+    except:
+        print("base_tiny / underflow_threshold failed!")
+        r = H + H   # fall through to else case below
+    if r <= H:
+        z = r * underflow_threshold
+        x = z * (ONE + r * H * (ONE + H))
+    else:
+        z = underflow_threshold
+        x = z * (ONE + H * H * (ONE + H))
+# ~~~~~~~ test_tiny_differences_3
+    if (x != z) and (x - z == ZERO):
+        BadCond(err_flaw, "")
+        print("x = {:0.17e}\n\tis not equal to z = {:0.17e} .".
+              format(x, z))
+        w = x - z
+        print("yet x - z yields {:0.17e} .".format(w))
+        print("    Should this NOT signal Underflow, ")
+        print("this is a SERIOUS DEFECT\nthat causes ")
+        print("confusion when innocent statements like");
+        print("    if (x == z)  ...  else")
+        print("  ... (f(x) - f(z)) / (x - z) ...")
+        print("encounter Division by ZERO although actually")
+        try:
+            print("x / z = 1 + {:g} .".format((x / z - ONE_HALF) - ONE_HALF))
+        except:
+            print("x / z fails!")
+    return
+
+

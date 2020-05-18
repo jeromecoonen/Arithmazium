@@ -1,0 +1,17 @@
+# The Basic code switches on four cases depending on whether two values are
+# zero or nonzero.
+#   add_sub_tiny -- the difference between two tiny unequal values may
+#       underflow to zero
+#   underflow_threshold -- intended to be the smallest normal number
+#       unaffected by underflow, but will not have been set yet for
+#       arithmetic flushes underflow abruptly to zero
+#
+# -----------CASES----      4      3      2     1
+#         add_sub_tiny    non0   non0     0     0
+# underflow_threshold     non0     0    non0    0
+#
+# In high-quality arithmetic, both values are nonzero, so it's just a matter
+# of checking for gradual underflow and its quality.
+# If on the other hand, either value is zero, a specific action is taken and
+# then all three cases fall into an explicit check for differences of zero
+# arising from unequal values.

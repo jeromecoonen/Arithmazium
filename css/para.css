@@ -1,11 +1,16 @@
 /* para.css -- style for the paranoia section */
 
-p {
-  font-family: "Work Sans", Arial, sans-serif;
-  margin-top: 0.0em;
-  margin-bottom: 0.0em;
+/* suppress underscore for outline elements */
+a.toc-link {
+  text-decoration-line: none;
 }
 
+p {
+  font-family: "Work Sans", Arial, sans-serif;
+  /* default margin: t-1 r-0 b-1 l-0 */
+}
+
+/* for indenting text outline elemets */
 p.el1 {
   margin-left: 0;
   font-family: "Days One", Arial, sans-serif;
@@ -24,8 +29,4 @@ p.el3 {
 p.el4 {
   margin-left: 9em;
   font-family: "Days One", Arial, sans-serif;
-}
-
-a.toc-link {
-  text-decoration-line: none;
 }

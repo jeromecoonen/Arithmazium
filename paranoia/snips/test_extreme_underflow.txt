@@ -1,0 +1,48 @@
+def test_extreme_underflow(ut):
+    """Test the behavior of underflow_threshold**2.
+    The code computes
+        ut+ = ut * (1 + eps)
+        ut++ = ut * B * (1 + eps)
+    and then determines where the ultra-small product lies on the line
+    ---------- 0 ---------- ut+ ---------- ut++ ----------
+     serious         OK           defect          serious
+
+    Args:
+        ut -- expect underflow_threshold, but works with any tiny value
+
+    Basic 5230-5300
+    """
+# ~~~~~~~ test_extreme_underflow_2
+    # Compute log(ut) base 1/H, where H=min(1/B, 1/2), so it's
+    # log base 2, 8, 10 or 16. Use the 240 factor to pick up
+    # fractional digits base 8, 10, or 16.
+    y = (-FLOOR(ONE_HALF - TWOFORTY * LOG(ut) / LOG(ONE_OVER_H))
+         / TWOFORTY)
+    y2 = y + y
+# ~~~~~~~ test_extreme_underflow_3
+    print("Since underflow occurs below the threshold")
+    print("threshold = ({:0.17e}) ^ ({:0.17e})\nonly underflow "
+          .format(ONE_OVER_H, y), end="")
+    print("should afflict the expression\n\t({:0.17e}) ^ ({:0.17e});"
+          .format(ONE_OVER_H, y2))
+    print("actually calculating yields:", end="")
+    try:
+        ultra = POW(ONE_OVER_H, y2)
+    except:
+        BadCond(err_serious, " trap on underflow.\n")
+    print(" {:0.17e} .".format(ultra))
+# ~~~~~~~ test_extreme_underflow_4
+    # Note use of SAFE_ULPS_OF_ONE versus ULP_OF_ONE_PLUS to ensure
+    # multiplication doesn't lose the low bits, for lack of a
+    # guard digit or worse.
+    if (ultra < ZERO) or (ultra > (B + B * SAFE_ULPS_OF_ONE) * ut):
+        BadCond(err_serious, "this is not between 0 and underflow\n")
+        print("   threshold = {:0.17e} .".format(ut))
+    elif not (ultra > ut * (ONE + SAFE_ULPS_OF_ONE)):
+        print("This computed value is O.K.")
+    else:
+        BadCond(err_defect, "this is not between 0 and underflow\n")
+        print("   threshold = {:0.17e} .".format(ut))
+    return
+
+

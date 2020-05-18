@@ -1,0 +1,13 @@
+# Constant SAFE_ULPS_OF_ONE = B OR 1 * ULP_OF_ONE_PLUS should have
+# enough units in the last place of 1 to leave something nonzero
+# in multiplication, even if there's no guard digit.
+one_plus_safe = ONE + SAFE_ULPS_OF_ONE
+
+# Compute a rich set of values analogous to the tiniest powers of B, but with
+# nonzero low-order bits and attention to the differences of small values.
+(less_tiny_x, tiny_x, too_tiny_x, underflow_threshold, add_sub_tiny,
+ add_sub_hi, add_sub_lo) = tiny_values_and_difference(one_plus_safe)
+print("***less_tiny_x, tiny_x, too_tiny_x = {:.7e} {:.7e} {:.7e}"
+      .format(less_tiny_x, tiny_x, too_tiny_x))
+print("***underflow_threshold, add_sub_tiny, add_sub_hi = {:.7e} {:.7e} {:.7e}"
+      .format(underflow_threshold, add_sub_tiny, add_sub_hi))

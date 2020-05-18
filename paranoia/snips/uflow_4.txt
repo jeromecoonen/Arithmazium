@@ -1,0 +1,16 @@
+# Compared here are min_positive, the smallest nonzero value
+# gotten by successively multiplying by H, and add_sub_tiny,
+# which is |x - (x*H)/H| for a tiny x.
+if (add_sub_tiny != ZERO) and (add_sub_tiny != min_positive):
+    BadCond(err_defect, "")
+    if (add_sub_tiny < min_positive):
+        print("Products underflow at a higher", end="")
+        print(" threshold than differences.")
+        if too_tiny_x == ZERO:   # Only if there are NO pseudo-zeros.
+            # Don't admit add_sub_tiny if it could be a pseudo-zero.
+            min_positive = add_sub_tiny
+    else:
+        print("Difference underflows at a higher", end="")
+        print(" threshold than products.")
+print("Smallest strictly positive number found is min_positive = {:g} .".
+      format(min_positive))

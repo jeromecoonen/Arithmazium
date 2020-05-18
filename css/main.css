@@ -97,6 +97,9 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+:root {
+  --but-color: cornflowerblue;
+}
 body {
   margin-left: 10%;
   margin-right: 10%;
@@ -112,11 +115,73 @@ code,
 pre {
   font-family: "Roboto Mono", Courier, monospace;
   font-size: smaller;
+}
+
+code {
   background-color: rgba(245, 222, 179, 0.8);
+  padding: 1px 1px 1px 1px;
 }
 
 pre {
-  margin-left: 1em;
+  background-color: rgba(245, 222, 179, 0.8);
+  margin: 1em 0 1em 1em;
+}
+
+/* Prev - Next buttons */
+div.next-prev {
+  padding: 10px 24px 10px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  text-align: right; /* Float the buttons side by side */
+
+}
+
+/* Clear floats (clearfix hack) */
+.next-prev:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.tree,
+.next,
+.previous {
+  padding: 6px 15px 6px 15px; /* Some padding */
+  margin: 0 0 15px 15px;
+  text-align: center;
+  cursor: pointer; /* Pointer/hand icon */
+  float: right; /* Float the buttons side by side */
+  background-color: var(--but-color);
+  border: 0 solid green; /* Green border */
+  color: white; /* White text */
+  font-family: Courier, monospace;
+  font-weight: normal;
+}
+
+/*
+.tree,
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+  background-color: #4CAF50;
+  color: white;
+}
+*/
+
+.round {
+  border-radius: 25px;
 }
 
 /* ==========================================================================

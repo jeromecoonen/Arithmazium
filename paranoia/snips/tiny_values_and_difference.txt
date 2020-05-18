@@ -1,0 +1,12 @@
+def tiny_values_and_difference(one_plus):
+    """Compute the tiniest values from a starting value with nonzero
+    low-order bits. This function is parallel to tiny_powers_of_B(),
+    but looks for nonzero differences of tiny values, which are
+    evidence of gradual underflow.
+
+    If multiplication is too inaccurate, raise an error and return default
+    values, shown in parens under Returns.
+
+    Args:
+        one_plus -- 1 plus enough ulps that they shouldn't be lost when
+            multiplied by a power of B

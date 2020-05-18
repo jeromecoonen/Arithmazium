@@ -42,13 +42,13 @@ text.home-room {
 }
 
 polygon.home-para {
-  fill: lime;
+  fill: coral;
 }
 
 text.home-para {
-  font-size: 56px;
+  font-size: 48px;
   font-weight: bold;
-  font-family: Atma, Georgia, serif;
+  font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
 }
 
 polygon.home-entry {
@@ -56,9 +56,9 @@ polygon.home-entry {
 }
 
 text.home-entry {
-  font-size: 56px;
+  font-size: 40px;
   font-weight: normal;
-  font-family: Bevan, "Arial Black", Gadget, sans-serif;
+  font-family: "Days One", "Arial Black", Gadget, sans-serif;
 }
 
 polygon.home-lib {
@@ -66,19 +66,19 @@ polygon.home-lib {
 }
 
 text.home-lib {
-  font-size: 56px;
+  font-size: 48px;
   font-weight: bold;
   font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
 }
 
 polygon.home-study {
-  fill: coral;
+  fill: lime;
 }
 
 text.home-study {
   font-size: 48px;
   font-weight: bold;
-  font-family: "Days One", "lucida Console", Monaco, monospace;
+  font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
 }
 
 polygon.home-core {
@@ -88,9 +88,9 @@ polygon.home-core {
 
 text.home-core {
   fill: white;
-  font-size: 48px;
+  font-size: 36px;
   font-weight: normal;
-  font-family: "Fontdiner Swanky", "lucida Console", Monaco, monospace;
+  font-family: "Days One", "lucida Console", Monaco, monospace;
 }
 
 
@@ -99,9 +99,9 @@ polygon.home-lab {
 }
 
 text.home-lab {
-  font-size: 56px;
-  font-weight: bolder;
-  font-family: "Orbitron", "lucida Console", Monaco, monospace;
+  font-size: 48px;
+  font-weight: bold;
+  font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
 }
 
 polygon.home-class {
@@ -109,9 +109,9 @@ polygon.home-class {
 }
 
 text.home-class {
-  font-size: 44px;
-  font-weight: bolder;
-  font-family: "Petit Formal Script", "lucida Console", Monaco, monospace;
+  font-size: 48px;
+  font-weight: bold;
+  font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
 }
 
 polygon.home-fit {
@@ -119,9 +119,9 @@ polygon.home-fit {
 }
 
 text.home-fit {
-  font-size: 52px;
+  font-size: 48px;
   font-weight: bold;
-  font-family: "Allerta Stencil", "lucida Console", Monaco, monospace;
+  font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
 }
 
 polygon.home-dino {
@@ -129,9 +129,9 @@ polygon.home-dino {
 }
 
 text.home-dino {
-  font-size: 52px;
+  font-size: 48px;
   font-weight: bold;
-  font-family: "Passero One", "lucida Console", Monaco, monospace;
+  font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
 }
 
 
@@ -140,7 +140,7 @@ polygon.home-nurse {
 }
 
 text.home-nurse {
-  font-size: 64px;
+  font-size: 48px;
   font-weight: bold;
-  font-family: "Nanum Pen Script", "lucida Console", Monaco, monospace;
+  font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
 }

@@ -21,122 +21,130 @@
 </head>
 
 <body>
-  <h1>tiny_values_and_difference</h1>
+<h1>tiny_values_and_difference</h1>
 
-  <p>This function explores tiny values with nonzero low-order digits, and it
+<p>
+  This function explores tiny values with nonzero low-order digits, and it
   looks at the differences between them. The loop has two layers, skipping over
   the inner layer as soon as the difference between tiny values
-  fails the test</p>
+  fails the test
+</p>
 
-  <pre>
-if (tiny_delta + tiny_delta) <= tiny_delta:</pre>
+<pre><code>if (tiny_delta + tiny_delta) &lt;= tiny_delta:</code></pre>
 
-  <p><code>if (tiny_delta)</code> which says tiny_delta has taken a nonzero and non-𝛜 value. This indicates
-  there isome loss of information due to underflow.
+<p>
+  which says <code>tiny_delta</code> has taken a nonzero and non-𝛜 value.
+  This indicates that there isome loss of information due to underflow.
+</p>
 
-  <p>While <code>too_tiny</code> is in the range of normal numbers,
+<p>
+  While <code>too_tiny</code> is in the range of normal numbers,
   <code>tinier</code> scales back to <code>tiny</code>
   by <code>1/H</code> exactly.
   The next diagram shows the situation in binary in the typical case
   that multiplication is accurate enough that a single unit in the last place
   will detect differences between two nearly similar values after scaling by
   <code>1/H</code>.
-  </p>
+</p>
 
 
-  <br>
+<p>
   <img src="img/tiny_x_a.svg"
       alt="Tiny values with nonzero ulps" title="Google drawing">
-  <br>
+</p>
 
-  <p>If <code>too_tiny</code> underflows to zero,
+<p>
+  If <code>too_tiny</code> underflows to zero,
   the loop ends with <code>tiny_delta</code> still zero.
   But with any form of gradual underflow, the loss of precision is detected.
   Depending on the design of the arithmetic and which mode of rounding is
   selected, the low-order bit of <code>tinier</code> may be 0 or 1.
   This explains the use of
   the absolute value in computing <code>tiny_delta</code>.
-  </p>
+</p>
 
-  <br>
+<p>
   <img src="img/tiny_x_b.svg"
-      alt="Tiny values, showing excptional cases" title="Google drawing">
-  <br><br>
+    alt="Tiny values, showing excptional cases" title="Google drawing">
+</p>
 
-  <p>The code sets the underflow threshold value to tiny the first time this
-  behavior is discovered.</p>
+<p>
+  The code sets the underflow threshold value to tiny the first time this
+  behavior is discovered.
+</p>
 
-  <p><em>[TODO: Provide an example of an arithmetic with multiplication so bad
-  that it falls back to default values.]</em></p>
+<p>
+  <em>[TODO: Provide an example of an arithmetic with multiplication so bad
+  that it falls back to default values.]</em>
+</p>
 
-  <p><pre>
-  def tiny_values_and_difference(one_plus):
-     """Compute the tiniest values from a starting value with nonzero
-     low-order bits. This function is parallel to tiny_powers_of_B(),
-     but looks for nonzero differences of tiny values, which are
-     evidence of gradual underflow.
+<pre><code>def tiny_values_and_difference(one_plus):
+   """Compute the tiniest values from a starting value with nonzero
+   low-order bits. This function is parallel to tiny_powers_of_B(),
+   but looks for nonzero differences of tiny values, which are
+   evidence of gradual underflow.
 
-     If multiplication is too inaccurate, raise an error and return default
-     values, shown in parens under Returns.
+   If multiplication is too inaccurate, raise an error and return default
+   values, shown in parens under Returns.
 
-     Args:
-         one_plus -- 1 plus enough ulps that they shouldn't be lost when
-             multiplied by a power of B
+   Args:
+       one_plus -- 1 plus enough ulps that they shouldn't be lost when
+           multiplied by a power of B
 
-     Returns:
-         tiny -- smallest well-behaved value (0)   *** why not tiny_B?
-         tinier -- first value to exhibit underflow (tiny_B)
-         too_tiny -- underflows to 0 or an epsilon value (too_tiny_B)
-         u_threshold -- smallest well-behaved value, if underflow degrades
-             into nonzero values, or 0 if underflow flushes to 0 (tiny_B)
-         tiny_delta -- difference between two values caused by underflow (0)
-         save_tiny1 -- value of tiny where tiny_delta computed (0)
-         save_tiny2 -- recomputed tiny where tiny_delta computed (0)
+   Returns:
+       tiny -- smallest well-behaved value (0)   *** why not tiny_B?
+       tinier -- first value to exhibit underflow (tiny_B)
+       too_tiny -- underflows to 0 or an epsilon value (too_tiny_B)
+       u_threshold -- smallest well-behaved value, if underflow degrades
+           into nonzero values, or 0 if underflow flushes to 0 (tiny_B)
+       tiny_delta -- difference between two values caused by underflow (0)
+       save_tiny1 -- value of tiny where tiny_delta computed (0)
+       save_tiny2 -- recomputed tiny where tiny_delta computed (0)
 
-      Basic 4450-4520
-     """
+    Basic 4450-4520
+   """
 
-     d = C * one_plus
-     # 1 + SAFE_ULPS_OF_ONE should be enough ulps of 1 that d > C.
-     if d <= C:
-         # But if not, we punt with default values.
-         BadCond(err_failure,
-                 "multiplication gets too many last digits wrong.")
-         Pause()
-         return 0, tiny_B, too_tiny_B, tiny_B, 0, 0, 0
-     else:
-         tinier = d
-         too_tiny = tinier * H
-         u_threshold = ZERO
-         tiny_delta = ZERO  # indicates no value computed yet
-         save_tiny1 = ZERO
-         save_tiny2 = ZERO
-         while True:
-             tiny = tinier
-             tinier = too_tiny
-             # This loop mirrors the computation in tiny_powers_of_B(),
-             # except that the launch point is C*s with nonzero low-order
-             # bits, versus C, which is just a power of the radix.
-             if (tiny_delta + tiny_delta) <= tiny_delta:
-                 print("***Uflow loop -- within if: tinier = {:.7e}"
-                       .format(tinier))
-                 save_tiny2 = tinier * ONE_OVER_H
-                 tiny_delta = FABS(tiny - save_tiny2)   # may underflow to 0
-                 save_tiny1 = tiny
-                 if (u_threshold == ZERO) and (tiny != save_tiny2):
-                     # Test for 0 captures first time through, in case
-                     # tiny_delta underflows to 0.
-                     u_threshold = tiny
-             # Placing this statement after the (tiny*H)/H test above
-             # emphasizes that only nonzero values of tinier qualify for
-             # values degraded by underflow.
-             too_tiny = too_tiny * H
-             print("***Uflow loop -- new too_tiny = {:.7e}".format(too_tiny))
-             if ((tinier <= too_tiny)
-                     or (too_tiny + too_tiny <= too_tiny)): break
-         return (tiny, tinier, too_tiny, u_threshold,
-                 tiny_delta, save_tiny1, save_tiny2)
-    </pre></p>
+   d = C * one_plus
+   # 1 + SAFE_ULPS_OF_ONE should be enough ulps of 1 that d > C.
+   if d <= C:
+       # But if not, we punt with default values.
+       BadCond(err_failure,
+               "multiplication gets too many last digits wrong.")
+       Pause()
+       return 0, tiny_B, too_tiny_B, tiny_B, 0, 0, 0
+   else:
+       tinier = d
+       too_tiny = tinier * H
+       u_threshold = ZERO
+       tiny_delta = ZERO  # indicates no value computed yet
+       save_tiny1 = ZERO
+       save_tiny2 = ZERO
+       while True:
+           tiny = tinier
+           tinier = too_tiny
+           # This loop mirrors the computation in tiny_powers_of_B(),
+           # except that the launch point is C*s with nonzero low-order
+           # bits, versus C, which is just a power of the radix.
+           if (tiny_delta + tiny_delta) <= tiny_delta:
+               print("***Uflow loop -- within if: tinier = {:.7e}"
+                     .format(tinier))
+               save_tiny2 = tinier * ONE_OVER_H
+               tiny_delta = FABS(tiny - save_tiny2)   # may underflow to 0
+               save_tiny1 = tiny
+               if (u_threshold == ZERO) and (tiny != save_tiny2):
+                   # Test for 0 captures first time through, in case
+                   # tiny_delta underflows to 0.
+                   u_threshold = tiny
+           # Placing this statement after the (tiny*H)/H test above
+           # emphasizes that only nonzero values of tinier qualify for
+           # values degraded by underflow.
+           too_tiny = too_tiny * H
+           print("***Uflow loop -- new too_tiny = {:.7e}".format(too_tiny))
+           if ((tinier <= too_tiny)
+                   or (too_tiny + too_tiny <= too_tiny)): break
+       return (tiny, tinier, too_tiny, u_threshold,
+               tiny_delta, save_tiny1, save_tiny2)
+</code></pre>
 
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
@@ -147,6 +155,6 @@ window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
   lsga('create', 'UA-165469376-1', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
 </script>
 <script src="https://www.google-analytics.com/analytics.js" async></script>
-</<body>
+</body>
 
 </html>

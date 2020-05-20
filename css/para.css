@@ -6,23 +6,24 @@ a.toc-link {
 }
 
 p {
-  font-family: "Work Sans", Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
   /* default margin: t-1 r-0 b-1 l-0 */
 }
 
 /* for indenting text outline elemets */
 p.el1 {
-  margin-left: 0;
-  font-family: "Days One", Arial, sans-serif;
+  margin: 0 0 -.5em 0;
+  /*font-family: "Days One", Arial, sans-serif;*/
 }
 
 p.el2 {
-  margin-left: 3em;
-  font-family: "Days One", Arial, sans-serif;
+  margin: 0 0 -.5em 2em;
+  /*font-family: "Days One", Arial, sans-serif;*/
 }
 
 p.el3 {
-  margin-left: 6em;
+  margin: 0 0 -.5em 4em;
   font-family: "Days One", Arial, sans-serif;
 }
 

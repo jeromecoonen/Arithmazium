@@ -1,0 +1,249 @@
+#INCLUDE para_head para_toc.html para_toc.html tiny_powers_of_B.html
+
+<h1>Underflow tests</h1>
+
+<div><p>
+  Much ado about almost nothing is one way to characterize the historical
+  treatment of tiny values in floating point arithmetic. It has been far the most
+  hotly debated topic in the IEEE 754 committees. This section of Paranoia
+  investigates the behavior of arithmetic on tiny values. But this is a brief
+  history. It tells the story of underflow through Paranoia’s exploration. It
+  leaves the more complete discussion to pages dedicated to the topic. Background
+  As values get tinier and tinier, perhaps by successive division by 2,
+</p></div>
+
+<pre><code>1/2  1/4  1/8  1/16  1/32  1/64  . . . 1/1024  1/2048  . . .
+</code></pre>
+
+<p>
+  they eventually become too small to represent in the form
+</p>
+
+<p>
+<em>FORMULA</em>
+</p>
+
+<p>
+  where  is the radix and the  are digits in that radix. The exponent  is bounded
+  by the limitations of the representation of the number format. The exponent
+  usually falls in a simple range, such as [–126, 127] for IEEE 754 single format.
+  Some arithmetics will sacrifice significant digits to extend the exponent range
+  as values get huge or small. IEEE 754 supports gradual underflow, allowing the
+  leading digits in the expression above to become 0, thereby supporting smaller
+  and smaller values all with the same exponent . There are more extreme designs,
+  extending the representation as needed to support an exponent of any conceivable
+  size.
+</p>
+
+<p>
+  Paranoia features many loops that terminate when a magnitude shrinks to zero or
+  to a tiny epsilon value that remains the same when doubled. Faced with
+  arithmetic that will not underflow, automatically extending the range to within
+  the limits of the host computer, Paranoia will loop without end. The code The
+  underflow investigation opens with a deceptively simple message about the
+  objects of the search:
+
+  <ul>
+    <li>
+      the underflow threshold – the smallest positive value
+      that exhibits no surprises in arithmetic
+    </li>
+    <li>
+      the smallest nonzero value – the
+      smallest positive value discovered, though it may behave badly in some
+      operations; for example, <code>100 * z</code> may result in zero
+      even though <code>z != 0.0</code>
+    </li>
+    <li>
+      an underflowed
+      value – a computed result so tiny it has underflowed,
+      usually to zero The
+      various tests print messages along the way,
+      especially when they discover
+      anomalies.
+    </li>
+  </ul>
+</p>
+
+
+<p>
+  The diagram below illustrates the three values as will be discovered
+  in arithmetic
+  compliant with IEEE 754. The two nonzero values have the minimum exponent for
+  the number format.
+</p>
+
+<p>
+<img src="img/uflow_3_values_a.svg"
+    alt="The values characterizing underflow" title="Google drawing">
+</p>
+
+<p>
+  Paranoia starts with powers of the radix. See the discussion of
+  <code>tiny_powers_of_B()</code> for details about the triple of
+  returned values. Typically,
+  <code>too_tiny_B</code> has underflowed to zero.
+  A description of H and C can be found in the
+  discussion of the fundamental constants of the arithmetic.
+</p>
+
+#CODE 901uflow_1
+
+<p>
+  Powers of the radix don’t tell the whole story, so Paranoia computes a parallel
+  set of tiny values with nonzero low-order digits. Just adding a useful number of
+  units in the last place is a challenge, so read about SAFE_ULPS_OF_ONE in the
+  section on constants. The function tiny_values_and_difference(), returns seven
+  values to be used in the following tests. They are explained in the discussion
+  of the function.
+<p/>
+
+#CODE 901auflow_1a
+
+<p>
+  The next big comment puts the two sets of tiny values in context. Paranoia
+  introduces the concept of pseudo zero, for values that compare unequal to zero
+  yet may behave like zero in some operations. The Control Data CDC 6000 series of
+  machines had such tiny, seemingly nonzero values that infallibly behaved like
+  zero in multiplication and division. They were encoded with the smallest
+  representable exponent – the same exponent as true zero – so the designers saved
+  a bit of hardware by simply treating all such numbers as zero during
+  multiplication and division. They behaved correctly in addition and subtraction.
+  This flaw lived on into Cray supercomputers, too.
+</p>
+
+<p>
+  <em>[Insert Jamie Sethian example. Ponder whether to libel Seymour Cray
+  here, evenœpolitely.]</em>
+</p>
+
+<p>After the comment, the call to test_for_pseudo_zero() is made strictly for the side effect.
+
+#CODE 902uflow_2
+
+<p>
+  In order to compare the tiny values from two sources,
+  Paranoia scales the values
+  up by a large power of the radix. This defends against faulty comparisons,
+  again
+  on the CDD 6000 class. In this case, the values are not so small that they
+  behave like zero in multiplication,
+  but they do all compare equal to each other.
+</p>
+
+#CODE 903uflow_3
+
+<p>
+  The next test is more subtle. It asks whether the difference between two tiny
+  values can be a number smaller than values reached by just scaling by powers of
+  the radix.
+</p>
+
+<p>
+  <em>[QUESTION: Is “Products underflow at a higher threshold…” really a correct
+  report? What’s being compared are two different beasts: one is a simple
+  scaled-down value while the other is the nonzero difference between two such
+  values. It is interesting that we can obtain a smaller value from a difference
+  than from a product, but to talk about the underflow threshold, we should talk
+  about the values producing the difference.]</em>
+</p>
+
+#CODE 904uflow_4
+
+<p>
+  Paranoia sets a reliable value base_iny which is used in the summary of
+  arithmetic without gradual underflow. The utility does_tiny_value_misbehave()
+  gives some assurance of a well-behaved value.
+</p>
+
+#CODE 905uflow_5
+
+<p>
+  The next comment explains the division into
+  four classes of arithmetic, relative
+  to underflow.
+  Value add_sub_tiny is nonzero when the arithmetic supports tiny,
+  usually unnormalized, values.
+  This is the case in arithmetic compliant with IEEE
+  754. Value underflow_threshold is set thus far by the call to
+  tiny_values_and_difference(). It is zero if the arithmetic flushes underflowed
+  values to zero, so Paranoia will set it as needed. It is nonzero when the
+  arithmetic has a well-defined, usually normalized, value below which the
+  arithmetic degrades to nonzero values, with some loss of precision.
+</p>
+
+<p>
+  <em>[TODO: give examples of all four.]</em>
+</p>
+
+#CODE 906uflow_6
+
+<p>
+  Paranoia in Python skips the cases and tests the values directly. Case 4
+  includes IEEE 754 arithmetic. In the elaborate compound test below, add_sub_hi
+  is the value below which precision degrades, so it must match the computed
+  underflow_threshold. Similarly, the tiniest difference should match the smallest
+  nonzero value detected. The key to the third expression is the ratio
+  add_sub_tiny / SAFE_ULPS_OF_ONE, which should match underflow_threshold.
+</p>
+
+<p>
+  <em>[QUESTION: Why isn’t that test for zero? Is this just a “tiny enough” idiom,
+  which is safer than testing for true zero?]</em>
+</p>
+
+#CODE 907uflow_7
+
+<p>
+  Case 3 falls through without comment to a final test. Its nonzero
+  underflow_threshold indicates that it underflows to nonzero values, but the
+  arithmetic is unable to represent the differences, so add_sub_hi is zero.
+</p>
+
+<p>
+  Case 2 is anomalous, as the messages indicate, because very tiny values compare
+  equal yet don’t subtract to zero. Value underflow_threshold is set to a tiny
+  value known to behave well and below which the arithmetic misbehaves.
+</p>
+
+#CODE 908uflow_8
+
+<p>
+  Case 1 arises in arithmetic that flushes underflows to zero. The comment
+  explains that the underflow threshold is backed up to the next power of B if the
+  computation of add_sub_hi cannot be reproduced, indicating some anomaly.
+</p>
+
+<p>
+  The call to test_tiny_differences() explores whether the differences between
+  unequal values are zero. It applies to all of cases 1-3.
+</p>
+
+#CODE 909uflow_9
+
+<p>
+  The underflow analysis closes with a message about the underflow threshold and
+  two final tests. Paranoia looks for an exponent range that’s too narrow relative
+  to the precision, and tries to compute a value way below the underflow
+  threshold.
+</p>
+
+#CODE 910uflow_10
+<pre><code>print("The Underflow threshold is {:0.17e}, below which"
+      .format(underflow_threshold))
+print("calculation may suffer larger Relative error than ", end="")
+print("merely roundoff.")
+test_for_narrow_range()
+milestone = 130   #==============================
+test_extreme_underflow(underflow_threshold)
+</code></pre>
+
+<p>
+  The next sections discuss the utility functions that support the underflow
+  exploration. Much of this logic is in-line in the Basic code,
+  often very tersely
+  so, but the program is more malleable and readable when
+  discussed in natural blocks.
+</p>
+
+#INCLUDE para_foot para_toc.html para_toc.html tiny_powers_of_B.html

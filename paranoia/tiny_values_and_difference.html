@@ -1,47 +1,39 @@
 <!doctype html>
 <html class="no-js" lang="">
-
 <head>
   <meta charset="utf-8">
   <title>Underflow</title>
-  <meta name="description" content="tiny_values_and_difference() page">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/para.css">
-  <link href='https://fonts.googleapis.com/css?family=Roboto Mono'
-  rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Fira Code'
-  rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Work Sans'
-  rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Work Sans:wght@400;800'
-  rel='stylesheet'>
-
-  <meta name="theme-color" content="#fafafa">
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/paranoia/tiny_values_and_difference.html">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#fafafa'>
+  <link rel='stylesheet' href='../css/normalize.css'>
+  <link rel='stylesheet' href='../css/main.css'>
+  <link rel='stylesheet' href='../css/para.css'>
+  <link href='https://fonts.googleapis.com/css?family=Days One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans:wght@400;800' rel='stylesheet'>
 </head>
-
 <body>
-<div>
-  <svg viewbox="0 0 1000 80" xmlns="http://www.w3.org/2000/svg">
-    <a href="../index.html">
-      <rect x=0 y=0 width=1000 height=80 class="arith-ban-box"/>
-      <text x=10 y=68 class="arith-ban-back">
-        <tspan>11.001001000011111101101010100010001000010110100011000010001</tspan>
-      </text>
-      <text x=60 y=55 class="arith-ban-front">
-        <tspan>Arithmazium</tspan>
-      </text>
-    </a>
+  <div>
+  <svg viewbox='0 0 1000 80' xmlns='http://www.w3.org/2000/svg'>
+  <a href='../index.html'>
+  <rect x=0 y=0 width=1000 height=80 class='arith-ban-box'/>
+  <text x=10 y=68 class='arith-ban-back'>
+  <tspan>11.001001000011111101101010100010001000</tspan>
+  </text>
+  <text x=60 y=55 class='arith-ban-front'>
+  <tspan>Arithmazium</tspan>
+  </text>
+  </a>
   </svg>
-</div>
-
-<div class="next-prev">
-  <a href="test_for_pseudo_zero.html" class="next round">Next</a>
-  <a href="para_toc.html" class="tree round">Home</a>
-  <a href="tiny_powers_of_B.html" class="previous round">Previous</a>
-</div>
+  </div>
+  <div class='next-prev'>
+  <a href='test_for_pseudo_zero.html' class='next round'>Next</a>
+  <a href='para_toc.html' class='tree round'>Home</a>
+  <a href='tiny_powers_of_B.html' class='previous round'>Previous</a>
+  </div>
 
 <h1>tiny_values_and_difference()</h1>
 
@@ -51,6 +43,20 @@
   the inner layer as soon as the difference between tiny values
   fails the test
 </p>
+
+<pre><code>def tiny_values_and_difference(one_plus):
+    """Compute the tiniest values from a starting value with nonzero
+    low-order bits. This function is parallel to tiny_powers_of_B(),
+    but looks for nonzero differences of tiny values, which are
+    evidence of gradual underflow.
+
+    If multiplication is too inaccurate, raise an error and return default
+    values, shown in parens under Returns.
+
+    Args:
+        one_plus -- 1 plus enough ulps that they shouldn't be lost when
+            multiplied by a power of B
+</code></pre>
 
 <pre><code>if (tiny_delta + tiny_delta) &lt;= tiny_delta:</code></pre>
 
@@ -69,6 +75,19 @@
   <code>1/H</code>.
 </p>
 
+<pre><code>    Returns:
+        tiny -- smallest well-behaved value (0)   *** why not tiny_B?
+        tinier -- first value to exhibit underflow (tiny_B)
+        too_tiny -- underflows to 0 or an epsilon value (too_tiny_B)
+        u_threshold -- smallest well-behaved value, if underflow degrades
+            into nonzero values, or 0 if underflow flushes to 0 (tiny_B)
+        tiny_delta -- difference between two values caused by underflow (0)
+        save_tiny1 -- value of tiny where tiny_delta computed (0)
+        save_tiny2 -- recomputed tiny where tiny_delta computed (0)
+
+    Basic 4450-4520
+    """
+</code></pre>
 
 <p>
   <img src="img/tiny_x_a.svg"
@@ -90,6 +109,16 @@
     alt="Tiny values, showing excptional cases" title="Google drawing">
 </p>
 
+<pre><code>    d = C * one_plus
+    # 1 + SAFE_ULPS_OF_ONE should be enough ulps of 1 that d > C.
+    if d <= C:
+        # But if not, we punt with default values.
+        BadCond(err_failure,
+                "multiplication gets too many last digits wrong.")
+        Pause()
+        return 0, tiny_B, too_tiny_B, tiny_B, 0, 0, 0
+</code></pre>
+
 <p>
   The code sets the underflow threshold value to tiny the first time this
   behavior is discovered.
@@ -100,74 +129,47 @@
   that it falls back to default values.]</em>
 </p>
 
-<pre><code>def tiny_values_and_difference(one_plus):
-   """Compute the tiniest values from a starting value with nonzero
-   low-order bits. This function is parallel to tiny_powers_of_B(),
-   but looks for nonzero differences of tiny values, which are
-   evidence of gradual underflow.
+<pre><code>    else:
+        tinier = d
+        too_tiny = tinier * H
+        u_threshold = ZERO
+        tiny_delta = ZERO  # indicates no value computed yet
+        save_tiny1 = ZERO
+        save_tiny2 = ZERO
+        while True:
+            tiny = tinier
+            tinier = too_tiny
+            # This loop mirrors the computation in tiny_powers_of_B(),
+            # except that the launch point is C*s with nonzero low-order
+            # bits, versus C, which is just a power of the radix.
+            if (tiny_delta + tiny_delta) <= tiny_delta:
+                print("***Uflow loop -- within if: tinier = {:.7e}"
+                      .format(tinier))
+                save_tiny2 = tinier * ONE_OVER_H
+                tiny_delta = FABS(tiny - save_tiny2)   # may underflow to 0
+                save_tiny1 = tiny
+                if (u_threshold == ZERO) and (tiny != save_tiny2):
+                    # Test for 0 captures first time through, in case
+                    # tiny_delta underflows to 0.
+                    u_threshold = tiny
+            # Placing this statement after the (tiny*H)/H test above
+            # emphasizes that only nonzero values of tinier qualify for
+            # values degraded by underflow.
+            too_tiny = too_tiny * H
+            print("***Uflow loop -- new too_tiny = {:.7e}".format(too_tiny))
+            if ((tinier <= too_tiny)
+                    or (too_tiny + too_tiny <= too_tiny)): break
+        return (tiny, tinier, too_tiny, u_threshold,
+                tiny_delta, save_tiny1, save_tiny2)
 
-   If multiplication is too inaccurate, raise an error and return default
-   values, shown in parens under Returns.
 
-   Args:
-       one_plus -- 1 plus enough ulps that they shouldn't be lost when
-           multiplied by a power of B
-
-   Returns:
-       tiny -- smallest well-behaved value (0)   *** why not tiny_B?
-       tinier -- first value to exhibit underflow (tiny_B)
-       too_tiny -- underflows to 0 or an epsilon value (too_tiny_B)
-       u_threshold -- smallest well-behaved value, if underflow degrades
-           into nonzero values, or 0 if underflow flushes to 0 (tiny_B)
-       tiny_delta -- difference between two values caused by underflow (0)
-       save_tiny1 -- value of tiny where tiny_delta computed (0)
-       save_tiny2 -- recomputed tiny where tiny_delta computed (0)
-
-    Basic 4450-4520
-   """
-
-   d = C * one_plus
-   # 1 + SAFE_ULPS_OF_ONE should be enough ulps of 1 that d > C.
-   if d <= C:
-       # But if not, we punt with default values.
-       BadCond(err_failure,
-               "multiplication gets too many last digits wrong.")
-       Pause()
-       return 0, tiny_B, too_tiny_B, tiny_B, 0, 0, 0
-   else:
-       tinier = d
-       too_tiny = tinier * H
-       u_threshold = ZERO
-       tiny_delta = ZERO  # indicates no value computed yet
-       save_tiny1 = ZERO
-       save_tiny2 = ZERO
-       while True:
-           tiny = tinier
-           tinier = too_tiny
-           # This loop mirrors the computation in tiny_powers_of_B(),
-           # except that the launch point is C*s with nonzero low-order
-           # bits, versus C, which is just a power of the radix.
-           if (tiny_delta + tiny_delta) <= tiny_delta:
-               print("***Uflow loop -- within if: tinier = {:.7e}"
-                     .format(tinier))
-               save_tiny2 = tinier * ONE_OVER_H
-               tiny_delta = FABS(tiny - save_tiny2)   # may underflow to 0
-               save_tiny1 = tiny
-               if (u_threshold == ZERO) and (tiny != save_tiny2):
-                   # Test for 0 captures first time through, in case
-                   # tiny_delta underflows to 0.
-                   u_threshold = tiny
-           # Placing this statement after the (tiny*H)/H test above
-           # emphasizes that only nonzero values of tinier qualify for
-           # values degraded by underflow.
-           too_tiny = too_tiny * H
-           print("***Uflow loop -- new too_tiny = {:.7e}".format(too_tiny))
-           if ((tinier <= too_tiny)
-                   or (too_tiny + too_tiny <= too_tiny)): break
-       return (tiny, tinier, too_tiny, u_threshold,
-               tiny_delta, save_tiny1, save_tiny2)
 </code></pre>
 
+<div class='next-prev'>
+<a href='test_for_pseudo_zero.html' class='next round'>Next</a>
+<a href='para_toc.html' class='tree round'>Home</a>
+<a href='tiny_powers_of_B.html' class='previous round'>Previous</a>
+</div>
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 
@@ -177,6 +179,6 @@ window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
   lsga('create', 'UA-165469376-1', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
 </script>
 <script src="https://www.google-analytics.com/analytics.js" async></script>
-</body>
+</<body>
 
 </html>

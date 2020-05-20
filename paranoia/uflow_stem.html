@@ -1,46 +1,39 @@
 <!doctype html>
 <html class="no-js" lang="">
-
 <head>
   <meta charset="utf-8">
   <title>Underflow</title>
-  <meta name="description" content="Underflow stem page">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="../css/main.css">
-  <link href='https://fonts.googleapis.com/css?family=Roboto Mono'
-  rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Fira Code'
-  rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Work Sans'
-  rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Work Sans:wght@400;800'
-  rel='stylesheet'>
-
-  <meta name="theme-color" content="#fafafa">
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/paranoia/uflow_stem.html">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#fafafa'>
+  <link rel='stylesheet' href='../css/normalize.css'>
+  <link rel='stylesheet' href='../css/main.css'>
+  <link rel='stylesheet' href='../css/para.css'>
+  <link href='https://fonts.googleapis.com/css?family=Days One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans:wght@400;800' rel='stylesheet'>
 </head>
-
 <body>
-<div>
-  <svg viewbox="0 0 1000 80" xmlns="http://www.w3.org/2000/svg">
-    <a href="../index.html">
-      <rect x=0 y=0 width=1000 height=80 class="arith-ban-box"/>
-      <text x=10 y=68 class="arith-ban-back">
-        <tspan>11.001001000011111101101010100010001000010110100011000010001</tspan>
-      </text>
-      <text x=60 y=55 class="arith-ban-front">
-        <tspan>Arithmazium</tspan>
-      </text>
-    </a>
+  <div>
+  <svg viewbox='0 0 1000 80' xmlns='http://www.w3.org/2000/svg'>
+  <a href='../index.html'>
+  <rect x=0 y=0 width=1000 height=80 class='arith-ban-box'/>
+  <text x=10 y=68 class='arith-ban-back'>
+  <tspan>11.001001000011111101101010100010001000</tspan>
+  </text>
+  <text x=60 y=55 class='arith-ban-front'>
+  <tspan>Arithmazium</tspan>
+  </text>
+  </a>
   </svg>
-</div>
-
-<div class="next-prev">
-  <a href="tiny_powers_of_B.html" class="next round">Next</a>
-  <a href="para_toc.html" class="tree round">Home</a>
-  <a href="para_toc.html" class="previous round">Previous</a>
-</div>
+  </div>
+  <div class='next-prev'>
+  <a href='tiny_powers_of_B.html' class='next round'>Next</a>
+  <a href='para_toc.html' class='tree round'>Home</a>
+  <a href='para_toc.html' class='previous round'>Previous</a>
+  </div>
 
 <h1>Underflow tests</h1>
 
@@ -161,6 +154,10 @@ one_plus_safe = ONE + SAFE_ULPS_OF_ONE
 # nonzero low-order bits and attention to the differences of small values.
 (less_tiny_x, tiny_x, too_tiny_x, underflow_threshold, add_sub_tiny,
  add_sub_hi, add_sub_lo) = tiny_values_and_difference(one_plus_safe)
+print("***less_tiny_x, tiny_x, too_tiny_x = {:.7e} {:.7e} {:.7e}"
+      .format(less_tiny_x, tiny_x, too_tiny_x))
+print("***underflow_threshold, add_sub_tiny, add_sub_hi = {:.7e} {:.7e} {:.7e}"
+      .format(underflow_threshold, add_sub_tiny, add_sub_hi))
 </code></pre>
 
 <p>
@@ -183,7 +180,7 @@ one_plus_safe = ONE + SAFE_ULPS_OF_ONE
 <p>After the comment, the call to test_for_pseudo_zero() is made strictly for the side effect.
 
 <pre><code># The two sets of tiny values characterize the underflow behavior.
-# The following comments mirror Basic comments 4530-4560. The relational ">~"
+# The following comments mirror BASIC comments 4530-4560. The relational ">~"
 # may be loosely read "greater than or kind of equal to". It refers to the odd
 # behavior of some arithmetics near 0, where some "pseudo zero" values behave
 # like zero in some contexts and nonzero in others.
@@ -193,8 +190,8 @@ one_plus_safe = ONE + SAFE_ULPS_OF_ONE
 #
 # 1  >>  d = (1+SAFE_ULPS_OF_ONE)*C  >=  underflow_threshold
 #        >= add_sub_hi  >=  less_tiny_x  >  tiny_x  >~ too_tiny_x  >~  0
-#   where underflow_threshold = d * H^k is the first to violate (x*H)/H = x
-#       else underflow_threshold = 0
+#   where underflow_threshold = d * H^k is the first NONZERO value to
+#       violate (x*H)/H = x else underflow_threshold = 0
 #   and where add_sub_hi = underflow_threshold * H^k is the first to satisfy
 #       add_sub_tiny <- |(x*H)/H - x| > 0 else add_sub_hi = less_tiny_x
 test_for_pseudo_zero(too_tiny_x)
@@ -328,9 +325,9 @@ else:
 </p>
 
 <pre><code>if add_sub_tiny and underflow_threshold:
-    # Basic case 4
+    # BASIC case 4
     if ((add_sub_hi == underflow_threshold) and (add_sub_tiny == min_positive)
-            and (FABS( underflow_threshold - add_sub_tiny / SAFE_ULPS_OF_ONE)
+            and (FABS(underflow_threshold - add_sub_tiny / SAFE_ULPS_OF_ONE)
                  <= add_sub_tiny)):
         flags["IEEE"] = is_gradual_underflow_IEEE(min_positive)
 </code></pre>
@@ -348,7 +345,7 @@ else:
 </p>
 
 <pre><code>else:
-    # Basic cases 1-3. Case 3 falls through to a final test.
+    # BASIC cases 1-3. Case 3 falls through to a final test.
     if underflow_threshold == ZERO:   # Cases 1-2
         if add_sub_tiny:
             # Case 2
@@ -379,7 +376,7 @@ else:
 
 <pre><code>        else:
             # Case 1
-            underflow_threshold = base_tiny   # Behaves like powers of B
+            underflow_threshold = base_tiny   # Safe value computed above
             # A sanity check determines that the result from
             # tiny_x_and_difference() matches expectation, based on the
             # loop on powers of B. The factor one_plus_safe accounts for
@@ -418,6 +415,14 @@ test_for_narrow_range()
 milestone = 130   #==============================
 test_extreme_underflow(underflow_threshold)
 </code></pre>
+<pre><code>print("The Underflow threshold is {:0.17e}, below which"
+      .format(underflow_threshold))
+print("calculation may suffer larger Relative error than ", end="")
+print("merely roundoff.")
+test_for_narrow_range()
+milestone = 130   #==============================
+test_extreme_underflow(underflow_threshold)
+</code></pre>
 
 <p>
   The next sections discuss the utility functions that support the underflow
@@ -427,12 +432,11 @@ test_extreme_underflow(underflow_threshold)
   discussed in natural blocks.
 </p>
 
-<div class="next-prev">
-  <a href="tiny_powers_of_B.html" class="next round">Next</a>
-  <a href="para_toc.html" class="tree round">Home</a>
-  <a href="para_toc.html" class="previous round">Previous</a>
+<div class='next-prev'>
+<a href='tiny_powers_of_B.html' class='next round'>Next</a>
+<a href='para_toc.html' class='tree round'>Home</a>
+<a href='para_toc.html' class='previous round'>Previous</a>
 </div>
-
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 

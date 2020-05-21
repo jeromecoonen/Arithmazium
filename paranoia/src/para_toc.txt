@@ -1,4 +1,4 @@
-#INCLUDE para_toc_head a b c
+#INCLUDE para_toc_head
 
 <p style="font-family: Courier; font-weight: bold;">
   <em>This navigation will change...</em>

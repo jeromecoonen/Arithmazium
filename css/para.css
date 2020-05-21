@@ -3,11 +3,11 @@
 /* suppress underscore for outline elements */
 a.toc-link {
   text-decoration-line: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
 }
 
 p {
-  font-family: Arial, sans-serif;
-  font-weight: bold;
   /* default margin: t-1 r-0 b-1 l-0 */
 }
 

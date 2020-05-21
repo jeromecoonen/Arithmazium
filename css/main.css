@@ -99,6 +99,7 @@ textarea {
    ========================================================================== */
 :root {
   --but-color: cornflowerblue;
+  --code-color: rgba(241, 228, 194, 1.0);
 }
 
 rect.arith-ban-box {
@@ -143,12 +144,12 @@ pre {
 }
 
 code {
-  background-color: rgba(245, 222, 179, 0.8);
+  background-color: var(--code-color, lightblue);
   padding: 1px 1px 1px 1px;
 }
 
 pre {
-  background-color: rgba(245, 222, 179, 0.8);
+  background-color: var(--code-color, lightblue);
   margin: 1em 0 1em 1em;
 }
 

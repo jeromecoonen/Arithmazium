@@ -1,0 +1,10 @@
+#=============================================
+# Tests of X**K for integer X and K.
+#=============================================
+def test_power_result(x, z, q):
+    """Check that x equals z**q, usually for exact integer cases."""
+    global err_cnt
+    y = POW(z, q)
+    if ultra_verbose:
+        print("\t{:.17e} = {:.17e} ^ {:.17e}".format(y, z, q))
+    if y != x:

@@ -1,0 +1,9 @@
+    y = ONE
+    doit = True
+    while doit:
+        b = big + y
+        y = y + y
+        b = b - big
+        doit = b == ZERO
+    return b
+

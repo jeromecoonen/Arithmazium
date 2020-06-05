@@ -1,0 +1,36 @@
+    else:
+        tinier = d
+        too_tiny = tinier * H
+        u_threshold = ZERO
+        tiny_delta = ZERO  # indicates no value computed yet
+        save_tiny1 = ZERO
+        save_tiny2 = ZERO
+        while True:
+            tiny = tinier
+            tinier = too_tiny
+            # This loop mirrors the computation in tiny_powers_of_B(),
+            # except that the launch point is C*s with nonzero low-order
+            # bits, versus C, which is just a power of the radix.
+            if (tiny_delta + tiny_delta) <= tiny_delta:
+                if ultra_verbose:
+                    print("\tUnderflow loop: within if, tinier = {:.7e}"
+                          .format(tinier))
+                save_tiny2 = tinier * ONE_OVER_H
+                tiny_delta = FABS(tiny - save_tiny2)   # may underflow to 0
+                save_tiny1 = tiny
+                if (u_threshold == ZERO) and (tiny != save_tiny2):
+                    # Test for 0 captures first time through, in case
+                    # tiny_delta underflows to 0.
+                    u_threshold = tiny
+            # Placing this statement after the (tiny*H)/H test above
+            # emphasizes that only nonzero values of tinier qualify for
+            # values degraded by underflow.
+            too_tiny = too_tiny * H
+            if ultra_verbose:
+                print("\tUnderflow loop: too_tiny = {:.7e}".format(too_tiny))
+            if ((tinier <= too_tiny)
+                    or (too_tiny + too_tiny <= too_tiny)): break
+        return (tiny, tinier, too_tiny, u_threshold,
+                tiny_delta, save_tiny1, save_tiny2)
+
+

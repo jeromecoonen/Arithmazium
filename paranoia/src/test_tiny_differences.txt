@@ -1,0 +1,36 @@
+#INCLUDE para_head is_gradual_underflow_IEEE.html aaapara_toc.html test_for_narrow_range.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 532-test_tiny_differences
+
+<p>
+Part 3
+</p>
+
+#CODE 533-test_tiny_differences2
+
+<p>
+Part 4
+</p>
+
+#CODE 533a-test_tiny_differences3
+
+<p>
+Part 5
+</p>
+
+#INCLUDE para_foot is_gradual_underflow_IEEE.html aaapara_toc.html test_for_narrow_range.html
+

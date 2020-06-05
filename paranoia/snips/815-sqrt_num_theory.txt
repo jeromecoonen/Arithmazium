@@ -1,0 +1,15 @@
+milestone = 85   #==============================
+sqrt_rnd_odd = False
+sqrt_anomalous_int = False
+tests = 0
+flags["sqrt_rounding"] = "other"
+while B != ONE:
+    print("Testing whether sqrt is rounded or chopped.")
+    D = FLOOR(ONE_HALF + POW(B, ONE + PRECISION - FLOOR(PRECISION)))
+    # ... == B^(1 + fract) if (PRECISION == Integer + fract.
+    x = D / B
+    y = D / A
+    if (x != FLOOR(x)) or (y != FLOOR(y)):
+        sqrt_anomalous_int = True
+        break
+

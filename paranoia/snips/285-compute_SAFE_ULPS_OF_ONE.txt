@@ -1,0 +1,11 @@
+def compute_SAFE_ULPS_OF_ONE():
+    """Return a value useful in over/underflow testing.
+
+    Want to find x such that (1+x)*some_power_of_B leaves some low bits,
+    so that the product exceeds C, a power of B not far from the underflow
+    threshold. Try x = 1 ulp, but settle for B ulps of, whether or not it
+    works.
+
+    Returns:
+        1 or B ulps of one
+    """

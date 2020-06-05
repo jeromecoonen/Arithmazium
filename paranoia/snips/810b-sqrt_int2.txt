@@ -1,0 +1,12 @@
+y = (((SQRT(ONE_MINUS_ULP) - ULP_OF_ONE_PLUS) - (ONE - ULP_OF_ONE_PLUS))
+     / ULP_OF_ONE_MINUS)
+if verbose:
+    print("sqrt(1-ulp) = {:0.17e}".format(SQRT(ONE_MINUS_ULP)))
+    print("y = {:0.17e}".format(y))
+up_err = y + ULP_OF_ONE_MINUS / EIGHT
+down_err = (y + ONE) + ULP_OF_ONE_MINUS / EIGHT
+update_sqrt_errors(down_err, up_err)
+if verbose:
+    print("\tAfter 1 - ulp test:")
+    print("\t\tmin_sqrt_error = {:0.17e}".format(min_sqrt_error))
+    print("\t\tmax_sqrt_error = {:0.17e}".format(max_sqrt_error))

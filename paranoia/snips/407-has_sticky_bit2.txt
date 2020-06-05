@@ -1,0 +1,5 @@
+    verdict = False
+    x = (ONE_HALF + ULP_OF_ONE_MINUS) * ULP_OF_ONE_PLUS
+    y = ONE_HALF * ULP_OF_ONE_PLUS
+    z = ONE + y
+    t = ONE + x

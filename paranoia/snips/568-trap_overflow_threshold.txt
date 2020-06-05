@@ -1,0 +1,18 @@
+def trap_overflow_threshold(big):
+    """Determine the threshold when overflow traps.
+
+    The difference from the non-trap case is that the middle value, big,
+    returned from the saerch is the greatest power of the radix, so the
+    task is to fill it out to max value without increasing the exponent.
+
+    Argunment:
+        big -- biggest finite power of the radix
+
+    Returns:
+        oflo -- overflow threshold
+    """
+
+    oflo = big * (ONE_OVER_H * ULP_OF_ONE_PLUS - ONE_OVER_H)
+    oflo = oflo + ((ONE - ONE_OVER_H) * ULP_OF_ONE_PLUS) * big
+    return oflo
+

@@ -1,0 +1,4 @@
+            if (z - ONE == ZERO) and (t - ONE_MINUS_ULP == ZERO):
+                z = (ONE_HALF - ULP_OF_ONE_MINUS) * ULP_OF_ONE_MINUS
+                t = ONE_MINUS_ULP - z
+                q = ONE_MINUS_ULP - y

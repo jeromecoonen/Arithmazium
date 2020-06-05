@@ -1,0 +1,70 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Number Formats</title>
+  <meta name="description" content="a railway diagram sampler">
+  <script src="../js/header_footer.js"></script>
+  <link rel='stylesheet' href='../css/railroad-diagrams.css'>
+
+  <link rel='stylesheet' href='../css/railroad-diagrams.css'>
+  <script src='../js/railroad-diagrams.js'></script>
+
+</head>
+
+<body>
+<script>put_banner();</script>
+<script>
+  put_nav("uflow_stem.html", "para_toc.html", "tiny_values_and_difference.html");
+</script>
+
+<h1>Wild numbers</h1>
+<h2>Second header</h2>
+
+<p>
+  The first diagram is below:
+  Here is some <code>Python code description in Roboto Mono 0123456789</code>
+</p>
+
+
+
+<h1 id='ident'>IDENT</h1>
+<script>
+Diagram(
+  "Chicago Dog",
+	Choice(0, "White", "Wheat"),
+  Choice(0, Skip(), "onion", "relish", "yellow mustard", "peppers", "ketchup")).addTo();
+</script>
+
+<p>
+</p>
+<script>
+ComplexDiagram(
+	Choice(0, Skip(), '-'),
+	Choice(0, NonTerminal('name-start char'), NonTerminal('escape')),
+	ZeroOrMore(
+		Choice(0, NonTerminal('name char'), NonTerminal('escape')))).addTo();
+</script>
+
+  <script>
+  Diagram("foo", Choice(0, "bar", "bat")).addTo();
+  </script>
+
+<script>
+  put_nav("uflow_stem.html", "para_toc.html", "tiny_values_and_difference.html");
+</script>
+
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/railroad.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  lsga('create', 'UA-165469376-1', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+</<body>
+
+</html>

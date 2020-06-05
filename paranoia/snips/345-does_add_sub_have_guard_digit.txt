@@ -1,0 +1,9 @@
+def does_add_sub_have_guard_digit():
+    """Check for guard digit in add and subtract.
+
+    Returns:
+        boolean reply to question
+    """
+    x = ONE / (ONE + ULP_OF_ONE_PLUS)
+    y = x - ONE_HALF - ONE_HALF
+    test_cond(err_serious, y < ZERO, "Computed value of 1/1.000..1 >= 1")

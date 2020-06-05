@@ -1,0 +1,12 @@
+    y = ONE - ULP_OF_ONE_MINUS
+    x = ONE - ONE_MINUS_ULP
+    y = ONE - y
+    t = B - ULP_OF_ONE_PLUS
+    z = B - B_MINUS_ULP
+    t = B - t
+    gaddsub = ((x == ULP_OF_ONE_MINUS) and (y == ULP_OF_ONE_MINUS)
+               and (z == ULP_OF_ONE_PLUS) and (t == ULP_OF_ONE_PLUS))
+    test_cond(err_serious, gaddsub,
+            "- lacks Guard Digit, so cancellation is obscured")
+    return gaddsub
+

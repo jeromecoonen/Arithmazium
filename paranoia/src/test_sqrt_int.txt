@@ -1,0 +1,24 @@
+#INCLUDE para_head sqrt_single_bound_test.html aaapara_toc.html test_sqrt_monotonicity.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 433-test_sqrt_int
+
+<p>
+Part 3
+</p>
+
+#INCLUDE para_foot sqrt_single_bound_test.html aaapara_toc.html test_sqrt_monotonicity.html
+

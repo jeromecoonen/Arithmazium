@@ -1,0 +1,23 @@
+milestone = 160   #==============================
+pause()
+print("Searching for Overflow threshold:")
+print("This may generate an error.")
+bigger_B, big_B, less_big_B, no_oflow_except = big_powers_of_B()
+# In a system that saturates at INFINITY, only less_big_B will be finite.
+overflow_threshold = less_big_B   # first approxomation, to be refined
+
+print("Can  z = -y  overflow?")
+print("Trying it on big_B = {:0.17e} .".format(big_B))
+v = -big_B
+pos_big_B = v
+if overflow_threshold - big_B == overflow_threshold + pos_big_B:
+    print("Seems O.K.")
+else:
+    print("finds a ")
+    bad_cond(err_flaw, "-(-big_B) differs from big_B.")
+
+if bigger_B != big_B:
+    bad_cond(err_serious, "")
+    print("overflow past {:0.17e}\n\tshrinks to {:0.17e} ."
+          .format(big_B, bigger_B))
+

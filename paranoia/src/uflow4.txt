@@ -1,0 +1,22 @@
+#INCLUDE para_head uflow3.html aaapara_toc.html uflow5.html
+
+<h1>Are there smaller values than powers of the radix?</h1>
+
+<p>
+  The next test is more subtle. It asks whether the difference between two tiny
+  values can be a number smaller than values reached by just scaling by powers of
+  the radix.
+</p>
+
+<p>
+  <em>[QUESTION: Is “Products underflow at a higher threshold…” really a correct
+  report? What’s being compared are two different beasts: one is a simple
+  scaled-down value while the other is the nonzero difference between two such
+  values. It is interesting that we can obtain a smaller value from a difference
+  than from a product, but to talk about the underflow threshold, we should talk
+  about the values producing the difference.]</em>
+</p>
+
+#CODE 904-uflow4
+
+#INCLUDE para_foot uflow3.html aaapara_toc.html uflow5.html

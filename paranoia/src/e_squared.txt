@@ -1,0 +1,36 @@
+#INCLUDE para_head test_for_pseudo_zero.html aaapara_toc.html test_x_to_xp1_over_xm1.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 548-e_squared
+
+<p>
+Part 3
+</p>
+
+#CODE 550-e_squared2
+
+<p>
+Part 4
+</p>
+
+#CODE 550a-e_squared3
+
+<p>
+Part 5
+</p>
+
+#INCLUDE para_foot test_for_pseudo_zero.html aaapara_toc.html test_x_to_xp1_over_xm1.html
+

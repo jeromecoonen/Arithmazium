@@ -1,0 +1,4 @@
+    x = x * y2
+    y = (y + ULP_OF_ONE_PLUS) * y1
+    x = x - ONE_AND_HALF
+    y = y - ONE_AND_HALF

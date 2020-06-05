@@ -1,0 +1,14 @@
+def test_sqrt_big(tlist):
+    """Check sqrt(x)**2 for values near the iverflow threshold."""
+    for z in tlist:
+        sqrt_z = SQRT(z)
+        x = (ONE - B * SAFE_ULPS_OF_ONE) * sqrt_z
+        y = sqrt_z * x
+        if ((y < (ONE - TWO * B * SAFE_ULPS_OF_ONE) * z) or (y > z)):
+            if x < BIG_B_NTH:
+                bad_cond(err_serious, "")
+            else:
+                bad_cond(err_defect, "")
+            print("Comparison alleges that z = {:0.17e}".format(z))
+            print(" is too far from sqrt(z) ^ 2 ({:0.17e}) .".format(y))
+

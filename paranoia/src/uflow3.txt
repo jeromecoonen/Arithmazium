@@ -1,0 +1,17 @@
+#INCLUDE para_head uflow2.html aaapara_toc.html uflow4.html
+
+<h1>Underflow tests with scaling</h1>
+
+<p>
+  In order to compare the tiny values from two sources,
+  Paranoia scales the values
+  up by a large power of the radix. This defends against faulty comparisons,
+  again
+  on the CDD 6000 class. In this case, the values are not so small that they
+  behave like zero in multiplication,
+  but they do all compare equal to each other.
+</p>
+
+#CODE 903-uflow3
+
+#INCLUDE para_foot uflow2.html aaapara_toc.html uflow4.html

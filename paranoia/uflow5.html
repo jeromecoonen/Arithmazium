@@ -1,0 +1,73 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>Underflow</title>
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/paranoia/uflow5.html">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#fafafa'>
+  <link rel='stylesheet' href='../css/normalize.css'>
+  <link rel='stylesheet' href='../css/main.css'>
+  <link rel='stylesheet' href='../css/para.css'>
+  <link href='https://fonts.googleapis.com/css?family=Days One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans:wght@400;800' rel='stylesheet'>
+</head>
+<body>
+  <div>
+  <svg viewbox='0 0 1000 80' xmlns='http://www.w3.org/2000/svg'>
+  <a href='../index.html'>
+  <rect x=0 y=0 width=1000 height=80 class='arith-ban-box'/>
+  <text x=10 y=68 class='arith-ban-back'>
+  <tspan>11.001001000011111101101010100010001000</tspan>
+  </text>
+  <text x=60 y=55 class='arith-ban-front'>
+  <tspan>Arithmazium</tspan>
+  </text>
+  </a>
+  </svg>
+  </div>
+  <div class='next-prev'>
+  <a href='uflow4.html' class='previous round'>Previous</a>
+  <a href='aaapara_toc.html' class='tree round'>Home</a>
+  <a href='uflow6.html' class='next round'>Next</a>
+  </div>
+
+<h1>Without gradual underflow</h1>
+
+<p>
+  Paranoia sets a reliable value base_iny which is used in the summary of
+  arithmetic without gradual underflow. The utility does_tiny_value_misbehave()
+  gives some assurance of a well-behaved value.
+</p>
+
+<pre><code># Now consolidate the three triples of tiny results into the values
+# from the loop computation. Break into several cases...
+# This defines base_tiny, which may be needed as a final result in some
+# anomalous arithmetics.
+if does_tiny_value_misbehave(min_positive):
+    base_tiny = less_tiny_B   # Back up by a factor of 1/H, for CDC 7600
+else:
+    base_tiny = min_positive
+</code></pre>
+
+<div class='next-prev'>
+<a href='uflow4.html' class='previous round'>Previous</a>
+<a href='aaapara_toc.html' class='tree round'>Home</a>
+<a href='uflow6.html' class='next round'>Next</a>
+</div>
+<script src="js/vendor/jquery-3.5.1.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  lsga('create', 'UA-165469376-1', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+</<body>
+
+</html>

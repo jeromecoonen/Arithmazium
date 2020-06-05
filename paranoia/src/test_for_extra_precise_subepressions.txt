@@ -1,0 +1,66 @@
+#INCLUDE para_head standardize_fractional_precision.html aaapara_toc.html test_normalized_subtraction.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 300-test_for_extra_precise_subepressions
+
+<p>
+Part 3
+</p>
+
+#CODE 302-test_for_extra_precise_subepressionsc2
+
+<p>
+Part 4
+</p>
+
+#CODE 304-test_for_extra_precise_subepressions4
+
+<p>
+Part 5
+</p>
+
+#CODE 306-test_for_extra_precise_subepressions6
+
+<p>
+Part 6
+</p>
+
+#CODE 308-test_for_extra_precise_subepressions8
+
+<p>
+Part 7
+</p>
+
+#CODE 310-test_for_extra_precise_subepressions10
+
+<p>
+Part 8
+</p>
+
+#CODE 312-test_for_extra_precise_subepressions12
+
+<p>
+Part 9
+</p>
+
+#CODE 314-test_for_extra_precise_subepressions14
+
+<p>
+Part 10
+</p>
+
+#INCLUDE para_foot standardize_fractional_precision.html aaapara_toc.html test_normalized_subtraction.html
+

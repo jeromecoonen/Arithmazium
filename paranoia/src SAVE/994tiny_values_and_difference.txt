@@ -1,0 +1,67 @@
+#INCLUDE para_head 992tiny_powers_of_B.html para_toc.html test_for_pseudo_zero.html
+
+<h1>tiny_values_and_difference()</h1>
+
+<p>
+  This function explores tiny values with nonzero low-order digits, and it
+  looks at the differences between them. The loop has two layers, skipping over
+  the inner layer as soon as the difference between tiny values
+  fails the test
+</p>
+
+#CODE 522tiny_values_and_difference
+
+<pre><code>if (tiny_delta + tiny_delta) &lt;= tiny_delta:</code></pre>
+
+<p>
+  which says <code>tiny_delta</code> has taken a nonzero and non-𝛜 value.
+  This indicates that there isome loss of information due to underflow.
+</p>
+
+<p>
+  While <code>too_tiny</code> is in the range of normal numbers,
+  <code>tinier</code> scales back to <code>tiny</code>
+  by <code>1/H</code> exactly.
+  The next diagram shows the situation in binary in the typical case
+  that multiplication is accurate enough that a single unit in the last place
+  will detect differences between two nearly similar values after scaling by
+  <code>1/H</code>.
+</p>
+
+#CODE 523tiny_values_and_difference2
+
+<p>
+  <img src="img/tiny_x_a.svg"
+      alt="Tiny values with nonzero ulps" title="Google drawing">
+</p>
+
+<p>
+  If <code>too_tiny</code> underflows to zero,
+  the loop ends with <code>tiny_delta</code> still zero.
+  But with any form of gradual underflow, the loss of precision is detected.
+  Depending on the design of the arithmetic and which mode of rounding is
+  selected, the low-order bit of <code>tinier</code> may be 0 or 1.
+  This explains the use of
+  the absolute value in computing <code>tiny_delta</code>.
+</p>
+
+<p>
+  <img src="img/tiny_x_b.svg"
+    alt="Tiny values, showing excptional cases" title="Google drawing">
+</p>
+
+#CODE 524tiny_values_and_difference3
+
+<p>
+  The code sets the underflow threshold value to tiny the first time this
+  behavior is discovered.
+</p>
+
+<p>
+  <em>[TODO: Provide an example of an arithmetic with multiplication so bad
+  that it falls back to default values.]</em>
+</p>
+
+#CODE 525tiny_values_and_difference4
+
+#INCLUDE para_foot 992tiny_powers_of_B.html para_toc.html test_for_pseudo_zero.html

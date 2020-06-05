@@ -1,0 +1,12 @@
+def big_powers_of_B():
+    """ Look for overflow threshold, watching for exception.
+
+    With a strategy similar to underflow, use three values in
+    step to get up to and just beyond the overflow limit.
+
+    Returns:
+        bigger -- value that saturates like infinity or triggers an exception
+        big -- down a factor of 1/H
+        less_big -- down a factor of 1/H from big
+        no_except -- boolean indicating no exception triggered
+    """

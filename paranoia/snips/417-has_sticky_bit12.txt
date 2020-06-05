@@ -1,0 +1,8 @@
+                    if (t == ZERO) and (x + B * ULP_OF_ONE_PLUS - z == ZERO):
+                        if (B != TWO):
+                            x = TWO + ULP_OF_ONE_PLUS
+                            y = x / TWO
+                            if (y - ONE) == ZERO:
+                                verdict = True
+                        else:
+                            verdict = True

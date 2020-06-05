@@ -1,0 +1,10 @@
+    i = 0
+    doit = True
+    while doit:
+        x = rand_frac()
+        y = rand_frac()
+        yx = y * x
+        xy = x * y
+        xyyx = xy - yx
+        i = i + 1
+        doit = (i < count) and (xyyx == ZERO)

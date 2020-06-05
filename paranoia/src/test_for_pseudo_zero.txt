@@ -1,0 +1,36 @@
+#INCLUDE para_head test_extreme_underflow.html aaapara_toc.html e_squared.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 540-test_for_pseudo_zero
+
+<p>
+Part 3
+</p>
+
+#CODE 541-test_for_pseudo_zero2
+
+<p>
+Part 4
+</p>
+
+#CODE 542-test_for_pseudo_zero3
+
+<p>
+Part 5
+</p>
+
+#INCLUDE para_foot test_extreme_underflow.html aaapara_toc.html e_squared.html
+

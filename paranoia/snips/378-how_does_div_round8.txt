@@ -1,0 +1,6 @@
+        y = y - z
+        z = z / y2
+        y1 = (y2 + ULP_OF_ONE_PLUS) / y2
+        z = z - ONE_AND_HALF
+        y2 = y1 - y2
+        y1 = (ONE_MINUS_ULP - ULP_OF_ONE_MINUS) / ONE_MINUS_ULP

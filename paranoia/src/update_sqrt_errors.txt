@@ -1,0 +1,24 @@
+#INCLUDE para_head test_sqrt_monotonicity.html aaapara_toc.html num_theory_sqrt_test.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 440-update_sqrt_errors
+
+<p>
+Part 3
+</p>
+
+#INCLUDE para_foot test_sqrt_monotonicity.html aaapara_toc.html num_theory_sqrt_test.html
+

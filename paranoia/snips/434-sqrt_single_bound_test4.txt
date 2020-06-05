@@ -1,0 +1,11 @@
+        if err != ZERO:
+            success = False
+            if err < min_sqrt_error:
+                min_sqrt_error = err
+            if err > max_sqrt_error:
+                max_sqrt_error = err
+            bad_cond(error_kind, "\n")
+            print("sqrt( {:0.17e}) - {:0.17e}  = {:0.17e}".format(x * x, x, ulp * err))
+            print("\tinstead of correct value 0 .")
+    return success
+

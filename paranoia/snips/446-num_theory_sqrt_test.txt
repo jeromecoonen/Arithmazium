@@ -1,0 +1,2 @@
+def num_theory_sqrt_test(x, D, y, z2):
+    """Test utility."""

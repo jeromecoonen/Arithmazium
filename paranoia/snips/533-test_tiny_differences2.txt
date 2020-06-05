@@ -1,0 +1,12 @@
+    print("")
+    try:
+        r = SQRT(base_tiny / underflow_threshold)
+    except ZeroDivisionError:
+        print("base_tiny / underflow_threshold failed!")
+        r = H + H   # fall through to else case below
+    if r <= H:
+        z = r * underflow_threshold
+        x = z * (ONE + r * H * (ONE + H))
+    else:
+        z = underflow_threshold
+        x = z * (ONE + H * H * (ONE + H))

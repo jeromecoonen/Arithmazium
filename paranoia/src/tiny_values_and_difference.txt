@@ -1,4 +1,4 @@
-#INCLUDE para_head tiny_powers_of_B.html para_toc.html test_for_pseudo_zero.html
+#INCLUDE para_head tiny_powers_of_B.html aaapara_toc.html test_for_pseudo_zero.html
 
 <h1>tiny_values_and_difference()</h1>
 
@@ -9,7 +9,7 @@
   fails the test
 </p>
 
-#CODE 422tiny_values_and_difference
+#CODE 522-tiny_values_and_difference
 
 <pre><code>if (tiny_delta + tiny_delta) &lt;= tiny_delta:</code></pre>
 
@@ -28,7 +28,7 @@
   <code>1/H</code>.
 </p>
 
-#CODE 423tiny_values_and_difference_2
+#CODE 523-tiny_values_and_difference2
 
 <p>
   <img src="img/tiny_x_a.svg"
@@ -50,7 +50,7 @@
     alt="Tiny values, showing excptional cases" title="Google drawing">
 </p>
 
-#CODE 424tiny_values_and_difference_3
+#CODE 524-tiny_values_and_difference3
 
 <p>
   The code sets the underflow threshold value to tiny the first time this
@@ -62,6 +62,6 @@
   that it falls back to default values.]</em>
 </p>
 
-#CODE 425tiny_values_and_difference_4
+#CODE 525-tiny_values_and_difference4
 
-#INCLUDE para_foot tiny_powers_of_B.html para_toc.html test_for_pseudo_zero.html
+#INCLUDE para_foot tiny_powers_of_B.html aaapara_toc.html test_for_pseudo_zero.html

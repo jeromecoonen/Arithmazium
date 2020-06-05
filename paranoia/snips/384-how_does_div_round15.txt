@@ -1,0 +1,4 @@
+    if rdiv == "other":
+        print("/ is neither chopped nor correctly rounded. ")
+    return rdiv
+

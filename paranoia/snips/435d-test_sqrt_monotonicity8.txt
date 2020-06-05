@@ -1,0 +1,7 @@
+            elif i == 1:
+                y = y * ONE_OVER_B
+                x = y - ULP_OF_ONE_MINUS
+                z = y + ULP_OF_ONE_MINUS
+            else:
+                # Have survived three cases
+                monot = True

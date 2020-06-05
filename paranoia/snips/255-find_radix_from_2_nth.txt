@@ -1,0 +1,9 @@
+def find_radix_from_2_nth(big):
+    """Look for a carry out of the ones place.
+
+    Arguments;
+        big satisfies |((big + 1) - big) - 1| >= 1
+
+    Returns:
+        radix, which may not be integral in log arithmetic
+    """

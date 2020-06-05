@@ -1,0 +1,30 @@
+#INCLUDE para_head does_mult_have_guard_digit.html aaapara_toc.html does_div_have_guard_digit.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 330-test_mult_low_digits
+
+<p>
+Part 3
+</p>
+
+#CODE 332-mullowdig2
+
+<p>
+Part 4
+</p>
+
+#INCLUDE para_foot does_mult_have_guard_digit.html aaapara_toc.html does_div_have_guard_digit.html
+

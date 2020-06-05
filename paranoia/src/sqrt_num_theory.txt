@@ -1,0 +1,84 @@
+#INCLUDE para_head sqrt_int.html aaapara_toc.html pow_small_int.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 815-sqrt_num_theory
+
+<p>
+Part 3
+</p>
+
+#CODE 815c-sqrt_num_theory3
+
+<p>
+Part 4
+</p>
+
+#CODE 815f-sqrt_num_theory6
+
+<p>
+Part 5
+</p>
+
+#CODE 815i-sqrt_num_theory9
+
+<p>
+Part 6
+</p>
+
+#CODE 815l-sqrt_num_theory12
+
+<p>
+Part 7
+</p>
+
+#CODE 815n-sqrt_num_theory14
+
+<p>
+Part 8
+</p>
+
+#CODE 815p-sqrt_num_theory16
+
+<p>
+Part 9
+</p>
+
+#CODE 815r-sqrt_num_theory18
+
+<p>
+Part 10
+</p>
+
+#CODE 815t-sqrt_num_theory20
+
+<p>
+Part 11
+</p>
+
+#CODE 815u-sqrt_num_theory22
+
+<p>
+Part 12
+</p>
+
+#CODE 815w-sqrt_num_theory24
+
+<p>
+Part 13
+</p>
+
+#INCLUDE para_foot sqrt_int.html aaapara_toc.html pow_small_int.html
+

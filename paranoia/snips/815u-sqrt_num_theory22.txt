@@ -1,0 +1,22 @@
+if verbose:
+    print("\tAfter all sqrt test computations:")
+    print("\t\tmin_sqrt_error = {:0.17e}".format(min_sqrt_error))
+    print("\t\tmax_sqrt_error = {:0.17e}".format(max_sqrt_error))
+if tests == 0 or sqrt_anomalous_int:
+    bad_cond(err_failure, "Anomalous arithmetic with Integer < ")
+    print("B^PRECISION = {:0.7e}".format(BIG_B_NTH))
+    print(" fails test whether sqrt rounds or chops.")
+    sqrt_rnd_odd = True
+else:
+    if min_sqrt_error >= ZERO and max_sqrt_error <= ZERO:
+        flags["sqrt_rounding"] = "rounded"
+        print("Square root appears to be correctly rounded.")
+    else :
+        if (max_sqrt_error + ULP_OF_ONE_PLUS > ULP_OF_ONE_PLUS - ONE_HALF
+            or min_sqrt_error > ONE_HALF
+            or min_sqrt_error + B < ONE_HALF):
+            sqrt_rnd_odd = True
+        else:
+            flags["sqrt_rounding"] = "chopped"
+            print("Square root appears to be chopped.")
+

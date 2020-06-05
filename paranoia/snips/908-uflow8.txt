@@ -1,0 +1,17 @@
+else:
+    # BASIC cases 1-3. Case 3 falls through to a final test.
+    if underflow_threshold == ZERO:   # Cases 1-2
+        if add_sub_tiny:
+            # Case 2
+            underflow_threshold = add_sub_hi   # last good behavior
+            bad_cond(err_failure,
+                    "Underflow confuses Comparison, which alleges that")
+            print("add_sub_hi == add_sub_lo while denying that |add_sub_hi"
+                  + " - add_sub_lo| == 0; these values")
+            print("print out as add_sub_hi = {:0.17e}, "
+                  + "add_sub_lo ={:0.17e} .".format(add_sub_hi, add_sub_lo))
+            print("|add_sub_hi - add_sub_lo| = {:0.17e} ."
+                  .format(FABS(add_sub_hi - add_sub_lo)))
+            # BUG: C lacks the following message.
+            print("and add_sub_hi / add_sub_lo| = 1.0 + {:0.17e} ."
+                  .format((add_sub_hi / add_sub_lo - ONE_HALF) - ONE_HALF))

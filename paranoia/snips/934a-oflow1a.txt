@@ -1,0 +1,9 @@
+print("----Starting overflow watch.----")
+print("No Overflow should be signaled for overflow_threshold * 1 = ", end="")
+v = overflow_threshold * ONE
+print("{:0.17e}".format(v))
+print("                           nor for overflow_threshold / 1 = ", end="")
+v = overflow_threshold / ONE
+print("{:0.17e} .".format(v))
+print("Any overflow signal during this watch is a DEFECT.")
+print("----End of overflow watch.---")

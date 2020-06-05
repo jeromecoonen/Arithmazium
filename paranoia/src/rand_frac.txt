@@ -1,0 +1,24 @@
+#INCLUDE para_head bad_cond.html aaapara_toc.html print_if_err_cnt_positive.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 235-rand_frac
+
+<p>
+Part 3
+</p>
+
+#INCLUDE para_foot bad_cond.html aaapara_toc.html print_if_err_cnt_positive.html
+

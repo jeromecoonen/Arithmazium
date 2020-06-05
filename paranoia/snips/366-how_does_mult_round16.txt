@@ -1,0 +1,5 @@
+        else:
+            print("* is neither chopped nor correctly rounded. ")
+        if (rmult == "rounded"
+                and not flags["mult_guard_digit"]):
+            notify("Multiplication")

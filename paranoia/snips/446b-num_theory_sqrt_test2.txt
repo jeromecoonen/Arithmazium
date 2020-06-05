@@ -1,0 +1,13 @@
+        down_err = (y2 + ONE_HALF) + (ONE_HALF - X2)
+        up_err = y2 - X2
+        if debug:
+            print("\t\t       y2 = {:.5e} X2 = {:.5e}".format(y2, X2))
+            print("\t\t       dn = {:.5e} up = {:.5e}"
+                  .format(down_err, up_err))
+        update_sqrt_errors(down_err, up_err)
+        if debug:
+            print("\tnew X2 = {:.17e} y2 = {:.17e}".format(X2, y2))
+    elif verbose:
+        print("\thasty exit from num_theory_sqrt_test()")
+    return test
+

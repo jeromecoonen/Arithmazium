@@ -1,0 +1,6 @@
+def rounding_symmetry_test():
+    """Test sign symmetry in simple rounding case.
+
+    Returns:
+         True if passes, False otherwise
+    """

@@ -1,0 +1,7 @@
+        if round_add_sub == "chopped":
+            # ***JTC: BASIC 2690 sets R3 = F1 - O2*R3 triggering 3
+            # messages when boch chopped and rounded are detected.
+            round_add_sub = "other"
+        else:
+            round_add_sub = "rounded"
+        print("Addition/Subtraction appears to round correctly. ")

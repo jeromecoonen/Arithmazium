@@ -1,0 +1,30 @@
+#INCLUDE para_head test_tiny_differences.html aaapara_toc.html test_extreme_underflow.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 534-test_for_narrow_range
+
+<p>
+Part 3
+</p>
+
+#CODE 535-test_for_narrow_range2
+
+<p>
+Part 4
+</p>
+
+#INCLUDE para_foot test_tiny_differences.html aaapara_toc.html test_extreme_underflow.html
+

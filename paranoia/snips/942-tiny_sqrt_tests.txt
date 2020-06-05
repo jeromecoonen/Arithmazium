@@ -1,0 +1,13 @@
+milestone = 175   #==============================
+print("")
+test_sqrt_tiny([underflow_threshold, min_positive, too_tiny_x])
+
+milestone = 180   #==============================
+# Peel off historical case from the more typical else clause.
+if B == 2 and PRECISION == 56 and too_tiny_B != ZERO and -ZERO != ZERO:
+    print("FAILURE: Attempts to evaluate  SQR(overflow_threshold)")
+    print("in Double Precision n  BASIC  on the  IBM PC  display the word")
+    print("`Overflow'  and then disable the Keyboard! This is disastrous.")
+else:
+    test_sqrt_big([overflow_threshold, pos_big_B])
+

@@ -1,0 +1,21 @@
+verbose = True
+ultra_verbose = False
+hasty = True
+debug = True
+# Declarations of global variables
+err_failure = 0
+err_serious = 1
+err_defect = 2
+err_flaw = 3
+error_count = [0, 0, 0, 0]
+error_type = ["Failure", "Serious", "Defect", "Flaw"]
+fpecount = 0   # int
+milestone = 0   # int
+PageNo = 0   # int
+M = 0   # int
+err_cnt = 0   # int
+save_err_cnt = 0   # int
+rand_seed = math.nan
+rand_next = math.nan
+min_sqrt_error = math.nan
+max_sqrt_error = math.nan

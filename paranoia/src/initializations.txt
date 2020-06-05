@@ -1,0 +1,42 @@
+#INCLUDE para_head open_comment.html aaapara_toc.html print_msgs.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 100-initializations
+
+<p>
+Part 3
+</p>
+
+#CODE 110-globals
+
+<p>
+Part 4
+</p>
+
+#CODE 115-flags
+
+<p>
+Part 5
+</p>
+
+#CODE 120-flags2
+
+<p>
+Part 6
+</p>
+
+#INCLUDE para_foot open_comment.html aaapara_toc.html print_msgs.html
+

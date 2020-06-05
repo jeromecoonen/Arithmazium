@@ -1,0 +1,19 @@
+    big = -ONE_OVER_C
+    bigger = ONE_OVER_H * big
+    no_except = True
+    try:
+        while True:
+            less_big = big
+            big = bigger
+            bigger = ONE_OVER_H * big
+            if verbose:
+                print("\tbigger = {:.12e} big = {:.12e}"
+                      .format(bigger, big))
+            if bigger >= big: break   # remember, these values < 0
+    except OverflowError:   # Python does not catch floating point overflow
+        no_except = False
+        bigger = big
+        if verbose:
+            print("\tEncountered overflow exception.")
+    return bigger, big, less_big, no_except
+

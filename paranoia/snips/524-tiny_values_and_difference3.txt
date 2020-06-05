@@ -1,0 +1,8 @@
+    d = C * one_plus
+    # 1 + SAFE_ULPS_OF_ONE should be enough ulps of 1 that d > C.
+    if d <= C:
+        # But if not, we punt with default values.
+        bad_cond(err_failure,
+                "multiplication gets too many last digits wrong.")
+        pause()
+        return 0, tiny_B, too_tiny_B, tiny_B, 0, 0, 0

@@ -1,0 +1,27 @@
+    reply = False
+    if z == ZERO:   # nothing complex to test in the easy case
+        return reply
+    print("Since comparison denies z = 0, evaluating ", end="")
+    print("(z + z) / z should be safe.")
+    z_quo = ONE
+    try:
+        z_quo = (z + z) / z
+    except ZeroDivisionError:
+        reply = True
+        error_count[err_serious] = error_count[err_serious] + 1
+        print("But the division triggered an exception.")
+        print("This is a VERY SERIOUS DEFECT!")
+
+    print("What the machine gets for (z + z) / z is  {:0.17e} ."
+          .format(z_quo))
+    if FABS(z_quo - TWO) < B * ULP_OF_ONE_PLUS:
+        print("This is O.K., provided Over/Underflow", end="")
+        print(" has NOT just been signaled.")
+    else:
+        reply = True
+        if (z_quo < ONE) or (z_quo > TWO):
+            error_count[err_serious] = error_count[err_serious] + 1
+            print("This is a VERY SERIOUS DEFECT!")
+        else:
+            error_count[err_defect] = error_count[err_defect] + 1
+            print("This is a DEFECT!")

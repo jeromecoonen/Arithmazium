@@ -1,0 +1,9 @@
+    # Now look at ulps of 1- by starting with rounding noise in 3/4.
+    # x, y, and z are used in the three following loops.
+    x = y = z = FABS((THREE / FOUR - TWO / THREE) * THREE - ONE / FOUR)
+    while True:
+        z1 = z
+        z = (ONE / TWO
+             - ((ONE / TWO - (ONE_HALF * z1 + THIRTY_TWO * z1 * z1))
+                + ONE / TWO)) + ONE / TWO
+        if (z1 <= z) or (z <= ZERO): break

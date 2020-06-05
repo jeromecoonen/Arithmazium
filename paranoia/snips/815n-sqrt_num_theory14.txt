@@ -1,0 +1,10 @@
+    while True:
+        x = z1 * z
+        x = x - FLOOR(x / B) * B
+        if x != ONE:
+            z1 = z1 - ONE
+        if x == ONE or z1 <= ZERO: break
+    if z1 <= ZERO and x != ONE:
+        sqrt_anomalous_int = True
+        break
+

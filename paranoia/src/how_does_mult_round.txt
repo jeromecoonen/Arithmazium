@@ -1,0 +1,78 @@
+#INCLUDE para_head does_add_sub_have_guard_digit.html aaapara_toc.html how_does_div_round.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 350-how_does_mult_round
+
+<p>
+Part 3
+</p>
+
+#CODE 352-how_does_mult_round2
+
+<p>
+Part 4
+</p>
+
+#CODE 354-how_does_mult_round4
+
+<p>
+Part 5
+</p>
+
+#CODE 356-how_does_mult_round6
+
+<p>
+Part 6
+</p>
+
+#CODE 358-how_does_mult_round8
+
+<p>
+Part 7
+</p>
+
+#CODE 360-how_does_mult_round10
+
+<p>
+Part 8
+</p>
+
+#CODE 362-how_does_mult_round12
+
+<p>
+Part 9
+</p>
+
+#CODE 364-how_does_mult_round14
+
+<p>
+Part 10
+</p>
+
+#CODE 366-how_does_mult_round16
+
+<p>
+Part 11
+</p>
+
+#CODE 368-how_does_mult_round18
+
+<p>
+Part 12
+</p>
+
+#INCLUDE para_foot does_add_sub_have_guard_digit.html aaapara_toc.html how_does_div_round.html
+

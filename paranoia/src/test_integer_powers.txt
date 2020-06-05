@@ -1,0 +1,30 @@
+#INCLUDE para_head test_power_result.html aaapara_toc.html tiny_powers_of_B.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 455-test_integer_powers
+
+<p>
+Part 3
+</p>
+
+#CODE 457-test_integer_powers2
+
+<p>
+Part 4
+</p>
+
+#INCLUDE para_foot test_power_result.html aaapara_toc.html tiny_powers_of_B.html
+

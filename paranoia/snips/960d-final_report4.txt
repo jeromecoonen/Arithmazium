@@ -1,0 +1,27 @@
+else:
+    print("No failures, defects nor flaws have been discovered.")
+    if not (flags["mult_rounding"] == "rounded"
+            and flags["div_rounding"] == "rounded"
+            and flags["add_sub_rounding"] == "rounded"
+            and flags["sqrt_rounding"] == "rounded"):
+        print("The arithmetic diagnosed seems Satisfactory.")
+    else:
+        if (flags["uses_sticky_bit"] and
+                (B - TWO) * (B - NINE - ONE) == ZERO):
+            print("Rounding appears to conform to ", end="")
+            print("IEEE standard ", end="")
+            if ((B == TWO) and
+                 ((PRECISION - FOUR * THREE * TWO)
+                  * ( PRECISION - TWENTY_SEVEN
+                    - TWENTY_SEVEN + ONE) == ZERO)):
+                print("754", end="")
+            else:
+                print("854", end="")
+            if flags["IEEE"]:
+                print(".")
+            else:
+                print(",\nexcept for possibly Double Rounding", end="")
+                print(" during Gradual Underflow.")
+
+        print("The arithmetic diagnosed appears to be Excellent!")
+

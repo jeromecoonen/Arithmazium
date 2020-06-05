@@ -1,0 +1,36 @@
+#INCLUDE para_head does_div_have_guard_digit.html aaapara_toc.html how_does_mult_round.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 345-does_add_sub_have_guard_digit
+
+<p>
+Part 3
+</p>
+
+#CODE 347-does_add_sub_have_guard_digit2
+
+<p>
+Part 4
+</p>
+
+#CODE 349-does_add_sub_have_guard_digit3
+
+<p>
+Part 5
+</p>
+
+#INCLUDE para_foot does_div_have_guard_digit.html aaapara_toc.html how_does_mult_round.html
+

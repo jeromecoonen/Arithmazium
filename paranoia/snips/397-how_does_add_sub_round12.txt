@@ -1,0 +1,4 @@
+        if not flags["add_sub_guard_digit"]:
+            # ***JTC: BUG, annot happen, guard digit is checked above.
+            notify("Add/Subtract")
+        break   # Execute this block just once, with early exit possible.

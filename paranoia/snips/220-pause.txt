@@ -1,0 +1,19 @@
+def alt_input(s):
+    """Local version of input allows hasty execution."""
+    reply = "y"   # default reply
+    if hasty:
+        print(s)
+    else:
+        reply = input(s)
+    return reply
+
+
+def pause():
+    """Wait until the user hits RETURN"""
+    global milestone, PageNo
+    s = alt_input("\nTo continue, press RETURN ")
+    print("\nDiagnosis resumes after milestone Number ", milestone,
+          "          Page: ", PageNo, "\n")
+    milestone += 1   # note -- milestone may be changed by extra pauses
+    PageNo += 1
+

@@ -1,0 +1,13 @@
+#INCLUDE para_head uflow4.html aaapara_toc.html uflow6.html
+
+<h1>Without gradual underflow</h1>
+
+<p>
+  Paranoia sets a reliable value base_iny which is used in the summary of
+  arithmetic without gradual underflow. The utility does_tiny_value_misbehave()
+  gives some assurance of a well-behaved value.
+</p>
+
+#CODE 905-uflow5
+
+#INCLUDE para_foot uflow4.html aaapara_toc.html uflow6.html

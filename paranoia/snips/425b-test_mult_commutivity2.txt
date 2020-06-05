@@ -1,0 +1,11 @@
+    if (xyyx == ZERO):
+        # One rather less random test lays out the operands, products,
+        # and the computed difference.
+        x = ONE + ONE_HALF / THREE
+        y = (ULP_OF_ONE_PLUS + ULP_OF_ONE_MINUS) + ONE
+        xy = x * y
+        yx = y * x
+        xyyx = ((ONE + ONE_HALF / THREE)
+                * ((ULP_OF_ONE_PLUS + ULP_OF_ONE_MINUS) + ONE)
+                - ((ULP_OF_ONE_PLUS + ULP_OF_ONE_MINUS) + ONE)
+                * (ONE + ONE_HALF / THREE))

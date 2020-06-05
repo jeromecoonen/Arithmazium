@@ -1,0 +1,9 @@
+    if (x1 != y1) or (x1 != z1):
+        bad_cond(err_serious, "Disagreements among the values x1, y1, z1,")
+        print("respectively  {:0.7e},  {:0.7e},  {:0.7e},".format(x1, y1, z1))
+        print("are symptoms of inconsistencies introduced")
+        print("by extra-precise evaluation of arithmetic subexpressions.")
+        notify("Possibly some part of this")
+        if ((x1 == ULP_OF_ONE_MINUS) or (y1 == ULP_OF_ONE_MINUS)
+                or (z1 == ULP_OF_ONE_MINUS)):
+            print("That feature is not tested further by this program.\n")

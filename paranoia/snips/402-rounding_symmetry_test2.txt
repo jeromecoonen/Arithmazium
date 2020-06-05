@@ -1,0 +1,11 @@
+    verdict = True
+    x = ONE + ONE_HALF * (ONE + ONE_HALF)
+    y = (ONE + ULP_OF_ONE_PLUS) * ONE_HALF
+    z = x - y
+    t = y - x
+    s = z + t
+    if (s != ZERO):
+        verdict = False
+        bad_cond(err_flaw, "(x - y) + (y - x) is non zero!\n")
+    return verdict
+

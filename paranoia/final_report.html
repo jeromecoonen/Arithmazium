@@ -1,0 +1,173 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>Underflow</title>
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/paranoia/final_report.html">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#fafafa'>
+  <link rel='stylesheet' href='../css/normalize.css'>
+  <link rel='stylesheet' href='../css/main.css'>
+  <link rel='stylesheet' href='../css/para.css'>
+  <link href='https://fonts.googleapis.com/css?family=Days One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans:wght@400;800' rel='stylesheet'>
+</head>
+<body>
+  <div>
+  <svg viewbox='0 0 1000 80' xmlns='http://www.w3.org/2000/svg'>
+  <a href='../index.html'>
+  <rect x=0 y=0 width=1000 height=80 class='arith-ban-box'/>
+  <text x=10 y=68 class='arith-ban-back'>
+  <tspan>11.001001000011111101101010100010001000</tspan>
+  </text>
+  <text x=60 y=55 class='arith-ban-front'>
+  <tspan>Arithmazium</tspan>
+  </text>
+  </a>
+  </svg>
+  </div>
+  <div class='next-prev'>
+  <a href='range_unit_div_zero.html' class='previous round'>Previous</a>
+  <a href='aaapara_toc.html' class='tree round'>Home</a>
+  <a href='aaapara_toc.html' class='next round'>Next</a>
+  </div>
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+<pre><code>milestone = 220   #==============================
+pause()
+print("")
+msg = ["FAILUREs  encountered =",
+        "SERIOUS DEFECTs  discovered =",
+        "DEFECTs  discovered =",
+        "FLAWs  discovered ="
+       ]
+for i in range(0,4):
+    if error_count[i]:
+        print("The number of  {:>29s} {:d}.".format(msg[i], error_count[i]))
+
+</code></pre>
+
+<p>
+Part 3
+</p>
+
+<pre><code>print("")
+if (error_count[err_failure] or error_count[err_serious] or
+        error_count[err_defect] or error_count[err_flaw]):
+    if (error_count[err_failure] + error_count[err_serious]
+        + error_count[err_defect] == 0) and (error_count[err_flaw] > 0):
+        print("The arithmetic diagnosed seems ", end="")
+        print("Satisfactory though flawed.")
+
+
+</code></pre>
+
+<p>
+Part 4
+</p>
+
+<pre><code>    elif ((error_count[err_failure] + error_count[err_serious] == 0)
+          and error_count[err_defect] > 0):
+        print("The arithmetic diagnosed may be Acceptable", end="")
+        print(" despite inconvenient Defects.")
+
+
+</code></pre>
+
+<p>
+Part 5
+</p>
+
+<pre><code>    elif error_count[err_failure] or error_count[err_serious]:
+        print("The arithmetic diagnosed has", end="")
+        print(" unacceptable Serious Defects.")
+
+    if error_count[err_failure]:
+        print("Potentially fatal FAILURE may have spoiled this", end="")
+        print(" program's subsequent diagnoses.")
+
+</code></pre>
+
+<p>
+Part 6
+</p>
+
+<pre><code>else:
+    print("No failures, defects nor flaws have been discovered.")
+    if not (flags["mult_rounding"] == "rounded"
+            and flags["div_rounding"] == "rounded"
+            and flags["add_sub_rounding"] == "rounded"
+            and flags["sqrt_rounding"] == "rounded"):
+        print("The arithmetic diagnosed seems Satisfactory.")
+    else:
+        if (flags["uses_sticky_bit"] and
+                (B - TWO) * (B - NINE - ONE) == ZERO):
+            print("Rounding appears to conform to ", end="")
+            print("IEEE standard ", end="")
+            if ((B == TWO) and
+                 ((PRECISION - FOUR * THREE * TWO)
+                  * ( PRECISION - TWENTY_SEVEN
+                    - TWENTY_SEVEN + ONE) == ZERO)):
+                print("754", end="")
+            else:
+                print("854", end="")
+            if flags["IEEE"]:
+                print(".")
+            else:
+                print(",\nexcept for possibly Double Rounding", end="")
+                print(" during Gradual Underflow.")
+
+        print("The arithmetic diagnosed appears to be Excellent!")
+
+</code></pre>
+
+<p>
+Part 7
+</p>
+
+<pre><code>if fpecount:
+    print("\nA total of {:d} floating point exceptions were registered."
+          .format(fpecount))
+print("END OF TEST.")
+exit(0)
+</code></pre>
+
+<p>
+Part 8
+</p>
+
+<div class='next-prev'>
+<a href='range_unit_div_zero.html' class='previous round'>Previous</a>
+<a href='aaapara_toc.html' class='tree round'>Home</a>
+<a href='aaapara_toc.html' class='next round'>Next</a>
+</div>
+<script src="js/vendor/jquery-3.5.1.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  lsga('create', 'UA-165469376-1', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+</<body>
+
+</html>
+

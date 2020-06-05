@@ -1,0 +1,9 @@
+print("")
+if (error_count[err_failure] or error_count[err_serious] or
+        error_count[err_defect] or error_count[err_flaw]):
+    if (error_count[err_failure] + error_count[err_serious]
+        + error_count[err_defect] == 0) and (error_count[err_flaw] > 0):
+        print("The arithmetic diagnosed seems ", end="")
+        print("Satisfactory though flawed.")
+
+

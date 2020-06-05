@@ -1,0 +1,24 @@
+#INCLUDE para_head notify.html aaapara_toc.html pause.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 210-maths
+
+<p>
+Part 3
+</p>
+
+#INCLUDE para_foot notify.html aaapara_toc.html pause.html
+

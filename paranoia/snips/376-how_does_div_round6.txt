@@ -1,0 +1,8 @@
+    if not ((x > ZERO) or (y > ZERO) or (z > ZERO) or (t > ZERO)):
+        x = ONE_AND_HALF / y2
+        y = ONE_AND_HALF - ULP_OF_ONE_PLUS
+        z = ONE_AND_HALF + ULP_OF_ONE_PLUS
+        x = x - y
+        t = ONE_AND_HALF / y1
+        y = y / y1
+        t = t - (z + ULP_OF_ONE_PLUS)

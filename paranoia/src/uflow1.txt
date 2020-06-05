@@ -1,0 +1,92 @@
+#INCLUDE para_head pow_primes.html aaapara_toc.html tiny_powers_of_B.html
+
+<h1>Underflow tests</h1>
+
+<div><p>
+  Much ado about almost nothing is one way to characterize the historical
+  treatment of tiny values in floating point arithmetic. It has been far the most
+  hotly debated topic in the IEEE 754 committees. This section of Paranoia
+  investigates the behavior of arithmetic on tiny values. But this is a brief
+  history. It tells the story of underflow through Paranoia’s exploration. It
+  leaves the more complete discussion to pages dedicated to the topic. Background
+  As values get tinier and tinier, perhaps by successive division by 2,
+</p></div>
+
+<pre><code>1/2  1/4  1/8  1/16  1/32  1/64  . . . 1/1024  1/2048  . . .
+</code></pre>
+
+<p>
+  they eventually become too small to represent in the form
+</p>
+
+<p>
+<em>FORMULA</em>
+</p>
+
+<p>
+  where  is the radix and the  are digits in that radix. The exponent  is bounded
+  by the limitations of the representation of the number format. The exponent
+  usually falls in a simple range, such as [–126, 127] for IEEE 754 single format.
+  Some arithmetics will sacrifice significant digits to extend the exponent range
+  as values get huge or small. IEEE 754 supports gradual underflow, allowing the
+  leading digits in the expression above to become 0, thereby supporting smaller
+  and smaller values all with the same exponent . There are more extreme designs,
+  extending the representation as needed to support an exponent of any conceivable
+  size.
+</p>
+
+<p>
+  Paranoia features many loops that terminate when a magnitude shrinks to zero or
+  to a tiny epsilon value that remains the same when doubled. Faced with
+  arithmetic that will not underflow, automatically extending the range to within
+  the limits of the host computer, Paranoia will loop without end. The code The
+  underflow investigation opens with a deceptively simple message about the
+  objects of the search:
+
+  <ul>
+    <li>
+      the underflow threshold – the smallest positive value
+      that exhibits no surprises in arithmetic
+    </li>
+    <li>
+      the smallest nonzero value – the
+      smallest positive value discovered, though it may behave badly in some
+      operations; for example, <code>100 * z</code> may result in zero
+      even though <code>z != 0.0</code>
+    </li>
+    <li>
+      an underflowed
+      value – a computed result so tiny it has underflowed,
+      usually to zero The
+      various tests print messages along the way,
+      especially when they discover
+      anomalies.
+    </li>
+  </ul>
+</p>
+
+
+<p>
+  The diagram below illustrates the three values as will be discovered
+  in arithmetic
+  compliant with IEEE 754. The two nonzero values have the minimum exponent for
+  the number format.
+</p>
+
+<p>
+<img src="img/uflow_3_values_a.svg"
+    alt="The values characterizing underflow" title="Google drawing">
+</p>
+
+<p>
+  Paranoia starts with powers of the radix. See the discussion of
+  <code>tiny_powers_of_B()</code> for details about the triple of
+  returned values. Typically,
+  <code>too_tiny_B</code> has underflowed to zero.
+  A description of H and C can be found in the
+  discussion of the fundamental constants of the arithmetic.
+</p>
+
+#CODE 900-uflow1
+
+#INCLUDE para_foot pow_primes.html aaapara_toc.html tiny_powers_of_B.html

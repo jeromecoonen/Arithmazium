@@ -1,0 +1,9 @@
+    rmult = "other"
+    y2 = ONE + ULP_OF_ONE_PLUS
+    y1 = ONE - ULP_OF_ONE_PLUS
+    x = ONE_AND_HALF - ULP_OF_ONE_PLUS
+    y = ONE_AND_HALF + ULP_OF_ONE_PLUS
+    z = (x - ULP_OF_ONE_PLUS) * y2
+    t = y * y1
+    z = z - x
+    t = t - x

@@ -1,0 +1,16 @@
+# Purify Integers was the original comment. The following test assumes
+# B=1 for log arithmetic, before any fractional part of the precision
+# is "purified".
+if (B != ONE):
+    PRECISION = standardize_fractional_precision(ULP_OF_ONE_MINUS, B)
+
+if (PRECISION != FLOOR(PRECISION)) or (B == ONE):
+    print("PRECISION cannot be characterized by an Integer number")
+    print("of significant digits but, by itself, this is a minor flaw.")
+
+if B == ONE:
+    print("logarithmic encoding has precision characterized solely "
+          +"by ULP_OF_ONE_MINUS.")
+else:
+    print("The number of significant digits of the B is {:0.4f} ."
+          .format(PRECISION))

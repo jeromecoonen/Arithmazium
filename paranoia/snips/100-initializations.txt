@@ -1,0 +1,3 @@
+#----START CODE----
+# Integer constants
+NUM_TRIALS = 20   # Numbeer of random and sequential tests.

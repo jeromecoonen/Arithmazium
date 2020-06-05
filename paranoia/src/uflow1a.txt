@@ -1,0 +1,16 @@
+#INCLUDE para_head uflow1.html aaapara_toc.html uflow2.html
+
+<h1>Tiny values with nonzero low-order digits</h1>
+
+<p>
+  Powers of the radix don’t tell the whole story, so Paranoia computes a parallel
+  set of tiny values with nonzero low-order digits. Just adding a useful number of
+  units in the last place is a challenge, so read about SAFE_ULPS_OF_ONE in the
+  section on constants. The function tiny_values_and_difference(), returns seven
+  values to be used in the following tests. They are explained in the discussion
+  of the function.
+<p/>
+
+#CODE 900a-uflow1a
+
+#INCLUDE para_foot uflow1.html aaapara_toc.html uflow2.html

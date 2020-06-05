@@ -1,0 +1,26 @@
+def characteristics():
+    """Explain whtat the program reveals"""
+    chars = [
+        "Running this program should reveal these characteristics:",
+        "     Radix B = 1, 2, 4, 8, 10, 16, 100, 256 ...",
+        "     PRECISION = number of significant digits carried.",
+        "     ULP_OF_ONE_PLUS = B/B^PRECISION = One Ulp",
+        "         (Unit in the Last Place) of 1.000xxx .",
+        "     ULP_OF_ONE_MINUS = 1/B^PRECISION = One Ulp",
+        "          of numbers a little less than 1.0 .",
+        "     Adequacy of guard digits for Mult., Div. and Subt.",
+        "     Whether arithmetic is chopped, correctly rounded, or something else",
+        "         for Mult., Div., Add/Subt. and Sqrt.",
+        "     Whether a Sticky Bit used correctly for rounding.",
+        "     UnderflowThreshold = an underflow threshold.",
+        "     E0 and too_tiny_x tell whether underflow is abrupt, gradual, or fuzzy.",
+        "     overflow_threshold = an overflow threshold, roughly.",
+        "     V0  tells, roughly, whether  Infinity  is represented.",
+        "     Comparisions are checked for consistency with subtraction",
+        "         and for contamination with pseudo-zeros.",
+        "     Sqrt is tested.  Y^X is tested for integer X.",
+        "     Extra-precise subexpressions are revealed but NOT YET tested.",
+        "     Decimal-Binary conversion is NOT YET tested for accuracy."
+     ]
+    print_msgs(chars)
+

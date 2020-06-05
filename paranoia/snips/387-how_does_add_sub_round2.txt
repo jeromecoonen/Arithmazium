@@ -1,0 +1,6 @@
+    round_add_sub = "other"
+    x = ONE - ULP_OF_ONE_MINUS * ULP_OF_ONE_MINUS
+    y = ONE + ULP_OF_ONE_PLUS * (ONE - ULP_OF_ONE_PLUS)
+    z = ONE_MINUS_ULP - ONE_HALF
+    x = (x - ONE_HALF) - z
+    y = y - ONE

@@ -1,0 +1,5 @@
+if (ONE_MINUS_ULP != ONE and ONE_MINUS_ULP - ONE >= ZERO):
+    bad_cond(err_serious, "comparison alleges  (1-ULP_OF_ONE_MINUS) < 1  although")
+    print("  subtraction yields  (1-ULP_OF_ONE_MINUS) - 1 = 0 , thereby vitiating")
+    print("  such precautions against division by zero as")
+    print("  ...  if (x == 1.0) {.....} else {.../(x-1.0)...}")

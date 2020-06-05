@@ -1,0 +1,23 @@
+    # Initialize the loop values so that the first term is 1, addied
+    # into the initial sum of zero.
+    x = ZERO
+    k = 2
+    term = TWO * THREE
+    x_lo = ZERO
+    if verbose:
+        print("Loop to compute 1/48th the sum of terms 3 to k")
+        print("of the Taylor series of exp(1/2).")
+    while True:
+        old_x = x
+        k = k + 1
+        term = term / (k + k)
+        inc = x_lo + term
+        x = old_x + inc
+        # After adding the next term into the sum, capture x_lo, the
+        # amount of inc that is not captured by x.
+        x_lo = (old_x - x) + inc
+        if verbose:
+            print("\texp2 x={:.6e} x_lo={:.6e} term={:.6e}"
+                  .format(x, x_lo, term))
+        # Exit the loop when the value x is no longer changing.
+        if x <= old_x: break

@@ -1,0 +1,11 @@
+def e_squared():
+    """Compute exp(2) from the Taylor series for exp(x).
+
+    We compute exp(1/2) and square it twice.
+    exp(1/2) = 1 + 1/2 + 1/8 + 1/48 + 1/(48*2*4) + 1/(48*4*4*5) + ...
+             = 13/8 + 1/48 * (1 + 1/8 + 1/80 + 1/960 + ...)
+    Compute the sum as a two-piece hi/lo accumulation and then
+    evaluate 13/8 + sum/48.
+
+    Basic 5320-5350
+    """

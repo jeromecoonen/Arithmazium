@@ -1,0 +1,5 @@
+    # JTC: gdiv now includes all 5 tests not just last 4 like original.
+    gdiv &= (x == ZERO) and (y == ZERO)
+    test_cond(err_serious, gdiv, "Division lacks a Guard Digit, so x/1 != x")
+    return gdiv
+

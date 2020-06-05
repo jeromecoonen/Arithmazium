@@ -1,0 +1,13 @@
+    z2 = D
+    y = D + (ONE + z) * ONE_HALF
+    x = D + z + Q
+    tests += num_theory_sqrt_test(x, D, y, z2)
+    y = D + (ONE - z) * ONE_HALF + D
+    x = D - z + D
+    x = x + Q + x
+    tests += num_theory_sqrt_test(x, D, y, z2)
+    x, D, Q, z, z1 = num_theory_sqrt_value(x, D, Q, z, z1)
+    if D - z2 != BIG_B_NTH - z2:
+        sqrt_anomalous_int = True
+        break
+

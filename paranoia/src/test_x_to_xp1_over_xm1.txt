@@ -1,0 +1,42 @@
+#INCLUDE para_head e_squared.html aaapara_toc.html extreme_z_to_q.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 554-test_x_to_xp1_over_xm1
+
+<p>
+Part 3
+</p>
+
+#CODE 554a-test_x_to_xp1_over_xm12
+
+<p>
+Part 4
+</p>
+
+#CODE 554b-test_x_to_xp1_over_xm13
+
+<p>
+Part 5
+</p>
+
+#CODE 554c-test_x_to_xp1_over_xm14
+
+<p>
+Part 6
+</p>
+
+#INCLUDE para_foot e_squared.html aaapara_toc.html extreme_z_to_q.html
+

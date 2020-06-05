@@ -1,0 +1,16 @@
+            else:
+                # Jump by 1 ulp, then 2, then 4, etc.
+                z = (next_x - x) * TWO + next_x
+                x = next_x
+                next_x = z
+                z = ONE + (x - ONE_MINUS_ULP)*(x - ONE_MINUS_ULP)
+                # *** BUG: P has (z > ONE), which means test done once only.
+                # Keep testing until too close to 1 or count too big.
+                if (z <= ONE) and (test_cnt < NUM_TRIALS):
+                        test_cnt += 1
+                else:
+                    break
+    # BUG: removed unneeded error flag if N == 0:
+    print("Accuracy seems adequate.")
+    return
+

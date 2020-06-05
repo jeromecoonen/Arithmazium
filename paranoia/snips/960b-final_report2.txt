@@ -1,0 +1,6 @@
+    elif ((error_count[err_failure] + error_count[err_serious] == 0)
+          and error_count[err_defect] > 0):
+        print("The arithmetic diagnosed may be Acceptable", end="")
+        print(" despite inconvenient Defects.")
+
+

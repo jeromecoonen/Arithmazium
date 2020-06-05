@@ -1,0 +1,4 @@
+flags["mult_guard_digit"] = does_mult_have_guard_digit()
+test_mult_low_digits()
+flags["div_guard_digit"] = does_div_have_guard_digit()
+flags["add_sub_guard_digit"] = does_add_sub_have_guard_digit()

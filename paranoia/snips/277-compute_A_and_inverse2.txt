@@ -1,0 +1,11 @@
+    a = radix   # Default to the unusual case
+    for z in [TWO, NINE+ONE]:
+        y = radix
+        doit = True
+        while doit:
+            x = y
+            y = y / z
+            doit = FLOOR(y) == y
+        if x == ONE:
+            a = z   # Have found a power of 2 or 10
+            break

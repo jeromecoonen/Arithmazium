@@ -1,0 +1,5 @@
+    if z <= ZERO:
+        if debug:
+            print("\t\t\tnum_theory_sqrt_value: z = {:.17} <= ZERO".format(z))
+        z = - z
+        z1 = - z1

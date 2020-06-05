@@ -1,0 +1,36 @@
+#INCLUDE para_head does_tiny_value_misbehave.html aaapara_toc.html test_tiny_differences.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 529-is_gradual_underflow_IEEE
+
+<p>
+Part 3
+</p>
+
+#CODE 530-is_gradual_underflow_IEEE2
+
+<p>
+Part 4
+</p>
+
+#CODE 531-is_gradual_underflow_IEEE2
+
+<p>
+Part 5
+</p>
+
+#INCLUDE para_foot does_tiny_value_misbehave.html aaapara_toc.html test_tiny_differences.html
+

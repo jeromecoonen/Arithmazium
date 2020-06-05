@@ -1,0 +1,18 @@
+#INCLUDE para_head uflow8.html aaapara_toc.html uflow10.html
+
+<h1>Case 1</h1>
+
+<p>
+  Case 1 arises in arithmetic that flushes underflows to zero. The comment
+  explains that the underflow threshold is backed up to the next power of B if the
+  computation of add_sub_hi cannot be reproduced, indicating some anomaly.
+</p>
+
+<p>
+  The call to test_tiny_differences() explores whether the differences between
+  unequal values are zero. It applies to all of cases 1-3.
+</p>
+
+#CODE 909-uflow9
+
+#INCLUDE para_foot uflow8.html aaapara_toc.html uflow10.html

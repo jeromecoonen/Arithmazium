@@ -1,0 +1,77 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>Underflow</title>
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/paranoia/tiny_values_and_difference.html">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#fafafa'>
+  <link rel='stylesheet' href='../css/normalize.css'>
+  <link rel='stylesheet' href='../css/main.css'>
+  <link rel='stylesheet' href='../css/para.css'>
+  <link href='https://fonts.googleapis.com/css?family=Days One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans:wght@400;800' rel='stylesheet'>
+</head>
+<body>
+  <div>
+  <svg viewbox='0 0 1000 80' xmlns='http://www.w3.org/2000/svg'>
+  <a href='../index.html'>
+  <rect x=0 y=0 width=1000 height=80 class='arith-ban-box'/>
+  <text x=10 y=68 class='arith-ban-back'>
+  <tspan>11.001001000011111101101010100010001000</tspan>
+  </text>
+  <text x=60 y=55 class='arith-ban-front'>
+  <tspan>Arithmazium</tspan>
+  </text>
+  </a>
+  </svg>
+  </div>
+  <div class='next-prev'>
+  <a href='test_for_pseudo_zero.html' class='next round'>Next</a>
+  <a href='para_toc.html' class='tree round'>Home</a>
+  <a href='tiny_powers_of_B.html' class='previous round'>Previous</a>
+  </div>
+
+<h1>tiny_values_and_difference()</h1>
+
+<p>
+  This function explores tiny values with nonzero low-order digits, and it
+  looks at the differences between them. The loop has two layers, skipping over
+  the inner layer as soon as the difference between tiny values
+  fails the test
+</p>
+
+<pre><code>def tiny_values_and_difference(one_plus):
+    """Compute the tiniest values from a starting value with nonzero
+    low-order bits. This function is parallel to tiny_powers_of_B(),
+    but looks for nonzero differences of tiny values, which are
+    evidence of gradual underflow.
+
+    If multiplication is too inaccurate, raise an error and return default
+    values, shown in parens under Returns.
+
+    Args:
+        one_plus -- 1 plus enough ulps that they shouldn't be lost when
+            multiplied by a power of B
+</code></pre>
+
+<pre><code>if (tiny_delta + tiny_delta) &lt;= tiny_delta:</code></pre>
+
+<p>
+  which says <code>tiny_delta</code> has taken a nonzero and non-𝛜 value.
+  This indicates that there isome loss of information due to underflow.
+</p>
+
+<p>
+  While <code>too_tiny</code> is in the range of normal numbers,
+  <code>tinier</code> scales back to <code>tiny</code>
+  by <code>1/H</code> exactly.
+  The next diagram shows the situation in binary in the typical case
+  that multiplication is accurate enough that a single unit in the last place
+  will detect differences between two nearly similar values after scaling by
+  <code>1/H</code>.
+</p>
+

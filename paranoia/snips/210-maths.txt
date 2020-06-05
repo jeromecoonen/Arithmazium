@@ -1,0 +1,19 @@
+def FABS(x):
+    return math.fabs(x)
+
+def FLOOR(x):
+    return math.floor(x)
+
+def LOG(x):
+    return math.log(x)
+
+def POW(x,y):
+    return math.pow(x,y)
+
+def SQRT(x):
+    return math.sqrt(x)
+
+def Sign(x):
+    """+1.0 for a nonnegative argument, else -1.0"""
+    return 1.0 if x >= 0 else -1.0
+

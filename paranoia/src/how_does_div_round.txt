@@ -1,0 +1,66 @@
+#INCLUDE para_head how_does_mult_round.html aaapara_toc.html how_does_add_sub_round.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 370-how_does_div_round
+
+<p>
+Part 3
+</p>
+
+#CODE 372-how_does_div_round2
+
+<p>
+Part 4
+</p>
+
+#CODE 374-how_does_div_round4
+
+<p>
+Part 5
+</p>
+
+#CODE 376-how_does_div_round6
+
+<p>
+Part 6
+</p>
+
+#CODE 378-how_does_div_round8
+
+<p>
+Part 7
+</p>
+
+#CODE 380-how_does_div_round10
+
+<p>
+Part 8
+</p>
+
+#CODE 382-how_does_div_round12
+
+<p>
+Part 9
+</p>
+
+#CODE 384-how_does_div_round15
+
+<p>
+Part 10
+</p>
+
+#INCLUDE para_foot how_does_mult_round.html aaapara_toc.html how_does_add_sub_round.html
+

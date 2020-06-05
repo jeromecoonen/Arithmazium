@@ -1,0 +1,9 @@
+if (flags["mult_guard_digit"] and flags["div_guard_digit"]
+        and flags["add_sub_guard_digit"]
+        and flags["mult_rounding"] == "rounded"
+        and flags["div_rounding"] == "rounded"
+        and flags["add_sub_rounding"] == "rounded"
+        and FLOOR(B_OVER_TWO) == B_OVER_TWO):
+    print("Checking for sticky bit.")
+    set_sticky &= has_sticky_bit()
+flags["uses_sticky_bit"] = set_sticky

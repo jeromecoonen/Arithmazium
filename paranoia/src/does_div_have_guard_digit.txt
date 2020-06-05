@@ -1,0 +1,48 @@
+#INCLUDE para_head test_mult_low_digits.html aaapara_toc.html does_add_sub_have_guard_digit.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 335-does_div_have_guard_digit
+
+<p>
+Part 3
+</p>
+
+#CODE 337-does_div_have_guard_digit2
+
+<p>
+Part 4
+</p>
+
+#CODE 339-does_div_have_guard_digit3
+
+<p>
+Part 5
+</p>
+
+#CODE 341-does_div_have_guard_digit6
+
+<p>
+Part 6
+</p>
+
+#CODE 343-does_div_have_guard_digit7
+
+<p>
+Part 7
+</p>
+
+#INCLUDE para_foot test_mult_low_digits.html aaapara_toc.html does_add_sub_have_guard_digit.html
+

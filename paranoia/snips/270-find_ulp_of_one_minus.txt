@@ -1,0 +1,9 @@
+def find_ulp_of_one_minus(guess):
+    """Compute value by iterating down to a single ulp.
+
+    Args:
+        guess: default guess for 1 ulp of value just under 1
+
+    Returns:
+        the value u such at 1 - u is the next smaller value than 1
+    """

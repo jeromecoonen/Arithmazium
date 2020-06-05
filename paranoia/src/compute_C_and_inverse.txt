@@ -1,0 +1,42 @@
+#INCLUDE para_head compute_A_and_inverse.html aaapara_toc.html compute_SAFE_ULPS_OF_ONE.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 280-compute_C_and_inverse
+
+<p>
+Part 3
+</p>
+
+#CODE 282-compute_C_and_inverse2
+
+<p>
+Part 4
+</p>
+
+#CODE 283-compute_C_and_inverse3
+
+<p>
+Part 5
+</p>
+
+#CODE 284-compute_C_and_inverse4
+
+<p>
+Part 6
+</p>
+
+#INCLUDE para_foot compute_A_and_inverse.html aaapara_toc.html compute_SAFE_ULPS_OF_ONE.html
+

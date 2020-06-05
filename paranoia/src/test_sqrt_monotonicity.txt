@@ -1,0 +1,54 @@
+#INCLUDE para_head test_sqrt_int.html aaapara_toc.html update_sqrt_errors.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 435-test_sqrt_monotonicity
+
+<p>
+Part 3
+</p>
+
+#CODE 435a-test_sqrt_monotonicity2
+
+<p>
+Part 4
+</p>
+
+#CODE 435b-test_sqrt_monotonicity4
+
+<p>
+Part 5
+</p>
+
+#CODE 435c-test_sqrt_monotonicity6
+
+<p>
+Part 6
+</p>
+
+#CODE 435d-test_sqrt_monotonicity8
+
+<p>
+Part 7
+</p>
+
+#CODE 435e-test_sqrt_monotonicity10
+
+<p>
+Part 8
+</p>
+
+#INCLUDE para_foot test_sqrt_int.html aaapara_toc.html update_sqrt_errors.html
+

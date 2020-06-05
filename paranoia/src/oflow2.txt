@@ -1,0 +1,30 @@
+#INCLUDE para_head oflow1.html aaapara_toc.html oflow_comparisions.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 938-oflow2
+
+<p>
+Part 3
+</p>
+
+#CODE 934a-oflow1a
+
+<p>
+Part 4
+</p>
+
+#INCLUDE para_foot oflow1.html aaapara_toc.html oflow_comparisions.html
+

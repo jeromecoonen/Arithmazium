@@ -1,0 +1,21 @@
+#INCLUDE para_head uflow6.html aaapara_toc.html uflow8.html
+
+<h1>Case 4</h1>
+
+<p>
+  Paranoia in Python skips the cases and tests the values directly. Case 4
+  includes IEEE 754 arithmetic. In the elaborate compound test below, add_sub_hi
+  is the value below which precision degrades, so it must match the computed
+  underflow_threshold. Similarly, the tiniest difference should match the smallest
+  nonzero value detected. The key to the third expression is the ratio
+  add_sub_tiny / SAFE_ULPS_OF_ONE, which should match underflow_threshold.
+</p>
+
+<p>
+  <em>[QUESTION: Why isn’t that test for zero? Is this just a “tiny enough” idiom,
+  which is safer than testing for true zero?]</em>
+</p>
+
+#CODE 907-uflow7
+
+#INCLUDE para_foot uflow6.html aaapara_toc.html uflow8.html

@@ -1,0 +1,5 @@
+        elif ((x + ULP_OF_ONE_PLUS == ZERO) and (y < ZERO) and (z + ULP_OF_ONE_PLUS == ZERO)
+                and (t < ZERO) and (s1 + ULP_OF_ONE_PLUS == ZERO)
+                and (y1 < ONE_HALF)):
+                rmult = "chopped"
+                print("Multiplication appears to chop. ")

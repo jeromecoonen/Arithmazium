@@ -1,0 +1,19 @@
+milestone = 100   #==============================
+# Powers of B have been tested, sonext try a few primes.
+# The simpler loop skips the trick of stepping by 2 through the odd
+# numbers from 3, filtering the further multiples of 3.
+m = NUM_TRIALS
+for z in [3, 5, 7, 11, 13, 17, 19, 23]:
+    test_integer_powers(z, z, 1, m)
+if err_cnt > 0:
+    print("Errors like this may invalidate financial calculations")
+    print("\tinvolving interest rates.")
+
+print_if_err_cnt_positive()
+err_cnt += save_err_cnt
+if err_cnt == 0:
+    print("... no discrepancies found.")
+if err_cnt > 0:
+    pause()
+else:
+    print("")

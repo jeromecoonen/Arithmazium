@@ -1,0 +1,6 @@
+    y = ONE_MINUS_ULP / ONE
+    x = ONE_MINUS_ULP - ONE_HALF
+    y = (y - ONE_HALF) - x
+    x = ONE + ULP_OF_ONE_PLUS
+    t = x / ONE
+    x = t - x

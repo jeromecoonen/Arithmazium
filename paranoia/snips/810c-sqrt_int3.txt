@@ -1,0 +1,20 @@
+ulp = ULP_OF_ONE_PLUS
+x = ulp
+for (x, ulp) in [(ULP_OF_ONE_PLUS, ULP_OF_ONE_PLUS),
+                 (ULP_OF_ONE_PLUS
+                  * FLOOR(EIGHT / (NINE * SQRT(ULP_OF_ONE_PLUS))),
+                  ULP_OF_ONE_PLUS),
+                 (-ULP_OF_ONE_MINUS, ULP_OF_ONE_MINUS)]:
+    if verbose:
+        print("\t3-term sqrt loop: x = {:.17e} ulp = {:.17e}".format(x, ulp))
+    y = SQRT((x + ULP_OF_ONE_MINUS + x) + ONE_MINUS_ULP)
+    y = ((y - ULP_OF_ONE_PLUS) - ((ONE - ULP_OF_ONE_PLUS) + x)) / ulp
+    z = ((ULP_OF_ONE_MINUS - x) + ONE_MINUS_ULP) * ONE_HALF * x * x / ulp
+    down_err = (y + ONE_HALF) + z
+    up_err = (y - ONE_HALF) + z
+    update_sqrt_errors(down_err, up_err)
+if verbose:
+    print("\tAfter ulp of 1+ cases")
+    print("\t\tmin_sqrt_error = {:0.17e}".format(min_sqrt_error))
+    print("\t\tmax_sqrt_error = {:0.17e}".format(max_sqrt_error))
+

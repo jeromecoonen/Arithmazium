@@ -1,0 +1,145 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>Underflow</title>
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/paranoia/test_x_to_xp1_over_xm1.html">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#fafafa'>
+  <link rel='stylesheet' href='../css/normalize.css'>
+  <link rel='stylesheet' href='../css/main.css'>
+  <link rel='stylesheet' href='../css/para.css'>
+  <link href='https://fonts.googleapis.com/css?family=Days One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans:wght@400;800' rel='stylesheet'>
+</head>
+<body>
+  <div>
+  <svg viewbox='0 0 1000 80' xmlns='http://www.w3.org/2000/svg'>
+  <a href='../index.html'>
+  <rect x=0 y=0 width=1000 height=80 class='arith-ban-box'/>
+  <text x=10 y=68 class='arith-ban-back'>
+  <tspan>11.001001000011111101101010100010001000</tspan>
+  </text>
+  <text x=60 y=55 class='arith-ban-front'>
+  <tspan>Arithmazium</tspan>
+  </text>
+  </a>
+  </svg>
+  </div>
+  <div class='next-prev'>
+  <a href='e_squared.html' class='previous round'>Previous</a>
+  <a href='aaapara_toc.html' class='tree round'>Home</a>
+  <a href='extreme_z_to_q.html' class='next round'>Next</a>
+  </div>
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+<pre><code>def test_x_to_xp1_over_xm1(e2):
+    """ Compare x^(x+1)/(x-1) to exp(2) for x above and below 1.
+
+    Args:
+        e2 -- computed value of exp(2)
+    Basic 5360-5440
+    """
+    print("Testing x^((x + 1) / (x - 1)) vs. " +
+          "exp(2) = {:0.12f} as x -> 1.".format(exp2))
+          # BUG: x runs away from 1, perhaps "x near 1"?
+    # Run tests below 1, then above 1, with a start value
+    # and a next value one ulp away.
+    if verbose:
+        print("Looping on values just below and just above 1.")
+    for x, next_x in [(ONE_MINUS_ULP, ONE_MINUS_ULP - ULP_OF_ONE_MINUS),
+                 (ONE + ULP_OF_ONE_PLUS,
+                  ONE + ULP_OF_ONE_PLUS + ULP_OF_ONE_PLUS)]:
+</code></pre>
+
+<p>
+Part 3
+</p>
+
+<pre><code>        test_cnt = 1
+        while True:
+            z = x - ONE_OVER_B
+            z = (x + ONE) / (z - (ONE - ONE_OVER_B))
+            dev = POW(x, z) - exp2
+            if verbose:
+                print("\tx = {:.17f} z = {:.6e} deviation of".format(x, z)
+                      + " x^z = {:.3e}".format(dev))
+</code></pre>
+
+<p>
+Part 4
+</p>
+
+<pre><code>            if (FABS(dev) > TWOFORTY * ULP_OF_ONE_PLUS):
+                delta_x = (x - ONE_OVER_B) - (ONE - ONE_OVER_B)
+                bad_cond(err_defect, "Calculated")
+                print(" {:0.17e} for".format(POW(x,z)))
+                print("\t(1 + ({:0.17e}) ^ ({:0.17e});".format(delta_x, z))
+                print("\tdiffers from correct value by {:0.17e} ."
+                      .format(dev))
+                print("\tThis much error may spoil financial")
+                print("\tcalculations involving tiny interest rates.")
+                return
+</code></pre>
+
+<p>
+Part 5
+</p>
+
+<pre><code>            else:
+                # Jump by 1 ulp, then 2, then 4, etc.
+                z = (next_x - x) * TWO + next_x
+                x = next_x
+                next_x = z
+                z = ONE + (x - ONE_MINUS_ULP)*(x - ONE_MINUS_ULP)
+                # *** BUG: P has (z > ONE), which means test done once only.
+                # Keep testing until too close to 1 or count too big.
+                if (z <= ONE) and (test_cnt < NUM_TRIALS):
+                        test_cnt += 1
+                else:
+                    break
+    # BUG: removed unneeded error flag if N == 0:
+    print("Accuracy seems adequate.")
+    return
+
+</code></pre>
+
+<p>
+Part 6
+</p>
+
+<div class='next-prev'>
+<a href='e_squared.html' class='previous round'>Previous</a>
+<a href='aaapara_toc.html' class='tree round'>Home</a>
+<a href='extreme_z_to_q.html' class='next round'>Next</a>
+</div>
+<script src="js/vendor/jquery-3.5.1.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  lsga('create', 'UA-165469376-1', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+</<body>
+
+</html>
+

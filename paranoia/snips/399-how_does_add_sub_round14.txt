@@ -1,0 +1,4 @@
+    if round_add_sub == "other":  # pick up all the odd cases
+        print("Addition/Subtraction neither rounds nor chops.")
+    return round_add_sub
+

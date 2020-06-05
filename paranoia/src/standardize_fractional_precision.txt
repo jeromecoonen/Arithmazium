@@ -1,0 +1,30 @@
+#INCLUDE para_head compute_H_and_inverse.html aaapara_toc.html test_for_extra_precise_subepressions.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 295-standardize_fractional_precision
+
+<p>
+Part 3
+</p>
+
+#CODE 297-standardize_fractional_precision2
+
+<p>
+Part 4
+</p>
+
+#INCLUDE para_foot compute_H_and_inverse.html aaapara_toc.html test_for_extra_precise_subepressions.html
+

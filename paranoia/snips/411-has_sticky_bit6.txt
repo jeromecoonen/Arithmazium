@@ -1,0 +1,5 @@
+        if (z - t >= ULP_OF_ONE_PLUS) and (y - t == ZERO):
+            x = (ONE_HALF + ULP_OF_ONE_MINUS) * ULP_OF_ONE_MINUS
+            y = ONE_HALF * ULP_OF_ONE_MINUS
+            z = ONE - y
+            t = ONE - x

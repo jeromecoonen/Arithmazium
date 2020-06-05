@@ -1,0 +1,36 @@
+#INCLUDE para_head num_theory_sqrt_test.html aaapara_toc.html test_power_result.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 448-num_theory_sqrt_value
+
+<p>
+Part 3
+</p>
+
+#CODE 448a-num_theory_sqrt_value1
+
+<p>
+Part 4
+</p>
+
+#CODE 448b-num_theory_sqrt_value2
+
+<p>
+Part 5
+</p>
+
+#INCLUDE para_foot num_theory_sqrt_test.html aaapara_toc.html test_power_result.html
+

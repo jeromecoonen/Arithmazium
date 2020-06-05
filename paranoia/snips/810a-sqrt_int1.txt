@@ -1,0 +1,12 @@
+print("Test sqrt for accuracy.")
+# TODO: explain this bump - scaling?
+min_sqrt_error = min_sqrt_error + ONE_HALF
+max_sqrt_error = max_sqrt_error - ONE_HALF
+y = (SQRT(ONE + ULP_OF_ONE_PLUS) - ONE) / ULP_OF_ONE_PLUS
+up_err = (y - ONE) + ULP_OF_ONE_PLUS / EIGHT
+down_err = y + ULP_OF_ONE_PLUS / EIGHT
+update_sqrt_errors(down_err, up_err)
+if verbose:
+    print("\tAfter 1 + ulp test:")
+    print("\t\tmin_sqrt_error = {:0.17e}".format(min_sqrt_error))
+    print("\t\tmax_sqrt_error = {:0.17e}".format(max_sqrt_error))

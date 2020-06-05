@@ -1,0 +1,24 @@
+#INCLUDE para_head recalc_radix.html aaapara_toc.html cmp_ulps_of_one.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 742-recalc_radix2
+
+<p>
+Part 3
+</p>
+
+#INCLUDE para_foot recalc_radix.html aaapara_toc.html cmp_ulps_of_one.html
+

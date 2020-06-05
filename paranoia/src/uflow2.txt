@@ -1,0 +1,26 @@
+#INCLUDE para_head uflow1a.html aaapara_toc.html uflow3.html
+
+<h1>The underflow search values explained</ph1>
+
+<p>
+  The next big comment puts the two sets of tiny values in context. Paranoia
+  introduces the concept of pseudo zero, for values that compare unequal to zero
+  yet may behave like zero in some operations. The Control Data CDC 6000 series of
+  machines had such tiny, seemingly nonzero values that infallibly behaved like
+  zero in multiplication and division. They were encoded with the smallest
+  representable exponent – the same exponent as true zero – so the designers saved
+  a bit of hardware by simply treating all such numbers as zero during
+  multiplication and division. They behaved correctly in addition and subtraction.
+  This flaw lived on into Cray supercomputers, too.
+</p>
+
+<p>
+  <em>[Insert Jamie Sethian example. Ponder whether to libel Seymour Cray
+  here, evenœpolitely.]</em>
+</p>
+
+<p>After the comment, the call to <code>test_for_pseudo_zero()</code> is made strictly for the side effect.
+
+#CODE 902-uflow2
+
+#INCLUDE para_foot uflow1a.html aaapara_toc.html uflow3.html

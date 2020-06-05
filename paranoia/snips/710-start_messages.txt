@@ -1,0 +1,9 @@
+milestone = 0   #==============================
+instructions()
+pause()
+heading()
+pause()
+characteristics()
+pause()
+history()
+pause()

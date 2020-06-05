@@ -1,0 +1,24 @@
+#INCLUDE para_head radix.html aaapara_toc.html recalc_radix.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 735-precision
+
+<p>
+Part 3
+</p>
+
+#INCLUDE para_foot radix.html aaapara_toc.html recalc_radix.html
+

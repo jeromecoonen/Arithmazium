@@ -1,0 +1,6 @@
+def has_sticky_bit():
+    """Create a rounding situation designed to require a sticky bit.
+
+    Returns:
+        True if sticky detected, False otherwise
+    """

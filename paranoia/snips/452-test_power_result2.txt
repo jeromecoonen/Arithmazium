@@ -1,0 +1,13 @@
+        if err_cnt <= 0:
+            if z == ZERO and q <= ZERO:
+                print("WARNING:  computing")
+            else:
+                bad_cond(err_defect, "computing")
+            print("\t({:0.17e}) ^ ({:0.17e})".format(z, q))
+            print("\tyielded {:0.17e};\n".format(y))
+            print("\twhich compared unequal to correct {:0.17e} ;"
+                  .format(x))
+            print("\t\tthey differ by {:0.17e} .".format(y - x))
+        err_cnt += 1   # ... count discrepancies.
+    return
+

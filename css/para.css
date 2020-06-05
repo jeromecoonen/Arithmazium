@@ -1,33 +1,55 @@
 /* para.css -- style for the paranoia section */
 
+h1 {
+  margin-top: .5em
+}
+
 /* suppress underscore for outline elements */
 a.toc-link {
   text-decoration-line: none;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
+  font-family: "Trebuchet", sans-serif;
+  font-weight: normal;
+  font-size: small;
 }
 
-p {
-  /* default margin: t-1 r-0 b-1 l-0 */
+a.toc-link {
+  color: black;
+}
+
+a.toc-link.to-do {
+  color: red;
+}
+
+a.toc-link.wip {
+  color: green;
+}
+
+a.toc-link:hover {
+  text-decoration-line: underline;
+  background-color: transparent;
+  color: blue;
 }
 
 /* for indenting text outline elemets */
+/* default margin: t-1 r-0 b-1 l-0 */
+p.el1,
+p.el2,
+p.el3,
+p.el4 {
+  line-height: 1.0;
+}
 p.el1 {
   margin: 0 0 -.5em 0;
-  /*font-family: "Days One", Arial, sans-serif;*/
 }
 
 p.el2 {
   margin: 0 0 -.5em 2em;
-  /*font-family: "Days One", Arial, sans-serif;*/
 }
 
 p.el3 {
   margin: 0 0 -.5em 4em;
-  font-family: "Days One", Arial, sans-serif;
 }
 
 p.el4 {
-  margin-left: 9em;
-  font-family: "Days One", Arial, sans-serif;
+  margin-left: 6em;
 }

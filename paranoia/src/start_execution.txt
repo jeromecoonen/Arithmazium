@@ -1,0 +1,30 @@
+#INCLUDE para_head test_div_by_zero.html aaapara_toc.html start_messages.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 700-start_execution
+
+<p>
+Part 3
+</p>
+
+#CODE 705-init_counters
+
+<p>
+Part 4
+</p>
+
+#INCLUDE para_foot test_div_by_zero.html aaapara_toc.html start_messages.html
+

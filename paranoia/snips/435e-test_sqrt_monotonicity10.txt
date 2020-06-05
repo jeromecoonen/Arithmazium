@@ -1,0 +1,6 @@
+    if monot:
+        print("sqrt has passed a test for Monotonicity.")
+    else:
+        bad_cond(err_defect, "")
+        print("sqrt(x) is non-monotonic for x near {:0.7e} .".format(y))
+

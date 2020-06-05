@@ -1,0 +1,24 @@
+#INCLUDE para_head trap_overflow_threshold.html aaapara_toc.html test_sqrt_big.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 572-test_sqrt_tiny
+
+<p>
+Part 3
+</p>
+
+#INCLUDE para_foot trap_overflow_threshold.html aaapara_toc.html test_sqrt_big.html
+

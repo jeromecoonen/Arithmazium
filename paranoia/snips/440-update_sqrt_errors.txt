@@ -1,0 +1,9 @@
+def update_sqrt_errors(down, up):
+    """Update the sqrt global min and max errors."""
+    global min_sqrt_error, max_sqrt_error
+    if up > max_sqrt_error:
+        max_sqrt_error = up
+    if down < min_sqrt_error:
+        min_sqrt_error = down
+    return
+

@@ -30,9 +30,9 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='test_for_pseudo_zero.html' class='next round'>Next</a>
-  <a href='para_toc.html' class='tree round'>Home</a>
   <a href='tiny_powers_of_B.html' class='previous round'>Previous</a>
+  <a href='aaapara_toc.html' class='tree round'>Home</a>
+  <a href='test_for_pseudo_zero.html' class='next round'>Next</a>
   </div>
 
 <h1>tiny_values_and_difference()</h1>
@@ -113,9 +113,9 @@
     # 1 + SAFE_ULPS_OF_ONE should be enough ulps of 1 that d > C.
     if d <= C:
         # But if not, we punt with default values.
-        BadCond(err_failure,
+        bad_cond(err_failure,
                 "multiplication gets too many last digits wrong.")
-        Pause()
+        pause()
         return 0, tiny_B, too_tiny_B, tiny_B, 0, 0, 0
 </code></pre>
 
@@ -143,8 +143,9 @@
             # except that the launch point is C*s with nonzero low-order
             # bits, versus C, which is just a power of the radix.
             if (tiny_delta + tiny_delta) <= tiny_delta:
-                print("***Uflow loop -- within if: tinier = {:.7e}"
-                      .format(tinier))
+                if ultra_verbose:
+                    print("\tUnderflow loop: within if, tinier = {:.7e}"
+                          .format(tinier))
                 save_tiny2 = tinier * ONE_OVER_H
                 tiny_delta = FABS(tiny - save_tiny2)   # may underflow to 0
                 save_tiny1 = tiny
@@ -156,7 +157,8 @@
             # emphasizes that only nonzero values of tinier qualify for
             # values degraded by underflow.
             too_tiny = too_tiny * H
-            print("***Uflow loop -- new too_tiny = {:.7e}".format(too_tiny))
+            if ultra_verbose:
+                print("\tUnderflow loop: too_tiny = {:.7e}".format(too_tiny))
             if ((tinier <= too_tiny)
                     or (too_tiny + too_tiny <= too_tiny)): break
         return (tiny, tinier, too_tiny, u_threshold,
@@ -166,10 +168,11 @@
 </code></pre>
 
 <div class='next-prev'>
-<a href='test_for_pseudo_zero.html' class='next round'>Next</a>
-<a href='para_toc.html' class='tree round'>Home</a>
 <a href='tiny_powers_of_B.html' class='previous round'>Previous</a>
+<a href='aaapara_toc.html' class='tree round'>Home</a>
+<a href='test_for_pseudo_zero.html' class='next round'>Next</a>
 </div>
+<script src="js/vendor/jquery-3.5.1.min.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 

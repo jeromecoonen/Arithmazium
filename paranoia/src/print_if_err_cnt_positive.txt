@@ -1,0 +1,24 @@
+#INCLUDE para_head rand_frac.html aaapara_toc.html find_big_two_to_the_nth.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 240-print_if_err_cnt_positive
+
+<p>
+Part 3
+</p>
+
+#INCLUDE para_foot rand_frac.html aaapara_toc.html find_big_two_to_the_nth.html
+

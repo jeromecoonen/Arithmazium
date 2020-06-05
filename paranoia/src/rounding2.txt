@@ -1,0 +1,24 @@
+#INCLUDE para_head rounding.html aaapara_toc.html rounding3.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 777-rounding2
+
+<p>
+Part 3
+</p>
+
+#INCLUDE para_foot rounding.html aaapara_toc.html rounding3.html
+

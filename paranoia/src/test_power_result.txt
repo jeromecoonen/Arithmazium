@@ -1,0 +1,30 @@
+#INCLUDE para_head num_theory_sqrt_value.html aaapara_toc.html test_integer_powers.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 450-test_power_result
+
+<p>
+Part 3
+</p>
+
+#CODE 452-test_power_result2
+
+<p>
+Part 4
+</p>
+
+#INCLUDE para_foot num_theory_sqrt_value.html aaapara_toc.html test_integer_powers.html
+

@@ -1,0 +1,42 @@
+#INCLUDE para_head test_for_narrow_range.html aaapara_toc.html test_for_pseudo_zero.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 536-test_extreme_underflow
+
+<p>
+Part 3
+</p>
+
+#CODE 537-test_extreme_underflow2
+
+<p>
+Part 4
+</p>
+
+#CODE 538-test_extreme_underflow3
+
+<p>
+Part 5
+</p>
+
+#CODE 539-test_extreme_underflow4
+
+<p>
+Part 6
+</p>
+
+#INCLUDE para_foot test_for_narrow_range.html aaapara_toc.html test_for_pseudo_zero.html
+

@@ -1,0 +1,7 @@
+        x = (ONE_HALF + ULP_OF_ONE_PLUS) * ULP_OF_ONE_MINUS
+        y = (ONE_HALF - ULP_OF_ONE_PLUS) * ULP_OF_ONE_MINUS
+        x = ONE - x
+        y = ONE - y
+        x = ONE_MINUS_ULP - x
+        y = ONE - y
+        if (x != ZERO) or (y != ZERO): break

@@ -1,0 +1,2 @@
+test_cond(err_failure, ONE_OVER_B * B - ONE_HALF == ONE_HALF,
+       "B * ( 1 / B ) differs from 1")

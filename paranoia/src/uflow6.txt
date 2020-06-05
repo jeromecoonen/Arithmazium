@@ -1,0 +1,25 @@
+#INCLUDE para_head uflow5.html aaapara_toc.html uflow7.html
+
+<h1>The triage of underflow cases</h1>
+
+<p>
+  The next comment explains the division into
+  four classes of arithmetic, relative
+  to underflow.
+  Value add_sub_tiny is nonzero when the arithmetic supports tiny,
+  usually unnormalized, values.
+  This is the case in arithmetic compliant with IEEE
+  754. Value underflow_threshold is set thus far by the call to
+  tiny_values_and_difference(). It is zero if the arithmetic flushes underflowed
+  values to zero, so Paranoia will set it as needed. It is nonzero when the
+  arithmetic has a well-defined, usually normalized, value below which the
+  arithmetic degrades to nonzero values, with some loss of precision.
+</p>
+
+<p>
+  <em>[TODO: give examples of all four.]</em>
+</p>
+
+#CODE 906-uflow6
+
+#INCLUDE para_foot uflow5.html aaapara_toc.html uflow7.html

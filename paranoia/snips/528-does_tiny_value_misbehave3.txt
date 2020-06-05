@@ -1,0 +1,26 @@
+    r1 = z * ONE
+    r2 = ONE * z
+    r3 = z / ONE
+    if (z == r1) and (z == r2) and (z == r3):
+        if reply:
+            pause()
+    else:
+        reply = True
+        bad_cond(err_defect, "What prints as z = ", end="")
+        print("{:0.17e}\n\tcompares different from  ".format(z))
+        if z != r1:
+            print("z * 1 = {:0.17e} ".format(r1))
+        if (z != r2) and (r2 != r1):
+            print("1 * z == {:0.17e}".format(r2))
+        if z != r3:
+            print("z / 1 = {:0.17e}".format(r3))
+        if r2 != r1:
+            error_count[err_defect] = error_count[err_defect] + 1
+            bad_cond(err_defect, "Multiplication does not commute!\n")
+            print("\tComparison alleges that 1 * z = {:0.17e}"
+                  .format(r2))
+            print("\tdiffers from z * 1 = {:0.17e}".format(r1))
+        pause()
+    return reply
+
+

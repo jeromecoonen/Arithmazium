@@ -1,0 +1,2 @@
+test_cond(err_serious, ULP_OF_ONE_PLUS * NINE * NINE * TWOFORTY < ONE,
+       "PRECISION worse than 5 decimal figures  ")

@@ -176,8 +176,8 @@ a {
 
 a:hover {
   background-color: #ddd;
-  color: black;
-}
+  text-decoration: underline;
+
 .tree,
 .next,
 .previous {

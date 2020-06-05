@@ -1,0 +1,20 @@
+def test_unit_ratios(tlist):
+    """Try x/x for interesting values."""
+    for x in tlist:
+        y = x
+        # Beware values near over/underflow thresholds.
+        try:
+            diff = (y / x - ONE_HALF) - ONE_HALF
+        except ZeroDivisionError:
+            print("  x / x  traps when x = {:g}", x)
+
+        if diff != ZERO:
+            if diff == (-ULP_OF_ONE_MINUS and
+                        (FABS(x) < 1 or FABS(x) > B)):
+                bad_cond(err_flaw, "")
+            else:
+                bad_cond(err_serious, "")
+            print("  x / x differs from 1 when x = {:0.17e}", x)
+            print("  instead, x / x - 1/2 - 1/2 = {:0.17e} .", diff)
+    return
+

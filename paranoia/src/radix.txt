@@ -1,0 +1,24 @@
+#INCLUDE para_head med_ints.html aaapara_toc.html precision.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 730-radix
+
+<p>
+Part 3
+</p>
+
+#INCLUDE para_foot med_ints.html aaapara_toc.html precision.html
+

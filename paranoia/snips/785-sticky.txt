@@ -1,0 +1,3 @@
+# The boolean set_sticky is used to indicate the presence of a sticky bit
+# below. It is cleared if the first simple test fails.
+set_sticky = rounding_symmetry_test()

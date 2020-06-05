@@ -1,0 +1,18 @@
+    oflo = -less_big   # default start
+    pos_big = -big
+    y = less_big * (ONE_OVER_H * ULP_OF_ONE_PLUS - ONE_OVER_H)
+    z = y + ((ONE - ONE_OVER_H) * ULP_OF_ONE_PLUS) * less_big
+    if z < pos_big:
+        oflo = z
+        if verbose:
+            print("Try full-precision overflow threshold.")
+    elif y < pos_big:
+        oflo = y
+        if verbose:
+            print("Try reduced precision overflow threshold.")
+    if pos_big - oflo < pos_big:
+        oflo = pos_big
+        if verbose:
+            print("Finite saturating power of B overflow threshold.")
+    return oflo
+

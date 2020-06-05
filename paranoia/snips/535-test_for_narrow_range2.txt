@@ -1,0 +1,16 @@
+    y2 = ULP_OF_ONE_MINUS * ULP_OF_ONE_MINUS
+    y = y2 * y2
+    y2 = y * ULP_OF_ONE_MINUS
+    if y2 <= underflow_threshold:
+        # ***ISSUE: Should this be > underflow_threshold, given message?
+        if y > min_positive:
+            bad_cond(err_defect, "")
+            i = 5
+        else:
+            bad_cond(err_serious, "")
+            i = 4
+        print("Range is too narrow; ULP_OF_ONE_MINUS^{:d} Underflows."
+              .format(i))
+    return
+
+

@@ -1,0 +1,9 @@
+milestone = 170   #==============================
+if not (-overflow_threshold < overflow_threshold and
+        -pos_big_B < pos_big_B and
+        -underflow_threshold < overflow_threshold and
+        underflow_threshold < overflow_threshold):
+    bad_cond(err_failure, "Comparisons involving ")
+    print("+-{:.6e}, +-{:.6e}\nand +-{:.6e} are confused by Overflow."
+          .format(overflow_threshold, pos_big_B, underflow_threshold))
+

@@ -1,0 +1,11 @@
+    doit = True
+    while doit:
+        u = x
+        y = ONE_HALF * u + THIRTY_TWO * u * u
+        y = ONE_HALF - y
+        x = ONE_HALF + y
+        y = ONE_HALF - x
+        x = ONE_HALF + y
+        doit = (u > x) and (x > ZERO)
+    return u
+

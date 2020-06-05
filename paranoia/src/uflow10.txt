@@ -1,0 +1,22 @@
+#INCLUDE para_head uflow9.html aaapara_toc.html exp2.html
+
+<h1>>
+
+<p>
+  The underflow analysis closes with a message about the underflow threshold and
+  two final tests. Paranoia looks for an exponent range that’s too narrow relative
+  to the precision, and tries to compute a value way below the underflow
+  threshold.
+</p>
+
+#CODE 910-uflow10
+
+<p>
+  The next sections discuss the utility functions that support the underflow
+  exploration. Much of this logic is in-line in the Basic code,
+  often very tersely
+  so, but the program is more malleable and readable when
+  discussed in natural blocks.
+</p>
+
+#INCLUDE para_foot uflow9.html aaapara_toc.html exp2.html

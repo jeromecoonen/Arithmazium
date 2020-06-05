@@ -1,0 +1,4 @@
+            elif i <= 0:
+                y = q
+                x = y - ULP_OF_ONE_PLUS
+                z = y + ULP_OF_ONE_PLUS

@@ -1,0 +1,14 @@
+BIG_B_NTH = ONE / ULP_OF_ONE_MINUS
+ONE_MINUS_ULP = (ONE_HALF - ULP_OF_ONE_MINUS) + ONE_HALF
+save_b = B
+B = FLOOR(0.01 + ULP_OF_ONE_PLUS / ULP_OF_ONE_MINUS)
+B_OVER_TWO = B / TWO
+ONE_OVER_B = ONE / B
+if (B == save_b):
+    print("B confirmed.")
+else:
+    print("MYSTERY: recalculated B = {:0.7e} .".format(B))
+test_cond(err_defect, B <= EIGHT + EIGHT,
+       "B is too big: roundoff problems")
+test_cond(err_flaw, (B == TWO) or (B == 10)
+       or (B == ONE), "B is not as good as 2 or 10")

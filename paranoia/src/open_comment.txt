@@ -1,0 +1,24 @@
+#INCLUDE para_head token_header_file.html aaapara_toc.html initializations.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 095-open_comment
+
+<p>
+Part 3
+</p>
+
+#INCLUDE para_foot token_header_file.html aaapara_toc.html initializations.html
+

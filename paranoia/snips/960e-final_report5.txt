@@ -1,0 +1,5 @@
+if fpecount:
+    print("\nA total of {:d} floating point exceptions were registered."
+          .format(fpecount))
+print("END OF TEST.")
+exit(0)

@@ -1,0 +1,10 @@
+    # (4/3 -1) - 1/4 = 1/12 with rounding error in values bigger than 1.
+    # 3 * rounded value - 1/4 should be some rounding error in 1+.
+    # z2 should be an ulp of 1+, unless the computation of x below enjoys
+    # extra precision, allowing it to be even smaller.
+    x = FABS(((FOUR / THREE - ONE) - ONE / FOUR) * THREE - ONE / FOUR)
+    doit = True
+    while doit:
+        z2 = x
+        x = (ONE + (ONE_HALF * z2 + THIRTY_TWO * z2 * z2)) - ONE
+        doit =  (z2 > x) and (x > ZERO)

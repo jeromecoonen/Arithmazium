@@ -1,0 +1,10 @@
+        y = y + TWO
+        x = x + EIGHT
+        y2 = y2 + x
+        if y2 >= FourD:
+            y2 = y2 - FourD
+        if debug:
+            print("\t\t\tloop x = {:.6e} x1 = {:.6e}".format(x, x1))
+            print("\t\t\t     y = {:.6e} y1 = {:.6e} y2 = {:.6e}".format(y, y1, y2))
+            print("\t\t\t     z = {:.6e} z1 = {:.6e} z2 = {:.6e}".format(z, z1, z2))
+        if y >= D: break

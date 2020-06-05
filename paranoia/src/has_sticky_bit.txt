@@ -1,0 +1,66 @@
+#INCLUDE para_head rounding_symmetry_test.html aaapara_toc.html test_mult_commutivity.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 405-has_sticky_bit
+
+<p>
+Part 3
+</p>
+
+#CODE 407-has_sticky_bit2
+
+<p>
+Part 4
+</p>
+
+#CODE 409-has_sticky_bit4
+
+<p>
+Part 5
+</p>
+
+#CODE 411-has_sticky_bit6
+
+<p>
+Part 6
+</p>
+
+#CODE 413-has_sticky_bit8
+
+<p>
+Part 7
+</p>
+
+#CODE 415-has_sticky_bit10
+
+<p>
+Part 8
+</p>
+
+#CODE 417-has_sticky_bit12
+
+<p>
+Part 9
+</p>
+
+#CODE 419-has_sticky_bit14
+
+<p>
+Part 10
+</p>
+
+#INCLUDE para_foot rounding_symmetry_test.html aaapara_toc.html test_mult_commutivity.html
+

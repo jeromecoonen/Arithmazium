@@ -1,0 +1,66 @@
+#INCLUDE para_head how_does_div_round.html aaapara_toc.html rounding_symmetry_test.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 385-how_does_add_sub_round
+
+<p>
+Part 3
+</p>
+
+#CODE 387-how_does_add_sub_round2
+
+<p>
+Part 4
+</p>
+
+#CODE 389-how_does_add_sub_round4
+
+<p>
+Part 5
+</p>
+
+#CODE 391-how_does_add_sub_round6
+
+<p>
+Part 6
+</p>
+
+#CODE 393-how_does_add_sub_round8
+
+<p>
+Part 7
+</p>
+
+#CODE 395-how_does_add_sub_round10
+
+<p>
+Part 8
+</p>
+
+#CODE 397-how_does_add_sub_round12
+
+<p>
+Part 9
+</p>
+
+#CODE 399-how_does_add_sub_round14
+
+<p>
+Part 10
+</p>
+
+#INCLUDE para_foot how_does_div_round.html aaapara_toc.html rounding_symmetry_test.html
+

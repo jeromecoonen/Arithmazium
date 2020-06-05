@@ -1,0 +1,34 @@
+#INCLUDE para_head 540test_for_pseudo_zero.html para_toc.html 580test_x_to_xp1_over_xm1.html
+
+<p>Automatically generated file: 570e_squared.txt</p>
+
+<p>
+Part 1
+
+</p>
+<img src="img/tiny_B_a.svg" alt="Filler image" title="Needs">
+
+#CODE 570e_squared
+
+<p>
+Part 2
+
+</p>
+#CODE 572e_squared2
+
+<p>
+Part 3
+
+</p>
+#CODE 574e_squared3
+
+<p>
+Part 4
+
+</p>
+#INCLUDE para_foot 540test_for_pseudo_zero.html para_toc.html 580test_x_to_xp1_over_xm1.html
+
+<p>
+Part 5
+
+</p>

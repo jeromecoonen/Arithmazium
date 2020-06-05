@@ -1,0 +1,4 @@
+        elif ((x < ZERO) and (y < ZERO) and (z < ZERO) and (t < ZERO)
+              and (y2 < ZERO) and (y1 - ONE_HALF < ONE_MINUS_ULP - ONE_HALF)):
+            rdiv = "chopped"
+            print("Division appears to chop. ")

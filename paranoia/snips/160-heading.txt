@@ -1,0 +1,18 @@
+def heading():
+    """Gives user a place to report issues."""
+    head = [
+        "Users are invited to help debug and augment this program so it will",
+        "cope with unanticipated and newly uncovered arithmetic pathologies.\n",
+        "Please send suggestions and interesting results to",
+        "\tJerome Coonen",
+        "\tjcoonen@gmail.com\n",
+        "In doing so, please include the following information:",
+        "\tPrecision:\tdouble;",
+        "\tVersion:\t10.py February 2020;",
+        "\tComputer:",
+        "\tCompiler:",
+        "\tOptimization level:",
+        "\tOther relevant compiler options:"
+    ]
+    print_msgs(head)
+

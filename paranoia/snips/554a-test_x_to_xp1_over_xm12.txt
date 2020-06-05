@@ -1,0 +1,8 @@
+        test_cnt = 1
+        while True:
+            z = x - ONE_OVER_B
+            z = (x + ONE) / (z - (ONE - ONE_OVER_B))
+            dev = POW(x, z) - exp2
+            if verbose:
+                print("\tx = {:.17f} z = {:.6e} deviation of".format(x, z)
+                      + " x^z = {:.3e}".format(dev))

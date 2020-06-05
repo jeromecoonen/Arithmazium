@@ -1,0 +1,10 @@
+    print("Since underflow occurs below the threshold")
+    print("threshold = ({:0.17e}) ^ ({:0.17e})\nonly underflow "
+          .format(ONE_OVER_H, y), end="")
+    print("should afflict the expression\n\t({:0.17e}) ^ ({:0.17e});"
+          .format(ONE_OVER_H, y2))
+    print("actually calculating yields:", end="")
+    # Python has no underflow exception, so no try/except here.
+    ultra = POW(ONE_OVER_H, y2)
+    # Can't happen -- bad_cond(err_serious, " trap on underflow.\n")
+    print(" {:0.17e} .".format(ultra))

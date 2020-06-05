@@ -1,0 +1,24 @@
+#INCLUDE para_head instructions.html aaapara_toc.html charcteristics.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 160-heading
+
+<p>
+Part 3
+</p>
+
+#INCLUDE para_foot instructions.html aaapara_toc.html charcteristics.html
+

@@ -1,0 +1,6 @@
+def how_does_mult_round():
+    """Check type of rounding in multiplication.
+
+    Returns:
+        "rounded", "chopped", "other"
+    """

@@ -1,0 +1,7 @@
+print("Recalculating radix and precision")
+ULP_OF_ONE_PLUS = find_ulp_of_one_plus(guess_ulp_of_one_plus)
+ULP_OF_ONE_MINUS = find_ulp_of_one_minus(guess_ulp_of_one_minus)
+if (ULP_OF_ONE_MINUS == guess_ulp_of_one_minus):
+    print("confirms closest relative separation ULP_OF_ONE_MINUS ")
+else:
+    print("gets better closest relative separation ULP_OF_ONE_MINUS = {:0.7e} .".format(ULP_OF_ONE_MINUS))

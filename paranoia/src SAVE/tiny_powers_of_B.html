@@ -1,0 +1,72 @@
+#INCLUDE para_head uflow_stem.html para_toc.html tiny_values_and_difference.html
+
+<p>
+  The Python comments this walk toward the underflow threshold and,
+  ultimately, to zero by factors of the radix. The result is a triple – small,
+  smaller, smallest – which
+  reflects how murky matters can be for tiny numbers. These are all simple
+  powers of the radix, so their trailing digits are all zero.
+</p>
+
+#CODE 520tiny_powers_of_B
+
+<p>
+  The diagram below captures the action in binary as <code>tiny</code>
+  reaches the smallest
+  normal number. It’s the value with full precision
+  that has the smallest representable
+  exponent. Value <code>z</code>, which is half that,
+  is exactly representable as a subnormal
+  on an IEEE 754 system. On most other machines, <code>z</code> flushes
+  to zero, terminating
+  the loop.
+</p>
+
+<p>
+<img src="img/tiny_B_a.svg"
+    alt="Tiny powers of the radix" title="Google drawing">
+</p>
+
+<p>
+  With subnormal numbers, <code>tiny</code>
+  reaches the tiniest representable
+  value, as <code>z</code> underflows to zero.
+  It is the first inexact result returned. Can
+  you see that decimal arithmetic compatible with
+  IEEE 754 2019 would behave the
+  same way, with division by 10 at each step?
+</p>
+
+<p>
+<img src="img/tiny_B_b.svg"
+    alt="Tiny powers of the radix" title="Google drawing">
+</p>
+
+<p>
+  The termination criterion
+</p>
+
+<pre><code>if (tiny_delta <= z) or (z + z <= z):</code></pre>
+
+<p>
+  detects several conditions:
+  <ul>
+    <li><code>z</code> pins at a tiny nonzero number,
+      never underflowing to zero</li>
+    <li><code>z</code> reaches zero</li>
+    <li><code>z</code> underflows to a nonzero <em>epsilon</em> value,
+      named for the Greek letter &epsilon;;
+      epsilons are featured in a section of their own
+  </ul>
+</p>
+
+<p><em>
+  [Epsilons are introduced elsewhere.
+  <br>
+  SUGGESTION: Add a <code>verbose</code> flag to the code, controlling extra output,
+  such as is given here. Such additions to original Paranoia output are marked
+  by “***”.  The original code reflected the era, restricting output to 80
+  columns by 24 rows, enabling users to take screen shots.]
+</em></p>
+
+#CODE 521tiny_powers_of_B2

@@ -1,0 +1,19 @@
+#INCLUDE para_head uflow7.html aaapara_toc.html uflow9.html
+
+<h1>Cases 3 and 2</h1>
+
+<p>
+  Case 3 falls through without comment to a final test. Its nonzero
+  underflow_threshold indicates that it underflows to nonzero values, but the
+  arithmetic is unable to represent the differences, so add_sub_hi is zero.
+</p>
+
+<p>
+  Case 2 is anomalous, as the messages indicate, because very tiny values compare
+  equal yet don’t subtract to zero. Value underflow_threshold is set to a tiny
+  value known to behave well and below which the arithmetic misbehaves.
+</p>
+
+#CODE 908-uflow8
+
+#INCLUDE para_foot uflow7.html aaapara_toc.html uflow9.html

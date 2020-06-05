@@ -1,0 +1,40 @@
+#INCLUDE para_head 570e_squared.html para_toc.html 590extreme_z_to_q.html
+
+<p>Automatically generated file: 580test_x_to_xp1_over_xm1.txt</p>
+
+<p>
+Part 1
+
+</p>
+<img src="img/tiny_B_a.svg" alt="Filler image" title="Needs">
+
+#CODE 580test_x_to_xp1_over_xm1
+
+<p>
+Part 2
+
+</p>
+#CODE 582test_x_to_xp1_over_xm12
+
+<p>
+Part 3
+
+</p>
+#CODE 583test_x_to_xp1_over_xm13
+
+<p>
+Part 4
+
+</p>
+#CODE 584test_x_to_xp1_over_xm14
+
+<p>
+Part 5
+
+</p>
+#INCLUDE para_foot 570e_squared.html para_toc.html 590extreme_z_to_q.html
+
+<p>
+Part 6
+
+</p>

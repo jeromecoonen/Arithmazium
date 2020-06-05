@@ -1,0 +1,18 @@
+"""START PARANOIA EXECUTION"""
+verbose |= ultra_verbose   # if it's ultra, it's verbose!
+# Small floating point constants.
+# First two assignments use coerced integer right - hand sides.
+ZERO = float(0)
+ONE = float(1)
+TWO = ONE + ONE
+THREE = TWO + ONE
+FOUR = THREE + ONE
+FIVE = FOUR + ONE
+EIGHT = FOUR + FOUR
+NINE = THREE * THREE
+TWENTY_SEVEN = NINE * THREE
+THIRTY_TWO = FOUR * EIGHT
+TWOFORTY = FOUR * FIVE * THREE * FOUR
+MINUS_ONE = -ONE
+ONE_HALF = ONE / TWO
+ONE_AND_HALF = ONE + ONE_HALF

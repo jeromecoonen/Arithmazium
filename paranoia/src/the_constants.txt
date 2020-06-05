@@ -1,0 +1,24 @@
+#INCLUDE para_head cmp_ulps_of_one.html aaapara_toc.html frac_prec.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 750-the_constants
+
+<p>
+Part 3
+</p>
+
+#INCLUDE para_foot cmp_ulps_of_one.html aaapara_toc.html frac_prec.html
+

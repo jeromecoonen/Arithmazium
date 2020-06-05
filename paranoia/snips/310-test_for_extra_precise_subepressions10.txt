@@ -1,0 +1,6 @@
+    elif (z1 != ULP_OF_ONE_MINUS) or (z2 != ULP_OF_ONE_PLUS):
+        if (z1 >= ULP_OF_ONE_MINUS) or (z2 >= ULP_OF_ONE_PLUS):
+            bad_cond(err_failure, "")
+            notify("PRECISION")
+            print("\tULP_OF_ONE_MINUS = {:0.7e}, z1 - ULP_OF_ONE_MINUS = {:0.7e}".format(ULP_OF_ONE_MINUS,z1-ULP_OF_ONE_MINUS))
+            print("\tULP_OF_ONE_PLUS = {:0.7e}, z2 - ULP_OF_ONE_PLUS = {:0.7e}".format(ULP_OF_ONE_PLUS,z2-ULP_OF_ONE_PLUS))

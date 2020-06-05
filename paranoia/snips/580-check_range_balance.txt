@@ -1,0 +1,17 @@
+def check_range_balance():
+    """Check balnce of overflow and underflow thresholds."""
+    x = underflow_threshold * overflow_threshold
+    y = B * B
+    if verbose:
+        print("\tThe product of the overflow and"
+              + "underflow thresholds is {:.4e}".format(x))
+    if x * y < ONE or x > y:
+        if x * y < ULP_OF_ONE_MINUS or x > y / ULP_OF_ONE_MINUS:
+            bad_cond(err_defect, "Badly")
+        else:
+            bad_cond(err_flaw, "")
+        print((" unbalanced range; underflow_threshold * overflow_threshold"
+               + "= {:0.17e}\n\tis too far from 1.").format(x))
+    return
+
+

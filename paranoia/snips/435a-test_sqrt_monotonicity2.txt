@@ -1,0 +1,7 @@
+    while not (not_monot or monot):
+        i = i + 1
+        x = SQRT(x)
+        q = SQRT(y)
+        z = SQRT(z)
+        if (x > q) or (q > z):
+            not_monot = True

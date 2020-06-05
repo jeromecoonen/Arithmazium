@@ -1,0 +1,8 @@
+    elif error_count[err_failure] or error_count[err_serious]:
+        print("The arithmetic diagnosed has", end="")
+        print(" unacceptable Serious Defects.")
+
+    if error_count[err_failure]:
+        print("Potentially fatal FAILURE may have spoiled this", end="")
+        print(" program's subsequent diagnoses.")
+

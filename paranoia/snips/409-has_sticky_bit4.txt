@@ -1,0 +1,3 @@
+    if (z - ONE <= ZERO) and (t - ONE >= ULP_OF_ONE_PLUS):
+        z = t + y
+        y = z - x

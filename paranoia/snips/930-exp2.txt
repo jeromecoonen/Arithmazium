@@ -1,0 +1,6 @@
+milestone = 140   #==============================
+print("")
+# ...calculate exp2 == exp(2) == 7.389056099...
+exp2 = e_squared()
+test_x_to_xp1_over_xm1(exp2)
+

@@ -1,0 +1,6 @@
+def how_does_div_round():
+    """Check for rounding in division.
+
+    Returns:
+        "rounded", "chopped", "other"
+    """

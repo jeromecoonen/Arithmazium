@@ -1,0 +1,6 @@
+        x = x - (z + ULP_OF_ONE_PLUS)
+        s1 = y * y1
+        s = z * y2
+        t = t - y
+        y = (ULP_OF_ONE_PLUS - y) + s1
+        z = s - (z + ULP_OF_ONE_PLUS + ULP_OF_ONE_PLUS)

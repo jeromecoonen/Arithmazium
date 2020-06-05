@@ -1,0 +1,22 @@
+#=============================================
+# Tests of square root accurcacy and monotonicity.
+#=============================================
+def sqrt_single_bound_test(tlist):
+
+    """Test x = sqrt(x*x), raise error if not, and track max and min
+    signed error in units of ulp.
+
+    Uses an artful decomposition of x into xa + xb to facilitate test for
+    equality.
+    ***TODO: elaborate that this decomposition is exact -- because the values
+    of x all have trailing 0s?
+
+    Args:
+        tlist - a list of tuples of:
+            x - value to be tested
+            ulp - 1/2 ulp of argument x
+            error_kind - level of alarm to raise
+
+    Returns:
+        True if all tests pass, False otherwise
+    """

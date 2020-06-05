@@ -1,0 +1,8 @@
+    rdiv = "other"
+    y2 = ONE + ULP_OF_ONE_PLUS
+    y1 = ONE - ULP_OF_ONE_PLUS
+    z = ONE_AND_HALF + ULP_OF_ONE_PLUS + ULP_OF_ONE_PLUS
+    x = z / y2
+    t = ONE_AND_HALF - ULP_OF_ONE_PLUS - ULP_OF_ONE_PLUS
+    y = (t - ULP_OF_ONE_PLUS) / y1
+    z = (z + ULP_OF_ONE_PLUS) / y2

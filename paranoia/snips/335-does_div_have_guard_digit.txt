@@ -1,0 +1,10 @@
+def does_div_have_guard_digit():
+    """Check for guard digit in division.
+
+    Returns:
+        boolean reply to question
+    """
+    y = ONE - ULP_OF_ONE_PLUS
+    x = ONE + ULP_OF_ONE_PLUS
+    z = ONE / y
+    y = z - x

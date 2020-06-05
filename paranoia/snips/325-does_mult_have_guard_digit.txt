@@ -1,0 +1,10 @@
+def does_mult_have_guard_digit():
+    """Test for a guard digit in mulitiplicaiton.
+
+    Run three tests, 1*X and X*1 for X with nonzero low-order
+    digit, and a product known to require one extra digit, before
+    normalization.
+
+    Returns:
+        boolean answer to the question
+    """

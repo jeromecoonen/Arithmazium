@@ -1,0 +1,15 @@
+    while True:
+        if (y2 > z2):
+            Q = B
+            y1 = y
+            while True:
+                x1 = FABS(Q + FLOOR(ONE_HALF - Q / y1) * y1)
+                Q = y1
+                y1 = x1
+                if debug:
+                    print("\t\t\tloop inner x1 = {:.6e} Q = {:.6e} y1 = {:.6e}"
+                          .format(x1, Q, y1))
+                if x1 <= ZERO: break
+            if (Q <= ONE):
+                z2 = y2
+                z = y

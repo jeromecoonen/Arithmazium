@@ -1,0 +1,8 @@
+#    START MESSAGES
+#    Block messages to be printed as the user starts running paranoia.
+
+def print_msgs(s):
+    """Print a list of strings"""
+    for m in s:
+        print(m)
+

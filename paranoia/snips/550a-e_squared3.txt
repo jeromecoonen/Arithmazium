@@ -1,0 +1,9 @@
+    e12 = (ONE_AND_HALF + ONE / EIGHT) + x / (ONE_AND_HALF * THIRTY_TWO)
+    e = e12 * e12
+    e2 = e * e
+    if verbose:
+        print("exp(1/2) = {:.12f}  exp(1) = {:.12f}  exp(2) = {:.12f}"
+              .format(e12, e, e2))
+    return e2
+
+

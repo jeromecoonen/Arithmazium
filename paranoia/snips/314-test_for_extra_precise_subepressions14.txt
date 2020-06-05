@@ -1,0 +1,13 @@
+            if z1 != z2 or z1 > ZERO:
+                x = z1 / ULP_OF_ONE_MINUS
+                y = z2 / ULP_OF_ONE_PLUS
+                if y > x:
+                    x = y
+                q = - LOG(x)
+                print("Some subexpressions appear to be calculated extra")
+                print("precisely with about {:.g} extra B-digits, i.e.",
+                    (q / LOG(B)))
+                print("roughly {:.g} extra significant decimals."
+                    .format(q / LOG(10.)))
+            print("That feature is not tested further by this program.")
+

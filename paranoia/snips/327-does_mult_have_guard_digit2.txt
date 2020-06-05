@@ -1,0 +1,19 @@
+    print("\nChecking for guard digit in *, /, and -.")
+    y = ONE_MINUS_ULP * ONE
+    z = ONE * ONE_MINUS_ULP
+    x = ONE_MINUS_ULP - ONE_HALF
+    y = (y - ONE_HALF) - x
+    z = (z - ONE_HALF) - x
+    x = ONE + ULP_OF_ONE_PLUS
+    t = x * B
+    r = B * x
+    x = t - B
+    x = x - B * ULP_OF_ONE_PLUS
+    t = r - B
+    t = t - B * ULP_OF_ONE_PLUS
+    x = x * (B - ONE)
+    t = t * (B - ONE)
+    gmult = (x == ZERO) and (y == ZERO) and (z == ZERO) and (t == ZERO)
+    test_cond(err_serious, gmult, "* lacks a Guard Digit, so 1*x != x")
+    return gmult
+

@@ -1,0 +1,8 @@
+def test_integer_powers(x, z, i, max_i):
+    """Test z**k for k = i .. max_i."""
+    while True:
+        q = float(i)
+        if ultra_verbose:
+            print("test_int_pow with x, z, q = {:.17e} {:.17e} {:.4f}"
+                  .format(x, z, q))
+        test_power_result(x, z, q)

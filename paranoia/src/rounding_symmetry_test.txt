@@ -1,0 +1,30 @@
+#INCLUDE para_head how_does_add_sub_round.html aaapara_toc.html has_sticky_bit.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 400-rounding_symmetry_test
+
+<p>
+Part 3
+</p>
+
+#CODE 402-rounding_symmetry_test2
+
+<p>
+Part 4
+</p>
+
+#INCLUDE para_foot how_does_add_sub_round.html aaapara_toc.html has_sticky_bit.html
+

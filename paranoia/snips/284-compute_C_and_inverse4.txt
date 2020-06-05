@@ -1,0 +1,12 @@
+    # Finally, step toward the minimum normal number by multiples of d.
+    # c stays one step behind y, so that at termination
+    # 1  >>  c  >  2**(min+PRECISION)  >  y  >  2**mnin  >  z (underflows)
+    y = c
+    z = y * d
+    while True:
+        c = y
+        y = z
+        z = y * d
+        if (y <= z) or (z + z <= z): break
+    return c, ONE / c
+

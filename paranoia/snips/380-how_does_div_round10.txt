@@ -1,0 +1,7 @@
+        if ((x == ZERO) and (y == ZERO) and (z == ZERO) and (t == ZERO)
+                and (y2 == ZERO)  # BUG in C version: duplicate test
+                and (y1 - ONE_HALF == ONE_MINUS_ULP - ONE_HALF)):
+            rdiv = "rounded"
+            print("Division appears to round correctly. ")
+            if not flags["div_guard_digit"]:
+                notify("Division")

@@ -1,0 +1,9 @@
+    if z1 > B_OVER_TWO:
+        z1 = z1 - B
+    while True:
+        x, D, Q, z, z1 = num_theory_sqrt_value(x, D, Q, z, z1)
+        if ULP_OF_ONE_PLUS * D >= ONE_MINUS_ULP: break
+    if D * B - D != BIG_B_NTH - D:
+        sqrt_anomalous_int = True
+        break
+

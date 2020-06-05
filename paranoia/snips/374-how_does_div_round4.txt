@@ -1,0 +1,5 @@
+    x = x - ONE_AND_HALF
+    y = y - t
+    t = t / y1
+    z = z - (ONE_AND_HALF + ULP_OF_ONE_PLUS)
+    t = (ULP_OF_ONE_PLUS - ONE_AND_HALF) + t

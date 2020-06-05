@@ -1,4 +1,4 @@
-#INCLUDE para_head uflow_stem.html para_toc.html tiny_values_and_difference.html
+#INCLUDE para_head uflow1.html aaapara_toc.html tiny_values_and_difference.html
 
 <h1>tiny_powers_of_B()</h1>
 
@@ -10,7 +10,7 @@
   powers of the radix, so their trailing digits are all zero.
 </p>
 
-#CODE 420tiny_powers_of_B
+#CODE 520-tiny_powers_of_B
 
 <p>
   The diagram below captures the action in binary as <code>tiny</code>
@@ -71,6 +71,6 @@
   columns by 24 rows, enabling users to take screen shots.]
 </em></p>
 
-#CODE 421tiny_powers_of_B_2
+#CODE 521-tiny_powers_of_B2
 
-#INCLUDE para_foot uflow_stem.html para_toc.html tiny_values_and_difference.html
+#INCLUDE para_foot uflow1.html aaapara_toc.html tiny_values_and_difference.html

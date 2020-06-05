@@ -1,0 +1,6 @@
+def bad_cond(K, t):
+    """Error message"""
+    print("bad_cond called with problem " + str(K))
+    error_count[K] += 1
+    print(error_type[K] + ":  " + t, end="")
+

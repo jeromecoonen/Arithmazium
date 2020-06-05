@@ -1,0 +1,6 @@
+    d = ULP_OF_ONE_MINUS   # default value for integer precision
+    if PRECISION != FLOOR(PRECISION):
+        # Compute 1 / B**ceiling(PRECISION)
+        d = ONE_OVER_B
+        for _ in range(FLOOR(PRECISION)):
+            d = d * ONE_OVER_B

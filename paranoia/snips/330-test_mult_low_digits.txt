@@ -1,0 +1,5 @@
+def test_mult_low_digits():
+    """Try two tests of the form (1 + tiny)**2."""
+    z = B * ULP_OF_ONE_PLUS
+    x = ONE + z
+    y = FABS((x + z) - x * x) - ULP_OF_ONE_PLUS

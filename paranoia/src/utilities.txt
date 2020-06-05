@@ -1,0 +1,24 @@
+#INCLUDE para_head history.html aaapara_toc.html notify.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 200-utilities
+
+<p>
+Part 3
+</p>
+
+#INCLUDE para_foot history.html aaapara_toc.html notify.html
+

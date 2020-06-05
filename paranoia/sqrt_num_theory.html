@@ -1,0 +1,265 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>Underflow</title>
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/paranoia/sqrt_num_theory.html">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#fafafa'>
+  <link rel='stylesheet' href='../css/normalize.css'>
+  <link rel='stylesheet' href='../css/main.css'>
+  <link rel='stylesheet' href='../css/para.css'>
+  <link href='https://fonts.googleapis.com/css?family=Days One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans:wght@400;800' rel='stylesheet'>
+</head>
+<body>
+  <div>
+  <svg viewbox='0 0 1000 80' xmlns='http://www.w3.org/2000/svg'>
+  <a href='../index.html'>
+  <rect x=0 y=0 width=1000 height=80 class='arith-ban-box'/>
+  <text x=10 y=68 class='arith-ban-back'>
+  <tspan>11.001001000011111101101010100010001000</tspan>
+  </text>
+  <text x=60 y=55 class='arith-ban-front'>
+  <tspan>Arithmazium</tspan>
+  </text>
+  </a>
+  </svg>
+  </div>
+  <div class='next-prev'>
+  <a href='sqrt_int.html' class='previous round'>Previous</a>
+  <a href='aaapara_toc.html' class='tree round'>Home</a>
+  <a href='pow_small_int.html' class='next round'>Next</a>
+  </div>
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+<pre><code>milestone = 85   #==============================
+sqrt_rnd_odd = False
+sqrt_anomalous_int = False
+tests = 0
+flags["sqrt_rounding"] = "other"
+while B != ONE:
+    print("Testing whether sqrt is rounded or chopped.")
+    D = FLOOR(ONE_HALF + POW(B, ONE + PRECISION - FLOOR(PRECISION)))
+    # ... == B^(1 + fract) if (PRECISION == Integer + fract.
+    x = D / B
+    y = D / A
+    if (x != FLOOR(x)) or (y != FLOOR(y)):
+        sqrt_anomalous_int = True
+        break
+
+</code></pre>
+
+<p>
+Part 3
+</p>
+
+<pre><code>    x = ZERO
+    z2 = x
+    y = ONE
+    y2 = y
+    # **** B = 8   #**********************************************
+    # *** D = 16   #**********************************************
+    z1 = B - ONE
+    FourD = FOUR * D
+</code></pre>
+
+<p>
+Part 4
+</p>
+
+<pre><code>    while True:
+        if (y2 > z2):
+            Q = B
+            y1 = y
+            while True:
+                x1 = FABS(Q + FLOOR(ONE_HALF - Q / y1) * y1)
+                Q = y1
+                y1 = x1
+                if debug:
+                    print("\t\t\tloop inner x1 = {:.6e} Q = {:.6e} y1 = {:.6e}"
+                          .format(x1, Q, y1))
+                if x1 <= ZERO: break
+            if (Q <= ONE):
+                z2 = y2
+                z = y
+</code></pre>
+
+<p>
+Part 5
+</p>
+
+<pre><code>        y = y + TWO
+        x = x + EIGHT
+        y2 = y2 + x
+        if y2 >= FourD:
+            y2 = y2 - FourD
+        if debug:
+            print("\t\t\tloop x = {:.6e} x1 = {:.6e}".format(x, x1))
+            print("\t\t\t     y = {:.6e} y1 = {:.6e} y2 = {:.6e}".format(y, y1, y2))
+            print("\t\t\t     z = {:.6e} z1 = {:.6e} z2 = {:.6e}".format(z, z1, z2))
+        if y >= D: break
+</code></pre>
+
+<p>
+Part 6
+</p>
+
+<pre><code>    X8 = FourD - z2
+    # ***JTC: fix global Q used by num_theory_sqrt_value
+    Q = (X8 + z * z) / FourD
+    X8 = X8 / EIGHT
+    if debug:
+        print("Loop finds Q = {:.17e} X8 = {:.17e}".format(Q, X8))
+    # *** exit(17)   # ***********************************
+    if Q != FLOOR(Q):
+        sqrt_anomalous_int = True
+        break
+
+</code></pre>
+
+<p>
+Part 7
+</p>
+
+<pre><code>    while True:
+        x = z1 * z
+        x = x - FLOOR(x / B) * B
+        if x != ONE:
+            z1 = z1 - ONE
+        if x == ONE or z1 <= ZERO: break
+    if z1 <= ZERO and x != ONE:
+        sqrt_anomalous_int = True
+        break
+
+</code></pre>
+
+<p>
+Part 8
+</p>
+
+<pre><code>    if z1 > B_OVER_TWO:
+        z1 = z1 - B
+    while True:
+        x, D, Q, z, z1 = num_theory_sqrt_value(x, D, Q, z, z1)
+        if ULP_OF_ONE_PLUS * D >= ONE_MINUS_ULP: break
+    if D * B - D != BIG_B_NTH - D:
+        sqrt_anomalous_int = True
+        break
+
+</code></pre>
+
+<p>
+Part 9
+</p>
+
+<pre><code>    z2 = D
+    y = D + (ONE + z) * ONE_HALF
+    x = D + z + Q
+    tests += num_theory_sqrt_test(x, D, y, z2)
+    y = D + (ONE - z) * ONE_HALF + D
+    x = D - z + D
+    x = x + Q + x
+    tests += num_theory_sqrt_test(x, D, y, z2)
+    x, D, Q, z, z1 = num_theory_sqrt_value(x, D, Q, z, z1)
+    if D - z2 != BIG_B_NTH - z2:
+        sqrt_anomalous_int = True
+        break
+
+</code></pre>
+
+<p>
+Part 10
+</p>
+
+<pre><code>    y = (D - z2) + (z2 + (ONE - z) * ONE_HALF)
+    x = (D - z2) + (z2 - z + Q)
+    tests += num_theory_sqrt_test(x, D, y, z2)
+    y = (ONE + z) * ONE_HALF
+    x = Q
+    tests += num_theory_sqrt_test(x, D, y, z2)
+    break   # exit ficttitious loop in one pass
+
+</code></pre>
+
+<p>
+Part 11
+</p>
+
+<pre><code>if verbose:
+    print("\tAfter all sqrt test computations:")
+    print("\t\tmin_sqrt_error = {:0.17e}".format(min_sqrt_error))
+    print("\t\tmax_sqrt_error = {:0.17e}".format(max_sqrt_error))
+if tests == 0 or sqrt_anomalous_int:
+    bad_cond(err_failure, "Anomalous arithmetic with Integer < ")
+    print("B^PRECISION = {:0.7e}".format(BIG_B_NTH))
+    print(" fails test whether sqrt rounds or chops.")
+    sqrt_rnd_odd = True
+else:
+    if min_sqrt_error >= ZERO and max_sqrt_error <= ZERO:
+        flags["sqrt_rounding"] = "rounded"
+        print("Square root appears to be correctly rounded.")
+    else :
+        if (max_sqrt_error + ULP_OF_ONE_PLUS > ULP_OF_ONE_PLUS - ONE_HALF
+            or min_sqrt_error > ONE_HALF
+            or min_sqrt_error + B < ONE_HALF):
+            sqrt_rnd_odd = True
+        else:
+            flags["sqrt_rounding"] = "chopped"
+            print("Square root appears to be chopped.")
+
+</code></pre>
+
+<p>
+Part 12
+</p>
+
+<pre><code>if sqrt_rnd_odd:
+    print("Square root is neither chopped nor correctly rounded.")
+    print("Observed errors run from {:0.7e} "
+          .format(min_sqrt_error - ONE_HALF), end="")
+    print("to {:0.7e} ulps.".format(ONE_HALF + max_sqrt_error))
+    test_cond(err_serious, max_sqrt_error - min_sqrt_error < B * B,
+        "sqrt gets too many last digits wrong")
+
+</code></pre>
+
+<p>
+Part 13
+</p>
+
+<div class='next-prev'>
+<a href='sqrt_int.html' class='previous round'>Previous</a>
+<a href='aaapara_toc.html' class='tree round'>Home</a>
+<a href='pow_small_int.html' class='next round'>Next</a>
+</div>
+<script src="js/vendor/jquery-3.5.1.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  lsga('create', 'UA-165469376-1', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+</<body>
+
+</html>
+

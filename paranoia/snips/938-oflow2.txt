@@ -1,0 +1,11 @@
+if no_oflow_except:
+    overflow_threshold = no_trap_overflow_threshold(big_B, less_big_B)
+else:
+    overflow_threshold = trap_overflow_threshold(big_B)
+
+print("Computed overflow_threshold  = {:0.17e} .".format(overflow_threshold))
+if no_oflow_except:
+    print("Overflow saturates at pos_big_B = {:0.17e} .".format(pos_big_B))
+else:
+    print("There is no saturation value because " +
+          "the system traps on overflow.")

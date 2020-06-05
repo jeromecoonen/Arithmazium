@@ -1,0 +1,12 @@
+def extreme_z_to_q():
+    """Test A and 1/A to powers reaching 1/C and C.
+
+    A is 2 or 10. C is 1/B**k, tiny but well away from underflow.
+    C is an integer power of 1/A, so try the four possibilities of
+    A and 1/A producing C and 1/C.
+    Basic 5460-5490
+    """
+
+    global err_cnt   # var used by power tests
+    print("Testing powers z^q at four nearly extreme values.")
+    err_cnt = 0   # this test resets the global value to 0 without restore.

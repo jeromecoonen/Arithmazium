@@ -1,0 +1,17 @@
+    x = FOUR / THREE    # rounds in ulps of 1
+    third = x - ONE
+    sixth = ONE_HALF - third
+    x = sixth + sixth
+    x = FABS(x - third)
+    if x < guess:
+        x = guess
+    # Now x = (unknown no.) ulps of 1+.
+    doit = True
+    while doit:
+        u = x
+        y = ONE_HALF * u + THIRTY_TWO * u * u
+        y = ONE + y
+        x = y - ONE
+        doit = (u > x) and (x > ZERO)
+    return u
+

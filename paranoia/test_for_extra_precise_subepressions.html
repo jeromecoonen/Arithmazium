@@ -1,0 +1,194 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>Underflow</title>
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/paranoia/test_for_extra_precise_subepressions.html">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#fafafa'>
+  <link rel='stylesheet' href='../css/normalize.css'>
+  <link rel='stylesheet' href='../css/main.css'>
+  <link rel='stylesheet' href='../css/para.css'>
+  <link href='https://fonts.googleapis.com/css?family=Days One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans:wght@400;800' rel='stylesheet'>
+</head>
+<body>
+  <div>
+  <svg viewbox='0 0 1000 80' xmlns='http://www.w3.org/2000/svg'>
+  <a href='../index.html'>
+  <rect x=0 y=0 width=1000 height=80 class='arith-ban-box'/>
+  <text x=10 y=68 class='arith-ban-back'>
+  <tspan>11.001001000011111101101010100010001000</tspan>
+  </text>
+  <text x=60 y=55 class='arith-ban-front'>
+  <tspan>Arithmazium</tspan>
+  </text>
+  </a>
+  </svg>
+  </div>
+  <div class='next-prev'>
+  <a href='standardize_fractional_precision.html' class='previous round'>Previous</a>
+  <a href='aaapara_toc.html' class='tree round'>Home</a>
+  <a href='test_normalized_subtraction.html' class='next round'>Next</a>
+  </div>
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+<pre><code>#=============================================
+# Test for extra precison.
+#=============================================
+def test_for_extra_precise_subepressions():
+    """Print messages if wider intermediate values detected.
+
+    """
+</code></pre>
+
+<p>
+Part 3
+</p>
+
+<pre><code>    # (4/3 -1) - 1/4 = 1/12 with rounding error in values bigger than 1.
+    # 3 * rounded value - 1/4 should be some rounding error in 1+.
+    # z2 should be an ulp of 1+, unless the computation of x below enjoys
+    # extra precision, allowing it to be even smaller.
+    x = FABS(((FOUR / THREE - ONE) - ONE / FOUR) * THREE - ONE / FOUR)
+    doit = True
+    while doit:
+        z2 = x
+        x = (ONE + (ONE_HALF * z2 + THIRTY_TWO * z2 * z2)) - ONE
+        doit =  (z2 > x) and (x > ZERO)
+</code></pre>
+
+<p>
+Part 4
+</p>
+
+<pre><code>    # Now look at ulps of 1- by starting with rounding noise in 3/4.
+    # x, y, and z are used in the three following loops.
+    x = y = z = FABS((THREE / FOUR - TWO / THREE) * THREE - ONE / FOUR)
+    while True:
+        z1 = z
+        z = (ONE / TWO
+             - ((ONE / TWO - (ONE_HALF * z1 + THIRTY_TWO * z1 * z1))
+                + ONE / TWO)) + ONE / TWO
+        if (z1 <= z) or (z <= ZERO): break
+</code></pre>
+
+<p>
+Part 5
+</p>
+
+<pre><code>    # BUG in BASIC and C version -- the two loops below are not nested,
+    # but simply in sequence with the z1 loop just above.
+    # See lines 1730 and 1740 in the BASIC, the latter line should branch
+    # back to itself.
+    while True:
+        y1 = y
+        y = (ONE_HALF - ((ONE_HALF - (ONE_HALF * y1 + THIRTY_TWO * y1 * y1))
+                         + ONE_HALF)) + ONE_HALF
+        print("1730: y1 = {:.17e} y = {:.17e}".format(y1, y))
+        if  (y1 <= y) or (y <= ZERO): break
+    while True:
+        x1 = x
+        x = ((ONE_HALF * x1 + THIRTY_TWO * x1 * x1)
+             - ONE_MINUS_ULP)+ ONE_MINUS_ULP
+        print("1740: x1 = {:.17e} x = {:.17e}".format(x1, x))
+        if  (x1 <= x) or (x <= ZERO): break
+</code></pre>
+
+<p>
+Part 6
+</p>
+
+<pre><code>    if (x1 != y1) or (x1 != z1):
+        bad_cond(err_serious, "Disagreements among the values x1, y1, z1,")
+        print("respectively  {:0.7e},  {:0.7e},  {:0.7e},".format(x1, y1, z1))
+        print("are symptoms of inconsistencies introduced")
+        print("by extra-precise evaluation of arithmetic subexpressions.")
+        notify("Possibly some part of this")
+        if ((x1 == ULP_OF_ONE_MINUS) or (y1 == ULP_OF_ONE_MINUS)
+                or (z1 == ULP_OF_ONE_MINUS)):
+            print("That feature is not tested further by this program.\n")
+</code></pre>
+
+<p>
+Part 7
+</p>
+
+<pre><code>    elif (z1 != ULP_OF_ONE_MINUS) or (z2 != ULP_OF_ONE_PLUS):
+        if (z1 >= ULP_OF_ONE_MINUS) or (z2 >= ULP_OF_ONE_PLUS):
+            bad_cond(err_failure, "")
+            notify("PRECISION")
+            print("\tULP_OF_ONE_MINUS = {:0.7e}, z1 - ULP_OF_ONE_MINUS = {:0.7e}".format(ULP_OF_ONE_MINUS,z1-ULP_OF_ONE_MINUS))
+            print("\tULP_OF_ONE_PLUS = {:0.7e}, z2 - ULP_OF_ONE_PLUS = {:0.7e}".format(ULP_OF_ONE_PLUS,z2-ULP_OF_ONE_PLUS))
+</code></pre>
+
+<p>
+Part 8
+</p>
+
+<pre><code>        else:
+            if ((z1 <= ZERO) or (z2 <= ZERO)):
+                print("Because of unusual B = {:0.f}".format(B))
+                print(", or exact rational arithmetic a result")
+                print("z1 = {:0.7e}, or z2 = {:0.7e} ".format(z1, z2))
+                notify("of an extra-precision")
+</code></pre>
+
+<p>
+Part 9
+</p>
+
+<pre><code>            if z1 != z2 or z1 > ZERO:
+                x = z1 / ULP_OF_ONE_MINUS
+                y = z2 / ULP_OF_ONE_PLUS
+                if y > x:
+                    x = y
+                q = - LOG(x)
+                print("Some subexpressions appear to be calculated extra")
+                print("precisely with about {:.g} extra B-digits, i.e.",
+                    (q / LOG(B)))
+                print("roughly {:.g} extra significant decimals."
+                    .format(q / LOG(10.)))
+            print("That feature is not tested further by this program.")
+
+</code></pre>
+
+<p>
+Part 10
+</p>
+
+<div class='next-prev'>
+<a href='standardize_fractional_precision.html' class='previous round'>Previous</a>
+<a href='aaapara_toc.html' class='tree round'>Home</a>
+<a href='test_normalized_subtraction.html' class='next round'>Next</a>
+</div>
+<script src="js/vendor/jquery-3.5.1.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  lsga('create', 'UA-165469376-1', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+</<body>
+
+</html>
+

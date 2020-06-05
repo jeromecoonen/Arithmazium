@@ -1,0 +1,30 @@
+#INCLUDE para_head big_powers_of_B.html aaapara_toc.html trap_overflow_threshold.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 564-no_trap_overflow_threshold
+
+<p>
+Part 3
+</p>
+
+#CODE 564a-no_trap_overflow_threshold2
+
+<p>
+Part 4
+</p>
+
+#INCLUDE para_foot big_powers_of_B.html aaapara_toc.html trap_overflow_threshold.html
+

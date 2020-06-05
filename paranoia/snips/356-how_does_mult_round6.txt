@@ -1,0 +1,5 @@
+    if ((x == ZERO) and (y == ZERO) and (z == ZERO) and (t <= ZERO)):
+        x = (ONE_AND_HALF + ULP_OF_ONE_PLUS) * y2
+        y = ONE_AND_HALF - ULP_OF_ONE_PLUS - ULP_OF_ONE_PLUS
+        z = ONE_AND_HALF + ULP_OF_ONE_PLUS + ULP_OF_ONE_PLUS
+        t = (ONE_AND_HALF - ULP_OF_ONE_PLUS) * y1

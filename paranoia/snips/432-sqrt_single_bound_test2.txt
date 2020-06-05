@@ -1,0 +1,6 @@
+    global min_sqrt_error, max_sqrt_error
+    success = True
+    for (x, ulp, error_kind) in tlist:
+        xb = x * ONE_OVER_B
+        xa = x - xb
+        err = ((SQRT(x * x) - xb) - xa) / ulp

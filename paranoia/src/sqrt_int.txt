@@ -1,0 +1,42 @@
+#INCLUDE para_head sqrt.html aaapara_toc.html sqrt_num_theory.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 810-sqrt_int
+
+<p>
+Part 3
+</p>
+
+#CODE 810a-sqrt_int1
+
+<p>
+Part 4
+</p>
+
+#CODE 810b-sqrt_int2
+
+<p>
+Part 5
+</p>
+
+#CODE 810c-sqrt_int3
+
+<p>
+Part 6
+</p>
+
+#INCLUDE para_foot sqrt.html aaapara_toc.html sqrt_num_theory.html
+

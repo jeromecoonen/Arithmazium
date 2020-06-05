@@ -1,0 +1,36 @@
+#INCLUDE para_head find_ulp_of_one_minus.html aaapara_toc.html compute_C_and_inverse.html
+
+<p>This is an automatically generated file.</p>
+
+<p>
+Part 1
+</p>
+
+<object type="image/svg+xml" data="img/tiny_B_a.svg">
+  ------Image------
+</object>
+
+<p>
+Part 2
+</p>
+
+#CODE 275-compute_A_and_inverse
+
+<p>
+Part 3
+</p>
+
+#CODE 277-compute_A_and_inverse2
+
+<p>
+Part 4
+</p>
+
+#CODE 279-compute_A_and_inverse3
+
+<p>
+Part 5
+</p>
+
+#INCLUDE para_foot find_ulp_of_one_minus.html aaapara_toc.html compute_C_and_inverse.html
+

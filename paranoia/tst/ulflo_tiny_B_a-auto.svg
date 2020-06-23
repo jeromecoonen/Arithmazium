@@ -1,0 +1,109 @@
+<svg viewbox="0 0 1200 280" xmlns="http://www.w3.org/2000/svg">
+<style>
+svg {width: 100%; height: auto;}
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: lightgray; }
+.diag-num-path { stroke-width: 3; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: "Roboto Mono"; font-size: 1em; dominant-baseline: middle; fill: green; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+</style>
+<!-- LINE 0 -->
+<g transform="translate(0,0)">
+<rect class="diag-py-rect" width=360 height=70 />
+<text class="diag-py" x=10 y=35>
+less_tiny = tiny
+</text>
+</g>
+<g transform="translate(360,0)">
+<rect class="diag-num-rect" width=360 height=70 />
+<line class="diag-num-line" x1=15 y1=50 x2=320 y2=50 />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246 50 L 246 10" />
+<circle class="diag-num-dot" cx=88.6 cy=44 r=2.5 />
+<text class="diag-num-bin" x=20 y=33>
+&nbsp&nbsp1000&nbsp...&nbsp00
+</text>
+</g>
+<g transform="translate(720,0)">
+<rect class="diag-rem-rect" width=480 height=70 />
+<text class="diag-rem" x=10 y=35>
+Twice the smallest normal number
+</text>
+</g>
+<!-- LINE 1 -->
+<g transform="translate(0,70)">
+<rect class="diag-py-rect" width=360 height=70 />
+<text class="diag-py" x=10 y=35>
+tiny = z
+</text>
+</g>
+<g transform="translate(360,70)">
+<rect class="diag-num-rect" width=360 height=70 />
+<line class="diag-num-line" x1=15 y1=50 x2=320 y2=50 />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246 50 L 246 10" />
+<circle class="diag-num-dot" cx=88.6 cy=44 r=2.5 />
+<text class="diag-num-bin" x=20 y=33>
+&nbsp&nbsp&nbsp100&nbsp...&nbsp00
+</text>
+</g>
+<g transform="translate(720,70)">
+<rect class="diag-rem-rect" width=480 height=70 />
+<text class="diag-rem" x=10 y=35>
+The smallest normal number
+</text>
+</g>
+<!-- LINE 2 -->
+<g transform="translate(0,140)">
+<rect class="diag-py-rect" width=360 height=70 />
+<text class="diag-py" x=10 y=35>
+z = z * H
+</text>
+</g>
+<g transform="translate(360,140)">
+<rect class="diag-num-rect" width=360 height=70 />
+<line class="diag-num-line" x1=15 y1=50 x2=320 y2=50 />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246 50 L 246 10" />
+<circle class="diag-num-dot" cx=88.6 cy=44 r=2.5 />
+<ellipse class="diag-num-elps" cx=113.6 cy=30 rx=12 ry=20 />
+<text class="diag-num-bin" x=20 y=33>
+&nbsp&nbsp&nbsp010&nbsp...&nbsp00
+</text>
+</g>
+<g transform="translate(720,140)">
+<rect class="diag-rem-rect" width=480 height=70 />
+<text class="diag-rem" x=10 y=20>
+<tspan>IEEE: denormalize to half the</tspan>
+<tspan x=25 dy=1.2em>smallest normal number, exactly</tspan>
+</text>
+</g>
+<!-- LINE 3 -->
+<g transform="translate(0,210)">
+<rect class="diag-py-rect" width=360 height=70 />
+<text class="diag-py" x=10 y=35>
+z = z * H
+</text>
+</g>
+<g transform="translate(360,210)">
+<rect class="diag-num-rect" width=360 height=70 />
+<line class="diag-num-line" x1=15 y1=50 x2=320 y2=50 />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246 50 L 246 10" />
+<circle class="diag-num-dot" cx=88.6 cy=44 r=2.5 />
+<ellipse class="diag-num-elps" cx=113.6 cy=30 rx=12 ry=20 />
+<text class="diag-num-bin" x=20 y=33>
+&nbsp&nbsp&nbsp000&nbsp...&nbsp00000
+</text>
+</g>
+<g transform="translate(720,210)">
+<rect class="diag-rem-rect" width=480 height=70 />
+<text class="diag-rem" x=10 y=35>
+Plan B: flush underflow to zero
+</text>
+</g>
+</svg>

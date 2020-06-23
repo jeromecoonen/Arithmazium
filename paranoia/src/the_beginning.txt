@@ -1,0 +1,39 @@
+#INCLUDE para_head aaapara_toc.html aaapara_toc.html open_comment.html
+
+<p>
+Welcome to Paranoia: The Program!
+</p>
+
+<p>
+This is the story of Prof. William Kahan's
+BASIC program, developed in the early 1980s on an original IBM PC.
+Paranoia became an instant cult-classic in the numerical
+community because of its ability to tease out misbehavior at the edges
+of computer arithmetic.
+</p>
+
+<p>
+The story is worth telling, and may you find it worth reading,
+because Paranoia to this day has the highest concentration
+of accessible arithmetic wizardry you'll find anywhere.
+There is no comparison.
+</p>
+
+<p>
+To bring the conversation up to the 21st century, I've recast Paranoia
+in Python, where we have the luxury of variable names more descriptive than
+<code>U2</code> and no limit on commentary. But you will need no specific Python
+knowledge to read this story. Passing familiarity with any programming language
+will suffice.
+</p>
+<p>
+The next pages set some the context, but of course you're welcome to dive
+in anywhere to get a feel for the code. Paranoia's experiments are designed
+to be independent, so you can understand what's happening without inhaling
+the whole program.
+</p>
+<p>
+Welcome, and good luck!
+</p>
+
+#INCLUDE para_foot aaapara_toc.html aaapara_toc.html open_comment.html

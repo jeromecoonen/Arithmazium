@@ -120,6 +120,8 @@ text.arith-ban-front {
   font-size: 56px;
   font-weight: 800;
   font-family: "Work Sans", "lucida Console", Monaco, monospace;
+  dominant-baseline: 'middle';
+  text-anchor: 'middle';
 }
 
 h1 {
@@ -177,6 +179,7 @@ a {
 a:hover {
   background-color: #ddd;
   text-decoration: underline;
+}
 
 .tree,
 .next,

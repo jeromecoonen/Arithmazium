@@ -1,0 +1,42 @@
+// para_art_ouflow.txt -- source for over/underflow diagrams
+FILE uflo_tiny_B_a
+
+LINE3
+less_tiny = tiny
+b jj1000j...j00
+Twice the smallest normal number
+
+LINE3
+tiny = z
+b jjj100j...j00
+The smallest normal number
+
+LINE3
+z = z * H
+b jjj010j...j00 e4
+IEEE: denormalize to half the|smallest normal number, exactly
+
+LINE3
+z = z * H
+b jjj000j...j00 e4
+Plan B: flush underflow to zero
+
+FEND
+FILE uflo_tiny_x_b
+LINE3
+tiny = tinier
+b jjj100j...j01
+smallest normal number plus an ulp
+LINE3
+tinier = too_tiny
+b jjj010j...j001 e13
+Low-order bit typically rounds off,|but could round up
+LINE3
+save_tiny_2 = ...
+b jjj010j...j00 e12
+Scale too_tiny back by 1/H|highlighted bit might be 1
+LINE3
+tiny_delta = ...
+b jjj000j...j01 e12
+Smallest positive value
+FEND

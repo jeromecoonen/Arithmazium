@@ -13,6 +13,10 @@
 /* Dinosaur -- Passero One */
 /* Nursery -- Nanum Pen Script */
 
+a:hover {
+  text-decoration: none;
+}
+
 rect.home-box {
   fill: lightgreen;
   stroke: black;
@@ -41,6 +45,13 @@ text.home-room {
   alignment-baseline: center;
 }
 
+.home-room-wip {
+  stroke-width: 30;
+  stroke-linecap: square;
+  stroke: gray;
+  opacity: 0.8;
+}
+
 polygon.home-para {
   fill: coral;
 }
@@ -57,6 +68,12 @@ polygon.home-entry {
 
 text.home-entry {
   font-size: 40px;
+  font-weight: normal;
+  font-family: "Days One", "Arial Black", Gadget, sans-serif;
+}
+
+.home-entry-subtext {
+  font-size: 28px;
   font-weight: normal;
   font-family: "Days One", "Arial Black", Gadget, sans-serif;
 }
@@ -133,7 +150,6 @@ text.home-dino {
   font-weight: bold;
   font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
 }
-
 
 polygon.home-nurse {
   fill: olive;

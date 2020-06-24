@@ -48,8 +48,8 @@ text.home-room {
 .home-room-wip {
   stroke-width: 30;
   stroke-linecap: square;
-  stroke: gray;
-  opacity: 0.8;
+  stroke: yellow;
+  opacity: 0.7;
 }
 
 polygon.home-para {

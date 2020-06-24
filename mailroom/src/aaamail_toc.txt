@@ -78,7 +78,7 @@
 
 <h1>Correspondence</h1>
 <nl>
-  <li><em>Who will ask the first question?</em></li>
+  <li><em>Operators are standing by.</em></li>
 </nl>
 
 <p><br></p>

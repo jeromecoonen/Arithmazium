@@ -5,6 +5,7 @@ svg_builder = $(PYDIR)svg_builder.py
 
 .PHONY: site
 site: paragraphs
+	python3 $(injector) entrance
 	python3 $(injector) mailroom
 	python3 $(injector) paranoia
 

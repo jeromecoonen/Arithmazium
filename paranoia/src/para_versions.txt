@@ -1,0 +1,7 @@
+#INCLUDE para_head what_para_isnt.html aaapara_toc.html semiliterate.html
+
+<p>
+Welcome
+</p>
+
+#INCLUDE para_foot what_para_isnt.html aaapara_toc.html semiliterate.html

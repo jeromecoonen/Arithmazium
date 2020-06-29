@@ -33,7 +33,7 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='_PREVIOUS_' class='previous round'>Previous</a>
-  <a href='_HOME_' class='tree round'>Home</a>
   <a href='_NEXT_' class='next round'>Next</a>
+  <a href='_HOME_' class='tree round'>Home</a>
+  <a href='_PREVIOUS_' class='previous round'>Previous</a>
   </div>

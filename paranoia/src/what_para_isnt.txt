@@ -1,0 +1,7 @@
+#INCLUDE para_head what_is_para.html aaapara_toc.html para_versions.html
+
+<p>
+Welcome
+</p>
+
+#INCLUDE para_foot what_is_para.html aaapara_toc.html para_versions.html

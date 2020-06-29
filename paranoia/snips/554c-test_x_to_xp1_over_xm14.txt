@@ -3,7 +3,7 @@
                 z = (next_x - x) * TWO + next_x
                 x = next_x
                 next_x = z
-                z = ONE + (x - ONE_MINUS_ULP)*(x - ONE_MINUS_ULP)
+                z = ONE + (x - ONE_MINUS_ULP) * (x - ONE_MINUS_ULP)
                 # *** BUG: P has (z > ONE), which means test done once only.
                 # Keep testing until too close to 1 or count too big.
                 if (z <= ONE) and (test_cnt < NUM_TRIALS):

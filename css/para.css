@@ -14,9 +14,6 @@ a.toc-link {
   font-family: "Trebuchet", sans-serif;
   font-weight: normal;
   font-size: small;
-}
-
-a.toc-link {
   color: black;
 }
 
@@ -43,17 +40,17 @@ p.el4 {
   line-height: 1.0;
 }
 p.el1 {
-  margin: 0 0 -.5em 0;
+  margin: 0 0 0 0;
 }
 
 p.el2 {
-  margin: 0 0 -.5em 2em;
+  margin: 0 0 0 2em;
 }
 
 p.el3 {
-  margin: 0 0 -.5em 4em;
+  margin: 0 0 0 4em;
 }
 
 p.el4 {
-  margin-left: 6em;
+  margin: 0 0 0 6em;
 }

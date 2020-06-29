@@ -1,0 +1,7 @@
+#INCLUDE para_head para_versions.html aaapara_toc.html pocket_guide.html
+
+<p>
+Welcome
+</p>
+
+#INCLUDE para_foot para_versions.html aaapara_toc.html pocket_guide.html

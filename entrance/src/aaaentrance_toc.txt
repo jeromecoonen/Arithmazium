@@ -5,11 +5,53 @@
 <h1>Welcome to the Arithmazium!</h1>
   <p>
     This site tells a story of computer arithmetic. The target audience is
-    any student, from primary to graduate school. Arithmazium focuses on the
-    interesting and engaging topics, but the site strives to offer bits even
-    the most ardent experts might enjoy.
+    anyone age 5 to 75. Undergraduate students will find useful lore here
+    that is rarely found in any curriculum.
+    Arithmazium strives to be
+    engaging rather than encyclopedic.
+    The site offers bits even
+    the most devoted experts might enjoy.
+  </p>
+<h2>Disclsoures and other fine print</h2>
+  <p>
+    As of mid-year 2020, this site is very much under construction.
+    So long as it's not a distraction at this early stage,
+    Arithmazium will remain open.
+    What you see is what you get, and
+    all the usual legal Latin applies: <em>caveat emptor</em> and <em>tempis
+    fugits</em>, hopefully with a dash of <em>compos mentis</em>.
+  </p>
+<h2>Reader's guide</h2>
+  <p>
+    You need no more than enthusiasm to approach Arithmazium.
+    The site presents many stories, not a tsunami of facts.
+    Arithmetic is the subject. You won't need more than elementary
+    mathematics to get a long way down the path.
+    Of course, computer arithmetic is exploited through programming,
+    but you won't need sophisticated knowledge to follow
+    the thread. Literally, many of the code samples you'll see are variations
+    on a simple theme:
+  <pre><code>
+    new_value = old_value / TWO
+  </code></pre>
+    The patience to read such math formulas and to follow the binary bits
+    or decimal digits where they fall is all you need.
   </p>
   <p>
+    If you're 5 and reading this, you don't need my guidance.
+    If you're with a young person or you miraculously find yourself
+    here without having encountered computer arithmetic before,
+    go to the
+    <a href="aaaplayroom_toc.html">Playroom</a>,
+    scheduled to open July 2020.
+  </p>
+  <p>
+    For now, your next step is to the
+    <a href="../paranoia/aaapara_toc.html">
+      Paranoia Study
+    </a>
+    to ponder a rich stew of arithmetic oddities collected in a
+    cult-classic numerical program.
   </p>
 <p><br></p>
 

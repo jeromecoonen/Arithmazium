@@ -1,7 +1,7 @@
-verbose = True
+verbose = False
 ultra_verbose = False
-hasty = True
-debug = True
+hasty = False
+debug = False
 # Declarations of global variables
 err_failure = 0
 err_serious = 1

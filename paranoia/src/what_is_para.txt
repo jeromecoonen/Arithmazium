@@ -1,0 +1,24 @@
+#INCLUDE para_head the_beginning.html aaapara_toc.html what_para_isnt.html
+
+years in the making
+overtaken by 754
+PC
+base 2 8 10 16 - and log
+
+<p>
+Paranoia grew out of experience with mainframe computers of the 50s, 60s,
+and 70s, with minicomputers joining the party in the last decade.
+In that era, designs – and misbehaviors – varied widely from machine to
+machine, even from one manufacturer.
+</p>
+<p>
+Writing programs intended to run across a variety of computers was
+next to impossible. Programming language features were not yet standardized,
+and the situation with the underlying arithmetics was worse. Values on one
+machine might be too large or too small to represent on another. One machine
+might lack enough significant digits in its number system to carry out
+a computation correctly. Then there all the surprising behaviors, such
+as \(x \times y \ne y \times x\) for unexceptional values \(x\) and \(y\).
+</p>
+
+#INCLUDE para_foot the_beginning.html aaapara_toc.html what_para_isnt.html

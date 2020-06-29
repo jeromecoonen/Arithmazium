@@ -1,4 +1,4 @@
-#INCLUDE para_head aaapara_toc.html aaapara_toc.html open_comment.html
+#INCLUDE para_head pocket_guide.html aaapara_toc.html open_comment.html
 
 <p>This is an automatically generated file.</p>
 
@@ -20,5 +20,4 @@ Part 2
 Part 3
 </p>
 
-#INCLUDE para_foot aaapara_toc.html aaapara_toc.html open_comment.html
-
+#INCLUDE para_foot pocket_guide.html aaapara_toc.html open_comment.html

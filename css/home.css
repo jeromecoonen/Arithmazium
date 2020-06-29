@@ -11,7 +11,7 @@
 /* Classroom -- Petit Formal Script */
 /* Fitness -- Allerta Stencil */
 /* Dinosaur -- Passero One */
-/* Nursery -- Nanum Pen Script */
+/* Playroom -- Nanum Pen Script */
 
 a:hover {
   text-decoration: none;
@@ -151,11 +151,11 @@ text.home-dino {
   font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
 }
 
-polygon.home-nurse {
+polygon.home-playroom {
   fill: olive;
 }
 
-text.home-nurse {
+text.home-playroom {
   font-size: 48px;
   font-weight: bold;
   font-family: "Cherry Swash", "lucida Console", Monaco, monospace;

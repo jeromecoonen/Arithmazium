@@ -1,0 +1,7 @@
+#INCLUDE para_head semiliterate.html aaapara_toc.html token_header_file.html
+
+<p>
+Welcome
+</p>
+
+#INCLUDE para_foot semiliterate.html aaapara_toc.html token_header_file.html

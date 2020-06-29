@@ -2,17 +2,23 @@
 
 <h1>Paranoia: The Program</h1>
 
-<p>
-  Click any link to dive right into the discussion, or click
-  <em>The beginning</em> to take it from the top.
-</p>
-
-<p style="font-family: Courier; font-weight: bold; font-size: xx-small">
-  <em>(This navigation may change.)</em>
-</p>
-
 <p class="el1"><a class="toc-link wip" href="the_beginning.html">
-  The beginning
+  Starting at the start
+</a></p>
+<p class="el1"><a class="toc-link wip" href="what_is_para.html">
+  What is Paranoia?
+</a></p>
+<p class="el1"><a class="toc-link wip" href="what_para_isnt.html">
+  What Paranoia isn't
+</a></p>
+<p class="el1"><a class="toc-link wip" href="para_versions.html">
+  Versions of Paranoia code
+</a></p>
+<p class="el1"><a class="toc-link wip" href="semiliterate.html">
+  Semiliterate programming
+</a></p>
+<p class="el1"><a class="toc-link wip" href="pocket_guide.html">
+  Pocket guide to Python for Paranoia
 </a></p>
 <p class="el1"><a class="toc-link to-do" href="token_header_file.html">
   First line

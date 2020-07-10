@@ -1,24 +1,124 @@
 #INCLUDE para_head the_beginning.html aaapara_toc.html what_para_isnt.html
 
-years in the making
-overtaken by 754
-PC
-base 2 8 10 16 - and log
+<h1>What is Paranoia?</h1>
 
 <p>
-Paranoia grew out of experience with mainframe computers of the 50s, 60s,
-and 70s, with minicomputers joining the party in the last decade.
-In that era, designs – and misbehaviors – varied widely from machine to
-machine, even from one manufacturer.
+Prof. William Kahan of the University of California
+at Berkeley developed Paranoia in standard Basic
+on an original
+<a href="https://en.wikipedia.org/wiki/IBM_Personal_Computer">IBM PC</a>,
+a product of
+IBM's development office in Boca Raton, Florida.
 </p>
+
 <p>
-Writing programs intended to run across a variety of computers was
-next to impossible. Programming language features were not yet standardized,
-and the situation with the underlying arithmetics was worse. Values on one
-machine might be too large or too small to represent on another. One machine
-might lack enough significant digits in its number system to carry out
-a computation correctly. Then there all the surprising behaviors, such
-as \(x \times y \ne y \times x\) for unexceptional values \(x\) and \(y\).
+Paranoia arose from Kahan's
+experience with computers ranging from the earliest
+commercial mainframes of the 50s to
+the minicomputers in the 70s.
+For thirty years, Kahan had worked with colleagues at Toronto,
+Cambridge, Urbana-Champaign, Stanford, and Berkeley to understand
+why innocent-looking mathematical algorithms often failed so miserably.
+Most of the codes he studied were in Fortran, the era's
+language of science and engineering,
+but he chose standard Basic for Paranoia.
+He wanted it to run anywhere with minimal change,
+including new microprocessor-powered machines just
+starting to multiply.
+</p>
+
+<p>
+It's one thing to home in anomalies like a value that changes
+slightly when multiplied by \( 1.0 \) or a value that behaves
+like zero despite comparing not equal to zero. Programmers find these
+problems and fix them, or they discover strategies to just avoid
+them. Such strategies contribute to the lore of mystery around
+numerical computation.
+</p>
+
+<p>
+It's another matter to port a working program from one computer
+to another with completely different arithmetic.
+As explored in the <a href="../aaadinosaur_toc.html">Dinosaur Gallery</a>,
+designs vary widely even across a single manufacturer's product lines.
+This is the challenge Kahan had in mind when he wrote Paranoia.
+</p>
+
+<p>
+The programmer's dilemma is not obvious.
+In everyday affairs, arithmetic is arithmetic,
+backed by mathematical principles we learn at an early age.
+But computer users and programmers at all levels of exposure
+know there's something suspicious about computer arithmetic.
+</p>
+
+<p>
+Computers support <em>floating point</em> arithmetic, which is explored
+throughout this site. We have all experienced variations of floating point
+in some form.
+We use <em>scientific notation</em> in school to represent Avogadro's Number
+\(6.02252 \times 10^{23} \) and we see the condensed form
+<code>6.02252E23</code> on pocket calculators.
+This is a decimal representation, convenient for human use.
+Computers may use bninary <code>0..1</code>,
+octal <code>0..7</code>, or
+hexadecimal <code>0..9A..F</code>
+digits, scaled by
+\( 2^{k} \), \( 8^{k} \), or \( 16^{k} \), respectively.
+</p>
+
+<p>
+This site is devoted to unraveling the
+subtleties of arithmetic, tracing anomalies back to the earliest
+machines and trying to collect the ideas that will play into
+designs of the next decades.
+</p>
+
+<p>
+Paranoia's job in 1982 was to psyche out a machine's arithmetic.
+Here is a list of some of the questions explored:
+  <ul>
+    <li>
+      Is the arithmetic binary, octal, decimal, hexadecimal,
+      or even logarithmic?
+    </li>
+    <li>
+      How many significant digits in the radix 2, 8, 10, or 16 are carried?
+    <li>
+      Are excess digits in a result truncated,
+      rounded off, or something else?
+    </li>
+    <li>
+      What is the largest finite number? The smallest number?
+      Do the extreme values have any unusual behaviors when used in arithmetic?
+    </li>
+    <li>
+      How accurate are \( \sqrt{x} \) and \( y ^ {z} \)?
+    </li>
+    <li>
+      Does the arithmetic behave according the then-emerging
+      IEEE floating point standard?
+    </li>
+  </ul>
+</p>
+
+<p>
+The final question refers to
+IEEE Standard 754 for Floating Point
+Arithmetic. The standard was formally approved in 1984, after Paranoia's
+introduction, but its development dated from 1978.
+Paranoia arrived just as the world was about to improve dramatically
+for numerical programmers.
+</p>
+
+<p>
+Paranoia's job was to characterize the arithmetic on a computer,
+so that programmers porting code from
+one computer to another would have some idea of the
+numerical challenges they faced.
+In principle, a programmer would run Paranoia just once on each machine
+in question, then devise a strategy for modifying what worked in one
+place to work in the next.
 </p>
 
 #INCLUDE para_foot the_beginning.html aaapara_toc.html what_para_isnt.html

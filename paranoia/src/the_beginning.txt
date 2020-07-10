@@ -1,56 +1,67 @@
 #INCLUDE para_head aaapara_toc.html aaapara_toc.html what_is_para.html
 
 <h1>
-Welcome to Paranoia: The Program!
+Welcome to Paranoia: The Program
 </h1>
 
 <p>
-This is the story of a BASIC program designed to be run any
-imaginable computer. Its goal is the discovery of how the
-arithmetic behaves – and misbehaves.
-</p>
-
-<p>
-Prof. William Kahan of the University of California
-at Berkeley developed Paranoia in the early 1980s
-on an original IBM PC.
-Paranoia became an instant cult classic in the numerical
-community. Within years, translations to Pascal, C, Fortran,
-and Modula 2 appeared.
+This is the story of a program from the early 1980s.
+Paranoia runs on any computer supporting the BASIC language,
+revealing the secrets of the computer's underlying arithmetic.
 </p>
 
 <p>
 The story is worth telling, and may you find it worth reading,
-because Paranoia to this day has the highest concentration
+because Paranoia has the highest concentration
 of accessible arithmetic wizardry you'll find anywhere.
 There will never be another code quite like it.
 </p>
 
 <p>
-To bring the conversation up to the 21st century, I've recast Paranoia
-in Python, where we have the luxury of variable names more descriptive than
-<code>E9</code> and <code>U2</code>,
-and no limit on commentary.
-You will need no specific Python
-knowledge to read this story,
-but you might notice that another advantage of Python is its
-clean form, uncluttered by braces and punctuation.
-Passing familiarity with any programming language
-will help, but this discussion explains what little of
-Python you will need.
+When it appeared, Paranoia
+became an instant cult classic in the numerical
+community. Translations to Pascal, C, FORTRAN,
+and Modula-2 quickly appeared. (Let's agree on the mixed-case names
+like Basic
+and Fortran to go easier on the eyes.)
 </p>
 
 <p>
-If you've seen other versions of Paranoia or if you're just
-feeling lucky, you're welcome to dive
-in anywhere to get a feel for the code. Paranoia's experiments are designed
-to be independent, so you can understand what's happening without
-digesting
-the whole program.
+To bring the conversation up to the 21st century,
+I've translated Paranoia to Python.
+Gone are the restriction to variables like
+<code>E9</code> and <code>U2</code> and
+a limit on number of lines for comments.
 </p>
 
 <p>
-Welcome, enjoy the story!
+You won't need deep Python
+knowledge to read this story.
+Python's clean form
+allows you to focus on computation, not syntax.
+Familiarity with any programming language
+will help, but this discussion includes a section explaining
+what little of Python you might need.
+</p>
+
+<p>
+This presentation proceeds with several introductory pages
+and and then the code itself, organized as a shallow hierarchy
+of tests with supporting functions. Paranoia executes in one pass,
+a sequence of largely independent experiments.
+It's not at all a simple program,
+but you can unravel bits and pieces
+without digesting the whole code.
+</p>
+
+<p>
+Of course, you're welcome to dive in anywhere,
+if you've seen other versions of Paranoia or if you're just
+feeling lucky.
+</p>
+
+<p>
+Welcome, enjoy the story.
 </p>
 
 #INCLUDE para_foot aaapara_toc.html aaapara_toc.html what_is_para.html

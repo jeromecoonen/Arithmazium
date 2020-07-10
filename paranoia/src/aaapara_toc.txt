@@ -3,7 +3,7 @@
 <h1>Paranoia: The Program</h1>
 
 <p class="el1"><a class="toc-link wip" href="the_beginning.html">
-  Starting at the start
+  The beginning
 </a></p>
 <p class="el1"><a class="toc-link wip" href="what_is_para.html">
   What is Paranoia?

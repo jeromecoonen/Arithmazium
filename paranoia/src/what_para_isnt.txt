@@ -1,7 +1,87 @@
 #INCLUDE para_head what_is_para.html aaapara_toc.html para_versions.html
 
+<h1>What Paranoia isn't</h1>
+
 <p>
-Welcome
+Paranoia diagnoses computer arithmetic, but it does not reverse
+engineer the underlying architecture. Paranoia does not attempt
+to discover the word sizes of values. It does not distinguish
+ones'-complement, two's-complement, and sign-magnitude
+representation of algebraic sign.
+(Just the difference in the placement of the apostrophes above is enough
+to make you suspicious.)
+</p>
+
+<p>
+Most importantly, Paranoia does not inquire about the encoding of
+values. Readers familiar with floating point arithmetic and the IEEE
+standards know this a topic all its own. It's covered in the Basics page
+of this site.
+</p>
+
+<p>
+Paranoia concerns itself with "commercially relevant" computers,
+so it does not look at any radix other than 2, 8, 10, or 16.
+And by the year 2000, octal and hexadecimal systems were designs
+of the past.
+Paranoia discovers logarithmic arithmetic, which appeared on
+specialized machines years ago, but the reporting is keyed to
+floating point arithmetic.
+</p>
+
+<p>
+Paranoia does not concern itself with the <em>bindings</em>
+of arithmetic features to programming languages.
+To be cast in standard Basic, and then ported to multiple
+other languages, Paranoia necessarily uses few sophisticated
+features. Aside from the basic four operations and comparisons,
+Paranoia uses common functions like <code>abs()</code>,
+<code>sqrt()</code>, <code>pow()</code>, and <code>log()</code>,
+and it depends on printing values in decimal.
+</p>
+
+<p>
+Paranoia tests that integer values behave reasonably in
+scientific calculations,
+but it does not test the limits of a system's integer arithmetic.
+</p>
+
+<p>
+Paranoia provides a richer analysis than an earlier Fortran program,
+<coee>MACHAR</code> by William J. Cody, which provided runtime parameters
+to some library programs.
+But Paranoia does not leap to the axiomatic approach,
+such as in W. Stan Brown's paper
+<em>A Simple but Realistic Model of Floating-Point Computation</em>.
+Instead, Paranoia provides a specific set of findings
+to inform a single software port from one computer to
+another.
+This is more tractable than a one-time
+port to a hypothetical <em>model</em> suffering the
+sum of all numerical failings.
+</p>
+
+<p>
+Finally, a word about architectures of the 2020s.
+Paranoia diagnoses a system's arithmetic for use across the
+panoply of scientific, engineering, financial, and student
+applications. In the brave new world of graphics accelerators
+and machine learning, highly parallelized custom processors
+support specialized applications characterized by features like
+</p>
+<ul>
+  <li>Limited precision of about 2 or 3 decimal digits</li>
+  <li>Limited dynamic range, perhaps \( 10^{\pm 5} \)</li>
+  <li><em>Simplified</em> response to arithmetic overflow and underflow,
+    which are expected not to be computationally significant</li>
+  <li>No division operation</li>
+  <li>Few conventional functions like <code>log()</code></li>
+  <li>No general purpose programming</li>
+</ul>
+<p>
+Paranoia does not necessarily ask the right questions for this
+specialized realm, and it may require significant change to run
+in such an environment.
 </p>
 
 #INCLUDE para_foot what_is_para.html aaapara_toc.html para_versions.html

@@ -1,4 +1,4 @@
-/* home.css -- style for the home page */
+a/* home.css -- style for the home page */
 
 /* Styles for the room layout, patterns, and fonts */
 /* These are the experimental fonts, saved here for now. */
@@ -12,6 +12,14 @@
 /* Fitness -- Allerta Stencil */
 /* Dinosaur -- Passero One */
 /* Playroom -- Nanum Pen Script */
+
+a.home-room {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
 
 a:hover {
   text-decoration: none;

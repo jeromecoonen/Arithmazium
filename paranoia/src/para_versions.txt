@@ -1,7 +1,137 @@
 #INCLUDE para_head what_para_isnt.html aaapara_toc.html semiliterate.html
 
+<h1>Versions of Paranoia</h1>
+
 <p>
-Welcome
+Since its release in 1982, Paranoia has enjoyed enthusiastic
+migration to other popular languages. You can find them at
+<a class="inline" href="http://www.netlib.org/" target="_blank">Netlib</a>,
+the repository of mathematical software, papers, and databases.
+</p>
+
+<h2>What do you call it?</h2>
+<p>
+This discussion touches on several flavors of the Paranoia program.
+Some shorthand will tidy up the discussion, with a distinctive style
+to call attention to the reference to a specific version.
+We'll use <span class="p">ParaBas</span> (<em>pair 'a bass</em>,
+as they say in Wisconsin, you know) for the Basic version,
+adapting the file extension for other versions
+like <span class="p">ParaPy</span>, the focus of this discussion.
+</p>
+
+<h2>Basic</h2>
+<p>
+<span class="p">ParaBas</span> version
+A1.10 by William Kahan, released May 1982, is
+<a class="inline" href="https://netlib.org/paranoia/paranoia.b"
+  target="_blank">here</a>
+at Netlib.
+</p>
+<p>
+Version A1.11 by the author in 2020 is
+<a class="inline" href="paranoia_bas.html" target="_blank">here</a>
+on this site. It incorporates four small changes:
+</p>
+<nl>
+  <li>Bump the version number in the introductory
+    <code>PRINT</code> statement.</li>
+  <li>Remove an unwanted <code>'</code> character in line 110.</li>
+  <li>Reverse the inequality in line 5390,  as explained in
+    the discussion.</li>
+  <li>Change all instances of <code>&gt;&lt;</code> to
+    <code>&lt;&gt;</code>, the more modern symbol for
+    \( \ne \) in Basic.</li>
+</nl>
+<p>
+The three new lines are comments, with distinctive line numbers
+<code>xx3</code> and the initials JTC, noting the changes.
+</p>
+<p>
+This is a fascinating body of code and you're encouraged to
+have a look at it. Be aware that a very useful place to start is
+the bottom, where you will find an immensely useful glossary of
+the variables.
+</p>
+
+<h2>Pascal</h2>
+<p>
+Brian A. Wichmann of the National Physical Laboratory in Britain
+coded Paranoia in Pascal in 1985,
+with contributions buy David M. Gay
+and David G. Hough. You can find the 1988 edition
+of <span class="p">ParaPas</span> on Netlib
+<a class="inline" href="https://www.netlib.org/paranoia/paranoia.p"
+  target="_blank">here</a>.
+Wichimann used his version of Paranooia to NPL's new Pascal compiler.
+</p>
+
+<h2>C</h2>
+<p>
+Thos Sumner of the University of California, San Francisco ported
+Pascal Paranoia to C in 1985, with later help from Gay and Hough.
+<span class="p">ParaC</span> 1992 is
+<a class="inline" href="https://www.netlib.org/paranoia/paranoia.c"
+  target="_blank">here</a> at Netlib.
+C Paranoia has been modified from its interactive form to be
+used as a numerical sanity check in some systems development.
+</p>
+<p>
+This effort has revealed several bugs in the C version.
+They <em>should</em> find their way to an update to the Netlib version.
+</p>
+
+<h2>Fortran</h2>
+<p>
+Naturally, Paranoia has a Fortran edition, well two.
+Netlib has versions to be compiled for
+<a class="inline" href="https://www.netlib.org/paranoia/spara.f"
+  target="_blank">single precision</a> and
+<a class="inline" href="https://www.netlib.org/paranoia/dpara.f"
+  target="_blank">double precision</a>.
+We refer to them together as <span class="p">ParaFor</span>.
+</p>
+
+<h2>Modula-2</h2>
+<p>
+Among the spate of early Paranoia codes is K. Y. Tan's port
+of the Pascal version to Modula-2.
+The 1986 edition of <span class="p">ParaMod</span> is
+<a class="inline" href="https://www.netlib.org/paranoia/paranoia.m2"
+  target="_blank">here</a> at Netlib.
+</p>
+
+<h2>Python</h2>
+<p>
+I converted <span class="p">ParaC</span> to Python semi-automatically in 2019.
+Like the <span class="p">ParaPas</span> and
+<span class="p">ParaC</span>, it looked like a large Basic program
+in sheep's clothing. It had many global variables, often recycled for
+multiple uses, and few subprograms.
+</p>
+<p>
+To exploit many excellent features of Python, I completely restructured
+Python as a set of independent test functions called from a code
+sequence mirroring Kahan's original Basic. Everything happens in the same
+order, but in a more modular way.
+</p>
+<p>
+The next page explains how this discussion carves
+<span class="p">ParaPy</span> up
+to deal with it in bite-sized chunks.
+To see the whole program, or just run it yourself, click
+<a class="inline" href="paranoia_py.html" target="_blank">here</a>
+on this site.
+</p>
+<p>
+<span class="p">ParaPy</span> will find its way to Netlib when the dust
+settles a bit.
+</p>
+
+<h2>Julia</h2>
+<p>
+A clear next step is <span class="p">ParaJ</span>
+in the Julia language. To be continued...
 </p>
 
 #INCLUDE para_foot what_para_isnt.html aaapara_toc.html semiliterate.html

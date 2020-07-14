@@ -181,6 +181,14 @@ a:hover {
   text-decoration: underline;
 }
 
+a.inline {
+  text-decoration: underline;
+}
+
+a.inline:hover {
+  text-decoration: none;
+}
+
 .tree,
 .next,
 .previous {
@@ -211,6 +219,11 @@ a:hover {
 
 .round {
   border-radius: 25px;
+}
+
+span.p {
+  font-family: Courier, monospace;
+  font-weight: bold;  
 }
 
 /* ==========================================================================

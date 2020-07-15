@@ -38,9 +38,114 @@
   <a href='para_versions.html' class='previous round'>Previous</a>
   </div>
 
+Knuth
+musis
+<h1>Semiliterate Programming</h1>
 <p>
-Welcome
+<span class="p">ParaPy</span> is an example of Semiliterate Programming,
+to borrow from the powerful
+<a class="inline" href="http://www.literateprogramming.com/"
+  target="_blank">
+Literate Programing</a>
+paradigm of Donald Knuth.
+In both cases, the goal is presenting the code in best form for a reader,
+not a compiler. Knuth's methodology supports a top-down creation of a program,
+the way we often think of programming, with the benefit of handsome
+presentation of the code using Knuth's
+ <a class="inline" href="https://en.wikipedia.org/wiki/TeX"
+  target="_blank">TeX</a>.
+ </p>
+
+ <p>
+With <span class="p">ParaPy</span>, we start with a few thousand
+lines of Python that have evolved from the <span class="p">ParaC</span>
+translation of <span class="p">ParaBas</span>.
+This is programming from the inside out.
+Our presentation is a series of web pages documenting code snippets,
+not formatted document suitable for publication.
+It shares the granularity of the
+literate programming style.
 </p>
+
+<p>
+The semiliterate approach differs in the treatment of the pure Python
+code. <span class="p">ParaPy</span> is offered
+<a class="inline" href="paranoia_py.html" target="_blank">here</a>
+to be copied and pasted locally and run as is.
+It has sufficient comments to stand on its own, but not to explain
+all the inner workings. By contrast, the code output of the
+literate programming <code>tangle</code> tool is not intended for
+human consumption and may even be obfuscated to remove the temptation
+to modify that version instead the Web form.
+By design, Python discourages such obfuscation. For example, Python enforces
+indentation to reveal block structure.
+</p>
+
+<p>
+The semiliterate approach of
+<span class="p">ParaPy</span> is expedient.
+The source
+code presented in the site is what's carved up into the
+snippets presented in the discussion. All the pieces
+remaain up to date.
+While the semiliterate approach lacks the handy indexing
+and cross-referencing tools of literate programming,
+there is always the full source <code>paranoia.py</code>
+as the final arbiter.
+When in doubt, best heed Obi-Wan: <em>Use the source, Luke!</em>
+</p>
+
+<h2>Digit diagrams</h2>
+<p>
+Paranoia employs devious sequences of algebraic
+operations to tease out isolated digits of numbers.
+Most often, the formulas work whether the radix
+is 2, 8, 10, or 16. To help follow the flow, we will
+use digit diagrams of the form
+</p>
+
+<object type="image/svg+xml"
+  data="img/semilit_samp_a-auto.svg">
+  Image of 1.0, the number next larger, and an ulp.
+</object>
+
+<p>
+Digit diagrams have no connection to the internal representation of
+nummbers. You, good reader, are asked to supply the scale factor –
+the exponent – from the context. Almost all current arithmetic
+uses a normalized representation, which allows the leading
+<code>1</code> bit to be <em>implicit</em>. In the digit diagrams,
+we'll leave the radix point aligned across multiple values, to
+help visualize the calculation.
+</p>
+
+<p>
+The key is to honor the number of significant digits,
+that is, the <em>precision</em>, which Paranoia
+determines early on. That's what the vertical guidelines indicate
+in the diagrams.
+Digits may lie outside out the guidelines, but there may never
+by any more digits than would fit between them.
+</p>
+
+<p>
+Consider what happens when subtracting a <em>unit in the lsat place</em>
+of <code>1.0</code> in any radix:
+</p>
+
+<object type="image/svg+xml"
+  data="img/semilit_samp_b-auto.svg">
+  Values just less than 1.0, in radix 2, 10, 8, 16.
+</object>
+
+<p>
+The lowest-order significant digit is now one place to the right,
+because the one's place is now zero.
+</p>
+
+<p>
+We'll see many of these diagrams.
+</p
 
 <div class='next-prev'>
 <a href='pocket_guide.html' class='next round'>Next</a>

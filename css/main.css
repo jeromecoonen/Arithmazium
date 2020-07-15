@@ -223,8 +223,13 @@ a.inline:hover {
 
 span.p {
   font-family: Courier, monospace;
-  font-weight: bold;  
+  font-weight: bold;
 }
+
+div.math {
+  background: lightgreen;
+}
+
 
 /* ==========================================================================
    Helper classes

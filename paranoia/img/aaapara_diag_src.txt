@@ -1,27 +1,57 @@
 // para_art_ouflow.txt -- source for over/underflow diagrams
-FILE uflo_tiny_B_a
+FILE semilit_samp_a
+LINE3
+ONE = 1.0
+b jjj100j...j00
+The constant value one
+LINE3
+ONE_PLUS_ULP = ...
+b jjj100j...j01
+The next number larger than one
+LINE3
+ULP_OF_ONE_PLUS = ...
+b jjj000j...j01 e3
+A unit in the last place of one;|ote the value 1 is subtracted off
+FEND
 
+FILE semilit_samp_b
+LINE3
+ONE_MINUS_ULP = ...
+b jjj011j...j111 e13
+Next number smaller than one, in binary;|note the new digit position
+LINE3
+# ...in decimal
+d jjj099j...j999
+Bold digits
+LINE3
+# ...in octal
+o jjj077j...j777
+Italic digits
+LINE3
+# ...in hexadecimal
+h jjj0ffj...jfff
+Bold italic digits
+FEND
+
+FILE uflo_tiny_B_a
 LINE3
 less_tiny = tiny
 b jj1000j...j00
 Twice the smallest normal number
-
 LINE3
 tiny = z
 b jjj100j...j00
 The smallest normal number
-
 LINE3
 z = z * H
 b jjj010j...j00 e4
 IEEE: denormalize to half the|smallest normal number, exactly
-
 LINE3
 z = z * H
 b jjj000j...j00 e4
 Plan B: flush underflow to zero
-
 FEND
+
 FILE uflo_tiny_x_b
 LINE3
 tiny = tinier

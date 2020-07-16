@@ -62,8 +62,9 @@ When in doubt, best heed Obi-Wan: <em>Use the source, Luke!</em>
 Paranoia employs devious sequences of algebraic
 operations to tease out isolated digits of numbers.
 Most often, the formulas work whether the radix
-is 2, 8, 10, or 16. To help follow the flow, we will
-use digit diagrams of the form
+is 2, 8, 10, or 16. To help visualize the flow, we will
+use <em>digit diagrams</em>. This is an example showing
+three constants (hence the caps) in <span class="p">ParaPy</span>:
 </p>
 
 <object type="image/svg+xml"
@@ -82,8 +83,8 @@ help visualize the calculation.
 </p>
 
 <p>
-The key is to honor the number of significant digits,
-that is, the <em>precision</em>, which Paranoia
+The key is to honor the number of significant digits
+(the <em>precision</em>) which Paranoia
 determines early on. That's what the vertical guidelines indicate
 in the diagrams.
 Digits may lie outside out the guidelines, but there may never

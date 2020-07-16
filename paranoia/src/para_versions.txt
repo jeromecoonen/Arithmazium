@@ -89,7 +89,7 @@ Netlib has versions to be compiled for
   target="_blank">single precision</a> and
 <a class="inline" href="https://www.netlib.org/paranoia/dpara.f"
   target="_blank">double precision</a>.
-We refer to them together as <span class="p">ParaFor</span>.
+We refer to them together as <span class="p">ParaTran</span>.
 </p>
 
 <h2>Modula-2</h2>
@@ -99,6 +99,17 @@ of the Pascal version to Modula-2.
 The 1986 edition of <span class="p">ParaMod</span> is
 <a class="inline" href="https://www.netlib.org/paranoia/paranoia.m2"
   target="_blank">here</a> at Netlib.
+</p>
+
+<h2>Forth</h2>
+<p>
+Krishna Myneni ported <span class="p">ParaC</span> to
+Forth-94 in 2009.
+<span class="p">ParaForth</span> is not yet in Netlib, but
+you can find it at
+<a class="inline"
+  href="https://www.complang.tuwien.ac.at/forth/programs/paranoia.fs"
+  target="_blank">here</a>.
 </p>
 
 <h2>Python</h2>

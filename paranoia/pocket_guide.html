@@ -38,9 +38,285 @@
   <a href='semiliterate.html' class='previous round'>Previous</a>
   </div>
 
+<h1>Pocket Guide to Python for Paranoia</h1>
 <p>
-Welcome
+Paranoia is a complex program with a simple structure –
+a single sequence of computations with results displayed at each
+step. <span class="p">ParaPy</span> breaks the in-line
+form of <span class="p">ParaBas</span> into dozens of independent
+functions, but the flow of execution is the same.
 </p>
+
+<p>
+The structure of <span class="p">ParaPy</span> and the clean
+form of Python make this code as readable as any
+<em>pseudocode</em>, but this section presents a small
+number of Python's features you might find helpful.
+The focus is on what matters for Paranoia, not the
+juicy details of Python exploited to its fullest.
+</p>
+
+<p>
+If you want to learn more about Python,
+<a class="inline"
+  href="https://diveintopython3.problemsolving.io/">
+Dive Into Python 3</a> offers a wonderful tour of
+the language.
+Or try
+<a class="inline"
+  href="https://docs.python.org/3/tutorial/">
+the official tutorial</a>
+for a more thorough treatment.
+</p>
+
+<h3>Types and values</h3>
+<p>
+Python is untyped. Variables arise from use rather than
+by declaration. Python supports integers of arbitrary
+size, but <span class="p">ParaPy</span> uses floating
+point values for its tests. If you're using any conventional
+computer (or cloud-based server) from the past four decades,
+you're likely to have IEEE Standard 754 64-bit
+<code>double</code> values. You can find
+intimate details of IEEE 754 arithmetic
+in the
+<a class="inline" href="../essentials/aaaessentials_toc.html">
+Arithmetic Essentials</a> room.
+</p>
+
+<p>
+Python supports the boolean values <code>True</code>
+and <code>False</code>, and a pretty intuitive definition
+of the <em>truthiness</em> of any expression.
+</p>
+
+<p>
+Strings in <span class="p">ParaPy</span> usually
+appear in <code>"double quotes"</code>, but may
+also be written with <code>'single quotes'</code>.
+</p>
+
+<h3>Comments</h3>
+<p>
+The hash sign <code>#</code> not embedded in a string
+introduces a comment
+that runs to the end of the line.
+</p>
+
+<p>
+Python also supports <em>docstrings</em>, triple-quoted
+comments you'll find as the first line(s) of most
+functions.
+</p>
+
+<pre><code>  def print_if_err_cnt_positive():
+      '''Print an error message from a global count.'''
+</code></pre>
+
+<h3>Functions</h3>
+<p>
+Because Python is untyped, function definitions are
+pretty self-evident. This is another example from
+<span class="p">ParaPy</span>, including the one-line docstring.
+</p>
+
+<pre><code>  def compute_H_and_inverse():
+      """Return min(1/B, 1/2) and reciprocal, noting H is a fraction."""
+</code></pre>
+
+
+<h3>Block structure</h3>
+<p>
+Python's most remarkable feature is its freedom from punctuation.
+Indented lines of code are blocks, usually introduced with a
+<code>:</code> character. Here is the body of
+<code>compute_H_and_inverse()</code> from the last section.
+It is indented to the level of the docstring.
+</p>
+
+<pre><code>    if B < TWO:
+        h_inv = TWO
+    else:
+        h_inv = B
+</code></pre>
+
+<p>
+Locally, the indentation is very readable. When the plot thickens
+and you find yourself several levels deep in the logic,
+it takes a steady eye, or a plumb line, to keep oriented.
+<span class="p">ParaPy</span> reaches its deepest nesting in
+the examination of <em>underflow</em>, which may not surprise
+readers who have been down this path before.
+</p>
+
+<h3>Tuples</h3>
+<p>
+Part of Python's expressiveness is its
+ability to manipulate multiple values at a time.
+The final line of
+<code>compute_H_and_inverse()</code> is the return
+of <code>H</code> and its reciprocal:
+</p>
+
+<pre><code>    return ONE / h_inv, h_inv
+</code></pre>
+
+<p>
+You can guess that the invocation assigns two results.
+</p>
+
+<pre><code>  H, ONE_OVER_H = compute_H_and_inverse()
+</code></pre>
+
+<p>
+Python tuples are defined as values grouped by parentheses,
+but the <em>Pythonic</em> way is to relax the requirement
+for the punctuation
+when the context is obvious. Tuples are likewise useful in loops,
+where two or more values are updated at each pass.
+</p>
+
+<h3>Global variables</h3>
+<p>
+Basic on the 1982 IBM Personal Computer was limited by
+its flat structure and its limited namespace for variables.
+All variables were global, of the form
+<code>A</code> or <code>X3</code>, making the glossary
+at the end of <span class="p">ParaBas</span> essential reading.
+Reuse of some variables in different sections of the code
+could complicate things for the reader.
+</p>
+
+<p>
+<span class="p">ParaPy</span> uses Python global variables sparingly,
+always in a way parallel to <span class="p">ParaBas</span>.
+One class of globals, the flags and counters, are initialized
+(declared) at the beginning of the code.
+</p>
+
+<p>
+The other globals are constants, distinguished by their all-caps
+names. They are assigned once, then used as needed. Two exceptions,
+radix <code>B</code> and <code>PRECISION</code>, are double-checked
+and are subject to update.
+</p>
+
+<p>
+When a global variable is assigned within a function it must
+be declared <code>global</code>, otherwise a local variable
+is created. The <code>pause()</code> function accesses two
+globals.
+
+<pre><code>  def pause():
+      """Wait until the user hits RETURN."""
+      global milestone, page_num
+</code></pre>
+
+<h3>Style</h3>
+<p>
+<span class="p">ParaPy</span> follows the
+<a class="inline"
+  href="https://google.github.io/styleguide/pyguide.html">
+  Google style guide</a>.
+As just noted, constant variables like
+<code>ONE_HALF</code> are upper case.
+All other variables and all functions are lower case
+with underscore dividers, like
+<code>underflow_threshold</code>.
+</p>
+
+<h3>An idiom for do-while</h3>
+<p>
+The Pythonic way is to have one way to do something, not four ways.
+Python supports <code>while</code> loops, whose condition is tested
+at the top of the loop. <span class="p">ParaBas</span> employs the
+<code>do...while</code> structure heavily, in which the condition is
+tested at the end of the loop.
+</p>
+
+<p>
+<span class="p">ParaPy</span> effects this structure with a mild
+deviation from the style guide.
+Bringing the <code>break</code> statement up alongside the
+<code>if</code> test improves readability.
+</p>
+
+<pre><code>    y = ONE
+    while True:
+        b = big + y
+        y = y + y
+        b = b - big
+        if b != ZERO: break
+</code></pre>
+
+<h3>Modules and libraries</h3>
+<p>
+<span class="p">ParaPy</span> has a simple structure
+that fits in a single file (module), so there's no need
+for elaboration. At the top of the code, it <em>imports</em>
+the <code>math</code> library, giving access to handy
+functions like <code>math.sqrt</code> and
+<code>math.pow</code>.
+</p>
+
+<p>
+The curious line
+</p>
+
+<pre><code>  from __future__ import division      # use // for integer division
+</code></pre>
+
+<p>
+is a bit of Python custom around the <code>/</code> operator
+as it applies to integers, so it's not important here.
+</p>
+
+<h3>Lists</h3>
+<p>
+A Python list is an ordered sequence of values. In
+<span class="p">ParaPy</span>, we sometimes iterate
+over a list, as in this case of small odd primes:
+</p>
+
+<pre><code>    for z in [3, 5, 7, 11, 13, 17, 19, 23]:
+</code></pre>
+
+
+<h3>Dictionaries</h3>
+<p>
+A Python dictionary is a set of <em>key-value</em> pairs.
+<span class="p">ParaPy</span> has just one dictionary, a global
+set of test results. This is the start of its defiinition.
+</p>
+
+<pre><code>  flags = {
+      "mult_guard_digit": False,
+      "div_guard_digit": False,
+</code></pre>
+
+<p>
+The construct <code>flags["mult_guard_digit"]</code> accesses
+the dictionary element.
+</p>
+
+<h3>Number formatting</h3>
+<p>
+If you have formatted floating point numbers in another language,
+Python will come as no surprise. This is a typical usage.
+</p>
+
+<pre><code>    print("\tdiffers from z * 1 = {:0.17e}".format(r1))
+</code></pre>
+
+<p>
+Format requests in <code>{...}</code> are fulfilled in
+sequence from the arguments to <code>format</code>.
+As in C, <code>\t</code> skips to the next
+tab stop, and <code>\n</code> skips to the next line.
+</p>
+
+
+
 
 <div class='next-prev'>
 <a href='token_header_file.html' class='next round'>Next</a>

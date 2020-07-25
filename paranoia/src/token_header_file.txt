@@ -1,23 +1,73 @@
 #INCLUDE para_head pocket_guide.html aaapara_toc.html open_comment.html
 
-<p>This is an automatically generated file.</p>
+<h1>Introduction</h1>
 
 <p>
-Part 1
+Prof. William Kahan of the
+University of California at Berkeley
+designed Paranoia to test the behavior
+of a computer's floating point arithmetic.
+With the user providing no more than <code>return</code>
+keystrokes when prompted, Paranoia reports its findings
+on standard output.
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
+<p>
+Paranoia's analysis is intended to help programmers porting a numerical code
+from one computer to another. The artful tests arise from decades of
+experience on mainframes and minicomputers.
+Computers designed before 1980 exhibited a wide range of
+different flavors of floating point.
+By the time Paranoia appeared in 1982, the
+effort to develop IEEE Standard 754 for floating point arithmetic was already
+well underway. Today, the task of porting numerical programs is far less
+onerous than it was four decades earlier.
+</p>
 
 <p>
-Part 2
+In 2020, Paranoia may be more interesting to <em>read</em> than to run,
+but it will detect some deviations from 754-conforming arithmetic,
+and it may be useful on custom architectures not intended to support
+the standard.
+</p>
+
+<p>
+To run Paranoia, execute the single file <code>paranoia.py</code>.
+The classic Basic version, <span class="p">ParaBas</span>,
+treated its output device as a <em>glass tty</em>, printing results
+in \(24 \times 80\) chunks. <span class="p">ParaPy</span> produces
+output fit for a modern scrolling window.
+</p>
+
+<p>
+The first lines of the the file indicate you should use some version
+of Python 3. <span class="p">ParaPy</span> does not dip into
+Python exotica, but it does rely on some v. 3 features.
+There are two <code>import</code> statements.
+The <code>math</code> <em>module</em> gives access to useful mathematical
+functions like \(log(x)\) and \(floor(x)\).
+The <code>division</code> import is an idiom
+regarding integer division; it's good Python practice, but not essential
+for Paranoia.
 </p>
 
 #CODE 090-token_header_file
 
 <p>
-Part 3
+At highest level, <code>paranoia.py</code> is a sequence of four
+chunks:
+</p>
+<ol>
+  <li>Opening comments</li>
+  <li>Initialization of global variables</li>
+  <li>Support functions</li>
+  <li>One-pass sequence of tests</li>
+</ol>
+
+<p>
+This presentation proceeds in approximate execution order, following the
+sequence of tests, with reference to the many support functions as
+they are invoked.
 </p>
 
 #INCLUDE para_foot pocket_guide.html aaapara_toc.html open_comment.html

@@ -1,0 +1,9 @@
+    global rand_next, rand_seed
+    x = rand_next + rand_seed
+    y = x * x
+    y = y * y
+    x = x * y
+    y = x - math.floor(x)
+    rand_next = y + x * 0.000005
+    return rand_next
+

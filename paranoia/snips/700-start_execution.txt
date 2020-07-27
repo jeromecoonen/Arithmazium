@@ -1,7 +1,7 @@
 """START PARANOIA EXECUTION"""
 verbose |= ultra_verbose   # if it's ultra, it's verbose!
 # Small floating point constants.
-# First two assignments use coerced integer right - hand sides.
+# First two assignments use coerced integer right-hand sides.
 ZERO = float(0)
 ONE = float(1)
 TWO = ONE + ONE

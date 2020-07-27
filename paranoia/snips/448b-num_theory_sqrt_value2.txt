@@ -1,5 +1,5 @@
     D = B * D
-    if debug:
+    if ultra_verbose:
         print("\tnew D = {:.17e} Q = {:.17e}".format(D, Q))
     return x, D, Q, z, z1
 

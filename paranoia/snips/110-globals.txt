@@ -1,21 +1,16 @@
-verbose = False
-ultra_verbose = False
-hasty = False
-debug = False
-# Declarations of global variables
-err_failure = 0
+# Declarations of global variables other than CONSTANTS
+err_failure = 0   # Indexes into the count and type lists below
 err_serious = 1
 err_defect = 2
 err_flaw = 3
 error_count = [0, 0, 0, 0]
 error_type = ["Failure", "Serious", "Defect", "Flaw"]
-fpecount = 0   # int
-milestone = 0   # int
-PageNo = 0   # int
-M = 0   # int
-err_cnt = 0   # int
-save_err_cnt = 0   # int
-rand_seed = math.nan
-rand_next = math.nan
+fpecount = 0   # int count of exceptioins detected
+milestone = 0   # int progress through the code
+page_num = 1   # int vestige of glass tty pages
+pow_err_cnt = 0   # int for testing x**y
+save_pow_err_cnt = 0   # int for testing x**y
 min_sqrt_error = math.nan
 max_sqrt_error = math.nan
+rand_seed = math.nan
+rand_next = math.nan

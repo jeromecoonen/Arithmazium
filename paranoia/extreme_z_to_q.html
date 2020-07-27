@@ -61,16 +61,16 @@ Part 2
     Basic 5460-5490
     """
 
-    global err_cnt   # var used by power tests
+    global pow_err_cnt   # var used by power tests
     print("Testing powers z^q at four nearly extreme values.")
-    err_cnt = 0   # this test resets the global value to 0 without restore.
+    pow_err_cnt = 0   # this test resets the global value to 0 without restore.
 </code></pre>
 
 <p>
 Part 3
 </p>
 
-<pre><code>    q = FLOOR(ONE_HALF - LOG(C) / LOG(A))   # C is a power of B and thus A
+<pre><code>    q = floor(ONE_HALF - log(C) / log(A))   # C is a power of B and thus A
     for z in [A, ONE_OVER_A]:
         x = ONE_OVER_C
         test_power_result(x, z, q)
@@ -78,7 +78,7 @@ Part 3
         x = C
         test_power_result(x, z, q)
     print_if_err_cnt_positive()
-    if err_cnt == 0:
+    if pow_err_cnt == 0:
         print(" ... no discrepancies found.")
     return
 

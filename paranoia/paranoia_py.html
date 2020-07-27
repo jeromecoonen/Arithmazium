@@ -41,18 +41,17 @@ import math
 #       C -- adapted from Pascal by Thos Sumner, with
 #           David M. Gay, 1986
 #       Modula-2 -- adapted from Pascal by K. Y. Tan, 1986
-#       FORTRAN - single and double precision versions
-#
+#       FORTRAN - single and double precision versions, 1986
 #       Forth -- adapted from C by Krishna Myneni, 2009
 #
-#   (C) Apr 19 1983 in BASIC version by:
+#       BASIC version (C) 1982  by:
 #       Professor William M. Kahan,
 #       EECS Dept., Soda Hall, Room 441
 #       University of California
 #       Berkeley, California 94720 USA
 #
 #   You may copy this program freely if you acknowledge its source.
-#   Please send comments on the Python version to the author
+#   Please send comments on the Python version to
 #   Jerome Coonen at jcoonen@gmail.com
 #
 # ~~~~~~~ 100-initializations
@@ -65,41 +64,33 @@ ultra_verbose = False
 hasty = True   # When True, skips all user interaction
 # ~~~~~~~ 110-globals
 # Declarations of global variables other than CONSTANTS
-err_failure = 0   # Indexes into ther error_count list
+err_failure = 0   # Indexes into the count and type lists below
 err_serious = 1
 err_defect = 2
 err_flaw = 3
 error_count = [0, 0, 0, 0]
 error_type = ["Failure", "Serious", "Defect", "Flaw"]
-fpecount = 0   # int
-milestone = 0   # int
-page_num = 0   # int
-M = 0   # int
-err_cnt = 0   # int
-save_err_cnt = 0   # int
-rand_seed = math.nan
-rand_next = math.nan
+fpecount = 0   # int count of exceptioins detected
+milestone = 0   # int progress through the code
+page_num = 1   # int vestige of glass tty pages
+pow_err_cnt = 0   # int for testing x**y
+save_pow_err_cnt = 0   # int for testing x**y
 min_sqrt_error = math.nan
 max_sqrt_error = math.nan
+rand_seed = math.nan
+rand_next = math.nan
 # ~~~~~~~ 115-flags
 flags = {
     "mult_guard_digit": False,
     "div_guard_digit": False,
     "add_sub_guard_digit": False,
-    "mult_rounding": "other",
+    "mult_rounding": "other",   # rounded and chopped are the alternatives
     "div_rounding": "other",
     "add_sub_rounding": "other",
     "sqrt_rounding": "other",
     "uses_sticky_bit": False,
     "IEEE": False
 }
-# ~~~~~~~ 120-flags2
-Break= False
-Done= False
-NotMonot= False
-Monot= False
-IEEE= False
-
 # ~~~~~~~ 150-print_msgs
 #    START MESSAGES
 #    Block messages to be printed as the user starts running paranoia.
@@ -279,10 +270,10 @@ def rand_frac():
 # ~~~~~~~ 240-print_if_err_cnt_positive
 def print_if_err_cnt_positive():
     '''Print an error message from a global count.'''
-    global err_cnt
-    if err_cnt > 0:
+    global pow_err_cnt
+    if pow_err_cnt > 0:
         print("Similar discrepancies have occurred {:d} times."
-              .format(err_cnt))
+              .format(pow_err_cnt))
     return
 
 # ~~~~~~~ 250-find_big_two_to_the_nth
@@ -1226,13 +1217,13 @@ def num_theory_sqrt_value(x, D, Q, z, z1):
 #=============================================
 def test_power_result(x, z, q):
     """Check that x equals z**q, usually for exact integer cases."""
-    global err_cnt
+    global pow_err_cnt
     y = pow(z, q)
     if ultra_verbose:
         print("\t{:.17e} = {:.17e} ^ {:.17e}".format(y, z, q))
     if y != x:
         # ~~~~~~~ 452-test_power_result2
-        if err_cnt <= 0:
+        if pow_err_cnt <= 0:
             if z == ZERO and q <= ZERO:
                 print("WARNING:  computing")
             else:
@@ -1242,7 +1233,7 @@ def test_power_result(x, z, q):
             print("\twhich compared unequal to correct {:0.17e} ;"
                   .format(x))
             print("\t\tthey differ by {:0.17e} .".format(y - x))
-        err_cnt += 1   # ... count discrepancies.
+        pow_err_cnt += 1   # ... count discrepancies.
     return
 
 # ~~~~~~~ 455-test_integer_powers
@@ -1743,9 +1734,9 @@ def extreme_z_to_q():
     Basic 5460-5490
     """
 
-    global err_cnt   # var used by power tests
+    global pow_err_cnt   # var used by power tests
     print("Testing powers z^q at four nearly extreme values.")
-    err_cnt = 0   # this test resets the global value to 0 without restore.
+    pow_err_cnt = 0   # this test resets the global value to 0 without restore.
     # ~~~~~~~ 556a-test_x_to_xp1_over_xm14
     q = floor(ONE_HALF - log(C) / log(A))   # C is a power of B and thus A
     for z in [A, ONE_OVER_A]:
@@ -1755,7 +1746,7 @@ def extreme_z_to_q():
         x = C
         test_power_result(x, z, q)
     print_if_err_cnt_positive()
-    if err_cnt == 0:
+    if pow_err_cnt == 0:
         print(" ... no discrepancies found.")
     return
 
@@ -1954,7 +1945,7 @@ def test_div_by_zero():
 """START PARANOIA EXECUTION"""
 verbose |= ultra_verbose   # if it's ultra, it's verbose!
 # Small floating point constants.
-# First two assignments use coerced integer right - hand sides.
+# First two assignments use coerced integer right-hand sides.
 ZERO = float(0)
 ONE = float(1)
 TWO = ONE + ONE
@@ -1969,12 +1960,6 @@ TWOFORTY = FOUR * FIVE * THREE * FOUR
 MINUS_ONE = -ONE
 ONE_HALF = ONE / TWO
 ONE_AND_HALF = ONE + ONE_HALF
-# ~~~~~~~ 705-init_counters
-error_count[err_failure] = 0
-error_count[err_serious] = 0
-error_count[err_defect] = 0
-error_count[err_flaw] = 0
-page_num = 1
 # ~~~~~~~ 710-start_messages
 milestone = 0   #==============================
 instructions()
@@ -2408,10 +2393,9 @@ if sqrt_rnd_odd:
 milestone = 90   #==============================
 pause()
 print("Testing powers z^i for small Integers z and i.")
-err_cnt = 0
+pow_err_cnt = 0
 # ... test powers of zero.
 # If(-1)^k is invalid, replace MINUS_ONE by ONE.
-# JTC: M = 3 was the max value of I, but was it supposed to be a count?
 for (z, i) in [(-ZERO, 0), (MINUS_ONE, -4)]:
     x = ONE
     test_integer_powers(x, z, 0, 3)
@@ -2419,8 +2403,8 @@ for (z, i) in [(-ZERO, 0), (MINUS_ONE, -4)]:
     test_integer_powers(z, z, 1023, 1026)
 
 print_if_err_cnt_positive()
-save_err_cnt = err_cnt
-err_cnt = 0
+save_pow_err_cnt = pow_err_cnt
+pow_err_cnt = 0
 m = int(floor(TWO * log(BIG_B_NTH) / log(A)))
 for z in [A, ONE_OVER_A]:   # Executes 2x if A = 1/A = 1
     test_integer_powers(z, z, 1, m)
@@ -2433,15 +2417,15 @@ milestone = 100   #==============================
 m = NUM_TRIALS
 for z in [3, 5, 7, 11, 13, 17, 19, 23]:
     test_integer_powers(z, z, 1, m)
-if err_cnt > 0:
+if pow_err_cnt > 0:
     print("Errors like this may invalidate financial calculations")
     print("\tinvolving interest rates.")
 
 print_if_err_cnt_positive()
-err_cnt += save_err_cnt
-if err_cnt == 0:
+pow_err_cnt += save_pow_err_cnt
+if pow_err_cnt == 0:
     print("... no discrepancies found.")
-if err_cnt > 0:
+if pow_err_cnt > 0:
     pause()
 else:
     print("")

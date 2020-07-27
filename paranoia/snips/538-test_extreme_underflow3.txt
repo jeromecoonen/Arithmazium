@@ -5,6 +5,6 @@
           .format(ONE_OVER_H, y2))
     print("actually calculating yields:", end="")
     # Python has no underflow exception, so no try/except here.
-    ultra = POW(ONE_OVER_H, y2)
+    ultra = pow(ONE_OVER_H, y2)
     # Can't happen -- bad_cond(err_serious, " trap on underflow.\n")
     print(" {:0.17e} .".format(ultra))

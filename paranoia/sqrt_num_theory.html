@@ -59,11 +59,11 @@ tests = 0
 flags["sqrt_rounding"] = "other"
 while B != ONE:
     print("Testing whether sqrt is rounded or chopped.")
-    D = FLOOR(ONE_HALF + POW(B, ONE + PRECISION - FLOOR(PRECISION)))
+    D = floor(ONE_HALF + pow(B, ONE + PRECISION - floor(PRECISION)))
     # ... == B^(1 + fract) if (PRECISION == Integer + fract.
     x = D / B
     y = D / A
-    if (x != FLOOR(x)) or (y != FLOOR(y)):
+    if (x != floor(x)) or (y != floor(y)):
         sqrt_anomalous_int = True
         break
 
@@ -92,10 +92,10 @@ Part 4
             Q = B
             y1 = y
             while True:
-                x1 = FABS(Q + FLOOR(ONE_HALF - Q / y1) * y1)
+                x1 = fabs(Q + floor(ONE_HALF - Q / y1) * y1)
                 Q = y1
                 y1 = x1
-                if debug:
+                if ultra_verbose:
                     print("\t\t\tloop inner x1 = {:.6e} Q = {:.6e} y1 = {:.6e}"
                           .format(x1, Q, y1))
                 if x1 <= ZERO: break
@@ -113,7 +113,7 @@ Part 5
         y2 = y2 + x
         if y2 >= FourD:
             y2 = y2 - FourD
-        if debug:
+        if ultra_verbose:
             print("\t\t\tloop x = {:.6e} x1 = {:.6e}".format(x, x1))
             print("\t\t\t     y = {:.6e} y1 = {:.6e} y2 = {:.6e}".format(y, y1, y2))
             print("\t\t\t     z = {:.6e} z1 = {:.6e} z2 = {:.6e}".format(z, z1, z2))
@@ -128,10 +128,9 @@ Part 6
     # ***JTC: fix global Q used by num_theory_sqrt_value
     Q = (X8 + z * z) / FourD
     X8 = X8 / EIGHT
-    if debug:
+    if ultra_verbose:
         print("Loop finds Q = {:.17e} X8 = {:.17e}".format(Q, X8))
-    # *** exit(17)   # ***********************************
-    if Q != FLOOR(Q):
+    if Q != floor(Q):
         sqrt_anomalous_int = True
         break
 
@@ -143,7 +142,7 @@ Part 7
 
 <pre><code>    while True:
         x = z1 * z
-        x = x - FLOOR(x / B) * B
+        x = x - floor(x / B) * B
         if x != ONE:
             z1 = z1 - ONE
         if x == ONE or z1 <= ZERO: break

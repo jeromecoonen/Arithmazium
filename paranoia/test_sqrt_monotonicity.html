@@ -68,9 +68,9 @@ Part 3
 
 <pre><code>    while not (not_monot or monot):
         i = i + 1
-        x = SQRT(x)
-        q = SQRT(y)
-        z = SQRT(z)
+        x = sqrt(x)
+        q = sqrt(y)
+        z = sqrt(z)
         if (x > q) or (q > z):
             not_monot = True
 </code></pre>
@@ -80,7 +80,7 @@ Part 4
 </p>
 
 <pre><code>        else:
-            q = FLOOR(q + ONE_HALF)
+            q = floor(q + ONE_HALF)
             # B = q*q only if radix B is 16 or 4
             if (i <= 0) and (B != q * q):
                 monot = True

@@ -5,13 +5,13 @@
     # 16 with a bit extra. The value y rounds off noise from the logs.
     # TODO: resolve the apparent redundancy between the big factor 240
     # and the check for being with a quarter.
-    x = - TWOFORTY * LOG(ulp) / LOG(b)
-    y = FLOOR(ONE_HALF + x)
-    if (FABS(x - y) * FOUR < ONE):
+    x = - TWOFORTY * log(ulp) / log(b)
+    y = floor(ONE_HALF + x)
+    if (fabs(x - y) * FOUR < ONE):
         x = y
     p = x / TWOFORTY
-    y = FLOOR(ONE_HALF + p)
-    if (FABS(p - y) * TWOFORTY < ONE_HALF):
+    y = floor(ONE_HALF + p)
+    if (fabs(p - y) * TWOFORTY < ONE_HALF):
         p = y
     return p
 

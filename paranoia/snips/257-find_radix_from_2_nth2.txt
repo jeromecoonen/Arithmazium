@@ -1,9 +1,8 @@
     y = ONE
-    doit = True
-    while doit:
+    while True:
         b = big + y
         y = y + y
         b = b - big
-        doit = b == ZERO
+        if b != ZERO: break
     return b
 

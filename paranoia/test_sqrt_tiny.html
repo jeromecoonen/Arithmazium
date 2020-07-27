@@ -56,7 +56,7 @@ Part 2
     """Check sqrt(x)**2 for values near the underflow threshold."""
     for z in tlist:
         if z != ZERO:
-            sqrt_z = SQRT(z)
+            sqrt_z = sqrt(z)
             y = sqrt_z * sqrt_z
             if ((y / (ONE - B * SAFE_ULPS_OF_ONE) < z)
                     or y > (ONE + B * SAFE_ULPS_OF_ONE) * z):

@@ -4,7 +4,7 @@
 if (B != ONE):
     PRECISION = standardize_fractional_precision(ULP_OF_ONE_MINUS, B)
 
-if (PRECISION != FLOOR(PRECISION)) or (B == ONE):
+if (PRECISION != floor(PRECISION)) or (B == ONE):
     print("PRECISION cannot be characterized by an Integer number")
     print("of significant digits but, by itself, this is a minor flaw.")
 

@@ -56,7 +56,7 @@ Part 2
     """Try two tests of the form (1 + tiny)**2."""
     z = B * ULP_OF_ONE_PLUS
     x = ONE + z
-    y = FABS((x + z) - x * x) - ULP_OF_ONE_PLUS
+    y = fabs((x + z) - x * x) - ULP_OF_ONE_PLUS
 </code></pre>
 
 <p>
@@ -64,7 +64,7 @@ Part 3
 </p>
 
 <pre><code>    x = ONE - ULP_OF_ONE_PLUS
-    z = FABS((x - ULP_OF_ONE_PLUS) - x * x) - ULP_OF_ONE_MINUS
+    z = fabs((x - ULP_OF_ONE_PLUS) - x * x) - ULP_OF_ONE_MINUS
     test_cond(err_failure, y <= ZERO and z <= ZERO,
             "* gets too many final digits wrong.\n")
 

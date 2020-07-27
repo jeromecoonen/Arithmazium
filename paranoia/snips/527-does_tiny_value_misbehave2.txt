@@ -14,7 +14,7 @@
 
     print("What the machine gets for (z + z) / z is  {:0.17e} ."
           .format(z_quo))
-    if FABS(z_quo - TWO) < B * ULP_OF_ONE_PLUS:
+    if fabs(z_quo - TWO) < B * ULP_OF_ONE_PLUS:
         print("This is O.K., provided Over/Underflow", end="")
         print(" has NOT just been signaled.")
     else:

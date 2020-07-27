@@ -55,7 +55,7 @@ Part 2
 <pre><code>def num_theory_sqrt_value(x, D, Q, z, z1):
     """Test utility."""
     x = z1 * Q
-    x = FLOOR(ONE_HALF - x / B) * B + x
+    x = floor(ONE_HALF - x / B) * B + x
     Q = (Q - x * z) / B + x * x * (D / B)
     z = z - TWO * x * D
 </code></pre>
@@ -65,7 +65,7 @@ Part 3
 </p>
 
 <pre><code>    if z <= ZERO:
-        if debug:
+        if ultra_verbose:
             print("\t\t\tnum_theory_sqrt_value: z = {:.17} <= ZERO".format(z))
         z = - z
         z1 = - z1
@@ -76,7 +76,7 @@ Part 4
 </p>
 
 <pre><code>    D = B * D
-    if debug:
+    if ultra_verbose:
         print("\tnew D = {:.17e} Q = {:.17e}".format(D, Q))
     return x, D, Q, z, z1
 

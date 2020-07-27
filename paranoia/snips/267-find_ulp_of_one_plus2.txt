@@ -2,7 +2,7 @@
     third = x - ONE
     sixth = ONE_HALF - third
     x = sixth + sixth
-    x = FABS(x - third)
+    x = fabs(x - third)
     if x < guess:
         x = guess
     # Now x = (unknown no.) ulps of 1+.

@@ -1,4 +1,4 @@
-#INCLUDE para_head test_div_by_zero.html aaapara_toc.html start_messages.html
+#INCLUDE para_head initializations.html aaapara_toc.html start_messages.html
 
 <p>This is an automatically generated file.</p>
 
@@ -20,11 +20,9 @@ Part 2
 Part 3
 </p>
 
-#CODE 705-init_counters
 
 <p>
 Part 4
 </p>
 
-#INCLUDE para_foot test_div_by_zero.html aaapara_toc.html start_messages.html
-
+#INCLUDE para_foot initializations.html aaapara_toc.html start_messages.html

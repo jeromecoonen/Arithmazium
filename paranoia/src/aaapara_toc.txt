@@ -21,21 +21,22 @@
   Pocket Guide to Python for Paranoia
 </a></p>
 <p class="el1"><a class="toc-link wip" href="token_header_file.html">
-  First line
+  First lines of code
 </a></p>
-<p class="el1"><a class="toc-link to-do" href="open_comment.html">
-  open_comment
+<p class="el1"><a class="toc-link wip" href="open_comment.html">
+  Historical comment
 </a></p>
-<p class="el1"><a class="toc-link to-do" href="initializations.html">
-  initializations
+<p class="el1"><a class="toc-link wip" href="initializations.html">
+  Global variables and flags
 </a></p>
-
-<p class="el1"><a class="toc-link to-do" href="start_execution.html">
+<p class="el1"><a class="toc-link wip" href="start_execution.html">
   start_execution
 </a></p>
-<p class="el1"><a class="toc-link to-do" href="start_messages.html">
+<p class="el1"><a class="toc-link wip" href="start_messages.html">
   start_messages
 </a></p>
+
+
 <p class="el3"><a class="toc-link to-do" href="print_msgs.html">
   print_msgs()
 </a></p>
@@ -51,6 +52,8 @@
 <p class="el2"><a class="toc-link to-do" href="history.html">
   history()
 </a></p>
+
+
 <p class="el1"><a class="toc-link to-do" href="utilities.html">
   utilities
 </a></p>
@@ -63,6 +66,7 @@
 <p class="el2"><a class="toc-link to-do" href="pause.html">
   pause()
 </a></p>
+
 
 <p class="el1"><a class="toc-link to-do" href="zero_one.html">
   zero_one

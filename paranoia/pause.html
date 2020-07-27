@@ -63,13 +63,13 @@ Part 2
 
 
 def pause():
-    """Wait until the user hits RETURN"""
-    global milestone, PageNo
+    """Wait until the user hits RETURN."""
+    global milestone, page_num
     s = alt_input("\nTo continue, press RETURN ")
     print("\nDiagnosis resumes after milestone Number ", milestone,
-          "          Page: ", PageNo, "\n")
+          "          Page: ", page_num, "\n")
     milestone += 1   # note -- milestone may be changed by extra pauses
-    PageNo += 1
+    page_num += 1
 
 </code></pre>
 

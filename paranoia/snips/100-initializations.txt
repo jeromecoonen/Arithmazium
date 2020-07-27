@@ -1,3 +1,7 @@
 #----START CODE----
-# Integer constants
-NUM_TRIALS = 20   # Numbeer of random and sequential tests.
+# Number of trials in half a dozen random and sequential tests.
+NUM_TRIALS = 20
+# Set all three flags to False for classic Paranoia flow.
+verbose = False
+ultra_verbose = False
+hasty = True   # When True, skips all user interaction

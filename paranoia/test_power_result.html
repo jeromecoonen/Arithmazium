@@ -57,8 +57,8 @@ Part 2
 #=============================================
 def test_power_result(x, z, q):
     """Check that x equals z**q, usually for exact integer cases."""
-    global err_cnt
-    y = POW(z, q)
+    global pow_err_cnt
+    y = pow(z, q)
     if ultra_verbose:
         print("\t{:.17e} = {:.17e} ^ {:.17e}".format(y, z, q))
     if y != x:
@@ -68,7 +68,7 @@ def test_power_result(x, z, q):
 Part 3
 </p>
 
-<pre><code>        if err_cnt <= 0:
+<pre><code>        if pow_err_cnt <= 0:
             if z == ZERO and q <= ZERO:
                 print("WARNING:  computing")
             else:
@@ -78,7 +78,7 @@ Part 3
             print("\twhich compared unequal to correct {:0.17e} ;"
                   .format(x))
             print("\t\tthey differ by {:0.17e} .".format(y - x))
-        err_cnt += 1   # ... count discrepancies.
+        pow_err_cnt += 1   # ... count discrepancies.
     return
 
 </code></pre>

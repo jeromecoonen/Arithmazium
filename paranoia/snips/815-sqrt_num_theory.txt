@@ -5,11 +5,11 @@ tests = 0
 flags["sqrt_rounding"] = "other"
 while B != ONE:
     print("Testing whether sqrt is rounded or chopped.")
-    D = FLOOR(ONE_HALF + POW(B, ONE + PRECISION - FLOOR(PRECISION)))
+    D = floor(ONE_HALF + pow(B, ONE + PRECISION - floor(PRECISION)))
     # ... == B^(1 + fract) if (PRECISION == Integer + fract.
     x = D / B
     y = D / A
-    if (x != FLOOR(x)) or (y != FLOOR(y)):
+    if (x != floor(x)) or (y != floor(y)):
         sqrt_anomalous_int = True
         break
 

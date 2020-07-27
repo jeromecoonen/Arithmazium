@@ -2,7 +2,7 @@ print("Test sqrt for accuracy.")
 # TODO: explain this bump - scaling?
 min_sqrt_error = min_sqrt_error + ONE_HALF
 max_sqrt_error = max_sqrt_error - ONE_HALF
-y = (SQRT(ONE + ULP_OF_ONE_PLUS) - ONE) / ULP_OF_ONE_PLUS
+y = (sqrt(ONE + ULP_OF_ONE_PLUS) - ONE) / ULP_OF_ONE_PLUS
 up_err = (y - ONE) + ULP_OF_ONE_PLUS / EIGHT
 down_err = y + ULP_OF_ONE_PLUS / EIGHT
 update_sqrt_errors(down_err, up_err)

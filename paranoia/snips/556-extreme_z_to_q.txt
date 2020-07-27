@@ -7,6 +7,6 @@ def extreme_z_to_q():
     Basic 5460-5490
     """
 
-    global err_cnt   # var used by power tests
+    global pow_err_cnt   # var used by power tests
     print("Testing powers z^q at four nearly extreme values.")
-    err_cnt = 0   # this test resets the global value to 0 without restore.
+    pow_err_cnt = 0   # this test resets the global value to 0 without restore.

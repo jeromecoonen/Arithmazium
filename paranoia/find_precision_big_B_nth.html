@@ -70,12 +70,11 @@ Part 3
 
 <pre><code>    big_b = ONE
     precision = ZERO
-    doit = True
-    while doit:
+    while True:
         precision = precision + ONE
         big_b = big_b * b
         y = big_b + ONE
-        doit = (y - big_b) == ONE
+        if y - big_b != ONE: break
     return precision, big_b
 
 

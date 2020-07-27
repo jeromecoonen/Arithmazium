@@ -2,10 +2,9 @@
     # ***JTC: fix global Q used by num_theory_sqrt_value
     Q = (X8 + z * z) / FourD
     X8 = X8 / EIGHT
-    if debug:
+    if ultra_verbose:
         print("Loop finds Q = {:.17e} X8 = {:.17e}".format(Q, X8))
-    # *** exit(17)   # ***********************************
-    if Q != FLOOR(Q):
+    if Q != floor(Q):
         sqrt_anomalous_int = True
         break
 

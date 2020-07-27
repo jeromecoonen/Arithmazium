@@ -10,7 +10,7 @@ def test_unit_ratios(tlist):
 
         if diff != ZERO:
             if diff == (-ULP_OF_ONE_MINUS and
-                        (FABS(x) < 1 or FABS(x) > B)):
+                        (fabs(x) < 1 or fabs(x) > B)):
                 bad_cond(err_flaw, "")
             else:
                 bad_cond(err_serious, "")

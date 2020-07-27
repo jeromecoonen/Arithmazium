@@ -33,66 +33,103 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='print_msgs.html' class='next round'>Next</a>
+  <a href='start_execution.html' class='next round'>Next</a>
   <a href='aaapara_toc.html' class='tree round'>Home</a>
   <a href='open_comment.html' class='previous round'>Previous</a>
   </div>
 
-<p>This is an automatically generated file.</p>
+<h1>Global variables and flags</h1>
 
 <p>
-Part 1
+A complex program like Paranoia in standard Basic suffers from the
+lack of modularity . . . but especially from the blizzard of
+global variables with one- and
+two-character names. <span class="p">ParaPas</span> and
+<span class="p">ParaC</span> introduced more mnemonic names.
+<span class="p">ParaPy</span> adopts Pythonic naming
+conventions, but more importantly, factors the code into
+functions that isolates values used locally.
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
+<p>
+<code>NUM_TRIALS</code> is the one user-settable parameter in Paranoia.
+It governs the number of random tests
+that \(x \times y = y \times x\)
+and the number of sequential tests of
+\( \sqrt{x} \) for monotonicity and at integer \(x\).
+Typical values of
+<code>NUM_TRIALS</code> can be in the dozens, but the code
+defends against absurdly large values. The name
+is capitalized by Python convention for constants.
+</p>
 
 <p>
-Part 2
+<span class="p">ParaPy</span> supports customary flags for more verbose
+output and for nonstop execution. Classic <span class="p">ParaBas</span>
+delivered its output screen by screen.
 </p>
 
 <pre><code>#----START CODE----
-# Integer constants
-NUM_TRIALS = 20   # Numbeer of random and sequential tests.
+# Number of trials in half a dozen random and sequential tests.
+NUM_TRIALS = 20
+# Set all three flags to False for classic Paranoia flow.
+verbose = False
+ultra_verbose = False
+hasty = True   # When True, skips all user interaction
 </code></pre>
 
 <p>
-Part 3
+The next globals are counters and status values throughout the program.
+Paranoia classifies issues as Flaws, Defects, Serious Defects, and
+Failures. It reports problems as they arise and summarizes at the end.
+The code has milestones that track progress through the tests.
+<span class="p">ParaPy</span> follows the same milestone sequence as
+the classic. The code also preserves the original sense of
+<em>page number</em>, which corresponded to <em>screens</em> as the units of
+output.
 </p>
 
-<pre><code>verbose = False
-ultra_verbose = False
-hasty = False
-debug = False
-# Declarations of global variables
-err_failure = 0
+<p>
+There are global counters for errors associated
+with \(y ^ {z}\) and error limits for
+\( \sqrt{x}\). Two state values
+apply to a simple
+pseudorandom number generator.
+Counters start at 0, but other values are given the
+IEEE standard Not-a-Number value, <code>math.nan</code>.
+</p>
+
+<pre><code># Declarations of global variables other than CONSTANTS
+err_failure = 0   # Indexes into the count and type lists below
 err_serious = 1
 err_defect = 2
 err_flaw = 3
 error_count = [0, 0, 0, 0]
 error_type = ["Failure", "Serious", "Defect", "Flaw"]
-fpecount = 0   # int
-milestone = 0   # int
-PageNo = 0   # int
-M = 0   # int
-err_cnt = 0   # int
-save_err_cnt = 0   # int
-rand_seed = math.nan
-rand_next = math.nan
+fpecount = 0   # int count of exceptioins detected
+milestone = 0   # int progress through the code
+page_num = 1   # int vestige of glass tty pages
+pow_err_cnt = 0   # int for testing x**y
+save_pow_err_cnt = 0   # int for testing x**y
 min_sqrt_error = math.nan
 max_sqrt_error = math.nan
+rand_seed = math.nan
+rand_next = math.nan
 </code></pre>
 
 <p>
-Part 4
+Paranooia delivers qualitative results, too, such as whether
+an operation has a guard digit, or what kind of rounding
+it provides. The dictionary <code>flags{}</code> gathers up
+those findings, which were captured in a fleet of global
+variables in <span class="p">ParaBas</span>.
 </p>
 
 <pre><code>flags = {
     "mult_guard_digit": False,
     "div_guard_digit": False,
     "add_sub_guard_digit": False,
-    "mult_rounding": "other",
+    "mult_rounding": "other",   # rounded and chopped are the alternatives
     "div_rounding": "other",
     "add_sub_rounding": "other",
     "sqrt_rounding": "other",
@@ -101,24 +138,8 @@ Part 4
 }
 </code></pre>
 
-<p>
-Part 5
-</p>
-
-<pre><code>Break= False
-Done= False
-NotMonot= False
-Monot= False
-IEEE= False
-
-</code></pre>
-
-<p>
-Part 6
-</p>
-
 <div class='next-prev'>
-<a href='print_msgs.html' class='next round'>Next</a>
+<a href='start_execution.html' class='next round'>Next</a>
 <a href='aaapara_toc.html' class='tree round'>Home</a>
 <a href='open_comment.html' class='previous round'>Previous</a>
 </div>
@@ -135,4 +156,3 @@ window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
 </<body>
 
 </html>
-

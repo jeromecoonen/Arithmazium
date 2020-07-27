@@ -71,7 +71,7 @@ Part 3
 # TODO: explain this bump - scaling?
 min_sqrt_error = min_sqrt_error + ONE_HALF
 max_sqrt_error = max_sqrt_error - ONE_HALF
-y = (SQRT(ONE + ULP_OF_ONE_PLUS) - ONE) / ULP_OF_ONE_PLUS
+y = (sqrt(ONE + ULP_OF_ONE_PLUS) - ONE) / ULP_OF_ONE_PLUS
 up_err = (y - ONE) + ULP_OF_ONE_PLUS / EIGHT
 down_err = y + ULP_OF_ONE_PLUS / EIGHT
 update_sqrt_errors(down_err, up_err)
@@ -85,10 +85,10 @@ if verbose:
 Part 4
 </p>
 
-<pre><code>y = (((SQRT(ONE_MINUS_ULP) - ULP_OF_ONE_PLUS) - (ONE - ULP_OF_ONE_PLUS))
+<pre><code>y = (((sqrt(ONE_MINUS_ULP) - ULP_OF_ONE_PLUS) - (ONE - ULP_OF_ONE_PLUS))
      / ULP_OF_ONE_MINUS)
 if verbose:
-    print("sqrt(1-ulp) = {:0.17e}".format(SQRT(ONE_MINUS_ULP)))
+    print("sqrt(1-ulp) = {:0.17e}".format(sqrt(ONE_MINUS_ULP)))
     print("y = {:0.17e}".format(y))
 up_err = y + ULP_OF_ONE_MINUS / EIGHT
 down_err = (y + ONE) + ULP_OF_ONE_MINUS / EIGHT
@@ -107,12 +107,12 @@ Part 5
 x = ulp
 for (x, ulp) in [(ULP_OF_ONE_PLUS, ULP_OF_ONE_PLUS),
                  (ULP_OF_ONE_PLUS
-                  * FLOOR(EIGHT / (NINE * SQRT(ULP_OF_ONE_PLUS))),
+                  * floor(EIGHT / (NINE * sqrt(ULP_OF_ONE_PLUS))),
                   ULP_OF_ONE_PLUS),
                  (-ULP_OF_ONE_MINUS, ULP_OF_ONE_MINUS)]:
     if verbose:
         print("\t3-term sqrt loop: x = {:.17e} ulp = {:.17e}".format(x, ulp))
-    y = SQRT((x + ULP_OF_ONE_MINUS + x) + ONE_MINUS_ULP)
+    y = sqrt((x + ULP_OF_ONE_MINUS + x) + ONE_MINUS_ULP)
     y = ((y - ULP_OF_ONE_PLUS) - ((ONE - ULP_OF_ONE_PLUS) + x)) / ulp
     z = ((ULP_OF_ONE_MINUS - x) + ONE_MINUS_ULP) * ONE_HALF * x * x / ulp
     down_err = (y + ONE_HALF) + z

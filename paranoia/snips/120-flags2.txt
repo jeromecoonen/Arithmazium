@@ -1,6 +1,0 @@
-Break= False
-Done= False
-NotMonot= False
-Monot= False
-IEEE= False
-

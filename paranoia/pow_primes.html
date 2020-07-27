@@ -59,15 +59,15 @@ Part 2
 m = NUM_TRIALS
 for z in [3, 5, 7, 11, 13, 17, 19, 23]:
     test_integer_powers(z, z, 1, m)
-if err_cnt > 0:
+if pow_err_cnt > 0:
     print("Errors like this may invalidate financial calculations")
     print("\tinvolving interest rates.")
 
 print_if_err_cnt_positive()
-err_cnt += save_err_cnt
-if err_cnt == 0:
+pow_err_cnt += save_pow_err_cnt
+if pow_err_cnt == 0:
     print("... no discrepancies found.")
-if err_cnt > 0:
+if pow_err_cnt > 0:
     pause()
 else:
     print("")

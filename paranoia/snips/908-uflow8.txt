@@ -11,7 +11,7 @@ else:
             print("print out as add_sub_hi = {:0.17e}, "
                   + "add_sub_lo ={:0.17e} .".format(add_sub_hi, add_sub_lo))
             print("|add_sub_hi - add_sub_lo| = {:0.17e} ."
-                  .format(FABS(add_sub_hi - add_sub_lo)))
+                  .format(fabs(add_sub_hi - add_sub_lo)))
             # BUG: C lacks the following message.
             print("and add_sub_hi / add_sub_lo| = 1.0 + {:0.17e} ."
                   .format((add_sub_hi / add_sub_lo - ONE_HALF) - ONE_HALF))

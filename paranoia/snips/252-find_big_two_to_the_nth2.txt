@@ -4,7 +4,7 @@
         y = x + ONE
         z = y - x
         y = z - ONE
-        if MINUS_ONE + FABS(y) >= ZERO: break   # ***JTC: new style loop
+        if MINUS_ONE + fabs(y) >= ZERO: break
         # ... now x is just big enough that |((x+1)-x)-1| >= 1 ...
     return x
 

@@ -2,7 +2,7 @@ flags = {
     "mult_guard_digit": False,
     "div_guard_digit": False,
     "add_sub_guard_digit": False,
-    "mult_rounding": "other",
+    "mult_rounding": "other",   # rounded and chopped are the alternatives
     "div_rounding": "other",
     "add_sub_rounding": "other",
     "sqrt_rounding": "other",

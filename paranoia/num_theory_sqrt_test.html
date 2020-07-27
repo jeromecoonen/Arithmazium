@@ -63,10 +63,10 @@ Part 3
 <pre><code>    test = 0
     if x - B >= z2 - B and x - z2 <= BIG_B_NTH - z2:
         test = 1
-        if debug:
+        if ultra_verbose:
             print("\t\tnum_theory_sqrt_test x = {:.6f} D = {:.6f}".format(x, D))
-        X2 = SQRT(x * D)
-        if debug:
+        X2 = sqrt(x * D)
+        if ultra_verbose:
             print("\t\t       X2 = {:.6f} = sqrt( {:.6f} )"
                   .format(X2, x * D))
         y2 = (X2 - z2) - (y - z2)
@@ -80,12 +80,12 @@ Part 4
 
 <pre><code>        down_err = (y2 + ONE_HALF) + (ONE_HALF - X2)
         up_err = y2 - X2
-        if debug:
+        if ultra_verbose:
             print("\t\t       y2 = {:.5e} X2 = {:.5e}".format(y2, X2))
             print("\t\t       dn = {:.5e} up = {:.5e}"
                   .format(down_err, up_err))
         update_sqrt_errors(down_err, up_err)
-        if debug:
+        if ultra_verbose:
             print("\tnew X2 = {:.17e} y2 = {:.17e}".format(X2, y2))
     elif verbose:
         print("\thasty exit from num_theory_sqrt_test()")

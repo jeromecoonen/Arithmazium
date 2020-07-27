@@ -1,6 +1,6 @@
 def num_theory_sqrt_value(x, D, Q, z, z1):
     """Test utility."""
     x = z1 * Q
-    x = FLOOR(ONE_HALF - x / B) * B + x
+    x = floor(ONE_HALF - x / B) * B + x
     Q = (Q - x * z) / B + x * x * (D / B)
     z = z - TWO * x * D

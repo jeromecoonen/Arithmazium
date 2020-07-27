@@ -79,7 +79,7 @@ Part 3
         while True:
             z = x - ONE_OVER_B
             z = (x + ONE) / (z - (ONE - ONE_OVER_B))
-            dev = POW(x, z) - exp2
+            dev = pow(x, z) - exp2
             if verbose:
                 print("\tx = {:.17f} z = {:.6e} deviation of".format(x, z)
                       + " x^z = {:.3e}".format(dev))
@@ -89,10 +89,10 @@ Part 3
 Part 4
 </p>
 
-<pre><code>            if (FABS(dev) > TWOFORTY * ULP_OF_ONE_PLUS):
+<pre><code>            if (fabs(dev) > TWOFORTY * ULP_OF_ONE_PLUS):
                 delta_x = (x - ONE_OVER_B) - (ONE - ONE_OVER_B)
                 bad_cond(err_defect, "Calculated")
-                print(" {:0.17e} for".format(POW(x,z)))
+                print(" {:0.17e} for".format(pow(x,z)))
                 print("\t(1 + ({:0.17e}) ^ ({:0.17e});".format(delta_x, z))
                 print("\tdiffers from correct value by {:0.17e} ."
                       .format(dev))

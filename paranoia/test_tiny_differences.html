@@ -75,7 +75,7 @@ Part 3
 
 <pre><code>    print("")
     try:
-        r = SQRT(base_tiny / underflow_threshold)
+        r = sqrt(base_tiny / underflow_threshold)
     except ZeroDivisionError:
         print("base_tiny / underflow_threshold failed!")
         r = H + H   # fall through to else case below

@@ -1,5 +1,0 @@
-error_count[err_failure] = 0
-error_count[err_serious] = 0
-error_count[err_defect] = 0
-error_count[err_flaw] = 0
-PageNo = 1

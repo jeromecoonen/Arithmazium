@@ -3,4 +3,4 @@
     for (x, ulp, error_kind) in tlist:
         xb = x * ONE_OVER_B
         xa = x - xb
-        err = ((SQRT(x * x) - xb) - xa) / ulp
+        err = ((sqrt(x * x) - xb) - xa) / ulp

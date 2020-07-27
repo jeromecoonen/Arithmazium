@@ -57,7 +57,7 @@
 <pre><code>if add_sub_tiny and underflow_threshold:
     # BASIC case 4
     if ((add_sub_hi == underflow_threshold) and (add_sub_tiny == min_positive)
-            and (FABS(underflow_threshold - add_sub_tiny / SAFE_ULPS_OF_ONE)
+            and (fabs(underflow_threshold - add_sub_tiny / SAFE_ULPS_OF_ONE)
                  <= add_sub_tiny)):
         flags["IEEE"] = is_gradual_underflow_IEEE(min_positive)
 </code></pre>

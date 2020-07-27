@@ -53,23 +53,13 @@ Part 2
 </p>
 
 <pre><code>def rand_frac():
-    """Generatre random fractions.
+    """Generate random fractions.
 
         Compute x = (rand_next + rand_seed)^5
-        rand_next = x - FLOOR(x) + 0.000005 * x
+        rand_next = x - floor(x) + 0.000005 * x
         Globals rand_next and rand_seed are initialized when needed.
         Returns the new value of rand_next
     """
-    # ~~~~~~~237rand_frac2
-    global rand_next, rand_seed
-    x = rand_next + rand_seed
-    y = x * x
-    y = y * y
-    x = x * y
-    y = x - math.floor(x)
-    rand_next = y + x * 0.000005
-    return rand_next
-
 </code></pre>
 
 <p>

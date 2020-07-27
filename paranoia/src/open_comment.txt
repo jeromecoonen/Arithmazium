@@ -1,24 +1,52 @@
 #INCLUDE para_head token_header_file.html aaapara_toc.html initializations.html
 
-<p>This is an automatically generated file.</p>
+<h1>Historical comment</h1>
 
 <p>
-Part 1
+The opening comment gives a summary of known ports
+of Paranoia, as well as a drop box for questions
+or suggestions for the code.
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
+<p>
+Within a few years of the appearance of classic
+<span class="p">ParaBas</span>, Brian Wichmann of the
+ National Physical Laboratory in the U.K. inspired a
+ flurry of ports when he translated Paranoia from Basic
+ to Pascal. His <span class="p">ParaPas</span> adheres
+ closely to the structure of the Basic. Wichmann's intent
+ was to test a new Pascal compiler at NPL.
+</p>
 
 <p>
-Part 2
+The Pascal let naturally to a version in C by Thos Sumner
+at the Data Center
+of the University of California at San Francisco.
+David M. Gay of Bell Labs also contributed to the port.
+Some companies adapted
+<span class="p">ParaC</span>
+to run without user interaction as a
+<em>smoke test</em> of systems in development.
+During the course of such usage at Sun Microsystems,
+David G. Hough made a number of minor fixes
+to <span class="p">ParaC</span>.
+The <code>hasty</code> flag in
+<span class="p">ParaPy</span>
+offers similar nonstop execution:
+"Just the facts, ma'am."
 </p>
 
 #CODE 095-open_comment
 
 <p>
-Part 3
+If you explore the other versions, you'll find
+error messages of the form
+<code>Notify Karpinski!</code>
+The late Richard Karpinski was a colleague of
+Sumner at the UCSF Data Center, and an active
+contributor to multiple IEEE standards efforts.
+You are invited to send any such comments to
+me at the address in the code comment.
 </p>
 
 #INCLUDE para_foot token_header_file.html aaapara_toc.html initializations.html
-

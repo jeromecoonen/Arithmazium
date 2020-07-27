@@ -1,6 +1,6 @@
 #INCLUDE para_head pocket_guide.html aaapara_toc.html open_comment.html
 
-<h1>Introduction</h1>
+<h1>Introduction to the program</h1>
 
 <p>
 Prof. William Kahan of the

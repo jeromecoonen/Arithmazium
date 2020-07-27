@@ -74,11 +74,10 @@ Part 3
 <pre><code>    a = radix   # Default to the unusual case
     for z in [TWO, NINE+ONE]:
         y = radix
-        doit = True
-        while doit:
+        while True:
             x = y
             y = y / z
-            doit = FLOOR(y) == y
+            if floor(y) != y: break
         if x == ONE:
             a = z   # Have found a power of 2 or 10
             break

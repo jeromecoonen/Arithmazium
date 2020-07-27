@@ -69,7 +69,7 @@ Part 3
     # 3 * rounded value - 1/4 should be some rounding error in 1+.
     # z2 should be an ulp of 1+, unless the computation of x below enjoys
     # extra precision, allowing it to be even smaller.
-    x = FABS(((FOUR / THREE - ONE) - ONE / FOUR) * THREE - ONE / FOUR)
+    x = fabs(((FOUR / THREE - ONE) - ONE / FOUR) * THREE - ONE / FOUR)
     doit = True
     while doit:
         z2 = x
@@ -83,7 +83,7 @@ Part 4
 
 <pre><code>    # Now look at ulps of 1- by starting with rounding noise in 3/4.
     # x, y, and z are used in the three following loops.
-    x = y = z = FABS((THREE / FOUR - TWO / THREE) * THREE - ONE / FOUR)
+    x = y = z = fabs((THREE / FOUR - TWO / THREE) * THREE - ONE / FOUR)
     while True:
         z1 = z
         z = (ONE / TWO
@@ -162,12 +162,12 @@ Part 9
                 y = z2 / ULP_OF_ONE_PLUS
                 if y > x:
                     x = y
-                q = - LOG(x)
+                q = - log(x)
                 print("Some subexpressions appear to be calculated extra")
                 print("precisely with about {:.g} extra B-digits, i.e.",
-                    (q / LOG(B)))
+                    (q / log(B)))
                 print("roughly {:.g} extra significant decimals."
-                    .format(q / LOG(10.)))
+                    .format(q / log(10.)))
             print("That feature is not tested further by this program.")
 
 </code></pre>

@@ -44,7 +44,7 @@ import math
 #       FORTRAN - single and double precision versions, 1986
 #       Forth -- adapted from C by Krishna Myneni, 2009
 #
-#       BASIC version (C) 1982  by:
+#       BASIC version (C) 1983  by:
 #       Professor William M. Kahan,
 #       EECS Dept., Soda Hall, Room 441
 #       University of California
@@ -61,7 +61,7 @@ NUM_TRIALS = 20
 # Set all three flags to False for classic Paranoia flow.
 verbose = False
 ultra_verbose = False
-hasty = True   # When True, skips all user interaction
+hasty = False   # When True, skips all user interaction
 # ~~~~~~~ 110-globals
 # Declarations of global variables other than CONSTANTS
 err_failure = 0   # Indexes into the count and type lists below
@@ -92,11 +92,9 @@ flags = {
     "IEEE": False
 }
 # ~~~~~~~ 150-print_msgs
-#    START MESSAGES
-#    Block messages to be printed as the user starts running paranoia.
-
+# Opening messages -- printed as execution begins.
 def print_msgs(s):
-    """Print a list of strings"""
+    """Print a list of strings."""
     for m in s:
         print(m)
 
@@ -106,13 +104,13 @@ def instructions():
     instr = [
         "Lest this program stop prematurely, i.e. before displaying\n",
         "    `END OF TEST',\n",
+        ""
         "try to persuade the computer NOT to terminate execution when an",
         "error like Over/Underflow or Division by Zero occurs, but rather",
         "to persevere with a surrogate value after, perhaps, displaying some",
         "warning.  If persuasion avails naught, don't despair but run this",
         "program anyway to see how many milestones it passes, and then",
-        "amend it to make further progress.\n",
-        "Answer questions with Y y, N or n (unless otherwise indicated).\n"
+        "amend it to make further progress.\n"
     ]
     print_msgs(instr)
 
@@ -124,14 +122,9 @@ def heading():
         "cope with unanticipated and newly uncovered arithmetic pathologies.\n",
         "Please send suggestions and interesting results to",
         "\tJerome Coonen",
-        "\tjcoonen@gmail.com\n",
-        "In doing so, please include the following information:",
-        "\tPrecision:\tdouble;",
-        "\tVersion:\t10.py February 2020;",
-        "\tComputer:",
-        "\tCompiler:",
-        "\tOptimization level:",
-        "\tOther relevant compiler options:"
+        "\tjcoonen@gmail.com\n\n",
+        "\t*(C) 1983 Prof. William M. Kahan",
+        "\t*  You may copy this program freely if you acknowledge its source."
     ]
     print_msgs(head)
 
@@ -146,14 +139,15 @@ def characteristics():
         "         (Unit in the Last Place) of 1.000xxx .",
         "     ULP_OF_ONE_MINUS = 1/B^PRECISION = One Ulp",
         "          of numbers a little less than 1.0 .",
-        "     Adequacy of guard digits for Mult., Div. and Subt.",
-        "     Whether arithmetic is chopped, correctly rounded, or something else",
-        "         for Mult., Div., Add/Subt. and Sqrt.",
-        "     Whether a Sticky Bit used correctly for rounding.",
-        "     UnderflowThreshold = an underflow threshold.",
-        "     E0 and too_tiny_x tell whether underflow is abrupt, gradual, or fuzzy.",
+        "     Presence of guard digits for Mult., Div. and Subt.",
+        "     Whether arithmetic is chopped, correctly rounded, or",
+        "         something else for Mult., Div., Add/Subt. and Sqrt.",
+        "     Whether a sticky bit is used correctly in rounding.",
+        "     underflow_threshold = an underflow threshold.",
+        "     min_postive and too_tiny_x tell whether underflow is",
+        "         abrupt, gradual, or fuzzy.",
         "     overflow_threshold = an overflow threshold, roughly.",
-        "     V0  tells, roughly, whether  Infinity  is represented.",
+        "     pos_big_B  tells, roughly, whether  Infinity  is represented.",
         "     Comparisions are checked for consistency with subtraction",
         "         and for contamination with pseudo-zeros.",
         "     Sqrt is tested.  Y^X is tested for integer X.",
@@ -164,11 +158,7 @@ def characteristics():
 
 # ~~~~~~~ 170-history
 def history():
-    """Tell the story of paranoia
-    Converted from Brian Wichmann's Pascal version to C by Thos Sumner,
-    with further massaging by David M. Gay.
-    Converted from the Sumner-Gay C version to Python by Jerome Coonen
-    """
+    """Present a bit of historical context and set user expectations."""
     hist = [
         "The program attempts to discriminate among",
         "   FLAWs, like lack of a sticky bit,",
@@ -184,9 +174,7 @@ def history():
         "of pathologies, and to say how well the arithmetic is implemented.",
         "\nThe program is based upon a conventional radix representation for",
         "floating-point numbers, but also allows logarithmic encoding",
-        "as used by certain early WANG machines.\n",
-        "BASIC version of this program (C) 1983 by Prof. W. M. Kahan;",
-        "see source comments for more history."
+        "(radix B=1) as used by certain early WANG machines.\n"
     ]
     print_msgs(hist)
 
@@ -1752,7 +1740,8 @@ def extreme_z_to_q():
 
 # ~~~~~~~ 560-big_powers_of_B
 def big_powers_of_B():
-    """ Look for overflow threshold, watching for exception.
+    """Searching for the overflow threshold,
+    return the NEGATIVES of the largest powers ofB.
 
     With a strategy similar to underflow, use three values in
     step to get up to and just beyond the overflow limit.
@@ -1762,6 +1751,11 @@ def big_powers_of_B():
         big -- down a factor of 1/H
         less_big -- down a factor of 1/H from big
         no_except -- boolean indicating no exception triggered
+
+    Basic 5530-5530
+    TODO: Resolve that we use negatives because of possible 2's complement
+        representation, that could allow the largest magnitude to be
+        negative.
     """
     # ~~~~~~~ 560a-big_powers_of_B2
     big = -ONE_OVER_C
@@ -1942,10 +1936,9 @@ def test_div_by_zero():
 
 
 # ~~~~~~~ 700-start_execution
-"""START PARANOIA EXECUTION"""
-verbose |= ultra_verbose   # if it's ultra, it's verbose!
-# Small floating point constants.
-# First two assignments use coerced integer right-hand sides.
+# PARANOIA EXECUTION BEGINS
+verbose |= ultra_verbose   # if it's ultra, it's verbose, too
+# Small floating point constants built from coerced integers.
 ZERO = float(0)
 ONE = float(1)
 TWO = ONE + ONE

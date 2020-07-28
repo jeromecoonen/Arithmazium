@@ -5,14 +5,9 @@ def heading():
         "cope with unanticipated and newly uncovered arithmetic pathologies.\n",
         "Please send suggestions and interesting results to",
         "\tJerome Coonen",
-        "\tjcoonen@gmail.com\n",
-        "In doing so, please include the following information:",
-        "\tPrecision:\tdouble;",
-        "\tVersion:\t10.py February 2020;",
-        "\tComputer:",
-        "\tCompiler:",
-        "\tOptimization level:",
-        "\tOther relevant compiler options:"
+        "\tjcoonen@gmail.com\n\n",
+        "\t*(C) 1983 Prof. William M. Kahan",
+        "\t*  You may copy this program freely if you acknowledge its source."
     ]
     print_msgs(head)
 

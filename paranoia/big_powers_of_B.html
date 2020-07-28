@@ -53,7 +53,8 @@ Part 2
 </p>
 
 <pre><code>def big_powers_of_B():
-    """ Look for overflow threshold, watching for exception.
+    """Searching for the overflow threshold,
+    return the NEGATIVES of the largest powers ofB.
 
     With a strategy similar to underflow, use three values in
     step to get up to and just beyond the overflow limit.
@@ -63,6 +64,11 @@ Part 2
         big -- down a factor of 1/H
         less_big -- down a factor of 1/H from big
         no_except -- boolean indicating no exception triggered
+
+    Basic 5530-5530
+    TODO: Resolve that we use negatives because of possible 2's complement
+        representation, that could allow the largest magnitude to be
+        negative.
     """
 </code></pre>
 

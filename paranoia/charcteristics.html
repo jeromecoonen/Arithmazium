@@ -38,18 +38,15 @@
   <a href='heading.html' class='previous round'>Previous</a>
   </div>
 
-<p>This is an automatically generated file.</p>
+<h1>characteristics()</h1>
 
 <p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
-<p>
-Part 2
+This long page describes the Paranoia report.
+Specific numeric values are given with their variable
+names. The intent of Paranoia is that
+users will dive into the code when problems arise.
+Identifying the most interesting variables offers some
+encouragement.
 </p>
 
 <pre><code>def characteristics():
@@ -62,14 +59,15 @@ Part 2
         "         (Unit in the Last Place) of 1.000xxx .",
         "     ULP_OF_ONE_MINUS = 1/B^PRECISION = One Ulp",
         "          of numbers a little less than 1.0 .",
-        "     Adequacy of guard digits for Mult., Div. and Subt.",
-        "     Whether arithmetic is chopped, correctly rounded, or something else",
-        "         for Mult., Div., Add/Subt. and Sqrt.",
-        "     Whether a Sticky Bit used correctly for rounding.",
-        "     UnderflowThreshold = an underflow threshold.",
-        "     E0 and too_tiny_x tell whether underflow is abrupt, gradual, or fuzzy.",
+        "     Presence of guard digits for Mult., Div. and Subt.",
+        "     Whether arithmetic is chopped, correctly rounded, or",
+        "         something else for Mult., Div., Add/Subt. and Sqrt.",
+        "     Whether a sticky bit is used correctly in rounding.",
+        "     underflow_threshold = an underflow threshold.",
+        "     min_postive and too_tiny_x tell whether underflow is",
+        "         abrupt, gradual, or fuzzy.",
         "     overflow_threshold = an overflow threshold, roughly.",
-        "     V0  tells, roughly, whether  Infinity  is represented.",
+        "     pos_big_B  tells, roughly, whether  Infinity  is represented.",
         "     Comparisions are checked for consistency with subtraction",
         "         and for contamination with pseudo-zeros.",
         "     Sqrt is tested.  Y^X is tested for integer X.",
@@ -79,10 +77,6 @@ Part 2
     print_msgs(chars)
 
 </code></pre>
-
-<p>
-Part 3
-</p>
 
 <div class='next-prev'>
 <a href='history.html' class='next round'>Next</a>
@@ -102,4 +96,3 @@ window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
 </<body>
 
 </html>
-

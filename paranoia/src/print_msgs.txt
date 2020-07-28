@@ -1,24 +1,12 @@
-#INCLUDE para_head initializations.html aaapara_toc.html instructions.html
+#INCLUDE para_head instructions.html aaapara_toc.html heading.html
 
-<p>This is an automatically generated file.</p>
-
-<p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
+<h1>print_msgs()</h1>
 
 <p>
-Part 2
+This simple loop splashes the four
+introductory screens.
 </p>
 
 #CODE 150-print_msgs
 
-<p>
-Part 3
-</p>
-
-#INCLUDE para_foot initializations.html aaapara_toc.html instructions.html
-
+#INCLUDE para_foot instructions.html aaapara_toc.html heading.html

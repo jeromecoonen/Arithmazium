@@ -1,24 +1,17 @@
 #INCLUDE para_head charcteristics.html aaapara_toc.html utilities.html
 
-<p>This is an automatically generated file.</p>
+<h1>history()</h1>
 
 <p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
-<p>
-Part 2
+Page four of the introduction summarizes user expectations, with
+a reference to William J. Cody's Fortran
+<code>MACHAR</code> routine.
+In it's time, Cody and Waite's
+<em>Software Manual for the Elementary Functions</em>
+was an excellent reference for implementing, and especially testing,
+elementary functions.
 </p>
 
 #CODE 170-history
 
-<p>
-Part 3
-</p>
-
 #INCLUDE para_foot charcteristics.html aaapara_toc.html utilities.html
-

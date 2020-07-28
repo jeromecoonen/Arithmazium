@@ -1,24 +1,17 @@
-#INCLUDE para_head print_msgs.html aaapara_toc.html heading.html
+#INCLUDE para_head start_messages.html aaapara_toc.html print_msgs.html
 
-<p>This is an automatically generated file.</p>
-
-<p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
+<h1>instructions()</h1>
 
 <p>
-Part 2
+Execution opens with a warning about the possibility of termination
+due to some arithmetic anomaly. <span class="p">ParaBas</span> included
+a reference to lines 250-370, which handled emergencies via the
+<code>ONERROR</code> mechanism. Python systems will run nonstop
+through any calculation, delivering IEEE standard 754 results when
+possible, and offering exception handling via
+<code>try - except</code>.
 </p>
 
 #CODE 155-instructions
 
-<p>
-Part 3
-</p>
-
-#INCLUDE para_foot print_msgs.html aaapara_toc.html heading.html
-
+#INCLUDE para_foot start_messages.html aaapara_toc.html print_msgs.html

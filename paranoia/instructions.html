@@ -33,23 +33,21 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='heading.html' class='next round'>Next</a>
+  <a href='print_msgs.html' class='next round'>Next</a>
   <a href='aaapara_toc.html' class='tree round'>Home</a>
-  <a href='print_msgs.html' class='previous round'>Previous</a>
+  <a href='start_messages.html' class='previous round'>Previous</a>
   </div>
 
-<p>This is an automatically generated file.</p>
+<h1>instructions()</h1>
 
 <p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
-<p>
-Part 2
+Execution opens with a warning about the possibility of termination
+due to some arithmetic anomaly. <span class="p">ParaBas</span> included
+a reference to lines 250-370, which handled emergencies via the
+<code>ONERROR</code> mechanism. Python systems will run nonstop
+through any calculation, delivering IEEE standard 754 results when
+possible, and offering exception handling via
+<code>try - except</code>.
 </p>
 
 <pre><code>def instructions():
@@ -57,26 +55,22 @@ Part 2
     instr = [
         "Lest this program stop prematurely, i.e. before displaying\n",
         "    `END OF TEST',\n",
+        ""
         "try to persuade the computer NOT to terminate execution when an",
         "error like Over/Underflow or Division by Zero occurs, but rather",
         "to persevere with a surrogate value after, perhaps, displaying some",
         "warning.  If persuasion avails naught, don't despair but run this",
         "program anyway to see how many milestones it passes, and then",
-        "amend it to make further progress.\n",
-        "Answer questions with Y y, N or n (unless otherwise indicated).\n"
+        "amend it to make further progress.\n"
     ]
     print_msgs(instr)
 
 </code></pre>
 
-<p>
-Part 3
-</p>
-
 <div class='next-prev'>
-<a href='heading.html' class='next round'>Next</a>
+<a href='print_msgs.html' class='next round'>Next</a>
 <a href='aaapara_toc.html' class='tree round'>Home</a>
-<a href='print_msgs.html' class='previous round'>Previous</a>
+<a href='start_messages.html' class='previous round'>Previous</a>
 </div>
 <script src="js/vendor/jquery-3.5.1.min.js"></script>
 <script src="js/plugins.js"></script>
@@ -91,4 +85,3 @@ window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
 </<body>
 
 </html>
-

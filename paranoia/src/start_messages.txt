@@ -1,24 +1,15 @@
-#INCLUDE para_head start_execution.html aaapara_toc.html zero_one.html
+#INCLUDE para_head start_execution.html aaapara_toc.html instructions.html
 
-<p>This is an automatically generated file.</p>
-
-<p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
+<h1>Opening messages</h1>
 
 <p>
-Part 2
+Paranoia's signature feature is its sequence of output screens.
+This code presents the four opening pages.
+While the messages have been updated in keeping with
+the Python implementation, every attempt has been made
+to preserve the feel of classic <span class="p">ParaBas</span>.
 </p>
 
 #CODE 710-start_messages
 
-<p>
-Part 3
-</p>
-
-#INCLUDE para_foot start_execution.html aaapara_toc.html zero_one.html
-
+#INCLUDE para_foot start_execution.html aaapara_toc.html instructions.html

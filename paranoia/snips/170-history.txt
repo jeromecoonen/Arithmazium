@@ -1,9 +1,5 @@
 def history():
-    """Tell the story of paranoia
-    Converted from Brian Wichmann's Pascal version to C by Thos Sumner,
-    with further massaging by David M. Gay.
-    Converted from the Sumner-Gay C version to Python by Jerome Coonen
-    """
+    """Present a bit of historical context and set user expectations."""
     hist = [
         "The program attempts to discriminate among",
         "   FLAWs, like lack of a sticky bit,",
@@ -19,9 +15,7 @@ def history():
         "of pathologies, and to say how well the arithmetic is implemented.",
         "\nThe program is based upon a conventional radix representation for",
         "floating-point numbers, but also allows logarithmic encoding",
-        "as used by certain early WANG machines.\n",
-        "BASIC version of this program (C) 1983 by Prof. W. M. Kahan;",
-        "see source comments for more history."
+        "(radix B=1) as used by certain early WANG machines.\n"
     ]
     print_msgs(hist)
 

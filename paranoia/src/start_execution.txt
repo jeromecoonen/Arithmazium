@@ -1,28 +1,16 @@
 #INCLUDE para_head initializations.html aaapara_toc.html start_messages.html
 
-<p>This is an automatically generated file.</p>
+<h1>Execution begins</h1>
 
 <p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
-<p>
-Part 2
+Paranoia starts with zero and one, converted from integer values.
+This block defines a bunch of global constants used throughout
+the code. They're all caps, in Python style. The value
+\(240\) is a handy multiple of \(8\), \(10\), and \(16\) that
+we'll find useful later.
 </p>
 
 #CODE 700-start_execution
 
-<p>
-Part 3
-</p>
-
-
-<p>
-Part 4
-</p>
 
 #INCLUDE para_foot initializations.html aaapara_toc.html start_messages.html

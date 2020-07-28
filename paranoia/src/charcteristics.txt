@@ -1,24 +1,16 @@
 #INCLUDE para_head heading.html aaapara_toc.html history.html
 
-<p>This is an automatically generated file.</p>
+<h1>characteristics()</h1>
 
 <p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
-<p>
-Part 2
+This long page describes the Paranoia report.
+Specific numeric values are given with their variable
+names. The intent of Paranoia is that
+users will dive into the code when problems arise.
+Identifying the most interesting variables offers some
+encouragement.
 </p>
 
 #CODE 165-charcteristics
 
-<p>
-Part 3
-</p>
-
 #INCLUDE para_foot heading.html aaapara_toc.html history.html
-

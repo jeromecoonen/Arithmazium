@@ -38,26 +38,20 @@
   <a href='charcteristics.html' class='previous round'>Previous</a>
   </div>
 
-<p>This is an automatically generated file.</p>
+<h1>history()</h1>
 
 <p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
-<p>
-Part 2
+Page four of the introduction summarizes user expectations, with
+a reference to William J. Cody's Fortran
+<code>MACHAR</code> routine.
+In it's time, Cody and Waite's
+<em>Software Manual for the Elementary Functions</em>
+was an excellent reference for implementing, and especially testing,
+elementary functions.
 </p>
 
 <pre><code>def history():
-    """Tell the story of paranoia
-    Converted from Brian Wichmann's Pascal version to C by Thos Sumner,
-    with further massaging by David M. Gay.
-    Converted from the Sumner-Gay C version to Python by Jerome Coonen
-    """
+    """Present a bit of historical context and set user expectations."""
     hist = [
         "The program attempts to discriminate among",
         "   FLAWs, like lack of a sticky bit,",
@@ -73,17 +67,11 @@ Part 2
         "of pathologies, and to say how well the arithmetic is implemented.",
         "\nThe program is based upon a conventional radix representation for",
         "floating-point numbers, but also allows logarithmic encoding",
-        "as used by certain early WANG machines.\n",
-        "BASIC version of this program (C) 1983 by Prof. W. M. Kahan;",
-        "see source comments for more history."
+        "(radix B=1) as used by certain early WANG machines.\n"
     ]
     print_msgs(hist)
 
 </code></pre>
-
-<p>
-Part 3
-</p>
 
 <div class='next-prev'>
 <a href='utilities.html' class='next round'>Next</a>
@@ -103,4 +91,3 @@ window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
 </<body>
 
 </html>
-

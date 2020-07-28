@@ -30,26 +30,26 @@
   Global variables and flags
 </a></p>
 <p class="el1"><a class="toc-link wip" href="start_execution.html">
-  start_execution
+  Execution begins
 </a></p>
 <p class="el1"><a class="toc-link wip" href="start_messages.html">
-  start_messages
+  Opening messages
 </a></p>
 
 
-<p class="el3"><a class="toc-link to-do" href="print_msgs.html">
-  print_msgs()
-</a></p>
-<p class="el2"><a class="toc-link to-do" href="instructions.html">
+<p class="el2"><a class="toc-link wip" href="instructions.html">
   instructions()
 </a></p>
-<p class="el2"><a class="toc-link to-do" href="heading.html">
+<p class="el3"><a class="toc-link wip" href="print_msgs.html">
+  print_msgs()
+</a></p>
+<p class="el2"><a class="toc-link wip" href="heading.html">
   heading()
 </a></p>
-<p class="el2"><a class="toc-link to-do" href="charcteristics.html">
+<p class="el2"><a class="toc-link wip" href="charcteristics.html">
   charcteristics()
 </a></p>
-<p class="el2"><a class="toc-link to-do" href="history.html">
+<p class="el2"><a class="toc-link wip" href="history.html">
   history()
 </a></p>
 

@@ -5,9 +5,11 @@ def floor(x):
     return math.floor(x)
 
 def log(x):
+    """Return the natural log of the argument."""
     return math.log(x)
 
 def pow(x,y):
+    """Return x**y."""
     return math.pow(x,y)
 
 def sqrt(x):

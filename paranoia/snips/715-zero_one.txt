@@ -1,14 +1,8 @@
 milestone = 7   #==============================
+# Basic 880-950
 print("Program is now RUNNING tests on small integers:")
 test_cond(err_failure, (ZERO + ZERO == ZERO)
         and (ONE - ONE == ZERO)
         and (ONE > ZERO)
         and (ONE + ONE == TWO),
         "0+0 != 0, 1-1 != 0, 1 <= 0, or 1+1 != 2")
-z = -ZERO
-if (z != 0.0):
-    error_count[err_failure] += 1
-    print("Comparison alleges that -0.0 is Non-zero!")
-    ULP_OF_ONE_PLUS = 0.001   # todo: elaborate on this fallback test
-    B = 1
-    discard = does_tiny_value_misbehave(z)

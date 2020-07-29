@@ -1,0 +1,9 @@
+def alt_input(s):
+    """Local version of input allows hasty execution."""
+    if hasty:
+        print(s)
+        reply = "y"
+    else:
+        reply = input(s)
+    return reply
+

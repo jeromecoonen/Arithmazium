@@ -24,4 +24,5 @@ def characteristics():
         "     Decimal-Binary conversion is NOT YET tested for accuracy."
      ]
     print_msgs(chars)
+    return
 

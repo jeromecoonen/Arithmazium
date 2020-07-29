@@ -1,24 +1,12 @@
 #INCLUDE para_head pause.html aaapara_toc.html bad_cond.html
 
-<p>This is an automatically generated file.</p>
+<h1>test_cond()</h1>
 
 <p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
-<p>
-Part 2
+This simple function allows multiple tests to be ganged up in one
+logical AND.
 </p>
 
 #CODE 225-test_cond
 
-<p>
-Part 3
-</p>
-
 #INCLUDE para_foot pause.html aaapara_toc.html bad_cond.html
-

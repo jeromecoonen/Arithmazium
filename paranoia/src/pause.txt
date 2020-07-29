@@ -1,24 +1,32 @@
-#INCLUDE para_head maths.html aaapara_toc.html test_cond.html
+#INCLUDE para_head maths.html aaapara_toc.html zero_one.html
 
-<p>This is an automatically generated file.</p>
-
-<p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
+<h1>Pause for user input</h1>
 
 <p>
-Part 2
+A hybrid <code>input()</code> function allows us to use
+the <code>hasty</code> flag to speed through Paranoia
+without a stop. The tests for \(1 / 0\) and \(0 / 0\) request
+user permission to proceed. Some older machines would summarily
+halt execution at either of those operations.
 </p>
 
-#CODE 220-pause
+#CODE 220-alt_input
 
 <p>
-Part 3
+The spirit of Paranoia is to have the user follow along as
+testing proceeds. The <code>pause()</code> function gives the
+user the chance to catch up with the latest messages. It updates
+the page number and milestone and prints a header for a new
+"page" of output.
 </p>
 
-#INCLUDE para_foot maths.html aaapara_toc.html test_cond.html
+<p>
+Pauses arise in the normal course of Paranoia, but may arise in some
+exceptional circumstances too, such as \(x \times y \neq y \times x\).
+This means slightly different page numbers and milestones can
+be seen on different arithmetics.
+</p>
 
+#CODE 222-pause
+
+#INCLUDE para_foot maths.html aaapara_toc.html zero_one.html

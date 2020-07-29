@@ -10,4 +10,5 @@ def heading():
         "\t*  You may copy this program freely if you acknowledge its source."
     ]
     print_msgs(head)
+    return
 

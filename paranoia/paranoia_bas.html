@@ -114,7 +114,8 @@
 910 O2=O1+O1 : IF (O+O=O AND O1-O1=O AND O1>O AND O2=2) THEN 930
 920 J0=1 : PRINT F$;V$;"  0+0=0  or 1-1=0 or 1 > 0  or  1+1 = 2 "
 930 Z=-O : IF (Z=O) THEN 960
-940 J0=J0+1 : PRINT F$;" Comparison alleges that Minus Zero, obtained by setting" : PRINT "         X = 0  and then  Z = -X ,  is nonzero!
+933 ' JTC: Add double-quote to close the latter string on 940.
+940 J0=J0+1 : PRINT F$;" Comparison alleges that Minus Zero, obtained by setting" : PRINT "         X = 0  and then  Z = -X ,  is nonzero!"
 950 U2=.001 : Z$="Z" : B=1 : GOSUB 4640
 960 O3=O2+O1 : O4=O3+O1 : IF (O4+O2*(-O2) = O AND (O4-O3)-O1 = O) THEN 980
 970 J0=J0+1 : PRINT F$;V$;"  3+1 = 2*2 "

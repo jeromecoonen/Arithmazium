@@ -1,0 +1,9 @@
+z = -ZERO
+if (z != 0.0):
+    error_count[err_failure] += 1
+    print("Comparison alleges that Minus Zero, obtained by setting")
+    print("         X = 0  and then  Z = -X ,  is nonzero!")
+    # The next two lines artificially set two global constants for the test.
+    ULP_OF_ONE_PLUS = 0.001
+    B = 1
+    discard = does_tiny_value_misbehave(z)

@@ -61,7 +61,7 @@ NUM_TRIALS = 20
 # Set all three flags to False for classic Paranoia flow.
 verbose = False
 ultra_verbose = False
-hasty = False   # When True, skips all user interaction
+hasty = True   # When True, skips all user interaction
 # ~~~~~~~ 110-globals
 # Declarations of global variables other than CONSTANTS
 err_failure = 0   # Indexes into the count and type lists below
@@ -97,6 +97,7 @@ def print_msgs(s):
     """Print a list of strings."""
     for m in s:
         print(m)
+    return
 
 # ~~~~~~~ 155-instructions
 def instructions():
@@ -113,6 +114,7 @@ def instructions():
         "amend it to make further progress.\n"
     ]
     print_msgs(instr)
+    return
 
 # ~~~~~~~ 160-heading
 def heading():
@@ -127,6 +129,7 @@ def heading():
         "\t*  You may copy this program freely if you acknowledge its source."
     ]
     print_msgs(head)
+    return
 
 # ~~~~~~~ 165-charcteristics
 def characteristics():
@@ -155,6 +158,7 @@ def characteristics():
         "     Decimal-Binary conversion is NOT YET tested for accuracy."
      ]
     print_msgs(chars)
+    return
 
 # ~~~~~~~ 170-history
 def history():
@@ -177,13 +181,15 @@ def history():
         "(radix B=1) as used by certain early WANG machines.\n"
     ]
     print_msgs(hist)
+    return
 
 # ~~~~~~~ 200-utilities
 #----START UTILITIES----
-# ~~~~~~~ 205-notify
 def notify(s):
-	print("{:s} test appears to be inconsistent...".format(s))
-	print("   PLEASE NOTIFY COONEN!\n")
+    """When the impossible happens, send up a flare."""
+    print("{:s} test appears to be inconsistent...".format(s))
+    print("   PLEASE NOTIFY THE AUTHOR!\n")
+    return
 
 # ~~~~~~~ 210-maths
 def fabs(x):
@@ -193,48 +199,53 @@ def floor(x):
     return math.floor(x)
 
 def log(x):
+    """Return the natural log of the argument."""
     return math.log(x)
 
 def pow(x,y):
+    """Return x**y."""
     return math.pow(x,y)
 
 def sqrt(x):
     return math.sqrt(x)
 
-# ~~~~~~~ 220-pause
+# ~~~~~~~ 220-alt_input
 def alt_input(s):
     """Local version of input allows hasty execution."""
-    reply = "y"   # default reply
     if hasty:
         print(s)
+        reply = "y"
     else:
         reply = input(s)
     return reply
 
-
+# ~~~~~~~ 222-pause
 def pause():
     """Wait until the user hits RETURN."""
     global milestone, page_num
     s = alt_input("\nTo continue, press RETURN ")
     print("\nDiagnosis resumes after milestone Number ", milestone,
           "          Page: ", page_num, "\n")
-    milestone += 1   # note -- milestone may be changed by extra pauses
+    milestone += 1   # the only incremental change to milestone
     page_num += 1
+    return
 
 # ~~~~~~~ 225-test_cond
-def test_cond(K, Valid, t):
-    """Respond to a logical test
-        K is level of error, Valid is the condition tested, t is a message"""
-    if not Valid:
-        bad_cond(K,t)
+def test_cond(k, v, t):
+    """Respond to test v of severity k, with error message t."""
+    if not v:
+        bad_cond(k,t)
         print(".\n")
+    return
 
 # ~~~~~~~ 230-bad_cond
-def bad_cond(K, t):
-    """Error message"""
-    print("bad_cond called with problem " + str(K))
+def bad_cond(k, t):
+    """Record and report error t of severity k.
+    Basic 920, for example.
+    """
     error_count[K] += 1
     print(error_type[K] + ":  " + t, end="")
+    return
 
 # ~~~~~~~ 235-rand_frac
 def rand_frac():
@@ -1965,17 +1976,21 @@ history()
 pause()
 # ~~~~~~~ 715-zero_one
 milestone = 7   #==============================
+# Basic 880-950
 print("Program is now RUNNING tests on small integers:")
 test_cond(err_failure, (ZERO + ZERO == ZERO)
         and (ONE - ONE == ZERO)
         and (ONE > ZERO)
         and (ONE + ONE == TWO),
         "0+0 != 0, 1-1 != 0, 1 <= 0, or 1+1 != 2")
+# ~~~~~~~ 717-zero_one2
 z = -ZERO
 if (z != 0.0):
     error_count[err_failure] += 1
-    print("Comparison alleges that -0.0 is Non-zero!")
-    ULP_OF_ONE_PLUS = 0.001   # todo: elaborate on this fallback test
+    print("Comparison alleges that Minus Zero, obtained by setting")
+    print("         X = 0  and then  Z = -X ,  is nonzero!")
+    # The next two lines artificially set two global constants for the test.
+    ULP_OF_ONE_PLUS = 0.001
     B = 1
     discard = does_tiny_value_misbehave(z)
 # ~~~~~~~ 720-small_ints

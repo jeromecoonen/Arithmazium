@@ -1,7 +1,7 @@
-def test_cond(K, Valid, t):
-    """Respond to a logical test
-        K is level of error, Valid is the condition tested, t is a message"""
-    if not Valid:
-        bad_cond(K,t)
+def test_cond(k, v, t):
+    """Respond to test v of severity k, with error message t."""
+    if not v:
+        bad_cond(k,t)
         print(".\n")
+    return
 

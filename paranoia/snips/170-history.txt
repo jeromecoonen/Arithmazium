@@ -18,4 +18,5 @@ def history():
         "(radix B=1) as used by certain early WANG machines.\n"
     ]
     print_msgs(hist)
+    return
 

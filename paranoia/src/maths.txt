@@ -1,24 +1,20 @@
-#INCLUDE para_head notify.html aaapara_toc.html pause.html
+#INCLUDE para_head utilities.html aaapara_toc.html pause.html
 
-<p>This is an automatically generated file.</p>
+<h1>Math functions</h1>
 
 <p>
-Part 1
+Paranoia uses pseudonyms for its utility math functions,
+so that any local naming conventions can be resolved within
+these functions. The situation in <span class="p">ParaPy</span>
+is straightforward.
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
 <p>
-Part 2
+The <code>log()</code> function is the natural logarithm.
+It always appears in the form
+\( log(x) / log(b) \) to compute the log of \(x\) to the base \(b\).
 </p>
 
 #CODE 210-maths
 
-<p>
-Part 3
-</p>
-
-#INCLUDE para_foot notify.html aaapara_toc.html pause.html
-
+#INCLUDE para_foot utilities.html aaapara_toc.html pause.html

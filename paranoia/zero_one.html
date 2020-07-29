@@ -33,49 +33,61 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='small_ints.html' class='next round'>Next</a>
+  <a href='test_cond.html' class='next round'>Next</a>
   <a href='aaapara_toc.html' class='tree round'>Home</a>
-  <a href='start_messages.html' class='previous round'>Previous</a>
+  <a href='pause.html' class='previous round'>Previous</a>
   </div>
 
-<p>This is an automatically generated file.</p>
+<h1>Zero and one</h1>
 
 <p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
-<p>
-Part 2
+Paranoia's very first tests are sanity checks of
+\(0\) and \(1\). Function
+<a class="inline" href="test_cond.html">
+  <code>test_cond()</code></a>
+appears throughout the code to process <em>Yes/No</em> tests.
 </p>
 
 <pre><code>milestone = 7   #==============================
+# Basic 880-950
 print("Program is now RUNNING tests on small integers:")
 test_cond(err_failure, (ZERO + ZERO == ZERO)
         and (ONE - ONE == ZERO)
         and (ONE > ZERO)
         and (ONE + ONE == TWO),
         "0+0 != 0, 1-1 != 0, 1 <= 0, or 1+1 != 2")
-z = -ZERO
+</code></pre>
+
+<p>
+Finally, check that \(-0 = 0\). If not, call
+<a class="inline" href="does_tiny_value_misbehave.html">
+  <code>does_tiny_value_misbehave()</code></a>,
+a test we'll see later in the exploration of underflow.
+Paranoia's use of global constants pokes through here.
+<code>ULP_OF_ONE_PLUS</code> and <code>B</code> get artificial
+values that pertain just to this function call.
+</p>
+
+<pre><code>z = -ZERO
 if (z != 0.0):
     error_count[err_failure] += 1
-    print("Comparison alleges that -0.0 is Non-zero!")
-    ULP_OF_ONE_PLUS = 0.001   # todo: elaborate on this fallback test
+    print("Comparison alleges that Minus Zero, obtained by setting")
+    print("         X = 0  and then  Z = -X ,  is nonzero!")
+    # The next two lines artificially set two global constants for the test.
+    ULP_OF_ONE_PLUS = 0.001
     B = 1
     discard = does_tiny_value_misbehave(z)
 </code></pre>
 
 <p>
-Part 3
+We'll compute proper values for the global constants after some
+more tests of integer values.
 </p>
 
 <div class='next-prev'>
-<a href='small_ints.html' class='next round'>Next</a>
+<a href='test_cond.html' class='next round'>Next</a>
 <a href='aaapara_toc.html' class='tree round'>Home</a>
-<a href='start_messages.html' class='previous round'>Previous</a>
+<a href='pause.html' class='previous round'>Previous</a>
 </div>
 <script src="js/vendor/jquery-3.5.1.min.js"></script>
 <script src="js/plugins.js"></script>
@@ -90,4 +102,3 @@ window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
 </<body>
 
 </html>
-

@@ -35,21 +35,22 @@
   <div class='next-prev'>
   <a href='pause.html' class='next round'>Next</a>
   <a href='aaapara_toc.html' class='tree round'>Home</a>
-  <a href='notify.html' class='previous round'>Previous</a>
+  <a href='utilities.html' class='previous round'>Previous</a>
   </div>
 
-<p>This is an automatically generated file.</p>
+<h1>Math functions</h1>
 
 <p>
-Part 1
+Paranoia uses pseudonyms for its utility math functions,
+so that any local naming conventions can be resolved within
+these functions. The situation in <span class="p">ParaPy</span>
+is straightforward.
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
 <p>
-Part 2
+The <code>log()</code> function is the natural logarithm.
+It always appears in the form
+\( log(x) / log(b) \) to compute the log of \(x\) to the base \(b\).
 </p>
 
 <pre><code>def fabs(x):
@@ -59,9 +60,11 @@ def floor(x):
     return math.floor(x)
 
 def log(x):
+    """Return the natural log of the argument."""
     return math.log(x)
 
 def pow(x,y):
+    """Return x**y."""
     return math.pow(x,y)
 
 def sqrt(x):
@@ -69,14 +72,10 @@ def sqrt(x):
 
 </code></pre>
 
-<p>
-Part 3
-</p>
-
 <div class='next-prev'>
 <a href='pause.html' class='next round'>Next</a>
 <a href='aaapara_toc.html' class='tree round'>Home</a>
-<a href='notify.html' class='previous round'>Previous</a>
+<a href='utilities.html' class='previous round'>Previous</a>
 </div>
 <script src="js/vendor/jquery-3.5.1.min.js"></script>
 <script src="js/plugins.js"></script>
@@ -91,4 +90,3 @@ window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
 </<body>
 
 </html>
-

@@ -1,24 +1,11 @@
 #INCLUDE para_head small_ints.html aaapara_toc.html radix.html
 
-<p>This is an automatically generated file.</p>
+<h1>Larger integers</h1>
 
 <p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
-<p>
-Part 2
+One more look at easy whole number operations on integer values.
 </p>
 
 #CODE 725-med_ints
 
-<p>
-Part 3
-</p>
-
 #INCLUDE para_foot small_ints.html aaapara_toc.html radix.html
-

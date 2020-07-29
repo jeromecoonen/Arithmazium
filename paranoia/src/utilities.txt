@@ -1,24 +1,21 @@
-#INCLUDE para_head history.html aaapara_toc.html notify.html
+#INCLUDE para_head history.html aaapara_toc.html maths.html
 
-<p>This is an automatically generated file.</p>
+<h1>Utilities</h1>
 
 <p>
-Part 1
+Aside from all it's numerical computation,
+Paranoia employs a modest number of utility functions
+pertaining to user interaction and some handy
+mathematical functions.
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
 <p>
-Part 2
+To get things started, here is a function intended never
+to be called. Paranoia invokes <code>notify()</code> in
+half a dozen places, when a sanity check is made for
+a situation that should not arise.
 </p>
 
 #CODE 200-utilities
 
-<p>
-Part 3
-</p>
-
-#INCLUDE para_foot history.html aaapara_toc.html notify.html
-
+#INCLUDE para_foot history.html aaapara_toc.html maths.html

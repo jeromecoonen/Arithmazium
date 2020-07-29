@@ -33,34 +33,38 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='notify.html' class='next round'>Next</a>
+  <a href='maths.html' class='next round'>Next</a>
   <a href='aaapara_toc.html' class='tree round'>Home</a>
   <a href='history.html' class='previous round'>Previous</a>
   </div>
 
-<p>This is an automatically generated file.</p>
+<h1>Utilities</h1>
 
 <p>
-Part 1
+Aside from all it's numerical computation,
+Paranoia employs a modest number of utility functions
+pertaining to user interaction and some handy
+mathematical functions.
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
 <p>
-Part 2
+To get things started, here is a function intended never
+to be called. Paranoia invokes <code>notify()</code> in
+half a dozen places, when a sanity check is made for
+a situation that should not arise.
 </p>
 
 <pre><code>#----START UTILITIES----
+def notify(s):
+    """When the impossible happens, send up a flare."""
+    print("{:s} test appears to be inconsistent...".format(s))
+    print("   PLEASE NOTIFY THE AUTHOR!\n")
+    return
+
 </code></pre>
 
-<p>
-Part 3
-</p>
-
 <div class='next-prev'>
-<a href='notify.html' class='next round'>Next</a>
+<a href='maths.html' class='next round'>Next</a>
 <a href='aaapara_toc.html' class='tree round'>Home</a>
 <a href='history.html' class='previous round'>Previous</a>
 </div>
@@ -77,4 +81,3 @@ window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
 </<body>
 
 </html>
-

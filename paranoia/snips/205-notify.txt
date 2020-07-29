@@ -1,4 +1,0 @@
-def notify(s):
-	print("{:s} test appears to be inconsistent...".format(s))
-	print("   PLEASE NOTIFY COONEN!\n")
-

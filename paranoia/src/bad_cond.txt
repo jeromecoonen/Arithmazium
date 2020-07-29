@@ -1,24 +1,11 @@
-#INCLUDE para_head test_cond.html aaapara_toc.html rand_frac.html
+#INCLUDE para_head test_cond.html para_toc.html small_ints.html
 
-<p>This is an automatically generated file.</p>
-
-<p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
+<h1>bad_cond()</h1>
 
 <p>
-Part 2
+This test report function is called throughout <span class="p">ParaPy</span>.
 </p>
 
 #CODE 230-bad_cond
 
-<p>
-Part 3
-</p>
-
-#INCLUDE para_foot test_cond.html aaapara_toc.html rand_frac.html
-
+#INCLUDE para_foot test_cond.html para_toc.html small_ints.html

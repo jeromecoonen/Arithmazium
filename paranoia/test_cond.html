@@ -38,32 +38,21 @@
   <a href='pause.html' class='previous round'>Previous</a>
   </div>
 
-<p>This is an automatically generated file.</p>
+<h1>test_cond()</h1>
 
 <p>
-Part 1
+This simple function allows multiple tests to be ganged up in one
+logical AND.
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
-<p>
-Part 2
-</p>
-
-<pre><code>def test_cond(K, Valid, t):
-    """Respond to a logical test
-        K is level of error, Valid is the condition tested, t is a message"""
-    if not Valid:
-        bad_cond(K,t)
+<pre><code>def test_cond(k, v, t):
+    """Respond to test v of severity k, with error message t."""
+    if not v:
+        bad_cond(k,t)
         print(".\n")
+    return
 
 </code></pre>
-
-<p>
-Part 3
-</p>
 
 <div class='next-prev'>
 <a href='bad_cond.html' class='next round'>Next</a>
@@ -83,4 +72,3 @@ window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
 </<body>
 
 </html>
-

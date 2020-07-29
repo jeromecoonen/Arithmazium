@@ -1,1 +1,7 @@
 #----START UTILITIES----
+def notify(s):
+    """When the impossible happens, send up a flare."""
+    print("{:s} test appears to be inconsistent...".format(s))
+    print("   PLEASE NOTIFY THE AUTHOR!\n")
+    return
+

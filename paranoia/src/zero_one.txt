@@ -1,24 +1,32 @@
-#INCLUDE para_head start_messages.html aaapara_toc.html small_ints.html
+#INCLUDE para_head pause.html aaapara_toc.html test_cond.html
 
-<p>This is an automatically generated file.</p>
-
-<p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
+<h1>Zero and one</h1>
 
 <p>
-Part 2
+Paranoia's very first tests are sanity checks of
+\(0\) and \(1\). Function
+<a class="inline" href="test_cond.html">
+  <code>test_cond()</code></a>
+appears throughout the code to process <em>Yes/No</em> tests.
 </p>
 
 #CODE 715-zero_one
 
 <p>
-Part 3
+Finally, check that \(-0 = 0\). If not, call
+<a class="inline" href="does_tiny_value_misbehave.html">
+  <code>does_tiny_value_misbehave()</code></a>,
+a test we'll see later in the exploration of underflow.
+Paranoia's use of global constants pokes through here.
+<code>ULP_OF_ONE_PLUS</code> and <code>B</code> get artificial
+values that pertain just to this function call.
 </p>
 
-#INCLUDE para_foot start_messages.html aaapara_toc.html small_ints.html
+#CODE 717-zero_one2
 
+<p>
+We'll compute proper values for the global constants after some
+more tests of integer values.
+</p>
+
+#INCLUDE para_foot pause.html aaapara_toc.html test_cond.html

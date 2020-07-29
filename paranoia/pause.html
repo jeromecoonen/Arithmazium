@@ -33,52 +33,61 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='test_cond.html' class='next round'>Next</a>
+  <a href='zero_one.html' class='next round'>Next</a>
   <a href='aaapara_toc.html' class='tree round'>Home</a>
   <a href='maths.html' class='previous round'>Previous</a>
   </div>
 
-<p>This is an automatically generated file.</p>
+<h1>Pause for user input</h1>
 
 <p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
-<p>
-Part 2
+A hybrid <code>input()</code> function allows us to use
+the <code>hasty</code> flag to speed through Paranoia
+without a stop. The tests for \(1 / 0\) and \(0 / 0\) request
+user permission to proceed. Some older machines would summarily
+halt execution at either of those operations.
 </p>
 
 <pre><code>def alt_input(s):
     """Local version of input allows hasty execution."""
-    reply = "y"   # default reply
     if hasty:
         print(s)
+        reply = "y"
     else:
         reply = input(s)
     return reply
 
+</code></pre>
 
-def pause():
+<p>
+The spirit of Paranoia is to have the user follow along as
+testing proceeds. The <code>pause()</code> function gives the
+user the chance to catch up with the latest messages. It updates
+the page number and milestone and prints a header for a new
+"page" of output.
+</p>
+
+<p>
+Pauses arise in the normal course of Paranoia, but may arise in some
+exceptional circumstances too, such as \(x \times y \neq y \times x\).
+This means slightly different page numbers and milestones can
+be seen on different arithmetics.
+</p>
+
+<pre><code>def pause():
     """Wait until the user hits RETURN."""
     global milestone, page_num
     s = alt_input("\nTo continue, press RETURN ")
     print("\nDiagnosis resumes after milestone Number ", milestone,
           "          Page: ", page_num, "\n")
-    milestone += 1   # note -- milestone may be changed by extra pauses
+    milestone += 1   # the only incremental change to milestone
     page_num += 1
+    return
 
 </code></pre>
 
-<p>
-Part 3
-</p>
-
 <div class='next-prev'>
-<a href='test_cond.html' class='next round'>Next</a>
+<a href='zero_one.html' class='next round'>Next</a>
 <a href='aaapara_toc.html' class='tree round'>Home</a>
 <a href='maths.html' class='previous round'>Previous</a>
 </div>
@@ -95,4 +104,3 @@ window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
 </<body>
 
 </html>
-

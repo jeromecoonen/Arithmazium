@@ -1,24 +1,20 @@
-#INCLUDE para_head med_ints.html aaapara_toc.html precision.html
+#INCLUDE para_head med_ints.html aaapara_toc.html find_big_two_to_the_nth.html
 
-<p>This is an automatically generated file.</p>
-
-<p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
+<h1>What is the radix?</h1>
 
 <p>
-Part 2
+The work is carried out in a pair of interesting loops.
+Look for the details at
+<a class="inline" href="find_big_two_to_the_nth.html">
+  <code>find_big_2_to_nth()</code></a> and
+<a class="inline" href="find_radix_from_2_nth.html">
+  <code>find_radix_from_big_2_to_nth()</code></a>.
 </p>
 
 #CODE 730-radix
 
 <p>
-Part 3
+The case b=1...
 </p>
 
-#INCLUDE para_foot med_ints.html aaapara_toc.html precision.html
-
+#INCLUDE para_foot med_ints.html aaapara_toc.html find_big_two_to_the_nth.html

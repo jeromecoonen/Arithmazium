@@ -1,30 +1,96 @@
-#INCLUDE para_head print_if_err_cnt_positive.html aaapara_toc.html find_radix_from_2_nth.html
+#INCLUDE para_head radix.html aaapara_toc.html find_radix_from_2_nth.html
 
-<p>This is an automatically generated file.</p>
+<h1>find_big_2_to_nth()</h1>
 
 <p>
-Part 1
+This function seeks the smallest value \(2^{n}\) such that
+\( | ( ( 2^{n} + 1 ) - 2^{n} ) - 1 | \geq 1 \).
+For small values of \(n\), the expression sums to zero.
+For very large values of \(n\), the partial sum
+\( 2^{n} + 1 \) will have to round. Both outcomes will satisfy
+the inequality, as we'll now see.
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
+<p>
+The binary case is easy to visualize. Intuitively, the target is the
+smallest power of \(2\) for which \(+ 1\)
+<em>falls off the right hand side</em>.
+Usually, the \(1\) will just round off, but some arithmetics
+might round it up to the next bit position, in which
+case the rounded sum is \( 2^{n} + 2 \). In the diagram,
+the binary point is aligned to put the 1's place to the
+right of the digit block.
+</p>
+
+<object type="image/svg+xml" data="img/big_2_nth_bin-auto.svg">
   ------Image------
 </object>
 
 <p>
-Part 2
+Octal and hexadecimal arithmetic behave very much the same way.
+Here are the values the step before \( 2^{n} + 1 \) must be rounded.
+Italic values are octal. Bold italic values are hex.
+</p>
+
+<object type="image/svg+xml" data="img/big_2_nth_oct-auto.svg">
+  ------Image------
+</object>
+
+<p>
+Our technique works in decimal, or radix 36 or 100, too. As in the
+octal and hex cases, repeated doubling produces a
+<code>1</code> digit in any radix the leading position, when there's a carry
+into a new place.
+Here is what happens with 5 significant
+decimal digits.
+</p>
+
+<object type="image/svg+xml" data="img/big_2_nth_dec-auto.svg">
+  ------Image------
+</object>
+
+<p>
+You may notice that while the mathematical description of
+the calculation involves a comparison against \(1\), the
+implementation below compares against \(0\).
+Historically, comparison against zero was
+less likely to be anomalous, hence a preference for such comparisons
+throughout Paranoia.
 </p>
 
 #CODE 250-find_big_two_to_the_nth
 
 <p>
-Part 3
+A more subtle issue that can arise in octal or hexadecimal arithmetic is
+<em>fractional precision</em>, which we'll see again.
+For example, a hex system with 26 bits
+available for precision would have what we call 4.5 significant digits,
+where the low-order half-digit takes just the values
+<code>8</code>,
+<code>9</code>,
+<code>A</code>,
+<code>B</code>,
+<code>C</code>,
+<code>D</code>,
+<code>E8</code>, or
+<code>F</code>.
+The analysis above applies here, too.
 </p>
 
-#CODE 252-find_big_two_to_the_nth2
+<h2>What could go wrong?</h2>
 
 <p>
-Part 4
+Can you work through the loop in the next diagram,
+first with 6 hex digits then with 6 digits plus another
+low-order half-digit? It can be useful to think in 26-bit
+binary, remembering that when a carry-out happens on the
+left-hand side, it's a new hex digit that comes into play.
+The circled digits indicate the positions of the half-digits,
+of which only the top two bits can hold final values.
 </p>
 
-#INCLUDE para_foot print_if_err_cnt_positive.html aaapara_toc.html find_radix_from_2_nth.html
+<object type="image/svg+xml" data="img/big_2_nth_hexfrac-auto.svg">
+  ------Image------
+</object>
 
+#INCLUDE para_foot radix.html aaapara_toc.html find_radix_from_2_nth.html

@@ -1,8 +1,8 @@
-def find_radix_from_2_nth(big):
-    """Look for a carry out of the ones place.
+def find_radix_from_big_2_to_nth(big):
+    """The radix is marked by a change in the 'tens' place.
 
-    Arguments;
-        big satisfies |((big + 1) - big) - 1| >= 1
+    Args:
+        big: smallest value satisfying |((big + 1) - big) - 1| >= 1
 
     Returns:
         radix, which may not be integral in log arithmetic

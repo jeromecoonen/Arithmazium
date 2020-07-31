@@ -2,7 +2,7 @@ def test_x_to_xp1_over_xm1(e2):
     """ Compare x^(x+1)/(x-1) to exp(2) for x above and below 1.
 
     Args:
-        e2 -- computed value of exp(2)
+        e2: computed value of exp(2)
     Basic 5360-5440
     """
     print("Testing x^((x + 1) / (x - 1)) vs. " +

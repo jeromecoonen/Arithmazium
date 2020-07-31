@@ -7,7 +7,7 @@
 .diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
 .diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
 .diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
-.diag-py { font-family: "Roboto Mono"; font-size: 1em; dominant-baseline: middle; fill: black; }
+.diag-py { font-family: "Roboto Mono", monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
 .diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
 .diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
 .diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
@@ -22,16 +22,16 @@ less_tiny = tiny
 </text>
 </g>
 <g transform="translate(360,0)">
-<rect class="diag-num-rect" width="360" height="70" />
-<line class="diag-num-line" x1="15" y1="50" x2="320" y2="50" />
-<path class="diag-num-path" d="M 72 10 L 72 50 L 246 50 L 246 10" />
-<circle class="diag-num-dot" cx="88.6" cy="44" r="2.5" />
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
 <text class="diag-num-bin" x="20" y="33">
 &#160;&#160;1000&#160;...&#160;00
 </text>
 </g>
-<g transform="translate(720,0)">
-<rect class="diag-rem-rect" width="480" height="70" />
+<g transform="translate(718,0)">
+<rect class="diag-rem-rect" width="482" height="70" />
 <text class="diag-rem" x="10" y="35">
 Twice the smallest normal number
 </text>
@@ -44,16 +44,16 @@ tiny = z
 </text>
 </g>
 <g transform="translate(360,70)">
-<rect class="diag-num-rect" width="360" height="70" />
-<line class="diag-num-line" x1="15" y1="50" x2="320" y2="50" />
-<path class="diag-num-path" d="M 72 10 L 72 50 L 246 50 L 246 10" />
-<circle class="diag-num-dot" cx="88.6" cy="44" r="2.5" />
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
 <text class="diag-num-bin" x="20" y="33">
 &#160;&#160;&#160;100&#160;...&#160;00
 </text>
 </g>
-<g transform="translate(720,70)">
-<rect class="diag-rem-rect" width="480" height="70" />
+<g transform="translate(718,70)">
+<rect class="diag-rem-rect" width="482" height="70" />
 <text class="diag-rem" x="10" y="35">
 The smallest normal number
 </text>
@@ -66,17 +66,17 @@ z = z * H
 </text>
 </g>
 <g transform="translate(360,140)">
-<rect class="diag-num-rect" width="360" height="70" />
-<line class="diag-num-line" x1="15" y1="50" x2="320" y2="50" />
-<path class="diag-num-path" d="M 72 10 L 72 50 L 246 50 L 246 10" />
-<circle class="diag-num-dot" cx="88.6" cy="44" r="2.5" />
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
 <ellipse class="diag-num-elps" cx="96.2" cy="30" rx="12" ry="20" />
 <text class="diag-num-bin" x="20" y="33">
 &#160;&#160;&#160;010&#160;...&#160;00
 </text>
 </g>
-<g transform="translate(720,140)">
-<rect class="diag-rem-rect" width="480" height="70" />
+<g transform="translate(718,140)">
+<rect class="diag-rem-rect" width="482" height="70" />
 <text class="diag-rem" x="10" y="20">
 <tspan>IEEE: denormalize to half the</tspan>
 <tspan x="25" dy="1.2em">smallest normal number, exactly</tspan>
@@ -90,17 +90,17 @@ z = z * H
 </text>
 </g>
 <g transform="translate(360,210)">
-<rect class="diag-num-rect" width="360" height="70" />
-<line class="diag-num-line" x1="15" y1="50" x2="320" y2="50" />
-<path class="diag-num-path" d="M 72 10 L 72 50 L 246 50 L 246 10" />
-<circle class="diag-num-dot" cx="88.6" cy="44" r="2.5" />
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
 <ellipse class="diag-num-elps" cx="96.2" cy="30" rx="12" ry="20" />
 <text class="diag-num-bin" x="20" y="33">
 &#160;&#160;&#160;000&#160;...&#160;00
 </text>
 </g>
-<g transform="translate(720,210)">
-<rect class="diag-rem-rect" width="480" height="70" />
+<g transform="translate(718,210)">
+<rect class="diag-rem-rect" width="482" height="70" />
 <text class="diag-rem" x="10" y="35">
 Plan B: flush underflow to zero
 </text>

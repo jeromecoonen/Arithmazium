@@ -60,10 +60,10 @@ Part 2
     task is to fill it out to max value without increasing the exponent.
 
     Argunment:
-        big -- biggest finite power of the radix
+        big: biggest finite power of the radix
 
     Returns:
-        oflo -- overflow threshold
+        oflo: overflow threshold
     """
 
     oflo = big * (ONE_OVER_H * ULP_OF_ONE_PLUS - ONE_OVER_H)

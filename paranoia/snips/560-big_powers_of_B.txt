@@ -6,10 +6,10 @@ def big_powers_of_B():
     step to get up to and just beyond the overflow limit.
 
     Returns:
-        bigger -- value that saturates like infinity or triggers an exception
-        big -- down a factor of 1/H
-        less_big -- down a factor of 1/H from big
-        no_except -- boolean indicating no exception triggered
+        bigger: value that saturates like infinity or triggers an exception
+        big: down a factor of 1/H
+        less_big: down a factor of 1/H from big
+        no_except: boolean indicating no exception triggered
 
     Basic 5530-5530
     TODO: Resolve that we use negatives because of possible 2's complement

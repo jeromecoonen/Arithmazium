@@ -1,9 +1,8 @@
-print("Searching for B and PRECISION.")
-big_2_nth = find_big_two_to_the_nth()
-B = find_radix_from_2_nth(big_2_nth)
-# JTC: Can't find a case of B < 2.  For log arithmetic base 2, e, and 10,
-# B comes out 2 or greater.
-# TODO: continue investigating.
+# Basic 1160-1230
+print("Searching for radix B and PRECISION.")
+big_2_to_nth = find_big_2_to_nth()
+B = find_radix_from_big_2_to_nth(big_2_to_nth)
+# TODO: resolve log case.
 if B < TWO:
     B = ONE
 print("B = {:0.4f} .\n".format(B))

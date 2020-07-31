@@ -33,30 +33,27 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='find_precision_big_B_nth.html' class='next round'>Next</a>
+  <a href='precision.html' class='next round'>Next</a>
   <a href='aaapara_toc.html' class='tree round'>Home</a>
   <a href='find_big_two_to_the_nth.html' class='previous round'>Previous</a>
   </div>
 
-<p>This is an automatically generated file.</p>
+<h1>find_radix_from_big_2_to_nth()</h1>
 
 <p>
-Part 1
+This function's argument is the result from
+<a class="inline" href="find_big_2_to_the_nth.html">
+  <code>find_big_2_to_nth()</code></a>.
+The low-order digit in <code>big</code> is in the
+<em>B's place</em>, that is the 2's place in binary,
+the 10's place in decimal, and so on.
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
+<pre><code>def find_radix_from_big_2_to_nth(big):
+    """The radix is marked by a change in the 'tens' place.
 
-<p>
-Part 2
-</p>
-
-<pre><code>def find_radix_from_2_nth(big):
-    """Look for a carry out of the ones place.
-
-    Arguments;
-        big satisfies |((big + 1) - big) - 1| >= 1
+    Args:
+        big: smallest value satisfying |((big + 1) - big) - 1| >= 1
 
     Returns:
         radix, which may not be integral in log arithmetic
@@ -64,7 +61,29 @@ Part 2
 </code></pre>
 
 <p>
-Part 3
+The loop simply adds the values \(1\), \(2\), \(4\), \(8\), ...
+in sequence until <code>b</code> exceeds <code>big</code>.
+In binary, this will happen on the first or second step, but
+the result is the same.
+</p>
+
+<object type="image/svg+xml" data="img/find_radix_bin-auto.svg">
+  ------Image------
+</object>
+
+<p>
+In decimal, the low order digit will change when <code>y</code>
+is 8 or 16, depending on whether the arithmetic is
+rounded or chopped.
+</p>
+
+<object type="image/svg+xml" data="img/find_radix_dec-auto.svg">
+  ------Image------
+</object>
+
+<p>
+The digits <code>x</code> and <code>z</code> depend
+on the decimal precision, but the algorithm applies, regardless.
 </p>
 
 <pre><code>    y = ONE
@@ -77,12 +96,8 @@ Part 3
 
 </code></pre>
 
-<p>
-Part 4
-</p>
-
 <div class='next-prev'>
-<a href='find_precision_big_B_nth.html' class='next round'>Next</a>
+<a href='precision.html' class='next round'>Next</a>
 <a href='aaapara_toc.html' class='tree round'>Home</a>
 <a href='find_big_two_to_the_nth.html' class='previous round'>Previous</a>
 </div>
@@ -99,4 +114,3 @@ window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
 </<body>
 
 </html>
-

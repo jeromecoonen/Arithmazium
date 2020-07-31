@@ -6,7 +6,7 @@ def compute_A_and_inverse(radix):
     There are two tests that value "a" behaves well in division.
 
     Args:
-        radix -- usually passed from B
+        radix: usually passed from B
 
     Returns:
         a, 1 / a

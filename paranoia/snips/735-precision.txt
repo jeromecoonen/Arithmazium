@@ -1,4 +1,4 @@
-# Compute PRECSION and BIG_B_NTH == B^PRECISION barely satisfying
+# Compute PRECISION and BIG_B_NTH == B^PRECISION barely satisfying
 # (BIG_B_NTH+1)-BIG_B_NTH == 1...
 PRECISION = ZERO
 if B == ONE:

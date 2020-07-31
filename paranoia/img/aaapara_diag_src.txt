@@ -1,71 +1,153 @@
 // para_art_ouflow.txt -- source for over/underflow diagrams
+FILE big_2_nth_bin
+CNC10
+y = x + ONE
+b jjj010j...j001 p14
+Largest exact sum 2**n + 1
+CNC10
+y = x + ONE   # must round
+b jjj10jj...j0?1 p14 e13
+Will the trailing 1 round off or up to 2?
+CNC10
+  = x + TWO   # rounded up
+b jjj10jj...j010 p14
+In the unlikely event of rounding up|he trailing 1 is in the 2's place
+FEND
+
+FILE big_2_nth_oct
+CNC10
+y = x + ONE
+o jjj040j...j001 p14
+Largest exact sum 2**n + 1, octal
+CNC10
+y = x + ONE
+h jjj080j...j001 p14
+Largest exact sum 2**n + 1, hexadecimal
+FEND
+
+FILE big_2_nth_dec
+CNC5
+y = x + ONE
+d jjj032769 p9
+2**15 + 1, exact in 5 digits
+CNC5
+y = x + ONE
+d jjj065537 p9
+2**16 + 1, exact
+CNC5
+y = x + ONE
+d jjj131073 p9 e8
+2**16 + 1, with the 3 to be rounded off
+FEND
+
+FILE big_2_nth_hexfrac
+CNC6
+y = x + ONE
+h jjj04000010 p10 e10
+2**22 + 1, hex
+CNC6
+y = x + ONE
+h jjj08000010 p10 e10
+2**23 + 1
+CNC6
+y = x + ONE
+h jjj1000001 p10 e9
+2**24 + 1, the 1 must round off,|whether the precision is 6 or 6.5 hex digits
+FEND
+
+FILE find_radix_bin
+CNC10
+b = big + y   # y = 1
+b jjj100j...j001 p14
+VAX add-half-and-chop will round this up
+CNC10
+b = big + y   # y = 2
+b jjj100j...j010 p14
+Add's into the 2's place, giving the radix
+FEND
+
+FILE find_radix_dec
+CNC10
+b = big + y   # y = 4
+d jjjxxj...jxz4 p14
+Most arithmetics would round the 4 down
+CNC10
+b = big + y   # y = 8
+d jjj1xxj...jxz8 p14 e13
+Modern decimal arithmetic would round|into the z digit
+CNC10
+b = big + y   # y = 16
+d jjj1xxj...jxZ6 p14 e13
+In chopped arithmetic this bumps z to Z = z + 1|possibly with a carry into the next digit
+FEND
+
 FILE semilit_samp_a
-LINE3
+CNC10
 ONE = 1.0
 b jjj100j...j00
 The constant value one
-LINE3
+CNC10
 ONE_PLUS_ULP = ...
 b jjj100j...j01
 The next number larger than one
-LINE3
+CNC10
 ULP_OF_ONE_PLUS = ...
 b jjj000j...j01 e3
 A unit in the last place of one;|ote the value 1 is subtracted off
 FEND
 
 FILE semilit_samp_b
-LINE3
+CNC10
 ONE_MINUS_ULP = ...
 b jjj011j...j111 e13
 Next number smaller than one, in binary;|note the new digit position
-LINE3
+CNC10
 # ...in decimal
 d jjj099j...j999
 Bold digits
-LINE3
+CNC10
 # ...in octal
 o jjj077j...j777
 Italic digits
-LINE3
+CNC10
 # ...in hexadecimal
 h jjj0ffj...jfff
 Bold italic digits
 FEND
 
 FILE uflo_tiny_B_a
-LINE3
+CNC10
 less_tiny = tiny
 b jj1000j...j00
 Twice the smallest normal number
-LINE3
+CNC10
 tiny = z
 b jjj100j...j00
 The smallest normal number
-LINE3
+CNC10
 z = z * H
 b jjj010j...j00 e4
 IEEE: denormalize to half the|smallest normal number, exactly
-LINE3
+CNC10
 z = z * H
 b jjj000j...j00 e4
 Plan B: flush underflow to zero
 FEND
 
 FILE uflo_tiny_x_b
-LINE3
+CNC10
 tiny = tinier
 b jjj100j...j01
 smallest normal number plus an ulp
-LINE3
+CNC10
 tinier = too_tiny
 b jjj010j...j001 e13
 Low-order bit typically rounds off,|but could round up
-LINE3
+CNC10
 save_tiny_2 = ...
 b jjj010j...j00 e12
 Scale too_tiny back by 1/H|highlighted bit might be 1
-LINE3
+CNC10
 tiny_delta = ...
 b jjj000j...j01 e12
 Smallest positive value

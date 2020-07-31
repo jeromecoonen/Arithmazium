@@ -61,12 +61,12 @@ def tiny_powers_of_B(c):
     zero. The factor H protects against B=1.
 
     Args:
-        c -- 1/B**k, expected to be the constant C or comparable
+        c: 1/B**k, expected to be the constant C or comparable
 
     Returns:
-        less_tiny -- next tiniest positive value, by a factor of H
-        tiny -- tiniest positive value
-        z -- too tiny value, that underflows to zero or a pseudo-zero
+        less_tiny: next tiniest positive value, by a factor of H
+        tiny: tiniest positive value
+        z: too tiny value, that underflows to zero or a pseudo-zero
 
     Basic 4430-4440
     """

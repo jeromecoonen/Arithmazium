@@ -1,12 +1,12 @@
     Returns:
-        tiny -- smallest well-behaved value (0)   *** why not tiny_B?
-        tinier -- first value to exhibit underflow (tiny_B)
-        too_tiny -- underflows to 0 or an epsilon value (too_tiny_B)
-        u_threshold -- smallest well-behaved value, if underflow degrades
+        tiny: smallest well-behaved value (0)   *** why not tiny_B?
+        tinier: first value to exhibit underflow (tiny_B)
+        too_tiny: underflows to 0 or an epsilon value (too_tiny_B)
+        u_threshold: smallest well-behaved value, if underflow degrades
             into nonzero values, or 0 if underflow flushes to 0 (tiny_B)
-        tiny_delta -- difference between two values caused by underflow (0)
-        save_tiny1 -- value of tiny where tiny_delta computed (0)
-        save_tiny2 -- recomputed tiny where tiny_delta computed (0)
+        tiny_delta: difference between two values caused by underflow (0)
+        save_tiny1: value of tiny where tiny_delta computed (0)
+        save_tiny2: recomputed tiny where tiny_delta computed (0)
 
     Basic 4450-4520
     """

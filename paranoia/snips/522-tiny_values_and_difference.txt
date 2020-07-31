@@ -8,5 +8,5 @@ def tiny_values_and_difference(one_plus):
     values, shown in parens under Returns.
 
     Args:
-        one_plus -- 1 plus enough ulps that they shouldn't be lost when
+        one_plus: 1 plus enough ulps that they shouldn't be lost when
             multiplied by a power of B

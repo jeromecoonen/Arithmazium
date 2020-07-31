@@ -1,30 +1,44 @@
-#INCLUDE para_head find_big_two_to_the_nth.html aaapara_toc.html find_precision_big_B_nth.html
+#INCLUDE para_head find_big_two_to_the_nth.html aaapara_toc.html precision.html
 
-<p>This is an automatically generated file.</p>
-
-<p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
+<h1>find_radix_from_big_2_to_nth()</h1>
 
 <p>
-Part 2
+This function's argument is the result from
+<a class="inline" href="find_big_2_to_the_nth.html">
+  <code>find_big_2_to_nth()</code></a>.
+The low-order digit in <code>big</code> is in the
+<em>B's place</em>, that is the 2's place in binary,
+the 10's place in decimal, and so on.
 </p>
 
 #CODE 255-find_radix_from_2_nth
 
 <p>
-Part 3
+The loop simply adds the values \(1\), \(2\), \(4\), \(8\), ...
+in sequence until <code>b</code> exceeds <code>big</code>.
+In binary, this will happen on the first or second step, but
+the result is the same.
+</p>
+
+<object type="image/svg+xml" data="img/find_radix_bin-auto.svg">
+  ------Image------
+</object>
+
+<p>
+In decimal, the low order digit will change when <code>y</code>
+is 8 or 16, depending on whether the arithmetic is
+rounded or chopped.
+</p>
+
+<object type="image/svg+xml" data="img/find_radix_dec-auto.svg">
+  ------Image------
+</object>
+
+<p>
+The digits <code>x</code> and <code>z</code> depend
+on the decimal precision, but the algorithm applies, regardless.
 </p>
 
 #CODE 257-find_radix_from_2_nth2
 
-<p>
-Part 4
-</p>
-
-#INCLUDE para_foot find_big_two_to_the_nth.html aaapara_toc.html find_precision_big_B_nth.html
-
+#INCLUDE para_foot find_big_two_to_the_nth.html aaapara_toc.html precision.html

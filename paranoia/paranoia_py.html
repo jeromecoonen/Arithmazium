@@ -279,19 +279,8 @@ def print_if_err_cnt_positive():
 #=============================================
 # Computations of fundamental system constants like radix and precisioon.
 #=============================================
-def find_big_two_to_the_nth():
-    """Compute 2**n that dominates 1.0.
-
-    Regardless of radix, find the smallest 2**n such that
-    |((2**n + 1)-2**n)-1| >= 1.  This value will be used for the first
-    evaluation of the radix.  For small n, the sum is just zero.  When n is
-    so large that the 2**n has no ones place, the sum with 1 will round
-    down to 2**n or up to (2**n + 2), hence the absolute value.
-
-     Returns:
-         Smallest 2**n satisfying the formula above.
-    """
-    # ~~~~~~~ 252-find_big_two_to_the_nth2
+def find_big_2_to_nth():
+    """Compute 2**n satisfying |((2**n + 1)-2**n)-1| >= 1."""
     x = ONE
     while True:
         x = x + x
@@ -299,16 +288,17 @@ def find_big_two_to_the_nth():
         z = y - x
         y = z - ONE
         if MINUS_ONE + fabs(y) >= ZERO: break
-        # ... now x is just big enough that |((x+1)-x)-1| >= 1 ...
+    # ... now x is just big enough that |((x+1)-x)-1| >= 1 ...
     return x
 
 
-# ~~~~~~~ 255-find_radix_from_2_nth
-def find_radix_from_2_nth(big):
-    """Look for a carry out of the ones place.
 
-    Arguments;
-        big satisfies |((big + 1) - big) - 1| >= 1
+# ~~~~~~~ 255-find_radix_from_2_nth
+def find_radix_from_big_2_to_nth(big):
+    """The radix is marked by a change in the 'tens' place.
+
+    Args:
+        big: smallest value satisfying |((big + 1) - big) - 1| >= 1
 
     Returns:
         radix, which may not be integral in log arithmetic
@@ -412,7 +402,7 @@ def compute_A_and_inverse(radix):
     There are two tests that value "a" behaves well in division.
 
     Args:
-        radix -- usually passed from B
+        radix: usually passed from B
 
     Returns:
         a, 1 / a
@@ -524,8 +514,8 @@ def standardize_fractional_precision(ulp, b):
      properly.
 
     Args:
-        ulp -- unit in the last place of a value just less than 1
-        b -- radix
+        ulp: unit in the last place of a value just less than 1
+        b: radix
     Returns:
          sss
     """
@@ -1265,12 +1255,12 @@ def tiny_powers_of_B(c):
     zero. The factor H protects against B=1.
 
     Args:
-        c -- 1/B**k, expected to be the constant C or comparable
+        c: 1/B**k, expected to be the constant C or comparable
 
     Returns:
-        less_tiny -- next tiniest positive value, by a factor of H
-        tiny -- tiniest positive value
-        z -- too tiny value, that underflows to zero or a pseudo-zero
+        less_tiny: next tiniest positive value, by a factor of H
+        tiny: tiniest positive value
+        z: too tiny value, that underflows to zero or a pseudo-zero
 
     Basic 4430-4440
     """
@@ -1301,18 +1291,18 @@ def tiny_values_and_difference(one_plus):
     values, shown in parens under Returns.
 
     Args:
-        one_plus -- 1 plus enough ulps that they shouldn't be lost when
+        one_plus: 1 plus enough ulps that they shouldn't be lost when
             multiplied by a power of B
     # ~~~~~~~ 523-tiny_values_and_difference2
     Returns:
-        tiny -- smallest well-behaved value (0)   *** why not tiny_B?
-        tinier -- first value to exhibit underflow (tiny_B)
-        too_tiny -- underflows to 0 or an epsilon value (too_tiny_B)
-        u_threshold -- smallest well-behaved value, if underflow degrades
+        tiny: smallest well-behaved value (0)   *** why not tiny_B?
+        tinier: first value to exhibit underflow (tiny_B)
+        too_tiny: underflows to 0 or an epsilon value (too_tiny_B)
+        u_threshold: smallest well-behaved value, if underflow degrades
             into nonzero values, or 0 if underflow flushes to 0 (tiny_B)
-        tiny_delta -- difference between two values caused by underflow (0)
-        save_tiny1 -- value of tiny where tiny_delta computed (0)
-        save_tiny2 -- recomputed tiny where tiny_delta computed (0)
+        tiny_delta: difference between two values caused by underflow (0)
+        save_tiny1: value of tiny where tiny_delta computed (0)
+        save_tiny2: recomputed tiny where tiny_delta computed (0)
 
     Basic 4450-4520
     """
@@ -1550,7 +1540,7 @@ def test_extreme_underflow(ut):
      serious         OK           defect          serious
 
     Args:
-        ut -- expect underflow_threshold, but works with any tiny value
+        ut: expect underflow_threshold, but works with any tiny value
 
     Basic 5230-5300
     """
@@ -1592,7 +1582,7 @@ def test_for_pseudo_zero(pseudo):
     """Test for a nonzero value that violates basic numerical laws.
 
     Args:
-        pseudo -- tiny value that might misbehave
+        pseudo: tiny value that might misbehave
 
     Basic 4580-4630
     """
@@ -1673,7 +1663,7 @@ def test_x_to_xp1_over_xm1(e2):
     """ Compare x^(x+1)/(x-1) to exp(2) for x above and below 1.
 
     Args:
-        e2 -- computed value of exp(2)
+        e2: computed value of exp(2)
     Basic 5360-5440
     """
     print("Testing x^((x + 1) / (x - 1)) vs. " +
@@ -1758,10 +1748,10 @@ def big_powers_of_B():
     step to get up to and just beyond the overflow limit.
 
     Returns:
-        bigger -- value that saturates like infinity or triggers an exception
-        big -- down a factor of 1/H
-        less_big -- down a factor of 1/H from big
-        no_except -- boolean indicating no exception triggered
+        bigger: value that saturates like infinity or triggers an exception
+        big: down a factor of 1/H
+        less_big: down a factor of 1/H from big
+        no_except: boolean indicating no exception triggered
 
     Basic 5530-5530
     TODO: Resolve that we use negatives because of possible 2's complement
@@ -1798,12 +1788,12 @@ def no_trap_overflow_threshold(big, less_big):
     returns big_B as a finite saturating value or fills out less_big_B
     with significant digits to reach right up to big_B.
 
-    Arguments:
-        big -- power of 1/H that may be infinite or saturating finite value
-        less_big -- tame value a nominal factor of H smaller than big
+    Args:
+        big: power of 1/H that may be infinite or saturating finite value
+        less_big: tame value a nominal factor of H smaller than big
 
     Returns:
-        oflo -- the overflow threshold
+        oflo: the overflow threshold
     """
 
     # ~~~~~~~ 564a-no_trap_overflow_threshold2
@@ -1834,10 +1824,10 @@ def trap_overflow_threshold(big):
     task is to fill it out to max value without increasing the exponent.
 
     Argunment:
-        big -- biggest finite power of the radix
+        big: biggest finite power of the radix
 
     Returns:
-        oflo -- overflow threshold
+        oflo: overflow threshold
     """
 
     oflo = big * (ONE_OVER_H * ULP_OF_ONE_PLUS - ONE_OVER_H)
@@ -2023,17 +2013,16 @@ test_cond(err_failure, (FIVE == FOUR + ONE)
 if (error_count[err_failure] == 0):
     print("-1, 0, 1/2, 1, 2, 3, 4, 5, 9, 27, 32 & 240 are O.K.")
 # ~~~~~~~ 730-radix
-print("Searching for B and PRECISION.")
-big_2_nth = find_big_two_to_the_nth()
-B = find_radix_from_2_nth(big_2_nth)
-# JTC: Can't find a case of B < 2.  For log arithmetic base 2, e, and 10,
-# B comes out 2 or greater.
-# TODO: continue investigating.
+# Basic 1160-1230
+print("Searching for radix B and PRECISION.")
+big_2_to_nth = find_big_2_to_nth()
+B = find_radix_from_big_2_to_nth(big_2_to_nth)
+# TODO: resolve log case.
 if B < TWO:
     B = ONE
 print("B = {:0.4f} .\n".format(B))
 # ~~~~~~~ 735-precision
-# Compute PRECSION and BIG_B_NTH == B^PRECISION barely satisfying
+# Compute PRECISION and BIG_B_NTH == B^PRECISION barely satisfying
 # (BIG_B_NTH+1)-BIG_B_NTH == 1...
 PRECISION = ZERO
 if B == ONE:
@@ -2526,9 +2515,9 @@ else:
 # ~~~~~~~ 906-uflow6
 # The Basic code switches on four cases depending on whether two values are
 # zero or nonzero.
-#   add_sub_tiny -- the difference between two tiny unequal values may
+#   add_sub_tiny: the difference between two tiny unequal values may
 #       underflow to zero
-#   underflow_threshold -- intended to be the smallest normal number
+#   underflow_threshold: intended to be the smallest normal number
 #       unaffected by underflow, but will not have been set yet for
 #       arithmetic flushes underflow abruptly to zero
 #

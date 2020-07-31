@@ -1,15 +1,17 @@
 #=============================================
 # Computations of fundamental system constants like radix and precisioon.
 #=============================================
-def find_big_two_to_the_nth():
-    """Compute 2**n that dominates 1.0.
+def find_big_2_to_nth():
+    """Compute 2**n satisfying |((2**n + 1)-2**n)-1| >= 1."""
+    x = ONE
+    while True:
+        x = x + x
+        y = x + ONE
+        z = y - x
+        y = z - ONE
+        if MINUS_ONE + fabs(y) >= ZERO: break
+    # ... now x is just big enough that |((x+1)-x)-1| >= 1 ...
+    return x
 
-    Regardless of radix, find the smallest 2**n such that
-    |((2**n + 1)-2**n)-1| >= 1.  This value will be used for the first
-    evaluation of the radix.  For small n, the sum is just zero.  When n is
-    so large that the 2**n has no ones place, the sum with 1 will round
-    down to 2**n or up to (2**n + 2), hence the absolute value.
 
-     Returns:
-         Smallest 2**n satisfying the formula above.
-    """
+

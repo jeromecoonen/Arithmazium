@@ -33,42 +33,38 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='precision.html' class='next round'>Next</a>
+  <a href='find_big_two_to_the_nth.html' class='next round'>Next</a>
   <a href='aaapara_toc.html' class='tree round'>Home</a>
   <a href='med_ints.html' class='previous round'>Previous</a>
   </div>
 
-<p>This is an automatically generated file.</p>
+<h1>What is the radix?</h1>
 
 <p>
-Part 1
+The work is carried out in a pair of interesting loops.
+Look for the details at
+<a class="inline" href="find_big_two_to_the_nth.html">
+  <code>find_big_2_to_nth()</code></a> and
+<a class="inline" href="find_radix_from_2_nth.html">
+  <code>find_radix_from_big_2_to_nth()</code></a>.
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
-<p>
-Part 2
-</p>
-
-<pre><code>print("Searching for B and PRECISION.")
-big_2_nth = find_big_two_to_the_nth()
-B = find_radix_from_2_nth(big_2_nth)
-# JTC: Can't find a case of B < 2.  For log arithmetic base 2, e, and 10,
-# B comes out 2 or greater.
-# TODO: continue investigating.
+<pre><code># Basic 1160-1230
+print("Searching for radix B and PRECISION.")
+big_2_to_nth = find_big_2_to_nth()
+B = find_radix_from_big_2_to_nth(big_2_to_nth)
+# TODO: resolve log case.
 if B < TWO:
     B = ONE
 print("B = {:0.4f} .\n".format(B))
 </code></pre>
 
 <p>
-Part 3
+The case b=1...
 </p>
 
 <div class='next-prev'>
-<a href='precision.html' class='next round'>Next</a>
+<a href='find_big_two_to_the_nth.html' class='next round'>Next</a>
 <a href='aaapara_toc.html' class='tree round'>Home</a>
 <a href='med_ints.html' class='previous round'>Previous</a>
 </div>
@@ -85,4 +81,3 @@ window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
 </<body>
 
 </html>
-

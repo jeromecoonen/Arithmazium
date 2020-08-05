@@ -35,65 +35,107 @@
   <div class='next-prev'>
   <a href='find_ulp_of_one_minus.html' class='next round'>Next</a>
   <a href='aaapara_toc.html' class='tree round'>Home</a>
-  <a href='find_precision_big_B_nth.html' class='previous round'>Previous</a>
+  <a href='recalc_radix.html' class='previous round'>Previous</a>
   </div>
 
-<p>This is an automatically generated file.</p>
+<h1>fin_ulp_of_one_plus()</h1>
 
 <p>
-Part 1
+Herein lies one of the splendid numerical idioms of Paranoia.
+We'll encounter this technique in several functions to follow.
+The idea is this:
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
+<p class="quote">
+<em>
+When searching for the smallest value with a given property,
+start with a <span class="bo">noisy</span> value
+at least as big and iterate downward.
+</em>
+</p>
+
+<p>
+The code uses the value \(4 / 3\), which rounds in any
+radix not a multiple of \(3\). It's rounding error is in
+ulps of <code>1.0</code>. Subtracting from <code>HALF</code>
+gives <code>sixth</code> a rounding error in the opposite direction.
+If one is rounded up, the other is rounded down. Subtracting
+the two approximations of \(1 / 3\) sums the two error magnitudes.
+This binary diagram shows the case of even precision.
+</p>
+
+<object type="image/svg+xml" data="img/ulp_one_plus-auto.svg">
   ------Image------
 </object>
 
 <p>
-Part 2
+The result of the fiddling is a handful of ulps of \(1\).
+To give some headroom, Paranoia takes the larger of the the rounding
+noise <code>x</code> and the <code>guess</code> passed as a parameter.
 </p>
 
 <pre><code>def find_ulp_of_one_plus(guess):
-    """Compute value by iterating down to a single ulp.
-
-    Args:
-        guess: default guess for 1 ulp of value just over 1
-
-    Returns:
-        the value u such at 1+u is the next larger value than 1
-    """
-</code></pre>
-
-<p>
-Part 3
-</p>
-
-<pre><code>    x = FOUR / THREE    # rounds in ulps of 1
+    """Compute u such at 1+u is the next larger value than 1."""
+    x = FOUR / THREE    # rounds in ulps of 1
     third = x - ONE
     sixth = ONE_HALF - third
     x = sixth + sixth
-    x = fabs(x - third)
+    x = fabs(x - third)   # sums two rounding errors
     if x < guess:
         x = guess
     # Now x = (unknown no.) ulps of 1+.
-    doit = True
-    while doit:
+</code></pre>
+
+<p>
+The next iteration exhibits another idiom: the creation of nonzero low-order
+digits to encourage an upward round, if there's nearly a half-way case.
+The binary diagram below shows how <code>u</code> is halved, but with
+some nonzero low-order bits. Since <code>u</code> is some ulps of
+\(1.0\), <code>u * u</code> is some ulps of <code>u</code>.
+The factor <code>THIRTY_TWO</code> shifts those bits well back into
+<code>u</code> in radix 2, 8, or 16. The diagram continues the binary tale.
+</p>
+
+<object type="image/svg+xml" data="img/ulp_one_plus_b-auto.svg">
+  ------Image------
+</object>
+
+</p>
+In decimal, the factor ensures some
+nonzero low-order digits in <code>x</code>.
+</p>
+
+<pre><code>    while True:
         u = x
-        y = ONE_HALF * u + THIRTY_TWO * u * u
-        y = ONE + y
-        x = y - ONE
-        doit = (u > x) and (x > ZERO)
+        x = ONE_HALF * u + THIRTY_TWO * u * u
+        x = x + ONE
+        x = x - ONE
+        if (u <= x) or (x <= ZERO): break
     return u
 
 </code></pre>
 
+<h2>Your turn</h2>
 <p>
-Part 4
+<span class="b">Exercise:</span> The decimal diagram below
+starts the computation in decimal.
+Assuming that <code>guess == 0.000001</code>, run the iteration
+to see that the guess was correct.
+</p>
+
+<object type="image/svg+xml" data="img/ulp_one_plus_c-auto.svg">
+  ------Image------
+</object>
+
+<p>
+<span class="b">Exercise:</span> Replay the binary case with odd precision to see
+it works either way.
 </p>
 
 <div class='next-prev'>
 <a href='find_ulp_of_one_minus.html' class='next round'>Next</a>
 <a href='aaapara_toc.html' class='tree round'>Home</a>
-<a href='find_precision_big_B_nth.html' class='previous round'>Previous</a>
+<a href='recalc_radix.html' class='previous round'>Previous</a>
 </div>
 <script src="js/vendor/jquery-3.5.1.min.js"></script>
 <script src="js/plugins.js"></script>
@@ -108,4 +150,3 @@ window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
 </<body>
 
 </html>
-

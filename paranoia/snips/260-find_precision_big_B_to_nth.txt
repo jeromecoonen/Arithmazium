@@ -1,0 +1,11 @@
+def find_precision_big_B_to_nth(b):
+    """Compute the number of B-digits in the arithmetic and the power
+    of B sufficient to have the ones place fall off the right.
+
+    Args:
+        b: the global radix B, accepted as an argument
+
+    Returns:
+        precision: number of B digits in arithmetic
+        power of B such that the low-order digit is the B's place
+    """

@@ -1,4 +1,4 @@
-#INCLUDE para_head find_ulp_of_one_plus.html aaapara_toc.html compute_A_and_inverse.html
+#INCLUDE para_head find_ulp_of_one_plus.html aaapara_toc.html recalc_radix2.html
 
 <p>This is an automatically generated file.</p>
 
@@ -32,5 +32,4 @@ Part 4
 Part 5
 </p>
 
-#INCLUDE para_foot find_ulp_of_one_plus.html aaapara_toc.html compute_A_and_inverse.html
-
+#INCLUDE para_foot find_ulp_of_one_plus.html aaapara_toc.html recalc_radix2.html

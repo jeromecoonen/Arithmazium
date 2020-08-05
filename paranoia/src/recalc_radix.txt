@@ -1,24 +1,17 @@
-#INCLUDE para_head precision.html aaapara_toc.html recalc_radix2.html
+#INCLUDE para_head find_precision_big_B_to_nth.html aaapara_toc.html find_ulp_of_one_plus.html
 
-<p>This is an automatically generated file.</p>
-
-<p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
+<h1>Refining ulps of 1&plusmn;</h1>
 
 <p>
-Part 2
+We got a first guess at <em>ulps</em> of numbers just
+bigger and smaller than \(1\).
+Now, we invoke specialized functions to
+<a class="inline" href="find_ulp_of_one_plus.html">
+  <code>find_ulp_of_one_plus()</code></a> and
+<a class="inline" href="find_ulp_of_one_minus.html">
+  <code>find_ulp_of_one_minus()</code></a>.
 </p>
 
 #CODE 740-recalc_radix
 
-<p>
-Part 3
-</p>
-
-#INCLUDE para_foot precision.html aaapara_toc.html recalc_radix2.html
-
+#INCLUDE para_foot find_precision_big_B_to_nth.html aaapara_toc.html find_ulp_of_one_plus.html

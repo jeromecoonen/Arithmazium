@@ -1,6 +1,6 @@
 #INCLUDE para_head recalc_radix.html aaapara_toc.html cmp_ulps_of_one.html
 
-<p>This is an automatically generated file.</p>
+<h1>Recalculate radix (cont.)</h1>
 
 <p>
 Part 1
@@ -21,4 +21,3 @@ Part 3
 </p>
 
 #INCLUDE para_foot recalc_radix.html aaapara_toc.html cmp_ulps_of_one.html
-

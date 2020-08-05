@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Underflow</title>
-  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/paranoia/recalc_radix.html">
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/paranoia/find_precision_big_B_to_nth.html">
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <meta name='theme-color' content='#fafafa'>
   <link rel='stylesheet' href='../css/normalize.css'>
@@ -33,36 +33,71 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='find_ulp_of_one_plus.html' class='next round'>Next</a>
+  <a href='recalc_radix.html' class='next round'>Next</a>
   <a href='aaapara_toc.html' class='tree round'>Home</a>
-  <a href='find_precision_big_B_to_nth.html' class='previous round'>Previous</a>
+  <a href='precision.html' class='previous round'>Previous</a>
   </div>
 
-<h1>Refining ulps of 1&plusmn;</h1>
+<h1>find_precision_big_B_to_nth()</h1>
 
 <p>
-We got a first guess at <em>ulps</em> of numbers just
-bigger and smaller than \(1\).
-Now, we invoke specialized functions to
-<a class="inline" href="find_ulp_of_one_plus.html">
-  <code>find_ulp_of_one_plus()</code></a> and
-<a class="inline" href="find_ulp_of_one_minus.html">
-  <code>find_ulp_of_one_minus()</code></a>.
+The docstring sets the stage. We're looking for a value like this.
 </p>
 
-<pre><code>print("Recalculating radix and precision")
-ULP_OF_ONE_PLUS = find_ulp_of_one_plus(guess_ulp_of_one_plus)
-ULP_OF_ONE_MINUS = find_ulp_of_one_minus(guess_ulp_of_one_minus)
-if (ULP_OF_ONE_MINUS == guess_ulp_of_one_minus):
-    print("confirms closest relative separation ULP_OF_ONE_MINUS ")
-else:
-    print("gets better closest relative separation ULP_OF_ONE_MINUS = {:0.7e} .".format(ULP_OF_ONE_MINUS))
+<object type="image/svg+xml" data="img/precision_c-auto.svg">
+  ------Image------
+</object>
+
+<p>
+On some binary machines, the returned value might be a
+factor of \(2\) too big, depending
+on the rounding. This is just the first try.
+</p>
+
+<pre><code>def find_precision_big_B_nth(b):
+    """Compute the number of B-digits in the arithmetic and the power
+    of B sufficient to have the ones place fall off the right.
+
+    Args:
+        b: radix
+    Returns:
+        precision: number of B digits
+        power of B such that the low-order digit is the B's place.
+    """
+</code></pre>
+
+<p>
+The loop proceeds as in the discussion in the digit diagrams here
+and in the main code thread. Note the comparison here is against
+\(1\), which Paranoia assumes to be reliable.
+</p>
+
+<div class="math">
+<h2>What could go wrong?</h2>
+<p>
+This code will give
+surprising results with log arithmetic. What seem like obvious
+computations, such as addition of \(1\), are inexact,
+so exact comparison against <code>ONE</code> is fraught with peril.
+</p>
+</div>
+
+<pre><code>    big_b = ONE
+    precision = ZERO
+    while True:
+        precision = precision + ONE
+        big_b = big_b * b
+        y = big_b + ONE
+        if y - big_b != ONE: break
+    return precision, big_b
+
+
 </code></pre>
 
 <div class='next-prev'>
-<a href='find_ulp_of_one_plus.html' class='next round'>Next</a>
+<a href='recalc_radix.html' class='next round'>Next</a>
 <a href='aaapara_toc.html' class='tree round'>Home</a>
-<a href='find_precision_big_B_to_nth.html' class='previous round'>Previous</a>
+<a href='precision.html' class='previous round'>Previous</a>
 </div>
 <script src="js/vendor/jquery-3.5.1.min.js"></script>
 <script src="js/plugins.js"></script>

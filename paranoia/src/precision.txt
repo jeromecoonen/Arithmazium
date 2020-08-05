@@ -1,24 +1,41 @@
-#INCLUDE para_head radix.html aaapara_toc.html recalc_radix.html
+#INCLUDE para_head find_radix_from_2_nth.html aaapara_toc.html find_precision_big_B_to_nth.html
 
-<p>This is an automatically generated file.</p>
+<h1>Precision</h1>
 
 <p>
-Part 1
+If the radix <code>B</code> is 1, perhaps because of log
+arithmetic, defer the computation to the second look
+at precision to come.
+Otherwise, call
+<a class="inline" href="find_precision_big_B_to_nth.html">
+  <code>find_precision_big_B_to_nth()</code></a> to
+loop on powers of <code>B</code> until adding \(1\) causes
+no increase. The diagram shows the situation in binary as
+<code>big_b</code> grows just large enough that an added
+\(1\) just rounds off.
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
+<object type="image/svg+xml" data="img/precision_a-auto.svg">
   ------Image------
 </object>
 
 <p>
-Part 2
+The computation works as well in radix 8, 10, or 16. In these cases,
+adding \(1\) beyond the last digit position should always round off.
 </p>
 
 #CODE 735-precision
 
 <p>
-Part 3
+In most cases, <code>1.0 / BIG_B_NTH</code> gives
+\(1 / B\) of a unit in the last place (ulp) of \(1\).
+The values will be refined in code to come.
 </p>
 
-#INCLUDE para_foot radix.html aaapara_toc.html recalc_radix.html
+<object type="image/svg+xml" data="img/precision_b-auto.svg">
+  ------Image------
+</object>
 
+#CODE 737-precision2
+
+#INCLUDE para_foot find_radix_from_2_nth.html aaapara_toc.html find_precision_big_B_to_nth.html

@@ -1,4 +1,40 @@
 // para_art_ouflow.txt -- source for over/underflow diagrams
+
+FILE semilit_samp_a
+CNC10
+ONE = 1.0
+b jjj100j...j00
+The constant value one
+CNC10
+ONE_PLUS_ULP = ...
+b jjj100j...j01
+The next number larger than one
+CNC10
+ULP_OF_ONE_PLUS = ...
+b jjj000j...j01 e3
+A unit in the last place of one;|ote the value 1 is subtracted off
+FEND
+
+FILE semilit_samp_b
+CNC10
+ONE_MINUS_ULP = ...
+b jjj011j...j111 e13
+Next number smaller than one, in binary;|note the new digit position
+CNC10
+# ...in decimal
+d jjj099j...j999
+Bold digits
+CNC10
+# ...in octal
+o jjj077j...j777
+Italic digits
+CNC10
+# ...in hexadecimal
+h jjj0ffj...jfff
+Bold italic digits
+FEND
+
+
 FILE big_2_nth_bin
 CNC10
 y = x + ONE
@@ -81,39 +117,85 @@ d jjj1xxj...jxZ6 p14 e13
 In chopped arithmetic this bumps z to Z = z + 1|possibly with a carry into the next digit
 FEND
 
-FILE semilit_samp_a
+FILE precision_a
 CNC10
-ONE = 1.0
-b jjj100j...j00
-The constant value one
+big_b = ...
+b jjj100j...j01 p13
+largest power of B such that add 1 is exact
 CNC10
-ONE_PLUS_ULP = ...
-b jjj100j...j01
-The next number larger than one
-CNC10
-ULP_OF_ONE_PLUS = ...
-b jjj000j...j01 e3
-A unit in the last place of one;|ote the value 1 is subtracted off
+big_b = big_b * 2.0
+b jj1000j...j01 p13 e12
+add 1 rounds off on most machines, VAX with|add-half-and-chop will round up
 FEND
 
-FILE semilit_samp_b
+FILE precision_b
 CNC10
-ONE_MINUS_ULP = ...
-b jjj011j...j111 e13
-Next number smaller than one, in binary;|note the new digit position
+BIG_B_NTH = ...
+b jj1000j...j00 p13
+power of B such that added 1 rounds off
 CNC10
-# ...in decimal
-d jjj099j...j999
-Bold digits
+ONE / BIG_B_NTH
+b jjj000j...j001 p4
+1/B of a unit in the last place of 1
 CNC10
-# ...in octal
-o jjj077j...j777
-Italic digits
-CNC10
-# ...in hexadecimal
-h jjj0ffj...jfff
-Bold italic digits
+(ONE / BIG_B_NTH) * 2.0
+b jjj000j...j01 p4
+a unit in the last place of 1
 FEND
+
+FILE precision_c
+CNC10
+return ...
+b jj1000j...j00 p13 e11
+highlighted low-order digit is the B's place
+FEND
+
+FILE ulp_one_plus
+CNC10
+x = 4.0/3.0
+b jjj1010...0101010 e12
+the highlighted bit is rounded|whether the precision is even or odd
+CNC10
+third = x - ONE
+b jjj0010...01? e12
+subtraction is exact, preserving the rounding error
+CNC10
+sixth = HALF - third
+b jjj0001...??? e12
+1/6 is rounded in the opposite direction of 1/3
+FEND
+
+FILE ulp_one_plus_b
+CNC10
+ONE
+b jjj100j...j00
+1.0, showing binary point alignment
+CNC10
+u = ...
+b jjj000j...j11
+suppose u is 3 ulps of 1.0
+CNC10
+x = ONE_HALF * u + ...
+b jjj000j...j0110 ... xx
+x is half u, with nonzero low bits
+FEND
+
+FILE ulp_one_plus_c
+CNC6
+x = 4.0 / 3.0
+d jjj133333333 e9
+low-order 3s will round off
+CNC6
+third = x - ONE
+d jjj033333
+1/3 rounded in the low digit of 1.0
+CNC6
+sixth = ONE_HALF - third
+d jjj016667
+1/6, rounded up
+FEND
+
+
 
 FILE uflo_tiny_B_a
 CNC10

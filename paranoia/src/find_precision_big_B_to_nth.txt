@@ -1,0 +1,39 @@
+#INCLUDE para_head precision.html aaapara_toc.html recalc_radix.html
+
+<h1>find_precision_big_B_to_nth()</h1>
+
+<p>
+The docstring sets the stage. We're looking for a value like this.
+</p>
+
+<object type="image/svg+xml" data="img/precision_c-auto.svg">
+  ------Image------
+</object>
+
+<p>
+On some binary machines, the returned value might be a
+factor of \(2\) too big, depending
+on the rounding. This is just the first try.
+</p>
+
+#CODE 260-find_precision_big_B_nth
+
+<p>
+The loop proceeds as in the discussion in the digit diagrams here
+and in the main code thread. Note the comparison here is against
+\(1\), which Paranoia assumes to be reliable.
+</p>
+
+<div class="math">
+<h2>What could go wrong?</h2>
+<p>
+This code will give
+surprising results with log arithmetic. What seem like obvious
+computations, such as addition of \(1\), are inexact,
+so exact comparison against <code>ONE</code> is fraught with peril.
+</p>
+</div>
+
+#CODE 262-find_precision_big_B_nth2
+
+#INCLUDE para_foot precision.html aaapara_toc.html recalc_radix.html

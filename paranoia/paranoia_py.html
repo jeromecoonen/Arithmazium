@@ -312,18 +312,19 @@ def find_radix_from_big_2_to_nth(big):
         if b != ZERO: break
     return b
 
-# ~~~~~~~ 260-find_precision_big_B_nth
-def find_precision_big_B_nth(b):
+# ~~~~~~~ 260-find_precision_big_B_to_nth
+def find_precision_big_B_to_nth(b):
     """Compute the number of B-digits in the arithmetic and the power
     of B sufficient to have the ones place fall off the right.
 
     Args:
-        b: radix
+        b: the global radix B, accepted as an argument
+
     Returns:
-        precision: number of B digits
-        power of B such that the low-order digit is the B's place.
+        precision: number of B digits in arithmetic
+        power of B such that the low-order digit is the B's place
     """
-    # ~~~~~~~ 262-find_precision_big_B_nth2
+    # ~~~~~~~ 262-find_precision_big_B_to_nth2
     big_b = ONE
     precision = ZERO
     while True:
@@ -333,33 +334,24 @@ def find_precision_big_B_nth(b):
         if y - big_b != ONE: break
     return precision, big_b
 
-
 # ~~~~~~~ 265-find_ulp_of_one_plus
 def find_ulp_of_one_plus(guess):
-    """Compute value by iterating down to a single ulp.
-
-    Args:
-        guess: default guess for 1 ulp of value just over 1
-
-    Returns:
-        the value u such at 1+u is the next larger value than 1
-    """
-    # ~~~~~~~ 267-find_ulp_of_one_plus2
+    """Compute u such at 1+u is the next larger value than 1."""
     x = FOUR / THREE    # rounds in ulps of 1
     third = x - ONE
     sixth = ONE_HALF - third
     x = sixth + sixth
-    x = fabs(x - third)
+    x = fabs(x - third)   # sums two rounding errors
     if x < guess:
         x = guess
     # Now x = (unknown no.) ulps of 1+.
-    doit = True
-    while doit:
+    # ~~~~~~~ 267-find_ulp_of_one_plus2
+    while True:
         u = x
-        y = ONE_HALF * u + THIRTY_TWO * u * u
-        y = ONE + y
-        x = y - ONE
-        doit = (u > x) and (x > ZERO)
+        x = ONE_HALF * u + THIRTY_TWO * u * u
+        x = x + ONE
+        x = x - ONE
+        if (u <= x) or (x <= ZERO): break
     return u
 
 # ~~~~~~~ 270-find_ulp_of_one_minus
@@ -2017,19 +2009,19 @@ if (error_count[err_failure] == 0):
 print("Searching for radix B and PRECISION.")
 big_2_to_nth = find_big_2_to_nth()
 B = find_radix_from_big_2_to_nth(big_2_to_nth)
-# TODO: resolve log case.
-if B < TWO:
+if B < TWO:   # TODO: log case
     B = ONE
 print("B = {:0.4f} .\n".format(B))
 # ~~~~~~~ 735-precision
-# Compute PRECISION and BIG_B_NTH == B^PRECISION barely satisfying
-# (BIG_B_NTH+1)-BIG_B_NTH == 1...
-PRECISION = ZERO
-if B == ONE:
+# Compute PRECISION and BIG_B_NTH = B**PRECISION barely too big
+# to satisfy (BIG_B_NTH + 1) - BIG_B_NTH == 1 .
+# Basic 1240-1270
+if B == ONE:   # defer to the secondary calculation below
+    PRECISION = ZERO
     BIG_B_NTH = big_2_nth
 else:
-    PRECISION, BIG_B_NTH = find_precision_big_B_nth(B)
-
+    PRECISION, BIG_B_NTH = find_precision_big_B_to_nth(B)
+# ~~~~~~~ 737-precision2
 guess_ulp_of_one_minus = ONE / BIG_B_NTH
 guess_ulp_of_one_plus = B * guess_ulp_of_one_minus
 print("Closest relative separation found is ULP_OF_ONE_MINUS = {:0.7e} .".format(guess_ulp_of_one_minus))

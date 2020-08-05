@@ -1,9 +1,10 @@
 def find_ulp_of_one_plus(guess):
-    """Compute value by iterating down to a single ulp.
-
-    Args:
-        guess: default guess for 1 ulp of value just over 1
-
-    Returns:
-        the value u such at 1+u is the next larger value than 1
-    """
+    """Compute u such at 1+u is the next larger value than 1."""
+    x = FOUR / THREE    # rounds in ulps of 1
+    third = x - ONE
+    sixth = ONE_HALF - third
+    x = sixth + sixth
+    x = fabs(x - third)   # sums two rounding errors
+    if x < guess:
+        x = guess
+    # Now x = (unknown no.) ulps of 1+.

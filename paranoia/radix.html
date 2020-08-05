@@ -38,10 +38,10 @@
   <a href='med_ints.html' class='previous round'>Previous</a>
   </div>
 
-<h1>What is the radix?</h1>
+<h1>Radix</h1>
 
 <p>
-The work is carried out in a pair of interesting loops.
+The work is carried out in a pair of loops.
 Look for the details at
 <a class="inline" href="find_big_two_to_the_nth.html">
   <code>find_big_2_to_nth()</code></a> and
@@ -53,14 +53,15 @@ Look for the details at
 print("Searching for radix B and PRECISION.")
 big_2_to_nth = find_big_2_to_nth()
 B = find_radix_from_big_2_to_nth(big_2_to_nth)
-# TODO: resolve log case.
-if B < TWO:
+if B < TWO:   # TODO: log case
     B = ONE
 print("B = {:0.4f} .\n".format(B))
 </code></pre>
 
 <p>
-The case b=1...
+The case <code>B == 1</code> is deferred for now. The underlying topic is
+<em>log arithmetic</em>, which is known only to have been tried experimentally
+in parts of Paranoia.
 </p>
 
 <div class='next-prev'>

@@ -1,8 +1,10 @@
-    x = TWO / THREE
-    sixth = x - ONE_HALF
-    third = sixth + sixth
-    x = third - ONE_HALF
-    x = fabs(x + sixth)
-    if (x < guess):
-        x = guess
-    # Now  x == (unknown no.) ulps of 1 -.
+    while True:
+        u = x
+        y = ONE_HALF * u + THIRTY_TWO * u * u
+        y = ONE_HALF - y
+        x = ONE_HALF + y
+        y = ONE_HALF - x
+        x = ONE_HALF + y
+        if (u <= x) or (x <= ZERO): break
+    return u
+

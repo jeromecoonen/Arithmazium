@@ -12,7 +12,7 @@
   What Paranoia isn't
 </a></p>
 <p class="el1"><a class="toc-link wip" href="para_versions.html">
-  Versions of Paranoia code
+  Versions of Paranoia
 </a></p>
 <p class="el1"><a class="toc-link wip" href="semiliterate.html">
   Semiliterate programming

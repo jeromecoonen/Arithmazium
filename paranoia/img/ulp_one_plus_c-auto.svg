@@ -18,7 +18,7 @@
 <g transform="translate(0,0)">
 <rect class="diag-py-rect" width="360" height="70" />
 <text class="diag-py" x="10" y="35">
-x = 4.0 / 3.0
+x = FOUR / THREE
 </text>
 </g>
 <g transform="translate(360,0)">
@@ -34,7 +34,7 @@ x = 4.0 / 3.0
 <g transform="translate(649,0)">
 <rect class="diag-rem-rect" width="551" height="70" />
 <text class="diag-rem" x="10" y="35">
-low-order 3s will round off
+the low-order 3s will round off
 </text>
 </g>
 <!-- LINE 1 -->
@@ -56,7 +56,7 @@ third = x - ONE
 <g transform="translate(649,70)">
 <rect class="diag-rem-rect" width="551" height="70" />
 <text class="diag-rem" x="10" y="35">
-1/3 rounded in the low digit of 1.0
+1/3 is rounded down in the low digit of 1.0
 </text>
 </g>
 <!-- LINE 2 -->
@@ -78,7 +78,7 @@ sixth = ONE_HALF - third
 <g transform="translate(649,140)">
 <rect class="diag-rem-rect" width="551" height="70" />
 <text class="diag-rem" x="10" y="35">
-1/6, rounded up
+1/6 is rounded up
 </text>
 </g>
 </svg>

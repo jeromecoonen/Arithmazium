@@ -1,17 +1,45 @@
 #INCLUDE para_head find_ulp_of_one_plus.html aaapara_toc.html recalc_radix2.html
 
-<p>This is an automatically generated file.</p>
+<h1>find_ulp_of_one_minus()</h1>
 
 <p>
-Part 1
+This function operates in parallel, but a factor of \(1 / B\) smaller
+than its sibiling
+<a class="inline" href="find_ulp_of_one_plus.html">
+  <code>find_ulp_of_one_plus</code></a> just covered.
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
+<p>
+We start with the value \(2 / 3\), which rounds in any
+radix not a multiple of \(3\). It's rounding error is in
+ulps of values just less than <code>1.0</code>.
+Values <code>sixth</code> and <code>third</code> share
+the rounding direction of <code>TWO / THREE</code>.
+But the negative value <code>x</code> has the opposite
+direction of magnitude rounding because of the change of sign.
+</p>
+
+<div class="math">
+<p>
+To explore the algebra a bit, if <code>sixth</code> has the value
+\(1/6 + \epsilon\) then <code>x</code> has the value
+\(-1/6 + 2 \epsilon\) or \(- ( 1/6 - 2 \epsilon )\).
+That is, if <code>sixth</code> rounds up in magnitude then
+<code>x</code> rounds down, and vice versa.
+</p>
+</div>
+
+<p>
+Here is a binary diagram showing the case of odd precision.
+</p>
+
+<object type="image/svg+xml" data="img/ulp_one_minus-auto.svg">
   ------Image------
 </object>
 
 <p>
-Part 2
+As before, we take
+the larger choice of starting values for <code>x</code>.
 </p>
 
 #CODE 270-find_ulp_of_one_minus
@@ -25,8 +53,6 @@ Part 3
 <p>
 Part 4
 </p>
-
-#CODE 274-find_ulp_of_one_minus3
 
 <p>
 Part 5

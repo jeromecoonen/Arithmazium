@@ -76,11 +76,11 @@
 <text class="tic-lab" x="762" y="110">
 2.0
 </text>
-<line class="tic-bnum" x1="427" y1="95" x2="427" y2="20" />
+<line class="tic-mnum" x1="427" y1="95" x2="427" y2="20" />
 <text class="tic-num" x="391" y="110">
 4/3
 </text>
-<line class="tic-hnum" x1="542" y1="95" x2="542" y2="20" />
+<line class="tic-bnum" x1="542" y1="95" x2="542" y2="20" />
 <text class="tic-num" x="506" y="110">
 3/2
 </text>

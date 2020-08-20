@@ -38,8 +38,6 @@
   <a href='para_versions.html' class='previous round'>Previous</a>
   </div>
 
-Knuth
-musis
 <h1>Semiliterate Programming</h1>
 <p>
 <span class="p">ParaPy</span> is an example of Semiliterate Programming,
@@ -48,7 +46,8 @@ to borrow from the powerful
   target="_blank">
 Literate Programing</a>
 paradigm of Donald Knuth.
-In both cases, the goal is presenting the code in best form for a reader,
+In both cases, the goal is to present the code in the best form for a
+human reader,
 not a compiler. Knuth's methodology supports a top-down creation of a program,
 the way we often think of programming, with the benefit of handsome
 presentation of the code using Knuth's
@@ -62,7 +61,7 @@ lines of Python that have evolved from the <span class="p">ParaC</span>
 translation of <span class="p">ParaBas</span>.
 This is programming from the inside out.
 Our presentation is a series of web pages documenting code snippets,
-not formatted document suitable for publication.
+not a formatted document suitable for publication.
 It shares the granularity of the
 literate programming style.
 </p>
@@ -76,7 +75,7 @@ It has sufficient comments to stand on its own, but not to explain
 all the inner workings. By contrast, the code output of the
 literate programming <code>tangle</code> tool is not intended for
 human consumption and may even be obfuscated to remove the temptation
-to modify that version instead the Web form.
+to modify that version instead the literate Web form.
 By design, Python discourages such obfuscation. For example, Python enforces
 indentation to reveal block structure.
 </p>
@@ -92,7 +91,7 @@ While the semiliterate approach lacks the handy indexing
 and cross-referencing tools of literate programming,
 there is always the full source <code>paranoia.py</code>
 as the final arbiter.
-When in doubt, best heed Obi-Wan: <em>Use the source, Luke!</em>
+When in doubt, think Star Wars: <em>Use the source, Luke!</em>
 </p>
 
 <h2>Digit diagrams</h2>
@@ -146,7 +145,49 @@ because the one's place is now zero.
 
 <p>
 We'll see many of these diagrams.
-</p
+</p>
+
+<h2>Tick diagrams</h2>
+<p>
+Sometimes, it's easier to visualize values on a number line.
+In floating point arithmetic systems, the powers of the radix
+<code>B</code> divide the number system into
+<em>B-ade</em>, each enclosing the same number of representable
+values.
+We all know decimal <em>decades</em>,
+but we will encounter binary <em>binades</em>
+frequently. Occasionally, we'll see
+an <em>ocatade</em> or <em>hexade</em>.
+</p>
+
+<p>
+Here is a span of a decimal system, with the tick marks greatly
+magnified so we can see them. The value \(4/3\) is not representable
+exactly, so it lies between representable numbers. On the other
+hand, \(3/2\) is simply <code>1.5</code>, regardless how it's encoded.
+Note how the relative spacing changes by a factor of \(10\) across
+decades. The graph is similar in base 8 and base 16.
+</p>
+
+<object type="image/svg+xml"
+  data="img/semilit_4_3_d-auto.svg">
+  Decimal number line.
+</object>
+
+<p>
+The binary number line is easier to visualize because the relative spacing
+changes by just a facctor of \(2\) across each binade (sounds like
+<em>limeade</em>). It's this factor that makes binary floating point
+best for most numerical computation.
+Once again, here are \(4/3\) and \(3/2\).
+</p>
+
+<object type="image/svg+xml"
+  data="img/semilit_4_3_b-auto.svg">
+  Binary number line.
+</object>
+
+
 
 <div class='next-prev'>
 <a href='pocket_guide.html' class='next round'>Next</a>

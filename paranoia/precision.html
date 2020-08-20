@@ -41,16 +41,16 @@
 <h1>Precision</h1>
 
 <p>
-If the radix <code>B</code> is 1, perhaps because of log
-arithmetic, defer the computation to the second look
-at precision to come.
-Otherwise, call
-<a class="inline" href="find_precision_big_B_to_nth.html">
-  <code>find_precision_big_B_to_nth()</code></a> to
-loop on powers of <code>B</code> until adding \(1\) causes
-no increase. The diagram shows the situation in binary as
-<code>big_b</code> grows just large enough that an added
-\(1\) just rounds off.
+We discovered the radix by looping in search
+of a carry into the <code>B</code>'s place of a large power of \(2\).
+</p>
+
+<p>
+Now, we discover the precision – the number of significant
+digits carried – by adding \(1\) to successive powers of
+<code>B</code> until the addition finally triggers rounding.
+The diagram looks the same in any radix. It's shown here
+in binary.
 </p>
 
 <object type="image/svg+xml" data="img/precision_a-auto.svg">
@@ -58,8 +58,15 @@ no increase. The diagram shows the situation in binary as
 </object>
 
 <p>
-The computation works as well in radix 8, 10, or 16. In these cases,
-adding \(1\) beyond the last digit position should always round off.
+The rounding arises when <code>B</code> is raised to the power that is the
+precision of the number system. The code sidelines the case of
+radix <code>1.0</code>, perhaps because of log
+arithmetic.
+Otherwise, we call
+<a class="inline" href="find_precision_big_B_to_nth.html">
+  <code>find_precision_big_B_to_nth()</code></a> to
+loop on powers of <code>B</code> until adding <code>1.0</code> causes
+no increase.
 </p>
 
 <pre><code># Compute PRECISION and BIG_B_NTH = B**PRECISION barely too big
@@ -73,14 +80,19 @@ else:
 </code></pre>
 
 <p>
-In most cases, <code>1.0 / BIG_B_NTH</code> gives
-\(1 / B\) of a unit in the last place (ulp) of \(1\).
-The values will be refined in code to come.
+The <code>N</code> in <code>BIG_B_NTH</code> is the precision,
+barring very anomalous rounding behavior.
+This means that \(B ^ {-(N-1)}\) should be an ulp of <code>1.0</code>, and
+\(B ^ {-N}\) should be an ulp of numbers just less than <code>1.0</code>.
 </p>
 
 <object type="image/svg+xml" data="img/precision_b-auto.svg">
   ------Image------
 </object>
+
+<p>
+We record these guesses for now and move on to further refinement.
+</p>
 
 <pre><code>guess_ulp_of_one_minus = ONE / BIG_B_NTH
 guess_ulp_of_one_plus = B * guess_ulp_of_one_minus

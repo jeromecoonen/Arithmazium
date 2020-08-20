@@ -1,5 +1,10 @@
 // para_art_ouflow.txt -- source for over/underflow diagrams
 
+FILE 4_3_round
+TIC
+b "1.0" "2.0" (b, 1, 141, "4/3") (h, 1, 256, "3/2")
+FEND
+
 FILE semilit_samp_a
 CNC10
 ONE = 1.0
@@ -120,13 +125,17 @@ FEND
 
 FILE precision_a
 CNC10
-big_b = ...
-b jjj100j...j01 p13
-largest power of B such that add 1 is exact
+# in loop: big_b + 1.0
+b jjj010j...j01 p13
+large power of B to which 1 can be added
 CNC10
-big_b = big_b * 2.0
-b jj1000j...j01 p13 e12
-add 1 rounds off on most machines, VAX with|add-half-and-chop will round up
+# next big_b + 1.0
+b jjj100j...j01 p13
+largest power of B to which 1 can be added
+CNC10
+# final big_b + 1.0
+b jj1000j...j?0 p13 e11
+the added 1 rounds off on most machines,|binary VAX with add-half-and-chop will round up
 FEND
 
 FILE precision_b
@@ -139,7 +148,7 @@ ONE / BIG_B_NTH
 b jjj000j...j001 p4
 1/B of a unit in the last place of 1
 CNC10
-(ONE / BIG_B_NTH) * 2.0
+(ONE / BIG_B_NTH) * B
 b jjj000j...j01 p4
 a unit in the last place of 1
 FEND
@@ -151,20 +160,56 @@ b jj1000j...j00 p13 e11
 highlighted low-order digit is the B's place
 FEND
 
+FILE precision_d
+CNC10
+y = big_b + ONE
+b jjj100j...j01 p13
+the largest power of B to which 1 can be added exactly
+CNC10
+# next y = big_b * B + ONE
+b jj1000j...j01 p13 e12
+the 1 must either round off or round into the B's place
+FEND
+
+FILE precision_e
+CNC6
+y = big_b + ONE
+h jjjjj100100 p9
+the last hex digit is 1, 2, or 3 bits wide
+CNC6
+# next y
+h jjjj100010 p9
+adding 1 is still exact
+CNC6
+# next y
+h jjj100001 p9 e8
+the circled hex digit has no one 1's bit
+FEND
+
+
+
+FILE 4_3_round_d
+TIC
+d "1.0" "10.0" (b, 1, 256, "4/3")
+FEND
 
 FILE ulp_one_plus
 CNC10
-x = FOUR / THREE
+FOUR / THREE
 b jjj1010...0101010 e12
 the highlighted bit is rounded|whether the precision is even or odd
 CNC10
+x = FOUR / THREE   # rounded
+b jjj1010...011 e12
+rounded up by 1/3 ulp of 1.0
+CNC10
 third = x - ONE
-b jjj0010...01? e12
+b jjj0010...011
 subtraction is exact, preserving the rounding error
 CNC10
 sixth = ONE_HALF - third
-b jjj0001...??? e12
-1/6 is rounded in the opposite direction of 1/3
+b jjj0001...101
+1/6 is rounded down by 1/3 ulp of 1.0
 FEND
 
 FILE ulp_one_plus_b
@@ -178,7 +223,7 @@ b jjj000j...j11
 suppose u is 3 ulps of 1.0
 CNC10
 x = ONE_HALF * u + ...
-b jjj000j...j0110 ... xx
+b jjj000j...j0110???
 x is half u, with nonzero low bits
 FEND
 

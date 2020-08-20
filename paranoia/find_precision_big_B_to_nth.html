@@ -41,7 +41,7 @@
 <h1>find_precision_big_B_to_nth()</h1>
 
 <p>
-The docstring sets the stage. We're looking for a value like this.
+The docstring in the code sets the stage. We're looking for a value like this:
 </p>
 
 <object type="image/svg+xml" data="img/precision_c-auto.svg">
@@ -49,36 +49,45 @@ The docstring sets the stage. We're looking for a value like this.
 </object>
 
 <p>
-On some binary machines, the returned value might be a
-factor of \(2\) too big, depending
-on the rounding. This is just the first try.
+This calculation works on most machines, where the precision is
+a whole number of digits. On a machine with fractional precision,
+such as a hexadecimal machine with 22 significant bits – five hex digits
+plus two extra significant bits – the computed precision will be
+the <em>floor</em> of the true precision. See the exercise
+below.
 </p>
 
-<pre><code>def find_precision_big_B_nth(b):
+<pre><code>def find_precision_big_B_to_nth(b):
     """Compute the number of B-digits in the arithmetic and the power
     of B sufficient to have the ones place fall off the right.
 
     Args:
-        b: radix
+        b: the global radix B, accepted as an argument
+
     Returns:
-        precision: number of B digits
-        power of B such that the low-order digit is the B's place.
+        precision: number of B digits in arithmetic
+        power of B such that the low-order digit is the B's place
     """
 </code></pre>
 
 <p>
-The loop proceeds as in the discussion in the digit diagrams here
-and in the main code thread. Note the comparison here is against
-\(1\), which Paranoia assumes to be reliable.
+The loop proceeds until the added <code>1.0</code> rounds off
+or rounds up into the <code>B</code>'s place of <code>y</code>.
 </p>
 
-<div class="math">
+<object type="image/svg+xml" data="img/precision_d-auto.svg">
+  ------Image------
+</object>
+
+<div class="wrong">
 <h2>What could go wrong?</h2>
 <p>
-This code will give
-surprising results with log arithmetic. What seem like obvious
-computations, such as addition of \(1\), are inexact,
-so exact comparison against <code>ONE</code> is fraught with peril.
+In log arithmetic,
+most small whole numbers cannot be represented exactly.
+What seem like obvious
+computations, such as adding <code>1.0</code> to small
+whole numbers, are inexact. That's why we skip this function
+altogether in log arithmetic.
 </p>
 </div>
 
@@ -93,6 +102,21 @@ so exact comparison against <code>ONE</code> is fraught with peril.
 
 
 </code></pre>
+
+<h2>Your turn</h2>
+
+<p>
+<span class="exer">Exercise:</span> The hexadecimal diagram below
+shows the loop in progress. There are five and a fraction digits, that is,
+the low-order hex digit has one, two, or three low-order bits always zero
+(and not represented in the storage format). Work out what might happen to
+the <code>1</code> added to a hex digit that has a hard-wired <code>0</code>
+there. What is the computed precision?
+</p>
+
+<object type="image/svg+xml" data="img/precision_e-auto.svg">
+  ------Image------
+</object>
 
 <div class='next-prev'>
 <a href='recalc_radix.html' class='next round'>Next</a>

@@ -3,13 +3,14 @@
 <h1>Refining ulps of 1&plusmn;</h1>
 
 <p>
-We got a first guess at <em>ulps</em> of numbers just
+We have a first guess at units in the last place of numbers just
 bigger and smaller than \(1\).
-Now, we invoke specialized functions to
+The specialized functions
 <a class="inline" href="find_ulp_of_one_plus.html">
   <code>find_ulp_of_one_plus()</code></a> and
 <a class="inline" href="find_ulp_of_one_minus.html">
-  <code>find_ulp_of_one_minus()</code></a>.
+  <code>find_ulp_of_one_minus()</code></a>
+nail the values down.
 </p>
 
 #CODE 740-recalc_radix

@@ -1,0 +1,88 @@
+<svg viewBox="0 0 1200 140" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<style>
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: darkgray; }
+.diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: Courier, monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
+</style>
+<!-- TIC LINE -->
+<g transform="translate(58,0)">
+<rect class="tic-rect" width="1084" height="140" />
+<line class="tic-line" x1="0" y1="70" x2="1084" y2="70" />
+<line class="tic-small" x1="286" y1="85" x2="286" y2="45" />
+<line class="tic-small" x1="318" y1="85" x2="318" y2="45" />
+<line class="tic-small" x1="350" y1="85" x2="350" y2="45" />
+<line class="tic-small" x1="382" y1="85" x2="382" y2="45" />
+<line class="tic-small" x1="414" y1="85" x2="414" y2="45" />
+<line class="tic-small" x1="446" y1="85" x2="446" y2="45" />
+<line class="tic-small" x1="478" y1="85" x2="478" y2="45" />
+<line class="tic-small" x1="510" y1="85" x2="510" y2="45" />
+<line class="tic-small" x1="542" y1="85" x2="542" y2="45" />
+<line class="tic-small" x1="574" y1="85" x2="574" y2="45" />
+<line class="tic-small" x1="606" y1="85" x2="606" y2="45" />
+<line class="tic-small" x1="638" y1="85" x2="638" y2="45" />
+<line class="tic-small" x1="670" y1="85" x2="670" y2="45" />
+<line class="tic-small" x1="702" y1="85" x2="702" y2="45" />
+<line class="tic-small" x1="734" y1="85" x2="734" y2="45" />
+<line class="tic-small" x1="766" y1="85" x2="766" y2="45" />
+<line class="tic-small" x1="286" y1="85" x2="286" y2="45" />
+<line class="tic-small" x1="270" y1="85" x2="270" y2="45" />
+<line class="tic-small" x1="254" y1="85" x2="254" y2="45" />
+<line class="tic-small" x1="238" y1="85" x2="238" y2="45" />
+<line class="tic-small" x1="222" y1="85" x2="222" y2="45" />
+<line class="tic-small" x1="206" y1="85" x2="206" y2="45" />
+<line class="tic-small" x1="190" y1="85" x2="190" y2="45" />
+<line class="tic-small" x1="174" y1="85" x2="174" y2="45" />
+<line class="tic-small" x1="158" y1="85" x2="158" y2="45" />
+<line class="tic-small" x1="142" y1="85" x2="142" y2="45" />
+<line class="tic-small" x1="126" y1="85" x2="126" y2="45" />
+<line class="tic-small" x1="110" y1="85" x2="110" y2="45" />
+<line class="tic-small" x1="94" y1="85" x2="94" y2="45" />
+<line class="tic-small" x1="78" y1="85" x2="78" y2="45" />
+<line class="tic-small" x1="62" y1="85" x2="62" y2="45" />
+<line class="tic-small" x1="46" y1="85" x2="46" y2="45" />
+<line class="tic-small" x1="30" y1="85" x2="30" y2="45" />
+<line class="tic-small" x1="22" y1="85" x2="22" y2="45" />
+<line class="tic-small" x1="14" y1="85" x2="14" y2="45" />
+<line class="tic-small" x1="6" y1="85" x2="6" y2="45" />
+<line class="tic-small" x1="858" y1="85" x2="858" y2="45" />
+<line class="tic-small" x1="922" y1="85" x2="922" y2="45" />
+<line class="tic-small" x1="986" y1="85" x2="986" y2="45" />
+<line class="tic-small" x1="1050" y1="85" x2="1050" y2="45" />
+<line class="tic-big" x1="30" y1="90" x2="30" y2="30" />
+<line class="tic-big" x1="286" y1="90" x2="286" y2="30" />
+<line class="tic-big" x1="798" y1="90" x2="798" y2="30" />
+<text class="tic-lab" x="250" y="110">
+1.0
+</text>
+<text class="tic-lab" x="762" y="110">
+2.0
+</text>
+<line class="tic-bnum" x1="427" y1="95" x2="427" y2="20" />
+<text class="tic-num" x="391" y="110">
+4/3
+</text>
+<line class="tic-hnum" x1="542" y1="95" x2="542" y2="20" />
+<text class="tic-num" x="506" y="110">
+3/2
+</text>
+</g>
+</svg>

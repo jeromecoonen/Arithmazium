@@ -7,12 +7,21 @@
 .diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
 .diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
 .diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
-.diag-py { font-family: "Roboto Mono", monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-py { font-family: Courier, monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
 .diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
 .diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
 .diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
 .diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
 .diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
 </style>
 <!-- LINE 0 -->
 <g transform="translate(0,0)">
@@ -71,7 +80,7 @@ x = ONE_HALF * u + ...
 <path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
 <circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
 <text class="diag-num-bin" x="20" y="33">
-&#160;&#160;&#160;000&#160;...&#160;0110
+&#160;&#160;&#160;000&#160;...&#160;0110???
 </text>
 </g>
 <g transform="translate(718,140)">

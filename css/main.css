@@ -141,7 +141,7 @@ svg {
 
 code,
 pre {
-  font-family: "Roboto Mono", Courier, monospace;
+  font-family: Courier, monospace, "Roboto Mono";
   font-size: smaller;
 }
 
@@ -233,6 +233,10 @@ span.bo {
 
 div.math {
   background: palegreen;
+}
+
+div.wrong {
+  background: paleturquoise;
 }
 
 p.quote {

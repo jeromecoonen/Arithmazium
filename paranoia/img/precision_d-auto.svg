@@ -27,44 +27,45 @@
 <g transform="translate(0,0)">
 <rect class="diag-py-rect" width="360" height="70" />
 <text class="diag-py" x="10" y="35">
-y = x + ONE
+y = big_b + ONE
 </text>
 </g>
 <g transform="translate(360,0)">
 <rect class="diag-num-rect" width="358" height="70" />
 <line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
 <path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
-<circle class="diag-num-dot" cx="262.6" cy="44" r="3.0" />
-<text class="diag-num-oct" x="20" y="33">
-&#160;&#160;&#160;040&#160;...&#160;001
+<circle class="diag-num-dot" cx="245.2" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;100&#160;...&#160;01
 </text>
 </g>
 <g transform="translate(718,0)">
 <rect class="diag-rem-rect" width="482" height="70" />
 <text class="diag-rem" x="10" y="35">
-Largest exact sum 2**n + 1, octal
+the largest power of B to which 1 can be added exactly
 </text>
 </g>
 <!-- LINE 1 -->
 <g transform="translate(0,70)">
 <rect class="diag-py-rect" width="360" height="70" />
 <text class="diag-py" x="10" y="35">
-y = x + ONE
+# next y = big_b * B + ONE
 </text>
 </g>
 <g transform="translate(360,70)">
 <rect class="diag-num-rect" width="358" height="70" />
 <line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
 <path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
-<circle class="diag-num-dot" cx="262.6" cy="44" r="3.0" />
-<text class="diag-num-hex" x="20" y="33">
-&#160;&#160;&#160;080&#160;...&#160;001
+<circle class="diag-num-dot" cx="245.2" cy="44" r="3.0" />
+<ellipse class="diag-num-elps" cx="235.4" cy="30" rx="12" ry="20" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;1000&#160;...&#160;01
 </text>
 </g>
 <g transform="translate(718,70)">
 <rect class="diag-rem-rect" width="482" height="70" />
 <text class="diag-rem" x="10" y="35">
-Largest exact sum 2**n + 1, hexadecimal
+the 1 must either round off or round into the B's place
 </text>
 </g>
 </svg>

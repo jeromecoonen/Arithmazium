@@ -63,7 +63,7 @@ radix not a multiple of \(3\).
 
 <p>
 What matters is that the rounding error is one or two thirds of an ulp
-of <code>1.0</code>, perhaps plus one or more further ulps of <code>1.0</code>,
+of <code>1.0</code>, perhaps plus one or more further ulps of <code>1.0</code>
 if the division
 is especially sloppy. To see this, look at the decimal number line:
 </p>
@@ -74,15 +74,15 @@ is especially sloppy. To see this, look at the decimal number line:
 
 <p>
 The tick marks signify the (highly magnified)
-representable numbers between <code>1.0</code> and <code>10.0</code>.
-Their spacing defines ulps of <code>1.0</code>. The rounding error
-is at least \(0.3333\cdots\)
+representable numbers in each <em>decade</em>.
+Their spacing defines ulps of the leftward power of \(10\). The rounding error
+in <code>4.0 / 3.0</code> is at least \(0.3333\cdots\)
 or \(0.6666\cdots\)
 ulp of <code>1.0</code>, depending on the computed (representable) value.
 </p>
 
 <p>
-The rounding error is \(\pm k / 3\)
+More precisely, the rounding error is \(\pm k / 3\)
 ulps of <code>1.0</code> where \(k = 1, 2, 4, 5, 7, 8, \ldots\)
 That is, there's a guaranteed one or two odd thirds of an ulp of
 <code>1.0</code> in the rounding error.
@@ -91,7 +91,7 @@ The same logic applies to binary, octal, and hex arithmetic.
 
 <p>
 After <code>4.0 / 3.0</code> is rounded, the rest of the setup is done
-without rounding in any plausible arithmetic. In any case, the thirds
+in what should be exact arithmetic. In any case, the thirds
 of an ulp error are baked in.
 Subtracting <code>1.0</code>
 leaves a rounded value of \(1/3\) in the range of numbers
@@ -107,8 +107,8 @@ sign. The doubled value <code>x</code> has twice the rounding error.
 Finally, subtracting
 the two approximations of \(1 / 3\) leaves just
 the sum of the two error magnitudes.
-We've accumulated \(3\) times \(1/3\) or \(2/3\) ulp of <code>1.0</code>,
-giving us an ulp or two of <code>1.0</code>.
+We've accumulated \(3\) times either \(1/3\) or \(2/3\) ulp of <code>1.0</code>,
+resulting in an ulp or two of <code>1.0</code>.
 </p>
 
 <p>

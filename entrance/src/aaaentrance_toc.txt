@@ -46,13 +46,13 @@
   </div>
 
     Of course, computer arithmetic is exploited through programming,
-    but you won't need sophisticated knowledge to follow
+    but you won't need sophisticated programming knowledge to follow
     the thread. Literally, many of the code samples you'll see are variations
     on a simple theme:
   <pre><code>
     new_value = old_value / TWO
   </code></pre>
-    The patience to read such math formulas and to follow the binary bits
+    The patience to read such formulas and to follow the binary bits
     or decimal digits where they fall is all you need.
   </p>
   <p>
@@ -61,15 +61,15 @@
     here without having encountered computer arithmetic before,
     go to the
     <a href="aaaplayroom_toc.html">Playroom</a>,
-    scheduled to open July 2020.
+    scheduled to open Fall 2020.
   </p>
   <p>
     For now, your next step is to the
     <a href="../paranoia/aaapara_toc.html">
       Paranoia Study
     </a>
-    to ponder a rich stew of arithmetic oddities collected in a
-    cult-classic numerical program.
+    to ponder a rich stew of arithmetic delights collected in a
+    cult-classic program.
   </p>
 <p><br></p>
 

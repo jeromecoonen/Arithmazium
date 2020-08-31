@@ -5,7 +5,7 @@
 <p>
 Prof. William Kahan of the University of California
 at Berkeley developed Paranoia in standard Basic
-on an original
+on the original
 <a href="https://en.wikipedia.org/wiki/IBM_Personal_Computer">IBM PC</a>,
 a product of
 IBM's development office in Boca Raton, Florida.
@@ -40,7 +40,7 @@ numerical computation.
 It's another matter to port a working program from one computer
 to another with completely different arithmetic.
 As explored in the <a href="../aaadinosaur_toc.html">Dinosaur Gallery</a>,
-designs vary widely even across a single manufacturer's product lines.
+designs varied widely even across a single manufacturer's product lines.
 This is the challenge Kahan had in mind when he wrote Paranoia.
 </p>
 
@@ -65,10 +65,12 @@ octal <code>0..7</code>, or
 hexadecimal <code>0..9A..F</code>
 digits, scaled by
 \( 2^{k} \), \( 8^{k} \), or \( 16^{k} \), respectively.
+The decimal point becomes a <em>radix point</em>, and places
+to the right are powers of a half, an eighth, or a sixteenth.
 </p>
 
 <p>
-This site is devoted to unraveling the
+This site is devoted to exposing the
 subtleties of arithmetic, tracing anomalies back to the earliest
 machines and trying to collect the ideas that will play into
 designs of the next decades.
@@ -90,7 +92,7 @@ Here is a list of some of the questions explored:
     </li>
     <li>
       What is the largest finite number? The smallest number?
-      Do the extreme values have any unusual behaviors when used in arithmetic?
+      Do the extreme values have any unusual behaviors in arithmetic?
     </li>
     <li>
       How accurate are \( \sqrt{x} \) and \( y ^ {z} \)?

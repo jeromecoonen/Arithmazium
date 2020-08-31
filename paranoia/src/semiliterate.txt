@@ -8,9 +8,9 @@ to borrow from the powerful
   target="_blank">
 Literate Programing</a>
 paradigm of Donald Knuth.
-In both cases, the goal is to present the code in the best form for a
-human reader,
-not a compiler. Knuth's methodology supports a top-down creation of a program,
+In both cases, the goal is to present code in a form suited to a
+human reader, not a software language compiler.
+Knuth's methodology supports the top-down creation of a program,
 the way we often think of programming, with the benefit of handsome
 presentation of the code using Knuth's
  <a class="inline" href="https://en.wikipedia.org/wiki/TeX"
@@ -39,7 +39,8 @@ literate programming <code>tangle</code> tool is not intended for
 human consumption and may even be obfuscated to remove the temptation
 to modify that version instead the literate Web form.
 By design, Python discourages such obfuscation. For example, Python enforces
-indentation to reveal block structure.
+indentation to reveal block structure, inhibiting any attempt to jam
+all the code together into a large blob peppered with punctuation.
 </p>
 
 <p>
@@ -62,8 +63,9 @@ Paranoia employs devious sequences of algebraic
 operations to tease out isolated digits of numbers.
 Most often, the formulas work whether the radix
 is 2, 8, 10, or 16. To help visualize the flow, we will
-use <em>digit diagrams</em>. This is an example showing
-three constants (hence the caps) in <span class="p">ParaPy</span>:
+use <em>digit diagrams</em> like the one just below.
+This is an example showing
+three constants in <span class="p">ParaPy</span>:
 </p>
 
 <object type="image/svg+xml"
@@ -74,24 +76,44 @@ three constants (hence the caps) in <span class="p">ParaPy</span>:
 <p>
 Digit diagrams have no connection to the internal representation of
 nummbers. You, good reader, are asked to supply the scale factor –
-the exponent – from the context. Almost all current arithmetic
-uses a normalized representation, which allows the leading
-<code>1</code> bit to be <em>implicit</em>. In the digit diagrams,
-we'll leave the radix point aligned across multiple values, to
-help visualize the calculation.
+the <em>exponent</em> in floating point jargon –
+from the surrounding discussion.
 </p>
 
 <p>
-The key is to honor the number of significant digits
-(the <em>precision</em>) which Paranoia
-determines early on. That's what the vertical guidelines indicate
-in the diagrams.
-Digits may lie outside out the guidelines, but there may never
+Almost all current arithmetic
+uses a <em>normalized</em> representation, in which results are aligned
+so that the leading digit
+is nonzero.
+Besides guaranteeing a unique representation for any value, it means
+the leading significant bit in a binary format need not be stored,
+because it's
+known to be <code>1</code>.
+<p/>
+
+<p>
+The digit diagrams
+will leave the radix point aligned across multiple values.
+Skipping the normalization and encoding that the underlying hardware
+performs
+allows us to visualize the calculations more easily.
+There are no digits lost <em>off the right-hand side</em>
+due our skipping the normalization in the discussion.
+</p>
+
+<p>
+One key to successful use of digit diagrams is to honor the
+<em>precision</em>
+(number of significant digits), which Paranoia
+determines early on. That's what the vertical guidelines indicate.
+Digits may lie outside out the guidelines in order that
+the radix points align, but there may never
 by any more digits than would fit between them.
 </p>
 
 <p>
-Consider what happens when subtracting a <em>unit in the lsat place</em>
+Consider what happens when subtracting an <em>ULP</em>
+(unit in the lsat place)
 of <code>1.0</code> in any radix:
 </p>
 
@@ -112,10 +134,10 @@ We'll see many of these diagrams.
 <h2>Tick diagrams</h2>
 <p>
 Sometimes, it's easier to visualize values on a number line.
-In floating point arithmetic systems, the powers of the radix
+In floating point number systems, the powers of the radix
 <code>B</code> divide the number system into
-<em>B-ade</em>, each enclosing the same number of representable
-values.
+<em>B-ades</em>, each B-ade enclosing the same number
+of values representable in the number system.
 We all know decimal <em>decades</em>,
 but we will encounter binary <em>binades</em>
 frequently. Occasionally, we'll see
@@ -126,9 +148,9 @@ an <em>ocatade</em> or <em>hexade</em>.
 Here is a span of a decimal system, with the tick marks greatly
 magnified so we can see them. The value \(4/3\) is not representable
 exactly, so it lies between representable numbers. On the other
-hand, \(3/2\) is simply <code>1.5</code>, regardless how it's encoded.
-Note how the relative spacing changes by a factor of \(10\) across
-decades. The graph is similar in base 8 and base 16.
+hand, \(3/2\) is simply <code>1.5</code>. The tick marks shown are
+at intervals of \(0.5\), so there isn't room to label the values
+of interest.
 </p>
 
 <object type="image/svg+xml"
@@ -137,11 +159,18 @@ decades. The graph is similar in base 8 and base 16.
 </object>
 
 <p>
-The binary number line is easier to visualize because the relative spacing
+Note how the relative spacing changes by a factor of \(10\) across
+decades. The tick marks beyond \(10\) are too widely separated to
+appear on this graph.
+Base 8 and base 16 have similar graphs.
+</p>
+
+<p>
+The binary number line is perhaps easier to visualize
+because the relative spacing
 changes by just a facctor of \(2\) across each binade (sounds like
-<em>limeade</em>). It's this factor that makes binary floating point
-best for most numerical computation.
-Once again, here are \(4/3\) and \(3/2\).
+<em>limeade</em>).
+It's easier to see \(4/3\) and \(3/2\).
 </p>
 
 <object type="image/svg+xml"
@@ -149,6 +178,10 @@ Once again, here are \(4/3\) and \(3/2\).
   Binary number line.
 </object>
 
-
+<p>
+The gentle factor of two across binades is what makes
+binary floating point
+best for most numerical computation.
+</p>
 
 #INCLUDE para_foot para_versions.html aaapara_toc.html pocket_guide.html

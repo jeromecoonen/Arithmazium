@@ -64,10 +64,11 @@ like <span class="p">ParaPy</span>, the focus of this discussion.
 A1.10 by William Kahan, released May 1982, is
 <a class="inline" href="https://netlib.org/paranoia/paranoia.b"
   target="_blank">here</a>
-at Netlib.
+at Netlib, the repository of mathematical software, papers,
+and databases.
 </p>
 <p>
-Version A1.11 by this author in 2020 is
+Version A1.11 by me in 2020 is
 <a class="inline" href="paranoia_bas.html" target="_blank">here</a>
 on this site. The changes are small:
 </p>
@@ -83,11 +84,12 @@ on this site. The changes are small:
 </nl>
 <p>
 The three new lines are comments, with distinctive line numbers
-<code>xx3</code> and the initials JTC, noting the changes.
+<code>xx3</code> and the initials JTC.
 </p>
+
 <p>
 This is a fascinating body of code and you're encouraged to
-have a look at it. Be aware that a good place to start is
+have a look at it. Pro tip: a good place to start is
 the bottom, where you will find a handy glossary of
 the variables.
 </p>
@@ -95,33 +97,36 @@ the variables.
 <h2>Pascal</h2>
 <p>
 Brian A. Wichmann of the National Physical Laboratory in Britain
-coded Paranoia in Pascal in 1985,
-with contributions buy David M. Gay
+re-coded Paranoia in Pascal in 1985,
+with contributions by David M. Gay
 and David G. Hough. You can find the 1988 edition
 of <span class="p">ParaPas</span> on Netlib
 <a class="inline" href="https://www.netlib.org/paranoia/paranoia.p"
   target="_blank">here</a>.
-Wichimann used his version of Paranooia to NPL's new Pascal compiler.
+Wichimann used his version of Paranoia to test NPL's new Pascal compiler.
 </p>
 
 <h2>C</h2>
 <p>
 Thos Sumner of the University of California, San Francisco ported
-Pascal Paranoia to C in 1985, with later help from Gay and Hough.
+<span class="p">ParaPas</span> to C in 1985,
+with later help from Gay and Hough.
 <span class="p">ParaC</span> 1992 is
 <a class="inline" href="https://www.netlib.org/paranoia/paranoia.c"
   target="_blank">here</a> at Netlib.
-C Paranoia has been modified from its interactive form to be
-used as a numerical sanity check in some systems development.
+Some users have modified <span class="p">ParaC</span>
+from its interactive form to a command-line tool to be
+used as a numerical sanity check in systems development.
 </p>
 <p>
-This effort has revealed several bugs in the C version.
-They <em>should</em> find their way to an update to the Netlib version.
+Work on the Python version has revealed several bugs in the C version.
+They should find their way to an update to the Netlib version,
+eventually.
 </p>
 
 <h2>Fortran</h2>
 <p>
-Naturally, Paranoia has a Fortran edition, well two.
+Naturally, Paranoia has a Fortran edition. Or two.
 Netlib has versions to be compiled for
 <a class="inline" href="https://www.netlib.org/paranoia/spara.f"
   target="_blank">single precision</a> and
@@ -159,10 +164,11 @@ in sheep's clothing. It had many global variables, often recycled for
 multiple uses, and few subprograms.
 </p>
 <p>
-To exploit many excellent features of Python, I completely restructured
-Python as a set of independent test functions called from a code
+To exploit many excellent features of Python
+and to make the program more readable, I completely restructured
+Paranoia as a set of independent test functions called from a code
 sequence mirroring Kahan's original Basic. Everything happens in the same
-order, but in a more modular way.
+order, but in a more modular structure.
 </p>
 <p>
 The next page explains how this discussion carves
@@ -174,7 +180,7 @@ on this site.
 </p>
 <p>
 <span class="p">ParaPy</span> will find its way to Netlib when the dust
-settles a bit.
+settles.
 </p>
 
 <h2>Julia</h2>

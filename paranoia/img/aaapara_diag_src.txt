@@ -194,7 +194,7 @@ FEND
 
 FILE 4_3_round_d
 TIC
-d "1.0" "10.0" (b, 1, 256, "4/3")
+d "1.0" "10.0" (b, 1, 30, "")
 FEND
 
 FILE ulp_one_plus

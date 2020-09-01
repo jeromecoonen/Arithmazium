@@ -31,7 +31,7 @@ the official tutorial</a>
 for a more thorough treatment.
 </p>
 
-<h3>Types and values</h3>
+<h3>Values, not types</h3>
 <p>
 Python is untyped. Variables arise from use rather than
 by declaration. Python supports integers of arbitrary
@@ -43,13 +43,13 @@ you're likely to have IEEE Standard 754 64-bit
 intimate details of IEEE 754 arithmetic
 in the
 <a class="inline" href="../essentials/aaaessentials_toc.html">
-Arithmetic Essentials</a> room.
+Essentials</a> room.
 </p>
 
 <p>
 Python supports the boolean values <code>True</code>
-and <code>False</code>, and a pretty intuitive definition
-of the <em>truthiness</em> of any expression.
+and <code>False</code>, and an intuitive definition
+of <em>truthiness</em> as anything remotely nonzero.
 </p>
 
 <p>
@@ -77,8 +77,10 @@ functions.
 
 <h3>Functions</h3>
 <p>
-Because Python is untyped, function definitions are
-pretty self-evident. This is another example from
+A function
+can take any number of parameters and return and
+number of values.
+This is another example from
 <span class="p">ParaPy</span>, including the one-line docstring.
 </p>
 
@@ -86,14 +88,17 @@ pretty self-evident. This is another example from
       """Return min(1/B, 1/2) and reciprocal, noting H is a fraction."""
 </code></pre>
 
+<p>
+The return mechanism is coming right up.
+</p>
 
 <h3>Block structure</h3>
 <p>
-Python's most remarkable feature is its freedom from punctuation.
+Python's most remarkable feature is its approach to punctuation.
 Indented lines of code are blocks, usually introduced with a
 <code>:</code> character. Here is the body of
 <code>compute_H_and_inverse()</code> from the last section.
-It is indented to the level of the docstring.
+It is indented one level in (typically 4 spaces) from the <code>def</code>.
 </p>
 
 <pre><code>    if B < TWO:
@@ -152,8 +157,8 @@ could complicate things for the reader.
 <p>
 <span class="p">ParaPy</span> uses Python global variables sparingly,
 always in a way parallel to <span class="p">ParaBas</span>.
-One class of globals, the flags and counters, are initialized
-(declared) at the beginning of the code.
+One class of globals, the flags and counters, are defined and initialized
+at the beginning of the code.
 </p>
 
 <p>
@@ -166,7 +171,8 @@ and are subject to update.
 <p>
 When a global variable is assigned within a function it must
 be declared <code>global</code>, otherwise a local variable
-is created. The <code>pause()</code> function accesses two
+is created.
+For example, the <code>pause()</code> function accesses two
 globals.
 
 <pre><code>  def pause():
@@ -176,7 +182,7 @@ globals.
 
 <h3>Style</h3>
 <p>
-<span class="p">ParaPy</span> follows the
+<span class="p">ParaPy</span> generally follows the
 <a class="inline"
   href="https://google.github.io/styleguide/pyguide.html">
   Google style guide</a>.
@@ -189,9 +195,11 @@ with underscore dividers, like
 
 <h3>An idiom for do-while</h3>
 <p>
-The Pythonic way is to have one way to do something, not four ways.
+The Pythonic approach is to support
+one way, not four, to accomplish a task.
 Python supports <code>while</code> loops, whose condition is tested
 at the top of the loop. <span class="p">ParaBas</span> employs the
+alternative
 <code>do...while</code> structure heavily, in which the condition is
 tested at the end of the loop.
 </p>
@@ -199,7 +207,7 @@ tested at the end of the loop.
 <p>
 <span class="p">ParaPy</span> effects this structure with a mild
 deviation from the style guide.
-Bringing the <code>break</code> statement up alongside the
+Bringing the loop <code>break</code> statement up alongside the
 <code>if</code> test improves readability.
 </p>
 
@@ -230,7 +238,8 @@ The curious line
 
 <p>
 is a bit of Python custom around the <code>/</code> operator
-as it applies to integers, so it's not important here.
+as it applies to integers. We'll do nothing subtle with integer
+division.
 </p>
 
 <h3>Lists</h3>
@@ -275,6 +284,8 @@ Format requests in <code>{...}</code> are fulfilled in
 sequence from the arguments to <code>format</code>.
 As in C, <code>\t</code> skips to the next
 tab stop, and <code>\n</code> skips to the next line.
+The <code>.17e</code> requests 17 significant digits
+in the exponential format.
 </p>
 
 

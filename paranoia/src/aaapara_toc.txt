@@ -21,7 +21,7 @@
   Pocket Guide to Python for Paranoia
 </a></p>
 <p class="el1"><a class="toc-link wip" href="token_header_file.html">
-  First lines of code
+  Opening lines of code
 </a></p>
 <p class="el1"><a class="toc-link wip" href="open_comment.html">
   Historical comment

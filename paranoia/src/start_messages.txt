@@ -3,10 +3,10 @@
 <h1>Opening messages</h1>
 
 <p>
-Paranoia's signature feature is its sequence of output screens.
+Paranoia's signature feature is its sequence of introductory screens.
 This code presents the four opening pages.
-While the messages have been updated in keeping with
-the Python implementation, every attempt has been made
+Updates to the messages to reflect the Python implementation
+were carried out with a light touch,
 to preserve the feel of classic <span class="p">ParaBas</span>.
 </p>
 

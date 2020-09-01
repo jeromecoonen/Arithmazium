@@ -41,14 +41,14 @@
 <h1>Global variables and flags</h1>
 
 <p>
-A complex program like Paranoia in standard Basic suffers from the
-lack of modularity . . . but especially from the blizzard of
+A complex program like Paranoia in standard Basic suffers from a
+lack of modularity, but moreso from the blizzard of
 global variables with one- and
 two-character names. <span class="p">ParaPas</span> and
 <span class="p">ParaC</span> introduced more mnemonic names.
 <span class="p">ParaPy</span> adopts Pythonic naming
-conventions, but more importantly, factors the code into
-functions that isolates values used locally.
+conventions, and factors the code into
+functions that isolate values used locally.
 </p>
 
 <p>
@@ -79,13 +79,17 @@ hasty = True   # When True, skips all user interaction
 </code></pre>
 
 <p>
-The next globals are counters and status values throughout the program.
+The next globals are counters and status values
+that appear throughout the program.
 Paranoia classifies issues as Flaws, Defects, Serious Defects, and
-Failures. It reports problems as they arise and summarizes at the end.
-The code has milestones that track progress through the tests.
+Failures. It reports problems as they arise and
+provides a summary at the end.
+<span class="p">ParaBas</span> sets
+milestones to track progress through the tests.
 <span class="p">ParaPy</span> follows the same milestone sequence as
 the classic. The code also preserves the original sense of
-<em>page number</em>, which corresponded to <em>screens</em> as the units of
+<em>page number</em>, which once corresponded
+to <em>screens</em> as the units of
 output.
 </p>
 
@@ -118,7 +122,7 @@ rand_next = math.nan
 </code></pre>
 
 <p>
-Paranooia delivers qualitative results, too, such as whether
+Paranoia delivers qualitative results, too, such as whether
 an operation has a guard digit, or what kind of rounding
 it provides. The dictionary <code>flags{}</code> gathers up
 those findings, which were captured in a fleet of global

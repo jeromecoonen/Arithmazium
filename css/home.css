@@ -1,10 +1,10 @@
-a/* home.css -- style for the home page */
+/* home.css -- style for the home page */
 
 /* Styles for the room layout, patterns, and fonts */
 /* These are the experimental fonts, saved here for now. */
 /* Paranoia -- Atma */
 /* Entrance -- Bevan */
-/* Library -- Cherry Swash */
+/* Library -- Days One */
 /* Study -- Days One */
 /* Core -- Fontdiner Swanky */
 /* Laboratory -- Orbitron */
@@ -54,7 +54,7 @@ text.home-room {
 }
 
 .home-room-wip {
-  stroke-width: 30;
+  stroke-width: 15;
   stroke-linecap: square;
   stroke: yellow;
   opacity: 0.7;
@@ -65,9 +65,9 @@ polygon.home-para {
 }
 
 text.home-para {
-  font-size: 48px;
-  font-weight: bold;
-  font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
+  font-size: 40px;
+  font-weight: normal;
+  font-family: "Days One", "lucida Console", Monaco, monospace;
 }
 
 polygon.home-entry {
@@ -91,9 +91,9 @@ polygon.home-lib {
 }
 
 text.home-lib {
-  font-size: 48px;
-  font-weight: bold;
-  font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
+  font-size: 40px;
+  font-weight: normal;
+  font-family: "Days One", "lucida Console", Monaco, monospace;
 }
 
 polygon.home-study {
@@ -101,14 +101,13 @@ polygon.home-study {
 }
 
 text.home-study {
-  font-size: 48px;
-  font-weight: bold;
-  font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
+  font-size: 40px;
+  font-weight: normal;
+  font-family: "Days One", "lucida Console", Monaco, monospace;
 }
 
 polygon.home-core {
   fill: slategray;
-  stroke-width: 0;
 }
 
 text.home-core {
@@ -124,9 +123,9 @@ polygon.home-lab {
 }
 
 text.home-lab {
-  font-size: 48px;
-  font-weight: bold;
-  font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
+  font-size: 40px;
+  font-weight: normal;
+  font-family: "Days One", "lucida Console", Monaco, monospace;
 }
 
 polygon.home-class {
@@ -134,9 +133,9 @@ polygon.home-class {
 }
 
 text.home-class {
-  font-size: 48px;
-  font-weight: bold;
-  font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
+  font-size: 40px;
+  font-weight: normal;
+  font-family: "Days One", "lucida Console", Monaco, monospace;
 }
 
 polygon.home-fit {
@@ -144,9 +143,9 @@ polygon.home-fit {
 }
 
 text.home-fit {
-  font-size: 48px;
-  font-weight: bold;
-  font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
+  font-size: 40px;
+  font-weight: normal;
+  font-family: "Days One", "lucida Console", Monaco, monospace;
 }
 
 polygon.home-dino {
@@ -154,9 +153,9 @@ polygon.home-dino {
 }
 
 text.home-dino {
-  font-size: 48px;
-  font-weight: bold;
-  font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
+  font-size: 40px;
+  font-weight: normal;
+  font-family: "Days One", "lucida Console", Monaco, monospace;
 }
 
 polygon.home-playroom {
@@ -164,7 +163,7 @@ polygon.home-playroom {
 }
 
 text.home-playroom {
-  font-size: 48px;
-  font-weight: bold;
-  font-family: "Cherry Swash", "lucida Console", Monaco, monospace;
+  font-size: 40px;
+  font-weight: normal;
+  font-family: "Days One", "lucida Console", Monaco, monospace;
 }

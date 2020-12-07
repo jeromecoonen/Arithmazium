@@ -1,0 +1,12 @@
+Hints and Reminders for Development
+
+Special characters in HTML
+  &plusmn; 
+
+Snippets
+  math \(xxx\) -- inline TeX
+
+Function cross-reference:
+  <a class="inline" href="find_ulp_of_one_plus.html">
+    <code>find_ulp_of_one_plus()</code></a>
+

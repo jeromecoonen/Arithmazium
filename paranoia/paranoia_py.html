@@ -351,7 +351,7 @@ def find_ulp_of_one_plus(guess):
         x = ONE_HALF * u + THIRTY_TWO * u * u
         x = x + ONE
         x = x - ONE
-        if (u <= x) or (x <= ZERO): break
+        if u <= x or x <= ZERO: break
     return u
 
 # ~~~~~~~ 270-find_ulp_of_one_minus
@@ -373,7 +373,7 @@ def find_ulp_of_one_minus(guess):
         x = ONE_HALF + y
         y = ONE_HALF - x
         x = ONE_HALF + y
-        if (u <= x) or (x <= ZERO): break
+        if u <= x or x <= ZERO: break
     return u
 
 # ~~~~~~~ 275-compute_A_and_inverse
@@ -442,7 +442,7 @@ def compute_C_and_inverse():
         c = y
         y = z
         z = y * y
-        if (y <= z) or (z + z <= z): break
+        if y <= z or z + z <= z: break
     # ~~~~~~~ 284-compute_C_and_inverse4
     # Finally, step toward the minimum normal number by multiples of d.
     # c stays one step behind y, so that at termination
@@ -453,7 +453,7 @@ def compute_C_and_inverse():
         c = y
         y = z
         z = y * d
-        if (y <= z) or (z + z <= z): break
+        if y <= z or z + z <= z: break
     return c, ONE / c
 
 # ~~~~~~~ 285-compute_SAFE_ULPS_OF_ONE
@@ -548,7 +548,7 @@ def test_for_extra_precise_subepressions():
         z = (ONE / TWO
              - ((ONE / TWO - (ONE_HALF * z1 + THIRTY_TWO * z1 * z1))
                 + ONE / TWO)) + ONE / TWO
-        if (z1 <= z) or (z <= ZERO): break
+        if z1 <= z or z <= ZERO: break
     # ~~~~~~~ 306-test_for_extra_precise_subepressions6
     # BUG in BASIC and C version -- the two loops below are not nested,
     # but simply in sequence with the z1 loop just above.
@@ -559,33 +559,33 @@ def test_for_extra_precise_subepressions():
         y = (ONE_HALF - ((ONE_HALF - (ONE_HALF * y1 + THIRTY_TWO * y1 * y1))
                          + ONE_HALF)) + ONE_HALF
         print("1730: y1 = {:.17e} y = {:.17e}".format(y1, y))
-        if  (y1 <= y) or (y <= ZERO): break
+        if  y1 <= y or y <= ZERO: break
     while True:
         x1 = x
         x = ((ONE_HALF * x1 + THIRTY_TWO * x1 * x1)
              - ONE_MINUS_ULP)+ ONE_MINUS_ULP
         print("1740: x1 = {:.17e} x = {:.17e}".format(x1, x))
-        if  (x1 <= x) or (x <= ZERO): break
+        if  x1 <= x or x <= ZERO: break
     # ~~~~~~~ 308-test_for_extra_precise_subepressions8
-    if (x1 != y1) or (x1 != z1):
+    if x1 != y1 or x1 != z1:
         bad_cond(err_serious, "Disagreements among the values x1, y1, z1,")
         print("respectively  {:0.7e},  {:0.7e},  {:0.7e},".format(x1, y1, z1))
         print("are symptoms of inconsistencies introduced")
         print("by extra-precise evaluation of arithmetic subexpressions.")
         notify("Possibly some part of this")
-        if ((x1 == ULP_OF_ONE_MINUS) or (y1 == ULP_OF_ONE_MINUS)
+        if (x1 == ULP_OF_ONE_MINUS or y1 == ULP_OF_ONE_MINUS
                 or (z1 == ULP_OF_ONE_MINUS)):
             print("That feature is not tested further by this program.\n")
     # ~~~~~~~ 310-test_for_extra_precise_subepressions10
-    elif (z1 != ULP_OF_ONE_MINUS) or (z2 != ULP_OF_ONE_PLUS):
-        if (z1 >= ULP_OF_ONE_MINUS) or (z2 >= ULP_OF_ONE_PLUS):
+    elif z1 != ULP_OF_ONE_MINUS or z2 != ULP_OF_ONE_PLUS:
+        if z1 >= ULP_OF_ONE_MINUS or z2 >= ULP_OF_ONE_PLUS:
             bad_cond(err_failure, "")
             notify("PRECISION")
             print("\tULP_OF_ONE_MINUS = {:0.7e}, z1 - ULP_OF_ONE_MINUS = {:0.7e}".format(ULP_OF_ONE_MINUS,z1-ULP_OF_ONE_MINUS))
             print("\tULP_OF_ONE_PLUS = {:0.7e}, z2 - ULP_OF_ONE_PLUS = {:0.7e}".format(ULP_OF_ONE_PLUS,z2-ULP_OF_ONE_PLUS))
         # ~~~~~~~ 312-test_for_extra_precise_subepressions12
         else:
-            if ((z1 <= ZERO) or (z2 <= ZERO)):
+            if (z1 <= ZERO or z2 <= ZERO):
                 print("Because of unusual B = {:0.f}".format(B))
                 print(", or exact rational arithmetic a result")
                 print("z1 = {:0.7e}, or z2 = {:0.7e} ".format(z1, z2))
@@ -826,7 +826,7 @@ def how_does_div_round():
     z = z - (ONE_AND_HALF + ULP_OF_ONE_PLUS)
     t = (ULP_OF_ONE_PLUS - ONE_AND_HALF) + t
     # ~~~~~~~ 376-how_does_div_round6
-    if not ((x > ZERO) or (y > ZERO) or (z > ZERO) or (t > ZERO)):
+    if not ((x > ZERO) or (y > ZERO) or z > ZERO or t > ZERO):
         x = ONE_AND_HALF / y2
         y = ONE_AND_HALF - ULP_OF_ONE_PLUS
         z = ONE_AND_HALF + ULP_OF_ONE_PLUS
@@ -885,7 +885,7 @@ def how_does_add_sub_round():
         y = ONE + y
         x = (ONE + ULP_OF_ONE_PLUS) - x
         y = ONE - y
-        if (x != ZERO) or (y != ZERO): break
+        if x != ZERO or y != ZERO: break
         # ~~~~~~~ 393-how_does_add_sub_round8
         x = (ONE_HALF + ULP_OF_ONE_PLUS) * ULP_OF_ONE_MINUS
         y = (ONE_HALF - ULP_OF_ONE_PLUS) * ULP_OF_ONE_MINUS
@@ -893,7 +893,7 @@ def how_does_add_sub_round():
         y = ONE - y
         x = ONE_MINUS_ULP - x
         y = ONE - y
-        if (x != ZERO) or (y != ZERO): break
+        if x != ZERO or y != ZERO: break
         # ~~~~~~~ 395-how_does_add_sub_round10
         if round_add_sub == "chopped":
             # ***JTC: BASIC 2690 sets R3 = F1 - O2*R3 triggering 3
@@ -1095,7 +1095,7 @@ def test_sqrt_monotonicity():
         x = sqrt(x)
         q = sqrt(y)
         z = sqrt(z)
-        if (x > q) or (q > z):
+        if x > q or q > z:
             not_monot = True
         # ~~~~~~~ 435b-test_sqrt_monotonicity4
         else:
@@ -1221,7 +1221,7 @@ def test_integer_powers(x, z, i, max_i):
         i += 1
         x = z * x
         # Stay within the range of exactly representable integers.
-        if (x >= BIG_B_NTH) or (i > max_i): break
+        if x >= BIG_B_NTH or i > max_i: break
     return
 
 # ~~~~~~~ 520-tiny_powers_of_B
@@ -1256,7 +1256,7 @@ def tiny_powers_of_B(c):
         z = z * H
         # Terminate if z pins at a nonzero minimal value or
         # if z falls to an epsilon or 0.
-        if (tiny <= z) or (z + z <= z): break
+        if tiny <= z or z + z <= z: break
     print("***Approaching underflow by powers of the radix:")
     print("***    less_tiny =  {:.7e}, tiny =  {:.7e},"
           + "z = {:.7e}".format(less_tiny, tiny, z))
@@ -1329,8 +1329,8 @@ def tiny_values_and_difference(one_plus):
             too_tiny = too_tiny * H
             if ultra_verbose:
                 print("\tUnderflow loop: too_tiny = {:.7e}".format(too_tiny))
-            if ((tinier <= too_tiny)
-                    or (too_tiny + too_tiny <= too_tiny)): break
+            if (tinier <= too_tiny
+                    or too_tiny + too_tiny <= too_tiny): break
         return (tiny, tinier, too_tiny, u_threshold,
                 tiny_delta, save_tiny1, save_tiny2)
 
@@ -1375,7 +1375,7 @@ def does_tiny_value_misbehave(z):
         print(" has NOT just been signaled.")
     else:
         reply = True
-        if (z_quo < ONE) or (z_quo > TWO):
+        if z_quo < ONE or z_quo > TWO:
             error_count[err_serious] = error_count[err_serious] + 1
             print("This is a VERY SERIOUS DEFECT!")
         else:
@@ -1549,7 +1549,7 @@ def test_extreme_underflow(ut):
     # Note use of SAFE_ULPS_OF_ONE versus ULP_OF_ONE_PLUS to ensure
     # multiplication doesn't lose the low bits, for lack of a
     # guard digit or worse.
-    if (ultra < ZERO) or (ultra > (B + B * SAFE_ULPS_OF_ONE) * ut):
+    if ultra < ZERO or ultra > (B + B * SAFE_ULPS_OF_ONE * ut):
         bad_cond(err_serious, "this is not between 0 and underflow\n")
         print("   threshold = {:0.17e} .".format(ut))
     elif not (ultra > ut * (ONE + SAFE_ULPS_OF_ONE)):
@@ -2015,7 +2015,8 @@ else:
 # ~~~~~~~ 737-precision2
 guess_ulp_of_one_minus = ONE / BIG_B_NTH
 guess_ulp_of_one_plus = B * guess_ulp_of_one_minus
-print("Closest relative separation found is ULP_OF_ONE_MINUS = {:0.7e} .".format(guess_ulp_of_one_minus))
+print("Closest relative separation found is ULP_OF_ONE_MINUS = {:0.7e} ."
+      .format(guess_ulp_of_one_minus))
 # ~~~~~~~ 740-recalc_radix
 print("Recalculating radix and precision")
 ULP_OF_ONE_PLUS = find_ulp_of_one_plus(guess_ulp_of_one_plus)
@@ -2023,7 +2024,8 @@ ULP_OF_ONE_MINUS = find_ulp_of_one_minus(guess_ulp_of_one_minus)
 if (ULP_OF_ONE_MINUS == guess_ulp_of_one_minus):
     print("confirms closest relative separation ULP_OF_ONE_MINUS ")
 else:
-    print("gets better closest relative separation ULP_OF_ONE_MINUS = {:0.7e} .".format(ULP_OF_ONE_MINUS))
+    print("gets better closest relative separation ULP_OF_ONE_MINUS = "
+          + "{:0.7e} .".format(ULP_OF_ONE_MINUS))
 # ~~~~~~~ 742-recalc_radix2
 BIG_B_NTH = ONE / ULP_OF_ONE_MINUS
 ONE_MINUS_ULP = (ONE_HALF - ULP_OF_ONE_MINUS) + ONE_HALF
@@ -2242,7 +2244,7 @@ while B != ONE:
     # ... == B^(1 + fract) if (PRECISION == Integer + fract.
     x = D / B
     y = D / A
-    if (x != floor(x)) or (y != floor(y)):
+    if x != floor(x) or y != floor(y):
         sqrt_anomalous_int = True
         break
 

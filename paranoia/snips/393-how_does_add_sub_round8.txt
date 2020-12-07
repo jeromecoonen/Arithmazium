@@ -4,4 +4,4 @@
         y = ONE - y
         x = ONE_MINUS_ULP - x
         y = ONE - y
-        if (x != ZERO) or (y != ZERO): break
+        if x != ZERO or y != ZERO: break

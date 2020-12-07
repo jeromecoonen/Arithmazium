@@ -5,6 +5,6 @@
         x = ONE_HALF + y
         y = ONE_HALF - x
         x = ONE_HALF + y
-        if (u <= x) or (x <= ZERO): break
+        if u <= x or x <= ZERO: break
     return u
 

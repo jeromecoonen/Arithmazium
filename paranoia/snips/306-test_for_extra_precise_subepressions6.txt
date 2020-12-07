@@ -7,10 +7,10 @@
         y = (ONE_HALF - ((ONE_HALF - (ONE_HALF * y1 + THIRTY_TWO * y1 * y1))
                          + ONE_HALF)) + ONE_HALF
         print("1730: y1 = {:.17e} y = {:.17e}".format(y1, y))
-        if  (y1 <= y) or (y <= ZERO): break
+        if  y1 <= y or y <= ZERO: break
     while True:
         x1 = x
         x = ((ONE_HALF * x1 + THIRTY_TWO * x1 * x1)
              - ONE_MINUS_ULP)+ ONE_MINUS_ULP
         print("1740: x1 = {:.17e} x = {:.17e}".format(x1, x))
-        if  (x1 <= x) or (x <= ZERO): break
+        if  x1 <= x or x <= ZERO: break

@@ -1,6 +1,6 @@
         i += 1
         x = z * x
         # Stay within the range of exactly representable integers.
-        if (x >= BIG_B_NTH) or (i > max_i): break
+        if x >= BIG_B_NTH or i > max_i: break
     return
 

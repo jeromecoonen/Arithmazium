@@ -3,6 +3,6 @@
         x = ONE_HALF * u + THIRTY_TWO * u * u
         x = x + ONE
         x = x - ONE
-        if (u <= x) or (x <= ZERO): break
+        if u <= x or x <= ZERO: break
     return u
 

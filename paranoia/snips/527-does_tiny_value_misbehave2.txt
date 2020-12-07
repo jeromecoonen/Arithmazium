@@ -19,7 +19,7 @@
         print(" has NOT just been signaled.")
     else:
         reply = True
-        if (z_quo < ONE) or (z_quo > TWO):
+        if z_quo < ONE or z_quo > TWO:
             error_count[err_serious] = error_count[err_serious] + 1
             print("This is a VERY SERIOUS DEFECT!")
         else:

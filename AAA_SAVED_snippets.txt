@@ -1,0 +1,82 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+'.text.plain':
+  'ParaPy':
+      'prefix': 'parapy'
+      'body': '<span class="p">ParaPy</span>'
+  'ParaC':
+      'prefix': 'parac'
+      'body': '<span class="p">ParaC</span>'
+  'ParaBas':
+      'prefix': 'parabas'
+      'body': '<span class="p">ParaBas</span>'
+  'ParaPas':
+      'prefix': 'parapas'
+      'body': '<span class="p">ParaPas</span>'
+  'ParaForth':
+      'prefix': 'paraforth'
+      'body': '<span class="p">ParaForth</span>'
+  'ParaTran':
+      'prefix': 'paratran'
+      'body': '<span class="p">ParaTran</span>'
+  'ParaMod':
+      'prefix': 'paramod'
+      'body': '<span class="p">ParaMod</span>'
+  'Inline':
+      'prefix': 'inline'
+      'body': 'class="inline"'
+  'Code':
+      'prefix': 'code'
+      'body': '<code>$1</code>$2'
+  'Math':
+      'prefix': 'math'
+      'body': '\\\\($1\\\\)$2'
+  'Math_div':
+      'prefix': 'mathdiv'
+      'body': '<div class="math">\n$1\n</div>$2'
+  'Wrong_div':
+      'prefix': 'wrongdiv'
+      'body': '<div class="wrong">\n$1\n</div>$2'
+  'Code_link':
+      'prefix': 'clink'
+      'body': '<a class="inline" href="$1">\n  <code>$2</code></a>$3'
+  'Text_link':
+      'prefix': 'tlink'
+      'body': '<a class="inline" href="$1">\n$2</a>$3'
+  'Web_link':
+      'prefix': 'wlink'
+      'body': '<a class="inline" href="$1" target="_blank">\n$2</a>$3'
+  'Paranoioa':
+      'prefix': 'para'
+      'body': '<code>paranoia.py</code>$1'
+  'Header1':
+      'prefix': 'h1'
+      'body': '<h1>$1</h1>$2'
+  'Header2':
+      'prefix': 'h2'
+      'body': '<h2>$1</h2>$2'
+  'Paragraph':
+      'prefix': 'pp'
+      'body': '<p>\n$1\n</p>'
+  'Emphasis':
+      'prefix': 'em'
+      'body': '<em>$1</em>$2'

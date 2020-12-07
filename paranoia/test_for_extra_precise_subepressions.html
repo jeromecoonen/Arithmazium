@@ -89,7 +89,7 @@ Part 4
         z = (ONE / TWO
              - ((ONE / TWO - (ONE_HALF * z1 + THIRTY_TWO * z1 * z1))
                 + ONE / TWO)) + ONE / TWO
-        if (z1 <= z) or (z <= ZERO): break
+        if z1 <= z or z <= ZERO: break
 </code></pre>
 
 <p>
@@ -105,26 +105,26 @@ Part 5
         y = (ONE_HALF - ((ONE_HALF - (ONE_HALF * y1 + THIRTY_TWO * y1 * y1))
                          + ONE_HALF)) + ONE_HALF
         print("1730: y1 = {:.17e} y = {:.17e}".format(y1, y))
-        if  (y1 <= y) or (y <= ZERO): break
+        if  y1 <= y or y <= ZERO: break
     while True:
         x1 = x
         x = ((ONE_HALF * x1 + THIRTY_TWO * x1 * x1)
              - ONE_MINUS_ULP)+ ONE_MINUS_ULP
         print("1740: x1 = {:.17e} x = {:.17e}".format(x1, x))
-        if  (x1 <= x) or (x <= ZERO): break
+        if  x1 <= x or x <= ZERO: break
 </code></pre>
 
 <p>
 Part 6
 </p>
 
-<pre><code>    if (x1 != y1) or (x1 != z1):
+<pre><code>    if x1 != y1 or x1 != z1:
         bad_cond(err_serious, "Disagreements among the values x1, y1, z1,")
         print("respectively  {:0.7e},  {:0.7e},  {:0.7e},".format(x1, y1, z1))
         print("are symptoms of inconsistencies introduced")
         print("by extra-precise evaluation of arithmetic subexpressions.")
         notify("Possibly some part of this")
-        if ((x1 == ULP_OF_ONE_MINUS) or (y1 == ULP_OF_ONE_MINUS)
+        if (x1 == ULP_OF_ONE_MINUS or y1 == ULP_OF_ONE_MINUS
                 or (z1 == ULP_OF_ONE_MINUS)):
             print("That feature is not tested further by this program.\n")
 </code></pre>
@@ -133,8 +133,8 @@ Part 6
 Part 7
 </p>
 
-<pre><code>    elif (z1 != ULP_OF_ONE_MINUS) or (z2 != ULP_OF_ONE_PLUS):
-        if (z1 >= ULP_OF_ONE_MINUS) or (z2 >= ULP_OF_ONE_PLUS):
+<pre><code>    elif z1 != ULP_OF_ONE_MINUS or z2 != ULP_OF_ONE_PLUS:
+        if z1 >= ULP_OF_ONE_MINUS or z2 >= ULP_OF_ONE_PLUS:
             bad_cond(err_failure, "")
             notify("PRECISION")
             print("\tULP_OF_ONE_MINUS = {:0.7e}, z1 - ULP_OF_ONE_MINUS = {:0.7e}".format(ULP_OF_ONE_MINUS,z1-ULP_OF_ONE_MINUS))
@@ -146,7 +146,7 @@ Part 8
 </p>
 
 <pre><code>        else:
-            if ((z1 <= ZERO) or (z2 <= ZERO)):
+            if (z1 <= ZERO or z2 <= ZERO):
                 print("Because of unusual B = {:0.f}".format(B))
                 print(", or exact rational arithmetic a result")
                 print("z1 = {:0.7e}, or z2 = {:0.7e} ".format(z1, z2))

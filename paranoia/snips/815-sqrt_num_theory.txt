@@ -9,7 +9,7 @@ while B != ONE:
     # ... == B^(1 + fract) if (PRECISION == Integer + fract.
     x = D / B
     y = D / A
-    if (x != floor(x)) or (y != floor(y)):
+    if x != floor(x) or y != floor(y):
         sqrt_anomalous_int = True
         break
 

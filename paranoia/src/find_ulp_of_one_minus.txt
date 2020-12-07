@@ -11,7 +11,16 @@ than its sibiling
 
 <p>
 We start with the value \(2 / 3\), which rounds in any
-radix not a multiple of \(3\). It's rounding error is in
+radix not a multiple of \(3\).
+</p>
+
+<object type="image/svg+xml" data="img/ulp_one_minus_2_3_d-auto.svg">
+  Value 2/3 on a number line
+</object>
+
+
+<p>
+It's rounding error is in
 ulps of values just less than <code>1.0</code>.
 Values <code>sixth</code> and <code>third</code> share
 the rounding direction of <code>TWO / THREE</code>.

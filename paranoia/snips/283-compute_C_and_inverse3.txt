@@ -8,4 +8,4 @@
         c = y
         y = z
         z = y * y
-        if (y <= z) or (z + z <= z): break
+        if y <= z or z + z <= z: break

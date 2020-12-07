@@ -28,8 +28,8 @@
             too_tiny = too_tiny * H
             if ultra_verbose:
                 print("\tUnderflow loop: too_tiny = {:.7e}".format(too_tiny))
-            if ((tinier <= too_tiny)
-                    or (too_tiny + too_tiny <= too_tiny)): break
+            if (tinier <= too_tiny
+                    or too_tiny + too_tiny <= too_tiny): break
         return (tiny, tinier, too_tiny, u_threshold,
                 tiny_delta, save_tiny1, save_tiny2)
 

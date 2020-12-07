@@ -6,4 +6,4 @@
         z = (ONE / TWO
              - ((ONE / TWO - (ONE_HALF * z1 + THIRTY_TWO * z1 * z1))
                 + ONE / TWO)) + ONE / TWO
-        if (z1 <= z) or (z <= ZERO): break
+        if z1 <= z or z <= ZERO: break

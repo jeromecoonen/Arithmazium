@@ -192,9 +192,37 @@ FEND
 
 
 
+FILE 6_digit_ulp
+CNC6
+1.0 + ulp
+d jjj100001 e8
+an ulp of 1 is 10^-5 in 6 decimal digits
+FEND
+
+FILE 24_bit_ulp
+CNC10
+1.0 + ulp
+b jjj1000...001 e12
+an ulp of 1 is 2**-23 in 24 bits
+FEND
 FILE 4_3_round_d
 TIC
 d "1.0" "10.0" (b, 1, 30, "")
+FEND
+
+FILE ulp_one_plus_4_3_d
+CNC10
+4.0 / 3.0
+d jjj1333...3333333 e13
+4/3 in decimal, highlighted digits to be rounded
+CNC10
+# rounded down, to nearest
+d jjj1333...333
+-1/3 ulp of 1.0 error
+CNC10
+# rounded up, to next larger
+d jjj1333...334
++2/3 ulp of 1.0 error
 FEND
 
 FILE ulp_one_plus
@@ -214,6 +242,10 @@ CNC10
 sixth = ONE_HALF - third
 b jjj0001...101
 1/6 is rounded down by 1/3 ulp of 1.0
+CNC10
+x = sixth + sixth
+b jjj0010...1010
+differs from third by an ulp of 1.0
 FEND
 
 FILE ulp_one_plus_b
@@ -244,6 +276,14 @@ CNC6
 sixth = ONE_HALF - third
 d jjj016667
 1/6 is rounded up
+FEND
+
+
+
+
+FILE ulp_one_minus_2_3_d
+TIC
+d "0.1" "1.0" (b, 1, 509, "")
 FEND
 
 

@@ -1,0 +1,59 @@
+#INCLUDE para_head find_ulp_of_one_plus.html aaapara_toc.html find_ulp_of_one_minus.html
+
+<h1>find_ulp_of_one_plus()  part 2</h1>
+
+<p>
+So far, we have computed a value <code>x</code> with one
+or more ulps of <code>1.0</code>. Next, we exploit a powerful
+numerical idiom of Paranoia:
+</p>
+
+<p class="quote">
+<em>
+When searching for the smallest value with a given property,
+start with a handy value
+at least as big and iterate downward.
+</em>
+</p>
+
+<p>
+The iteration exhibits another useful technique:
+the creation of nonzero low-order
+digits to encourage an upward round, if there's nearly a half-way case.
+The binary diagram below shows how <code>u</code> is halved, but with
+some added nonzero low-order bits. Since <code>u</code> is some ulps of
+\(1.0\), <code>u * u</code> is some ulps of <code>u</code>.
+The factor <code>THIRTY_TWO</code> shifts those bits well back into
+<code>u</code> in radix 2, 8, or 16. The diagram continues the binary tale.
+</p>
+
+<object type="image/svg+xml" data="img/ulp_one_plus_b-auto.svg">
+  ------Image------
+</object>
+
+</p>
+In decimal, the factor <code>THIRTY_TWO</code> ensures some
+nonzero low-order digits in <code>x</code>.
+</p>
+
+#CODE 267-find_ulp_of_one_plus2
+
+<h2>Your turn</h2>
+
+<p>
+<span class="exer">Exercise:</span> The decimal diagram below
+starts the computation in decimal.
+Assuming that <code>guess</code> is <code>0.00001</code>, run the iteration
+to see that the guess was correct.
+</p>
+
+<object type="image/svg+xml" data="img/ulp_one_plus_c-auto.svg">
+  ------Image------
+</object>
+
+<p>
+<span class="exer">Exercise:</span> Replay the binary case with odd precision to see
+it works either way.
+</p>
+
+#INCLUDE para_foot find_ulp_of_one_plus.html aaapara_toc.html find_ulp_of_one_minus.html

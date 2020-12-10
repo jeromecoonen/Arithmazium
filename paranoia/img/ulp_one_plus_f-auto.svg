@@ -27,7 +27,7 @@
 <g transform="translate(0,0)">
 <rect class="diag-py-rect" width="360" height="70" />
 <text class="diag-py" x="10" y="35">
-x = TWO / THREE
+u = ...
 </text>
 </g>
 <g transform="translate(360,0)">
@@ -35,22 +35,21 @@ x = TWO / THREE
 <line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
 <path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
 <circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
-<ellipse class="diag-num-elps" cx="200.6" cy="30" rx="12" ry="20" />
-<text class="diag-num-dec" x="20" y="33">
-&#160;&#160;&#160;0666666666
+<text class="diag-num-oct" x="20" y="33">
+&#160;&#160;&#160;000005
 </text>
 </g>
 <g transform="translate(649,0)">
 <rect class="diag-rem-rect" width="551" height="70" />
 <text class="diag-rem" x="10" y="35">
-the low-order 6s will round off
+suppose u is 5 ulps of 1.0 in octal
 </text>
 </g>
 <!-- LINE 1 -->
 <g transform="translate(0,70)">
 <rect class="diag-py-rect" width="360" height="70" />
 <text class="diag-py" x="10" y="35">
-sixth = x - ONE_HALF
+x = ONE_HALF * u + ...
 </text>
 </g>
 <g transform="translate(360,70)">
@@ -58,21 +57,23 @@ sixth = x - ONE_HALF
 <line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
 <path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
 <circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
-<text class="diag-num-dec" x="20" y="33">
-&#160;&#160;&#160;0166667
+<ellipse class="diag-num-elps" cx="183.2" cy="30" rx="12" ry="20" />
+<text class="diag-num-oct" x="20" y="33">
+&#160;&#160;&#160;0000024
 </text>
 </g>
 <g transform="translate(649,70)">
 <rect class="diag-rem-rect" width="551" height="70" />
-<text class="diag-rem" x="10" y="35">
-1/6 is rounded up in the low digit of 1.0-
+<text class="diag-rem" x="10" y="20">
+<tspan>the 4 will be chopped</tspan>
+<tspan x="25" dy="1.2em">remember, this is octal!</tspan>
 </text>
 </g>
 <!-- LINE 2 -->
 <g transform="translate(0,140)">
 <rect class="diag-py-rect" width="360" height="70" />
 <text class="diag-py" x="10" y="35">
-third = sixth + sixth
+x = x + ONE
 </text>
 </g>
 <g transform="translate(360,140)">
@@ -80,14 +81,15 @@ third = sixth + sixth
 <line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
 <path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
 <circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
-<text class="diag-num-dec" x="20" y="33">
-&#160;&#160;&#160;0333334
+<text class="diag-num-oct" x="20" y="33">
+&#160;&#160;&#160;100002
 </text>
 </g>
 <g transform="translate(649,140)">
 <rect class="diag-rem-rect" width="551" height="70" />
-<text class="diag-rem" x="10" y="35">
-1/3 is rounded up
+<text class="diag-rem" x="10" y="20">
+<tspan>half u will be 0.00001 in the next step;</tspan>
+<tspan x="25" dy="1.2em">almost there</tspan>
 </text>
 </g>
 </svg>

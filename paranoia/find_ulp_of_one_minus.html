@@ -33,23 +33,25 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='recalc_radix2.html' class='next round'>Next</a>
+  <a href='find_ulp_of_one_minus_2.html' class='next round'>Next</a>
   <a href='aaapara_toc.html' class='tree round'>Home</a>
-  <a href='find_ulp_of_one_plus.html' class='previous round'>Previous</a>
+  <a href='find_ulp_of_one_plus_2.html' class='previous round'>Previous</a>
   </div>
 
 <h1>find_ulp_of_one_minus()</h1>
 
 <p>
-This function operates in parallel, but a factor of \(1 / B\) smaller
-than its sibiling
+This function is the factor \(1 / B\) smaller cousin of
 <a class="inline" href="find_ulp_of_one_plus.html">
-  <code>find_ulp_of_one_plus</code></a> just covered.
+  <code>find_ulp_of_one_plus</code></a>,
+which you can refer to for more elaboration of the fine points.
 </p>
 
 <p>
 We start with the value \(2 / 3\), which rounds in any
-radix not a multiple of \(3\).
+radix not a multiple of \(3\). It's bigger than one-half,
+so it lies in the exponent range just below <code>1.0</code>
+in any of radix 2, 8, 10, or 16.
 </p>
 
 <object type="image/svg+xml" data="img/ulp_one_minus_2_3_d-auto.svg">
@@ -58,23 +60,28 @@ radix not a multiple of \(3\).
 
 
 <p>
-It's rounding error is in
+Following the earlier discussion, \(2 / 3\) has the
+decimal value
+\(0.6666\cdots\) and the binary value
+\(0.101010\cdots _{2}\).
+Analogous to the case of \(4 / 3\),
+the value <code>TWO&nbsp;/&nbsp;THREE</code>
+evaluates to \(2/3 + \epsilon\).
+The rounding error \(\epsilon\) is
+\(+1 / 3, +4 / 3, +7 / 3, \ldots\)
+or \(-2 / 3, -5 / 3, -8 / 3, \ldots\)
 ulps of values just less than <code>1.0</code>.
-Values <code>sixth</code> and <code>third</code> share
-the rounding direction of <code>TWO / THREE</code>.
-But the negative value <code>x</code> has the opposite
-direction of magnitude rounding because of the change of sign.
 </p>
 
-<div class="math">
 <p>
-To explore the algebra a bit, if <code>sixth</code> has the value
-\(1/6 + \epsilon\) then <code>x</code> has the value
-\(-1/6 + 2 \epsilon\) or \(- ( 1/6 - 2 \epsilon )\).
-That is, if <code>sixth</code> rounds up in magnitude then
-<code>x</code> rounds down, and vice versa.
+We then isolate and triple \(\epsilon\) by computing
+\[ | (1/6 + \epsilon) + ((1/6 + \epsilon) \times 2) - 1/2) | \]
+which reduces to
+\[ | (1/6 + \epsilon) + (-1/6 + 2\epsilon) | \]
+all in exact arithmetic.
+As in the cousin function,
+it simplifies to \( | 3 \epsilon |\).
 </p>
-</div>
 
 <p>
 Here is a binary diagram showing the case of odd precision.
@@ -85,8 +92,9 @@ Here is a binary diagram showing the case of odd precision.
 </object>
 
 <p>
-As before, we take
-the larger choice of starting values for <code>x</code>.
+The value \(1 / 6\) is subtracted out, leaving a whole number
+of ulps of values just less than <code>1.0</code>, regardless
+of the radix.
 </p>
 
 <pre><code>def find_ulp_of_one_minus(guess):
@@ -101,34 +109,46 @@ the larger choice of starting values for <code>x</code>.
     # Now  x == (unknown no.) ulps of 1-.
 </code></pre>
 
-<p>
-Part 3
-</p>
-
-<pre><code>    while True:
-        u = x
-        y = ONE_HALF * u + THIRTY_TWO * u * u
-        y = ONE_HALF - y
-        x = ONE_HALF + y
-        y = ONE_HALF - x
-        x = ONE_HALF + y
-        if u <= x or x <= ZERO: break
-    return u
-
-</code></pre>
+<h2>Your turn</h2>
 
 <p>
-Part 4
+<span class="exer">Exercise:</span> Replay the binary case with even
+precision to see that
+it also proudces an ulp of <code>1.0</code>.
 </p>
 
 <p>
-Part 5
+<span class="exer">Exercise:</span> The diagram below
+starts the computation in 6-digit decimal arithmetic.
+</p>
+
+<object type="image/svg+xml" data="img/ulp_one_minus_c-auto.svg">
+  ------Image------
+</object>
+
+<p>
+Can you complete the computation of <code>x</code>?
+</p>
+
+<p>
+<span class="exer">Exercise:</span> This diagram
+illustrates the computation of <code>x</code>
+in 6-digit octal arithmetic. We assume chopped arithmetic,
+as found on Burroughs computers of the 1960s.
+</p>
+
+<object type="image/svg+xml" data="img/ulp_one_minus_d-auto.svg">
+  ------Image------
+</object>
+
+<p>
+Now rerun the computation in 7-digit octal.
 </p>
 
 <div class='next-prev'>
-<a href='recalc_radix2.html' class='next round'>Next</a>
+<a href='find_ulp_of_one_minus_2.html' class='next round'>Next</a>
 <a href='aaapara_toc.html' class='tree round'>Home</a>
-<a href='find_ulp_of_one_plus.html' class='previous round'>Previous</a>
+<a href='find_ulp_of_one_plus_2.html' class='previous round'>Previous</a>
 </div>
 <script src="js/vendor/jquery-3.5.1.min.js"></script>
 <script src="js/plugins.js"></script>

@@ -38,7 +38,7 @@
   <a href='find_ulp_of_one_plus.html' class='previous round'>Previous</a>
   </div>
 
-<h1>find_ulp_of_one_plus()  part 2</h1>
+<h1>find_ulp_of_one_plus()  (cont.)</h1>
 
 <p>
 So far, we have computed a value <code>x</code> with one
@@ -74,6 +74,13 @@ In decimal, the factor <code>THIRTY_TWO</code> ensures some
 nonzero low-order digits in <code>x</code>.
 </p>
 
+<p>
+The expression <code>x + ONE</code> rounds to <code>1.0</code>
+plus some ulps of one.
+Subtracting <code>ONE</code> is exact, leaving just the ulps.
+Successively halving the value walks it down to a single ulp.
+</p>
+
 <pre><code>    while True:
         u = x
         x = ONE_HALF * u + THIRTY_TWO * u * u
@@ -87,20 +94,32 @@ nonzero low-order digits in <code>x</code>.
 <h2>Your turn</h2>
 
 <p>
-<span class="exer">Exercise:</span> The decimal diagram below
-starts the computation in decimal.
-Assuming that <code>guess</code> is <code>0.00001</code>, run the iteration
-to see that the guess was correct.
+<span class="exer">Exercise:</span> Complete the binary case
+started in the diagram above to see that it results in
+one ulp of <code>1.0</code>.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_plus_c-auto.svg">
+<p>
+<span class="exer">Exercise:</span> The decimal diagram below
+starts the iteration in 6-digit rounded decimal arithmetic.
+</p>
+
+<object type="image/svg+xml" data="img/ulp_one_plus_e-auto.svg">
   ------Image------
 </object>
 
 <p>
-<span class="exer">Exercise:</span> Replay the binary case with odd precision to see
-it works either way.
+Continue the loop to find one ulp of <code>1.0</code>.
 </p>
+
+<p>
+<span class="exer">Exercise:</span> Complete the
+computation in 6-digit chopped octal arithmetic.
+</p>
+
+<object type="image/svg+xml" data="img/ulp_one_plus_f-auto.svg">
+  ------Image------
+</object>
 
 <div class='next-prev'>
 <a href='find_ulp_of_one_minus.html' class='next round'>Next</a>

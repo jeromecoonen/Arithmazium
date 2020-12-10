@@ -1,6 +1,6 @@
-#INCLUDE para_head recalc_radix.html aaapara_toc.html cmp_ulps_of_one.html
+#INCLUDE para_head find_ulp_one_minus_2.html aaapara_toc.html cmp_ulps_of_one.html
 
-<h1>Recalculate radix (cont.)</h1>
+<h1>Recalculate radix  (cont.)</h1>
 
 <p>
 Part 1
@@ -20,4 +20,4 @@ Part 2
 Part 3
 </p>
 
-#INCLUDE para_foot recalc_radix.html aaapara_toc.html cmp_ulps_of_one.html
+#INCLUDE para_foot find_ulp_one_minus_2.html aaapara_toc.html cmp_ulps_of_one.html

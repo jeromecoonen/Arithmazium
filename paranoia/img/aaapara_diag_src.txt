@@ -244,8 +244,12 @@ b jjj0001...101
 1/6 is rounded down by 1/3 ulp of 1.0
 CNC10
 x = sixth + sixth
-b jjj0010...1010
+b jjj0010...010
 differs from third by an ulp of 1.0
+CNC10
+x - third
+b jj-0000...001
+absolute value is an ulp of 1.0
 FEND
 
 FILE ulp_one_plus_b
@@ -278,12 +282,69 @@ d jjj016667
 1/6 is rounded up
 FEND
 
+FILE ulp_one_plus_d
+CNC6
+x = FOUR / THREE
+o jjj125252525 e9
+the low-order digits will be chopped
+CNC6
+third = x - ONE
+o jjj025252
+1/3 is chopped in the low digit of 1.0
+CNC6
+sixth = ONE_HALF - third
+o jjj012526
+because of the subtraction|1/6 is rounded up
+CNC6
+x = sixth + sixth
+o jjj025254
+larger than 1/3 by
+CNC6
+x - third
+o jj-000002
+two ulps of 1
+FEND
+
+FILE ulp_one_plus_e
+CNC6
+ONE
+d jjj100000
+1.0, showing binary point alignment
+CNC6
+u = ...
+d jjj000005
+suppose u is 5 ulps of 1.0
+CNC6
+x = ONE_HALF * u + ...
+d jjj0000025 e8
+the 2 will be rounded up after adding|then subtracting 1
+CNC6
+x = x + ONE
+d jjj100003
+u will be 0.00003 in the next step
+FEND
+
+FILE ulp_one_plus_f
+CNC6
+u = ...
+o jjj000005
+suppose u is 5 ulps of 1.0 in octal
+CNC6
+x = ONE_HALF * u + ...
+o jjj0000024 e9
+the 4 will be chopped|remember, this is octal!
+CNC6
+x = x + ONE
+o jjj100002
+half u will be 0.00001 in the next step;|almost there
+FEND
+
 
 
 
 FILE ulp_one_minus_2_3_d
 TIC
-d "0.1" "1.0" (b, 1, 509, "")
+d "0.1" "1.0" (b, 1, 509, "2/3")
 FEND
 
 
@@ -291,7 +352,7 @@ FILE ulp_one_minus
 CNC10
 x = TWO / THREE
 b jjj0101...10101010 e13
-the highlighted bit is rounded|whether the precision is even or odd
+the highlighted bit must be rounded,|regardless of the precision
 CNC10
 sixth = x - ONE_HALF
 b jjj0001...101? e13
@@ -302,39 +363,144 @@ b jjj0010...01?0 e12
 doubling shifts the rounding error
 CNC10
 x = third - ONE_HALF
-b jjj0001...1??0
+b jj-0001...1??0
 negative 1/6 is rounded in the opposite direction of sixth
+CNC10
+fabs(x + sixth)
+b jjj0000...0???
+some ulps of values just less than 1.0
 FEND
 
-FILE ulp_one_minus_b
+FILE ulp_one_minus_c
+CNC6
+x = TWO / THREE
+d jjj0666666666 e10
+the low-order 6s will round off
+CNC6
+sixth = x - ONE_HALF
+d jjj0166667
+1/6 is rounded up in the low digit of 1.0-
+CNC6
+third = sixth + sixth
+d jjj0333334
+1/3 is rounded up
+FEND
+
+FILE ulp_one_minus_d
+CNC6
+x = TWO / THREE
+o jjj0525252552 e10
+the low-order digits will be chopped
+CNC6
+sixth = x - ONE_HALF
+o jjj0125252
+1/6 is chopped in the low digit of 1.0-
+CNC6
+third = sixth + sixth
+o jjj0252524
+the rounding error is doubled
+CNC6
+x = third - ONE_HALF
+o jj-0125254
+larger than 1/3 by
+CNC6
+x + sixth
+o jj-0000002
+two ulps of 1-
+FEND
+
+FILE ulp_one_minus_e
 CNC10
 ONE
 b jjj100j...j00
 1.0, showing binary point alignment
 CNC10
 u = ...
-b jjj000j...j11
-suppose u is 3 ulps of 1.0
+b jjj000j...j011
+suppose u is 3 ulps of 1.0-
 CNC10
-x = ONE_HALF * u + ...
-b jjj000j...j0110 ... xx
-x is half u, with nonzero low bits
+y = ONE_HALF * u + ...
+b jjj000j...j00110...
+y is half u, with nonzero low bits
+CNC10
+y = ONE_HALF - y
+b jjj001j...j1??
+does not yet round back to 1/2
+CNC10
+x = ONE_HALF + y
+b jjj011j...j1??
+a value just less than 1
 FEND
 
-FILE ulp_one_minus_c
-CNC6
-x = 4.0 / 3.0
-d jjj133333333 e9
-the low-order 3s will round off
-CNC6
-third = x - ONE
-d jjj033333
-1/3 is rounded down in the low digit of 1.0
-CNC6
-sixth = ONE_HALF - third
-d jjj016667
-1/6 is rounded up
+FILE ulp_one_minus_f
+CNC10
+y = ONE_HALF - x
+b jj-001j...j1??
+strips the leading bit and flips sign
+CNC10
+x = ONE_HALF + y
+b jjj000j...j0??
+magnitude subtract, leaving just low bits
 FEND
+
+FILE ulp_one_minus_g
+CNC6
+ONE
+d jjj100000
+1.0, showing binary point alignment
+CNC6
+u = ...
+d jjj0000005
+suppose u is 5 ulps of 1.0-
+CNC6
+y = ONE_HALF * u + ...
+d jjj00000025 e9
+the trailing 5 is half an ulp of 1-
+CNC6
+y = ONE_HALF - y
+d jjj0499998
+value 0.4999975 rounded up
+CNC6
+x = ONE_HALF + y
+d jjj0999998
+1 less two ulps of 1-
+CNC6
+y = ONE_HALF - x
+d jj-0499998
+exact
+CNC6
+x = ONE_HALF + y
+d jjj0000002
+down to two ulps of 1-
+FEND
+
+FILE ulp_one_minus_h
+CNC6
+u = ...
+o jjj000005
+suppose u is 5 ulps of 1.0 in octal
+CNC6
+y = ONE_HALF * u + ...
+o jjj0000024 e9
+the 4 is half an ulp of 1-
+CNC6
+y = ONE_HALF - y
+o jjj03777754 e9
+the trailing 4 chops off
+CNC6
+x = ONE_HALF + y
+o jjj0777775
+exact
+CNC6
+y = ONE_HALF - x
+o jj-0377775
+exact
+CNC6
+x = ONE_HALF + y
+o jjj0000003
+one more step toward an ulp of 1-
+FEND
+
 
 
 

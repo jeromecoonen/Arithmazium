@@ -3,8 +3,9 @@ Hints and Reminders for Development
 Special characters in HTML
   &plusmn; 
 
-Snippets
+Snippets (Sublime / Preferences / Browse packages)
   math \(xxx\) -- inline TeX
+  mathline
 
 Function cross-reference:
   <a class="inline" href="find_ulp_of_one_plus.html">

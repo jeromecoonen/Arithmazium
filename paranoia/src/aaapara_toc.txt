@@ -96,16 +96,16 @@
   Refining ulps of 1&plusmn;
 </a></p>
 <p class="el2"><a class="toc-link wip" href="find_ulp_of_one_plus.html">
-  find_ulp_of_one_plus()
+  find_ulp_of_one_plus()  &ndash;  the setup
 </a></p>
-<p class="el3"><a class="toc-link wip" href="find_ulp_of_one_plus_2.html">
-  ulp of one plus cont.
+<p class="el2"><a class="toc-link wip" href="find_ulp_of_one_plus_2.html">
+  find_ulp_of_one_plus()  &ndash;  the iteration
 </a></p>
 <p class="el2"><a class="toc-link wip" href="find_ulp_of_one_minus.html">
-  find_ulp_of_one_minus()
+  find_ulp_of_one_minus()  &ndash;  the setup
 </a></p>
-<p class="el3"><a class="toc-link wip" href="find_ulp_of_one_minus_2.html">
-  ulp of one minus cont.
+<p class="el2"><a class="toc-link wip" href="find_ulp_of_one_minus_2.html">
+  find_ulp_of_one_minus()  &ndash;  the iteration
 </a></p>
 <p class="el1"><a class="toc-link wip" href="recalc_radix2.html">
   Recalculate radix

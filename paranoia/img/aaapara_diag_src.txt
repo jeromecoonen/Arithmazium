@@ -309,7 +309,7 @@ FILE ulp_one_plus_e
 CNC6
 ONE
 d jjj100000
-1.0, showing binary point alignment
+1.0, showing decimal point alignment
 CNC6
 u = ...
 d jjj000005
@@ -447,7 +447,7 @@ FILE ulp_one_minus_g
 CNC6
 ONE
 d jjj100000
-1.0, showing binary point alignment
+1.0, showing decimal point alignment
 CNC6
 u = ...
 d jjj0000005
@@ -501,8 +501,50 @@ o jjj0000003
 one more step toward an ulp of 1-
 FEND
 
+FILE recalc_radix_a
+CNC6
+ONE
+d jjj100000
+exhibit decimal point alignment
+CNC6
+ULP_ONE_MINUS
+d jjj0000001
+the 1 falls one digit to the right
+CNC6
+ONE / ULP_ONE_MINUS
+d jj1000000 p9
+10**6, where 6 = precision
+CNC6
+# 1 less
+d jjj999999 p9
+10**6 - 1
+FEND
 
+FILE recalc_radix_b
+CNC6
+ONE
+d jjj100000
+exhibit decimal point alignment
+CNC6
+ULP_ONE_PLUS
+d jjj000001
+adds to 1.0 exactly
+CNC6
+ULP_ONE_MINUS
+d jjj0000001
+should be 1/B smaller
+FEND
 
+FILE recalc_radix_d
+CNC10
+ONE
+b jjj100j...j00
+binary point alignment
+CNC10
+ULP_ONE_MINUS
+b jjj000j...j001
+one bit further right
+FEND
 
 
 

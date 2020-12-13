@@ -1,6 +1,6 @@
 #INCLUDE para_head find_ulp_of_one_plus_2.html aaapara_toc.html find_ulp_of_one_minus_2.html
 
-<h1>find_ulp_of_one_minus()</h1>
+<h1>find_ulp_of_one_minus()  &ndash;  the setup</h1>
 
 <p>
 This function is the factor \(1 / B\) smaller cousin of

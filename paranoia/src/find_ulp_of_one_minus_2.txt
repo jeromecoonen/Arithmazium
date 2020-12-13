@@ -1,6 +1,6 @@
 #INCLUDE para_head find_ulp_of_one_minus.html aaapara_toc.html recalc_radix2.html
 
-<h1>find_ulp_of_one_minus()  (cont.)</h1>
+<h1>find_ulp_of_one_minus()  &ndash;  the iteration</h1>
 
 <p>
 The code continues im parallel with the case for ulps

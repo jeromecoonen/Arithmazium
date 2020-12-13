@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1200 490" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1200 280" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
 <style>
 .diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
 .diag-num-rect { fill: none; stroke: none; }
@@ -42,14 +42,14 @@ ONE
 <g transform="translate(649,0)">
 <rect class="diag-rem-rect" width="551" height="70" />
 <text class="diag-rem" x="10" y="35">
-1.0, showing decimal point alignment
+exhibit decimal point alignment
 </text>
 </g>
 <!-- LINE 1 -->
 <g transform="translate(0,70)">
 <rect class="diag-py-rect" width="360" height="70" />
 <text class="diag-py" x="10" y="35">
-u = ...
+ULP_ONE_MINUS
 </text>
 </g>
 <g transform="translate(360,70)">
@@ -58,124 +58,57 @@ u = ...
 <path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
 <circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
 <text class="diag-num-dec" x="20" y="33">
-&#160;&#160;&#160;0000005
+&#160;&#160;&#160;0000001
 </text>
 </g>
 <g transform="translate(649,70)">
 <rect class="diag-rem-rect" width="551" height="70" />
 <text class="diag-rem" x="10" y="35">
-suppose u is 5 ulps of 1.0-
+the 1 falls one digit to the right
 </text>
 </g>
 <!-- LINE 2 -->
 <g transform="translate(0,140)">
 <rect class="diag-py-rect" width="360" height="70" />
 <text class="diag-py" x="10" y="35">
-y = ONE_HALF * u + ...
+ONE / ULP_ONE_MINUS
 </text>
 </g>
 <g transform="translate(360,140)">
 <rect class="diag-num-rect" width="289" height="70" />
 <line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
 <path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
-<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
-<ellipse class="diag-num-elps" cx="183.2" cy="30" rx="12" ry="20" />
+<circle class="diag-num-dot" cx="175.6" cy="44" r="3.0" />
 <text class="diag-num-dec" x="20" y="33">
-&#160;&#160;&#160;00000025
+&#160;&#160;1000000
 </text>
 </g>
 <g transform="translate(649,140)">
 <rect class="diag-rem-rect" width="551" height="70" />
 <text class="diag-rem" x="10" y="35">
-the trailing 5 is half an ulp of 1-
+10**6, where 6 = precision
 </text>
 </g>
 <!-- LINE 3 -->
 <g transform="translate(0,210)">
 <rect class="diag-py-rect" width="360" height="70" />
 <text class="diag-py" x="10" y="35">
-y = ONE_HALF - y
+# 1 less
 </text>
 </g>
 <g transform="translate(360,210)">
 <rect class="diag-num-rect" width="289" height="70" />
 <line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
 <path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
-<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<circle class="diag-num-dot" cx="175.6" cy="44" r="3.0" />
 <text class="diag-num-dec" x="20" y="33">
-&#160;&#160;&#160;0499998
+&#160;&#160;&#160;999999
 </text>
 </g>
 <g transform="translate(649,210)">
 <rect class="diag-rem-rect" width="551" height="70" />
 <text class="diag-rem" x="10" y="35">
-value 0.4999975 rounded up
-</text>
-</g>
-<!-- LINE 4 -->
-<g transform="translate(0,280)">
-<rect class="diag-py-rect" width="360" height="70" />
-<text class="diag-py" x="10" y="35">
-x = ONE_HALF + y
-</text>
-</g>
-<g transform="translate(360,280)">
-<rect class="diag-num-rect" width="289" height="70" />
-<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
-<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
-<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
-<text class="diag-num-dec" x="20" y="33">
-&#160;&#160;&#160;0999998
-</text>
-</g>
-<g transform="translate(649,280)">
-<rect class="diag-rem-rect" width="551" height="70" />
-<text class="diag-rem" x="10" y="35">
-1 less two ulps of 1-
-</text>
-</g>
-<!-- LINE 5 -->
-<g transform="translate(0,350)">
-<rect class="diag-py-rect" width="360" height="70" />
-<text class="diag-py" x="10" y="35">
-y = ONE_HALF - x
-</text>
-</g>
-<g transform="translate(360,350)">
-<rect class="diag-num-rect" width="289" height="70" />
-<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
-<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
-<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
-<text class="diag-num-dec" x="20" y="33">
-&#160;&#160;-0499998
-</text>
-</g>
-<g transform="translate(649,350)">
-<rect class="diag-rem-rect" width="551" height="70" />
-<text class="diag-rem" x="10" y="35">
-exact
-</text>
-</g>
-<!-- LINE 6 -->
-<g transform="translate(0,420)">
-<rect class="diag-py-rect" width="360" height="70" />
-<text class="diag-py" x="10" y="35">
-x = ONE_HALF + y
-</text>
-</g>
-<g transform="translate(360,420)">
-<rect class="diag-num-rect" width="289" height="70" />
-<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
-<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
-<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
-<text class="diag-num-dec" x="20" y="33">
-&#160;&#160;&#160;0000002
-</text>
-</g>
-<g transform="translate(649,420)">
-<rect class="diag-rem-rect" width="551" height="70" />
-<text class="diag-rem" x="10" y="35">
-down to two ulps of 1-
+10**6 - 1
 </text>
 </g>
 </svg>

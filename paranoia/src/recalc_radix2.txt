@@ -1,23 +1,64 @@
-#INCLUDE para_head find_ulp_one_minus_2.html aaapara_toc.html cmp_ulps_of_one.html
+#INCLUDE para_head find_ulp_of_one_minus_2.html aaapara_toc.html cmp_ulps_of_one.html
 
-<h1>Recalculate radix  (cont.)</h1>
+<h1>Recalculate radix</h1>
 
 <p>
-Part 1
+With <code>ULP_ONE_PLUS</code> and
+<code>ULP_ONE_MINUS</code> in hand from the previous sections,
+we recompute the radix <code>B</code> and define
+some constants used throughout the remainder of the code.
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
+<p>
+<code>BIG_B_NTH</code> is the power of <code>B</code> one larger
+than the longest string of <code>B-1</code> digits.
+</p>
+
+<object type="image/svg+xml" data="img/recalc_radix_a-auto.svg">
   ------Image------
 </object>
 
 <p>
-Part 2
+We can determine <code>B</code>
+from the ratio of <code>ULP_ONE_PLUS</code> and
+<code>ULP_ONE_MINUS</code>. While the following example is 6-digit
+decimal, the number pattern would be the same in
+any radix.
+</p>
+
+<object type="image/svg+xml" data="img/recalc_radix_b-auto.svg">
+  ------Image------
+</object>
+
+<p>
+The ratio of the ulp values should be exactly <code>B</code>, but
+the code uses the idiom <code>foor(0.1&nbsp;+&nbsp;ratio)</code> to
+guard against problems in division and perhaps because of fuzziness
+in log arithmetic, which is to be discussed separately.
+</p>
+
+<p>
+If the recalculation of <code>B</code> doesn't jibe with the first
+try, we proclaim it a <em>MYSTERY</em> and forge ahead. We leave
+the matter for the user to resolve. Then we note as a <em>defect</em>
+a radix larger than \( 16 \) and as a <em>flaw</em> a radix neither
+\( 2 \) nor \( 10 \).
 </p>
 
 #CODE 742-recalc_radix2
 
+
+<h2>Your turn</h2>
+
 <p>
-Part 3
+<span class="exer">Exercise:</span> Complete the calculation
+of <code>BIG_B_NTH</code> in binary, and look at the value
+\( 1 \) less.
 </p>
 
-#INCLUDE para_foot find_ulp_one_minus_2.html aaapara_toc.html cmp_ulps_of_one.html
+<object type="image/svg+xml" data="img/recalc_radix_d-auto.svg">
+  ------Image------
+</object>
+
+
+#INCLUDE para_foot find_ulp_of_one_minus_2.html aaapara_toc.html cmp_ulps_of_one.html

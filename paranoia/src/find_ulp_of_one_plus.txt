@@ -1,6 +1,6 @@
 #INCLUDE para_head recalc_radix.html aaapara_toc.html find_ulp_of_one_plus_2.html
 
-<h1>find_ulp_of_one_plus()</h1>
+<h1>find_ulp_of_one_plus()  &ndash;  the setup</h1>
 
 <p>
 This innocent-looking function features two

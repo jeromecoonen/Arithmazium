@@ -38,18 +38,22 @@
   <a href='recalc_radix2.html' class='previous round'>Previous</a>
   </div>
 
-<p>This is an automatically generated file.</p>
+<h1>Compare ulps of 1</h1>
 
 <p>
-Part 1
+We now test values just greater than and less than
+<code>1.0</code>. The easy computations are laid out
+below for you to complete.
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
 <p>
-Part 2
+This sequnece exposes an asymmetry in Paranoia's constants.
+In the previous section, we computed
+<code>ONE_MINUS_ULP</code>, the value next less than <code>1.0</code>.
+To get the value next greater, we write out
+<code>ONE&nbsp;+&nbsp;ULP_ONE_PLUS</code>, which is expected to be
+computed without rounding error in any floating point arithmetic
+that will survive this program. There's no need for a named constant.
 </p>
 
 <pre><code>milestone = 20   #==============================
@@ -65,8 +69,60 @@ for x in [ONE_MINUS_ULP, ONE + ULP_OF_ONE_PLUS]:
 </code></pre>
 
 <p>
-Part 3
+Another topic that runs a thread through Paranoia is how numerical
+comparison behaves versus subtraction. Is asking whether
+<code>x</code> is equal to <code>y</code> the same as asking
+whether <code>x&nbsp;-&nbsp;y</code> is zero? It turns out that,
+historically, both comparison and subtraction could have different
+surprising properties on different machines.
 </p>
+
+<h2>Your turn</h2>
+
+<p>
+<span class="exer">Exercise:</span> Verify the comparison
+in 6-digit decimal.
+</p>
+
+<object type="image/svg+xml" data="img/cmp_ulps_1_a-auto.svg">
+  ------Image------
+</object>
+
+<p>
+<span class="exer">Exercise:</span> Verify the comparison
+in binary.
+</p>
+
+<object type="image/svg+xml" data="img/cmp_ulps_1_c-auto.svg">
+  ------Image------
+</object>
+
+<p>
+<span class="exer">Exercise:</span> Carry out the subtraction in
+6-digit octal.
+</p>
+
+<object type="image/svg+xml" data="img/cmp_ulps_1_e-auto.svg">
+  ------Image------
+</object>
+
+<p>
+<span class="exer">Exercise:</span> Carry out the subtraction
+for <code>1.0</code> plus an ulp in decimal.
+</p>
+
+<object type="image/svg+xml" data="img/cmp_ulps_1_g-auto.svg">
+  ------Image------
+</object>
+
+<p>
+<span class="exer">Exercise:</span> Carry out the subtraction
+for <code>1.0</code> plus an ulp in binary.
+</p>
+
+<object type="image/svg+xml" data="img/cmp_ulps_1_i-auto.svg">
+  ------Image------
+</object>
 
 <div class='next-prev'>
 <a href='the_constants.html' class='next round'>Next</a>

@@ -547,6 +547,84 @@ one bit further right
 FEND
 
 
+FILE cmp_ulps_1_a
+CNC6
+ONE_MINUS_ULP
+d jjj0999999
+next less than 1.0 in 6 digits
+CNC6
+ONE_HALF
+d jjj0500000
+exact if radix is even
+CNC6
+ULP_ONE_PLUS - ONE_HALF
+d jjj0499999
+the subtraction is exact
+FEND
+
+FILE cmp_ulps_1_c
+CNC10
+ONE_MINUS_ULP
+b jjj011j...j111
+next less than 1.0
+CNC10
+ONE_HALF
+b jjj010j...j000
+exact
+CNC10
+ULP_ONE_PLUS - ONE_HALF
+b jjj001j...j111
+should compare &lt; 1/2
+FEND
+
+FILE cmp_ulps_1_e
+CNC6
+x = ONE_MINUS_ULP
+o jjj0777777
+next less than 1.0 in 6-digit octal
+CNC6
+y = x - ONE_HALF
+d jjj0377777
+should be exact in any arithmetic
+CNC6
+z = y - ONE_HALF
+d jj-0000001
+should be small negative value
+FEND
+
+FILE cmp_ulps_1_g
+CNC6
+x = ONE + ULP_ONE_PLUS
+d jjj100001
+next greater than 1.0 in 6 digits
+CNC6
+y = x - ONE_HALF
+d jjj0500010 e9
+exact, with a digit to spare|to the right of the trailing 1
+CNC6
+z = y - ONE_HALF
+d jjj0000010
+should be exact and nonzero
+FEND
+
+FILE cmp_ulps_1_i
+CNC10
+x = ONE + ULP_ONE_PLUS
+b jjj100j...j01
+next greater than 1.0
+CNC10
+y = x - ONE_HALF
+b jjj010j...j010 e13
+exact, with a bit to spare to the|right of the trailing 1 bit
+CNC10
+z = y - ONE_HALF
+b jjj000j...j010
+should be &gt; zero
+FEND
+
+
+
+
 
 FILE uflo_tiny_B_a
 CNC10

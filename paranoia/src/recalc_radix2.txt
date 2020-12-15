@@ -60,5 +60,4 @@ of <code>BIG_B_NTH</code> in binary, and look at the value
   ------Image------
 </object>
 
-
 #INCLUDE para_foot find_ulp_of_one_minus_2.html aaapara_toc.html cmp_ulps_of_one.html

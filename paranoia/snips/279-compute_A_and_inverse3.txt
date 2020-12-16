@@ -1,6 +1,5 @@
     one_over_a = ONE / a
     x = a
-    y = one_over_a   # ***BUG -- check out y
     for x in [a, B]:
         y = ONE / x
         z = x * y - ONE_HALF

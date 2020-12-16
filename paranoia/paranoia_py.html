@@ -380,18 +380,18 @@ def find_ulp_of_one_minus(guess):
 def compute_A_and_inverse(radix):
     """Return value for constants A and ONE_OVER_A, based on radix.
 
-    a is 2 if radix is 1 (***logarithmic?) or a  power of 2.
+    a is 2 if radix is 1 (logarithmic) or a  power of 2.
     a is 10 if radix is a power of 10. Otherwise a is the radix.
-    There are two tests that value "a" behaves well in division.
+    There are two tests that "a" behaves well in division.
 
     Args:
-        radix: usually passed from B
+        radix: passed from B
 
     Returns:
         a, 1 / a
     """
     # ~~~~~~~ 277-compute_A_and_inverse2
-    a = radix   # Default to the unusual case
+    a = max(TWO, radix)   # Default, picking up log radix=1
     for z in [TWO, NINE+ONE]:
         y = radix
         while True:
@@ -404,7 +404,6 @@ def compute_A_and_inverse(radix):
     # ~~~~~~~ 279-compute_A_and_inverse3
     one_over_a = ONE / a
     x = a
-    y = one_over_a   # ***BUG -- check out y
     for x in [a, B]:
         y = ONE / x
         z = x * y - ONE_HALF

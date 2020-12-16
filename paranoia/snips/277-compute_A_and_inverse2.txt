@@ -1,4 +1,4 @@
-    a = radix   # Default to the unusual case
+    a = max(TWO, radix)   # Default, picking up log radix=1
     for z in [TWO, NINE+ONE]:
         y = radix
         while True:

@@ -38,29 +38,24 @@
   <a href='the_constants.html' class='previous round'>Previous</a>
   </div>
 
-<p>This is an automatically generated file.</p>
+<h1>compute_A_and_inverse()</h1>
 
 <p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
-<p>
-Part 2
+This function returns the values of <code>A</code> and
+<code>ONE_OVER_A</code>. Some tests want to to be run
+on all powers of \( 2 \), even in octal arithmetic with
+3-bit digits and hex with 4-bit digits.
 </p>
 
 <pre><code>def compute_A_and_inverse(radix):
     """Return value for constants A and ONE_OVER_A, based on radix.
 
-    a is 2 if radix is 1 (***logarithmic?) or a  power of 2.
+    a is 2 if radix is 1 (logarithmic) or a  power of 2.
     a is 10 if radix is a power of 10. Otherwise a is the radix.
-    There are two tests that value "a" behaves well in division.
+    There are two tests that "a" behaves well in division.
 
     Args:
-        radix: usually passed from B
+        radix: passed from B
 
     Returns:
         a, 1 / a
@@ -68,10 +63,13 @@ Part 2
 </code></pre>
 
 <p>
-Part 3
+The <code>while</code> loop terminates with
+<code>x&nbsp;==&nbsp;ONE</code> precisely when
+<code>radix</code> is a power of \( 2 \) or
+\( 10 \).
 </p>
 
-<pre><code>    a = radix   # Default to the unusual case
+<pre><code>    a = max(TWO, radix)   # Default, picking up log radix=1
     for z in [TWO, NINE+ONE]:
         y = radix
         while True:
@@ -84,12 +82,12 @@ Part 3
 </code></pre>
 
 <p>
-Part 4
+Finally, check that for <code>a</code> and
+<code>B</code>, that \( x \times 1 / x = 1 \).
 </p>
 
 <pre><code>    one_over_a = ONE / a
     x = a
-    y = one_over_a   # ***BUG -- check out y
     for x in [a, B]:
         y = ONE / x
         z = x * y - ONE_HALF
@@ -98,9 +96,17 @@ Part 4
 
 </code></pre>
 
+<h2>Your turn</h2>
+
 <p>
-Part 5
+<span class="exer">Exercise:</span> What value <code>a</code>
+is computed if the input <code>radix</code> is \( 60 \),
+as preferred by the Baylonians? Same question for \( 100 \)?
 </p>
+
+<object type="image/svg+xml" data="img/the_constants_b-auto.svg">
+  ------Image------
+</object>
 
 <div class='next-prev'>
 <a href='compute_C_and_inverse.html' class='next round'>Next</a>

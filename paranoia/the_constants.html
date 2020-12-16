@@ -33,23 +33,35 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='frac_prec.html' class='next round'>Next</a>
+  <a href='compute_A_and_inverse.html' class='next round'>Next</a>
   <a href='aaapara_toc.html' class='tree round'>Home</a>
   <a href='cmp_ulps_of_one.html' class='previous round'>Previous</a>
   </div>
 
-<p>This is an automatically generated file.</p>
+<h1>Useful constants</h1>
 
 <p>
-Part 1
+We'll use these values throughout the rest of the code.
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
+<p>
+<code>B_MINUS_ULP</code> is the next value smaller than
+the radix. The diagram expands the code to show how
+decrementing <code>B</code> allows the subtraction to be
+carried out entirely within PRECISION digits.
+It should be exact on any machine that survives the tests
+that follow.
+</p>
+
+<object type="image/svg+xml" data="img/the_constants_a-auto.svg">
   ------Image------
 </object>
 
 <p>
-Part 2
+Value <code>C</code> is a tiny value at least a factor of
+<code>B**PRECISION</code> above values that can underflow to
+zero or subnormal numbers. Refer to the function for more
+color.
 </p>
 
 <pre><code>milestone = 25   #==============================
@@ -65,12 +77,19 @@ H, ONE_OVER_H = compute_H_and_inverse()
 SAFE_ULPS_OF_ONE = compute_SAFE_ULPS_OF_ONE()   # 1 or B ulps of one
 </code></pre>
 
+<h2>Your turn</h2>
+
 <p>
-Part 3
+<span class="exer">Exercise:</span> Compute <code>B_MINUS_ULP</code>
+in binary arithmetic, given the helpful start.
 </p>
 
+<object type="image/svg+xml" data="img/the_constants_b-auto.svg">
+  ------Image------
+</object>
+
 <div class='next-prev'>
-<a href='frac_prec.html' class='next round'>Next</a>
+<a href='compute_A_and_inverse.html' class='next round'>Next</a>
 <a href='aaapara_toc.html' class='tree round'>Home</a>
 <a href='cmp_ulps_of_one.html' class='previous round'>Previous</a>
 </div>

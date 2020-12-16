@@ -623,6 +623,38 @@ should be &gt; zero
 FEND
 
 
+FILE the_constants_a
+CNC6
+x = B - ONE
+d jjj900000
+one ulp is same as ulp of 1+
+CNC6
+y = x - ULP_OF_ONE_PLUS
+d jjj899999
+exact value
+CNC6
+B_MINUS_ULP = y + ONE
+d jjj999999
+= B - ULP_OF_ONE_PLUS
+FEND
+
+FILE the_constants_b
+CNC10
+x = B - ONE
+b jjj100j...j0
+B = 2
+CNC10
+y = x - ULP_OF_ONE_PLUS
+b jjj011j...j???
+what are the low-order bits?
+CNC10
+B_MINUS_ULP = y + ONE
+b jjj???j...j???
+how many 1 bits are there?
+FEND
+
+
+
 
 
 

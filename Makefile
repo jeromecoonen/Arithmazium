@@ -11,6 +11,7 @@ site: diagrams
 	python3 $(injector) entrance
 	python3 $(injector) essentials
 	python3 $(injector) mailroom
+	python3 $(injector) numbers
 	python3 $(injector) paranoia
 
 .PHONY: diagrams

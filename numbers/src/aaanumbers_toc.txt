@@ -1,0 +1,27 @@
+#INCLUDE room_head
+
+
+<h1>Your Basic Byte</h1>
+
+<div class="slider-box">
+  <p>Default range slider:</p>
+
+  <p>Number: <span id="n"></span></p>
+  <input type="range" min="0" max="255" value="0"
+    class="slider" id="n-slider">
+</div>
+
+<script>
+var slider = document.getElementById("n-slider");
+var output = document.getElementById("n");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+
+
+<p>THE END</p>
+
+#INCLUDE room_foot

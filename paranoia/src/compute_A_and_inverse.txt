@@ -1,4 +1,4 @@
-#INCLUDE para_head find_ulp_of_one_minus.html aaapara_toc.html compute_C_and_inverse.html
+#INCLUDE para_head the_constants.html aaapara_toc.html compute_C_and_inverse.html
 
 <p>This is an automatically generated file.</p>
 
@@ -32,5 +32,5 @@ Part 4
 Part 5
 </p>
 
-#INCLUDE para_foot find_ulp_of_one_minus.html aaapara_toc.html compute_C_and_inverse.html
+#INCLUDE para_foot the_constants.html aaapara_toc.html compute_C_and_inverse.html
 

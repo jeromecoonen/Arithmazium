@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Arithmazium</title>
-  <meta name="description" content="_PAGE_NAME_">
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/numbers/aaanumbers_toc.html">
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <meta name='theme-color' content='#fafafa'>
   <link rel='stylesheet' href='../css/normalize.css'>
@@ -32,3 +32,41 @@
   </text>
   </a>
   </svg>
+
+
+<h1>Your Basic Byte</h1>
+
+<div class="slider-box">
+  <p>Default range slider:</p>
+
+  <p>Number: <span id="n"></span></p>
+  <input type="range" min="0" max="255" value="0"
+    class="slider" id="n-slider">
+</div>
+
+<script>
+var slider = document.getElementById("n-slider");
+var output = document.getElementById("n");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+
+
+<p>THE END</p>
+
+<script src="../js/vendor/jquery-3.5.1.min.js"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  lsga('create', 'UA-165469376-1', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+</<body>
+
+</html>

@@ -87,7 +87,7 @@ text.home-entry {
 }
 
 polygon.home-lib {
-  fill: violet;
+  fill: olive;
 }
 
 text.home-lib {
@@ -158,11 +158,11 @@ text.home-dino {
   font-family: "Days One", "lucida Console", Monaco, monospace;
 }
 
-polygon.home-playroom {
-  fill: olive;
+polygon.home-numbers {
+  fill: violet;
 }
 
-text.home-playroom {
+text.home-numbers {
   font-size: 40px;
   font-weight: normal;
   font-family: "Days One", "lucida Console", Monaco, monospace;

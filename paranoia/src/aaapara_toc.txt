@@ -113,23 +113,22 @@
 <p class="el1"><a class="toc-link wip" href="cmp_ulps_of_one.html">
   Compare ulps of 1
 </a></p>
-
-
-<p class="el1"><a class="toc-link to-do" href="the_constants.html">
-  the_constants
+<p class="el1"><a class="toc-link wip" href="the_constants.html">
+  Useful constants
 </a></p>
-<p class="el2"><a class="toc-link to-do" href="compute_A_and_inverse.html">
+<p class="el2"><a class="toc-link wip" href="compute_A_and_inverse.html">
   compute_A_and_inverse()
 </a></p>
-<p class="el2"><a class="toc-link to-do" href="compute_C_and_inverse.html">
+<p class="el2"><a class="toc-link wip" href="compute_C_and_inverse.html">
   compute_C_and_inverse()
 </a></p>
-<p class="el2"><a class="toc-link to-do" href="compute_H_and_inverse.html">
+<p class="el2"><a class="toc-link wip" href="compute_H_and_inverse.html">
   compute_H_and_inverse()
 </a></p>
-<p class="el2"><a class="toc-link to-do" href="compute_SAFE_ULPS_OF_ONE.html">
+<p class="el2"><a class="toc-link wip" href="compute_SAFE_ULPS_OF_ONE.html">
   compute_SAFE_ULPS_OF_ONE()
 </a></p>
+
 <p class="el1"><a class="toc-link to-do" href="frac_prec.html">
   frac_prec
 </a></p>

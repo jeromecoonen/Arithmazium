@@ -412,8 +412,8 @@ def compute_A_and_inverse(radix):
 
 # ~~~~~~~ 280-compute_C_and_inverse
 def compute_C_and_inverse():
-    """Return untility constant C = 1 / B**k, k farther than PRECISION
-    from causing underflow.
+    """Return untility constant C = 1 / B**k, safely above the underflow
+    threshold, and its reciprocal.
 
     C is a useful starting point for investigation of underflow.
     It has the form 1 / B**k with k chosen so that C is farther than
@@ -422,6 +422,8 @@ def compute_C_and_inverse():
 
     Returns:
         C, 1 / C
+
+    Basic 4370-4400
     """
     # ~~~~~~~ 282-compute_C_and_inverse2
     d = ULP_OF_ONE_MINUS   # default value for integer precision
@@ -445,7 +447,7 @@ def compute_C_and_inverse():
     # ~~~~~~~ 284-compute_C_and_inverse4
     # Finally, step toward the minimum normal number by multiples of d.
     # c stays one step behind y, so that at termination
-    # 1  >>  c  >  2**(min+PRECISION)  >  y  >  2**mnin  >  z (underflows)
+    # 1  >>  c  >  B**(min+PRECISION)  >  y  >  B**mnin  >  z (underflows)
     y = c
     z = y * d
     while True:

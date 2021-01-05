@@ -1,4 +1,5 @@
 Hints and Reminders for Development
+CH121108805US -- Jeff's New Year's package
 
 Special characters in HTML
   &plusmn; 
@@ -11,3 +12,6 @@ Function cross-reference:
   <a class="inline" href="find_ulp_of_one_plus.html">
     <code>find_ulp_of_one_plus()</code></a>
 
+Idioms
+  Should there be an index?
+  * Underflow test: y <= z or z+z <= z

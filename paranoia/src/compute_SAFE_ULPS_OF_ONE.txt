@@ -1,4 +1,4 @@
-#INCLUDE para_head compute_C_and_inverse.html aaapara_toc.html compute_H_and_inverse.html
+#INCLUDE para_head compute_H_and_inverse.html aaapara_toc.html compute_H_and_inverse.html
 
 <p>This is an automatically generated file.</p>
 
@@ -26,5 +26,5 @@ Part 3
 Part 4
 </p>
 
-#INCLUDE para_foot compute_C_and_inverse.html aaapara_toc.html compute_H_and_inverse.html
+#INCLUDE para_foot compute_H_and_inverse.html aaapara_toc.html compute_H_and_inverse.html
 

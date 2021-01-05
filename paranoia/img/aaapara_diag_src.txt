@@ -655,6 +655,31 @@ FEND
 
 
 
+FILE c_and_inverse_a
+CNC6
+ONE
+h jjj100000
+5 1/2 hex digits
+CNC6
+ULP_ONE_PLUS
+h jjj000004
+last hex digit = 0100 in binary
+CNC6
+ONE_MINUS_ULP
+h jjj0fffffc
+just 22 significant bits in 5 1/2 digits
+CNC6
+ULP_ONE_MINUS
+h jjj0000004
+last hex digit = 0010 in binary
+CNC6
+# 1 / 16**ceil(5.5)
+h jjj0000001
+finds the LSB of full last hex digit
+FEND
+
+
+
 
 
 

@@ -1,42 +1,100 @@
-#INCLUDE para_head compute_A_and_inverse.html aaapara_toc.html compute_SAFE_ULPS_OF_ONE.html
+#INCLUDE para_head compute_A_and_inverse.html aaapara_toc.html compute_H_and_inverse.html
 
-<p>This is an automatically generated file.</p>
-
-<p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
+<h1>compute_C_and_inverse()</h1>
 
 <p>
-Part 2
+When we explore underflow in the code to come, we want a starting
+point tiny but not too close to the underflow threshold. This
+function returns the value intended to be assigned to <code>C</code>.
+We'll not forget that it's <code>C</code> that's tiny, makeing
+<code>1/C</code> huge.
 </p>
 
 #CODE 280-compute_C_and_inverse
 
 <p>
-Part 3
+First, we compute <code>d</code>, typical just an ulp of
+values less than \( 1 \). When the number of digits is
+fractional, we <em>expand</em> the last digit to full size.
+Here is the case for 22 bits in hexadecimal.
+</p>
+
+<object type="image/svg+xml" data="img/c_and_inverse_a-auto.svg">
+  ------Image------
+</object>
+
+<p>
+The value just computed is an ulp of numbers just less than
+\( 1 \) in six hex digits.
 </p>
 
 #CODE 282-compute_C_and_inverse2
 
 <p>
-Part 4
+The next loop computes value <code>c</code> that
+is roughly the square root or perhaps the fourth root
+of the underflow threshold.
+This is one quick leap, before the loop that follows walks
+to the underflow threshold in measured steps.
+</p>
+
+<p>
+This code exhibits the Paranoia idiom for detecting underflow.
+The typical step is to compute <code>z = y * y</code> for
+a tiny value <code>y</code>. The two cases tested are
+</p>
+
+<ol>
+  <li>
+  <code>z + z <= z</code> which arises when <code>z</code>
+  underflows to zero or to an 
+  epsilon value <code>\epsilon</code> of nonzero but
+  indeterminate size that behaves well in comparisons
+  </li>
+  <li>
+  <code>y <= z</code> which arises when underflow ultimately
+  pins at a nonzero value the compares reasonably with itself
+  </li>
+</ol>
+
+<p>
+Typically, it's the first case that terminates the loop.
+In this case, <code>c</code> is left pessimistically far
+from the underfulow threshold, resulting in extra steps
+in the next loop.
 </p>
 
 #CODE 283-compute_C_and_inverse3
 
 <p>
-Part 5
+The second loop approaches the underflow threshold step by
+step by a factor of <code>d</code>. In an IEEE 754 system,
+<code>z</code> underflows to zero, <code>y</code> is possibly
+subnormal, and <code>c</code> is a tiny normal number.
+In arithmetic that just flushes to zero past a certain point,
+both <code>y</code> and <code>c</code> will be normal.
+In any case, <code>c</code> is tiny and normal.
 </p>
 
 #CODE 284-compute_C_and_inverse4
 
+<h2>Your turn</h2>
+
 <p>
-Part 6
+<span class="exer">Exercise:</span> Compute <code>c</code>
+for the case of six-digit decimal arithmetic in which any
+value smaller than \( 10 ^ {-99} \) flushes to zero.
+As a hint, an ulp of a number just less than one
+is \( 10 ^ {-6} \).
 </p>
 
-#INCLUDE para_foot compute_A_and_inverse.html aaapara_toc.html compute_SAFE_ULPS_OF_ONE.html
+<p>
+<span class="exer">Exercise:</span> If you have some
+familiarity with IEEE 754 arithmetic, compute <code>c</code>
+for the <code>single</code> format, with gradual underflow.
+An ulp of a number just less than one
+is \( 2 ^ {-24} \).
+</p>
+
+#INCLUDE para_foot compute_A_and_inverse.html aaapara_toc.html compute_H_and_inverse.html
 

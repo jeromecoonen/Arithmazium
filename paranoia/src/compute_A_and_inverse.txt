@@ -15,7 +15,13 @@ on all powers of \( 2 \), even in octal arithmetic with
 The <code>while</code> loop terminates with
 <code>x&nbsp;==&nbsp;ONE</code> precisely when
 <code>radix</code> is a power of \( 2 \) or
-\( 10 \).
+\( 10 \). Note the sum used to capture the value
+\( 10 \). This entire program is built
+on the handful of integer constants defined at
+the outset. See, for example,
+<a class="inline" href="small_ints.html">
+  Small integers</a>,
+
 </p>
 
 #CODE 277-compute_A_and_inverse2

@@ -1,6 +1,6 @@
 def compute_C_and_inverse():
-    """Return untility constant C = 1 / B**k, k farther than PRECISION
-    from causing underflow.
+    """Return untility constant C = 1 / B**k, safely above the underflow
+    threshold, and its reciprocal.
 
     C is a useful starting point for investigation of underflow.
     It has the form 1 / B**k with k chosen so that C is farther than
@@ -9,4 +9,6 @@ def compute_C_and_inverse():
 
     Returns:
         C, 1 / C
+
+    Basic 4370-4400
     """

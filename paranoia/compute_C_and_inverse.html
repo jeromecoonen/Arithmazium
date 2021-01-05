@@ -33,28 +33,24 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='compute_SAFE_ULPS_OF_ONE.html' class='next round'>Next</a>
+  <a href='compute_H_and_inverse.html' class='next round'>Next</a>
   <a href='aaapara_toc.html' class='tree round'>Home</a>
   <a href='compute_A_and_inverse.html' class='previous round'>Previous</a>
   </div>
 
-<p>This is an automatically generated file.</p>
+<h1>compute_C_and_inverse()</h1>
 
 <p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
-<p>
-Part 2
+When we explore underflow in the code to come, we want a starting
+point tiny but not too close to the underflow threshold. This
+function returns the value intended to be assigned to <code>C</code>.
+We'll not forget that it's <code>C</code> that's tiny, makeing
+<code>1/C</code> huge.
 </p>
 
 <pre><code>def compute_C_and_inverse():
-    """Return untility constant C = 1 / B**k, k farther than PRECISION
-    from causing underflow.
+    """Return untility constant C = 1 / B**k, safely above the underflow
+    threshold, and its reciprocal.
 
     C is a useful starting point for investigation of underflow.
     It has the form 1 / B**k with k chosen so that C is farther than
@@ -63,11 +59,25 @@ Part 2
 
     Returns:
         C, 1 / C
+
+    Basic 4370-4400
     """
 </code></pre>
 
 <p>
-Part 3
+First, we compute <code>d</code>, typical just an ulp of
+values less than \( 1 \). When the number of digits is
+fractional, we <em>expand</em> the last digit to full size.
+Here is the case for 22 bits in hexadecimal.
+</p>
+
+<object type="image/svg+xml" data="img/c_and_inverse_a-auto.svg">
+  ------Image------
+</object>
+
+<p>
+The value just computed is an ulp of numbers just less than
+\( 1 \) in six hex digits.
 </p>
 
 <pre><code>    d = ULP_OF_ONE_MINUS   # default value for integer precision
@@ -79,7 +89,37 @@ Part 3
 </code></pre>
 
 <p>
-Part 4
+The next loop computes value <code>c</code> that
+is roughly the square root or perhaps the fourth root
+of the underflow threshold.
+This is one quick leap, before the loop that follows walks
+to the underflow threshold in measured steps.
+</p>
+
+<p>
+This code exhibits the Paranoia idiom for detecting underflow.
+The typical step is to compute <code>z = y * y</code> for
+a tiny value <code>y</code>. The two cases tested are
+</p>
+
+<ol>
+  <li>
+  <code>z + z <= z</code> which arises when <code>z</code>
+  underflows to zero or to an 
+  epsilon value <code>\epsilon</code> of nonzero but
+  indeterminate size that behaves well in comparisons
+  </li>
+  <li>
+  <code>y <= z</code> which arises when underflow ultimately
+  pins at a nonzero value the compares reasonably with itself
+  </li>
+</ol>
+
+<p>
+Typically, it's the first case that terminates the loop.
+In this case, <code>c</code> is left pessimistically far
+from the underfulow threshold, resulting in extra steps
+in the next loop.
 </p>
 
 <pre><code>    # d = 1 / B**k for k = PRECISION or floor(PRECISION)+1
@@ -96,12 +136,18 @@ Part 4
 </code></pre>
 
 <p>
-Part 5
+The second loop approaches the underflow threshold step by
+step by a factor of <code>d</code>. In an IEEE 754 system,
+<code>z</code> underflows to zero, <code>y</code> is possibly
+subnormal, and <code>c</code> is a tiny normal number.
+In arithmetic that just flushes to zero past a certain point,
+both <code>y</code> and <code>c</code> will be normal.
+In any case, <code>c</code> is tiny and normal.
 </p>
 
 <pre><code>    # Finally, step toward the minimum normal number by multiples of d.
     # c stays one step behind y, so that at termination
-    # 1  >>  c  >  2**(min+PRECISION)  >  y  >  2**mnin  >  z (underflows)
+    # 1  >>  c  >  B**(min+PRECISION)  >  y  >  B**mnin  >  z (underflows)
     y = c
     z = y * d
     while True:
@@ -113,12 +159,26 @@ Part 5
 
 </code></pre>
 
+<h2>Your turn</h2>
+
 <p>
-Part 6
+<span class="exer">Exercise:</span> Compute <code>c</code>
+for the case of six-digit decimal arithmetic in which any
+value smaller than \( 10 ^ {-99} \) flushes to zero.
+As a hint, an ulp of a number just less than one
+is \( 10 ^ {-6} \).
+</p>
+
+<p>
+<span class="exer">Exercise:</span> If you have some
+familiarity with IEEE 754 arithmetic, compute <code>c</code>
+for the <code>single</code> format, with gradual underflow.
+An ulp of a number just less than one
+is \( 2 ^ {-24} \).
 </p>
 
 <div class='next-prev'>
-<a href='compute_SAFE_ULPS_OF_ONE.html' class='next round'>Next</a>
+<a href='compute_H_and_inverse.html' class='next round'>Next</a>
 <a href='aaapara_toc.html' class='tree round'>Home</a>
 <a href='compute_A_and_inverse.html' class='previous round'>Previous</a>
 </div>

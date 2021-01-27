@@ -1,24 +1,18 @@
-#INCLUDE para_head compute_C_and_inverse.html aaapara_toc.html standardize_fractional_precision.html
+#INCLUDE para_head compute_C_and_inverse.html aaapara_toc.html compute_safe_ulps_of_one.html
 
-<p>This is an automatically generated file.</p>
-
-<p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
+<h1>compute_H_and_inverse()</h1>
 
 <p>
-Part 2
+The constant <code>H</code> is an artifact of the
+computation \( B = 1 \) for log arithmetic.
+We use <code>H</code> when scaling down by the radix
+and <code>ONE_OVER_H</code> when scaling up.
+This simple routine substitutes \( 2 \) for the
+radix, when the radix is less than \( 1 \).
 </p>
 
 #CODE 290-compute_H_and_inverse
 
-<p>
-Part 3
-</p>
 
-#INCLUDE para_foot compute_C_and_inverse.html aaapara_toc.html standardize_fractional_precision.html
+#INCLUDE para_foot compute_C_and_inverse.html aaapara_toc.html compute_safe_ulps_of_one.html
 

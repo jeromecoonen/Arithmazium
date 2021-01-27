@@ -33,23 +33,20 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='standardize_fractional_precision.html' class='next round'>Next</a>
+  <a href='compute_safe_ulps_of_one.html' class='next round'>Next</a>
   <a href='aaapara_toc.html' class='tree round'>Home</a>
   <a href='compute_C_and_inverse.html' class='previous round'>Previous</a>
   </div>
 
-<p>This is an automatically generated file.</p>
+<h1>compute_H_and_inverse()</h1>
 
 <p>
-Part 1
-</p>
-
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
-<p>
-Part 2
+The constant <code>H</code> is an artifact of the
+computation \( B = 1 \) for log arithmetic.
+We use <code>H</code> when scaling down by the radix
+and <code>ONE_OVER_H</code> when scaling up.
+This simple routine substitutes \( 2 \) for the
+radix, when the radix is less than \( 1 \).
 </p>
 
 <pre><code>def compute_H_and_inverse():
@@ -62,12 +59,9 @@ Part 2
 
 </code></pre>
 
-<p>
-Part 3
-</p>
 
 <div class='next-prev'>
-<a href='standardize_fractional_precision.html' class='next round'>Next</a>
+<a href='compute_safe_ulps_of_one.html' class='next round'>Next</a>
 <a href='aaapara_toc.html' class='tree round'>Home</a>
 <a href='compute_C_and_inverse.html' class='previous round'>Previous</a>
 </div>

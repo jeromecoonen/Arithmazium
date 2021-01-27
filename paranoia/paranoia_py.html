@@ -457,8 +457,8 @@ def compute_C_and_inverse():
         if y <= z or z + z <= z: break
     return c, ONE / c
 
-# ~~~~~~~ 285-compute_SAFE_ULPS_OF_ONE
-def compute_SAFE_ULPS_OF_ONE():
+# ~~~~~~~ 285-compute_safe_ulps_of_one
+def compute_safe_ulps_of_one():
     """Return a value useful in over/underflow testing.
 
     Want to find x such that (1+x)*some_power_of_B leaves some low bits,
@@ -469,7 +469,7 @@ def compute_SAFE_ULPS_OF_ONE():
     Returns:
         1 or B ulps of one
     """
-    # ~~~~~~~ 287-compute_SAFE_ULPS_OF_ONE2
+    # ~~~~~~~ 287-compute_safe_ulps_of_one2
     x= ULP_OF_ONE_PLUS
     s = ONE + x
     # C is far enough above the underflow threshold that there should be no
@@ -2064,7 +2064,7 @@ B_MINUS_ULP = (B_MINUS_ULP - ULP_OF_ONE_PLUS) + ONE
 A, ONE_OVER_A = compute_A_and_inverse(B)
 C, ONE_OVER_C = compute_C_and_inverse()
 H, ONE_OVER_H = compute_H_and_inverse()
-SAFE_ULPS_OF_ONE = compute_SAFE_ULPS_OF_ONE()   # 1 or B ulps of one
+SAFE_ULPS_OF_ONE = compute_safe_ulps_of_one()   # 1 or B ulps of one
 # ~~~~~~~ 755-frac_prec
 # Purify Integers was the original comment. The following test assumes
 # B=1 for log arithmetic, before any fractional part of the precision

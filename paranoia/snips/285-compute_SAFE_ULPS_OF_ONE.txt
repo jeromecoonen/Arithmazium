@@ -1,4 +1,4 @@
-def compute_SAFE_ULPS_OF_ONE():
+def compute_safe_ulps_of_one():
     """Return a value useful in over/underflow testing.
 
     Want to find x such that (1+x)*some_power_of_B leaves some low bits,

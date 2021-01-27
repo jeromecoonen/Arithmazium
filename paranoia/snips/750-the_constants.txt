@@ -8,4 +8,4 @@ B_MINUS_ULP = (B_MINUS_ULP - ULP_OF_ONE_PLUS) + ONE
 A, ONE_OVER_A = compute_A_and_inverse(B)
 C, ONE_OVER_C = compute_C_and_inverse()
 H, ONE_OVER_H = compute_H_and_inverse()
-SAFE_ULPS_OF_ONE = compute_SAFE_ULPS_OF_ONE()   # 1 or B ulps of one
+SAFE_ULPS_OF_ONE = compute_safe_ulps_of_one()   # 1 or B ulps of one

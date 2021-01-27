@@ -1,5 +1,8 @@
 Hints and Reminders for Development
 CH121108805US -- Jeff's New Year's package
+Susan Tchon <soms1@comcast.net>
+W5631 Michelle Way
+Appleton, WI 54915
 
 Special characters in HTML
   &plusmn; 
@@ -15,3 +18,7 @@ Function cross-reference:
 Idioms
   Should there be an index?
   * Underflow test: y <= z or z+z <= z
+
+TODO
+  Resolved whether B=1 for log arithmetic
+  

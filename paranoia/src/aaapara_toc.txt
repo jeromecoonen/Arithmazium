@@ -125,8 +125,8 @@
 <p class="el2"><a class="toc-link wip" href="compute_H_and_inverse.html">
   compute_H_and_inverse()
 </a></p>
-<p class="el2"><a class="toc-link wip" href="compute_SAFE_ULPS_OF_ONE.html">
-  compute_SAFE_ULPS_OF_ONE()
+<p class="el2"><a class="toc-link wip" href="compute_safe_ulps_of_one.html">
+  compute_safe_ulps_of_one()
 </a></p>
 
 <p class="el1"><a class="toc-link to-do" href="frac_prec.html">

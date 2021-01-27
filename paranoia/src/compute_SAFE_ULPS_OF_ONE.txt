@@ -1,4 +1,4 @@
-#INCLUDE para_head compute_H_and_inverse.html aaapara_toc.html compute_H_and_inverse.html
+#INCLUDE para_head compute_H_and_inverse.html aaapara_toc.html frac_prec.html
 
 <p>This is an automatically generated file.</p>
 
@@ -14,17 +14,17 @@ Part 1
 Part 2
 </p>
 
-#CODE 285-compute_SAFE_ULPS_OF_ONE
+#CODE 285-compute_safe_ulps_of_one
 
 <p>
 Part 3
 </p>
 
-#CODE 287-compute_SAFE_ULPS_OF_ONE2
+#CODE 287-compute_safe_ulps_of_one2
 
 <p>
 Part 4
 </p>
 
-#INCLUDE para_foot compute_H_and_inverse.html aaapara_toc.html compute_H_and_inverse.html
+#INCLUDE para_foot compute_H_and_inverse.html aaapara_toc.html frac_prec.html
 

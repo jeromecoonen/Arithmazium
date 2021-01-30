@@ -1,30 +1,32 @@
 #INCLUDE para_head compute_H_and_inverse.html aaapara_toc.html frac_prec.html
 
-<p>This is an automatically generated file.</p>
+<h1>compute_safe_ulps_of_one()</h1>
 
 <p>
-Part 1
+Find a small value \( \epsilon \) such that
+\( (1 + \epsilon) \times C > 1 \), where
+\( C \) is a tiny power of the radix, not
+too near the underflow threshold.
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
 <p>
-Part 2
+The issue is not tininess, but rather whether
+\( \epsilon \) is lost due to deficiencies in
+multiplication, such as the lack of a guard digit.
+Refer to the function
+<a class="inline" href="does_mult_have_guard_digit.html">
+  <code>does_mult_have_guard_digit()</code></a>
+for elaboration on the guard digit issue.
 </p>
 
 #CODE 285-compute_safe_ulps_of_one
 
 <p>
-Part 3
+If the fallback value of <code>B</code> ulps of one
+doesn't suffice, that fact will be caught down the road.
 </p>
 
 #CODE 287-compute_safe_ulps_of_one2
-
-<p>
-Part 4
-</p>
 
 #INCLUDE para_foot compute_H_and_inverse.html aaapara_toc.html frac_prec.html
 

@@ -1,11 +1,9 @@
     x= ULP_OF_ONE_PLUS
     s = ONE + x
-    # C is far enough above the underflow threshold that there should be no
-    # total loss of low digits when multiplied by s.
     d = C * s
     if d <= C:
-        # Lack of a guard bit in binary could lose one bit, so try B digits
-        # in a more lenient value of SAFE_ULPS_OF_ONE.
+        # Fall back to B digits. A later test determines
+        # whether multiplication is just too awful.
         x = B * ULP_OF_ONE_PLUS
     return x
 

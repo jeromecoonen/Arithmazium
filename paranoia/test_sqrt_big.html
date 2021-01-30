@@ -53,7 +53,7 @@ Part 2
 </p>
 
 <pre><code>def test_sqrt_big(tlist):
-    """Check sqrt(x)**2 for values near the iverflow threshold."""
+    """Check sqrt(x)**2 for values near the overflow threshold."""
     for z in tlist:
         sqrt_z = sqrt(z)
         x = (ONE - B * SAFE_ULPS_OF_ONE) * sqrt_z

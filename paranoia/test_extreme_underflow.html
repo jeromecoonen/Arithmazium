@@ -103,7 +103,7 @@ Part 5
 <pre><code>    # Note use of SAFE_ULPS_OF_ONE versus ULP_OF_ONE_PLUS to ensure
     # multiplication doesn't lose the low bits, for lack of a
     # guard digit or worse.
-    if ultra < ZERO or ultra > (B + B * SAFE_ULPS_OF_ONE * ut):
+    if ultra < ZERO or ultra > (B + B * SAFE_ULPS_OF_ONE) * ut:
         bad_cond(err_serious, "this is not between 0 and underflow\n")
         print("   threshold = {:0.17e} .".format(ut))
     elif not (ultra > ut * (ONE + SAFE_ULPS_OF_ONE)):

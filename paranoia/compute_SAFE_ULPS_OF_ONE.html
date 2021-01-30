@@ -38,53 +38,56 @@
   <a href='compute_H_and_inverse.html' class='previous round'>Previous</a>
   </div>
 
-<p>This is an automatically generated file.</p>
+<h1>compute_safe_ulps_of_one()</h1>
 
 <p>
-Part 1
+Find a small value \( \epsilon \) such that
+\( (1 + \epsilon) \times C > 1 \), where
+\( C \) is a tiny power of the radix, not
+too near the underflow threshold.
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
-
 <p>
-Part 2
+The issue is not tininess, but rather whether
+\( \epsilon \) is lost due to deficiencies in
+multiplication, such as the lack of a guard digit.
+Refer to the function
+<a class="inline" href="does_mult_have_guard_digit.html">
+  <code>does_mult_have_guard_digit()</code></a>
+for elaboration on the guard digit issue.
 </p>
 
 <pre><code>def compute_safe_ulps_of_one():
-    """Return a value useful in over/underflow testing.
+    """Return a value useful in underflow and square root testing.
 
-    Want to find x such that (1+x)*some_power_of_B leaves some low bits,
-    so that the product exceeds C, a power of B not far from the underflow
-    threshold. Try x = 1 ulp, but settle for B ulps of, whether or not it
-    works.
+    Given the constant C, a power of B not far above the underflow
+    threshold, find x such that (1+x)*C > C. Try x = 1 ulp,
+    but back off to B ulps of one. C is large enough that
+    underflow is not an issue, but if multiplication
+    lacks a guard digit, a single ulp might be lost.
 
     Returns:
         1 or B ulps of one
+
+    Basic: 4450-4460
     """
 </code></pre>
 
 <p>
-Part 3
+If the fallback value of <code>B</code> ulps of one
+doesn't suffice, that fact will be caught down the road.
 </p>
 
 <pre><code>    x= ULP_OF_ONE_PLUS
     s = ONE + x
-    # C is far enough above the underflow threshold that there should be no
-    # total loss of low digits when multiplied by s.
     d = C * s
     if d <= C:
-        # Lack of a guard bit in binary could lose one bit, so try B digits
-        # in a more lenient value of SAFE_ULPS_OF_ONE.
+        # Fall back to B digits. A later test determines
+        # whether multiplication is just too awful.
         x = B * ULP_OF_ONE_PLUS
     return x
 
 </code></pre>
-
-<p>
-Part 4
-</p>
 
 <div class='next-prev'>
 <a href='frac_prec.html' class='next round'>Next</a>

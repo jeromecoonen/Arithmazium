@@ -1,0 +1,110 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>Underflow</title>
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/paranoia/compute_safe_ulps_of_one.html">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#fafafa'>
+  <link rel='stylesheet' href='../css/normalize.css'>
+  <link rel='stylesheet' href='../css/main.css'>
+  <link rel='stylesheet' href='../css/para.css'>
+  <link href='https://fonts.googleapis.com/css?family=Days One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans:wght@400;800' rel='stylesheet'>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_SVG">
+  </script>
+</head>
+<body>
+  <div>
+  <svg viewbox='0 0 1000 80' xmlns='http://www.w3.org/2000/svg'>
+  <a class="para-ban" href='../index.html'>
+  <rect x=0 y=0 width=1000 height=80 class='arith-ban-box'/>
+  <text x=10 y=68 class='arith-ban-back'>
+  <tspan>11.001001000011111101101010100010001000</tspan>
+  </text>
+  <text x='60' y='55' class='arith-ban-front'>
+  <tspan>Arithmazium</tspan>
+  </text>
+  </a>
+  </svg>
+  </div>
+  <div class='next-prev'>
+  <a href='frac_prec.html' class='next round'>Next</a>
+  <a href='aaapara_toc.html' class='tree round'>Home</a>
+  <a href='compute_H_and_inverse.html' class='previous round'>Previous</a>
+  </div>
+
+<h1>compute_safe_ulps_of_one()</h1>
+
+<p>
+Find a small value \( \epsilon \) such that
+\( (1 + \epsilon) \times C > 1 \), where
+\( C \) is a tiny power of the radix, not
+too near the underflow threshold.
+</p>
+
+<p>
+The issue is not tininess, but rather whether
+\( \epsilon \) is lost due to deficiencies in
+multiplication, such as the lack of a guard digit.
+Refer to the function
+<a class="inline" href="does_mult_have_guard_digit.html">
+  <code>does_mult_have_guard_digit()</code></a>
+for elaboration on the guard digit issue.
+</p>
+
+<pre><code>def compute_safe_ulps_of_one():
+    """Return a value useful in underflow and square root testing.
+
+    Given the constant C, a power of B not far above the underflow
+    threshold, find x such that (1+x)*C > C. Try x = 1 ulp,
+    but back off to B ulps of one. C is large enough that
+    underflow is not an issue, but if multiplication
+    lacks a guard digit, a single ulp might be lost.
+
+    Returns:
+        1 or B ulps of one
+
+    Basic: 4450-4460
+    """
+</code></pre>
+
+<p>
+If the fallback value of <code>B</code> ulps of one
+doesn't suffice, that fact will be caught down the road.
+</p>
+
+<pre><code>    x= ULP_OF_ONE_PLUS
+    s = ONE + x
+    d = C * s
+    if d <= C:
+        # Fall back to B digits. A later test determines
+        # whether multiplication is just too awful.
+        x = B * ULP_OF_ONE_PLUS
+    return x
+
+</code></pre>
+
+<div class='next-prev'>
+<a href='frac_prec.html' class='next round'>Next</a>
+<a href='aaapara_toc.html' class='tree round'>Home</a>
+<a href='compute_H_and_inverse.html' class='previous round'>Previous</a>
+</div>
+<script src="js/vendor/jquery-3.5.1.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  lsga('create', 'UA-165469376-1', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+</<body>
+
+</html>
+

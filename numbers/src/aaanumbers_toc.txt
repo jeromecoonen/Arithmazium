@@ -1,5 +1,18 @@
 #INCLUDE room_head
-
+<link rel="stylesheet" href="../css/odometer-theme-digital.css" />
+<script>
+  window.odometerOptions = {
+    format: 'd',
+    duration: 0,
+    animation: 'count'
+  };
+</script>
+<script src="../js/vendor/odometer.min.js"></script>
+<style>
+.odometer {
+  font-size: 80px;
+}
+</style>
 
 <h1>Your Basic Byte</h1>
 
@@ -8,18 +21,65 @@
   <p>Default range slider:</p>
 
   <p>Number: <span id="n"></span></p>
+  <div class="odometer" id="myOd">0</div>
   <input type="range" min="0" max="255" value="0"
     class="slider" id="n-slider">
+  <button onclick="bumpDown()">Decrement</button>
+  <button onclick="bumpUp()">Increment</button>
 </div>
 
 <script>
-var slider = document.getElementById("n-slider");
-var output = document.getElementById("n");
-output.innerHTML = slider.value;
+  var rad = 8;
+  var reading = 0;
+  var casting = 0;
+  var slider = document.getElementById("n-slider");
+  var output = document.getElementById("n");
+  var odom = document.getElementById("myOd");
 
-slider.oninput = function() {
-  output.innerHTML = this.value;
-}
+  function recast(n,r) {
+    var x = 0;
+    var i = 0;
+    var b = 1;
+    while (n > 0) {
+      i = n % r;
+      x += b * i;
+      b *= 10;
+      n = Math.floor(n / r);
+    }
+    return x;
+  }
+
+  function update() {
+    console.log('update in: ' + reading);
+    casting = recast(reading, rad);
+    output.innerHTML = reading;
+    odom.innerHTML = casting;
+    slider.value = reading;
+    console.log('update out: ' + reading);
+  }
+
+  update();
+
+  slider.oninput = function() {
+    reading = this.value;
+    update();
+  }
+
+  function bumpDown() {
+    console.log('bumpDown in: ' + reading);
+    reading -= 1;
+    update();
+    console.log('bumpDown out: ' + reading);
+  }
+
+  function bumpUp() {
+    console.log('bumpUp in: ' + reading);
+    reading = reading + 1;
+    console.log('bumpUp increment: ' + reading);
+    update();
+    console.log('bumpUp out: ' + reading);
+  }
+
 </script>
 <script src="../js/my_debug.js"></script>
 

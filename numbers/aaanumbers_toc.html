@@ -56,7 +56,7 @@
 
   <p>Number: <span id="n"></span></p>
   <div class="odometer" id="myOd">0</div>
-  <input type="range" min="0" max="255" value="0"
+  <input type="range" min="-128" max="127" value="0"
     class="slider" id="n-slider">
   <button onclick="bumpDown()">Decrement</button>
   <button onclick="bumpUp()">Increment</button>
@@ -95,23 +95,21 @@
   update();
 
   slider.oninput = function() {
-    reading = this.value;
+    reading = parseInt(this.value);
+    console.log('slider type: ' + typeof(reading));
     update();
   }
 
   function bumpDown() {
-    console.log('bumpDown in: ' + reading);
     reading -= 1;
     update();
-    console.log('bumpDown out: ' + reading);
   }
 
   function bumpUp() {
     console.log('bumpUp in: ' + reading);
-    reading = reading + 1;
+    reading += 1;
     console.log('bumpUp increment: ' + reading);
     update();
-    console.log('bumpUp out: ' + reading);
   }
 
 </script>

@@ -9,6 +9,7 @@
   <link rel='stylesheet' href='../css/normalize.css'>
   <link rel='stylesheet' href='../css/main.css'>
   <link rel='stylesheet' href='../css/para.css'>
+  <link rel='stylesheet' href='../css/numbers.css'>
   <link href='https://fonts.googleapis.com/css?family=Days One' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>

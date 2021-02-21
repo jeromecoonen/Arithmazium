@@ -1,0 +1,28 @@
+#INCLUDE para_head byte_basic.html aaanumbers_toc.html byte_circles.html
+
+<link rel="stylesheet" href="../css/odometer-theme-digital.css" />
+<script src="../js/odo_head.js"></script>
+<script src="../js/vendor/odometer.min.js"></script>
+<style>
+.odometer {
+  font-size: 80px;
+}
+</style>
+
+<h1>Your Basic Byte</h1>
+
+<div class="slider-box">
+  <p>Default range slider:</p>
+
+  <p>Number: <span id="n"></span></p>
+  <div class="odometer" id="myOd">0</div>
+  <input type="range" min="0" max="255" value="0"
+    class="slider" id="n-slider">
+  <button onclick="bumpDown()">Decrement</button>
+  <button onclick="bumpUp()">Increment</button>
+</div>
+
+<script src="../js/odo_foot.js" ></script>
+
+
+#INCLUDE para_foot byte_basic.html aaanumbers_toc.html byte_circles.html

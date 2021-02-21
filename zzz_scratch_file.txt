@@ -1,0 +1,20 @@
+===========Save num_toc stub
+#INCLUDE room_head
+
+<h1>Number Fun!</h1>
+
+<p>
+  Simple test: <span id="test-num">Starter</span>
+  <br>
+  <a href='num_minimal.html' >One reading</a>
+  <br>
+  <a href='num_unsigned_byte.html' >Basic Byte</a>
+</p>
+
+<script src="../js/my_debug.js"></script>
+
+
+<p>Fini</p>
+
+#INCLUDE room_foot
+=================

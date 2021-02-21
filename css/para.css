@@ -17,6 +17,10 @@ a.toc-link {
   color: black;
 }
 
+a.toc-link.num {
+  font-size: medium;
+}
+
 a.toc-link.to-do {
   color: red;
 }

@@ -3,9 +3,11 @@ CH121108805US -- Jeff's New Year's package
 Susan Tchon <soms1@comcast.net>
 W5631 Michelle Way
 Appleton, WI 54915
+git token
+60f64520db310708c09e91c11c6fc764f9735101
 
 Special characters in HTML
-  &plusmn; 
+  &plusmn; &nbsp; &ndash; &mdash;
 
 Snippets (Sublime / Preferences / Browse packages)
   math \(xxx\) -- inline TeX
@@ -15,10 +17,13 @@ Function cross-reference:
   <a class="inline" href="find_ulp_of_one_plus.html">
     <code>find_ulp_of_one_plus()</code></a>
 
+What could go wrong?
+  div class="wrong">
+  <h2>What could go wrong?</h2>...
+
 Idioms
   Should there be an index?
   * Underflow test: y <= z or z+z <= z
 
 TODO
   Resolved whether B=1 for log arithmetic
-  

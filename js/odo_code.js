@@ -23,12 +23,10 @@
       b *= 10;
       n = Math.floor(n / r);
     }
-    console.log('Type: ' + typeof(4 + String(3)));
     return x;
   }
 
   function update() {
-    console.log('update in: ' + reading);
     casting = recast(reading, rad);
     output.innerHTML = reading;
     odom.innerHTML = casting;
@@ -39,7 +37,6 @@
 
   slider.oninput = function() {
     reading = parseInt(this.value);
-    console.log('slider type: ' + typeof(reading));
     update();
   }
 
@@ -53,7 +50,6 @@
   }
 
   function bumpUp() {
-    console.log('bumpUp in: ' + reading);
     if (reading === maxVal) {
       reading = minVal;
     } else {

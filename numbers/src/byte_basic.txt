@@ -7,24 +7,73 @@
 <link rel="stylesheet" href="../css/odometer-theme-digital.css" />
 <style>
 .odometer {
-  font-size: 80px;
+  font-size: 100px;
 }
 </style>
 
-<h1>Your Basic Byte</h1>
+<h1>First byte</h1>
 
-<div class="slider-box">
-  <p>Default range slider:</p>
+<p>
+Play with the slider to explore the range of its values.
+</p>
 
-  <p>Number: <span id="n"></span></p>
-  <div class="odometer" id="myOd">0</div>
-  <input type="range" min="0" max="255" value="0"
-    class="slider" id="n-slider">
-  <button onclick="bumpDown()">Decrement</button>
-  <button onclick="bumpUp()">Increment</button>
+<div class="wrong">
+<p>
+What's wrong with this picture? The byte should be shown to its full eight bits, including leading zeros. This is a bug to be fixed.
+</p>
 </div>
 
-<script src="../js/odo_head.js"></script>
+<div class="slider-box">
+  <div class="odometer" id="myOd">0</div>
+  <br>
+  <input type="range" min="0" max="255" value="0"
+    class="slider" id="n-slider">
+  <br><br>
+ The byte has the value
+ &nbsp;<span class="basic-6" id="n"></span>&nbsp;
+ as a number.
+</div>
+
+<p>
+A byte is literally a string of eight bits.
+Each bit has the value <code>0</code> or <code>1</code>.
+Pretty simple.
+While a byte may be used in many different ways,
+it is at its heart a number from \( 0 \) through \( 255 \),
+as shown in the box above.
+</p>
+
+<p>
+The values of the bits in a byte depend on their <em>position</em>,
+just the way decimal digits work in everyday numbers
+In decimal, we know
+the ones place, tens place, hundreds place, and so on. In binary,
+we have the ones place, twos place, fours place, and more as
+shown here:
+</p>
+
+<pre><code>    128
+      64
+        32
+          16
+            8
+              4
+                2
+                  1
+</code></pre>
+
+<p>
+As an example,
+the value of the byte <code>00100101</code>
+is \( 32 + 4 + 1 = 37 \).
+</p>
+
+<p>
+That's the byte. What's amazing is how much can be
+accomplished with a datum that takes just \( 256 \)
+values. Please read on to learn more.
+</p>
+
 <script src="../js/odo_code.js" ></script>
 <script src="../js/vendor/odometer.min.js"></script>
 

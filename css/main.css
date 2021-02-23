@@ -243,6 +243,10 @@ p.quote {
   padding-left: 2em;
 }
 
+ul.basic {
+  list-style-type: circle;
+}
+
 
 /* ==========================================================================
    Helper classes

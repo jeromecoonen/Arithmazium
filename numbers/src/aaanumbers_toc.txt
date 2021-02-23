@@ -4,7 +4,7 @@
 
 <p class="el1"><a class="toc-link num wip"
   href="byte_basic.html">
-  Your first byte
+  First byte
 </a></p>
 <p class="el2"><a class="toc-link num wip"
   href="byte_details.html">

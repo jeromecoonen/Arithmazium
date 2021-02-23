@@ -80,6 +80,10 @@ text.home-entry {
   font-family: "Days One", "Arial Black", Gadget, sans-serif;
 }
 
+tspan.home-room-em {
+  font-style: italic;
+}
+
 .home-entry-subtext {
   font-size: 28px;
   font-weight: normal;

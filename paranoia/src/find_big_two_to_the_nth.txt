@@ -77,8 +77,8 @@ where the low-order half-digit takes just the values
 The analysis above applies here, too.
 </p>
 
+<div class="wrong">
 <h2>What could go wrong?</h2>
-
 <p>
 Can you work through the loop in the next diagram,
 first with 6 hex digits then with 6 digits plus another
@@ -88,6 +88,7 @@ left-hand side, it's a new hex digit that comes into play.
 The circled digits indicate the positions of the half-digits,
 of which only the top two bits can hold final values.
 </p>
+</div>
 
 <object type="image/svg+xml" data="img/big_2_nth_hexfrac-auto.svg">
   ------Image------

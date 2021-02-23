@@ -1,3 +1,15 @@
+
+  <button onclick="bumpDown()">Decrement</button>
+  <button onclick="bumpUp()">Increment</button>
+
+====retired slash on Number room====
+      <line class="home-room-wip" x1="815" y1="225" x2="1025" y2="95" >
+
+=====yanked as unncessary from toc pages
+<script src="../js/vendor/jquery.js"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
+
 ===========Save num_toc stub
 #INCLUDE room_head
 

@@ -2,53 +2,67 @@
 
 <p></p>
 
-<h1>Welcome to the Arithmazium!</h1>
+<h1>Welcome to the Arithmazium</h1>
   <p>
     This site tells a story of computer arithmetic. The target audience is
-    anyone age 5 to 75. Undergraduate students will find useful lore here
-    that is rarely found in any curriculum.
+    anyone from age 5 to 105.
+    Undergraduate students will find useful lore here
+    rarely found in any college curriculum.
+    Younger students will discover all kinds of
+    interesting bits.
     Arithmazium strives to be
     engaging rather than encyclopedic.
-    The site offers bits even
-    the most devoted experts might enjoy.
+    Even the most devoted experts might
+    find something to enjoy.
   </p>
 
   <p>
-    You can always return to the home page by clicking the
+    You can always return to the home floor plan by clicking the
     blue Arithmazium banner.
   </p>
 
-<h2>Disclosures and other fine print</h2>
+<h2>Let's go!</h2>
   <p>
-    As of mid-year 2020, this site is very much under construction.
-    So long as it's not a distraction at this early stage,
+    To skip this introduction, feel free to jump right to the
+    <a href="../numbers/aaanumbers_toc.html">Den of Numbers</a>
+    to start from square one.
+    Just follow the <em>Next</em> buttons from there.
+  </p>
+
+<h2>Disclosure</h2>
+  <p>
+    In early 2021, this site is very much under construction.
+    So long as that is not a distraction,
     Arithmazium will remain open.
     What you see is what you get, and
-    all the usual legal Latin applies: <em>caveat emptor</em> and <em>tempis
-    fugits</em>, hopefully with a dash of <em>compos mentis</em>.
+    all the usual legal Latin applies: <em>caveat emptor</em>
+    and <em>tempis fugits</em>, hopefully with a dash of
+    <em>compos mentis</em>.
   </p>
 <h2>Reader's guide</h2>
   <p>
     You need no more than enthusiasm to approach Arithmazium.
     The site presents many stories, not a tsunami of facts.
-    Arithmetic is the subject. You need just elementary
-    mathematics to get a long way down the path.
+    Computer arithmetic is the subject. Elementary
+    mathematics will get you a long way down the path.
   </p>
 
   <div class="math">
   <p>
     When optional mathematical content arises to enrich the story,
-    it is highlighted like this. But Arithmazium is self-contained
-    without readers poring over every fantastic formula like
+    it is highlighted like this. But you need not
+    pore over every fantastic formula like
     \[4/3 = 1 + 1/4 + 1/16 + 1/64 + 1/256 + 1/1024 + \cdots\]
-    so please feel free to skim or skip the math.
+    to benefit from Arithmazium.
+    Please feel free to skim or skip the math.
   </p>
   </div>
-
+  <p>
     Of course, computer arithmetic is exploited through programming,
     but you won't need sophisticated programming knowledge to follow
     the thread. Literally, many of the code samples you'll see are variations
     on a simple theme:
+  </p>
   <pre><code>
     new_value = old_value / TWO
   </code></pre>
@@ -56,21 +70,71 @@
     or decimal digits where they fall is all you need.
   </p>
   <p>
-    If you're 5 and reading this, you don't need my guidance.
-    If you're with a young person or you miraculously find yourself
-    here without having encountered computer arithmetic before,
-    go to the
-    <a href="aaaplayroom_toc.html">Playroom</a>,
-    scheduled to open Fall 2020.
+    If you're 5 and reading this, blaze on.
+    You don't need my guidance.
+    If you're with a young person or just wish to
+    revel in the bits,
+    heat to the
+    <a href="../numbers/aaanumbers_toc.html">Den of Numbers</a>
+    to get started.
   </p>
-  <p>
-    For now, your next step is to the
+
+  <h2>Guidebook</h2>
+  <ul class="basic">
+    <li>
+      <a href="../entrance/aaaentrance_toc.html">
+      Arithmazium <em>Start Here</em>
+      </a>
+      &mdash; this page
+   </li>
+   <li>
+     <a href="../numbers/aaanumbers_toc.html">
+     Den of Numbers
+     </a>
+     &mdash; an introductory tour
+   </li>
+   <li>
     <a href="../paranoia/aaapara_toc.html">
-      Paranoia Study
+    Paranoia Study
     </a>
-    to ponder a rich stew of arithmetic delights collected in a
-    cult-classic program.
-  </p>
+    &mdash; a <em>semiliterate programming</em> dissection of
+    Prof. William Kahan's cult classic Paranoia code
+   </li>
+   <li>
+    <a href="../mailroom/mail_toc.html">
+    Mail Room
+    </a>
+    &mdash; FAQs and contact inforation 
+   </li>
+   <li>
+     Arithmetic Essentials
+     &mdash; <em>(proposed)</em> the nitty gritty details
+     of computer number systems and arithmetic
+   </li>
+   <li>
+     Bug Lab
+     &mdash; <em>(proposed)</em> a collection of amusing gaffes
+   </li>
+   <li>
+     Classroom
+     &mdash; <em>(proposed)</em> a deeper dive into the fine
+     points of international standard IEEE 754
+   </li>
+   <li>
+     Fitness Center
+     &mdash; <em>(proposed)</em> calisthenics to test your
+     understanding
+   </li>
+   <li>
+     Dinosaur Hall
+     &mdash; <em>(proposed)</em> a comparative tour of arithmetic
+     as it once was on mainframes and minis
+   </li>
+   <li>
+     Library
+     &mdash; <em>(proposed)</em> historic and otherwise good reads
+   </li>
+  </ul>
 <p><br></p>
 
 #INCLUDE room_foot

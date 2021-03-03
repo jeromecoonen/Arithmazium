@@ -1,4 +1,4 @@
-#INCLUDE para_head aaanumbers_toc.html aaanumbers_toc.html byte_details.html
+#INCLUDE para_head aaanumbers_toc.html aaanumbers_toc.html byte_names.html
 
 <link rel="stylesheet" href="../css/odometer-theme-default.css" />
 <link rel="stylesheet" href="../css/odometer-theme-minimal.css" />
@@ -11,7 +11,7 @@
 }
 </style>
 
-<h1>First byte</h1>
+<h1>The byte</h1>
 
 <p>
 Play with the slider to explore the range of its values.
@@ -52,14 +52,14 @@ we have the ones place, twos place, fours place, and more as
 shown here:
 </p>
 
-<pre><code>    128
-      64
-        32
-          16
-            8
-              4
-                2
-                  1
+<pre><big-code>  128
+    64
+      32
+        16
+          8
+            4
+              2
+                1
 </code></pre>
 
 <p>
@@ -78,4 +78,4 @@ values. Please read on to learn more.
 <script src="../js/vendor/odometer.min.js"></script>
 
 
-#INCLUDE para_foot aaanumbers_toc.html aaanumbers_toc.html byte_details.html
+#INCLUDE para_foot aaanumbers_toc.html aaanumbers_toc.html byte_names.html

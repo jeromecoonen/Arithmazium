@@ -1,0 +1,125 @@
+#INCLUDE para_head byte_basic.html aaanumbers_toc.html byte_add.html
+
+
+<h1>Names for numbers</h1>
+
+<p>
+We are so familiar with numbers from everyday use
+that we rarely ponder the underlying
+mathematical view.
+That view is useful for our understanding
+of numbers in computers.
+</p>
+
+<p>
+When we talk about the numbers zero through twelve,
+a mathematician might conjure up an image like this.
+</p>
+
+<object type="image/svg+xml" data="img/zero_thru_12.svg">
+  ------Image------
+</object>
+
+<p>
+The concept of <em>number</em> is tied to counting
+collections of things. The container doesn't matter,
+just the collection.
+When we match the eggs in a carton one-for-one with the
+boxes in the lsat group above,
+we say they have the <em>same number</em>.
+Then we can match them one-for-one
+with the donuts in a box.
+</p>
+
+<object type="image/svg+xml" data="img/number_12.svg">
+  ------Image------
+</object>
+<p>
+The concept of number is about
+quantity. It doesn't depend on names for the quantities.
+We call this number <em>twelve</em>
+or sometimes <em>a dozen</em>, but it has other names.
+The expression \( 12 \) is another name.
+</p>
+
+<p>
+If you're careful with your laundry,
+when you look in your sock drawwer, your socks
+are in pairs matching this collection:
+</p>
+
+<object type="image/svg+xml" data="img/number_2.svg">
+  ------Image------
+</object>
+
+<h2>Names for numbers</h2>
+
+<p>
+It is an accident of our biology that we use decimal
+numbers to name quantities. Our ancestors counted on
+their fingers long before it was forbidden in school.
+</p>
+
+<p>
+Computers work best with binary numbers.
+They can quickly and reliably detect the presence of
+voltage, which they associate with <code>1</code>,
+or the absence of voltage, which signifies <code>0</code>.
+Just zero and one. Back when computers
+were huge and intimidating, people joked about
+how stupid they were. No doubt, part of that was due
+to a number system with just two digits.
+</p>
+
+<p>
+From an early age,
+we hear about the ones place, the tens place, and so
+on. The very same concept applies to binary
+numbers. It just works a little slower.
+In binary, we have the ones place, the twos place, the
+fours place, the eights place, the sixteens place, the
+thirty-twos place, and so on. We're out of breath before
+we reach the one-hundred-twenty-eights place.
+</p>
+
+<p>
+But, wait, we're using our handy decimal numbers to talk
+about the binary world. That's the point of the number boxes
+earlier. The number is what matters, not its name. We often
+use decimal language in human communication,
+even talking about binary arithmetic. But, when we
+talk to a computer about bytes, binary is best.
+</p>
+
+<h2>The basic formula</h2>
+
+<p>
+Let's look at the number \( 197 \). Somewhere along the way,
+we learned to decompose the number as
+\[ 197 = 1 \times 10^{2} + 9 \times 10^{1} + 7 \times 10^{0} \]
+The expression here emphasizes the powers of ten.
+</p>
+
+<div class="math">
+<p>
+From the byte odometer on the last page,
+we learn that \( 197 \) can be
+written as <code>11000101</code>.
+The breakdown into binary is
+\[ 197 = 11000101_{2} = 2^{7} + 2^{6} + 2^{2} + 2^{0} \]
+</p>
+</div>
+
+<p>
+Returning to the dozen donuts we didn't eat earlier,
+we see that our number 12 when stored in a byte
+has the form <code>00001100</code> because
+\( 12 = 8 + 4 \). More names for the same number.
+</p>
+
+<p>
+Now it's time to do some byte arithmetic.
+</p>
+
+
+#INCLUDE para_foot byte_basic.html aaanumbers_toc.html byte_add.html

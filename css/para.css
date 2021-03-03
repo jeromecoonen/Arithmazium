@@ -4,12 +4,13 @@ h1 {
   margin-top: .5em
 }
 
-a.para-ban:hover {
+.para-ban:hover {
   text-decoration: none;
 }
 
 /* suppress underscore for outline elements */
-a.toc-link {
+.toc-link,
+.num-link {
   text-decoration-line: none;
   font-family: "Trebuchet", sans-serif;
   font-weight: normal;
@@ -17,19 +18,19 @@ a.toc-link {
   color: black;
 }
 
-a.toc-link.num {
-  font-size: medium;
+.toc-link.num {
+  font-size: x-large;
 }
 
-a.toc-link.to-do {
+.toc-link.to-do {
   color: red;
 }
 
-a.toc-link.wip {
+.toc-link.wip {
   color: green;
 }
 
-a.toc-link:hover {
+.toc-link:hover {
   text-decoration-line: underline;
   background-color: transparent;
   color: blue;
@@ -37,25 +38,25 @@ a.toc-link:hover {
 
 /* for indenting text outline elemets */
 /* default margin: t-1 r-0 b-1 l-0 */
-p.el1,
-p.el2,
-p.el3,
-p.el4 {
+.el1,
+.el2,
+.el3,
+.el4 {
   line-height: 1.0;
 }
-p.el1 {
+.el1 {
   margin: 0 0 0 0;
 }
 
-p.el2 {
+.el2 {
   margin: 0 0 0 2em;
 }
 
-p.el3 {
+.el3 {
   margin: 0 0 0 4em;
 }
 
-p.el4 {
+.el4 {
   margin: 0 0 0 6em;
 }
 
@@ -65,7 +66,7 @@ p.el4 {
   background-color: transparent;
 }
 
-span.basic-6 {
+.basic-6 {
   display: inline-block;
   text-align: center;
   width: 40px;

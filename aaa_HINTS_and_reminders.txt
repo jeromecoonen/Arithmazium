@@ -18,9 +18,12 @@ Function cross-reference:
     <code>find_ulp_of_one_plus()</code></a>
 
 What could go wrong?
-  div class="wrong">
+  <div class="wrong">
   <h2>What could go wrong?</h2>...
 
+Math
+  <div class="math">
+  
 Idioms
   Should there be an index?
   * Underflow test: y <= z or z+z <= z

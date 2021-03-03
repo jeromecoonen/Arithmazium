@@ -140,14 +140,20 @@ svg {
 }
 
 code,
+big-code,
 pre {
   font-family: Courier, monospace, "Roboto Mono";
   font-size: smaller;
 }
 
-code {
+code,
+big-code {
   background-color: var(--code-color, lightblue);
   padding: 1px 1px 1px 1px;
+}
+
+big-code {
+  font-size: x-large;
 }
 
 pre {

@@ -1,0 +1,161 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>Arithmazium</title>
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/numbers/byte_add.html">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#fafafa'>
+  <link rel='stylesheet' href='../css/normalize.css'>
+  <link rel='stylesheet' href='../css/main.css'>
+  <link rel='stylesheet' href='../css/para.css'>
+  <link rel='stylesheet' href='../css/numbers.css'>
+  <link href='https://fonts.googleapis.com/css?family=Days One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans:wght@400;800' rel='stylesheet'>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_SVG">
+  </script>
+</head>
+<body>
+  <div>
+  <svg viewbox='0 0 1000 80' xmlns='http://www.w3.org/2000/svg'>
+  <a class="para-ban" href='../index.html'>
+  <rect x=0 y=0 width=1000 height=80 class='arith-ban-box'/>
+  <text x=10 y=68 class='arith-ban-back'>
+  <tspan>11.001001000011111101101010100010001000</tspan>
+  </text>
+  <text x='60' y='55' class='arith-ban-front'>
+  <tspan>Arithmazium</tspan>
+  </text>
+  </a>
+  </svg>
+  </div>
+  <div class='next-prev'>
+  <a href='byte_mul.html' class='next round'>Next</a>
+  <a href='aaanumbers_toc.html' class='tree round'>Home</a>
+  <a href='byte_names.html' class='previous round'>Previous</a>
+  </div>
+
+
+<h1>Byte addition</h1>
+
+<p>
+With only digits <code>0</code> and <code>1</code>,
+binary arithmetic has a pretty simple addition table.
+</p>
+
+<pre><big-code>  +|  0   1
+  -+-------
+  0|  0   1
+  1|  1  10
+</code></pre>
+
+<p>
+To help remember the one interesting case,
+think of the T-shirt that reads:
+<em>There are 10 kinds of peoaple in the world &ndash;
+those who understand binary and those who don't.</em>
+</p>
+
+<h2>Example</h2>
+<p>
+Here is an application of our addition table.
+</p>
+
+<pre><big-code>    01100100      100
+  + 00001101     + 13
+  ----------     ----
+    01110001      113
+</code></pre>
+
+<p>
+Remeber the mantra, "six plus seven is three, carry the one"?
+In binary, we have, "one plus one is zero, carry the one".
+</p>
+
+<p>
+Binary arithmetic
+leads to a lot of carries. That's fine. Computers are good at it.
+When the sum of two bytes leads to a carry out of the leftmost
+bit, that bit is lost to the byte forever. Most processors will
+save it in a special <em>Carry bit</em>,
+in case the code running wants to check for it.
+</p>
+
+<h2>Subtraction, too</h2>
+
+<p>
+The subtraction table has the added wrinkle that
+<code>0 - 1</code> triggers a borrow. In elementary
+school, borrowing is challenging for some students.
+Its mantra is less pleasant to write down.
+</p>
+
+
+<pre><big-code>  -|  0   1
+  -+-------
+  0|  0  b1    1, with a borrow
+  1|  1   0
+</code></pre>
+
+<p>
+Later on, we will look at another way to subtract,
+but it's useful to carry the operation out in our
+paper-and-pencil manner to get a feel for binary
+operations.
+</p>
+
+<pre><big-code>    01100100      100
+  - 00001101     - 13
+  ----------     ----
+    01010111       87
+</code></pre>
+
+<p>
+Of course, you are thinking that anyone can subtract
+\( 13 \) from \( 100 \). But how about the other way around?
+It's jsut more subtract-with-borrow, with the extra twist
+that we get a <em>free</em> borrow from beyond the leftmost
+end, if needed. Here it is.
+</p>
+
+<pre><big-code>    00001101       13
+  - 01100100     -100
+  ----------     ----
+    01010001      169    = 256 - 87
+</code></pre>
+
+<p>
+The free borrow has the effect of adding \( 2^{8} = 256 \)
+to the result. What
+mathematically ought
+to be \( -87 \) is actutally <code>01010001</code> in
+the byte, or \( 169 \).
+</p>
+
+<p>
+We'll see how conveniently binary arithmetic can handle
+negative numbers, shortly.
+</p>
+
+<div class='next-prev'>
+<a href='byte_mul.html' class='next round'>Next</a>
+<a href='aaanumbers_toc.html' class='tree round'>Home</a>
+<a href='byte_names.html' class='previous round'>Previous</a>
+</div>
+<script src="../js/vendor/jquery.js"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  ga('create', 'UA-165469376-1', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+</<body>
+
+</html>

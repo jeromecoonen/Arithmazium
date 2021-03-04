@@ -1,0 +1,133 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>Arithmazium</title>
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/numbers/byte_sqrt.html">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#fafafa'>
+  <link rel='stylesheet' href='../css/normalize.css'>
+  <link rel='stylesheet' href='../css/main.css'>
+  <link rel='stylesheet' href='../css/para.css'>
+  <link rel='stylesheet' href='../css/numbers.css'>
+  <link href='https://fonts.googleapis.com/css?family=Days One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans:wght@400;800' rel='stylesheet'>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_SVG">
+  </script>
+</head>
+<body>
+  <div>
+  <svg viewbox='0 0 1000 80' xmlns='http://www.w3.org/2000/svg'>
+  <a class="para-ban" href='../index.html'>
+  <rect x=0 y=0 width=1000 height=80 class='arith-ban-box'/>
+  <text x=10 y=68 class='arith-ban-back'>
+  <tspan>11.001001000011111101101010100010001000</tspan>
+  </text>
+  <text x='60' y='55' class='arith-ban-front'>
+  <tspan>Arithmazium</tspan>
+  </text>
+  </a>
+  </svg>
+  </div>
+  <div class='next-prev'>
+  <a href='byte_sqrt.html' class='next round'>Next</a>
+  <a href='aaanumbers_toc.html' class='tree round'>Home</a>
+  <a href='byte_div.html' class='previous round'>Previous</a>
+  </div>
+
+
+<h1>Byte square root</h1>
+
+<p>
+Extracting square roots with pencil and paper is out
+of vogue, to say the least. This final example is
+purely for your amusement.
+</p>
+
+<h2>Example</h2>
+<p>
+Here is the root \( \sqrt{100}  = 10 \).
+To start the computation, the digits of the
+<em>radicand</em> are paired
+off, shown here with commas. 
+The value \( 100 \) in binary is <code>01,10,01,00</code>.
+The commas are an aid to computation. They have no
+numerical significance.
+</p>
+
+<pre><big-code>
+         1  0  1  0           1  0
+      +------------         +-----
+     \| 01,10,01,00        \| 1,00
+  1    - 1               1   -1
+        --                   --
+  10_    0 10                 0
+           --
+  100_     10 01
+         - 10 01
+           -----
+           00 00
+</code></pre>
+
+<p>
+At each step of the extraction,
+we double the root thus far and
+shift by another digit. That is
+two shifts, with the last place
+to be occupied by the next digit
+of the root, which is either zero
+or one.
+</p>
+
+<div class="math">
+<p>
+The idea behind this arcane process lies in
+a little bit of algebra. In the decimal form
+\[ (10 a + b)^{2} = 100 a^{2} + 20 a b + b^{2} \]
+where the latter two terms combine to be
+\[ (20 a + b) b \]
+In this expression \( a \) represents the digits
+of the root computed so far and \( b \) is the
+next digit.
+The \( 100 \) captures the pairing of the digits
+and the \( 20 a b \) illustrates the doubling,
+shifting by one digit, and inserting the next digit
+into to the term.
+</p>
+
+<p>
+In binary, both doubling and shifting by a digit
+are one-bit shifts. The formula for the reduction term becomes
+\[ (4 a + b) b \]
+</p>
+</div>
+
+<p>
+To test your mettle, pick a six-bit number whose leading bit is
+<code>1</code>. Square it, checking your work, then compute the
+square root. Express the number in decimal and try it in
+decimal, too.
+</p>
+
+<div class='next-prev'>
+<a href='byte_sqrt.html' class='next round'>Next</a>
+<a href='aaanumbers_toc.html' class='tree round'>Home</a>
+<a href='byte_div.html' class='previous round'>Previous</a>
+</div>
+<script src="../js/vendor/jquery.js"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  ga('create', 'UA-165469376-1', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+</<body>
+
+</html>

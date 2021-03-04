@@ -1,0 +1,54 @@
+#INCLUDE para_head byte_mul.html aaanumbers_toc.html byte_sqrt.html
+
+
+<h1>Byte division</h1>
+
+<p>
+Like multiplication,
+diviion in binary arithmetic is simpler than its
+counterpart from school, long division.
+It uses the multipication table we saw on
+the last page.
+</p>
+
+<h2>Example</h2>
+<p>
+Here is the quotient \( 100 \div 13 = 7
+\; remainder \; 9 \).
+The leading zeros of the divisor <code>00001101</code>
+are omitted, to simplify the diagram.
+</p>
+
+<pre><big-code>
+              111             7
+       +---------         +----
+  1101 | 01100100      13 | 100
+         - 1101            - 91
+          ------            ---
+           11000              9
+          - 1101
+           ------
+            10110
+           - 1101
+            -----
+             1001  remainder 9
+</code></pre>
+
+<p>
+Each step of the division is easy.
+We compare the divisor with the
+partial remainder to decide whether
+to subtract or to plaze a <code>0</code>
+in the quotient, shift the divisor
+right one bit, and continue.
+</p>
+
+<p>
+Just as a product might be computed into a
+two-byte field, so might a two-byte dividend
+be divided by a one-byte divisor. That would produce
+a one-byte quotient and one-byte remainder.
+We show simple one-byte arithmetic here.
+</p>
+
+#INCLUDE para_foot byte_mul.html aaanumbers_toc.html byte_sqrt.html

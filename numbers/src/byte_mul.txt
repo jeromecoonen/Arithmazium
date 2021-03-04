@@ -1,0 +1,64 @@
+#INCLUDE para_head byte_add.html aaanumbers_toc.html byte_div.html
+
+
+<h1>Byte multiplication</h1>
+
+<p>
+Multiplication in binary is remarkably refreshing,
+compared to work you might have labored through
+in school.
+The multipication table could hardly be simpler.
+</p>
+
+<pre><big-code>  x|  0   1
+  -+-------
+  0|  0   0
+  1|  0   1
+</code></pre>
+
+<p>
+Long multiplication is just a matter of shifting
+and adding.
+</p>
+
+<h2>Example</h2>
+<p>
+Here is the product \( 1300 = 100 \times 13 \).
+</p>
+
+<pre><big-code>        01100100        100
+      x 00001101     x   13
+  --------------     ------
+        01100100       1300
+      01100100
+  +  01100100
+  --------------
+     10100010100   1024+256+16+4
+     xxx00010100   20 = 1300 mod 256
+</code></pre>
+
+<p>
+Each step of the multiplication is easy, because
+the only multiplication is by zero or one. The
+diagram above omits all the zero values. Computers
+can do these operations very quickly.
+</p>
+
+<p>
+A product of two bytes can, in principle, require
+a full two bytes to hold the result. The diagram
+shows both the full result and the byte result,
+gotten by lopping off all the high bits, as we did
+the <em>carry-out</em> in addition.
+</p>
+
+<div class="math">
+<p>
+In mathematical terms, taking the low byte of the
+result is equivalent to computing the result
+modulo \( 256 = 2^{8} \).
+</p>
+</div>
+
+
+#INCLUDE para_foot byte_add.html aaanumbers_toc.html byte_div.html

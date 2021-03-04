@@ -1,0 +1,77 @@
+#INCLUDE para_head byte_div.html aaanumbers_toc.html byte_sqrt.html
+
+
+<h1>Byte square root</h1>
+
+<p>
+Extracting square roots with pencil and paper is out
+of vogue, to say the least. This final example is
+purely for your amusement.
+</p>
+
+<h2>Example</h2>
+<p>
+Here is the root \( \sqrt{100}  = 10 \).
+To start the computation, the digits of the
+<em>radicand</em> are paired
+off, shown here with commas. 
+The value \( 100 \) in binary is <code>01,10,01,00</code>.
+The commas are an aid to computation. They have no
+numerical significance.
+</p>
+
+<pre><big-code>
+         1  0  1  0           1  0
+      +------------         +-----
+     \| 01,10,01,00        \| 1,00
+  1    - 1               1   -1
+        --                   --
+  10_    0 10                 0
+           --
+  100_     10 01
+         - 10 01
+           -----
+           00 00
+</code></pre>
+
+<p>
+At each step of the extraction,
+we double the root thus far and
+shift by another digit. That is
+two shifts, with the last place
+to be occupied by the next digit
+of the root, which is either zero
+or one.
+</p>
+
+<div class="math">
+<p>
+The idea behind this arcane process lies in
+a little bit of algebra. In the decimal form
+\[ (10 a + b)^{2} = 100 a^{2} + 20 a b + b^{2} \]
+where the latter two terms combine to be
+\[ (20 a + b) b \]
+In this expression \( a \) represents the digits
+of the root computed so far and \( b \) is the
+next digit.
+The \( 100 \) captures the pairing of the digits
+and the \( 20 a b \) illustrates the doubling,
+shifting by one digit, and inserting the next digit
+into to the term.
+</p>
+
+<p>
+In binary, both doubling and shifting by a digit
+are one-bit shifts. The formula for the reduction term becomes
+\[ (4 a + b) b \]
+</p>
+</div>
+
+<p>
+To test your mettle, pick a six-bit number whose leading bit is
+<code>1</code>. Square it, checking your work, then compute the
+square root. Express the number in decimal and try it in
+decimal, too.
+</p>
+
+#INCLUDE para_foot byte_div.html aaanumbers_toc.html byte_sqrt.html

@@ -1,0 +1,120 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>Arithmazium</title>
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/numbers/byte_mul.html">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#fafafa'>
+  <link rel='stylesheet' href='../css/normalize.css'>
+  <link rel='stylesheet' href='../css/main.css'>
+  <link rel='stylesheet' href='../css/para.css'>
+  <link rel='stylesheet' href='../css/numbers.css'>
+  <link href='https://fonts.googleapis.com/css?family=Days One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans:wght@400;800' rel='stylesheet'>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_SVG">
+  </script>
+</head>
+<body>
+  <div>
+  <svg viewbox='0 0 1000 80' xmlns='http://www.w3.org/2000/svg'>
+  <a class="para-ban" href='../index.html'>
+  <rect x=0 y=0 width=1000 height=80 class='arith-ban-box'/>
+  <text x=10 y=68 class='arith-ban-back'>
+  <tspan>11.001001000011111101101010100010001000</tspan>
+  </text>
+  <text x='60' y='55' class='arith-ban-front'>
+  <tspan>Arithmazium</tspan>
+  </text>
+  </a>
+  </svg>
+  </div>
+  <div class='next-prev'>
+  <a href='byte_div.html' class='next round'>Next</a>
+  <a href='aaanumbers_toc.html' class='tree round'>Home</a>
+  <a href='byte_add.html' class='previous round'>Previous</a>
+  </div>
+
+
+<h1>Byte multiplication</h1>
+
+<p>
+Multiplication in binary is remarkably refreshing,
+compared to work you might have labored through
+in school.
+The multipication table could hardly be simpler.
+</p>
+
+<pre><big-code>  x|  0   1
+  -+-------
+  0|  0   0
+  1|  0   1
+</code></pre>
+
+<p>
+Long multiplication is just a matter of shifting
+and adding.
+</p>
+
+<h2>Example</h2>
+<p>
+Here is the product \( 1300 = 100 \times 13 \).
+</p>
+
+<pre><big-code>        01100100        100
+      x 00001101     x   13
+  --------------     ------
+        01100100       1300
+      01100100
+  +  01100100
+  --------------
+     10100010100   1024+256+16+4
+     xxx00010100   20 = 1300 mod 256
+</code></pre>
+
+<p>
+Each step of the multiplication is easy, because
+the only multiplication is by zero or one. The
+diagram above omits all the zero values. Computers
+can do these operations very quickly.
+</p>
+
+<p>
+A product of two bytes can, in principle, require
+a full two bytes to hold the result. The diagram
+shows both the full result and the byte result,
+gotten by lopping off all the high bits, as we did
+the <em>carry-out</em> in addition.
+</p>
+
+<div class="math">
+<p>
+In mathematical terms, taking the low byte of the
+result is equivalent to computing the result
+modulo \( 256 = 2^{8} \).
+</p>
+</div>
+
+
+<div class='next-prev'>
+<a href='byte_div.html' class='next round'>Next</a>
+<a href='aaanumbers_toc.html' class='tree round'>Home</a>
+<a href='byte_add.html' class='previous round'>Previous</a>
+</div>
+<script src="../js/vendor/jquery.js"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  ga('create', 'UA-165469376-1', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+</<body>
+
+</html>

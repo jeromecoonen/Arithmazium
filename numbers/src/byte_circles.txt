@@ -1,28 +1,83 @@
-#INCLUDE para_head byte_details.html aaanumbers_toc.html byte_signed.html
+#INCLUDE para_head byte_sqrt.html aaanumbers_toc.html byte_signed.html
 
-<link rel="stylesheet" href="../css/odometer-theme-digital.css" />
-<script src="../js/odo_head.js"></script>
-<script src="../js/vendor/odometer.min.js"></script>
+<link rel="stylesheet" href="../css/odometer-theme-default.css" />
+<link rel="stylesheet" href="../css/odometer-theme-minimal.css" />
 <style>
 .odometer {
-  font-size: 80px;
+  font-size: 100px;
 }
 </style>
 
-<h1>Your Basic Byte</h1>
+<h1>Running in circles</h1>
+
+<p>
+Numbers in computer registers do not simply grow as we
+increase them. Instead, they run in circles.
+When they reach a maximum value, <code>11111111</code>
+in the case of the byte, they <em>wrap arount</em> to zero.
+</p>
+
+<p>
+As you manipulate the slider below, which runs faster
+than the first example, think of the values running
+around the circle shown. Adding one moves us counterclockwise,
+and subtracting one move us clockwise.
+</p>
+<object type="image/svg+xml" data="img/byte_wheel_bin.svg">
+  ------Image------
+</object>
 
 <div class="slider-box">
-  <p>Default range slider:</p>
-
-  <p>Number: <span id="n"></span></p>
   <div class="odometer" id="myOd">0</div>
-  <input type="range" min="0" max="255" value="0"
+  <br>
+  <input type="range" min="0" max="767" value="0"
     class="slider" id="n-slider">
-  <button onclick="bumpDown()">Decrement</button>
-  <button onclick="bumpUp()">Increment</button>
+  <br><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <button class="bump-button"
+    onclick="bumpDown()">&ndash;1</button>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <button class="bump-button"
+    onclick="bumpUp()">+1</button>
+  <br><br>
+ The byte has the value
+ &nbsp;<span class="basic-6" id="n"></span>&nbsp;
+ as a number.
 </div>
 
-<script src="../js/odo_foot.js" ></script>
+<div class="wrong">
+<p>
+What's wrong with this picture? The byte should be shown to its full eight bits, including leading zeros. This is a bug to be fixed.
+</p>
+</div>
 
+<p>
+We should not be shocked by this behavior of byte registers
+in computers. We see it every day on our clocks, which wrap
+around every 12 hours on most U.S. clocks and every 24 hours
+on any clock. Especially on older cars with mechanical
+odometers, it's exciting to see the mileage <em>99,999.9</em>
+roll over to <em>00,000.0</em>
+</p>
 
-#INCLUDE para_foot byte_details.html aaanumbers_toc.html byte_signed.html
+<div class="math">
+<p>
+In the previous sections on basic byte arithmetic,
+we introduced the concept of <em>modular arithmetic</em>.
+In basic byte arithmetic, all operations are performed
+modulo \( 256 \). When the computer lops off all bits
+beyond the 8 bits of a byte, it effective removes all
+multiples of \( 256 \), reducing the value to the range
+\( 0 \) to \( 255 \).
+</p>
+</div>
+
+<script>
+  input_modulus = 768;
+</script>
+<script src="../js/odo_code.js" ></script>
+<script src="../js/vendor/odometer.min.js"></script>
+
+#INCLUDE para_foot byte_sqrt.html aaanumbers_toc.html byte_signed.html

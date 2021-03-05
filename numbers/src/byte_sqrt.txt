@@ -1,4 +1,4 @@
-#INCLUDE para_head byte_div.html aaanumbers_toc.html byte_sqrt.html
+#INCLUDE para_head byte_div.html aaanumbers_toc.html byte_circles.html
 
 
 <h1>Byte square root</h1>
@@ -74,4 +74,4 @@ square root. Express the number in decimal and try it in
 decimal, too.
 </p>
 
-#INCLUDE para_foot byte_div.html aaanumbers_toc.html byte_sqrt.html
+#INCLUDE para_foot byte_div.html aaanumbers_toc.html byte_circles.html

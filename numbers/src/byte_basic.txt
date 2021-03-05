@@ -2,9 +2,6 @@
 
 <link rel="stylesheet" href="../css/odometer-theme-default.css" />
 <link rel="stylesheet" href="../css/odometer-theme-minimal.css" />
-<link rel="stylesheet" href="../css/odometer-theme-car.css" />
-<link rel="stylesheet" href="../css/odometer-theme-train-station.css" />
-<link rel="stylesheet" href="../css/odometer-theme-digital.css" />
 <style>
 .odometer {
   font-size: 100px;
@@ -17,21 +14,23 @@
 Play with the slider to explore the range of its values.
 </p>
 
-<div class="wrong">
-<p>
-What's wrong with this picture? The byte should be shown to its full eight bits, including leading zeros. This is a bug to be fixed.
-</p>
-</div>
-
 <div class="slider-box">
   <div class="odometer" id="myOd">0</div>
   <br>
   <input type="range" min="0" max="255" value="0"
     class="slider" id="n-slider">
-  <br><br>
+</div>
+
+<p>
  The byte has the value
  &nbsp;<span class="basic-6" id="n"></span>&nbsp;
  as a number.
+</p>
+
+<div class="wrong">
+<p>
+What's wrong with this picture? The byte should be shown to its full eight bits, including leading zeros. This is a bug to be fixed.
+</p>
 </div>
 
 <p>
@@ -74,6 +73,9 @@ accomplished with a datum that takes just \( 256 \)
 values. Please read on to learn more.
 </p>
 
+<script>
+  input_modulus = 256;
+</script>
 <script src="../js/odo_code.js" ></script>
 <script src="../js/vendor/odometer.min.js"></script>
 

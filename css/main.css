@@ -169,6 +169,15 @@ div.next-prev {
 
 }
 
+.bump-button {
+  padding: 10px 24px;
+  font-size: 24px;
+  font-weight: bold;
+  border: 2px solid DimGray;
+  color: Black;
+  background-color: Gainsboro;
+}
+
 /* Clear floats (clearfix hack) */
 .next-prev:after {
   content: "";

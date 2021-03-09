@@ -28,7 +28,7 @@ When we match the eggs in a carton one-for-one with the
 boxes in the lsat group above,
 we say they have the <em>same number</em>.
 Then we can match them one-for-one
-with the donuts in a box.
+with the donuts in a dozen box.
 </p>
 
 <object type="image/svg+xml" data="img/number_12.svg">
@@ -39,12 +39,12 @@ The concept of number is about
 quantity. It doesn't depend on names for the quantities.
 We call this number <em>twelve</em>
 or sometimes <em>a dozen</em>, but it has other names.
-The expression \( 12 \) is another name.
+The decimal expression \( 12 \) is just another name.
 </p>
 
 <p>
 If you're careful with your laundry,
-when you look in your sock drawwer, your socks
+when you look in your sock drawer, your socks
 are in pairs matching this collection:
 </p>
 
@@ -57,7 +57,7 @@ are in pairs matching this collection:
 <p>
 It is an accident of our biology that we use decimal
 numbers to name quantities. Our ancestors counted on
-their fingers long before it was forbidden in school.
+their fingers long before it was discouraged in school.
 </p>
 
 <p>
@@ -68,7 +68,7 @@ or the absence of voltage, which signifies <code>0</code>.
 Just zero and one. Back when computers
 were huge and intimidating, people joked about
 how stupid they were. No doubt, part of that was due
-to a number system with just two digits.
+to their number system with just two digits.
 </p>
 
 <p>
@@ -84,7 +84,8 @@ we reach the one-hundred-twenty-eights place.
 
 <p>
 But, wait, we're using our handy decimal numbers to talk
-about the binary world. That's the point of the number boxes
+about the binary world. Is that cheating?
+No, that's the point of the collections
 earlier. The number is what matters, not its name. We often
 use decimal language in human communication,
 even talking about binary arithmetic. But, when we
@@ -100,15 +101,16 @@ we learned to decompose the number as
 The expression here emphasizes the powers of ten.
 </p>
 
-<div class="math">
 <p>
 From the byte odometer on the last page,
 we learn that \( 197 \) can be
 written as <code>11000101</code>.
 The breakdown into binary is
-\[ 197 = 11000101_{2} = 2^{7} + 2^{6} + 2^{2} + 2^{0} \]
+\[ 197 = 11000101_{2} = 128 + 64 + 4 + 1 =
+ 2^{7} + 2^{6} + 2^{2} + 2^{0} \]
+ With practice, these powers of \( 2 \) become as familiar
+ as \( 1000 \), \( 100 \), and \( 10 \).
 </p>
-</div>
 
 <p>
 Returning to the dozen donuts we didn't eat earlier,

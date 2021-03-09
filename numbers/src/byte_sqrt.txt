@@ -69,7 +69,8 @@ are one-bit shifts. The formula for the reduction term becomes
 
 <p>
 To test your mettle, pick a six-bit number whose leading bit is
-<code>1</code>. Square it, checking your work, then compute the
+<code>1</code>. You might try <code>100001</code>, for example.
+Square it, checking your work, then compute the
 square root. Express the number in decimal and try it in
 decimal, too.
 </p>

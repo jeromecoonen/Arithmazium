@@ -1,0 +1,73 @@
+#INCLUDE para_head byte_add.html aaanumbers_toc.html byte_mul.html
+
+
+<h1>Byte subtraction</h1>
+
+<p>
+The interesting case in binary subtraction is
+</p>
+
+<pre><xbig-code>  0 - 1  =  1 with borrow
+</xbig-code></pre>
+
+<p>
+The subtraction table has the added wrinkle that
+<code>0 - 1</code> triggers a borrow from the bit
+position to the left. In elementary
+school, borrowing is challenging for some students.
+Its mantra is baffling, unless you already understand
+how to do it: "five minus seven is two, borrow one by
+crossing out the next left subtrahend digit and 
+reducing it by one." Simple!
+</p>
+
+<pre><big-code>  -|  0   1
+  -+-------
+  0|  0  b1    1 with  borrow
+  1|  1   0
+</code></pre>
+
+<p>
+Later on, we will look at another way to subtract,
+but it's useful to carry the operation out in our
+paper-and-pencil manner to get a feel for binary
+operations.
+Each <code>b</code> indicates a borrow from that
+bit position.
+</p>
+
+<pre><big-code>      bbbbbb
+    01100100      100
+  - 00001101     - 13
+  ----------     ----
+    01010111       87
+</code></pre>
+
+<p>
+Of course, you are thinking that anyone can subtract
+\( 13 \) from \( 100 \). But how about the other way around?
+It's just more subtract-with-borrow, with the extra twist
+that we get a <em>free borrow</em> from beyond the leftmost
+bit, if needed. Here it is.
+</p>
+
+<pre><big-code>    00001101       13
+  - 01100100     -100
+  ----------     ----
+    01010001      169    = 256 - 87
+</code></pre>
+
+<p>
+The free borrow has the effect of adding \( 2^{8} = 256 \)
+to the result. What
+mathematically ought
+to be \( -87 \) is actutally <code>01010001</code> in
+the byte, or \( 169 \).
+</p>
+
+<p>
+We'll see in the next pages how conveniently binary arithmetic can handle
+negative numbers.
+</p>
+
+#INCLUDE para_foot byte_add.html aaanumbers_toc.html byte_mul.html

@@ -1,10 +1,24 @@
-#INCLUDE para_head byte_names.html aaanumbers_toc.html byte_mul.html
+#INCLUDE para_head byte_names.html aaanumbers_toc.html byte_sub.html
 
 
-<h1>Byte addition</h1>
+<h1>Basic arithmetic: byte addition</h1>
 
 <p>
-With only digits <code>0</code> and <code>1</code>,
+In binary arithmetic, the hardest addition operation is
+adding one to iself:
+</p>
+
+<pre><xbig-code>  1 + 1 = 10
+</xbig-code></pre>
+
+<p>
+To help remember, think of the nerdy T-shirt:
+<em>There are 10 kinds of people in the world &ndash;
+those who understand binary and those who don't.</em>
+</p>
+
+<p>
+Once we master <code>1 + 1</code>,
 binary arithmetic has a pretty simple addition table.
 </p>
 
@@ -14,19 +28,15 @@ binary arithmetic has a pretty simple addition table.
   1|  1  10
 </code></pre>
 
-<p>
-To help remember the one interesting case,
-think of the T-shirt that reads:
-<em>There are 10 kinds of peoaple in the world &ndash;
-those who understand binary and those who don't.</em>
-</p>
-
 <h2>Example</h2>
 <p>
 Here is an application of our addition table.
+The the <code>c</code>s indicate carries into
+that bit position.
 </p>
 
-<pre><big-code>    01100100      100
+<pre><big-code>       cc
+    01100100      100
   + 00001101     + 13
   ----------     ----
     01110001      113
@@ -38,68 +48,13 @@ In binary, we have, "one plus one is zero, carry the one".
 </p>
 
 <p>
-Binary arithmetic
-leads to a lot of carries. That's fine. Computers are good at it.
+We do a lot of carrying in binary addition.
+It's tedious when computing by hand, but computers are good at it.
 When the sum of two bytes leads to a carry out of the leftmost
-bit, that bit is lost to the byte forever. Most processors will
+bit, that bit is lost to the byte forever. Most actual
+computer processors will
 save it in a special <em>Carry bit</em>,
 in case the code running wants to check for it.
 </p>
 
-<h2>Subtraction, too</h2>
-
-<p>
-The subtraction table has the added wrinkle that
-<code>0 - 1</code> triggers a borrow. In elementary
-school, borrowing is challenging for some students.
-Its mantra is less pleasant to write down.
-</p>
-
-
-<pre><big-code>  -|  0   1
-  -+-------
-  0|  0  b1    1, with a borrow
-  1|  1   0
-</code></pre>
-
-<p>
-Later on, we will look at another way to subtract,
-but it's useful to carry the operation out in our
-paper-and-pencil manner to get a feel for binary
-operations.
-</p>
-
-<pre><big-code>    01100100      100
-  - 00001101     - 13
-  ----------     ----
-    01010111       87
-</code></pre>
-
-<p>
-Of course, you are thinking that anyone can subtract
-\( 13 \) from \( 100 \). But how about the other way around?
-It's jsut more subtract-with-borrow, with the extra twist
-that we get a <em>free</em> borrow from beyond the leftmost
-end, if needed. Here it is.
-</p>
-
-<pre><big-code>    00001101       13
-  - 01100100     -100
-  ----------     ----
-    01010001      169    = 256 - 87
-</code></pre>
-
-<p>
-The free borrow has the effect of adding \( 2^{8} = 256 \)
-to the result. What
-mathematically ought
-to be \( -87 \) is actutally <code>01010001</code> in
-the byte, or \( 169 \).
-</p>
-
-<p>
-We'll see how conveniently binary arithmetic can handle
-negative numbers, shortly.
-</p>
-
-#INCLUDE para_foot byte_names.html aaanumbers_toc.html byte_mul.html
+#INCLUDE para_foot byte_names.html aaanumbers_toc.html byte_sub.html

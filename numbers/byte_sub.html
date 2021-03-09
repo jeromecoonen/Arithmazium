@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Arithmazium</title>
-  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/numbers/byte_add.html">
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/numbers/byte_sub.html">
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <meta name='theme-color' content='#fafafa'>
   <link rel='stylesheet' href='../css/normalize.css'>
@@ -34,72 +34,85 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='byte_sub.html' class='next round'>Next</a>
+  <a href='byte_mul.html' class='next round'>Next</a>
   <a href='aaanumbers_toc.html' class='tree round'>Home</a>
-  <a href='byte_names.html' class='previous round'>Previous</a>
+  <a href='byte_add.html' class='previous round'>Previous</a>
   </div>
 
 
-<h1>Basic arithmetic: byte addition</h1>
+<h1>Byte subtraction</h1>
 
 <p>
-In binary arithmetic, the hardest addition operation is
-adding one to iself:
+The interesting case in binary subtraction is
 </p>
 
-<pre><xbig-code>  1 + 1 = 10
+<pre><xbig-code>  0 - 1  =  1 with borrow
 </xbig-code></pre>
 
 <p>
-To help remember, think of the nerdy T-shirt:
-<em>There are 10 kinds of people in the world &ndash;
-those who understand binary and those who don't.</em>
+The subtraction table has the added wrinkle that
+<code>0 - 1</code> triggers a borrow from the bit
+position to the left. In elementary
+school, borrowing is challenging for some students.
+Its mantra is baffling, unless you already understand
+how to do it: "five minus seven is two, borrow one by
+crossing out the next left subtrahend digit and 
+reducing it by one." Simple!
 </p>
 
-<p>
-Once we master <code>1 + 1</code>,
-binary arithmetic has a pretty simple addition table.
-</p>
-
-<pre><big-code>  +|  0   1
+<pre><big-code>  -|  0   1
   -+-------
-  0|  0   1
-  1|  1  10
+  0|  0  b1    1 with  borrow
+  1|  1   0
 </code></pre>
 
-<h2>Example</h2>
 <p>
-Here is an application of our addition table.
-The the <code>c</code>s indicate carries into
-that bit position.
+Later on, we will look at another way to subtract,
+but it's useful to carry the operation out in our
+paper-and-pencil manner to get a feel for binary
+operations.
+Each <code>b</code> indicates a borrow from that
+bit position.
 </p>
 
-<pre><big-code>       cc
+<pre><big-code>      bbbbbb
     01100100      100
-  + 00001101     + 13
+  - 00001101     - 13
   ----------     ----
-    01110001      113
+    01010111       87
 </code></pre>
 
 <p>
-Remeber the mantra, "six plus seven is three, carry the one"?
-In binary, we have, "one plus one is zero, carry the one".
+Of course, you are thinking that anyone can subtract
+\( 13 \) from \( 100 \). But how about the other way around?
+It's just more subtract-with-borrow, with the extra twist
+that we get a <em>free borrow</em> from beyond the leftmost
+bit, if needed. Here it is.
+</p>
+
+<pre><big-code>    00001101       13
+  - 01100100     -100
+  ----------     ----
+    01010001      169    = 256 - 87
+</code></pre>
+
+<p>
+The free borrow has the effect of adding \( 2^{8} = 256 \)
+to the result. What
+mathematically ought
+to be \( -87 \) is actutally <code>01010001</code> in
+the byte, or \( 169 \).
 </p>
 
 <p>
-We do a lot of carrying in binary addition.
-It's tedious when computing by hand, but computers are good at it.
-When the sum of two bytes leads to a carry out of the leftmost
-bit, that bit is lost to the byte forever. Most actual
-computer processors will
-save it in a special <em>Carry bit</em>,
-in case the code running wants to check for it.
+We'll see in the next pages how conveniently binary arithmetic can handle
+negative numbers.
 </p>
 
 <div class='next-prev'>
-<a href='byte_sub.html' class='next round'>Next</a>
+<a href='byte_mul.html' class='next round'>Next</a>
 <a href='aaanumbers_toc.html' class='tree round'>Home</a>
-<a href='byte_names.html' class='previous round'>Previous</a>
+<a href='byte_add.html' class='previous round'>Previous</a>
 </div>
 <script src="../js/vendor/jquery.js"></script>
 <script src="../js/plugins.js"></script>

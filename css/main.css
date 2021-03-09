@@ -147,13 +147,18 @@ pre {
 }
 
 code,
-big-code {
+big-code,
+xbig-code {
   background-color: var(--code-color, lightblue);
   padding: 1px 1px 1px 1px;
 }
 
 big-code {
   font-size: x-large;
+}
+
+xbig-code {
+  font-size: xx-large;
 }
 
 pre {

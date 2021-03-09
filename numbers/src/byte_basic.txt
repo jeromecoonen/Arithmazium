@@ -14,9 +14,18 @@
 Play with the slider to explore the range of its values.
 </p>
 
+<div class="register">
+  <span class="reg-8" id="dig-0"></span>
+  <span class="reg-8" id="dig-1"></span>
+  <span class="reg-8" id="dig-2"></span>
+  <span class="reg-8" id="dig-3"></span>
+  <span class="reg-8" id="dig-4"></span>
+  <span class="reg-8" id="dig-5"></span>
+  <span class="reg-8" id="dig-6"></span>
+  <span class="reg-8" id="dig-7"></span>
+</div>
+
 <div class="slider-box">
-  <div class="odometer" id="myOd">0</div>
-  <br>
   <input type="range" min="0" max="255" value="0"
     class="slider" id="n-slider">
 </div>
@@ -26,12 +35,6 @@ Play with the slider to explore the range of its values.
  &nbsp;<span class="basic-6" id="n"></span>&nbsp;
  as a number.
 </p>
-
-<div class="wrong">
-<p>
-What's wrong with this picture? The byte should be shown to its full eight bits, including leading zeros. This is a bug to be fixed.
-</p>
-</div>
 
 <p>
 A byte is literally a string of eight bits.
@@ -77,7 +80,6 @@ values. Please read on to learn more.
   input_modulus = 256;
 </script>
 <script src="../js/odo_code.js" ></script>
-<script src="../js/vendor/odometer.min.js"></script>
 
 
 #INCLUDE para_foot aaanumbers_toc.html aaanumbers_toc.html byte_names.html

@@ -23,6 +23,24 @@
   <a href='num_unsigned_byte.html' >Basic Byte</a>
 </p>
 
+==============Unused odometer
+  <div class="odometer" id="myOd">0</div>
+<script src="../js/vendor/odometer.min.js"></script>
+
+  function recast(n,r) {
+    let x = 0;
+    let i = 0;
+    let b = 1;
+    while (n > 0) {
+      i = n % r;
+      x += b * i;
+      b *= 10;
+      n = Math.floor(n / r);
+    }
+    return x;
+  }
+
+
 <script src="../js/my_debug.js"></script>
 
 

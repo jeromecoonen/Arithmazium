@@ -28,9 +28,18 @@ The blue numbers are the byte values in decimal.
   ------Image------
 </object>
 
+<div class="register">
+  <span class="reg-8" id="dig-0"></span>
+  <span class="reg-8" id="dig-1"></span>
+  <span class="reg-8" id="dig-2"></span>
+  <span class="reg-8" id="dig-3"></span>
+  <span class="reg-8" id="dig-4"></span>
+  <span class="reg-8" id="dig-5"></span>
+  <span class="reg-8" id="dig-6"></span>
+  <span class="reg-8" id="dig-7"></span>
+</div>
+
 <div class="slider-box">
-  <div class="odometer" id="myOd">0</div>
-  <br>
   <input type="range" min="0" max="767" value="0"
     class="slider" id="n-slider">
   <br><br>
@@ -43,16 +52,12 @@ The blue numbers are the byte values in decimal.
   <button class="bump-button"
     onclick="bumpUp()">+1</button>
   <br><br>
- The byte has the value
- &nbsp;<span class="basic-6" id="n"></span>&nbsp;
- as a number.
 </div>
 
-<div class="wrong">
 <p>
-What's wrong with this picture? The byte should be shown to its full eight bits, including leading zeros. This is a bug to be fixed.
-</p>
-</div>
+The byte has the value
+&nbsp;<span class="basic-6" id="n"></span>&nbsp;
+as a number.
 
 <p>
 We should not be shocked by this behavior of byte registers
@@ -79,6 +84,5 @@ multiples of \( 256 \), reducing the value to the range
   input_modulus = 768;
 </script>
 <script src="../js/odo_code.js" ></script>
-<script src="../js/vendor/odometer.min.js"></script>
 
 #INCLUDE para_foot byte_sqrt.html aaanumbers_toc.html byte_signed.html

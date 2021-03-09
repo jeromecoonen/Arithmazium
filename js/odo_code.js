@@ -4,32 +4,34 @@
     animation: 'count',
     theme: 'minimal'
   };
-  // const input_modulus = 256, 768, ...?
   const byte_modulus = 256;
-  let rad = 2;
+  const rad = 2;
+  const num_digs = 8;
   let reading = 0;
   const slider = document.getElementById("n-slider");
   const output = document.getElementById("n");
-  const odom = document.getElementById("myOd");
-
-  function recast(n,r) {
-    let x = 0;
-    let i = 0;
-    let b = 1;
-    while (n > 0) {
-      i = n % r;
-      x += b * i;
-      b *= 10;
-      n = Math.floor(n / r);
-    }
-    return x;
+  const out_spans = new Array(num_digs);
+  let i = 0;
+  while (i < num_digs) {
+    out_spans[i] = document.getElementById("dig-" + i.toString());
+    i += 1;
   }
 
   function update(new_val) {
     let disp_val = new_val % byte_modulus;
-    let casting = recast(disp_val, rad);
+    //let casting = recast(disp_val, rad);
+    const num_str = disp_val.toString(rad);
+    const out_str = num_str.padStart(num_digs, "0");
+    //console.log("num_str: " + num_str + "  out_str: " + out_str);
+    let out_digs = out_str.split("");
+    //console.log("out_digs: " + out_digs.toString());
+    let i = 0;
+    while (i < num_digs) {
+      out_spans[i].innerHTML = out_digs[i].toString();
+      i += 1;
+    }
     output.innerHTML = disp_val;
-    odom.innerHTML = casting;
+    //odom.innerHTML = casting;
     slider.value = new_val;
   }
 

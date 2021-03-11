@@ -4,9 +4,10 @@
 <h1>Byte square root</h1>
 
 <p>
-Extracting square roots with pencil and paper is out
-of vogue, to say the least. This final example is
-purely for your amusement.
+Extracting square roots with pencil and paper is a
+dyiing art, to say the least. If this final example inspires
+you to try your hand at some decimal values,
+enjoy yourself!
 </p>
 
 <h2>Example</h2>
@@ -16,7 +17,7 @@ To start the computation, the digits of the
 <em>radicand</em> are paired
 off, shown here with commas. 
 The value \( 100 \) in binary is <code>01,10,01,00</code>.
-The commas are an aid to computation. They have no
+The commas are an aid to organization. They have no
 numerical significance.
 </p>
 
@@ -31,14 +32,20 @@ numerical significance.
   100_     10 01
          - 10 01
            -----
-           00 00
+           00 00 00
 </code></pre>
 
 <p>
 At each step of the extraction,
-we double the root thus far and
-shift by another digit. That is
-two shifts, with the last place
+the mantra is,
+"double the root thus far and
+shift by another digit; then fill
+in the next digit of the root."
+In binary, we double a number by
+shifting it left one bit position.
+So the mantra becomes shift two
+bits to the left,
+with the last place
 to be occupied by the next digit
 of the root, which is either zero
 or one.

@@ -11,7 +11,7 @@
 <h1>The byte</h1>
 
 <p>
-Play with the slider to explore the range of its values.
+Play with the slider to explore the range of a byte's values.
 </p>
 
 <div class="register">
@@ -31,13 +31,13 @@ Play with the slider to explore the range of its values.
 </div>
 
 <p>
- The byte has the value
+ Your byte has the value
  &nbsp;<span class="basic-6" id="n"></span>&nbsp;
  as a number.
 </p>
 
 <p>
-A byte is literally a string of eight bits.
+A byte is a sequence of eight bits.
 Each bit has the value <code>0</code> or <code>1</code>.
 Pretty simple.
 While a byte may be used in many different ways,
@@ -71,8 +71,9 @@ is \( 32 + 4 + 1 = 37 \).
 </p>
 
 <p>
-That's the byte. What's amazing is how much can be
-accomplished with a datum that takes just \( 256 \)
+What's amazing is how much can be
+accomplished with a little chunk of
+data that takes just \( 256 \) different
 values. Please read on to learn more.
 </p>
 

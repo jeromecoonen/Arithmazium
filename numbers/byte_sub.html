@@ -57,7 +57,7 @@ school, borrowing is challenging for some students.
 Its mantra is baffling, unless you already understand
 how to do it: "five minus seven is two, borrow one by
 crossing out the next left subtrahend digit and 
-reducing it by one." Simple!
+reducing it by one." Exactly!
 </p>
 
 <pre><big-code>  -|  0   1
@@ -75,7 +75,8 @@ Each <code>b</code> indicates a borrow from that
 bit position.
 </p>
 
-<pre><big-code>      bbbbbb
+<pre><big-code>
+      bbbbb
     01100100      100
   - 00001101     - 13
   ----------     ----
@@ -83,21 +84,23 @@ bit position.
 </code></pre>
 
 <p>
-Of course, you are thinking that anyone can subtract
+You might be thinking that anyone can subtract
 \( 13 \) from \( 100 \). But how about the other way around?
 It's just more subtract-with-borrow, with the extra twist
-that we get a <em>free borrow</em> from beyond the leftmost
-bit, if needed. Here it is.
+that we get a free borrow from beyond the leftmost
+bit, if needed. Here it is:
 </p>
 
-<pre><big-code>    00001101       13
+<pre><big-code>   bbb   
+    00001101       13
   - 01100100     -100
   ----------     ----
-    01010001      169    = 256 - 87
+    10101001      169    = 256 - 87
 </code></pre>
 
 <p>
-The free borrow has the effect of adding \( 2^{8} = 256 \)
+The borrow from the left
+has the effect of adding \( 2^{8} = 256 \)
 to the result. What
 mathematically ought
 to be \( -87 \) is actutally <code>01010001</code> in
@@ -105,7 +108,7 @@ the byte, or \( 169 \).
 </p>
 
 <p>
-We'll see in the next pages how conveniently binary arithmetic can handle
+We'll see in the later pages how conveniently binary arithmetic can handle
 negative numbers.
 </p>
 

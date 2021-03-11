@@ -8,11 +8,11 @@
 </a></p>
 <p class="el2"><a class="toc-link num wip"
   href="byte_names.html">
-  How we name numbers
+  Naming numbers
 </a></p>
 <p class="el2"><a class="toc-link num wip"
   href="byte_add.html">
-  Basic arithmetic: byte addition
+  Byte addition
 </a></p>
 <p class="el2"><a class="toc-link num wip"
   href="byte_sub.html">

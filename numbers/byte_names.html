@@ -40,14 +40,14 @@
   </div>
 
 
-<h1>How we name numbers</h1>
+<h1>Naming numbers</h1>
 
 <p>
 We are so familiar with numbers from everyday use
-that we rarely ponder the underlying
-mathematical view.
-That view is useful for our understanding
-of numbers in computers.
+that it's easy to take them for granted.
+A mathematical view
+is useful for understanding
+numbers in computers.
 </p>
 
 <p>
@@ -61,30 +61,38 @@ a mathematician might conjure up an image like this.
 
 <p>
 The concept of <em>number</em> is tied to counting
-collections of things. The container doesn't matter,
-just the collection.
-When we match the eggs in a carton one-for-one with the
-boxes in the lsat group above,
-we say they have the <em>same number</em>.
-Then we can match them one-for-one
-with the donuts in a dozen box.
+collections of things. The surrounding containers don't matter,
+just the collections.
+</p>
+
+<p>
+This is the last of the rows above.
 </p>
 
 <object type="image/svg+xml" data="img/number_12.svg">
   ------Image------
 </object>
+
+<p>
+When we match the eggs in a carton
+or the donuts in a box one-for-one with the
+squares in ths group,
+we say they have the same number.
+</p>
+
 <p>
 The concept of number is about
 quantity. It doesn't depend on names for the quantities.
-We call this number <em>twelve</em>
-or sometimes <em>a dozen</em>, but it has other names.
+We call this particular number <em>twelve</em>
+or sometimes <em>one dozen</em>, but it has other names.
 The decimal expression \( 12 \) is just another name.
 </p>
 
 <p>
 If you're careful with your laundry,
 when you look in your sock drawer, your socks
-are in pairs matching this collection:
+are in <em>pairs</em> matching this collection
+that you know as two:
 </p>
 
 <object type="image/svg+xml" data="img/number_2.svg">
@@ -101,13 +109,14 @@ their fingers long before it was discouraged in school.
 
 <p>
 Computers work best with binary numbers.
-They can quickly and reliably detect the presence of
+Electronic circuits can
+quickly and reliably detect the presence of
 voltage, which they associate with <code>1</code>,
 or the absence of voltage, which signifies <code>0</code>.
 Just zero and one. Back when computers
 were huge and intimidating, people joked about
 how stupid they were. No doubt, part of that was due
-to their number system with just two digits.
+to this strange number system with just two digits.
 </p>
 
 <p>
@@ -117,7 +126,9 @@ on. The very same concept applies to binary
 numbers. It just works a little slower.
 In binary, we have the ones place, the twos place, the
 fours place, the eights place, the sixteens place, the
-thirty-twos place, and so on. We're out of breath before
+thirty-twos place, and so on,
+multiplying by \( 2 \) each time.
+We're out of breath before
 we reach the one-hundred-twenty-eights place.
 </p>
 
@@ -128,7 +139,7 @@ No, that's the point of the collections
 earlier. The number is what matters, not its name. We often
 use decimal language in human communication,
 even talking about binary arithmetic. But, when we
-talk to a computer about bytes, binary is best.
+talk to a computer in bytes, binary is best.
 </p>
 
 <h2>The basic formula</h2>
@@ -136,18 +147,21 @@ talk to a computer about bytes, binary is best.
 <p>
 Let's look at the number \( 197 \). Somewhere along the way,
 we learned to decompose the number as
+\[ 197 = 1 \times 100 + 9 \times 10 + 7 \]
+If we want to get fancy, we can emphasize the powers of \( 10 \):
 \[ 197 = 1 \times 10^{2} + 9 \times 10^{1} + 7 \times 10^{0} \]
-The expression here emphasizes the powers of ten.
+It all amounts to \( 197 \).
 </p>
 
 <p>
-From the byte odometer on the last page,
-we learn that \( 197 \) can be
-written as <code>11000101</code>.
-The breakdown into binary is
+Using the byte odometer on the last page,
+we can learn that \( 197 \) has the byte value
+<code>11000101</code>.
+The breakdown into binary follows the pattern
+of our familiar decimal numbers, but with powers of \( 2 \):
 \[ 197 = 11000101_{2} = 128 + 64 + 4 + 1 =
  2^{7} + 2^{6} + 2^{2} + 2^{0} \]
- With practice, these powers of \( 2 \) become as familiar
+ With practice, the powers of \( 2 \) become as familiar
  as \( 1000 \), \( 100 \), and \( 10 \).
 </p>
 
@@ -155,11 +169,11 @@ The breakdown into binary is
 Returning to the dozen donuts we didn't eat earlier,
 we see that our number 12 when stored in a byte
 has the form <code>00001100</code> because
-\( 12 = 8 + 4 \). More names for the same number.
+\( 12 = 8 + 4 \). It's another name for the same number.
 </p>
 
 <p>
-Now it's time to do some byte arithmetic.
+Now let's do some byte arithmetic.
 </p>
 
 

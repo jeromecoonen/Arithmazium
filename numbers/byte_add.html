@@ -40,7 +40,7 @@
   </div>
 
 
-<h1>Basic arithmetic: byte addition</h1>
+<h1>Byte addition</h1>
 
 <p>
 In binary arithmetic, the hardest addition operation is
@@ -51,7 +51,7 @@ adding one to iself:
 </xbig-code></pre>
 
 <p>
-To help remember, think of the nerdy T-shirt:
+Think of the nerdy T-shirt:
 <em>There are 10 kinds of people in the world &ndash;
 those who understand binary and those who don't.</em>
 </p>
@@ -88,9 +88,10 @@ In binary, we have, "one plus one is zero, carry the one".
 
 <p>
 We do a lot of carrying in binary addition.
-It's tedious when computing by hand, but computers are good at it.
+It's tedious when computing by hand, but electronic
+circuits handle it easily.
 When the sum of two bytes leads to a carry out of the leftmost
-bit, that bit is lost to the byte forever. Most actual
+bit, that bit is lost to the byte forever. Most
 computer processors will
 save it in a special <em>Carry bit</em>,
 in case the code running wants to check for it.

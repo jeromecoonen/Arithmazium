@@ -1,7 +1,7 @@
 #INCLUDE para_head byte_add.html aaanumbers_toc.html byte_mul.html
 
 
-<h1>Byte subtraction</h1>
+<h1>Subtraction</h1>
 
 <p>
 The interesting case in binary subtraction is
@@ -16,9 +16,14 @@ The subtraction table has the added wrinkle that
 position to the left. In elementary
 school, borrowing is challenging for some students.
 Its mantra is baffling, unless you already understand
-how to do it: "five minus seven is two, borrow one by
+how to do it: "five minus seven is two, borrow ten by
 crossing out the next left subtrahend digit and 
 reducing it by one." Exactly!
+</p>
+
+<p>
+When we reach left one bit position to borrow, we get
+\( 2 \), or <code>10</code> in binary.
 </p>
 
 <pre><big-code>  -|  0   1
@@ -60,17 +65,19 @@ bit, if needed. Here it is:
 </code></pre>
 
 <p>
-The borrow from the left
-has the effect of adding \( 2^{8} = 256 \)
+When we borrow from the left,
+it is as though we have added \( 2^{8} = 256 \)
 to the result. What
 mathematically ought
-to be \( -87 \) is actutally <code>01010001</code> in
-the byte, or \( 169 \).
+to be \( -87 \) is actutally
+\( 256 - 87 = 169 \) or
+<code>01010001</code> in
+the byte.
 </p>
 
 <p>
-We'll see in the later pages how conveniently binary arithmetic can handle
-negative numbers.
+We'll see in the later pages how 
+easy it is to have negative numbers in bytes, too.
 </p>
 
 #INCLUDE para_foot byte_add.html aaanumbers_toc.html byte_mul.html

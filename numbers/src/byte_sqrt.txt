@@ -1,11 +1,11 @@
 #INCLUDE para_head byte_div.html aaanumbers_toc.html byte_circles.html
 
 
-<h1>Byte square root</h1>
+<h1>Square root</h1>
 
 <p>
 Extracting square roots with pencil and paper is a
-dyiing art, to say the least. If this final example inspires
+dyiing art. If this final example inspires
 you to try your hand at some decimal values,
 enjoy yourself!
 </p>
@@ -48,7 +48,9 @@ bits to the left,
 with the last place
 to be occupied by the next digit
 of the root, which is either zero
-or one.
+or one. The bit postion to be filled
+by the next bit of the square root
+is shown with an underscore, "_".
 </p>
 
 <div class="math">
@@ -81,5 +83,12 @@ Square it, checking your work, then compute the
 square root. Express the number in decimal and try it in
 decimal, too.
 </p>
+
+<div class="math">
+If the radicand is not a perfect square, the process ends
+with a nonzero "remainder" value. The process can be extended
+to produce binary fraction bits as long as we wish, but we won't
+talk about fractions for some pages yet.
+</div>
 
 #INCLUDE para_foot byte_div.html aaanumbers_toc.html byte_circles.html

@@ -1,11 +1,12 @@
 #INCLUDE para_head byte_sub.html aaanumbers_toc.html byte_div.html
 
 
-<h1>Byte multiplication</h1>
+<h1>Multiplication</h1>
 
 <p>
 Multiplication in binary is remarkably refreshing,
-compared to work you might have labored through
+compared to four-digit multiplications
+you might have labored through
 in school.
 The multipication table could hardly be simpler.
 </p>
@@ -17,7 +18,8 @@ The multipication table could hardly be simpler.
 </code></pre>
 
 <p>
-Long multiplication is just a matter of shifting
+Because we only ever multiply by zero or one,
+long multiplication is just a matter of shifting
 and adding.
 </p>
 
@@ -45,11 +47,13 @@ do in decimal.
 </p>
 
 <p>
-A product of two bytes can, in principle, require
-a full two bytes to hold the result. The diagram
-shows both the full result and the byte result,
-gotten by lopping off all the high bits, as we did
-the <em>carry-out</em> in addition.
+The product of two 8-bit bytes can require
+a full two bytes to hold the result
+In the example above, the one-byte result is
+gotten by lopping off all the high bits beyond
+the lowest 8 bits.
+This is similar to what we did with
+a <em>carry-out</em> in addition.
 </p>
 
 <div class="math">

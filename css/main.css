@@ -277,15 +277,14 @@ ul.basic {
 }
 
 .reg-8 {
-  display: inline;
+  float: left;
   font-family: "Helvetica Neue", "Roboto Mono", monospace;
   font-weight: normal;
-  font-size: 100px;
+  font-size: 90px;
   text-align: center;
-  width: 60px;
-  padding: 2px 12px 2px 12px;
-  border: 2px solid gray;
-  margin: 0 -3px 0 -3px;
+  width: 76px;
+  border: 1px solid gray;
+  margin: 0 0 0 0;
 }
 
 .register {

@@ -2,33 +2,59 @@
 
 <h1>Numbers in Computers</h1>
 
+<div class="message-box">
+<span class="big-green">G</span>
+This content is appropriate for all ages.
+</div>
+<br>
+
 <p class="el1"><a class="toc-link num wip"
   href="byte_basic.html">
   The byte
 </a></p>
 <p class="el2"><a class="toc-link num wip"
   href="byte_names.html">
-  Naming numbers
+  Names for numbers
 </a></p>
 <p class="el2"><a class="toc-link num wip"
   href="byte_add.html">
-  Byte addition
+  Addition
 </a></p>
 <p class="el2"><a class="toc-link num wip"
   href="byte_sub.html">
-  Byte subtraction
+  Subtraction
 </a></p>
 <p class="el2"><a class="toc-link num wip"
   href="byte_mul.html">
-  Byte multiplication
+  Multiplication
 </a></p>
 <p class="el2"><a class="toc-link num wip"
   href="byte_div.html">
-  Byte division
+  Division and remainder
 </a></p>
 <p class="el2"><a class="toc-link num wip"
   href="byte_sqrt.html">
-  Byte square root
+  Square root
+</a></p>
+<p class="el2"><a class="toc-link num wip"
+  href="byte_and.html">
+  And
+</a></p>
+<p class="el2"><a class="toc-link num wip"
+  href="byte_or.html">
+  Or
+</a></p>
+<p class="el2"><a class="toc-link num wip"
+  href="byte_not.html">
+  Not
+</a></p>
+<p class="el2"><a class="toc-link num wip"
+  href="byte_xor.html">
+  Xor
+</a></p>
+<p class="el2"><a class="toc-link num wip"
+  href="byte_peek_and_poke.html">
+  Peek and Poke
 </a></p>
 <p class="el1"><a class="toc-link num wip"
   href="byte_circles.html">

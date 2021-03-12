@@ -60,11 +60,11 @@ text.home-room {
   opacity: 0.7;
 }
 
-polygon.home-para {
+polygon.home-numbers {
   fill: coral;
 }
 
-text.home-para {
+text.home-numbers {
   font-size: 40px;
   font-weight: normal;
   font-family: "Days One", "lucida Console", Monaco, monospace;
@@ -162,11 +162,11 @@ text.home-dino {
   font-family: "Days One", "lucida Console", Monaco, monospace;
 }
 
-polygon.home-numbers {
+polygon.home-para {
   fill: violet;
 }
 
-text.home-numbers {
+text.home-para {
   font-size: 40px;
   font-weight: normal;
   font-family: "Days One", "lucida Console", Monaco, monospace;

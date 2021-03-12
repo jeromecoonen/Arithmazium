@@ -11,18 +11,19 @@
 <h1>The byte</h1>
 
 <p>
+The 8-bit byte is the basic unit of computer data.
 Play with the slider to explore the range of a byte's values.
 </p>
 
 <div class="register">
-  <span class="reg-8" id="dig-0"></span>
-  <span class="reg-8" id="dig-1"></span>
-  <span class="reg-8" id="dig-2"></span>
-  <span class="reg-8" id="dig-3"></span>
-  <span class="reg-8" id="dig-4"></span>
-  <span class="reg-8" id="dig-5"></span>
-  <span class="reg-8" id="dig-6"></span>
-  <span class="reg-8" id="dig-7"></span>
+  <div class="reg-8" id="dig-0"></div>
+  <div class="reg-8" id="dig-1"></div>
+  <div class="reg-8" id="dig-2"></div>
+  <div class="reg-8" id="dig-3"></div>
+  <div class="reg-8" id="dig-4"></div>
+  <div class="reg-8" id="dig-5"></div>
+  <div class="reg-8" id="dig-6"></div>
+  <div class="reg-8" id="dig-7"></div>
 </div>
 
 <div class="slider-box">

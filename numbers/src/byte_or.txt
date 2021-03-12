@@ -1,0 +1,41 @@
+#INCLUDE para_head byte_and.html aaanumbers_toc.html byte_not.html
+
+
+<h1>Or</h1>
+
+<p>
+Logical <code>OR</code> has the meaning you would
+expect from its name.
+<code>OR</code> is usually
+denoted by the symbol <code>&or;</code>.
+\( x \vee y \) is <code>True</code> if either
+The value of
+\( x \) or \( y \) is <code>True</code>.
+Its table looks like the addition table,
+with just one twist.
+</p>
+
+<pre><big-code>    &or;|  0   1
+  ---+-------
+    0|  0   1
+    1|  1   1
+</code></pre>
+
+<p>
+<code>OR</code> applied to two bytes is applied bit by bit.
+</p>
+
+<h2>Example</h2>
+<p>
+Here is the <code>OR</code> of two bytes.
+As with <code>AND</code>,
+we aren't necessarily interested in the numerical values.
+</p>
+
+<pre><big-code>      01100100
+    &or; 00111101
+  ------------
+      01111101
+</code></pre>
+
+#INCLUDE para_foot byte_and.html aaanumbers_toc.html byte_not.html

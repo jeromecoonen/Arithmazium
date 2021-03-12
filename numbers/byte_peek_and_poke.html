@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Arithmazium</title>
-  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/numbers/byte_and .html">
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/numbers/byte_peek_and_poke.html">
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <meta name='theme-color' content='#fafafa'>
   <link rel='stylesheet' href='../css/normalize.css'>
@@ -34,73 +34,48 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='byte_div.html' class='next round'>Next</a>
+  <a href='byte_circles.html' class='next round'>Next</a>
   <a href='aaanumbers_toc.html' class='tree round'>Home</a>
-  <a href='byte_sub.html' class='previous round'>Previous</a>
+  <a href='byte_xor.html' class='previous round'>Previous</a>
   </div>
 
 
-<h1>And</h1>
+<h1>Peek and poke</h1>
 
 <p>
-The previous pages have looked at the five
-most common arithmetic functions. Some specialized
-processors support just addition and subtraction.
-They leave the others for software routines to
-compute.
+No discussion of the basics of bytes is complete
+without mention of the classic functions
+<code>PEEK</code> and <code>POKE</code>.
 </p>
 
 <p>
-But all procesors support the logical operations:
-AND, OR, NOT, and XOR. We'll look at them in
-these next pages.
+These functions are not aritheitc, but
+they were staples of early BASIC language
+systems on the classic personal computers
+like the Apple ][ and the IBM PC.
 </p>
 
 <p>
-Bit-by-bit logical AND is the same as multiplication.
+When computers shipped with 4KB of RAM &ndash that's
+4,096 bytes &ndash; every byte mattered.
+<code>PEEK(37)</code> on an Apple ][
+returns the vertical postion of the cursor,
+a number between \( 1 \) and \( 24 \).
+<code>POKE(82,128)</code> puts the Apple ][ in
+a state where it will <em>auto-run</em> a
+program from a cassette tape when the tape
+is loaded.
 </p>
-
-<pre><big-code>  AND|  0   1
-  ---+-------
-    0|  0   0
-    1|  0   1
-</code></pre>
 
 <p>
-Logical AND applied to two bytes is applied bit by bit.
+Computers used to be very personal.
+Users had access to every single byte.
 </p>
-
-<h2>Example</h2>
-<p>
-Here is the AND of two bytes. In many cases,
-we aren't interested in the numerical values.
-Instead, the bytes represent some other form
-of data.
-</p>
-
-<pre><big-code>
-      01100100
-  AND 00111101
-  ------------
-      00100100
-</code></pre>
-
-<p>
-A numeical application of AND is testing whether a
-byte value is even or odd.
-</p>
-
-<pre><big-code>
-      01100100    decmal 100
-  AND 00000001
-  ------------
-      00000000    1 if odd, 0 if even
-</code></pre>
 
 <div class='next-prev'>
-<a href='byte_div.html' class='next round'>Next</a>
+<a href='byte_circles.html' class='next round'>Next</a>
 <a href='aaanumbers_toc.html' class='tree round'>Home</a>
-<a href='byte_sub.html' class='previous round'>Previous</a>
+<a href='byte_xor.html' class='previous round'>Previous</a>
 </div>
 <script src="../js/vendor/jquery.js"></script>
 <script src="../js/plugins.js"></script>

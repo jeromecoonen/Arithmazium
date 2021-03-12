@@ -1,0 +1,36 @@
+#INCLUDE para_head byte_xor.html aaanumbers_toc.html byte_circles.html
+
+
+<h1>Peek and poke</h1>
+
+<p>
+No discussion of the basics of bytes is complete
+without mention of the classic functions
+<code>PEEK</code> and <code>POKE</code>.
+</p>
+
+<p>
+These functions are not aritheitc, but
+they were staples of early BASIC language
+systems on the classic personal computers
+like the Apple ][ and the IBM PC.
+</p>
+
+<p>
+When computers shipped with 4KB of RAM &ndash that's
+4,096 bytes &ndash; every byte mattered.
+<code>PEEK(37)</code> on an Apple ][
+returns the vertical postion of the cursor,
+a number between \( 1 \) and \( 24 \).
+<code>POKE(82,128)</code> puts the Apple ][ in
+a state where it will <em>auto-run</em> a
+program from a cassette tape when the tape
+is loaded.
+</p>
+
+<p>
+Computers used to be very personal.
+Users had access to every single byte.
+</p>
+
+#INCLUDE para_foot byte_xor.html aaanumbers_toc.html byte_circles.html

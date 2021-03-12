@@ -16,7 +16,7 @@ Reinhold Holtkamp, Jr. or Tim Cain
 615-228-2683 615-228-5831 Website reinhold@optimara.com
 
 Special characters in HTML
-  &plusmn; &nbsp;=&#160; &ndash; &mdash;
+  &plusmn; &nbsp;=&#160; &ndash; &mdash; &and; &oplus; &not;
 
 Snippets (Sublime / Preferences / Browse packages)
   math \(xxx\) -- inline TeX

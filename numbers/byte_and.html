@@ -1,0 +1,135 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>Arithmazium</title>
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/numbers/byte_and.html">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#fafafa'>
+  <link rel='stylesheet' href='../css/normalize.css'>
+  <link rel='stylesheet' href='../css/main.css'>
+  <link rel='stylesheet' href='../css/para.css'>
+  <link rel='stylesheet' href='../css/numbers.css'>
+  <link href='https://fonts.googleapis.com/css?family=Days One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans:wght@400;800' rel='stylesheet'>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_SVG">
+  </script>
+</head>
+<body>
+  <div>
+  <svg viewbox='0 0 1000 80' xmlns='http://www.w3.org/2000/svg'>
+  <a class="para-ban" href='../index.html'>
+  <rect x=0 y=0 width=1000 height=80 class='arith-ban-box'/>
+  <text x=10 y=68 class='arith-ban-back'>
+  <tspan>11.001001000011111101101010100010001000</tspan>
+  </text>
+  <text x='60' y='55' class='arith-ban-front'>
+  <tspan>Arithmazium</tspan>
+  </text>
+  </a>
+  </svg>
+  </div>
+  <div class='next-prev'>
+  <a href='byte_or.html' class='next round'>Next</a>
+  <a href='aaanumbers_toc.html' class='tree round'>Home</a>
+  <a href='byte_sqrt.html' class='previous round'>Previous</a>
+  </div>
+
+
+<h1>And</h1>
+
+<p>
+Computer processors don't necessarily support
+every arithmetic operation. Some support just
+<code>ADD</code> and <code>SUB</code>. But every
+processor supports the logical operations:
+</p>
+
+<p>
+<code>AND    OR    NOT    XOR</code>
+</p>
+
+<p>
+These operations are essential for data processing.
+They operate on values <code>True</code> and
+<code>False</code>. You can imagine the link to binary
+numbers. <code>True</code> is \( 1 \) and
+<code>Fales</code> is \( 0 \).
+</p>
+
+<p>
+In the 1850s, English mathematician George Boole
+expressed the process of logical deduction in
+mathematical form. We now know that study as
+Boolean algebra, and celebrate his wonderful name
+every day in the <em>boolean</em> values we use
+when computing.
+</p>
+
+<p>
+The logical operations have names so intuitive that
+they barely need explanation.
+\( x \wedge y \) is <code>True</code> only if both
+\( x \) and \( y \) are <code>True</code>.
+<code>AND</code> is usually
+denoted by the symbol <code>&and;</code>.
+Its table is the same as multiplication table.
+</p>
+
+<pre><big-code>    &and;|  0   1
+  ---+-------
+    0|  0   0
+    1|  0   1
+</code></pre>
+
+<p>
+<code>AND</code> applied to two bytes is applied bit by bit.
+</p>
+
+<h2>Example</h2>
+<p>
+Here is the <code>AND</code> of two bytes. In many cases,
+we aren't interested in the numerical values.
+Instead, the bytes represent some other form
+of data.
+</p>
+
+<pre><big-code>      01100100
+    &and; 00111101
+  ------------
+      00100100
+</code></pre>
+
+<p>
+A numerical application of <code>AND</code> is testing whether a
+byte value is even or odd.
+</p>
+
+<pre><big-code>      01100100    decmal 100
+    &and; 00000001
+  ------------
+      00000000    1 if odd, 0 if even
+</code></pre>
+
+<div class='next-prev'>
+<a href='byte_or.html' class='next round'>Next</a>
+<a href='aaanumbers_toc.html' class='tree round'>Home</a>
+<a href='byte_sqrt.html' class='previous round'>Previous</a>
+</div>
+<script src="../js/vendor/jquery.js"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  ga('create', 'UA-165469376-1', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+</<body>
+
+</html>

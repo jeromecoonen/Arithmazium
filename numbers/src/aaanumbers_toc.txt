@@ -54,11 +54,11 @@ This content is appropriate for all ages.
 </a></p>
 <p class="el2"><a class="toc-link num wip"
   href="byte_peek_and_poke.html">
-  Peek and Poke
+  Peek and poke
 </a></p>
 <p class="el1"><a class="toc-link num wip"
   href="byte_circles.html">
-  Running in circles
+  A circle of numbers
 </a></p>
 
 #INCLUDE para_toc_foot

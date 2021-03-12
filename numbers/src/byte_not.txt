@@ -1,0 +1,37 @@
+#INCLUDE para_head byte_or.html aaanumbers_toc.html byte_xor.html
+
+
+<h1>Not</h1>
+
+<p>
+Logical <code>Not</code> turns <code>True</code>
+values to <code>False</code>, and vice versa.
+<code>NOT</code> is usually
+denoted by the symbol <code>&not;</code>.
+The value \( \neg x \) is <code>True</code> if \( x \) is
+<code>False</code> and it is
+<code>False</code> if \( x \) is <code>True</code>.
+Its table is simple.
+</p>
+
+<pre><big-code>    &not;| 
+  ---+----
+    0|  1
+    1|  0
+</code></pre>
+
+<p>
+<code>NOT</code> applied to a byte is applied bit by bit.
+</p>
+
+<h2>Example</h2>
+<p>
+Here is the logical negation of a byte.
+</p>
+
+<pre><big-code>    &not; 01100100
+  ------------
+      10011011
+</code></pre>
+
+#INCLUDE para_foot byte_or.html aaanumbers_toc.html byte_xor.html

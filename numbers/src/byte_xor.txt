@@ -1,0 +1,55 @@
+#INCLUDE para_head byte_not.html aaanumbers_toc.html byte_peek_and_poke.html
+
+
+<h1>Xor</h1>
+
+<p>
+<code>XOR</code> stands for <em>exclusive-or</em>,
+a less familiar operation unless you are already
+a seasoned programmer or logician.
+</p>
+
+<p>
+<code>XOR</code> is usually
+denoted by the symbol <code>&oplus;</code>.
+\( x \oplus y \) is <code>True</code> only if just
+one of \( x \) and \( y \) is <code>True</code>.
+Its table is like the <code>ADD</code>
+table, but with a different twist than with <code>OR</code>.
+</p>
+
+<pre><big-code>    &oplus;|  0   1
+  ---+-------
+    0|  0   1
+    1|  1   0
+</code></pre>
+
+<p>
+<code>XOR</code> applied to two bytes is applied bit by bit.
+</p>
+
+<h2>Example</h2>
+<p>
+Here is the <code>XOR</code> of two data bytes.
+</p>
+
+<pre><big-code>      01100100
+    &oplus; 00111101
+  ------------
+      01011001
+</code></pre>
+
+<p>
+If the usefulness of <code>XOR</code> isn't obvious, we can
+define binary addition in terms of logical operations.
+</p>
+
+<pre><xbig-code>
+     x
+   + y
+  ----
+    ab   a = x &and; y
+         b = x &oplus; y
+</code></pre>
+
+#INCLUDE para_foot byte_not.html aaanumbers_toc.html byte_peek_and_poke.html

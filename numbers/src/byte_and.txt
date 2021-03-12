@@ -1,0 +1,79 @@
+#INCLUDE para_head byte_sqrt.html aaanumbers_toc.html byte_or.html
+
+
+<h1>And</h1>
+
+<p>
+Computer processors don't necessarily support
+every arithmetic operation. Some support just
+<code>ADD</code> and <code>SUB</code>. But every
+processor supports the logical operations:
+</p>
+
+<p>
+<code>AND    OR    NOT    XOR</code>
+</p>
+
+<p>
+These operations are essential for data processing.
+They operate on values <code>True</code> and
+<code>False</code>. You can imagine the link to binary
+numbers. <code>True</code> is \( 1 \) and
+<code>Fales</code> is \( 0 \).
+</p>
+
+<p>
+In the 1850s, English mathematician George Boole
+expressed the process of logical deduction in
+mathematical form. We now know that study as
+Boolean algebra, and celebrate his wonderful name
+every day in the <em>boolean</em> values we use
+when computing.
+</p>
+
+<p>
+The logical operations have names so intuitive that
+they barely need explanation.
+\( x \wedge y \) is <code>True</code> only if both
+\( x \) and \( y \) are <code>True</code>.
+<code>AND</code> is usually
+denoted by the symbol <code>&and;</code>.
+Its table is the same as multiplication table.
+</p>
+
+<pre><big-code>    &and;|  0   1
+  ---+-------
+    0|  0   0
+    1|  0   1
+</code></pre>
+
+<p>
+<code>AND</code> applied to two bytes is applied bit by bit.
+</p>
+
+<h2>Example</h2>
+<p>
+Here is the <code>AND</code> of two bytes. In many cases,
+we aren't interested in the numerical values.
+Instead, the bytes represent some other form
+of data.
+</p>
+
+<pre><big-code>      01100100
+    &and; 00111101
+  ------------
+      00100100
+</code></pre>
+
+<p>
+A numerical application of <code>AND</code> is testing whether a
+byte value is even or odd.
+</p>
+
+<pre><big-code>      01100100    decmal 100
+    &and; 00000001
+  ------------
+      00000000    1 if odd, 0 if even
+</code></pre>
+
+#INCLUDE para_foot byte_sqrt.html aaanumbers_toc.html byte_or.html

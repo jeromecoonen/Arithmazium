@@ -167,7 +167,7 @@ pre {
 }
 
 /* Prev - Next buttons */
-div.next-prev {
+.next-prev {
   padding: 10px 24px 10px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
   text-align: right; /* Float the buttons side by side */
@@ -218,10 +218,18 @@ a.inline:hover {
   cursor: pointer; /* Pointer/hand icon */
   float: right; /* Float the buttons side by side */
   background-color: var(--but-color);
-  border: 0 solid green; /* Green border */
+  border: 0 solid black;
   color: white; /* White text */
   font-family: Courier, monospace;
   font-weight: normal;
+}
+
+a.tree:hover,
+a.next:hover,
+a.previous:hover {
+  background-color: #ddd;
+  text-decoration: none;
+  color: var(--but-color);
 }
 
 /*

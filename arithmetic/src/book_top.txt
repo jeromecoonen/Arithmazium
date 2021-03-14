@@ -1,0 +1,33 @@
+#INCLUDE para_head aaaarithmetic_toc.html aaaarithmetic_toc.html book_nonzero.html
+
+
+<h1>Floating point essentials</h1>
+
+<p>
+This pamphlet presents binary floating point
+number systems and special
+values. You will see how arithmetic operations
+produce results within the number system.
+You will see how the arithmetic connects to the
+rest of the computer system.
+You will see what happens the edges, where
+floating point departs from everyday mathematics.
+</p>
+
+<p>
+The presentation is in binary, but the ideas apply
+directly to ocatal, decimal, and hexadecimal.
+The presentation covers one
+data type, but the extension to multiple types is
+easy.
+</p>
+
+<p>
+The key simplification is the omission of the storage
+format. How the bits are arranged in storage is a vital
+part of the design, but the details of encoding have
+nothing to do with arithmetic. You will find extensive
+discussion of number encodings outside this pamphlet.
+</p>
+
+#INCLUDE para_foot aaaarithmetic_toc.html aaaarithmetic_toc.html book_nonzero.html

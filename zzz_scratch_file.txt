@@ -4,6 +4,8 @@
 
 ====retired slash on Number room====
       <line class="home-room-wip" x1="815" y1="225" x2="1025" y2="95" >
+====slash Arithmetic Study=======
+      <line class="home-room-wip" x1="95" y1="665" x2="385" y2="455" >
 
 =====yanked as unncessary from toc pages
 <script src="../js/vendor/jquery.js"></script>

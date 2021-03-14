@@ -53,6 +53,12 @@ text.home-room {
   alignment-baseline: center;
 }
 
+text.home-copyright {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: large;
+}
+
 .home-room-wip {
   stroke-width: 15;
   stroke-linecap: square;

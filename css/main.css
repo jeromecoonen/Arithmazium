@@ -102,7 +102,7 @@ textarea {
   --code-color: rgba(241, 228, 194, 1.0);
 }
 
-rect.arith-ban-box {
+.arith-ban-box {
   fill: var(--but-color);
   stroke: black;
   stroke-width: 0;
@@ -115,13 +115,19 @@ rect.arith-ban-box {
   font-family: "Courier", "lucida Console", Monaco, monospace;
 }
 
-text.arith-ban-front {
+.arith-ban-front {
   fill: white;
   font-size: 56px;
   font-weight: 800;
   font-family: "Work Sans", "lucida Console", Monaco, monospace;
   dominant-baseline: 'middle';
   text-anchor: 'middle';
+}
+
+.copyright {
+  font-family: sans-serif;
+  font-weight: bolder;
+  font-size: medium;
 }
 
 h1 {

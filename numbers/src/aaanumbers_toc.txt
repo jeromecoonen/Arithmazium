@@ -61,4 +61,5 @@ This content is appropriate for all ages.
   A circle of numbers
 </a></p>
 
+#INCLUDE page_copyright
 #INCLUDE para_toc_foot

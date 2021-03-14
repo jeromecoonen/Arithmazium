@@ -142,4 +142,5 @@
   </ul>
 <p><br></p>
 
+#INCLUDE page_copyright
 #INCLUDE room_foot

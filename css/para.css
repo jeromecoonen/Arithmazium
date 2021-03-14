@@ -21,8 +21,7 @@ h1 {
   font-size: 60px;
 }
 /* suppress underscore for outline elements */
-.toc-link,
-.num-link {
+.toc-link {
   text-decoration-line: none;
   font-family: "Trebuchet", sans-serif;
   font-weight: normal;

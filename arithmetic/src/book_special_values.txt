@@ -1,0 +1,71 @@
+#INCLUDE para_head book_nonzero.html aaaarithmetic_toc.html book_operations.html
+
+
+<h1>Special floating point values</h1>
+
+<p>
+Modern floating point systems have three
+flavors of special value. All of them have
+roots extending back to mainframes of the
+sixties, and even to the pioneering computers
+of earlier decades.
+</p>
+
+<h2>Zero</h2>
+
+<p>
+The parallelogram diagram misses one crtical value, zero,
+which figures specially in nearly every operation.
+The only question is whether zero carries algebraic sign.
+IEEE 754 specifies signed zero.
+</p>
+
+<p>
+For signed zero to be sensible mathematically,
+\( -0 = +0 \) must be true, as must \( x \pm 0 = x \)
+and many other identities.
+It is \( x / \pm0 \) for \( x \neq 0 \) that brings
+out the sign of zero.
+</p>
+
+<h2>Infinity</h2>
+
+<p>
+Modern floating point systems define some form of \( \infty \).
+IEEE 754 specifies \( \pm \infty \), not just as the
+reciprocal of \( \pm 0 \), but also to cope with numbers
+just too big to represent as normalized values.
+Infinity helps cope with results that fall beyond
+the overflow threshold.
+</p>
+
+<p>
+\[ \pm \infty = \pm 1 / \pm 0 \]
+where the usual conventions for algebaric sign apply.
+</p>
+
+<h2>NaN</h2>
+
+<p>
+The Not-a-Number symbol, or NaN, is the last resort, when
+no numerical value, even infinite, makes sense.
+The expression \( \pm 0 / \pm 0 \) is just one.
+At least \( \sqrt{-5} \) has a mathematical meaning,
+but it has no result in a number system with just
+real values. NaNs can but be stored for missing data
+in a data set or used to initialze numerical values
+created while a program is running.
+</p>
+
+<p>
+Modern programming languages define entities like
+<code>null</code>, <code>None</code>, or <code>Undefined</code>
+to cope with edge cases of all kinds. For a number
+system to be meaningful across diverse language
+environments and for it to be possible to encode
+unusual values in a portable bit format, some
+general form of NaN is required. IEEE 754 specified
+its NaNs over 40 years ago.
+</p>
+
+#INCLUDE para_foot book_nonzero.html aaaarithmetic_toc.html book_operations.html

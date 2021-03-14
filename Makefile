@@ -13,6 +13,7 @@ site: diagrams
 	python3 $(injector) mailroom
 	python3 $(injector) numbers
 	python3 $(injector) paranoia
+	python3 $(injector) arithmetic
 
 .PHONY: diagrams
 diagrams:

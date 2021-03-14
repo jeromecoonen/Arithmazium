@@ -370,4 +370,5 @@
   final_report
 </a></p>
 
+#INCLUDE page_copyright
 #INCLUDE para_toc_foot a b c

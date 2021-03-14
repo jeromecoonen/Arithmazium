@@ -1,0 +1,28 @@
+#INCLUDE para_toc_head
+
+<h1>Computer arithmetic</h1>
+
+<p class="el1"><a class="toc-link arith wip"
+  href="book_top.html">
+  A short book on floating point
+</a></p>
+<p class="el2"><a class="toc-link arith wip"
+  href="book_nonzero.html">
+  Numbers
+</a></p>
+<p class="el2"><a class="toc-link arith wip"
+  href="book_special_values.html">
+  Special values
+</a></p>
+<p class="el2"><a class="toc-link arith wip"
+  href="book_operations.html">
+  Operations
+</a></p>
+<p class="el2"><a class="toc-link arith wip"
+  href="book_special_cases.html">
+  Things that go wrong
+</a></p>
+
+
+#INCLUDE page_copyright
+#INCLUDE para_toc_foot

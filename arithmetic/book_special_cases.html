@@ -1,0 +1,165 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>Arithmazium</title>
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/arithmetic/book_special_cases.html">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#fafafa'>
+  <link rel='stylesheet' href='../css/normalize.css'>
+  <link rel='stylesheet' href='../css/main.css'>
+  <link rel='stylesheet' href='../css/para.css'>
+  <link rel='stylesheet' href='../css/numbers.css'>
+  <link href='https://fonts.googleapis.com/css?family=Days One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans:wght@400;800' rel='stylesheet'>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_SVG">
+  </script>
+</head>
+<body>
+  <div>
+  <svg viewbox='0 0 1000 80' xmlns='http://www.w3.org/2000/svg'>
+  <a class="para-ban" href='../index.html'>
+  <rect x=0 y=0 width=1000 height=80 class='arith-ban-box'/>
+  <text x=10 y=68 class='arith-ban-back'>
+  <tspan>11.001001000011111101101010100010001000</tspan>
+  </text>
+  <text x='60' y='55' class='arith-ban-front'>
+  <tspan>Arithmazium</tspan>
+  </text>
+  </a>
+  </svg>
+  </div>
+  <div class='next-prev'>
+  <a href='book_nonzero.html' class='next round'>Next</a>
+  <a href='aaaarithmetic_toc.html' class='tree round'>Home</a>
+  <a href='aaaarithmetic_toc.html' class='previous round'>Previous</a>
+  </div>
+
+
+<h1>Nonzero numbers</h1>
+
+<p>
+Floating point numbers fall neatly into a
+parallelogram.
+A bullet &bull;
+emphasizes the binary point in this 8-bit
+number system. Each value may have positive
+or negative algebraic sign.
+</p>
+
+<pre><code>
+  |11111111           &bull;                 | largest number
+  |1bbbbbbb           &bull;                 |
+  | 1bbbbbbb          &bull;                 |
+  |  1bbbbbbb         &bull;                 |
+  |   1bbbbbbb        &bull;                 |
+  
+       . . . many lines omitted . . .
+  
+  |         1bbbbbbb00&bull;                 |
+  |          1bbbbbbb0&bull;                 |
+  |           1bbbbbbb&bull;                 |
+  |            1bbbbbb&bull;b                |
+  |             1bbbbb&bull;bb               |
+  |              1bbbb&bull;bbb              |
+  |               1bbb&bull;bbbb             |
+  |                1bb&bull;bbbbb            |
+  |                 1b&bull;bbbbbb           |
+  |                  1&bull;bbbbbbb          |
+  |                   &bull;1bbbbbbb         |
+  |                   &bull;01bbbbbbb        |
+  |                   &bull;001bbbbbbb       |
+  |                   &bull;0001bbbbbbb      |
+  
+       . . . many lines omitted . . .
+  
+  |                   &bull;      1bbbbbbb   |
+  |                   &bull;       1bbbbbbb  |
+  |                   &bull;        1bbbbbbb |
+  |                   &bull;         1bbbbbbb|
+  |                   &bull;         10000000| smallest normal number
+  |                   --------------------------------------------
+  |                   &bull;         01111111| largest subnormal number
+  |                   &bull;         01bbbbbb|
+  |                   &bull;         001bbbbb|
+  |                   &bull;         0001bbbb|
+  |                   &bull;         00001bbb|
+  |                   &bull;         000001bb|
+  |                   &bull;         0000001b|
+  |                   &bull;         00000001| smallest subnormal number
+</code></pre>
+
+<p>
+This is a <em>normalized</em> number system.
+The leading bit is <code>1</code>,
+except perhaps for the tiniest values. 
+</p>
+
+<p>
+Normalization ensures there is exactly one representation for
+any value.
+For example, two appears as
+<code>10.000000</code> in the table, and nowhere else.
+When it's time to encode numbers as bit strings
+in memory,
+normalization gives us a free bit. If we know the
+leading significant bit is <code>1</code>, we don't have
+to store it.
+</p>
+
+<p>
+The diagram suggests the sense in which the binary point
+<em>floats</em> left and right across 8-bit strings.
+Usually, there is a limit to how far rightward the binary
+point can float &ndash; a limit to how big numbers can get.
+That largest representable number is called the
+<em>overflow threshold</em>.
+</p>
+
+<p>
+In the same way,there is a limit to how far leftward
+the binary point can float &ndash; a limit to how tiny
+numbers can get. The diagram shows a tiniest normalized
+number. This may be called the <em>underflow threshold</em>.
+</p>
+
+<p>
+The diagram suggests that we may squeeze out a bit more range
+by allowing the leading bit to go to <code>0</code> for just
+these tiniest numbers. The IEEE 754 Floating Point Standard
+famously adopted such <em>denormalization</em> as a means to
+mitigate the effects of underflow. The resulting values have
+come to be called <em>subnormal</em>.
+</p>
+
+<p>
+The 8-bit number system fits conveniently in a diagram.
+The narrow values help convey the dynamic nature of
+floating point numbers. Please don't think it's a toy
+example. Every day, billions of such numbers play into
+artificial intelligence calculations carried out by
+specialized processors.
+</p>
+
+<div class='next-prev'>
+<a href='book_nonzero.html' class='next round'>Next</a>
+<a href='aaaarithmetic_toc.html' class='tree round'>Home</a>
+<a href='aaaarithmetic_toc.html' class='previous round'>Previous</a>
+</div>
+<script src="../js/vendor/jquery.js"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  ga('create', 'UA-165469376-1', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+</<body>
+
+</html>

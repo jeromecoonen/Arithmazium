@@ -17,6 +17,8 @@ Reinhold Holtkamp, Jr. or Tim Cain
 
 Special characters in HTML
   &plusmn; &nbsp;=&#160; &ndash; &mdash; &and; &oplus; &not;
+  &#127849; donut &#129371; glass of milk
+  &copy;
 
 Snippets (Sublime / Preferences / Browse packages)
   math \(xxx\) -- inline TeX
@@ -38,4 +40,6 @@ Idioms
   * Underflow test: y <= z or z+z <= z
 
 TODO
-  Resolved whether B=1 for log arithmetic
+  Resolve whether B=1 for log arithmetic
+  Normalization and error analysis
+  FP as "nearly log" arithmetic

@@ -45,9 +45,9 @@
 <p>
 Modern floating point systems have three
 flavors of special value. All of them have
-roots extending back to mainframes of the
-sixties, and even to the pioneering computers
-of earlier decades.
+roots extending back to the mainframes of the
+sixties and beyond and even the pioneering computers
+that preceded them.
 </p>
 
 <h2>Zero</h2>
@@ -60,6 +60,8 @@ IEEE 754 specifies signed zero.
 </p>
 
 <p>
+The sign of zero requires special definition in the
+arithmetic, because mathematical zero has no sign.
 For signed zero to be sensible mathematically,
 \( -0 = +0 \) must be true, as must \( x \pm 0 = x \)
 and many other identities.
@@ -72,8 +74,8 @@ out the sign of zero.
 <p>
 Modern floating point systems define some form of \( \infty \).
 IEEE 754 specifies \( \pm \infty \), not just as the
-reciprocal of \( \pm 0 \), but also to cope with numbers
-just too big to represent as normalized values.
+reciprocal of \( \pm 0 \), but also to cope with values
+just too big to represent as normal numbers.
 Infinity helps cope with results that fall beyond
 the overflow threshold.
 </p>
@@ -90,7 +92,7 @@ The Not-a-Number symbol, or NaN, is the last resort, when
 no numerical value, even infinite, makes sense.
 The expression \( \pm 0 / \pm 0 \) is just one.
 At least \( \sqrt{-5} \) has a mathematical meaning,
-but it has no result in a number system with just
+but it has no representation in a number system with just
 real values. NaNs can but be stored for missing data
 in a data set or used to initialze numerical values
 created while a program is running.
@@ -98,13 +100,14 @@ created while a program is running.
 
 <p>
 Modern programming languages define entities like
-<code>null</code>, <code>None</code>, or <code>Undefined</code>
+<code>null</code>, <code>None</code>, or <code>undefined</code>
 to cope with edge cases of all kinds. For a number
 system to be meaningful across diverse language
 environments and for it to be possible to encode
 unusual values in a portable bit format, some
 general form of NaN is required. IEEE 754 specified
-its NaNs over 40 years ago.
+its NaNs over 40 years ago, to work as seamlessly
+as possible in more primitive high level languages.
 </p>
 
 <div class='next-prev'>

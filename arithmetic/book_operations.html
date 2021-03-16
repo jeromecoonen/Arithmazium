@@ -34,121 +34,147 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='book_nonzero.html' class='next round'>Next</a>
+  <a href='book_ideal_result.html' class='next round'>Next</a>
   <a href='aaaarithmetic_toc.html' class='tree round'>Home</a>
-  <a href='aaaarithmetic_toc.html' class='previous round'>Previous</a>
+  <a href='book_special_values.html' class='previous round'>Previous</a>
   </div>
 
 
-<h1>Nonzero numbers</h1>
+<h1>Operations</h1>
 
 <p>
-Floating point numbers fall neatly into a
-parallelogram.
-A bullet &bull;
-emphasizes the binary point in this 8-bit
-number system. Each value may have positive
-or negative algebraic sign.
-</p>
-
-<pre><code>
-  |11111111           &bull;                 | largest number
-  |1bbbbbbb           &bull;                 |
-  | 1bbbbbbb          &bull;                 |
-  |  1bbbbbbb         &bull;                 |
-  |   1bbbbbbb        &bull;                 |
-  
-       . . . many lines omitted . . .
-  
-  |         1bbbbbbb00&bull;                 |
-  |          1bbbbbbb0&bull;                 |
-  |           1bbbbbbb&bull;                 |
-  |            1bbbbbb&bull;b                |
-  |             1bbbbb&bull;bb               |
-  |              1bbbb&bull;bbb              |
-  |               1bbb&bull;bbbb             |
-  |                1bb&bull;bbbbb            |
-  |                 1b&bull;bbbbbb           |
-  |                  1&bull;bbbbbbb          |
-  |                   &bull;1bbbbbbb         |
-  |                   &bull;01bbbbbbb        |
-  |                   &bull;001bbbbbbb       |
-  |                   &bull;0001bbbbbbb      |
-  
-       . . . many lines omitted . . .
-  
-  |                   &bull;      1bbbbbbb   |
-  |                   &bull;       1bbbbbbb  |
-  |                   &bull;        1bbbbbbb |
-  |                   &bull;         1bbbbbbb|
-  |                   &bull;         10000000| smallest normal number
-  |                   --------------------------------------------
-  |                   &bull;         01111111| largest subnormal number
-  |                   &bull;         01bbbbbb|
-  |                   &bull;         001bbbbb|
-  |                   &bull;         0001bbbb|
-  |                   &bull;         00001bbb|
-  |                   &bull;         000001bb|
-  |                   &bull;         0000001b|
-  |                   &bull;         00000001| smallest subnormal number
-</code></pre>
-
-<p>
-This is a <em>normalized</em> number system.
-The leading bit is <code>1</code>,
-except perhaps for the tiniest values. 
+Most programming systesm provide the big five functions:
+<ul>
+  <li><code>add(x, y)</code></li>
+  <li><code>sub(x, y)</code></li>
+  <li><code>mul(x, y)</code></li>
+  <li><code>sqrt(x)</code></li>
+</ul>
+We write them in functional notation to emphasize
+their arguments, but of course most programming
+environments offer <em>infix</em> epxressions
+like <code>x * y</code>.
 </p>
 
 <p>
-Normalization ensures there is exactly one representation for
-any value.
-For example, two appears as
-<code>10.000000</code> in the table, and nowhere else.
-When it's time to encode numbers as bit strings
-in memory,
-normalization gives us a free bit. If we know the
-leading significant bit is <code>1</code>, we don't have
-to store it.
+IEEE 754 defines several less obvious, but also
+useful functions:
+<ul>
+  <li><code>remainder(x, y)</code> &ndash; the (exact)
+  remainder left when the full integer value of \( x / y \)
+  is computed
+  </li>
+  <li><code>nextUp(x)</code> &ndash; smallest
+  <code>y</code> with <code>x < y</code>
+  </li>
+  <li><code>nextDown(x)</code> &ndash; largest
+  <code>y</code> with <code>y < x</code>
+  </li>
+  <li><code>scaleB(x, n)</code> &ndash;
+  \( x \times 2^{n} \)
+  </li>
+  <li><code>logB(x)</code> &ndash; satisfies
+  <code>1.0 <= scaleB(x, -logB(x)) < 2.0</code>
+  </li>
+  <li><code>copysign(x, y)</code> &ndash; value <code>y</code>
+  with sign of <code>x</code>
+  </li>
+  <li><code>abs(x)</code> &ndash; <code>x</code>
+  with positive sign
+  </li>
+  <li><code>neg(x)</code> &ndash; <code>x</code>
+  with its sign reversed
+  </li>
+</ul>
+</p>
+
+<h2>Converting to and from floating point</h2>
+
+<p>
+Many programming environments have explicit integer
+data types. Converting to floating point
+from an integer type falls
+ritht into the pattern of any arithmetic operation.
+Converting from floating point to an integer type
+requires spefication for values outside the range
+of integers, such as happens with huge values,
+\( \infty \), and NaN.
 </p>
 
 <p>
-The diagram suggests the sense in which the binary point
-<em>floats</em> left and right across 8-bit strings.
-Usually, there is a limit to how far rightward the binary
-point can float &ndash; a limit to how big numbers can get.
-That largest representable number is called the
-<em>overflow threshold</em>.
+Converting between floating point and string formats
+depends on the environment. One of the attractions of
+decimal floating point is the lack of surprise converting
+between everyday decimal and internal decimal forms. Some
+environents support display in a radix other than
+decimal. These conversions usually appear in software
+that can handle the subtleties of formatting.
+</p>
+
+<h2>Many more operations</h2>
+
+<p>
+Any floating point system is going be a mix
+of hardware and software. The fastest systems
+are generally those with
+the most complete hardware support.
+But the conversation about floating point can
+be independent of how the features are
+implemented.
 </p>
 
 <p>
-In the same way,there is a limit to how far leftward
-the binary point can float &ndash; a limit to how tiny
-numbers can get. The diagram shows a tiniest normalized
-number. This may be called the <em>underflow threshold</em>.
+To fill out the discussion, here is the start of
+a bottomless list of floating point functions.
+Their implementation is usually in software.
+In the 1960s and 1970s, numerical software libraries
+were of highly variable quality.
+Since the arrival of IEEE 754, substantial effort has
+gone into refining these functions.
+Intel notably broke from convention by providing
+elementary function support on its
+i8087 and subsequent chips.
 </p>
 
 <p>
-The diagram suggests that we may squeeze out a bit more range
-by allowing the leading bit to go to <code>0</code> for just
-these tiniest numbers. The IEEE 754 Floating Point Standard
-famously adopted such <em>denormalization</em> as a means to
-mitigate the effects of underflow. The resulting values have
-come to be called <em>subnormal</em>.
-</p>
+These common functions can be implemented along
+the lines of the carefully-specified arithmetic
+operations:
+<ul>
+  <li><code>pow(x, y)</code> &ndash; \( x^{y} \)
+  </li>
+  <li><code>log(x)</code> &ndash; log base \( e \)
+  </li>
+  <li><code>log1p(x)</code> &ndash; \( log(1 + x) \),
+  without adding \( 1 + x \)
+  </li>
+  <li><code>exp(x)</code> &ndash; \( e^{x} \)
+  </li>
+  <li><code>expm1(x)</code> &ndash; \( e^{x} - 1 \),
+  without computing \( e^{x} \)
+  </li>
+  <li><code>sin(x)</code>
+  </li>
+  <li><code>cos(x)</code>
+  </li>
+  <li><code>tan(x)</code>
+  </li>
+  <li><code>atan(x)</code>
+  </li>
+</ul>
 
 <p>
-The 8-bit number system fits conveniently in a diagram.
-The narrow values help convey the dynamic nature of
-floating point numbers. Please don't think it's a toy
-example. Every day, billions of such numbers play into
-artificial intelligence calculations carried out by
-specialized processors.
+The subtleties of rounding the <em>transcendental</em>
+functions and performing trigonometric argument
+reduction modulo \( \pi / n \) are topics
+all their own, and are not part of this
+floating point discussion.
 </p>
 
 <div class='next-prev'>
-<a href='book_nonzero.html' class='next round'>Next</a>
+<a href='book_ideal_result.html' class='next round'>Next</a>
 <a href='aaaarithmetic_toc.html' class='tree round'>Home</a>
-<a href='aaaarithmetic_toc.html' class='previous round'>Previous</a>
+<a href='book_special_values.html' class='previous round'>Previous</a>
 </div>
 <script src="../js/vendor/jquery.js"></script>
 <script src="../js/plugins.js"></script>

@@ -53,6 +53,8 @@ or negative algebraic sign.
   |                   &bull;         00000001| smallest subnormal number
 </code></pre>
 
+<h2>Normal numbers</h2>
+
 <p>
 This is a <em>normalized</em> number system.
 The leading bit is <code>1</code>,
@@ -72,6 +74,12 @@ to store it.
 </p>
 
 <p>
+We will call these <em>normal numbers</em>.
+</p>
+
+<h2>The floating point</h2>
+
+<p>
 The diagram suggests the sense in which the binary point
 <em>floats</em> left and right across 8-bit strings.
 Usually, there is a limit to how far rightward the binary
@@ -81,11 +89,13 @@ That largest representable number is called the
 </p>
 
 <p>
-In the same way,there is a limit to how far leftward
+In the same way, there is a limit to how far leftward
 the binary point can float &ndash; a limit to how tiny
 numbers can get. The diagram shows a tiniest normalized
 number. This may be called the <em>underflow threshold</em>.
 </p>
+
+<h2>Denormalization</h2>
 
 <p>
 The diagram suggests that we may squeeze out a bit more range
@@ -96,8 +106,10 @@ mitigate the effects of underflow. The resulting values have
 come to be called <em>subnormal</em>.
 </p>
 
+<h2>Not a toy</h2>
+
 <p>
-The 8-bit numbers fit conveniently in a diagram.
+The 8-bit numbers fit conveniently in the diagram.
 The narrow values help convey the dynamic nature of
 floating point numbers. Please don't think it's a toy
 example. Every day, billions of such numbers play into

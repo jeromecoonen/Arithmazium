@@ -18,9 +18,17 @@
   href="book_operations.html">
   Operations
 </a></p>
-<p class="el2"><a class="toc-link arith wip"
+<p class="el3"><a class="toc-link arith wip"
+  href="book_ideal_result.html">
+  The ideal intermediate result
+</a></p>
+<p class="el3"><a class="toc-link arith wip"
+  href="book_coercion.html">
+  Coercion to the target range and precision
+</a></p>
+<p class="el3"><a class="toc-link arith wip"
   href="book_special_cases.html">
-  Things that go wrong
+  Special cases
 </a></p>
 
 

@@ -13,6 +13,9 @@
 <p>
 The 8-bit byte is the basic unit of computer data.
 Play with the slider to explore the range of a byte's values.
+If the zeros and ones look too techie,
+try the fun look. Zeros and ones, donuts and milk, Morse code
+dots and dashes &ndash; they all convey the same message.
 </p>
 
 <div class="register">
@@ -29,7 +32,18 @@ Play with the slider to explore the range of a byte's values.
 <div class="slider-box">
   <input type="range" min="0" max="255" value="0"
     class="slider" id="n-slider">
-</div>
+  <br><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="n-buttons">
+  <button class="serious-button"
+    onclick="more_serious()">Serious</button>
+  </div>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="n-buttons">
+  <button class="fun-button"
+    onclick="more_fun()">&nbsp;&nbsp;Fun&nbsp;&nbsp;</button>
+  </div>
+  <br><br></div>
 
 <p>
  Your byte has the value
@@ -40,15 +54,33 @@ Play with the slider to explore the range of a byte's values.
 <p>
 A byte is a sequence of eight bits.
 Each bit has the value <code>0</code> or <code>1</code>.
-Pretty simple.
 While a byte may be used in many different ways,
 it is at its heart a number from \( 0 \) through \( 255 \),
-as shown in the box above.
+as shown in the little box just above.
 </p>
 
 <p>
 The values of the bits in a byte depend on their <em>position</em>,
-just the way decimal digits work in everyday numbers
+just the way decimal digits work in everyday numbers.
+Check out these sample values
+</p>
+
+<pre><big-code> Binary    Everyday     Donut
+  Value      Name     Encoding
+ -------    ------    --------
+     0       Zero          &#127849;
+     1        One          &#129371;
+    10        Two         &#129371;&#127849;
+    11      Three         &#129371;&#129371;
+   100       Four        &#129371;&#127849;&#127849;
+   101       Five        &#129371;&#127849;&#129371;
+   110        Six        &#129371;&#129371;&#127849;
+   111      Seven        &#129371;&#129371;&#129371;
+  1000      Eight       &#129371;&#127849;&#127849;&#127849;
+  1001       Nine       &#129371;&#127849;&#127849;&#129371;
+</code></pre>
+
+<p>
 In decimal, we know
 the ones place, tens place, hundreds place, and so on. In binary,
 we have the ones place, twos place, fours place, and more as

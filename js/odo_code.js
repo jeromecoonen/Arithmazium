@@ -8,6 +8,8 @@
   const rad = 2;
   const num_digs = 8;
   let reading = 0;
+  let funny = false;
+  let root = document.documentElement;
   const slider = document.getElementById("n-slider");
   const output = document.getElementById("n");
   const out_spans = new Array(num_digs);
@@ -26,8 +28,17 @@
     let out_digs = out_str.split("");
     //console.log("out_digs: " + out_digs.toString());
     let i = 0;
+    let boo;
     while (i < num_digs) {
-      out_spans[i].innerHTML = out_digs[i].toString();
+      boo = out_digs[i];
+      if (funny) {
+        boo = (
+          boo === "0"
+          ? "&#127849;"
+          : "&#129371;"
+        );
+      }
+      out_spans[i].innerHTML = boo;
       i += 1;
     }
     output.innerHTML = disp_val;
@@ -49,5 +60,17 @@
 
   function bumpUp() {
     reading = (reading + 1) % input_modulus;
+    update(reading);
+  }
+
+  function more_serious() {
+    funny = false;
+    root.style.setProperty("--reg8-size", "90px");
+    update(reading);
+  }
+
+  function more_fun() {
+    funny = true;
+    root.style.setProperty("--reg8-size", "70px");
     update(reading);
   }

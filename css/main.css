@@ -100,10 +100,11 @@ textarea {
 :root {
   --but-color: cornflowerblue;
   --code-color: rgba(241, 228, 194, 1.0);
+  --reg8-size: 90px;
 }
 
 .arith-ban-box {
-  fill: var(--but-color);
+  fill: var(--but-color, lightblue);
   stroke: black;
   stroke-width: 0;
 }
@@ -180,6 +181,10 @@ pre {
 
 }
 
+.n-buttons {
+  display: inline-flex;
+}
+
 .bump-button {
   padding: 10px 24px;
   font-size: 24px;
@@ -187,6 +192,25 @@ pre {
   border: 2px solid DimGray;
   color: Black;
   background-color: Gainsboro;
+}
+
+.fun-button,
+.serious-button {
+  padding: 10px 24px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  color: White;
+}
+
+.serious-button {
+  background-color: MediumSeaGreen;
+}
+
+.fun-button {
+  background-color: Crimson;
 }
 
 /* Clear floats (clearfix hack) */
@@ -223,7 +247,7 @@ a.inline:hover {
   text-align: center;
   cursor: pointer; /* Pointer/hand icon */
   float: right; /* Float the buttons side by side */
-  background-color: var(--but-color);
+  background-color: var(--but-color, lightblue);
   border: 0 solid black;
   color: white; /* White text */
   font-family: Courier, monospace;
@@ -235,7 +259,7 @@ a.next:hover,
 a.previous:hover {
   background-color: #ddd;
   text-decoration: none;
-  color: var(--but-color);
+  color: var(--but-color, lightblue);
 }
 
 /*
@@ -294,7 +318,7 @@ ul.basic {
   float: left;
   font-family: "Helvetica Neue", "Roboto Mono", monospace;
   font-weight: normal;
-  font-size: 90px;
+  font-size: var(--reg8-size, 80px);
   text-align: center;
   width: 76px;
   border: 1px solid gray;

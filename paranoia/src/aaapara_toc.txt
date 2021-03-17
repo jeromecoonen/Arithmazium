@@ -2,6 +2,14 @@
 
 <h1>Paranoia: The Program</h1>
 
+<div class="message-box">
+<span class="big-green">M</span>
+Readers might visit the
+<a class="inline" href="../numbers/aaaarithmetic_toc.html">
+  Arithmetic Study</a> first.
+</div>
+<br>
+
 <p class="el1"><a class="toc-link wip" href="the_beginning.html">
   Introduction
 </a></p>

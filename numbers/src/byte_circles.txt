@@ -42,15 +42,17 @@ The blue numbers are the byte values in decimal.
 <div class="slider-box">
   <input type="range" min="0" max="767" value="0"
     class="slider" id="n-slider">
-  <br><br>
+  <br>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="n-buttons">
   <button class="bump-button"
     onclick="bumpDown()">&ndash;1</button>
+  </div>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="n-buttons">
   <button class="bump-button"
     onclick="bumpUp()">+1</button>
+  </div>
   <br><br>
 </div>
 

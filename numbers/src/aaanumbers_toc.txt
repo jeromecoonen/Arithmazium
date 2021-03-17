@@ -10,7 +10,7 @@ This content is appropriate for all ages.
 
 <p class="el1"><a class="toc-link num wip"
   href="byte_basic.html">
-  The byte
+  Introducing the byte
 </a></p>
 <p class="el2"><a class="toc-link num wip"
   href="byte_names.html">

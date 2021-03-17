@@ -14,6 +14,7 @@ site: diagrams
 	python3 $(injector) numbers
 	python3 $(injector) paranoia
 	python3 $(injector) arithmetic
+	python3 $(injector) library
 
 .PHONY: diagrams
 diagrams:

@@ -1,0 +1,13 @@
+#INCLUDE para_head aaalibrary_toc.html aaalibrary_toc.html lib_wKahan.html
+
+
+<h1>Reader's guide to IEEE 754</h1>
+
+<p>
+This shelf contains papers about the standard, how
+it is implmented, and how it is used. See the William
+Kahan shelves for his many papers regarding the standard.
+</p>
+
+
+#INCLUDE para_foot aaalibrary_toc.html aaalibrary_toc.html lib_wKahan.html

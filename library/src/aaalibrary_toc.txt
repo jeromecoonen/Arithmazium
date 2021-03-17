@@ -1,0 +1,45 @@
+#INCLUDE para_toc_head
+
+<h1>Library</h1>
+
+<div class="message-box">
+<span class="big-green">E</span>
+The Library is for Everyone.
+</div>
+<br>
+
+<p class="el1"><a class="toc-link library wip"
+  href="lib_ieee754.html">
+  IEEE Standard 754 for Floating Point Arithmetic
+</a></p>
+<p class="el2"><a class="toc-link library wip"
+  href="xxxxxxxxxxxx">
+  IEEE 754 1985
+</a></p>
+<p class="el2-note">
+  The original version of the standard. It's binary only, and lacking
+  many refinements of later revisions.
+</p>
+<p class="el1"><a class="toc-link library wip"
+  href="lib_wkahan.html">
+  William Kahan
+</a></p>
+<p class="el2"><a class="toc-link library wip"
+  href="lib_wkahan_ieee754.html">
+  IEEE 754
+</a></p>
+<p class="el3"><a class="toc-link library wip" target="_blank"
+  href="lib/wk_square_root_aug80.pdf">
+  Software \( \sqrt{x} \) for the Proposed IEEE Floating-Point
+  Standard
+</a></p>
+<p class="el3-note">
+  How to extract a square root in software, honoring the IEEE 754
+  rounding direction. Includes comments on testing, and historical
+  notes.
+</p>
+
+
+
+#INCLUDE page_copyright
+#INCLUDE para_toc_foot

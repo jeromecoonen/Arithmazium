@@ -40,7 +40,10 @@ h1 {
 .el1,
 .el2,
 .el3,
-.el4 {
+.el4
+.el2-note
+.el3-note
+.el4-note {
   line-height: 1.0;
 }
 .el1 {
@@ -51,12 +54,27 @@ h1 {
   margin: 0 0 0 2em;
 }
 
+.el2-note {
+  font-size: small;
+  margin: 0 0 0 4em;
+}
+
 .el3 {
   margin: 0 0 0 4em;
 }
 
+.el3-note {
+  font-size: small;
+  margin: 0 0 0 6em;
+}
+
 .el4 {
   margin: 0 0 0 6em;
+}
+
+.el4-note {
+  font-size: small;
+  margin: 0 0 0 8em;
 }
 
 .src {

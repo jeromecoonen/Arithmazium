@@ -8,7 +8,7 @@
 }
 </style>
 
-<h1>The byte</h1>
+<h1>Intrducing the byte</h1>
 
 <p>
 The 8-bit byte is the basic unit of computer data.

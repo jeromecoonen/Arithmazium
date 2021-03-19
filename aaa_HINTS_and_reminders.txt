@@ -40,6 +40,11 @@ Idioms
   * Underflow test: y <= z or z+z <= z
 
 TODO
+  "pamphlet"
+  ParaBas or "real" Paranoia?
+  Entrance spelling error
+  Who is this?
+  Stub ends
   Resolve whether B=1 for log arithmetic
   Normalization and error analysis
   FP as "nearly log" arithmetic

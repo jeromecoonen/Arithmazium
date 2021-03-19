@@ -9,11 +9,14 @@ site: diagrams
 	python3 $(make_source_pages)
 	python3 $(catcher)
 	python3 $(injector) entrance
-	python3 $(injector) essentials
+	python3 $(injector) bugjar
 	python3 $(injector) mailroom
 	python3 $(injector) numbers
 	python3 $(injector) paranoia
 	python3 $(injector) arithmetic
+	python3 $(injector) classroom
+	python3 $(injector) fitness
+	python3 $(injector) dinosaur
 	python3 $(injector) library
 
 .PHONY: diagrams

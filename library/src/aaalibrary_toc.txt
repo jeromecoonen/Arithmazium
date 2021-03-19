@@ -20,10 +20,12 @@ The Library is for Everyone.
   The original version of the standard. It's binary only, and lacking
   many refinements of later revisions.
 </p>
+
 <p class="el1"><a class="toc-link library wip"
   href="lib_wkahan.html">
   William Kahan
 </a></p>
+
 <p class="el2"><a class="toc-link library wip"
   href="lib_wkahan_ieee754.html">
   IEEE 754
@@ -38,6 +40,50 @@ The Library is for Everyone.
   rounding direction. Includes comments on testing, and historical
   notes.
 </p>
+<p class="el3"><a class="toc-link library wip" target="_blank"
+  href="lib/wk_pseudo_division_mar89.pdf">
+  Pseudo-Divison Algorithms for Floating-Point
+  Logarithms and Exponentials
+</a></p>
+<p class="el3-note">
+  Some of the ideas underlying the transcendental
+  funtions on the Intel 8087.
+</p>
+<p class="el3"><a class="toc-link library wip" target="_blank"
+  href="lib/wk_doc_for_ctrl87_sep94.pdf">
+  DOCUMENTATION for CTRL87
+</a></p>
+<p class="el3-note">
+  Description of <code>CTRL87.EXE</code>, which ran on MS-DOS 3.3
+  and later systems. Includes details of IEEE 754 exceptions
+  as realized on 8087. An appendix describes how to change
+  the state of the Motorola 68881 math coprocessor using the
+  venerable Macsbug debugger.
+</p>
+
+<p class="el1"><a class="toc-link library wip"
+  href="lib_intel.html">
+  Intel
+</a></p>
+<p class="el2"><a class="toc-link library wip"
+  href="x87trigonometricinstructionsvsmathfunctions.pdf">
+  The Difference Between x87 Instructions FSIN, FCOS, FSINCOS,
+  and FPTAN and Mathematical Functions sin, cos, sincos, and tan
+</a></p>
+<p class="el2-note">
+  Description of the polynomial approximations on 80887 and
+  later implementations, which superceded the earlier
+  pseudo-division algorithms on the 8087.
+</p>
+<p class="el2"><a class="toc-link library wip"
+  href="80387_Programmers_Reference_Manual_1987.pdf">
+  80387 Programmer's Reference Manual
+</a></p>
+<p class="el2-note">
+  80387 was the first big step up from 8087, 80187, and 80287.
+</p>
+
+
 
 
 

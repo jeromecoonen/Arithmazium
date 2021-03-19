@@ -1,6 +1,6 @@
 #INCLUDE para_toc_head
 
-<h1>Dinosaur Gallery</h1>
+<h1>Bug Jar</h1>
 
 <div class="message-box">
 <span class="big-green">NA</span>

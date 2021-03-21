@@ -16,6 +16,9 @@
   <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Work Sans:wght@400;800' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_SVG">
+  </script>
 </head>
 <body>
   <div>
@@ -40,29 +43,86 @@ The Library is for Everyone.
 </div>
 <br>
 
-<p class="el1"><a class="toc-link library wip"
+<p class="el1"><a class="toc-link library"
   href="lib_ieee754.html">
-  IEEE Standard 754 for Floating Point Arithmetic
+  The Floating Point Standard
 </a></p>
-<p class="el2"><a class="toc-link library wip"
-  href="xxxxxxxxxxxx">
-  IEEE 754 1985
+
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/ieee754-1985.pdf">
+  IEEE Standard 754-1985 for Binary Floating-Point Arithmetic
 </a></p>
 <p class="el2-note">
-  The original version of the standard. It's binary only, and lacking
+  The original, launched 1977 and approved 1985.
+  It's binary only, and lacking
   many refinements of later revisions.
+  <em>Permission from IEEE is pending
+  to post this decades-old version that got it
+  all started.</em>
 </p>
 
-<p class="el1"><a class="toc-link library wip"
+<p class="el2"><a class="toc-link library wip"
+  href="lib_filler.html">
+  IEEE Standard 854-1987 for Radix-Independent
+  Floating-Point Arithmetic
+</a></p>
+<p class="el2-note">
+  The radix-independent sequel to 754.
+  <em>Pending.</em>
+</p>
+
+<p class="el2"><a class="toc-link library wip"
+  href="lib_filler.html">
+  IEEE Standard 754-2019 for
+  Floating-Point Arithmetic
+</a></p>
+<p class="el2-note">
+  The latest revision of the floating point standard
+  is available from the IEEE, for a fee.
+  <em>Pending.</em>
+</p>
+
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/jerome_coonen_phd_thesis.pdf">
+  Contributions to a Propsed Standard for Binary
+  Floating-Point Arithmetic
+</a></p>
+<p class="el2-note">
+  Ph.D. thesis of Jerome Coonen, including several papers
+  leading to the adoption of 754-1985 and the original
+  IEEE test vectors, made publicly available by Zilog, Inc.
+  in 1980.
+</p>
+
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/ieee754_test_thesis.pdf">
+  An Advanced Set of Tools to Check IEEE 754-2008 Conformity
+</a></p>
+<p class="el2-note">
+  Ph.D. thesis of Matthias Hüsken.
+</p>
+
+<br>
+<p class="el1"><a class="toc-link library"
   href="lib_wkahan.html">
   William Kahan
 </a></p>
 
-<p class="el2"><a class="toc-link library wip"
+<p class="el2"><a class="toc-link library"
   href="lib_wkahan_ieee754.html">
   IEEE 754
 </a></p>
-<p class="el3"><a class="toc-link library wip" target="_blank"
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_why do we need standard_5mar91.pdf">
+  Why do we need a floating-point arithmetic standard?
+</a></p>
+<p class="el3-note">
+  Motivation for the features of IEEE 754 and many examples of
+  their uses. If you are going to read just one of all these
+  papers, read this one.
+</p>
+
+<p class="el3"><a class="toc-link library" target="_blank"
   href="lib/wk_square_root_aug80.pdf">
   Software \( \sqrt{x} \) for the Proposed IEEE Floating-Point
   Standard
@@ -72,7 +132,7 @@ The Library is for Everyone.
   rounding direction. Includes comments on testing, and historical
   notes.
 </p>
-<p class="el3"><a class="toc-link library wip" target="_blank"
+<p class="el3"><a class="toc-link library" target="_blank"
   href="lib/wk_pseudo_division_mar89.pdf">
   Pseudo-Divison Algorithms for Floating-Point
   Logarithms and Exponentials
@@ -81,23 +141,39 @@ The Library is for Everyone.
   Some of the ideas underlying the transcendental
   funtions on the Intel 8087.
 </p>
-<p class="el3"><a class="toc-link library wip" target="_blank"
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_branch_cuts_86.pdf">
+  Branch Cuts for Complex
+  Elementary Functions
+  <br>or
+  Much Ado About Nothing's Sign Bit
+</a></p>
+<p class="el3-note">
+  Prepared for the joint IMA/SIAM Conference on
+  "The State of the Art in Numerical Analysis"
+  held April 1986.
+  Oxford University Press published the proceedings,
+  edited by M. J. D. Powell and A. Iserles, in 1987.
+</p>
+
+<p class="el3"><a class="toc-link library" target="_blank"
   href="lib/wk_doc_for_ctrl87_sep94.pdf">
-  DOCUMENTATION for CTRL87
+  Documentation for CTRL87
 </a></p>
 <p class="el3-note">
   Description of <code>CTRL87.EXE</code>, which ran on MS-DOS 3.3
   and later systems. Includes details of IEEE 754 exceptions
   as realized on 8087. An appendix describes how to change
-  the state of the Motorola 68881 math coprocessor using the
+  the state of the Motorola 68881 math coprocessor on an
+  Apple Macintosh using the
   venerable Macsbug debugger.
 </p>
-
-<p class="el1"><a class="toc-link library wip"
+<br>
+<p class="el1"><a class="toc-link library"
   href="lib_intel.html">
   Intel
 </a></p>
-<p class="el2"><a class="toc-link library wip"
+<p class="el2"><a class="toc-link library" target="_blank"
   href="x87trigonometricinstructionsvsmathfunctions.pdf">
   The Difference Between x87 Instructions FSIN, FCOS, FSINCOS,
   and FPTAN and Mathematical Functions sin, cos, sincos, and tan
@@ -107,7 +183,7 @@ The Library is for Everyone.
   later implementations, which superceded the earlier
   pseudo-division algorithms on the 8087.
 </p>
-<p class="el2"><a class="toc-link library wip"
+<p class="el2"><a class="toc-link library" target="_blank"
   href="80387_Programmers_Reference_Manual_1987.pdf">
   80387 Programmer's Reference Manual
 </a></p>

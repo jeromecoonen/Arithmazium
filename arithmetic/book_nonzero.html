@@ -49,6 +49,8 @@ A bullet &bull;
 emphasizes the binary point in this 8-bit
 number system. Each value may have positive
 or negative algebraic sign.
+The <code>b</code>s are just bits, taking
+the value <code>0</code> or <code>1</code>.
 </p>
 
 <pre><code>  |11111111           &bull;                 | largest number
@@ -96,18 +98,30 @@ or negative algebraic sign.
 
 <p>
 This is a <em>normalized</em> number system.
-The leading bit is <code>1</code>,
+The leading bit of each number is <code>1</code>,
 except perhaps for the tiniest values. 
 </p>
 
 <p>
-Normalization ensures there is exactly one representation for
-any value.
+Of course, not all numbers between the largest
+and smallest are representable with just 8 bits.
+For example, \( 1 + 2^{-20} \) has the
+binary form:
+</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;<code>1.00000000000000000001</code>
+</p>
+<p>
+which does not lie in the parallelogram of numbers.
+</p>
+<p>
+Normalization ensures that if a value is repreentable,
+then there is exactly one representation for it.
 For example, two appears as
 <code>10.000000</code> in the table, and nowhere else.
 When it's time to encode numbers as bit strings
 in memory,
-normalization gives us a free bit. If we know the
+normalization gives us a free bit. Because we know the
 leading significant bit is <code>1</code>, we don't have
 to store it.
 </p>
@@ -119,7 +133,7 @@ We will call these <em>normal numbers</em>.
 <h2>The floating point</h2>
 
 <p>
-The diagram suggests the sense in which the binary point
+The diagram illustrates the sense in which the binary point
 <em>floats</em> left and right across 8-bit strings.
 Usually, there is a limit to how far rightward the binary
 point can float &ndash; a limit to how big numbers can get.
@@ -149,6 +163,9 @@ come to be called <em>subnormal</em>.
 
 <p>
 The 8-bit numbers fit conveniently in the diagram.
+They're easier to talk about than 24-bit or 53-bit
+numbers common in current microprocessors.
+But the ideas are all the same.
 The narrow values help convey the dynamic nature of
 floating point numbers. Please don't think it's a toy
 example. Every day, billions of such numbers play into

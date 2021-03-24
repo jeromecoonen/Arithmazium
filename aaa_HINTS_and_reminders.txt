@@ -19,6 +19,7 @@ Special characters in HTML
   &plusmn; &nbsp;=&#160; &ndash; &mdash; &and; &oplus; &not;
   &#127849; donut &#129371; glass of milk
   &copy; &bull;
+  &ldquo; &rdquo;
 
 Quote
   p class="quote" sets left margin

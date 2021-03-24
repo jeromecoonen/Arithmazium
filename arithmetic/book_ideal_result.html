@@ -43,29 +43,28 @@
 <h1>The ideal intermediate result</h1>
 
 <p>
-Floating point operations follow a two-step process
-that is remarkably simple, in principle:
+Floating point operations follow a
+remarkably simple process, in principle:
 </p>
 
-<nl>
+<ol>
   <li>
     Compute an <em>ideal</em> intermediate result,
     as if with unbounded range and precision.
   </li>
   <li>
     Coerce the intermediate result to fit within
-    the range and precision of the destination.
+    the destination.
   </li>
-</nl>
+</ol>
 
 <p>
-The process seems perfectly logical. Naturally, it's
-the fast, economical execution that poses challenges.
+It's the fast, economical execution of
+this perfectly logical process that poses challenges.
 </p>
 
 <p>
-Of course,
-we don't really need <em>unbounded</em> precison in
+Of course, we don't really need unlimited precison in
 the intermediate result. We need just enough
 to provide a normalized (if possible), correctly-rounded
 result.
@@ -73,8 +72,8 @@ result.
 
 <h2>An ideal intermediate</h2>
 <p>
-This diagram captures what is needed to produce
-a correctly rounded result.
+This diagram captures one way to produce
+a correctly-rounded result.
 </p>
 
 <pre><med-code>  +---+---------------------+-------+
@@ -83,17 +82,18 @@ a correctly rounded result.
 </med-code></pre>
 
 <p>
-Reading from left to right,
-the leading <em>Carry</em> bit catches a carry-out
+The leading <em>Carry</em> bit catches a carry-out
 that might, for example,
 arise in magnitude addition of normalized
 values.
 </p>
 
 <p>
-The string of <code>b</code> bits represent the number
-of significant bits in the destination value. This is
-also known as the <em>precision</em>. The binary point
+The string of <code>b</code> bits represents the number
+of significant bits
+&ndash; the <em>precision</em> &ndash;
+of the destination value.
+The binary point here
 is positioned after the leading significant bit, but
 that's just a convention. The exponent, not shown,
 aligns the binary point to its position in the mathematical
@@ -106,14 +106,14 @@ bits beyond the rightmost <code>b</code>.
 The <em>Sticky</em> bit is the logical sum of all bits
 to the right or <em>Round</em>,
 in the infinitely precise result.
-These names came into common usage during the development
+The name &ldquo;sticky bit&rdquo; came into common usage during the development
 of IEEE 754.
 </p>
 
 <p>
-It's <em>Sticky</em> that provides the sense of
-<em>unbounded precision</em>. Just to be clear, <em>Sticky</em>
-is <code>0</code> only if every bit to the right of
+The <em>Sticky</em> bit provides the sense of
+unbounded precision in the intermediate result.
+It is <code>0</code> only if every bit to the right of
 <em>Round</em> is <code>0</code>. If any righward bit
 is <code>1</code>, then <em>Sticky</em> is <code>1</code>.
 </p>
@@ -128,7 +128,7 @@ the roles these bits play.
 <h2><code>add()</code> and <code>sub()</code></h2>
 
 <p>
-We look at arithmetic on bytes in the
+You can read about arithmetic on bytes in the
 <a class="inline" href="../numbers/aaanumbers_toc.html">
 Number Hall</a>.
 Floating point <code>add()</code> and <code>sub()</code> are
@@ -138,6 +138,7 @@ binary points, and then the realignment during coercion.
 
 <p>
 As a first example, let's compute \( 1 + 1 \).
+No surprises here.
 </p>
 
 <pre><med-code>        1 &bull; 0 0 0 0 0 0 0
@@ -148,7 +149,173 @@ As a first example, let's compute \( 1 + 1 \).
   +---+-------------------+------ +
 </med-code></pre>
 
+<p>
+Now let's try \( 1 + 2^{-99} \).
+That lone <code>1</code> bit plays a role
+later, when the value is rounded.
+</p>
 
+<pre><med-code>        1 &bull; 0 0 0 0 0 0 0
+      + 0 &bull; 0 0 0 0 0 0 0 0 0 . . . 0 0 0 1
+      -------------------------------------
+  +---+-------------------+-------+
+  | 0 | 1 &bull; 0 0 0 0 0 0 0 | 0 0 1 |
+  +---+-------------------+------ +
+</med-code></pre>
+
+<p>
+To see how cancellation works,
+let's look at \( 1 - ( 1 - 2^{-8} ) \).
+These are adjacent values in our 8-bit
+number system.
+</p>
+
+<pre><med-code>        1 &bull; 0 0 0 0 0 0 0
+      - 0 &bull; 1 1 1 1 1 1 1 1
+      ---------------------
+  +---+-------------------+-------+
+  | 0 | 0 &bull; 0 0 0 0 0 0 0 | 1 0 0 |
+  +---+-------------------+------ +
+</med-code></pre>
+
+<p>
+The result requires an 8-bit left shift to be
+normalized. Magnitude
+subtraction of normalized numbers with the
+same precision has interesting special cases.
+Can you see that if the input values are more
+than one bit out of alignment, the left
+shift to renormalize is either zero or one bit?
+Can you also see that when a when a larger shift
+is required, that the result will require no
+rounding? All of its rightmost bits are zero.
+</p>
+
+<h2><code>mul()</code></h2>
+
+<p>
+Floating point multiplication is a matter of computing
+the product of the two 8-bit inputs, then gathering the
+lowest bits into <em>Sticky</em>.
+The multiplication can be seen as the binary
+flavor of everyday long multiplication.
+</p>
+
+<p>
+An example like \( ( 1 + 2^{-7} ) * ( 1 + 2^{-7} ) \)
+spares us a blizzard of <code>1</code> bits.
+The exact product is
+\( 1 + 2^{-6} + 2^{-14} \)
+where the tiny third term is collected into <em>Sticky</em>.
+</p>
+
+<pre><med-code>        1 &bull; 0 0 0 0 0 0 1
+      * 1 &bull; 0 0 0 0 0 0 1
+      -------------------
+        0 &bull; 0 0 0 0 0 0 1 0 0 0 0 0 0 1
+             ...lines of zeros...
+      + 1 &bull; 0 0 0 0 0 0 1
+      ---------------------------------
+        1 &bull; 0 0 0 0 0 1 0 0 0 0 0 0 0 1
+  +---+-------------------+-------+
+  | 0 | 1 &bull; 0 0 0 0 0 1 0 | 0 0 1 |
+  +---+-------------------+------ +
+</med-code></pre>
+
+<p>
+If this is new to you, try a case like
+\( ( 2 - 2^{-7} ) * ( 2 - 2^{-7} ) \).
+As a big hint, here is the intermediate
+result.
+</p>
+
+<pre><med-code>  +---+-------------------+-------+
+  | 1 | 1 &bull; 1 1 1 1 1 0 0 | 0 0 1 |
+  +---+-------------------+------ +
+</med-code></pre>
+
+<h2><code>div()</code></h2>
+
+<p>
+Floating point division can likewise be carried
+out with the binary version of pencil-and-paper
+long division. Fast implementations, including
+the famous Pentium divide instruction, are discussed
+outside this pamphlet.
+The idea is to compute the quotient out to
+at least the <em>Round</em> bit. Then, the
+<em>Sticky</em> bit is <code>1</code> if there
+is any nonzero remainder.
+</p>
+
+<p>
+Let's look at \( ( 1 + 2^{-7} ) / ( 1 - 2^{-8} ) \),
+the number just bigger than \( 1 \) divided by
+the number just less than \( 1 \).
+</p>
+
+<div class="math">
+  <p>
+  The quotient is
+  \[ ( 1 + 2^{-7} ) * ( 1 + 2^{-8} + 2^{-16} + 2^{-24} + \cdots ) \]
+  which simplifies to
+  \( 1 + 2^{-7} + 2^{-8} + 2^{-15} + 2^{-16} + \cdots \), with all the
+  trailing terms absorbed into <em>Sitcky</em>.
+  </p>
+</div>
+
+<p>
+Most of the quotient bits are zero, so it's not too painful
+to carry out this division by hand. In any case, the
+ideal result appears as
+</p>
+
+<pre><med-code>  +---+-------------------+-------+
+  | 0 | 1 &bull; 0 0 0 0 0 0 1 | 1 0 1 |
+  +---+-------------------+------ +
+</med-code></pre>
+
+<h2><code>sqrt()</code> and <code>remainder()</code></h2>
+
+<p>
+The pencil-and-paper technique for extracting
+a square root applies readily to binary
+arithmetic, as shown in the
+<a class="inline" href="../numbers/aaanumbers_toc.html">
+Number Hall</a>.
+As with division, the idea is to compute
+the root out to
+at least the <em>Round</em> bit. Then, the
+<em>Sticky</em> bit is <code>1</code> if
+the <em>radicand</em> has not been reduced
+to zero.
+</p>
+
+<p>
+The <code>remainder()</code> operation is different.
+Its intermediate value is always exact, but the
+number of integer quotient bits computed in order
+to arrive at the remainder may be huge.
+</p>
+
+
+<h2>Logs, exponentials, trig functions</h2>
+
+<p>
+The previous sections have shown how the computational
+model presented here, with its ideal intermediate result,
+is mathematically feasible for the most common operations.
+</p>
+
+<p>
+The situation for the <em>transcendental</em> functions
+is more complicated, so the requirement for correctly-rounded
+results rarely applies. Computing extra-precise intermediate
+values may be too expensive. In any case, there is the
+<em>Table-Maker's Dilemma:</em> that near half-way cases will arise,
+requiring many extra significant bits to resolve. (See two papers
+by W. Kahan in the Library, for example.)
+</p>
 
 
 <div class='next-prev'>

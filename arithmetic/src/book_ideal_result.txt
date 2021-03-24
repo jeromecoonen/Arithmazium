@@ -1,120 +1,115 @@
 #INCLUDE para_head book_operations.html aaaarithmetic_toc.html book_coercion.html
 
 
-<h1>Numbers</h1>
+<h1>The ideal intermediate result</h1>
 
 <p>
-Floating point numbers fall neatly into a
-parallelogram.
-A bullet &bull;
-emphasizes the binary point in this 8-bit
-number system. Each value may have positive
-or negative algebraic sign.
+Floating point operations follow a two-step process
+that is remarkably simple, in principle:
 </p>
 
-<pre><code>  |11111111           &bull;                 | largest number
-  |1bbbbbbb           &bull;                 |
-  | 1bbbbbbb          &bull;                 |
-  |  1bbbbbbb         &bull;                 |
-  |   1bbbbbbb        &bull;                 |
-  
-       . . . many lines omitted . . .
-  
-  |         1bbbbbbb00&bull;                 |
-  |          1bbbbbbb0&bull;                 |
-  |           1bbbbbbb&bull;                 |
-  |            1bbbbbb&bull;b                |
-  |             1bbbbb&bull;bb               |
-  |              1bbbb&bull;bbb              |
-  |               1bbb&bull;bbbb             |
-  |                1bb&bull;bbbbb            |
-  |                 1b&bull;bbbbbb           |
-  |                  1&bull;bbbbbbb          |
-  |                   &bull;1bbbbbbb         |
-  |                   &bull;01bbbbbbb        |
-  |                   &bull;001bbbbbbb       |
-  |                   &bull;0001bbbbbbb      |
-  
-       . . . many lines omitted . . .
-  
-  |                   &bull;      1bbbbbbb   |
-  |                   &bull;       1bbbbbbb  |
-  |                   &bull;        1bbbbbbb |
-  |                   &bull;         1bbbbbbb|
-  |                   &bull;         10000000| smallest normal number
-  |                   --------------------------------------------
-  |                   &bull;         01111111| largest subnormal number
-  |                   &bull;         01bbbbbb|
-  |                   &bull;         001bbbbb|
-  |                   &bull;         0001bbbb|
-  |                   &bull;         00001bbb|
-  |                   &bull;         000001bb|
-  |                   &bull;         0000001b|
-  |                   &bull;         00000001| smallest subnormal number
-</code></pre>
-
-<h2>Normal numbers</h2>
+<nl>
+  <li>
+    Compute an <em>ideal</em> intermediate result,
+    as if with unbounded range and precision.
+  </li>
+  <li>
+    Coerce the intermediate result to fit within
+    the range and precision of the destination.
+  </li>
+</nl>
 
 <p>
-This is a <em>normalized</em> number system.
-The leading bit is <code>1</code>,
-except perhaps for the tiniest values. 
+The process seems perfectly logical. Naturally, it's
+the fast, economical execution that poses challenges.
 </p>
 
 <p>
-Normalization ensures there is exactly one representation for
-any value.
-For example, two appears as
-<code>10.000000</code> in the table, and nowhere else.
-When it's time to encode numbers as bit strings
-in memory,
-normalization gives us a free bit. If we know the
-leading significant bit is <code>1</code>, we don't have
-to store it.
+Of course,
+we don't really need <em>unbounded</em> precison in
+the intermediate result. We need just enough
+to provide a normalized (if possible), correctly-rounded
+result.
+</p>
+
+<h2>An ideal intermediate</h2>
+<p>
+This diagram captures what is needed to produce
+a correctly rounded result.
+</p>
+
+<pre><med-code>  +---+---------------------+-------+
+  | C | b &bull; b b b b . . . b | G R S |
+  +---+---------------------+------ +
+</med-code></pre>
+
+<p>
+Reading from left to right,
+the leading <em>Carry</em> bit catches a carry-out
+that might, for example,
+arise in magnitude addition of normalized
+values.
 </p>
 
 <p>
-We will call these <em>normal numbers</em>.
-</p>
-
-<h2>The floating point</h2>
-
-<p>
-The diagram suggests the sense in which the binary point
-<em>floats</em> left and right across 8-bit strings.
-Usually, there is a limit to how far rightward the binary
-point can float &ndash; a limit to how big numbers can get.
-That largest representable number is called the
-<em>overflow threshold</em>.
+The string of <code>b</code> bits represent the number
+of significant bits in the destination value. This is
+also known as the <em>precision</em>. The binary point
+is positioned after the leading significant bit, but
+that's just a convention. The exponent, not shown,
+aligns the binary point to its position in the mathematical
+value.
 </p>
 
 <p>
-In the same way, there is a limit to how far leftward
-the binary point can float &ndash; a limit to how tiny
-numbers can get. The diagram shows a tiniest normalized
-number. This may be called the <em>underflow threshold</em>.
+<em>Guard</em> and <em>Round</em> are the next two 
+bits beyond the rightmost <code>b</code>.
+The <em>Sticky</em> bit is the logical sum of all bits
+to the right or <em>Round</em>,
+in the infinitely precise result.
+These names came into common usage during the development
+of IEEE 754.
 </p>
-
-<h2>Denormalization</h2>
 
 <p>
-The diagram suggests that we may squeeze out a bit more range
-by allowing the leading bit to go to <code>0</code> for just
-these tiniest numbers. The IEEE 754 Floating Point Standard
-famously adopted such <em>denormalization</em> as a means to
-mitigate the effects of underflow. The resulting values have
-come to be called <em>subnormal</em>.
+It's <em>Sticky</em> that provides the sense of
+<em>unbounded precision</em>. Just to be clear, <em>Sticky</em>
+is <code>0</code> only if every bit to the right of
+<em>Round</em> is <code>0</code>. If any righward bit
+is <code>1</code>, then <em>Sticky</em> is <code>1</code>.
 </p>
-
-<h2>Not a toy</h2>
 
 <p>
-The 8-bit numbers fit conveniently in the diagram.
-The narrow values help convey the dynamic nature of
-floating point numbers. Please don't think it's a toy
-example. Every day, billions of such numbers play into
-artificial intelligence calculations carried out by
-specialized processors.
+During <a class="inline" href="book_coercion.html">
+Coercion</a>
+of the result to the destination, we'll see
+the roles these bits play.
 </p>
+
+<h2><code>add()</code> and <code>sub()</code></h2>
+
+<p>
+We look at arithmetic on bytes in the
+<a class="inline" href="../numbers/aaanumbers_toc.html">
+Number Hall</a>.
+Floating point <code>add()</code> and <code>sub()</code> are
+made complicated by the shifting required to align the
+binary points, and then the realignment during coercion. 
+</p>
+
+<p>
+As a first example, let's compute \( 1 + 1 \).
+</p>
+
+<pre><med-code>        1 &bull; 0 0 0 0 0 0 0
+      + 1 &bull; 0 0 0 0 0 0 0
+      -------------------
+  +---+-------------------+-------+
+  | 1 | 0 &bull; 0 0 0 0 0 0 0 | 0 0 0 |
+  +---+-------------------+------ +
+</med-code></pre>
+
+
+
 
 #INCLUDE para_foot book_operations.html aaaarithmetic_toc.html book_coercion.html

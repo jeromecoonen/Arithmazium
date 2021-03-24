@@ -4,23 +4,30 @@
 <h1>Operations</h1>
 
 <p>
-Most programming systesm provide the big five functions:
+Most programming environments provide the four
+<em>rational</em> functions:
 <ul>
-  <li><code>add(x, y)</code></li>
-  <li><code>sub(x, y)</code></li>
-  <li><code>mul(x, y)</code></li>
-  <li><code>sqrt(x)</code></li>
+  <li><code>add(x, y)</code></li> &ndash; \( x + y \)
+  <li><code>sub(x, y)</code></li> &ndash; \( x - y \)
+  <li><code>mul(x, y)</code></li> &ndash; \( x \times y \)
+  <li><code>div(x, y)</code></li> &ndash; \( x / y \)
 </ul>
-We write them in functional notation to emphasize
-their arguments, but of course most programming
-environments offer <em>infix</em> epxressions
+The functional notation simplifies discussion
+of the operations below.
+It's common to program using
+<em>infix</em> epxressions
 like <code>x * y</code>.
+One powerful alternative is the <em>s-expression</em>
+form <code>(* x y)</code> of Scheme and Lisp.
+There is even the <em>postfix</em> form of
+Forth:</em> <code>x y *</code>.
 </p>
 
 <p>
-IEEE 754 defines several less obvious, but also
+IEEE Standard 754 defines several less obvious, but also
 useful functions:
 <ul>
+  <li><code>sqrt(x)</code> &ndash; \( \sqrt{x} \)</li>
   <li><code>remainder(x, y)</code> &ndash; the (exact)
   remainder left when the full integer value of \( x / y \)
   is computed
@@ -94,13 +101,13 @@ Since the arrival of IEEE 754, substantial effort has
 gone into refining these functions.
 Intel notably broke from convention by providing
 elementary function support on its
-i8087 and subsequent chips.
+8087 and subsequent chips.
 </p>
 
 <p>
-These common functions can be implemented along
-the lines of the carefully-specified arithmetic
-operations:
+These common functions can be implemented in the same spirit
+as the carefully-specified arithmetic
+operations. Accuracy is another matter, as we will see.
 <ul>
   <li><code>pow(x, y)</code> &ndash; \( x^{y} \)
   </li>
@@ -122,14 +129,17 @@ operations:
   </li>
   <li><code>atan(x)</code>
   </li>
+  <li><code>cosh(x)</code> &ndash; hyperbolic cosine
+  </li>
+  <li><code>tanh(x)</code> &ndash; hyperbolic tangent
+  </li>
 </ul>
 
 <p>
 The subtleties of rounding the <em>transcendental</em>
 functions and performing trigonometric argument
 reduction modulo \( \pi / n \) are topics
-all their own, and are not part of this
-floating point discussion.
+all their own, but we will touch on them here.
 </p>
 
 #INCLUDE para_foot book_special_values.html aaaarithmetic_toc.html book_ideal_result.html

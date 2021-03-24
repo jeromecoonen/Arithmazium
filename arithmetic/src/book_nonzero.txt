@@ -10,7 +10,7 @@ A bullet &bull;
 emphasizes the binary point in this 8-bit
 number system. Each value may have positive
 or negative algebraic sign.
-The <code>b</code>s are just bits, taking
+The <code>b</code>s are bits, taking
 the value <code>0</code> or <code>1</code>.
 </p>
 
@@ -69,8 +69,8 @@ and smallest are representable with just 8 bits.
 For example, \( 1 + 2^{-20} \) has the
 binary form:
 </p>
-<p>
-&nbsp;&nbsp;&nbsp;&nbsp;<code>1.00000000000000000001</code>
+<p class="quote">
+<code>1.00000000000000000001</code>
 </p>
 <p>
 which does not lie in the parallelogram of numbers.

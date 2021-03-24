@@ -40,12 +40,20 @@ h1 {
 .el1,
 .el2,
 .el3,
-.el4
-.el2-note
-.el3-note
+.el4,
+.el2-note,
+.el3-note,
 .el4-note {
   line-height: 1.0;
 }
+
+.el2-note,
+.el3-note,
+.el4-note {
+  line-height: 1.0;
+  font-size: small;
+}
+
 .el1 {
   margin: 0 0 0 0;
 }

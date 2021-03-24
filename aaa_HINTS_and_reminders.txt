@@ -18,7 +18,10 @@ Reinhold Holtkamp, Jr. or Tim Cain
 Special characters in HTML
   &plusmn; &nbsp;=&#160; &ndash; &mdash; &and; &oplus; &not;
   &#127849; donut &#129371; glass of milk
-  &copy;
+  &copy; &bull;
+
+Quote
+  p class="quote" sets left margin
 
 Snippets (Sublime / Preferences / Browse packages)
   math \(xxx\) -- inline TeX
@@ -27,6 +30,10 @@ Snippets (Sublime / Preferences / Browse packages)
 Function cross-reference:
   <a class="inline" href="find_ulp_of_one_plus.html">
     <code>find_ulp_of_one_plus()</code></a>
+
+Section cross-reference:
+  <a class="inline" href="book_coercion.html">
+    Coercion</a>
 
 What could go wrong?
   <div class="wrong">

@@ -161,17 +161,27 @@ svg {
 }
 
 code,
+med-code,
 big-code,
+xbig-code,
 pre {
   font-family: Courier, monospace, "Roboto Mono";
-  font-size: smaller;
 }
 
 code,
+med-code,
 big-code,
 xbig-code {
   background-color: var(--code-color, lightblue);
   padding: 1px 1px 1px 1px;
+}
+
+code {
+  font-size: smaller;
+}
+
+med-code {
+  font-size: medium;
 }
 
 big-code {

@@ -107,6 +107,15 @@ The Library is for Everyone.
   funtions on the Intel 8087.
 </p>
 <p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_elems_from_kernels_oct85.pdf">
+  Elementary Functions from Kernels
+</a></p>
+<p class="el3-note">
+  Compute the common trigonometric and hyperbolic functions
+  from a core set of logarithm, exponential, tangent, and
+  arctangent functions.
+</p>
+<p class="el3"><a class="toc-link library" target="_blank"
   href="lib/wk_branch_cuts_86.pdf">
   Branch Cuts for Complex
   Elementary Functions
@@ -133,6 +142,42 @@ The Library is for Everyone.
   Apple Macintosh using the
   venerable Macsbug debugger.
 </p>
+
+<p class="el2">
+  Other arithmetic
+</p>
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_math129a_3_machines_jan72.pdf">
+  Floating Point Arithmetic on Three Machines in Use
+  at U.C. Berkeley in 1972
+</a></p>
+<p class="el3-note">
+  Fun facts about the IBM 650, IBM 360, and the 
+  CDC 6000-7000 for engineers and scientists
+  try to port numerical codes.
+</p>
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_default_rounding_sep69.pdf">
+  Default Rules for Rounding Fixed Precision
+  Floating Point Arithmetic (Ignoring Over/Underflow)
+</a></p>
+<p class="el3-note">
+  Faded one-page note from September 1969, Prof. Kahan's
+  first fall quarter at U.C. Berkeley.
+</p>
+
+<p class="el2">
+  Numerical algorithms
+</p>
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_summing_slowly_convergent_series_jan98.pdf">
+  Summing a Slowly Convergent Series
+</a></p>
+<p class="el3-note">
+  Analysis of a sum known to converge slowly to
+  \( \pi / 2 \).
+</p>
+
 <br>
 <p class="el1"><a class="toc-link library"
   href="lib_intel.html">
@@ -144,7 +189,7 @@ The Library is for Everyone.
   and FPTAN and Mathematical Functions sin, cos, sincos, and tan
 </a></p>
 <p class="el2-note">
-  Description of the polynomial approximations on 80887 and
+  Description of the polynomial approximations on 80387 and
   later implementations, which superceded the earlier
   pseudo-division algorithms on the 8087.
 </p>
@@ -155,6 +200,16 @@ The Library is for Everyone.
 <p class="el2-note">
   80387 was the first big step up from 8087, 80187, and 80287.
 </p>
+
+<br>
+<p class="el1">
+  Other arithmetic
+</p>
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/ris_unified_fp_arch_sep76.pdf">
+  A Unified Decimal Floating-Point Architecture to
+  Support High-Level Languages
+</a>by Frederic N. Ris</p>
 
 
 

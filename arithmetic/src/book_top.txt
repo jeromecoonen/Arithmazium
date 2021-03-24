@@ -1,7 +1,7 @@
 #INCLUDE para_head aaaarithmetic_toc.html aaaarithmetic_toc.html book_nonzero.html
 
 
-<h1>Floating point essentials</h1>
+<h1>How floating point arithmetic works</h1>
 
 <p>
 This pamphlet presents binary floating point
@@ -15,20 +15,37 @@ floating point departs from everyday mathematics.
 </p>
 
 <p>
-The presentation is in binary, but the ideas apply
-directly to octal, decimal, and hexadecimal.
-The presentation covers one
-data type, but discusses the case of
-supporting multiple types.
+The beauty and simplicity of floating point aritmetic
+are easily lost in a fog of mathematical notation.
+By focusing the presentation, we can hope to keep
+sight of the big ideas.
 </p>
 
 <p>
-The key simplification is the omission of the storage
-format. How the bits are arranged in storage is a vital
-part of the design, but the details of encoding have
-nothing to do with the acutal arithmetic.
+First, the presentation is in binary.
+All of the ideas apply
+directly to octal, decimal, and hexadecimal
+arithmetic.
+</p>
+
+<p>
+Second, the presentation covers just one
+data type with 8 significnt bits.
+The story is the same for quadruple
+precision, with 112 signifcant bits,
+but it's less enlightening.
+Support for multiple types falls out
+of the discussion.
+</p>
+
+<p>
+Third, we omit the details of the storage
+format. How the bits are arranged in memory is a vital
+part of the design, but the encoding has
+nothing to do with arithmetic.
 You will find extensive
-discussion of number encodings elsewhere than this pamphlet.
+discussion of number encodings current and past
+outside this pamphlet.
 </p>
 
 #INCLUDE para_foot aaaarithmetic_toc.html aaaarithmetic_toc.html book_nonzero.html

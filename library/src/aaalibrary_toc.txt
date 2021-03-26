@@ -115,6 +115,42 @@ The Library is for Everyone.
   from a core set of logarithm, exponential, tangent, and
   arctangent functions.
 </p>
+
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_a_program_with_almost_nov88.pdf">
+  A Computer Program with Almost No Significance
+</a></p>
+<p class="el3-note">
+  "An amusing little program that computes
+  <code>Z = 2.0</code> correctly, despite roundoff, only
+  on computers that round products and quotients in
+  the way specifed by IEEE Standard 754 . . .", from
+  the Abstract, November 1988.
+</p>
+
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_the_occasional_futility_jul89.pdf">
+  The Occasional Futility of Higher-Precision Arithmetic
+</a></p>
+<p class="el3-note">
+  Analysis of a function <code>G(x)</code> which should
+  evaluate to \( 1.0 \) for all real <code>x</code>,
+  but which misbehaves for <code>x = 15, 16, 17, ...</code>.
+  The misbehavior persists despite extra precision used
+  in the computation.
+</p>
+
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_presubstitution_and_continued_mar87.pdf">
+  Presubstitution, and Continued Fractions
+</a></p>
+<p class="el3-note">
+  "This is a case study that attemps to program
+  the computation of a continued fraction and its
+  derivative in a way that avoids spurious
+  behavior . . .", from the Abstract, March 1987.
+</p>
+
 <p class="el3"><a class="toc-link library" target="_blank"
   href="lib/wk_branch_cuts_86.pdf">
   Branch Cuts for Complex
@@ -147,6 +183,16 @@ The Library is for Everyone.
   Other arithmetic
 </p>
 <p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_ruminations_on_the_design_apr00.pdf">
+  Ruminations on the Design of FLoating-Point Arithmetic
+</a></p>
+<p class="el3-note">
+  An error analyst looks at the state of the computing
+  world over 40 years after launching the design
+  of IEEE 754.
+</p>
+
+<p class="el3"><a class="toc-link library" target="_blank"
   href="lib/wk_math129a_3_machines_jan72.pdf">
   Floating Point Arithmetic on Three Machines in Use
   at U.C. Berkeley in 1972
@@ -156,6 +202,7 @@ The Library is for Everyone.
   CDC 6000-7000 for engineers and scientists
   try to port numerical codes.
 </p>
+
 <p class="el3"><a class="toc-link library" target="_blank"
   href="lib/wk_default_rounding_sep69.pdf">
   Default Rules for Rounding Fixed Precision

@@ -26,37 +26,31 @@ this perfectly logical process that poses challenges.
 
 <p>
 Of course, we don't really need unlimited precison in
-the intermediate result. We need just enough
+the intermediate result. We need just enough information
 to provide a normalized (if possible), correctly-rounded
 result.
 </p>
 
 <h2>An ideal intermediate</h2>
 <p>
-This diagram captures one way to produce
-a correctly-rounded result.
+This diagram illustrates one form of intermediate
+result in the 8-bit sample system.
 </p>
 
-<pre><med-code>  +---+---------------------+-------+
-  | C | b &bull; b b b b . . . b | G R S |
-  +---+---------------------+------ +
+<pre><med-code>    +---------------------+-------+
+  ± | b &bull; b b b b b b b b | G R S |  *  2**k
+    +---------------------+------ +
 </med-code></pre>
 
 <p>
-The leading <em>Carry</em> bit catches a carry-out
-that might, for example,
-arise in magnitude addition of normalized
-values.
-</p>
-
-<p>
-The string of <code>b</code> bits represents the number
-of significant bits
+The string of <code>b</code> bits represents the 8
+significant bits
 &ndash; the <em>precision</em> &ndash;
 of the destination value.
 The binary point here
 is positioned after the leading significant bit, but
-that's just a convention. The exponent, not shown,
+that's just a convention. The exponent <code>k</code>
+of the scale factor
 aligns the binary point to its position in the mathematical
 value.
 </p>
@@ -64,26 +58,27 @@ value.
 <p>
 <em>Guard</em> and <em>Round</em> are the next two 
 bits beyond the rightmost <code>b</code>.
-The <em>Sticky</em> bit is the logical sum of all bits
+The <em>Sticky</em> bit is the logical sum of
+<span class="bold">all</span> bits
 to the right or <em>Round</em>,
-in the infinitely precise result.
+in the infinitely precise result &ndash; it
+provides the sense of
+unbounded precision.
 The name &ldquo;sticky bit&rdquo; came into common usage during the development
 of IEEE 754.
 </p>
 
 <p>
-The <em>Sticky</em> bit provides the sense of
-unbounded precision in the intermediate result.
-It is <code>0</code> only if every bit to the right of
-<em>Round</em> is <code>0</code>. If any righward bit
-is <code>1</code>, then <em>Sticky</em> is <code>1</code>.
-</p>
-
-<p>
+The sign and the exponent <code>k</code> of the
+scale factor \( 2^{k} \) follow from the normal
+rules of arithmetic, with no restrictions on <code>k</code>.
 During <a class="inline" href="book_coercion.html">
-Coercion</a>
+coercion</a>
 of the result to the destination, we'll see
 the roles these bits play.
+Zero has no algebraic sign in mathematics, but
+if the destination supports a sign of zero, those
+rules come into play during coercion.
 </p>
 
 <h2><code>add()</code> and <code>sub()</code></h2>
@@ -94,34 +89,43 @@ You can read about arithmetic on bytes in the
 Number Hall</a>.
 Floating point <code>add()</code> and <code>sub()</code> are
 made complicated by the shifting required to align the
-binary points, and then the realignment during coercion. 
+binary points of the input values, and
+then the realignment during coercion. 
 </p>
 
 <p>
 As a first example, let's compute \( 1 + 1 \).
-No surprises here.
+Depending on the operation and the signs of the
+operands, we either <em>add magnitudes</em>
+or <em>subtract magnitudes</em>.
+Add magnitude may carry out, as here, so we're
+careful not to drop the <em>Sticky</em> bit
+during the right shift.
 </p>
 
 <pre><med-code>        1 &bull; 0 0 0 0 0 0 0
       + 1 &bull; 0 0 0 0 0 0 0
       -------------------
-  +---+-------------------+-------+
-  | 1 | 0 &bull; 0 0 0 0 0 0 0 | 0 0 0 |
-  +---+-------------------+------ +
+      +-------------------+-------+
+    1 | 0 &bull; 0 0 0 0 0 0 0 | 0 0 0 | with carry-out
+      +-------------------+------ +
+      +-------------------+-------+
+      | 1 &bull; 0 0 0 0 0 0 0 | 0 0 0 |  *  2
+      +-------------------+------ +
 </med-code></pre>
 
 <p>
 Now let's try \( 1 + 2^{-99} \).
-That lone <code>1</code> bit plays a role
+That lone <code>1</code> bit shifted wide right plays a role
 later, when the value is rounded.
 </p>
 
 <pre><med-code>        1 &bull; 0 0 0 0 0 0 0
       + 0 &bull; 0 0 0 0 0 0 0 0 0 . . . 0 0 0 1
       -------------------------------------
-  +---+-------------------+-------+
-  | 0 | 1 &bull; 0 0 0 0 0 0 0 | 0 0 1 |
-  +---+-------------------+------ +
+      +-------------------+-------+
+      | 1 &bull; 0 0 0 0 0 0 0 | 0 0 1 |
+      +-------------------+------ +
 </med-code></pre>
 
 <p>
@@ -134,9 +138,9 @@ number system.
 <pre><med-code>        1 &bull; 0 0 0 0 0 0 0
       - 0 &bull; 1 1 1 1 1 1 1 1
       ---------------------
-  +---+-------------------+-------+
-  | 0 | 0 &bull; 0 0 0 0 0 0 0 | 1 0 0 |
-  +---+-------------------+------ +
+      +-------------------+-------+
+      | 0 &bull; 0 0 0 0 0 0 0 | 1 0 0 |
+      +-------------------+------ +
 </med-code></pre>
 
 <p>
@@ -173,15 +177,23 @@ where the tiny third term is collected into <em>Sticky</em>.
 <pre><med-code>        1 &bull; 0 0 0 0 0 0 1
       * 1 &bull; 0 0 0 0 0 0 1
       -------------------
-        0 &bull; 0 0 0 0 0 0 1 0 0 0 0 0 0 1
+        0 0 &bull; 0 0 0 0 0 0 1 0 0 0 0 0 0 1
              ...lines of zeros...
-      + 1 &bull; 0 0 0 0 0 0 1
+      + 0 1 &bull; 0 0 0 0 0 0 1
       ---------------------------------
-        1 &bull; 0 0 0 0 0 1 0 0 0 0 0 0 0 1
-  +---+-------------------+-------+
-  | 0 | 1 &bull; 0 0 0 0 0 1 0 | 0 0 1 |
-  +---+-------------------+------ +
+        0 1 &bull; 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+      +-------------------+-------+
+      | 0 &bull; 1 0 0 0 0 0 1 | 0 0 1 |  *  2
+      +-------------------+------ +
 </med-code></pre>
+
+<p>
+One detail here is that
+the double-wide product is usually arranged with
+the binary point after the most significant bit,
+introducing an extra factor of \( 2 \), which can
+be added into the exponent <code>k</code>.
+</p>
 
 <p>
 If this is new to you, try a case like
@@ -190,9 +202,9 @@ As a big hint, here is the intermediate
 result.
 </p>
 
-<pre><med-code>  +---+-------------------+-------+
-  | 1 | 1 &bull; 1 1 1 1 1 0 0 | 0 0 1 |
-  +---+-------------------+------ +
+<pre><med-code>      +-------------------+-------+
+      | 1 &bull; 1 1 1 1 1 1 0 | 0 0 1 |  *  2
+      +-------------------+------ +
 </med-code></pre>
 
 <h2><code>div()</code></h2>
@@ -231,9 +243,9 @@ to carry out this division by hand. In any case, the
 ideal result appears as
 </p>
 
-<pre><med-code>  +---+-------------------+-------+
-  | 0 | 1 &bull; 0 0 0 0 0 0 1 | 1 0 1 |
-  +---+-------------------+------ +
+<pre><med-code>      +-------------------+-------+
+      | 1 &bull; 0 0 0 0 0 0 1 | 1 0 1 |
+      +-------------------+------ +
 </med-code></pre>
 
 <h2><code>sqrt()</code> and <code>remainder()</code></h2>

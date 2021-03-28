@@ -12,7 +12,7 @@ Readers might visit the
 
 <p class="el1"><a class="toc-link arith wip"
   href="book_top.html">
-  How floating point arithmetic works
+  A booklet on floating point arithmetic
 </a></p>
 <p class="el2"><a class="toc-link arith wip"
   href="book_nonzero.html">

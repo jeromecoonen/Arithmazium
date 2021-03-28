@@ -21,6 +21,10 @@ h1 {
   font-size: x-large;
 }
 
+.toc-link.library {
+  font-size: small;
+}
+
 .toc-link.to-do {
   color: red;
 }
@@ -51,7 +55,7 @@ h1 {
 .el3-note,
 .el4-note {
   line-height: 1.0;
-  font-size: smaller;
+  font-size: x-small;
 }
 
 .el1 {
@@ -63,7 +67,6 @@ h1 {
 }
 
 .el2-note {
-  font-size: small;
   margin: 0 0 0 4em;
 }
 
@@ -72,7 +75,6 @@ h1 {
 }
 
 .el3-note {
-  font-size: small;
   margin: 0 0 0 6em;
 }
 
@@ -81,7 +83,6 @@ h1 {
 }
 
 .el4-note {
-  font-size: small;
   margin: 0 0 0 8em;
 }
 

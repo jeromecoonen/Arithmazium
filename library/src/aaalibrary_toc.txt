@@ -67,6 +67,8 @@ The Library is for Everyone.
   Ph.D. thesis of Matthias Hüsken.
 </p>
 
+
+
 <br>
 <p class="el1"><a class="toc-link library"
   href="lib_wkahan.html">
@@ -114,6 +116,16 @@ The Library is for Everyone.
   Compute the common trigonometric and hyperbolic functions
   from a core set of logarithm, exponential, tangent, and
   arctangent functions.
+</p>
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_mathematics_written_in_sand_nov83.pdf">
+  Mathematics Written in Sand – the hp-15C, Intel 8087, etc.
+</a></p>
+<p class="el3-note">
+  Discussion of the computational benefits of the Intel 8087
+  math coprocessor and the HP-15C scientific calculator.
+  Prepared for the Joint Statistical Meetings of
+  ASA-ENAR-WNAR-IMS-SSC, August 1983.
 </p>
 
 <p class="el3"><a class="toc-link library" target="_blank"
@@ -167,6 +179,34 @@ The Library is for Everyone.
 </p>
 
 <p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_beastly_numbers_jan96.pdf">
+  Beastly Numbers
+</a></p>
+<p class="el3-note">
+  Short paper about FIST, a program to test the
+  conversion of floating point numbers to an
+  integer format.
+</p>
+
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_how_futile_are_mindless_jan06.pdf">
+  How Futile are Mindless Assessments of Roundoff
+  in Floating-Point Computation?
+</a></p>
+<p class="el3-note">
+  A baker's dozen examples discussed in detail.
+</p>
+
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_foreword_to_apple_82.pdf">
+  About Standard Numerics
+</a></p>
+<p class="el3-note">
+  Foreword to the <em>Apple Numerics Manual</em> of the
+  early 1980s.
+</p>
+
+<p class="el3"><a class="toc-link library" target="_blank"
   href="lib/wk_doc_for_ctrl87_sep94.pdf">
   Documentation for CTRL87
 </a></p>
@@ -179,6 +219,8 @@ The Library is for Everyone.
   venerable Macsbug debugger.
 </p>
 
+
+
 <p class="el2">
   Other arithmetic
 </p>
@@ -190,6 +232,21 @@ The Library is for Everyone.
   An error analyst looks at the state of the computing
   world over 40 years after launching the design
   of IEEE 754.
+</p>
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_anomalies_in_the_ibm_acrith_jun85.pdf">
+  Anomalies in the IBM ACRITH Package
+</a></p>
+<p class="el3-note">
+  Discussion of the <em>super-accuumulator</em> promoted in ACRITH.
+  Paper to the 7th IEEE Symposium on Computer Arithmetic, with Emile LeBlanc, 1985.
+</p>
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_further_remarks_on_reducing_jan65.pdf">
+  Further Remarks on Reducing Truncation Errors
+</a></p>
+<p class="el3-note">
+  An early look at doubled precision in a sum. CACM January 1965.
 </p>
 
 <p class="el3"><a class="toc-link library" target="_blank"
@@ -213,6 +270,8 @@ The Library is for Everyone.
   from September 1969. It was Prof. W. Kahan's
   first fall quarter at U.C. Berkeley.
 </p>
+
+
 
 <p class="el2">
   Numerical algorithms
@@ -242,6 +301,29 @@ The Library is for Everyone.
   Analysis of a sum known to converge slowly to
   \( \pi / 2 \).
 </p>
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_analysis_and_application_of_simply_compensated_summation_oct93.pdf">
+  Analysis and Application of Simply Compensated Summation
+</a></p>
+<p class="el3-note">
+  Detailed analysis of a "simple" sum.
+</p>
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_computing_1_minus_s2_jan08.pdf">
+  Computing \( 1 - s^{2} \) Accurately in Binary Floating-Point
+</a></p>
+<p class="el3-note">
+  How best to compute \( cos( \theta ) \) given \( sin( \theta ) \).
+</p>
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_whats_wroong_with_these_programs_sep93.pdf">
+  What's Wrong with These Programs?
+</a></p>
+<p class="el3-note">
+  Three short, tricky programs.
+</p>
+
+
 
 <br>
 <p class="el1"><a class="toc-link library"
@@ -275,6 +357,12 @@ The Library is for Everyone.
   A Unified Decimal Floating-Point Architecture to
   Support High-Level Languages
 </a>by Frederic N. Ris</p>
+<p class="el2-note">
+  IBM Research in Yorktown Heights, NY studied the
+  possibility of decimal arithmetic in machines to
+  succeed the 360 family. This is all that was ever
+  revealed of that years-long effort.
+</p>
 
 
 

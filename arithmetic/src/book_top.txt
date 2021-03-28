@@ -4,7 +4,7 @@
 <h1>How floating point arithmetic works</h1>
 
 <p>
-This pamphlet presents binary floating point
+This booklet presents binary floating point
 number systems and special
 values. You will see how arithmetic operations
 produce results within the number system.

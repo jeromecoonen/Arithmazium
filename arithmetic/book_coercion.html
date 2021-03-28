@@ -1,0 +1,402 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>Arithmazium</title>
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/arithmetic/book_coercion.html">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#fafafa'>
+  <link rel='stylesheet' href='../css/normalize.css'>
+  <link rel='stylesheet' href='../css/main.css'>
+  <link rel='stylesheet' href='../css/para.css'>
+  <link rel='stylesheet' href='../css/numbers.css'>
+  <link href='https://fonts.googleapis.com/css?family=Days One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Work Sans:bold,400,600,700,800' rel='stylesheet'>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_SVG">
+  </script>
+</head>
+<body>
+  <div>
+  <svg viewbox='0 0 1000 80' xmlns='http://www.w3.org/2000/svg'>
+  <a class="para-ban" href='../index.html'>
+  <rect x=0 y=0 width=1000 height=80 class='arith-ban-box'/>
+  <text x=10 y=68 class='arith-ban-back'>
+  <tspan>11.001001000011111101101010100010001000</tspan>
+  </text>
+  <text x='60' y='55' class='arith-ban-front'>
+  <tspan>Arithmazium</tspan>
+  </text>
+  </a>
+  </svg>
+  </div>
+  <div class='next-prev'>
+  <a href='book_special_cases.html' class='next round'>Next</a>
+  <a href='aaaarithmetic_toc.html' class='tree round'>Home</a>
+  <a href='book_ideal_result.html' class='previous round'>Previous</a>
+  </div>
+
+
+<h1>Coercion to the target range and precision</h1>
+
+<p>
+The previous pages have brought us an intermediate
+result of the form
+</p>
+
+<pre><med-code>    +---------------------+-------+
+  ± | b &bull; b b b b . . . b | G R S |  *  2**k
+    +---------------------+------ +
+</med-code></pre>
+
+<p>
+At this point, the <em>Sticky</em> bit
+<code>S</code> is just a trailing
+significant bit, despite its exotic definition.
+</p>
+
+<p>
+The goal now is to fit the value into the normal form
+</p>
+
+<pre><med-code>    +---------------------+
+  ± | 1 &bull; b b b b . . . b |  *  2**e
+    +---------------------+
+</med-code></pre>
+
+<p>
+if possible,
+where <code>e</code> is constrained by
+\( min_e \leq e \leq max_e \)
+given the limitations of the destination format.
+</p>
+
+<p>
+This is where computer arithmetic gets interesting.
+So far, we have followed the rules of ordinary arithmetic to arrive
+a tentative result. Now we turn to the rules of
+our computer arithmetic to produce a result that can
+be represented in the numeber system.
+</p>
+
+<h2>Dispatch zero</h2>
+
+<p>
+If all of the significant bits are <code>0</code>,
+then the result is zero. This falls into
+the special cases of the next page.
+</p>
+
+<h2>Normalize</h2>
+
+<p>
+To normalize the result, shift the bit string of
+<code>b</code>s, <code>G</code>, <code>R</code>,
+and <code>S</code> left until the the leading
+bit is <code>1</code>.
+<code>0</code> bits are shifted into the
+<code>S</code> postion from the right.
+Decrement <code>k</code> for each bit position
+shifted.
+</p>
+
+<p>
+Only in <code>add()</code> and <code>sub()</code>
+can a normalization shift of more than one bit
+arise, and in that case <code>S</code> is
+guaranteed to be zero.
+</p>
+
+<h2>Round</h2>
+
+<p>
+The significant bits now look like
+</p>
+
+<pre><med-code>    +---------------------+-------+
+    | 1 &bull; b b b b . . . b | G R S |
+    +---------------------+------ +
+</med-code></pre>
+
+<p>
+In the mainframe era of the 1960s, most computers
+would simply <em>truncate</em> the result by
+treating all bits from <code>G</code> rightward
+as zero.
+Some minicomputers of the 1970s would add \( 1 \)
+to the <code>G</code> bit and truncate that result.
+Visit the
+<a class="inline" href="../dinosaur/aaadinosaur_toc.html">
+    Dinosaur Gallery</a>
+for further
+information.
+</p>
+
+<p>
+IEEE 754 ushered in a whole new era by leveraging the power of
+the new microprocessors to support four different kinds
+of rounding. If four seems extravagant, be assured there
+are several more varieties, too.
+</p>
+
+<p>
+We'll discuss the four
+IEEE 754 rounding modes here.
+Given a value
+</p>
+
+<pre><med-code>    +---------------------+-------+
+    | 1 &bull; b b b b b b b b | G R S |
+    +---------------------+------ +
+</med-code></pre>
+
+<p>
+regardless of sign, we
+<em>round up</em> (in magnitude)
+by adding \( 1 \)
+into the lowest-order <code>b</code>.
+If every <code>b</code> is a
+<code>1</code>, then there is a carry out
+of the leading <code>1</code>, so the
+sigificant bits must be right-shifted
+one place and the exponent <code>k</code>
+incremented.
+</p>
+
+<p>
+We <em>round down</em> by taking no action
+on the significant bits. In either case,
+we discard
+<code>G</code>, <code>R</code>, and <code>S</code>
+after rounding.
+</p
+
+<ul>
+  <li> Round Toward Zero &ndash; this is classic mainframe trunctation,
+    where we round down (in magnitude)
+  </li>
+  <li>
+    Round Toward \( + \infty \) &ndash; if the sign is
+    \( + \) and any of
+    <code>G</code>, <code>R</code>, and <code>S</code>
+    is nonzero, then round up; otherwise, round down
+  </li>
+  <li>
+    Round Toward \( - \infty \) &ndash; if the sign is
+    \( - \) and any of
+    <code>G</code>, <code>R</code>, and <code>S</code>
+    is nonzero, then round up; otherwise round down
+  </li>
+  <li>
+    Round to Nearst &ndash; round up if <code>G</code>
+    is <code>1</code> and either
+    (a) <code>R</code> or <code>S</code> is <code>1</code>
+    or (b) the lowest-order <code>b</code> is <code>1</code>;
+    otherwise, round down
+  </li>
+<ul>
+
+
+
+<p>
+As a first example, let's compute \( 1 + 1 \).
+No surprises here.
+</p>
+
+<pre><med-code>        1 &bull; 0 0 0 0 0 0 0
+      + 1 &bull; 0 0 0 0 0 0 0
+      -------------------
+  +---+-------------------+-------+
+  | 1 | 0 &bull; 0 0 0 0 0 0 0 | 0 0 0 |
+  +---+-------------------+------ +
+</med-code></pre>
+
+<p>
+Now let's try \( 1 + 2^{-99} \).
+That lone <code>1</code> bit plays a role
+later, when the value is rounded.
+</p>
+
+<pre><med-code>        1 &bull; 0 0 0 0 0 0 0
+      + 0 &bull; 0 0 0 0 0 0 0 0 0 . . . 0 0 0 1
+      -------------------------------------
+  +---+-------------------+-------+
+  | 0 | 1 &bull; 0 0 0 0 0 0 0 | 0 0 1 |
+  +---+-------------------+------ +
+</med-code></pre>
+
+<p>
+To see how cancellation works,
+let's look at \( 1 - ( 1 - 2^{-8} ) \).
+These are adjacent values in our 8-bit
+number system.
+</p>
+
+<pre><med-code>        1 &bull; 0 0 0 0 0 0 0
+      - 0 &bull; 1 1 1 1 1 1 1 1
+      ---------------------
+  +---+-------------------+-------+
+  | 0 | 0 &bull; 0 0 0 0 0 0 0 | 1 0 0 |
+  +---+-------------------+------ +
+</med-code></pre>
+
+<p>
+The result requires an 8-bit left shift to be
+normalized. Magnitude
+subtraction of normalized numbers with the
+same precision has interesting special cases.
+Can you see that if the input values are more
+than one bit out of alignment, the left
+shift to renormalize is either zero or one bit?
+Can you also see that when a when a larger shift
+is required, that the result will require no
+rounding? All of its rightmost bits are zero.
+</p>
+
+<h2><code>mul()</code></h2>
+
+<p>
+Floating point multiplication is a matter of computing
+the product of the two 8-bit inputs, then gathering the
+lowest bits into <em>Sticky</em>.
+The multiplication can be seen as the binary
+flavor of everyday long multiplication.
+</p>
+
+<p>
+An example like \( ( 1 + 2^{-7} ) * ( 1 + 2^{-7} ) \)
+spares us a blizzard of <code>1</code> bits.
+The exact product is
+\( 1 + 2^{-6} + 2^{-14} \)
+where the tiny third term is collected into <em>Sticky</em>.
+</p>
+
+<pre><med-code>        1 &bull; 0 0 0 0 0 0 1
+      * 1 &bull; 0 0 0 0 0 0 1
+      -------------------
+        0 &bull; 0 0 0 0 0 0 1 0 0 0 0 0 0 1
+             ...lines of zeros...
+      + 1 &bull; 0 0 0 0 0 0 1
+      ---------------------------------
+        1 &bull; 0 0 0 0 0 1 0 0 0 0 0 0 0 1
+  +---+-------------------+-------+
+  | 0 | 1 &bull; 0 0 0 0 0 1 0 | 0 0 1 |
+  +---+-------------------+------ +
+</med-code></pre>
+
+<p>
+If this is new to you, try a case like
+\( ( 2 - 2^{-7} ) * ( 2 - 2^{-7} ) \).
+As a big hint, here is the intermediate
+result.
+</p>
+
+<pre><med-code>  +---+-------------------+-------+
+  | 1 | 1 &bull; 1 1 1 1 1 0 0 | 0 0 1 |
+  +---+-------------------+------ +
+</med-code></pre>
+
+<h2><code>div()</code></h2>
+
+<p>
+Floating point division can likewise be carried
+out with the binary version of pencil-and-paper
+long division. Fast implementations, including
+the famous Pentium divide instruction, are discussed
+outside this pamphlet.
+The idea is to compute the quotient out to
+at least the <em>Round</em> bit. Then, the
+<em>Sticky</em> bit is <code>1</code> if there
+is any nonzero remainder.
+</p>
+
+<p>
+Let's look at \( ( 1 + 2^{-7} ) / ( 1 - 2^{-8} ) \),
+the number just bigger than \( 1 \) divided by
+the number just less than \( 1 \).
+</p>
+
+<div class="math">
+  <p>
+  The quotient is
+  \[ ( 1 + 2^{-7} ) * ( 1 + 2^{-8} + 2^{-16} + 2^{-24} + \cdots ) \]
+  which simplifies to
+  \( 1 + 2^{-7} + 2^{-8} + 2^{-15} + 2^{-16} + \cdots \), with all the
+  trailing terms absorbed into <em>Sitcky</em>.
+  </p>
+</div>
+
+<p>
+Most of the quotient bits are zero, so it's not too painful
+to carry out this division by hand. In any case, the
+ideal result appears as
+</p>
+
+<pre><med-code>  +---+-------------------+-------+
+  | 0 | 1 &bull; 0 0 0 0 0 0 1 | 1 0 1 |
+  +---+-------------------+------ +
+</med-code></pre>
+
+<h2><code>sqrt()</code> and <code>remainder()</code></h2>
+
+<p>
+The pencil-and-paper technique for extracting
+a square root applies readily to binary
+arithmetic, as shown in the
+<a class="inline" href="../numbers/aaanumbers_toc.html">
+Number Hall</a>.
+As with division, the idea is to compute
+the root out to
+at least the <em>Round</em> bit. Then, the
+<em>Sticky</em> bit is <code>1</code> if
+the <em>radicand</em> has not been reduced
+to zero.
+</p>
+
+<p>
+The <code>remainder()</code> operation is different.
+Its intermediate value is always exact, but the
+number of integer quotient bits computed in order
+to arrive at the remainder may be huge.
+</p>
+
+
+<h2>Logs, exponentials, trig functions</h2>
+
+<p>
+The previous sections have shown how the computational
+model presented here, with its ideal intermediate result,
+is mathematically feasible for the most common operations.
+</p>
+
+<p>
+The situation for the <em>transcendental</em> functions
+is more complicated, so the requirement for correctly-rounded
+results rarely applies. Computing extra-precise intermediate
+values may be too expensive. In any case, there is the
+<em>Table-Maker's Dilemma:</em> that near half-way cases will arise,
+requiring many extra significant bits to resolve. (See two papers
+by W. Kahan in the Library, for example.)
+</p>
+
+
+<div class='next-prev'>
+<a href='book_special_cases.html' class='next round'>Next</a>
+<a href='aaaarithmetic_toc.html' class='tree round'>Home</a>
+<a href='book_ideal_result.html' class='previous round'>Previous</a>
+</div>
+<script src="../js/vendor/jquery.js"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  ga('create', 'UA-165469376-1', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+</<body>
+
+</html>

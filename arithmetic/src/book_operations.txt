@@ -7,10 +7,10 @@
 Most programming environments provide the four
 <em>rational</em> functions:
 <ul>
-  <li><code>add(x, y)</code></li> &ndash; \( x + y \)
-  <li><code>sub(x, y)</code></li> &ndash; \( x - y \)
-  <li><code>mul(x, y)</code></li> &ndash; \( x \times y \)
-  <li><code>div(x, y)</code></li> &ndash; \( x / y \)
+  <li><code>add(x, y)</code> &ndash; \( x + y \) </li>
+  <li><code>sub(x, y)</code> &ndash; \( x - y \) </li>
+  <li><code>mul(x, y)</code> &ndash; \( x \times y \) </li>
+  <li><code>div(x, y)</code> &ndash; \( x / y \) </li>
 </ul>
 The functional notation simplifies discussion
 of the operations below.

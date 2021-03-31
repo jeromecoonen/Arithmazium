@@ -47,22 +47,22 @@ result of the form
 </p>
 
 <pre><med-code>    +---------------------+-------+
-  ± | b &bull; b b b b . . . b | G R S |  *  2**k
+  ± | b &bull; b b b b b b b b | G R S |  *  2**k
     +---------------------+------ +
 </med-code></pre>
 
 <p>
-At this point, the <em>Sticky</em> bit
-<code>S</code> is just a trailing
+At this point, we treat the <em>Sticky</em> bit
+<code>S</code> as just a trailing
 significant bit, despite its exotic definition.
 </p>
 
 <p>
-The goal now is to fit the value into the normal form
+The goal  is to fit the value into the normal form
 </p>
 
 <pre><med-code>    +---------------------+
-  ± | 1 &bull; b b b b . . . b |  *  2**e
+  ± | 1 &bull; b b b b b b b b |  *  2**e
     +---------------------+
 </med-code></pre>
 
@@ -70,15 +70,16 @@ The goal now is to fit the value into the normal form
 if possible,
 where <code>e</code> is constrained by
 \( min_e \leq e \leq max_e \)
-given the limitations of the destination format.
+given the limitations of the exponent
+range of the destination.
 </p>
 
 <p>
-This is where computer arithmetic gets interesting.
-So far, we have followed the rules of ordinary arithmetic to arrive
-a tentative result. Now we turn to the rules of
-our computer arithmetic to produce a result that can
-be represented in the numeber system.
+This is where computer arithmetic gets departs
+from &ldquo;mere&rdquo; mathematics.
+We turn to the expanded rules of
+our computer arithmetic to produce a result we can
+represent in the numeber system.
 </p>
 
 <h2>Dispatch zero</h2>

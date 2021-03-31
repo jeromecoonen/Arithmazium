@@ -31,31 +31,31 @@ The goal  is to fit the value into the normal form
 <p>
 if possible,
 where <code>e</code> is constrained by
-\( min_e \leq e \leq max_e \)
+\( e_{min} \leq e \leq e_{max} \)
 given the limitations of the exponent
 range of the destination.
-</p>
-
-<p>
-This is where computer arithmetic gets departs
+We must turn to the expanded rules
+of computer arithmetic when we dpart
 from &ldquo;mere&rdquo; mathematics.
-We turn to the expanded rules of
-our computer arithmetic to produce a result we can
-represent in the numeber system.
 </p>
 
 <h2>Dispatch zero</h2>
 
 <p>
 If all of the significant bits are <code>0</code>,
-then the result is zero. This falls into
-the special cases of the next page.
+then the result is zero.
+Because zero falls outside the parallelogram of
+normal values of the number system, it fits
+into the special cases of the next page.
 </p>
 
 <h2>Normalize</h2>
 
 <p>
-To normalize the result, shift the bit string of
+With the goal of fitting a nonzero result into
+the parallelogram, a first logical step is to
+normalize it.
+Shift the bit string of
 <code>b</code>s, <code>G</code>, <code>R</code>,
 and <code>S</code> left until the the leading
 bit is <code>1</code>.
@@ -66,20 +66,79 @@ shifted.
 </p>
 
 <p>
-Only in <code>add()</code> and <code>sub()</code>
-can a normalization shift of more than one bit
-arise, and in that case <code>S</code> is
+In the flavor of floating point preseneted here,
+it is
+only in <code>add()</code> and <code>sub()</code>
+that a normalization shift of more than one bit
+can arise, and in that case <code>S</code> is
 guaranteed to be zero.
 </p>
+
+<h2>A strategy</h2>
+
+<p>
+After filtering zero results and normalizing,
+we have a value of the form
+</p>
+
+<pre><med-code>    +---------------------+-------+
+  ± | 1 &bull; b b b b b b b b | G R S |  *  2**k
+    +---------------------+------ +
+</med-code></pre>
+
+<p>
+The traditional approach was to round the value down
+to eight significant bits and then check for
+<code>k</code> out of range.
+In the IEEE 754 era, we exploit the bottom
+right corner of the parallelogram of values by
+first checking for \( k < e_{min} \) and
+denormalizing if necessary.
+</p>
+
+<h2>Check for underflow</h2>
+
+<p>
+If <code>k</code> is less than the minimum normal
+exponent, we have <em>exponent underflow</em>.
+</p>
+
+<p>
+Shift the significant bits right,
+adding \( 1 \) to <code>k</code> for each bit shifted,
+until it reaches the minimum normal exponent.
+Zero bits shift in from the left and bits shifted
+off the right are logically OR-ed into <code>S</code>.
+</p>
+
+<p>
+Underflow may result in a value like this
+</p>
+
+<pre><med-code>    +---------------------+-------+
+  ± | 0 &bull; 0 0 0 0 1 b b b | G R S |  *  2**e_min
+    +---------------------+------ +
+</med-code></pre>
+
+<p>
+or in an extreme case all the signifcant bits may
+be shifted into <code>S</code>.
+</p>
+
+<pre><med-code>    +---------------------+-------+
+  ± | 0 &bull; 0 0 0 0 0 0 0 0 | 0 0 1 |  *  2**e_min
+    +---------------------+------ +
+</med-code></pre>
 
 <h2>Round</h2>
 
 <p>
-The significant bits now look like
+After possible denormalization,
+the value looks like this:
 </p>
 
 <pre><med-code>    +---------------------+-------+
-    | 1 &bull; b b b b . . . b | G R S |
+  ± | 1 &bull; b b b b . . . b | G R S |  *  2**k
     +---------------------+------ +
 </med-code></pre>
 
@@ -99,19 +158,18 @@ information.
 
 <p>
 IEEE 754 ushered in a whole new era by leveraging the power of
-the new microprocessors to support four different kinds
-of rounding. If four seems extravagant, be assured there
-are several more varieties, too.
+the new microprocessors 
+to support four different kinds
+of rounding.
 </p>
 
 <p>
-We'll discuss the four
-IEEE 754 rounding modes here.
+Here is what we mean by rounding.
 Given a value
 </p>
 
 <pre><med-code>    +---------------------+-------+
-    | 1 &bull; b b b b b b b b | G R S |
+  ± | b &bull; b b b b b b b b | G R S |
     +---------------------+------ +
 </med-code></pre>
 
@@ -136,18 +194,24 @@ we discard
 after rounding.
 </p
 
+<p>
+These are the four
+types of rounding specified by
+IEEE 754.
+</p>
+
 <ul>
-  <li> Round Toward Zero &ndash; this is classic mainframe trunctation,
-    where we round down (in magnitude)
+  <li> Round toward Zero &ndash; this is classic mainframe trunctation,
+    where we round down
   </li>
   <li>
-    Round Toward \( + \infty \) &ndash; if the sign is
+    Round toward \( + \infty \) &ndash; if the sign is
     \( + \) and any of
     <code>G</code>, <code>R</code>, and <code>S</code>
     is nonzero, then round up; otherwise, round down
   </li>
   <li>
-    Round Toward \( - \infty \) &ndash; if the sign is
+    Round toward \( - \infty \) &ndash; if the sign is
     \( - \) and any of
     <code>G</code>, <code>R</code>, and <code>S</code>
     is nonzero, then round up; otherwise round down
@@ -159,189 +223,73 @@ after rounding.
     or (b) the lowest-order <code>b</code> is <code>1</code>;
     otherwise, round down
   </li>
-<ul>
-
-
+</ul>
 
 <p>
-As a first example, let's compute \( 1 + 1 \).
-No surprises here.
+Despite the technical language, the concepts are simple.
+Let's think of
+<code>G</code>, <code>R</code>, and <code>S</code>
+as the <em>rounding bits</em>.
+If they're all zero, the result needs no rounding.
 </p>
 
-<pre><med-code>        1 &bull; 0 0 0 0 0 0 0
-      + 1 &bull; 0 0 0 0 0 0 0
-      -------------------
-  +---+-------------------+-------+
-  | 1 | 0 &bull; 0 0 0 0 0 0 0 | 0 0 0 |
-  +---+-------------------+------ +
+<p>
+If the rounding bits are nonzero, then the intermediate
+value lies between representable values in the parallelogram.
+Round toward Zero, or toward \( + \infty \),
+or toward \( - \infty \)
+chooses the represnetable value in the relevant direction.
+</p>
+
+<p>
+Round to Nearest chooses the nearer of the two adjacent
+representable values. It's helpful to list the cases:
+</p>
+
+<pre><med-code>  ± | b &bull; b b b b b b b b | 0 R S   round down
+  ± | b &bull; b b b b b b b b | 1 1 S   round up
+  ± | b &bull; b b b b b b b b | 1 R 1   round up
+  ± | b &bull; b b b b b b b 0 | 1 0 0   round down
+  ± | b &bull; b b b b b b b 1 | 1 0 0   round up
 </med-code></pre>
 
 <p>
-Now let's try \( 1 + 2^{-99} \).
-That lone <code>1</code> bit plays a role
-later, when the value is rounded.
+The last two cases illustrate an
+intermediate result halfway between two
+representable values. The rounding is
+<em>unbiased</em> in that it rounds up
+only if the least significant bit, just
+ to the left, is one.
 </p>
 
-<pre><med-code>        1 &bull; 0 0 0 0 0 0 0
-      + 0 &bull; 0 0 0 0 0 0 0 0 0 . . . 0 0 0 1
-      -------------------------------------
-  +---+-------------------+-------+
-  | 0 | 1 &bull; 0 0 0 0 0 0 0 | 0 0 1 |
-  +---+-------------------+------ +
+<h2>Check for overflow</h2>
+
+<p>
+After rounding, we have a value
+</p>
+
+<pre><med-code>    +---------------------+
+  ± | b &bull; b b b b b b b b |  *  2**k
+    +---------------------+
 </med-code></pre>
 
 <p>
-To see how cancellation works,
-let's look at \( 1 - ( 1 - 2^{-8} ) \).
-These are adjacent values in our 8-bit
-number system.
-</p>
-
-<pre><med-code>        1 &bull; 0 0 0 0 0 0 0
-      - 0 &bull; 1 1 1 1 1 1 1 1
-      ---------------------
-  +---+-------------------+-------+
-  | 0 | 0 &bull; 0 0 0 0 0 0 0 | 1 0 0 |
-  +---+-------------------+------ +
-</med-code></pre>
-
-<p>
-The result requires an 8-bit left shift to be
-normalized. Magnitude
-subtraction of normalized numbers with the
-same precision has interesting special cases.
-Can you see that if the input values are more
-than one bit out of alignment, the left
-shift to renormalize is either zero or one bit?
-Can you also see that when a when a larger shift
-is required, that the result will require no
-rounding? All of its rightmost bits are zero.
-</p>
-
-<h2><code>mul()</code></h2>
-
-<p>
-Floating point multiplication is a matter of computing
-the product of the two 8-bit inputs, then gathering the
-lowest bits into <em>Sticky</em>.
-The multiplication can be seen as the binary
-flavor of everyday long multiplication.
+with <code>k</code> no less than the smallest
+normal exponent. If <code>k</code> is larger
+the the largest normal exponent, the
+<em>exponent ovderflow</em> arises.
+The magnitude is too large to represent.
 </p>
 
 <p>
-An example like \( ( 1 + 2^{-7} ) * ( 1 + 2^{-7} ) \)
-spares us a blizzard of <code>1</code> bits.
-The exact product is
-\( 1 + 2^{-6} + 2^{-14} \)
-where the tiny third term is collected into <em>Sticky</em>.
-</p>
-
-<pre><med-code>        1 &bull; 0 0 0 0 0 0 1
-      * 1 &bull; 0 0 0 0 0 0 1
-      -------------------
-        0 &bull; 0 0 0 0 0 0 1 0 0 0 0 0 0 1
-             ...lines of zeros...
-      + 1 &bull; 0 0 0 0 0 0 1
-      ---------------------------------
-        1 &bull; 0 0 0 0 0 1 0 0 0 0 0 0 0 1
-  +---+-------------------+-------+
-  | 0 | 1 &bull; 0 0 0 0 0 1 0 | 0 0 1 |
-  +---+-------------------+------ +
-</med-code></pre>
-
-<p>
-If this is new to you, try a case like
-\( ( 2 - 2^{-7} ) * ( 2 - 2^{-7} ) \).
-As a big hint, here is the intermediate
-result.
-</p>
-
-<pre><med-code>  +---+-------------------+-------+
-  | 1 | 1 &bull; 1 1 1 1 1 0 0 | 0 0 1 |
-  +---+-------------------+------ +
-</med-code></pre>
-
-<h2><code>div()</code></h2>
-
-<p>
-Floating point division can likewise be carried
-out with the binary version of pencil-and-paper
-long division. Fast implementations, including
-the famous Pentium divide instruction, are discussed
-outside this pamphlet.
-The idea is to compute the quotient out to
-at least the <em>Round</em> bit. Then, the
-<em>Sticky</em> bit is <code>1</code> if there
-is any nonzero remainder.
-</p>
-
-<p>
-Let's look at \( ( 1 + 2^{-7} ) / ( 1 - 2^{-8} ) \),
-the number just bigger than \( 1 \) divided by
-the number just less than \( 1 \).
-</p>
-
-<div class="math">
-  <p>
-  The quotient is
-  \[ ( 1 + 2^{-7} ) * ( 1 + 2^{-8} + 2^{-16} + 2^{-24} + \cdots ) \]
-  which simplifies to
-  \( 1 + 2^{-7} + 2^{-8} + 2^{-15} + 2^{-16} + \cdots \), with all the
-  trailing terms absorbed into <em>Sitcky</em>.
-  </p>
-</div>
-
-<p>
-Most of the quotient bits are zero, so it's not too painful
-to carry out this division by hand. In any case, the
-ideal result appears as
-</p>
-
-<pre><med-code>  +---+-------------------+-------+
-  | 0 | 1 &bull; 0 0 0 0 0 0 1 | 1 0 1 |
-  +---+-------------------+------ +
-</med-code></pre>
-
-<h2><code>sqrt()</code> and <code>remainder()</code></h2>
-
-<p>
-The pencil-and-paper technique for extracting
-a square root applies readily to binary
-arithmetic, as shown in the
-<a class="inline" href="../numbers/aaanumbers_toc.html">
-Number Hall</a>.
-As with division, the idea is to compute
-the root out to
-at least the <em>Round</em> bit. Then, the
-<em>Sticky</em> bit is <code>1</code> if
-the <em>radicand</em> has not been reduced
-to zero.
-</p>
-
-<p>
-The <code>remainder()</code> operation is different.
-Its intermediate value is always exact, but the
-number of integer quotient bits computed in order
-to arrive at the remainder may be huge.
-</p>
-
-
-<h2>Logs, exponentials, trig functions</h2>
-
-<p>
-The previous sections have shown how the computational
-model presented here, with its ideal intermediate result,
-is mathematically feasible for the most common operations.
-</p>
-
-<p>
-The situation for the <em>transcendental</em> functions
-is more complicated, so the requirement for correctly-rounded
-results rarely applies. Computing extra-precise intermediate
-values may be too expensive. In any case, there is the
-<em>Table-Maker's Dilemma:</em> that near half-way cases will arise,
-requiring many extra significant bits to resolve. (See two papers
-by W. Kahan in the Library, for example.)
+The IEEE 754 approach to overflow is to
+deliver \( \infty \) with the sign of the
+result, except for two circumstances.
+If the result is positive and rounding is
+toward \( -\infty \) or the result is negative
+and rounding is toward \( +\infty \),
+then deliver the largest normal number of
+the approppriate sign.
 </p>
 
 

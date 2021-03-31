@@ -5,7 +5,8 @@
 
 <p>
 Floating point operations follow a
-remarkably simple process, in principle:
+remarkably simple process. For any
+numeric arguments
 </p>
 
 <ol>
@@ -214,11 +215,19 @@ Floating point division can likewise be carried
 out with the binary version of pencil-and-paper
 long division. Fast implementations, including
 the famous Pentium divide instruction, are discussed
-outside this pamphlet.
+outside this booklet.
 The idea is to compute the quotient out to
 at least the <em>Round</em> bit. Then, the
 <em>Sticky</em> bit is <code>1</code> if there
 is any nonzero remainder.
+</p>
+
+<p>
+A zero divisor is one of the
+  <a class="inline" href="book_special_cases.html">
+  Special Cases</a>
+that fall outside simple arithmetic. Visit that page
+for details.
 </p>
 
 <p>

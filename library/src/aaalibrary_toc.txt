@@ -81,7 +81,7 @@ The Library is for Everyone.
 </a></p>
 
 <p class="el3"><a class="toc-link library" target="_blank"
-  href="lib/wk_why do we need a standard_5mar91.pdf">
+  href="lib/wk_why_do_we_need_a_floating_point_standard_5mar91.pdf">
   Why do we need a floating-point arithmetic standard?
 </a></p>
 <p class="el3-note">
@@ -89,6 +89,37 @@ The Library is for Everyone.
   their uses. If you are going to read just one of all these
   papers, read this one.
 </p>
+
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_von_neumann_lecture_97.pdf">
+  The Baleful Effect of Computer Languages and Benchmarks
+  on Applied Mathematics, Phisics and Chemistry
+  (talk 1997)
+</a></p>
+<p class="el3-note">
+  Slides for the John von Neumann Lecture at the
+  45th Annual Meeting of S.I.A.M., at Stanford
+  University.
+</p>
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_the_baleful_effect_of_spec_benchmarks_jul05.pdf">
+  The Baleful Effect of SPEC Benchmarks on
+  Applied Mathematics, Physics and Chemistry (talk 2005)
+</a></p>
+<p class="el3-note">
+  Variation prepared for SPEC benchmark group.
+  With the IEEE 754 revision committee.
+</p>
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_the_baleful_effect_of_computer_benchmarks_jun96.pdf">
+  The Baleful Effect of Computer Benchmarks on
+  Applied Mathematics, Physics and Chemistry (talk 1996)
+</a></p>
+<p class="el3-note">
+  Early version of the John von Neumann lecture.
+</p>
+
+
 
 <p class="el3"><a class="toc-link library" target="_blank"
   href="lib/wk_status_of_IEEE754_oct97.pdf">
@@ -227,6 +258,33 @@ The Library is for Everyone.
 </p>
 
 <p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_what_is_gradual_underflow_may80.pdf">
+  Why Gradual Underflow?
+</a></p>
+<p class="el3-note">
+  Argunment at the height of the debate.
+</p>
+
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_two_questions_payne_bhandarkar_may80.pdf">
+  Two Questions for Drs. Payne and Bhandarkar concerning
+  their paper
+  <em>VAX FLOATING POINT: A Solid Foundation for
+  Numerical Computation</em> presented at Electro/80
+</a></p>
+<p class="el3-note">
+  Debate with DEC engineers.
+</p>
+
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_why_must_0_to_0_be_1_mar83.pdf">
+  Why Must \( 0^0 = 1 \)?
+</a></p>
+<p class="el3-note">
+  Several pages of examples in support.
+</p>
+
+<p class="el3"><a class="toc-link library" target="_blank"
   href="lib/wk_rational_arithmetic_in_floating_point_sep86.pdf">
   Rattional Arithmetic in Floating-Point
 </a></p>
@@ -267,8 +325,21 @@ The Library is for Everyone.
   23 pretty self-contained slides. Lecture not included.
 </p>
 
+<br>
+<p class="el2">
+  Calculators
+</p>
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_can_you_count_on_your_calculator_apr77.pdf">
+  Can You Count on Your Calculator?
+</a></p>
+<p class="el3-note">
+  Many examples of how things can go wrong – and sometimes
+  right – on a variety of calculators. With Beresford N. Parlett.
+</p>
 
 
+<br>
 <p class="el2">
   Other arithmetic
 </p>
@@ -321,9 +392,11 @@ The Library is for Everyone.
 
 
 
+<br>
 <p class="el2">
   Numerical algorithms
 </p>
+
 <p class="el3"><a class="toc-link library" target="_blank"
   href="lib/wk_a_survey_of_error_analysis_72.pdf">
   A Survey of Error Analysis
@@ -349,6 +422,18 @@ The Library is for Everyone.
   Verbatin transcript of a talk given at
   Purdue University in May 1974.
 </p>
+
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_why_can_I_debug_some_numerical_jun08.pdf">
+  Why Can I Debug some Numerical Programs that You Can't?
+</a></p>
+<p class="el3-note">
+  Slices for the celebration of
+  50th Anniversary of George Forsythe’s founding
+  of Stanford’s Computer Science Dept.
+</p>
+
+
 <p class="el3"><a class="toc-link library" target="_blank"
   href="lib/wk_summing_slowly_convergent_series_jan98.pdf">
   Summing a Slowly Convergent Series
@@ -415,7 +500,20 @@ The Library is for Everyone.
 
 <br>
 <p class="el1">
-  Other arithmetic
+  Articles related to IEEE 754
+</p>
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/peterson_can_you_count_on_your_computer_82.pdf">
+  Can You Count on Your Computer?
+  </a>
+</p>
+<p class="el2-note">
+  A piece by Ivars Peterson in <em>Science News</em>.
+</p>
+
+<br>
+<p class="el1">
+  Arithmetic other than IEEE 754
 </p>
 <p class="el2"><a class="toc-link library" target="_blank"
   href="lib/ris_unified_fp_arch_sep76.pdf">

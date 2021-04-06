@@ -33,121 +33,308 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='book_nonzero.html' class='next round'>Next</a>
+  <a href='book_summary.html' class='next round'>Next</a>
   <a href='aaaarithmetic_toc.html' class='tree round'>Home</a>
-  <a href='aaaarithmetic_toc.html' class='previous round'>Previous</a>
+  <a href='book_coercion.html' class='previous round'>Previous</a>
   </div>
 
 
-<h1>Nonzero numbers</h1>
+<h1>Special cases</h1>
 
 <p>
-Floating point numbers fall neatly into a
-parallelogram.
-A bullet &bull;
-emphasizes the binary point in this 8-bit
-number system. Each value may have positive
-or negative algebraic sign.
+The previous pages have brought us an intermediate
+result of the form
 </p>
 
-<pre><code>
-  |11111111           &bull;                 | largest number
-  |1bbbbbbb           &bull;                 |
-  | 1bbbbbbb          &bull;                 |
-  |  1bbbbbbb         &bull;                 |
-  |   1bbbbbbb        &bull;                 |
-  
-       . . . many lines omitted . . .
-  
-  |         1bbbbbbb00&bull;                 |
-  |          1bbbbbbb0&bull;                 |
-  |           1bbbbbbb&bull;                 |
-  |            1bbbbbb&bull;b                |
-  |             1bbbbb&bull;bb               |
-  |              1bbbb&bull;bbb              |
-  |               1bbb&bull;bbbb             |
-  |                1bb&bull;bbbbb            |
-  |                 1b&bull;bbbbbb           |
-  |                  1&bull;bbbbbbb          |
-  |                   &bull;1bbbbbbb         |
-  |                   &bull;01bbbbbbb        |
-  |                   &bull;001bbbbbbb       |
-  |                   &bull;0001bbbbbbb      |
-  
-       . . . many lines omitted . . .
-  
-  |                   &bull;      1bbbbbbb   |
-  |                   &bull;       1bbbbbbb  |
-  |                   &bull;        1bbbbbbb |
-  |                   &bull;         1bbbbbbb|
-  |                   &bull;         10000000| smallest normal number
-  |                   --------------------------------------------
-  |                   &bull;         01111111| largest subnormal number
-  |                   &bull;         01bbbbbb|
-  |                   &bull;         001bbbbb|
-  |                   &bull;         0001bbbb|
-  |                   &bull;         00001bbb|
-  |                   &bull;         000001bb|
-  |                   &bull;         0000001b|
-  |                   &bull;         00000001| smallest subnormal number
-</code></pre>
+<pre><med-code>    +---------------------+-------+
+  ± | b &bull; b b b b b b b b | G R S |  *  2**k
+    +---------------------+------ +
+</med-code></pre>
 
 <p>
-This is a <em>normalized</em> number system.
-The leading bit is <code>1</code>,
-except perhaps for the tiniest values. 
+At this point, we treat the <em>Sticky</em> bit
+<code>S</code> as just a trailing
+significant bit, despite its exotic definition.
 </p>
 
 <p>
-Normalization ensures there is exactly one representation for
-any value.
-For example, two appears as
-<code>10.000000</code> in the table, and nowhere else.
-When it's time to encode numbers as bit strings
-in memory,
-normalization gives us a free bit. If we know the
-leading significant bit is <code>1</code>, we don't have
-to store it.
+The goal  is to fit the value into the normal form
+</p>
+
+<pre><med-code>    +---------------------+
+  ± | 1 &bull; b b b b b b b b |  *  2**e
+    +---------------------+
+</med-code></pre>
+
+<p>
+if possible,
+where <code>e</code> is constrained by
+\( e_{min} \leq e \leq e_{max} \)
+given the limitations of the exponent
+range of the destination.
+We must turn to the expanded rules
+of computer arithmetic when we dpart
+from &ldquo;mere&rdquo; mathematics.
+</p>
+
+<h2>Dispatch zero</h2>
+
+<p>
+If all of the significant bits are <code>0</code>,
+then the result is zero.
+Because zero falls outside the parallelogram of
+normal values of the number system, it fits
+into the special cases of the next page.
+</p>
+
+<h2>Normalize</h2>
+
+<p>
+With the goal of fitting a nonzero result into
+the parallelogram, a first logical step is to
+normalize it.
+Shift the bit string of
+<code>b</code>s, <code>G</code>, <code>R</code>,
+and <code>S</code> left until the the leading
+bit is <code>1</code>.
+<code>0</code> bits are shifted into the
+<code>S</code> postion from the right.
+Decrement <code>k</code> for each bit position
+shifted.
 </p>
 
 <p>
-The diagram suggests the sense in which the binary point
-<em>floats</em> left and right across 8-bit strings.
-Usually, there is a limit to how far rightward the binary
-point can float &ndash; a limit to how big numbers can get.
-That largest representable number is called the
-<em>overflow threshold</em>.
+In the flavor of floating point preseneted here,
+it is
+only in <code>add()</code> and <code>sub()</code>
+that a normalization shift of more than one bit
+can arise, and in that case <code>S</code> is
+guaranteed to be zero.
+</p>
+
+<h2>A strategy</h2>
+
+<p>
+After filtering zero results and normalizing,
+we have a value of the form
+</p>
+
+<pre><med-code>    +---------------------+-------+
+  ± | 1 &bull; b b b b b b b b | G R S |  *  2**k
+    +---------------------+------ +
+</med-code></pre>
+
+<p>
+The traditional approach was to round the value down
+to eight significant bits and then check for
+<code>k</code> out of range.
+In the IEEE 754 era, we exploit the bottom
+right corner of the parallelogram of values by
+first checking for \( k < e_{min} \) and
+denormalizing if necessary.
+</p>
+
+<h2>Check for underflow</h2>
+
+<p>
+If <code>k</code> is less than the minimum normal
+exponent, we have <em>exponent underflow</em>.
 </p>
 
 <p>
-In the same way,there is a limit to how far leftward
-the binary point can float &ndash; a limit to how tiny
-numbers can get. The diagram shows a tiniest normalized
-number. This may be called the <em>underflow threshold</em>.
+Shift the significant bits right,
+adding \( 1 \) to <code>k</code> for each bit shifted,
+until it reaches the minimum normal exponent.
+Zero bits shift in from the left and bits shifted
+off the right are logically OR-ed into <code>S</code>.
 </p>
 
 <p>
-The diagram suggests that we may squeeze out a bit more range
-by allowing the leading bit to go to <code>0</code> for just
-these tiniest numbers. The IEEE 754 Floating Point Standard
-famously adopted such <em>denormalization</em> as a means to
-mitigate the effects of underflow. The resulting values have
-come to be called <em>subnormal</em>.
+Underflow may result in a value like this
+</p>
+
+<pre><med-code>    +---------------------+-------+
+  ± | 0 &bull; 0 0 0 0 1 b b b | G R S |  *  2**e_min
+    +---------------------+------ +
+</med-code></pre>
+
+<p>
+or in an extreme case all the signifcant bits may
+be shifted into <code>S</code>.
+</p>
+
+<pre><med-code>    +---------------------+-------+
+  ± | 0 &bull; 0 0 0 0 0 0 0 0 | 0 0 1 |  *  2**e_min
+    +---------------------+------ +
+</med-code></pre>
+
+<h2>Round</h2>
+
+<p>
+After possible denormalization,
+the value looks like this:
+</p>
+
+<pre><med-code>    +---------------------+-------+
+  ± | 1 &bull; b b b b . . . b | G R S |  *  2**k
+    +---------------------+------ +
+</med-code></pre>
+
+<p>
+In the mainframe era of the 1960s, most computers
+would simply <em>truncate</em> the result by
+treating all bits from <code>G</code> rightward
+as zero.
+Some minicomputers of the 1970s would add \( 1 \)
+to the <code>G</code> bit and truncate that result.
+Visit the
+<a class="inline" href="../dinosaur/aaadinosaur_toc.html">
+    Dinosaur Gallery</a>
+for further
+information.
 </p>
 
 <p>
-The 8-bit number system fits conveniently in a diagram.
-The narrow values help convey the dynamic nature of
-floating point numbers. Please don't think it's a toy
-example. Every day, billions of such numbers play into
-artificial intelligence calculations carried out by
-specialized processors.
+IEEE 754 ushered in a whole new era by leveraging the power of
+the new microprocessors 
+to support four different kinds
+of rounding.
 </p>
+
+<p>
+Here is what we mean by rounding.
+Given a value
+</p>
+
+<pre><med-code>    +---------------------+-------+
+  ± | b &bull; b b b b b b b b | G R S |
+    +---------------------+------ +
+</med-code></pre>
+
+<p>
+regardless of sign, we
+<em>round up</em> (in magnitude)
+by adding \( 1 \)
+into the lowest-order <code>b</code>.
+If every <code>b</code> is a
+<code>1</code>, then there is a carry out
+of the leading <code>1</code>, so the
+sigificant bits must be right-shifted
+one place and the exponent <code>k</code>
+incremented.
+</p>
+
+<p>
+We <em>round down</em> by taking no action
+on the significant bits. In either case,
+we discard
+<code>G</code>, <code>R</code>, and <code>S</code>
+after rounding.
+</p
+
+<p>
+These are the four
+types of rounding specified by
+IEEE 754.
+</p>
+
+<ul>
+  <li> Round toward Zero &ndash; this is classic mainframe trunctation,
+    where we round down
+  </li>
+  <li>
+    Round toward \( + \infty \) &ndash; if the sign is
+    \( + \) and any of
+    <code>G</code>, <code>R</code>, and <code>S</code>
+    is nonzero, then round up; otherwise, round down
+  </li>
+  <li>
+    Round toward \( - \infty \) &ndash; if the sign is
+    \( - \) and any of
+    <code>G</code>, <code>R</code>, and <code>S</code>
+    is nonzero, then round up; otherwise round down
+  </li>
+  <li>
+    Round to Nearst &ndash; round up if <code>G</code>
+    is <code>1</code> and either
+    (a) <code>R</code> or <code>S</code> is <code>1</code>
+    or (b) the lowest-order <code>b</code> is <code>1</code>;
+    otherwise, round down
+  </li>
+</ul>
+
+<p>
+Despite the technical language, the concepts are simple.
+Let's think of
+<code>G</code>, <code>R</code>, and <code>S</code>
+as the <em>rounding bits</em>.
+If they're all zero, the result needs no rounding.
+</p>
+
+<p>
+If the rounding bits are nonzero, then the intermediate
+value lies between representable values in the parallelogram.
+Round toward Zero, or toward \( + \infty \),
+or toward \( - \infty \)
+chooses the represnetable value in the relevant direction.
+</p>
+
+<p>
+Round to Nearest chooses the nearer of the two adjacent
+representable values. It's helpful to list the cases:
+</p>
+
+<pre><med-code>  ± | b &bull; b b b b b b b b | 0 R S   round down
+  ± | b &bull; b b b b b b b b | 1 1 S   round up
+  ± | b &bull; b b b b b b b b | 1 R 1   round up
+  ± | b &bull; b b b b b b b 0 | 1 0 0   round down
+  ± | b &bull; b b b b b b b 1 | 1 0 0   round up
+</med-code></pre>
+
+<p>
+The last two cases illustrate an
+intermediate result halfway between two
+representable values. The rounding is
+<em>unbiased</em> in that it rounds up
+only if the least significant bit, just
+ to the left, is one.
+</p>
+
+<h2>Check for overflow</h2>
+
+<p>
+After rounding, we have a value
+</p>
+
+<pre><med-code>    +---------------------+
+  ± | b &bull; b b b b b b b b |  *  2**k
+    +---------------------+
+</med-code></pre>
+
+<p>
+with <code>k</code> no less than the smallest
+normal exponent. If <code>k</code> is larger
+the the largest normal exponent, the
+<em>exponent ovderflow</em> arises.
+The magnitude is too large to represent.
+</p>
+
+<p>
+The IEEE 754 approach to overflow is to
+deliver \( \infty \) with the sign of the
+result, except for two circumstances.
+If the result is positive and rounding is
+toward \( -\infty \) or the result is negative
+and rounding is toward \( +\infty \),
+then deliver the largest normal number of
+the approppriate sign.
+</p>
+
 
 <div class='next-prev'>
-<a href='book_nonzero.html' class='next round'>Next</a>
+<a href='book_summary.html' class='next round'>Next</a>
 <a href='aaaarithmetic_toc.html' class='tree round'>Home</a>
-<a href='aaaarithmetic_toc.html' class='previous round'>Previous</a>
+<a href='book_coercion.html' class='previous round'>Previous</a>
 </div>
 <script src="../js/vendor/jquery.js"></script>
 <script src="../js/plugins.js"></script>

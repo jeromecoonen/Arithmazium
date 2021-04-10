@@ -503,6 +503,17 @@ The Library is for Everyone.
   Articles related to IEEE 754
 </p>
 <p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/reinsch_summary_of_a_discussion_jun76.pdf">
+  Summary of a Discussion on Machine Arithmetic
+  </a>
+</p>
+<p class="el2-note">
+  Notes from a panel at the Workshop on Portability of
+  Numerical Software, June 1976. The experts
+  could never have guessed that one year laater
+  IEEE 754 would be launched. 
+</p>
+<p class="el2"><a class="toc-link library" target="_blank"
   href="lib/peterson_can_you_count_on_your_computer_82.pdf">
   Can You Count on Your Computer?
   </a>
@@ -519,12 +530,21 @@ The Library is for Everyone.
   href="lib/ris_unified_fp_arch_sep76.pdf">
   A Unified Decimal Floating-Point Architecture to
   Support High-Level Languages
-</a>by Frederic N. Ris</p>
+</a>by Frederic N. Ris, 1976</p>
 <p class="el2-note">
   IBM Research in Yorktown Heights, NY studied the
   possibility of decimal arithmetic in machines to
   succeed the 360 family. This is all that was ever
   revealed of that years-long effort.
+</p>
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/sterbenz_proposal_for_decimal_jul73.pdf">
+  Proposal for Decimal Floating-Point Arithmetic
+</a></p>
+<p class="el2-note">
+  An early proposal from the Computation Special Interest
+  Group at IBM, addressed to William Kahan,from
+  Pat Sterbenz, 1973.
 </p>
 
 

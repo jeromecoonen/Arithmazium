@@ -4,293 +4,128 @@
 <h1>Special cases</h1>
 
 <p>
-The previous pages have brought us an intermediate
-result of the form
+This section discusses situtations that fall
+outside the usual model of
+<em>round a mathmetmatical reault
+to fit into the destination</em>.
 </p>
 
-<pre><med-code>    +---------------------+-------+
-  ± | b &bull; b b b b b b b b | G R S |  *  2**k
-    +---------------------+------ +
-</med-code></pre>
+<h2>NaNs beget NaNs</h2>
 
 <p>
-At this point, we treat the <em>Sticky</em> bit
-<code>S</code> as just a trailing
-significant bit, despite its exotic definition.
+Any arithmetic operation on a NaN produces
+a NaN result. Special accommodation may
+be made for aggregating functions
+like <code>min</code> or <code>max</code>,
+but they fall outside the scope of
+basic arithmetic.
 </p>
 
-<p>
-The goal  is to fit the value into the normal form
-</p>
-
-<pre><med-code>    +---------------------+
-  ± | 1 &bull; b b b b b b b b |  *  2**e
-    +---------------------+
-</med-code></pre>
+<h2>Zero result</h2>
 
 <p>
-if possible,
-where <code>e</code> is constrained by
-\( e_{min} \leq e \leq e_{max} \)
-given the limitations of the exponent
-range of the destination.
-We must turn to the expanded rules
-of computer arithmetic when we dpart
-from &ldquo;mere&rdquo; mathematics.
-</p>
-
-<h2>Dispatch zero</h2>
-
-<p>
-If all of the significant bits are <code>0</code>,
-then the result is zero.
-Because zero falls outside the parallelogram of
-normal values of the number system, it fits
-into the special cases of the next page.
-</p>
-
-<h2>Normalize</h2>
-
-<p>
-With the goal of fitting a nonzero result into
-the parallelogram, a first logical step is to
-normalize it.
-Shift the bit string of
-<code>b</code>s, <code>G</code>, <code>R</code>,
-and <code>S</code> left until the the leading
-bit is <code>1</code>.
-<code>0</code> bits are shifted into the
-<code>S</code> postion from the right.
-Decrement <code>k</code> for each bit position
-shifted.
+In signed-magnitude systems like IEEE 754, zero has
+an algebraic sign whose rules fall outside ordinary
+mathematics. As with the actual computation,
+we look to the most natural &ndash; or perhaps
+<em>least surprising</em> &ndash; answer.
 </p>
 
 <p>
-In the flavor of floating point preseneted here,
-it is
-only in <code>add()</code> and <code>sub()</code>
-that a normalization shift of more than one bit
-can arise, and in that case <code>S</code> is
-guaranteed to be zero.
-</p>
-
-<h2>A strategy</h2>
-
-<p>
-After filtering zero results and normalizing,
-we have a value of the form
-</p>
-
-<pre><med-code>    +---------------------+-------+
-  ± | 1 &bull; b b b b b b b b | G R S |  *  2**k
-    +---------------------+------ +
-</med-code></pre>
-
-<p>
-The traditional approach was to round the value down
-to eight significant bits and then check for
-<code>k</code> out of range.
-In the IEEE 754 era, we exploit the bottom
-right corner of the parallelogram of values by
-first checking for \( k < e_{min} \) and
-denormalizing if necessary.
-</p>
-
-<h2>Check for underflow</h2>
-
-<p>
-If <code>k</code> is less than the minimum normal
-exponent, we have <em>exponent underflow</em>.
+When zero results from
+<code>mul</code> or <code>div</code>, its sign
+is just the exclusive-or of the operands' signs.
+<code>neg</code> flips zero's sign and <code>abs</code>
+gives zero positive sign. <code>copysign</code>
+does what it says. The first suprise is <code>sqrt</code>,
+which preserves the sign of a zero input.
 </p>
 
 <p>
-Shift the significant bits right,
-adding \( 1 \) to <code>k</code> for each bit shifted,
-until it reaches the minimum normal exponent.
-Zero bits shift in from the left and bits shifted
-off the right are logically OR-ed into <code>S</code>.
+The unobvious cases are <code>add</code> and <code>sub</code>.
+What is the sign of the result of <code>5.0 - 5.0</code>?
+There is no mathematical choice, so 754 arbitrarily chooses
+<code>+0</code>, with a special case when rounding toward
+\( - \infty \).
 </p>
 
 <p>
-Underflow may result in a value like this
+The cases <code>-0 + -0</code> and <code>-0 - +0</code>
+produce <code>-0</code> result, because there is no
+ambiguity about the sign.
 </p>
 
-<pre><med-code>    +---------------------+-------+
-  ± | 0 &bull; 0 0 0 0 1 b b b | G R S |  *  2**e_min
-    +---------------------+------ +
-</med-code></pre>
+<h2>Zero divided by zero</h2>
 
 <p>
-or in an extreme case all the signifcant bits may
-be shifted into <code>S</code>.
+This operation produces a NaN. It's called
+<em>Invalid</em> in 754.
 </p>
 
-<pre><med-code>    +---------------------+-------+
-  ± | 0 &bull; 0 0 0 0 0 0 0 0 | 0 0 1 |  *  2**e_min
-    +---------------------+------ +
-</med-code></pre>
+<div class="math">
+  <p>
+  \( \lim_{x,y \rightarrow 0} x / y \) does
+  not exist.
+  </p>
+</div>
 
-<h2>Round</h2>
+<h2>Zero times infinity</h2>
 
 <p>
-After possible denormalization,
-the value looks like this:
+This operation produces a NaN. It's called
+<em>Invalid</em> in 754.
 </p>
 
-<pre><med-code>    +---------------------+-------+
-  ± | 1 &bull; b b b b . . . b | G R S |  *  2**k
-    +---------------------+------ +
-</med-code></pre>
+<div class="math">
+  <p>
+  \( \lim_{x \rightarrow 0, y \rightarrow \infty} x \times y \)
+  does not exist.
+  </p>
+</div>
+
+<h2>Nonzero divided by zero</h2>
 
 <p>
-In the mainframe era of the 1960s, most computers
-would simply <em>truncate</em> the result by
-treating all bits from <code>G</code> rightward
-as zero.
-Some minicomputers of the 1970s would add \( 1 \)
-to the <code>G</code> bit and truncate that result.
-Visit the
-<a class="inline" href="../dinosaur/aaadinosaur_toc.html">
-    Dinosaur Gallery</a>
-for further
-information.
+This operation produces \( \infty \)
+with the exclusive-or of the operands' signs,
+provided the number system supports an
+infinity symbol, as 754 does.
 </p>
 
+<div class="math">
+  <p>
+  \( \lim_{y \rightarrow 0} x / y = \pm\infty \)
+  for \( x \neq 0 \).
+  </p>
+</div>
+
+<h2>Finite divided by infinity</h2>
+
 <p>
-IEEE 754 ushered in a whole new era by leveraging the power of
-the new microprocessors 
-to support four different kinds
-of rounding.
+This operation produces \( 0 \)
+with the exclusive-or of the operands' signs.
 </p>
 
+<div class="math">
+  <p>
+  \( \lim_{y \rightarrow \infty } x / y = 0 \)
+  for \( x \) finite.
+  </p>
+</div>
+
+<h2>Nonzero times infinity</h2>
+
 <p>
-Here is what we mean by rounding.
-Given a value
+This operation produces \( \infty \)
+with the exclusive-or of the operands' signs.
 </p>
 
-<pre><med-code>    +---------------------+-------+
-  ± | b &bull; b b b b b b b b | G R S |
-    +---------------------+------ +
-</med-code></pre>
-
-<p>
-regardless of sign, we
-<em>round up</em> (in magnitude)
-by adding \( 1 \)
-into the lowest-order <code>b</code>.
-If every <code>b</code> is a
-<code>1</code>, then there is a carry out
-of the leading <code>1</code>, so the
-sigificant bits must be right-shifted
-one place and the exponent <code>k</code>
-incremented.
-</p>
-
-<p>
-We <em>round down</em> by taking no action
-on the significant bits. In either case,
-we discard
-<code>G</code>, <code>R</code>, and <code>S</code>
-after rounding.
-</p
-
-<p>
-These are the four
-types of rounding specified by
-IEEE 754.
-</p>
-
-<ul>
-  <li> Round toward Zero &ndash; this is classic mainframe trunctation,
-    where we round down
-  </li>
-  <li>
-    Round toward \( + \infty \) &ndash; if the sign is
-    \( + \) and any of
-    <code>G</code>, <code>R</code>, and <code>S</code>
-    is nonzero, then round up; otherwise, round down
-  </li>
-  <li>
-    Round toward \( - \infty \) &ndash; if the sign is
-    \( - \) and any of
-    <code>G</code>, <code>R</code>, and <code>S</code>
-    is nonzero, then round up; otherwise round down
-  </li>
-  <li>
-    Round to Nearst &ndash; round up if <code>G</code>
-    is <code>1</code> and either
-    (a) <code>R</code> or <code>S</code> is <code>1</code>
-    or (b) the lowest-order <code>b</code> is <code>1</code>;
-    otherwise, round down
-  </li>
-</ul>
-
-<p>
-Despite the technical language, the concepts are simple.
-Let's think of
-<code>G</code>, <code>R</code>, and <code>S</code>
-as the <em>rounding bits</em>.
-If they're all zero, the result needs no rounding.
-</p>
-
-<p>
-If the rounding bits are nonzero, then the intermediate
-value lies between representable values in the parallelogram.
-Round toward Zero, or toward \( + \infty \),
-or toward \( - \infty \)
-chooses the represnetable value in the relevant direction.
-</p>
-
-<p>
-Round to Nearest chooses the nearer of the two adjacent
-representable values. It's helpful to list the cases:
-</p>
-
-<pre><med-code>  ± | b &bull; b b b b b b b b | 0 R S   round down
-  ± | b &bull; b b b b b b b b | 1 1 S   round up
-  ± | b &bull; b b b b b b b b | 1 R 1   round up
-  ± | b &bull; b b b b b b b 0 | 1 0 0   round down
-  ± | b &bull; b b b b b b b 1 | 1 0 0   round up
-</med-code></pre>
-
-<p>
-The last two cases illustrate an
-intermediate result halfway between two
-representable values. The rounding is
-<em>unbiased</em> in that it rounds up
-only if the least significant bit, just
- to the left, is one.
-</p>
-
-<h2>Check for overflow</h2>
-
-<p>
-After rounding, we have a value
-</p>
-
-<pre><med-code>    +---------------------+
-  ± | b &bull; b b b b b b b b |  *  2**k
-    +---------------------+
-</med-code></pre>
-
-<p>
-with <code>k</code> no less than the smallest
-normal exponent. If <code>k</code> is larger
-the the largest normal exponent, the
-<em>exponent ovderflow</em> arises.
-The magnitude is too large to represent.
-</p>
-
-<p>
-The IEEE 754 approach to overflow is to
-deliver \( \infty \) with the sign of the
-result, except for two circumstances.
-If the result is positive and rounding is
-toward \( -\infty \) or the result is negative
-and rounding is toward \( +\infty \),
-then deliver the largest normal number of
-the approppriate sign.
-</p>
+<div class="math">
+  <p>
+  \( \lim_{y \rightarrow \infty } x \times y = \pm \infty \)
+  for \( x \neq 0 \).
+  </p>
+</div>
 
 
 #INCLUDE para_foot book_coercion.html aaaarithmetic_toc.html book_summary.html

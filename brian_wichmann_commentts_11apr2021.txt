@@ -1,0 +1,28 @@
+Remarks Brian Wichmann might once have made about Paranoia.
+
+1) When working on Pascal compiler validation on a ________ in 1985, we looked around for some sample numerical code. We discovered a publicly available BASIC program called Paranoia from Prof. William Kahan at U.C. Berkeley.
+
+2) Paranoia was just 669 lines long and was known to exercise the edges of a machine's arithmetic. It was stand-alone by design, requiring no significant runtime support. And Paranoia was, in a sense, self-diagnosing, given that it reported its findings about a machine's arithmetic. All of these features made it an attractive validation candidate.
+
+3) Paranoia was really a 669x80 block of ASCII text, with occasional lines much longer. Multiple colon-separated statements appear per line. Many loops were coded on a single line of text.
+
+4) Perhaps due to the constraints of BASIC on the original IBM PC, Paranoia had very few comments. At the end of the program, a block comment provided a glossary of many of the variables. They were all globals, and the form X or Y2, in BASIC style.
+
+5) Not every variable was in the glossary, and some that were could be used for other purposes before they took their appointed role. I gave human-readable names to many values, but not all.
+
+6) After several splash screens of information for the user, Paranoia just proceeded as a flow of dozens of different tests. There are a modest number of utility functions, but most of the program is just the sequence of tests, run just once.
+
+7) Some of the more subtle tests, like square root, used GOSUB routines. I created Pascal subroutines using the BASIC line numbers as names. Like the BASIC, they relied on a significant amount of global state.
+
+8) The REPEAT .... UNTIL ... construct matched the BASIC code well. There were some WHILE ... DO ... loops, too.
+
+9) Paranoia made no attempt to look at the representßation of numbers and it created no data structures, so there were certain language features it did not exercise.
+
+10) Paranoia did examine rounding behavior closely. It stimulated exponent underflow and overflow, which could be problematical in the 1980s. It even computed quotients like 1/0 and even 0/0, but with user options to skip those tests.
+
+11) Because the BASIC code was very regular, much of the translation was _________ , but it was a lot of work.
+<<<Was there a bunch of regex massage, to change variable names, break lines up, add semicolons, ...? The change from C to Python was mader much easier in a modern editor>>>
+
+12) We found some compiler bugs, thanks to this significant exercise.
+
+13) I'm happy to know that this translation spawned a widely used C version, a Modula 2 translation, and later Fortran, Python, and even Forth versions. The C version has been widely used in other validations.

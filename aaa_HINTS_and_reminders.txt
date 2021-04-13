@@ -36,11 +36,11 @@ Section cross-reference:
   <a class="inline" href="book_coercion.html">
     Coercion</a>
 
-What could go wrong?
+What could go wrong? -- wrongdiv
   <div class="wrong">
   <h2>What could go wrong?</h2>...
 
-Math
+Math -- mathdiv
   <div class="math">
 
 Idioms

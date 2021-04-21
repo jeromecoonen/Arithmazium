@@ -39,12 +39,151 @@
   </div>
 
 
-<h1>Reader's guide to IEEE 754</h1>
+<h1>IEEE 754 reader's guide and timeline</h1>
 
 <p>
 This shelf contains papers about the standard, how
 it is implmented, and how it is used. See the William
 Kahan shelves for his many papers regarding the standard.
+The IEEE holds the copyright on its standards and charges
+a nominal fee for distribution.
+This site features older versions of the standard that
+have since been superseded.
+</p>
+
+<h2>A timeline of the emergence of IEEE 754</h2>
+
+<p>
+This list presents some high points
+from the early years of IEEE 754.
+</p>
+
+<ul>
+<li class="timeline">
+'75 – The Intel 432 project is launched; decimal floating point arithmetic is one suggestion, but binary is where the project is headed.
+</li>
+
+<li class="timeline">
+‘76 – John Palmer begins working on a math coprocessor for the Intel 8086; realizing there is similar work in progress for the 432, he convinces Intel management to standardize floating point arithmetic across the product line.
+</li>
+
+<li class="timeline">
+‘76 – Palmer reaches out to Prof. William Kahan at U.C. Berkeley for consultation. Palmer had met Kahan through Prof. Gene Golub at Stanford.
+</li>
+
+<li class="timeline">
+'76-'81 – Intel develops its internal floating point standard for 432 and what will be the x87 line of x86 floating point coprocessors.
+</li>
+
+<li class="timeline">
+‘77 – Early in the year, Richard Delp at Signetics sees the AMD 9511 arithmetic processor chip and contacts Robert Stewart about adding a floating point standard to the new microprocessor standards effort. Stewart launches IEEE 754, with Delp as chair; they hope to avoid a state of bedlam across microprocessors. The subcommittee holds its meeting in the summer, with Palmer representing Intel.
+</li>
+
+<li class="timeline">
+'77 – Kahan persuades Intel to allow him to discuss formats and 5 arithmetic operations puhlicly, with no mention of transcendental functions in hardware. This frees Kahan to develop a proposal for the IEEE standard in parallel with Intel's work.
+</li>
+
+<li class="timeline">
+‘77 – In September, Kahan and Palmer attend the second meeting of the emergent subcommittee.
+</li>
+
+<li class="timeline">
+‘77 – In October, graduate student Jerome Coonen approaches Kahan with analysis of a bug in exp() in DEC PDP-11 library; more bugs appear.
+</li>
+
+<li class="timeline">
+‘78 – At spring break, Kahan recruits visting Prof. Harold Stone and Coonen for a two-month project to write up a proposal for the IEEE.
+</li>
+
+<li class="timeline">
+'78 – Through spring and summer, Kahan and Coonen work out many fine details in tables, in parallel with Intel's effort.
+</li>
+
+<li class="timeline">
+‘78 – In April, Kahan and Coonen join a growing number of industry folks at the third subcommittee meeting, with the first "KCS" draft in hand.
+</li>
+
+<li class="timeline">
+'78 – Emergence of Ada leads to adoption of it as the high-level language of the 432.
+</li>
+
+<li class="timeline">
+'80 – Kahan writes to Prof. Don Knuth across the Bay at Stanford; they arrange a Saturday phone call. Knuth sends a letter to Delp and the subcommittee offering encouragement and praising the adoption of gradual underflow. He closes with the sentence, "Unfortunately I am having to change my TEX program to do just integer arithmetic, because as things stand in 1980 I dare not use floating point." Gradual underflow just makes it into the 2nd edition of Knuth's Vol. 2, <em>Seminumerical Algorithms</em>.
+</li>
+
+<li class="timeline">
+'80 – The Intel 8087 ships; some elementary function features (for example, trignonmetric argument reduction, SIN, and COS) are relegated to support software due to space constraints.
+</li>
+
+<li class="timeline">
+David Stevenson of Zilog assumes the chair of the 754 subcommittee.
+</li>
+
+<li class="timeline">
+'81 – IEEE <em>Computer</em> publishes Draft 8.0 of the proposed standard.
+</li>
+
+<li class="timeline">
+'81 – The 432 ships, but is discontinued in'85; 432 has the full-featured IEEE 754 floating point unit plus elementary functions.
+</li>
+
+<li class="timeline">
+'82 – In December, the subcommittee approves Draft 10.0 of the proposal, which will move forward with just cosmetic changes.
+</li>
+
+<li class="timeline">
+'85 – IEEE Stnadard 754 is formally approved.
+</li>
+
+<li class="timeline">
+'85 – Kahan works up new algorithms for the Intel 387, using a 66-bit pi (accurate to 68 bits) for argument reduction.
+</li>
+
+<li class="timeline">
+'87 – Intel 80387 ships, including revised trig functions; Kahan ends Intel collaboartion.
+</li>
+
+<li class="timeline">
+'89 – Intel 80486 ships with integrated floating point adapted from 80387.
+</li>
+
+<li class="timeline">
+'93 – Intel Pentium ships, with fast multiplier array on chip and faster 2-bit divide; Kahan's student Dr. Peter Tang codes new transcendental functions.
+</li>
+</ul>
+
+<h2>Anecdotes</h2>
+
+<p>
+Kahan modified the CORDIC algorithms, which are designed around fixed-point computation, to work in floating point. See his paper on pseudo-mulitply and pseudo-divide on the Wiliam Kahan IEEE 754 shelf.
+</p>
+
+<p>
+Bob Corbett developed correctly-rounded trigonometric argument reduction at the same time DEC engineers did, but Corbett used half the number of bits. Vic Vyssotsky at Bell Labs was surprised and impressed when it passed his tests.
+</p>
+
+<p>
+Palmer struggled to get Intel to build a coprocessor at all. In the 1970s, many executives believed there was no demand for scientific computation, an attitude that afflicted the calculator industry, too. When Palmer offered to go with $0 salary but take $1 for every 8087 shipped, he got no deal. There remained a contingent convinced that just the basic 4 funcitons would suffice.
+</p>
+
+<p>
+A Microsoft story: Early on, Kahan joined an Intel group in Redmond to discuss compiler supprt. All went fine through the morning until the chairman arrived around 11:00, looked at an open CPU box on the desk with an empty 8087 socket, and declared that most such sockets would remain empty. And so ended any prospect for direct compiler support of the floating point hardware.
+</p>
+
+<p>
+At Intel, there was more interest in Israel than in Santa Clara in working on a math coprocessor. Given the serious constraints of the time, Rafi Nave's team developed a technique for storing 2 bits per transistor in ROM.
+</p>
+
+<p>
+Borland Quattro was the first spreadsheet to fully exploit the 8087, thanks to Roger Schlafly.
+</p>
+
+<p>
+By the mid-1980s, competition was heating up. Cyrix and Weitek offered alternatives to the 80387.
+</p>
+
+<p>
+An apocryphal tale: "When I was at Intel, I heard a story that as the IEEE standard was coming together, Digital Equipment was holding out and refusing to endorse it. They had their own floating point architecture.  Finally Don Knuth [at Stanford] got on an airplane, flew to Maynard MA and stomped into Gordon Bell’s office and said that DEC was holding back the evolution of computing.  At that point DEC came around. I’ve never believed that story, but I’m curious if there is any truth to it." Knuth did write an open letter to the 754 subcommittee in 1980, and it is said he may have written to Bell at the same time.
 </p>
 
 

@@ -1,6 +1,6 @@
-Remarks Brian Wichmann might once have made about Paranoia.
+Remarks Brian Wichmann agrees he might once have made about Paranoia.
 
-1) When working on Pascal compiler validation on a ________ in 1985, we looked around for some sample numerical code. We discovered a publicly available BASIC program called Paranoia from Prof. William Kahan at U.C. Berkeley.
+1) When working on Pascal compiler validation on a mini and mainframe in 1985, we looked around for some sample numerical code. We discovered a publicly available BASIC program called Paranoia from Prof. William Kahan at U.C. Berkeley.
 
 2) Paranoia was just 669 lines long and was known to exercise the edges of a machine's arithmetic. It was stand-alone by design, requiring no significant runtime support. And Paranoia was, in a sense, self-diagnosing, given that it reported its findings about a machine's arithmetic. All of these features made it an attractive validation candidate.
 
@@ -20,9 +20,9 @@ Remarks Brian Wichmann might once have made about Paranoia.
 
 10) Paranoia did examine rounding behavior closely. It stimulated exponent underflow and overflow, which could be problematical in the 1980s. It even computed quotients like 1/0 and even 0/0, but with user options to skip those tests.
 
-11) Because the BASIC code was very regular, much of the translation was _________ , but it was a lot of work.
-<<<Was there a bunch of regex massage, to change variable names, break lines up, add semicolons, ...? The change from C to Python was mader much easier in a modern editor>>>
+11) Because the BASIC code was very regular, much of the translation was _________ , but it was a lot of work. I did not attempt to apply large-scale regular expression substitution to automate the process.
 
 12) We found some compiler bugs, thanks to this significant exercise.
 
-13) I'm happy to know that this translation spawned a widely used C version, a Modula 2 translation, and later Fortran, Python, and even Forth versions. The C version has been widely used in other validations.
+13) I'm happy to know that this translation spawned a widely used C version and others. The C version has also been used for validation.
+

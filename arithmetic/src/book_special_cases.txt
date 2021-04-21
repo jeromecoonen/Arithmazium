@@ -1,4 +1,4 @@
-#INCLUDE para_head book_coercion.html aaaarithmetic_toc.html book_summary.html
+#INCLUDE para_head book_coercion.html aaaarithmetic_toc.html book_conversions.html
 
 
 <h1>Special cases</h1>
@@ -128,4 +128,4 @@ with the exclusive-or of the operands' signs.
 </div>
 
 
-#INCLUDE para_foot book_coercion.html aaaarithmetic_toc.html book_summary.html
+#INCLUDE para_foot book_coercion.html aaaarithmetic_toc.html book_conversions.html

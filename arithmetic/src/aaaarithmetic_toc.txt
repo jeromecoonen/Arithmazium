@@ -39,6 +39,19 @@ Readers might visit the
   Special cases
 </a></p>
 
+<p class="el3"><a class="toc-link arith wip"
+  href="book_conversions.html">
+  Radix conversion
+</a></p>
+<p class="el3"><a class="toc-link arith wip"
+  href="book_exceptions.html">
+  Exceptions
+</a></p>
+<p class="el3"><a class="toc-link arith wip"
+  href="book_summary.html">
+  Summary
+</a></p>
+
 
 #INCLUDE page_copyright
 #INCLUDE para_toc_foot

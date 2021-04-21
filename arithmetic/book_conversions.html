@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Arithmazium</title>
-  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/arithmetic/book_coercion.html">
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/arithmetic/book_conversions.html">
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <meta name='theme-color' content='#fafafa'>
   <link rel='stylesheet' href='../css/normalize.css'>
@@ -33,23 +33,152 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='book_special_cases.html' class='next round'>Next</a>
+  <a href='book_exceptions.html' class='next round'>Next</a>
   <a href='aaaarithmetic_toc.html' class='tree round'>Home</a>
-  <a href='book_ideal_result.html' class='previous round'>Previous</a>
+  <a href='book_special_cases.html' class='previous round'>Previous</a>
   </div>
 
 
-<h1>Coercion to the target range and precision</h1>
+<h1>Radix conversions</h1>
 
 <p>
-The previous pages have brought us an intermediate
-result of the form
+Since the emergence of IEEE Standard 754,
+most floating point arithmetic
+in binary. This means that systems must
+support conversion between
+human-readable decimal numbers
+and the internal binary formats.
 </p>
 
-<pre><med-code>    +---------------------+-------+
-  ± | b &bull; b b b b b b b b | G R S |  *  2**k
-    +---------------------+-------+
+<p>
+Programmable calculators and some
+specialized systems offer decimal floating
+point arithmetic, where the conversion
+is far simpler, but still requires
+coercion to the target.
+</p>
+
+<p>
+Our focus here is the typical case of
+binary arithmetic.
+</p>
+
+<h2>Decimal to binary conversion</h2>
+
+<p>
+Whether input directly by a user or
+written in a computer program or a data file,
+a decimal value is either zero or a
+value of the form
+</p>
+
+<pre><med-code>  ± d &bull; d d d d ...  *  10**h
 </med-code></pre>
+
+<p>
+where the <code>d</code>s are decimal digits,
+with the leading <code>d</code> is nonzero.
+</p>
+
+<p>
+The zero case is easy, with the algebraic sign passing
+through to the binary result, if needed.
+Otherwise, the decimal number can be converted to
+the unique binary value
+</p>
+
+<pre><med-code>    +---------------------+-----+
+  ± | 1 &bull; b b b b b b b b | G S |  *  2**k
+    +---------------------+-----+
+</med-code></pre>
+
+<p>
+where the sticky bit <code>S</code> is the logical sum
+of all bits to the right of <code>G</code>.
+(There is no need for a round bit <code>R</code> because
+there is no normalization shift required.)
+</p>
+
+<p>
+With the intermediate binary result in this form,
+the rest of the conversion proceeds as with the
+arithmetic operations.
+</p>
+
+<h2>Binary to decimal conversion</h2>
+
+<p>
+A value of zero, \( \pm\infty \), or NaN requires
+no arithmetic. Otherwise, target decimal formats
+come in two flavors:
+<ul>
+  <li>
+    fixed &ndash; with a given number of digits
+    to the right of the decimal point:
+    <code>dd.dddd</code>
+  </li>
+  <li>
+    floating &ndash; with a given number of
+    significant digits:
+    <code>d.ddddddEnn</code>
+  </li>
+</ul>
+Conversion to fixed format is a matter of
+scaling by a suitable power of \( 10 \) and
+rounding to an integer. Then it's a matter
+of integer conversion and formatting the
+result with sign and decimal point.
+</p>
+
+<p>
+Conversion to floating form is the
+more interesting case, analogous to
+the binary arithmetic itself.
+The input value may be expressed in
+normalized form as
+</p>
+
+<pre><med-code>    +---------------------+
+  ± | 1 &bull; b b b b b b b b |  *  2**k
+    +---------------------+
+</med-code></pre>
+
+<p>
+whether or not the value was denormalized
+in the encoding.
+</p>
+
+<p>
+This value can be converted to the unique
+decimal intermediate form
+</p>
+
+<pre><med-code>    +---------------------+-----+
+  ± | d &bull; d d d . . . d d | G S |  *  10**h
+    +---------------------+-----+
+</med-code></pre>
+
+<p>
+where the <code>d</code>s are decimal digits,
+and the leading <code>d</code> is nonzero.
+<code>G</code> is a decimal guard digit
+and <code>S</code> is a sticky bit, which
+is nonzero only if some digit beyond <code>G</code>
+is nonzero, in the exact representation.
+This is analogous to coercion to binary.
+</p>
+
+<p>
+Coercion to the decimal result is simpler than
+coercion to binary form, becuase typically exponent
+overflow and underflow are not an issue on output.
+Using the guard <code>G</code> digit and the
+sticky <code>S</code> bit, we round
+</p>
+
+
+
+
 
 <p>
 At this point, we treat the <em>Sticky</em> bit
@@ -332,9 +461,9 @@ the approppriate sign.
 
 
 <div class='next-prev'>
-<a href='book_special_cases.html' class='next round'>Next</a>
+<a href='book_exceptions.html' class='next round'>Next</a>
 <a href='aaaarithmetic_toc.html' class='tree round'>Home</a>
-<a href='book_ideal_result.html' class='previous round'>Previous</a>
+<a href='book_special_cases.html' class='previous round'>Previous</a>
 </div>
 <script src="../js/vendor/jquery.js"></script>
 <script src="../js/plugins.js"></script>

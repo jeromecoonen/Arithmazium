@@ -68,6 +68,17 @@ The Library is for Everyone.
   Ph.D. thesis of Matthias Hüsken.
 </p>
 
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/wk_hs_jc_draft_of_material_on_a_floating_point_standard_apr78.pdf">
+  Draft of material on a Floating-Point Standard from discussions
+</a></p>
+<p class="el2-note">
+  The April 1978 draft of what was initially called the
+  <em>KCS proposal</em>. This draft contained
+  much supporting material by Harold Stone.
+  It led to what became IEEE 754.
+</p>
+
 
 
 <br>
@@ -286,6 +297,27 @@ The Library is for Everyone.
 </p>
 
 <p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_fclass_mar02.pdf">
+  Fclass: a Proposed Classification of Standard
+  Floating-Point Operands
+</a></p>
+<p class="el3-note">
+  Suggestions for compiler writers for dealing with floating
+  point types when considered as strings of bytes,
+  as in C <code>union</code>s.
+</p>
+
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_Names_apr02.pdf">
+  Names for Standardized Floating-Point Formats
+</a></p>
+<p class="el3-note">
+  Discussion of the floating point entities we must
+  refer to in programming languages &ndash; and the
+  challenges of choosing names.
+</p>
+
+<p class="el3"><a class="toc-link library" target="_blank"
   href="lib/wk_rational_arithmetic_in_floating_point_sep86.pdf">
   Rattional Arithmetic in Floating-Point
 </a></p>
@@ -413,7 +445,7 @@ The Library is for Everyone.
 
 <br>
 <p class="el2">
-  Numerical algorithms
+  Numerical algorithms and error analysis
 </p>
 
 <p class="el3"><a class="toc-link library" target="_blank"
@@ -452,6 +484,13 @@ The Library is for Everyone.
   of Stanford’s Computer Science Dept.
 </p>
 
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_the_error_analysts_quandary_aug72.pdf">
+  The Error-Analyst's Quandary
+</a></p>
+<p class="el3-note">
+  Short note on numerical stability.
+</p>
 
 <p class="el3"><a class="toc-link library" target="_blank"
   href="lib/wk_summing_slowly_convergent_series_jan98.pdf">
@@ -483,6 +522,16 @@ The Library is for Everyone.
 </a></p>
 <p class="el3-note">
   How best to compute \( cos( \theta ) \) given \( sin( \theta ) \).
+</p>
+<p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_machine_independent_algorithms_floor_ceil_may88.pdf">
+  Machine-Independent Algorithms for floor(x) and ceil(x)
+</a></p>
+<p class="el3-note">
+  Covers arithmetics including those predating IEEE 754.
+  Includes a short Basic program to determine the smallest
+  positive number beyond which all floating point values
+  are integers.
 </p>
 <p class="el3"><a class="toc-link library" target="_blank"
   href="lib/wk_whats_wroong_with_these_programs_sep93.pdf">

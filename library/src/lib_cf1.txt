@@ -1,0 +1,294 @@
+#INCLUDE para_head aaalibrary_toc.html aaalibrary_toc.html aaalibrary_toc.html
+
+
+<h1>A quick guide to continued fractions</h1>
+
+<p>
+In Volume 2 of <em>Seminumerial Algorithms</em>, Donald Knuth
+offers a great start to this rich subject.
+The general form of a continued fraction is this:
+</p>
+
+\[ \frac {b_1} {a_1 + \frac {b_2} {a_2 + \frac {b_3} {a_3}}}
+  = b_1 / (a_1 + b_2 / (a_2 + b_3 / a3)) \]
+
+<p>
+We start with continued fractions in which all the
+\( b_k \) are one. A convenient notation is
+</p>
+
+\[ \newcommand{\sslash}{\mathbin{/\mkern-6mu/}} 
+ \sslash x_1, x_2, x_3, \ldots, x_n \sslash = 
+1 / (x_1 + 1 / (x_2 + 1 / (x_3 + \ldots / x_n))) \]
+
+<h2>Continuants</h2>
+<p>
+Euler and others investigated the useful
+<em>continuant polynomials</em>:
+</p>
+
+\[ K_{n}(x_1, x_2, \ldots, x_n) = 
+  \left\{
+  \begin{array}{ll}
+  1 & \mbox{if $n = 0$} \\
+  x_1 & \mbox{if $n = 1$} \\
+  {x_1 K_{n-1}(x_2, x_3, \ldots, x_n) +
+  K_{n-2}(x_3, x_4, \ldots, x_n)} & \mbox{if $n > 1$}
+  \end{array}
+  \right.
+\]
+
+<p>
+Here are the first several continuants:
+</p>
+
+\[ 
+  \begin{array}{ll}
+  K_0 & 1 \\
+  K_1(x_1) & x_1 \\
+  K_2(x_1, x_2) & x_1 x_2 + 1 \\
+  K_3(x_1, x_2, x_3) & x_1 x_2 x_3 + x_1 + x_3 \\
+  K_4(x_1, x_2, x_3, x_4) & x_1 x_2 x_3 x_4 + x_1 x_2 +
+    x_1 x_4 + x_2 x _3 + 1 \\
+  K_5(x_1, x_2, x_3, x_4, x_5) &
+    \begin{array}{l}
+    x_1 x_2 x_3 x_4 x_5 + x_1 x_2 x_3 + x_1 x_2 x_5 + x_1 x _4 x_5 + \\
+    \ \ \ x_3 x_4 x_5 + x_1 + x_3 + x_5
+    \end{array}
+  \end{array}
+\]
+
+<p>
+Fun facts about continuants:
+<ul>
+  <li>
+    \( K_n(\ldots) \) is the sum of all terms starting
+    with \( x_1, x_2, \ldots, x_n \) and then deleting
+    nonoverlapping pairs of consecutive variables
+    \( x_j x_{j+1} \).
+   </li>
+   <li>
+     Just the \( K_{2k} \) have a term \( 1 \).
+   </li>
+   <li>
+     \( K_n(x_1, x_2, \ldots, x_n) = K_n(x_n, x_{n-1}, \ldots, x_1) \).
+    </li>
+    <li>
+      The number of terms in \(K_n(x_1, x_2, \ldots, x_n)\)
+      is \( F_{n+1} \) from the Fibonacci sequence
+      \( 0, 1, 1, 2, 3, 5, \ldots \).
+    </li>
+  </ul>
+</p>
+
+<p>
+The K-polynomials connect to continued fractions through
+the this formula:
+  \[ \sslash x_1, x_2, \ldots, x_n \sslash =
+    \frac{K_{n-1}(x_2, x_3, \ldots, x_n)}{K_n(x_1, x_2, \ldots, x_n)}
+  \]
+To see this, expand the reciprocal of the right hand side:
+  \[ \frac{x_1 K_{n-1}(x_2, x_3, \ldots, x_n) +
+    K_{n-2}(x_3, x_4, \ldots, x_n)}
+    {K_{n-1}(x_2, x_3, \ldots, x_n)}
+  \]
+The right-hand side of the formula above is thus
+  \[ \frac{1}{x_1 + \frac{K_{n-2}(x_3, x_4, \ldots, x_n)}
+    {K_{n-1}(x_2, x_3, \ldots, x_n)}}
+  \]
+which leads by induction to
+  \[ \frac{1}{x_1 + \frac{1}{x_2 + \frac{1}
+    {\cdots\frac{\rule{0in}{.1in}}{x_{n-1} + \frac{1}{x_n}}}}}
+  \]
+the desired continued fraction.
+</p>
+
+<p>
+An key identity is
+\[
+  K_n(x_1, \ldots, x_n) K_n(x_2, \ldots, x_{n+1}) -
+  K_{n+1}(x_1, \ldots, x_{n+1}) K_{n-1}(x_2, \ldots, x_n)
+  = (-1)^{n}
+\]
+for \( n \geq 1 \). To work out the inductive step, 
+advance to step \( n+1 \) and first expand
+the left-hand term to
+\[
+  (x_1 K_n(x_2, \ldots, x_{n+1}) + K_{n-1}(x_3, \ldots, x_{n+1}))
+  K_{n+1}(x_2, \ldots x_{n+2})
+\]
+and then the right-hand term to
+\[
+  (x_1 K_{n+1}(x_2, \ldots, x_{n+2}) + K_{n}(x_3, \ldots, x_{n+2}))
+  K_{n}(x_2, \ldots x_{n+1})
+\]
+The terms with factor \( x_1 \) cancel leaving
+\[
+  K_{n-1}(x_3, \ldots, x_{n+1}) K_{n+1}(x_2, \ldots x_{n+2}) -
+  K_{n}(x_3, \ldots, x_{n+2}) K_{n}(x_2, \ldots x_{n+1})
+  = (-1)^{n+1}
+\]
+by the assumption for step \( n \).
+</p>
+
+<h2>Continued fractions and continuants</h2>
+<p>
+We can now make the remarkable connection between the K-polynomials
+and continued fractions:
+  \[ \sslash x_1, x_2, \ldots, x_n \sslash =
+    \frac{1}{q_0 q_1} -\frac{1}{q_1 q_2} + \frac{1}{q_2 q_3}
+    + \cdots + \frac{(-1)^{n-1}}{q_{n-1}q_{n}}
+  \]
+where \( q_k = K_k(x_1, \ldots, x_k) \).
+</p>
+
+<p>
+To see the inductive step, start with the first
+expression for a continued fraction as a quotient
+of continuants
+  \[ \sslash x_1, \ldots, x_n \sslash =
+    \frac{K_{n-1}(x_2, \ldots, x_n)
+    K_{n-1}(x_1, \ldots, x_{n-1}) }
+    {K_n(x_1, \ldots, x_n)
+    K_{n-1}(x_1, \ldots, x_{n-1})}
+  \]
+with the latter term in the numerator and denominator
+chosen in order to exploit the last identity of the
+previous section.
+</p>
+
+<p>
+Rewriting the numerator leads us to
+  \[ 
+    \frac{ (-1)^{n-1} +  K_{n}(x_1, \ldots, x_{n})
+    K_{n-2}(x_2, \ldots, x_{n-1}) }
+    {K_n(x_1, \ldots, x_n)
+    K_{n-1}(x_1, \ldots, x_{n-1})}
+    = \frac{K_{n-2}(x_2, \ldots, x_{n-1})}
+    {K_{n-1}(x_1, \ldots, x_{n-1})} +
+    \frac{(-1)^{n-1}}{q_{n-1}q_{n}}
+  \]
+which is the inductive step.
+</p>
+
+<h2>Regular continued fractions</h2>
+<p>
+Every real number \( X \) with
+\( 0 \leq X < 1 \) has a
+<em>regular continued fraction</em>
+defined by this process. Set \( X = X_0 \),
+and for every \( n \geq 0 \), if
+\( X_n \neq 0 \)
+  \[
+    A_{n+1} = \lfloor 1 / X_n \rfloor
+    \mbox{,    }
+    X_{n+1} = 1 / X_n - A_{n+1}
+  \]
+If \( X_n = 0 \) the process stops and
+X = \( \sslash A_1, A_2, \ldots, A_n \sslash \).
+</p>
+
+<p>
+If \( X_n \neq 0 \) then \( 0 \leq X_{n+1} < 1 \),
+so all the \( A \)&rquo;s are positive integers.
+The definiton above exapnds to
+  \[
+    X = X_0 = \frac{1}{A_1 + X_1} =
+    \frac{1}{A_1 + \frac{1}{A_2 + X_2}} = \cdots
+  \]
+so
+  \[
+    X = \sslash A_1, A_2, \ldots, A_n + X_n \sslash
+  \]
+for all \( n \geq 1 \), whenever \( X_n \) is defined.
+</p>
+
+<p>
+Because \( K_n(A_1, \ldots, A_{n-1}, A_{n} + Y) \)
+is monotoinc in \( Y \), \( X \) lies between
+\( \sslash A_1, x_2, \ldots, A_n \sslash \) and
+\( \sslash A_1, x_2, \ldots, A_n + 1 \sslash \).
+The alternatiing signs in the identity of the last
+section suggest that successive approximations
+approach \( X \) from above and below, depending
+on whether \( n \) is odd or even.
+</p>
+
+<h2>The accuracy of approximatioin</h2>
+<p>
+Continued fractions approach their target quickly.
+To see this, consider
+
+  \[
+    \begin{align}
+    | X - \sslash A_1, \ldots, A_n \sslash | 
+    & = | \sslash A_1, \ldots, A_n + X_n \sslash -
+    \sslash A_1, \ldots, A_n \sslash | \\
+    & = | \sslash A_1, \ldots, A_n, 1 / X_n \sslash -
+    \sslash A_1, \ldots, A_n \sslash \\ |
+    & = 1 / (K_n(A_1, \ldots, A_n)
+    K_{n+1}(A_1, \ldots, A_n, 1 / X_n)) \\
+    & \leq 1 / (K_n(A_1, \ldots, A_n)
+    K_{n+1}(A_1, \ldots, A_n, A_{n+1}))
+    \end{align}
+  \]
+
+with the usual K-polynomial algebra applied in order
+to achieve a numerator of \( \pm 1 \) and the
+common denominator.
+</p>
+
+<h2>Brief sales pitch</h2>
+<p>
+One reason to study continued fractions is that
+they are beautiful expressions. Here is a sampler
+from Knuth and
+<em>The Handbook of Mathematical Functions</em>,
+affecdtionately known as &ldquo;Abramowitz & Stegun&rdquo;.
+</p>
+
+  \[
+    \phi = \frac{1 + \sqrt{5}}{2} =
+    1 + \sslash 1, 1, 1, 1, 1, 1, 1, \ldots \sslash
+  \]
+
+  \[
+    e =
+    2 + \sslash 1, 2, 1, 1, 41, 1, 1, 6,
+    1, 1, 8, 1, 1, 10, 1, 1, 12, \ldots \sslash
+  \]
+
+  \[
+    \pi = 
+    3 + \sslash 7, 15, 1, 192, 1, 1, 1, 2, 1,
+    3, 1, 14, 2, 1, 1, \ldots \sslash
+  \]
+
+  \[
+    tan(1) = 
+    \sslash 1, -3, 5, -7, 9, -11, 13, \ldots \sslash
+  \]
+
+  \[
+    ln(1 + z) =
+    \frac {z} {1 +
+      \frac {z} {2 +
+        \frac {z} {3 +
+          \frac {4 z} {4 +
+            \frac {4 z} {5 +
+              \frac {9 z} {6 + \cdots}}}}}}
+  \]
+
+  \[
+    e^z =
+    \frac {1} {1 -
+      \frac {z} {1 +
+        \frac {z} {2 -
+          \frac {z} {3 +
+            \frac {z} {2 -
+              \frac {z} {5 +
+                \frac {z} {2 - \cdots}}}}}}}
+  \]
+
+
+#INCLUDE para_foot aaalibrary_toc.html aaalibrary_toc.html aaalibrary_toc.html

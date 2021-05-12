@@ -40,8 +40,10 @@ What could go wrong? -- wrongdiv
   <div class="wrong">
   <h2>What could go wrong?</h2>...
 
-Math -- mathdiv
+Math --
   <div class="math">
+  math-tab, mathline-tab
+  \begin{align}
 
 Idioms
   Should there be an index?

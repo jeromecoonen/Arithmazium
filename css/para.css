@@ -17,7 +17,8 @@ h1 {
   color: black;
 }
 
-.toc-link.num {
+.toc-link.num,
+.toc-link.cf {
   font-size: x-large;
 }
 

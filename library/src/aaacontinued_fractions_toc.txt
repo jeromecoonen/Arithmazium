@@ -1,0 +1,22 @@
+#INCLUDE para_toc_head
+
+<h1>The Beauty of Continued Fractions</h1>
+
+<div class="message-box">
+<span class="big-green">M</span>
+This content is mathematical, but intended
+to be an easy read.
+</div>
+<br>
+
+<p class="el1"><a class="toc-link cf wip"
+  href="lib_cf_intro.html">
+  Introduction
+</a></p>
+<p class="el1"><a class="toc-link cf wip"
+  href="lib_cf_fractions.html">
+  23 and me
+</a></p>
+
+#INCLUDE page_copyright
+#INCLUDE para_toc_foot

@@ -17,7 +17,7 @@ by hand. Here is one example:
     7 / 23 =
     \frac {1} {\frac{23}{7}} =
     \frac {1} { 3 + \frac{2}{7} } =
-    \frac {1} { 3 + \frac{1}{\frac{7}{3}} } =
+    \frac {1} { 3 + \frac{1}{\frac{7}{2}} } =
     \frac {1} { 3 + \frac{1}{3 + \frac{1}{2}} } \ \ .
   \]
 </p>
@@ -25,6 +25,8 @@ by hand. Here is one example:
 <p>
 Here is the whole table of expansions:
   \[ \newcommand{\sslash}{\mathbin{/\mkern-6mu/}}
+    \newcommand{\tslash}{\mathbin{/\mkern-5mu/}}
+    \newcommand{\uslash}{\mathbin{/\mkern-4mu/}}
     \begin{array}{ll}
     1 / 23 = \sslash 23 \sslash &
       22 / 23 = \sslash 1, 22 \sslash \\
@@ -93,9 +95,119 @@ Several patterns emerge:
   </ul>
 </p>
 
+<h2>Now with a dash of floating point arithmetic</h2>
+<p>
+Rational arithmetic is the ideal medium for computing with values
+like \( 7 / 23 \) and their expansions into regular continued fractions. Every value is a ratio of two integers
+\( a / b \) and in the best case the integers may be arbitrarily
+large. But this site has a special focus on floating point
+arithmetic, so it's interesting to carry out the above computations
+in the 65-bit <code>double</code> type of the IEEE 754 standard.
+</p>
 
+<p>
+When we recompute the regular continued fraction expansions
+of the proper fractions with denominator \( 23 \) things
+come out a bit different, as shown in the third column
+of this table:
+  \[
+    \small{
+    \begin{array}{lclcl}
+    1/23 & = &  \tslash 23 \tslash  & = & \scriptsize{\uslash 23 \uslash} \\
+    2/23 & = &  \tslash 11, 2 \tslash  & = & \scriptsize{\uslash 11, 2 \uslash} \\
+    3/23 & = &  \tslash 7, 1, 2 \tslash  & \approx & \scriptsize{\uslash 7, 1, 2, 375299968947541, 3, 4, 1, 225179981368524, \ldots \uslash} \\
+    4/23 & = &  \tslash 5, 1, 3 \tslash  & \approx & \scriptsize{\uslash 5, 1, 3, 1125899906842624 \uslash} \\
+    5/23 & = &  \tslash 4, 1, 1, 2 \tslash  & \approx & \scriptsize{\uslash 4, 1, 1, 1, 1, 75059993789508, 3, 1, \ldots \uslash} \\
+    6/23 & = &  \tslash 3, 1, 5 \tslash  & \approx & \scriptsize{\uslash 3, 1, 5, 140737488355328 \uslash} \\
+    7/23 & = &  \tslash 3, 3, 2 \tslash  & \approx & \scriptsize{\uslash 3, 3, 1, 1, 140737488355328 \uslash} \\
+    8/23 & = &  \tslash 2, 1, 7 \tslash  & \approx & \scriptsize{\uslash 2, 1, 7, 281474976710656 \uslash} \\
+    9/23 & = &  \tslash 2, 1, 1, 4 \tslash  & \approx & \scriptsize{\uslash 2, 1, 1, 4, 56294995342131, 4, 1, 12, \ldots \uslash} \\
+    10/23 & = &  \tslash 2, 3, 3 \tslash  & \approx & \scriptsize{\uslash 2, 3, 3, 37529996894754, 7, 1, 1, 8, \ldots \uslash} \\
+    11/23 & = &  \tslash 2, 11 \tslash  & \approx & \scriptsize{\uslash 2, 11, 93824992236885, 3, 21, 13403570319555, 21, 3, \ldots \uslash} \\
+    12/23 & = &  \tslash 1, 1, 11 \tslash  & \approx & \scriptsize{\uslash 1, 1, 11, 93824992236885, 3, 21, 13403570319555, 21, \ldots \uslash} \\
+    13/23 & = &  \tslash 1, 1, 3, 3 \tslash  & \approx & \scriptsize{\uslash 1, 1, 3, 2, 1, 57738456761160, 4, 1, \ldots \uslash} \\
+    14/23 & = &  \tslash 1, 1, 1, 4 \tslash  & \approx & \scriptsize{\uslash 1, 1, 1, 1, 3, 1, 46912496118442, 1, \ldots \uslash} \\
+    15/23 & = &  \tslash 1, 1, 1, 7 \tslash  & \approx & \scriptsize{\uslash 1, 1, 1, 7, 40210710958665, 7, 9, 31274997412295, \ldots \uslash} \\
+    16/23 & = &  \tslash 1, 2, 3, 2 \tslash  & \approx & \scriptsize{\uslash 1, 2, 3, 1, 1, 140737488355328 \uslash} \\
+    17/23 & = &  \tslash 1, 2, 1, 5 \tslash  & \approx & \scriptsize{\uslash 1, 2, 1, 4, 1, 37529996894754, 7, 1, \ldots \uslash} \\
+    18/23 & = &  \tslash 1, 3, 1, 1, 2 \tslash  & \approx & \scriptsize{\uslash 1, 3, 1, 1, 1, 1, 28147497671065, 1, \ldots \uslash} \\
+    19/23 & = &  \tslash 1, 4, 1, 3 \tslash  & \approx & \scriptsize{\uslash 1, 4, 1, 3, 1125899906842624 \uslash} \\
+    20/23 & = &  \tslash 1, 6, 1, 2 \tslash  & \approx & \scriptsize{\uslash 1, 6, 1, 1, 1, 18764998447377, 15, 17, \ldots \uslash} \\
+    21/23 & = &  \tslash 1, 10, 2 \tslash  & \approx & \scriptsize{\uslash 1, 10, 2, 20105355479332, 1, 1, 3, 18, \ldots \uslash} \\
+    22/23 & = &  \tslash 1, 22 \sslash  & \approx & \scriptsize{\uslash 1, 22, 46912496118442, 1, 1, 1, 42, 6701785159777, \ldots \uslash}
+    \end{array}
+    }
+  \]
+</p>
 
+<p>
+What's going on? The Python code reflects the computation
+of \( A_{n+1} \) and \( X_{n+1} \), when \( X_n \neq 0 \):
+</p>
+<pre><code>        new_a = math.floor(1.0 / x)
+        new_x = (1.0 / x) - new_a
+</code></pre>
+<p>
+The computation is doomed from the start.
+\( 7 / 23 \) rounds up and the difference
+ripples through the calculation.
+Let's revisit the earlier calculation, in
+the presence of rounding. The Greek letters
+represent tiny positive values.
+  \[
+    \begin{array}{ll}
+    \frac{7}{23} + \alpha  & =
+    \frac {1} { 3 + (\frac{2}{7} - \beta) } =
+    \frac {1} { 3 + \frac{1}{3 + (\frac{1}{2} + \gamma) }} =
+    \frac {1} { 3 + \frac{1}{3 + \frac{1}{
+      1 + (1 - \delta)}}} \\
+    & = \frac {1} { 3 + \frac{1}{3 + \frac{1}{
+      1 + \frac{1}{1 + \epsilon}}}} =
+    \frac {1} { 3 + \frac{1}{3 + \frac{1}{
+      1 + \frac{1}{1 + \frac{1}{HUGE}}}}} \ \ .
+    \end{array}
+  \]
+These intermediate values printed by the Python program
+are annotated with references to the formulas just above.
+<pre><code>    new_a = 3  new_x = 0.2857142857142856  2/7 - beta
+    new_a = 3  new_x = 0.5000000000000018  1/2 + gamma
+    new_a = 1  new_x = 0.9999999999999929  1 - delta
+    new_a = 1  new_x = 7.105427357601002e-15  epsilon = 32 ulps of 1
+    new_a = 140737488355328  new_x = 0.0  1/epsilon is exact
+</code></pre>
+</p>
 
+<p>
+We can get lucky, as with \( 1 / 23 \), and have the rounding
+errors cancel and leave us with an exact result.
+In most cases, the error will ripple down until what ought
+to be the last step of \( \frac{1}{M} \) turns out instead
+to be \( \frac{1}{M \pm \delta} \). When it's
+\( M - \delta \), as happened just above, the continued fraction
+expansion becomes
+\( \sslash x_1, \ldots, x_n - 1, 1, HUGE, \ldots \sslash \).
+In the case of \( M + \delta \) the expansion is correct
+up to the huge value:
+\( \sslash x_1, \ldots, x_n, HUGE, \ldots \sslash \).
+The case \( 8/23 \) exhibits that behavior.
+</p>
 
+<p>
+In the step after what we've labeled the \( \delta \) step,
+we compute \( 1 / \epsilon \). If \( \epsilon \) is
+\( 2^k \) units in the last place of \( 1 \), then its
+reciprocal is exact and the computation terminates
+because <code>new_x == 0</code>.
+An <em>ulp</em> of \( 1 \) is \( 2^{-52} \). In the case
+of \( 7/23 \), \( \epsilon \) is 32 ulps of \( 1 \).
+However, in the case of \( 9/23 \), \( \epsilon \) is
+80 ulps of \( 1 \), so the computation wanders on.
+</p>
+
+<p>
+And so ends an exploration of regular continued fraction expansions
+and a look at the effects of rounding on what deserve to
+be exact calculations. Now, back to the algebra.
+</p>
 
 #INCLUDE para_foot lib_cf_intro.html aaacontinued_fractions_toc.html lib_cf_fractions.html

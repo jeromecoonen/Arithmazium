@@ -204,10 +204,59 @@ However, in the case of \( 9/23 \), \( \epsilon \) is
 80 ulps of \( 1 \), so the computation wanders on.
 </p>
 
+<h2>When <em>HUGE</em> becomes \( \infty \)</h2>
+<p>
+On previous page, we computed a bound on the
+error in a continued fraction expansion. The
+appearance of the huge values in the computed
+expansions puts the error down in the ulps of
+the intendd result.
+</p>
+
+<p>
+What happens in the limit, when the huge value
+jumps to \( \infty \)?
+Here is the case of \( 7 / 23 \):
+  \[
+    \small{
+    \begin{array}{lclcl}
+    7/23 & = &  \tslash 3, 3, 2 \tslash  & = & \scriptsize{\uslash 3, 3, 1, 1, \infty \uslash}
+    \end{array}
+    } \ \ .
+  \]
+The continued fraction expands to
+  \[
+    \begin{array}{l}
+    \frac{7}{23}  & =
+    \frac {1} { 3 + \frac{1}{3 + \frac{1}{
+      1 + \frac{1}{1 + \frac{1}{ \infty }}}}}
+    = \frac {1} { 3 + \frac{1}{3 + \frac{1}{
+      1 + \frac{1}{1}}}}
+    = \frac {1} { 3 + \frac{1}{3 + \frac{1}{
+      2}}}
+    \end{array}
+  \]
+from which we see that
+  \[
+    \normalsize{
+    7/23
+    = \sslash 3, 3, 1, 1, \infty \sslash
+    = \sslash 3, 3, 1, 1\sslash
+    = \sslash 3, 3, 2 \sslash
+    } \ \ .
+  \]
+Although \( \infty \) doesn't actually arise in
+the calculations on this page,
+IEEE 754 arithmetic will handle the Python value
+<code>math.inf</code> when it does appear
+in a continued fraction
+evaluation.
+</p>
+
 <p>
 And so ends an exploration of regular continued fraction expansions
 and a look at the effects of rounding on what deserve to
-be exact calculations. Now, back to the algebra.
+be exact calculations.
 </p>
 
 #INCLUDE para_foot lib_cf_intro.html aaacontinued_fractions_toc.html lib_cf_fractions.html

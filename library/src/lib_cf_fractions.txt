@@ -159,12 +159,19 @@ represent tiny positive values.
     \frac{7}{23} + \alpha  & =
     \frac {1} { 3 + (\frac{2}{7} - \beta) } =
     \frac {1} { 3 + \frac{1}{3 + (\frac{1}{2} + \gamma) }} =
-    \frac {1} { 3 + \frac{1}{3 + \frac{1}{
-      1 + (1 - \delta)}}} \\
-    & = \frac {1} { 3 + \frac{1}{3 + \frac{1}{
-      1 + \frac{1}{1 + \epsilon}}}} =
-    \frac {1} { 3 + \frac{1}{3 + \frac{1}{
-      1 + \frac{1}{1 + \frac{1}{HUGE}}}}} \ \ .
+    \frac {1} { 3 +
+      \frac{1}{3 +
+        \frac{1}{1 + (\frac{1}{1} - \delta)}}} \\
+    & =
+    \frac {1} { 3 +
+      \frac{1}{3 +
+        \frac{1}{1 +
+          \frac{1}{1 + \epsilon}}}} =
+    \frac {1} {3 +
+      \frac{1}{3 +
+        \frac{1}{1 +
+          \frac{1}{1 +
+            \frac{1}{HUGE}}}}} \ \ .
     \end{array}
   \]
 These intermediate values printed by the Python program
@@ -193,14 +200,16 @@ The case \( 8/23 \) exhibits that behavior.
 </p>
 
 <p>
-In the step after what we've labeled the \( \delta \) step,
+In the step after the \( \delta \) step,
 we compute \( 1 / \epsilon \). If \( \epsilon \) is
 \( 2^k \) units in the last place of \( 1 \), then its
 reciprocal is exact and the computation terminates
 because <code>new_x == 0</code>.
 An <em>ulp</em> of \( 1 \) is \( 2^{-52} \). In the case
 of \( 7/23 \), \( \epsilon \) is 32 ulps of \( 1 \).
-However, in the case of \( 9/23 \), \( \epsilon \) is
+The huge integer assigned to <code>new_a</code>
+is exactly \( 2^{47} \).
+In the case of \( 9/23 \), however, \( \epsilon \) is
 80 ulps of \( 1 \), so the computation wanders on.
 </p>
 
@@ -251,6 +260,47 @@ IEEE 754 arithmetic will handle the Python value
 <code>math.inf</code> when it does appear
 in a continued fraction
 evaluation.
+</p>
+
+<h2>The composite case</h2>
+<p>
+It's interesting to look at the table of
+regular continued fraction expansions for a
+highly composite divisor like \( 24 \).
+  \[ 
+    \begin{array}{ll}
+    1 / 24 = \sslash 24 \sslash &
+      23 / 24 = \sslash 1, 23 \sslash \\
+    2 / 24 = \sslash 12 \sslash &
+      22 / 24 = \sslash 1, 11 \sslash \\
+    3 / 24 = \sslash 8 \sslash &
+      21 / 24 = \sslash 1, 7 \sslash \\
+    4 / 24 = \sslash 6 \sslash &
+      20 / 24 = \sslash 1, 5 \sslash \\
+    5 / 24 = \sslash 4, 1, 4 \sslash &
+      19 / 24 = \sslash 1, 3, 1, 4 \sslash \\
+    6 / 24 = \sslash 4 \sslash &
+      18 / 24 = \sslash 1, 3 \sslash \\
+    7 / 24 = \sslash 3, 2, 3 \sslash &
+      17 / 24 = \sslash 1, 2, 2, 3 \sslash \\
+    8 / 24 = \sslash 3 \sslash &
+      16 / 24 = \sslash 1, 2 \sslash \\
+    9 / 24 = \sslash 2, 1, 2 \sslash &
+      15 / 24 = \sslash 1, 1, 1, 2 \sslash \\
+    10 / 24 = \sslash 2, 2, 2 \sslash &
+      14 / 24 = \sslash 1, 1, 2, 2 \sslash \\
+    11 / 24 = \sslash 2, 5, 2 \sslash &
+      13 / 24 = \sslash 1, 1, 5, 2 \sslash \\
+    12 / 24 = \sslash 2 \sslash &
+      \;
+    \end{array}
+  \]
+Looking at the various
+\( \sslash x_1, \ldots, x_t \sslash \)
+in the form
+\( K_{t-1}(x_2, \ldots, x_t) / K_t(x_1, \ldots, x_t) \),
+we see that the denominators generate all of the factors
+of \( 24 \) greater than one.
 </p>
 
 <p>

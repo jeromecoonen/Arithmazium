@@ -260,7 +260,7 @@ If \( X_n = 0 \) the process stops and
 <p>
 If \( X_n \neq 0 \) then \( 0 \leq X_{n+1} < 1 \),
 so all the \( A \)&rsquo;s are positive integers.
-The definiton above exapnds to
+The definition above expands to
   \[
     X = X_0 = \frac{1}{A_1 + X_1} =
     \frac{1}{A_1 + \frac{1}{A_2 + X_2}} = \cdots
@@ -288,7 +288,7 @@ The \( A \)&rsquo;s are called the
 <em>partial quotients</em> of \( X \).
 </p>
 
-<h2>The accuracy of approximatioin</h2>
+<h2>The accuracy of approximation</h2>
 <p>
 Regular continued fractions approach their target quickly.
 To see this, consider

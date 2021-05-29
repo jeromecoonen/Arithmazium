@@ -1,0 +1,145 @@
+#INCLUDE para_head lib_cf_fractions.html aaacontinued_fractions_toc.html lib_cf_basic_ops.html
+
+
+<h1>Basic operations</h1>
+
+<p>
+This section exhibits some algebra with
+regular continued fractions.
+</p>
+
+<h2>Doubling</h2>
+
+<p>
+We find two cases, depending on whether the first
+quotient is even or odd. First, the even case:
+
+  \[ \newcommand{\sslash}{\mathbin{/\mkern-6mu/}}
+    \newcommand{\tslash}{\mathbin{/\mkern-5mu/}}
+    \newcommand{\uslash}{\mathbin{/\mkern-4mu/}}
+    \begin{array}{ll}
+    2 \sslash 2a, b, c, \ldots \sslash & = 
+    \frac{2}{2a +
+      \frac{1}{b + \cdots}} \\ & =
+    \frac{1}{a +
+      \frac{1}{2b +
+        \frac{2}{\cdots}}} \\ & =
+    \sslash a, 2b + 2\sslash c , d, \ldots \sslash \sslash
+    \end{array}
+  \]
+
+Then the odd case:
+
+  \[
+    \begin{array}{ll}
+    2 \sslash 2a + 1, b, c, \ldots \sslash & = 
+    \frac{2}{2a + 1 +
+      \frac{1}{b + \uslash c, d, \ldots \uslash}} \\ & =
+    \frac{1}{a + \frac{1}{2} +
+      \frac{1}{2b + 2\uslash c, d, \ldots \uslash}} \\ & =
+    \frac{1}{a + 
+      \frac{(b + 1) + \uslash c, d, \ldots \uslash }
+      {2b + 2\uslash c, d, \ldots \uslash}} \\ & =
+    \sslash a, 1, 1 + 2\sslash b - 1, c , d, \ldots \sslash \sslash
+    \end{array}
+  \]
+
+</p>
+
+<h2>Reciprocation</h2>
+<p>
+Given \( A = A_0 + \sslash A_1, A_2, \ldots \sslash \) compute
+
+  \[ B = B_0 + \sslash B_1, B_2, \ldots \sslash = 1 / A
+  \]
+
+The result always has the form
+
+  \[ B_0 + \sslash B_1, \ldots,  B_m, A_4, A_5, \ldots \sslash
+  \]
+
+but various cases arise, depending on \( A_0 \) and
+\( A_1 \).
+</p>
+
+<h3>Case \( A_0 = 0 \)</h3>
+<p>
+This case reduces easily.
+  \[ B = A_1 + \sslash A_2, A_3, \ldots \sslash =
+  1 / \sslash A_1, A2, \ldots \sslash
+  \]
+</p>
+
+<h3>Case \( A_0 > 0 \)</h3>
+<p>
+In this case, \( A_0 \) is absorbed into
+the continued fraction.
+
+  \[ B = \sslash A_0, A_1, A_2, \ldots \sslash =
+  1 / (A_0 + \sslash A_1, A2, \ldots \sslash)
+  \]
+
+The interesting cases arise when \( A_0 < 0 \).
+</p>
+
+<h3>Case \( A_0 < -1 \)</h3>
+<p>
+Here, \( A < -1 \) so \( -1 < 1/A < 0 \) making
+\( B_0 = -1 \).
+
+  \[\begin{array}{ll}
+    B & = \frac{1}{A_0 + \tslash A_1, A_2, \ldots \tslash} \\
+    & = -1 + \frac{1}
+      {\frac{A_0 + 1 + \uslash A_1, A_2, \ldots \uslash -1}
+        {A_0 + 1 + \uslash A_1, A_2, \ldots \uslash}} \\
+    & = -1 + \frac{1}{1 + 
+      \frac{1}{(-A_0 - 2) + (1 - \uslash A_1, A_2, \ldots \uslash ) }} \\
+    & = -1 +
+      \sslash 1, -A_0 - 2, 1, A_1 - 1, A_2, A_3, \ldots \sslash
+    \end{array}
+  \]
+</p>
+
+<h3>Case \( A_0 = -1 \) and \( A_1 > 1 \)</h3>
+<p>
+Here, \( A = -1 + f \) where \( 0 < f \leq 1/2 \)
+so \( -2 \leq 1/A < -1 \)
+making \( B_0 = -2 \).
+
+  \[
+    \begin{array}{ll}
+    B & = \frac{1}{-1 + \frac{1}
+    { A_1 + \uslash A_2, A_3, \ldots \uslash}} \\
+    & = -1 + \frac{1}
+      {-A_1 + 1 - \uslash A_2, A_3, \ldots \uslash} \\
+    & = -2 + \frac{1}
+      {\frac{ A_1 - 1 + \uslash A_2, A_3, \ldots \uslash}
+      {A_1 - 2 + \uslash A_2, A_3, \ldots \uslash}} \\
+    & = -2 + \frac{1}
+      {1 + \frac{1}{A_1 - 2 + \uslash A_2, A_3, \ldots \uslash}} \\
+    & = -2 + \sslash 1, A_1 - 2, A_2, A_3, \ldots \sslash
+    \end{array}
+  \]
+</p>
+
+
+<h3>Case \( A_0 = -1 \) and \( A_1 = 1 \)</h3>
+<p>
+Here, \( A = -1 + g \) where \( 1/2 < g \leq 1 \)
+so \( 1/A < -2 \)
+making \( B_0 < -2 \).
+
+  \[
+    \begin{array}{ll}
+    B & = \frac{1}{-1 + \frac{1}
+    { 1 + \uslash A_2, A_3, \ldots \uslash }} \\
+    & = \frac{1 + \tslash A_2, A_3, \ldots \tslash}
+      { - \tslash A_2, A_3, \ldots \tslash } \\
+    & = -1 - A_2 - \sslash A_3, A_4, \ldots \sslash \\
+    & = -A_2 - 2 + \sslash 1, A_3 - 1, A_4, \ldots \sslash
+    \end{array}
+  \]
+</p>
+
+
+#INCLUDE para_foot lib_cf_fractions.html aaacontinued_fractions_toc.html lib_cf_basic_ops.html

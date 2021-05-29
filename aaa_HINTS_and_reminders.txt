@@ -24,7 +24,7 @@ Special characters in HTML
 Quote
   p class="quote" sets left margin
 
-Snippets (Sublime / Preferences / Browse packages)
+Snippets (jeromecoonen/Library/Application Support/Sublime...)
   math \(xxx\) -- inline TeX
   mathline
 

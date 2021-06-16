@@ -134,291 +134,126 @@ This is analogous to coercion to binary.
 Coercion to the decimal result is simpler than
 coercion to binary form, becuase typically exponent
 overflow and underflow are not an issue on output.
-Using the guard <code>G</code> digit and the
-sticky <code>S</code> bit, we round
+The only challenge is rounding.
 </p>
 
 
-
-
+<h3>Rounding a decimal value</h3>
 
 <p>
-At this point, we treat the <em>Sticky</em> bit
-<code>S</code> as just a trailing
-significant bit, despite its exotic definition.
+  Using the language of
+  <a class="inline" href="book_coercion.html">
+    Coercion</a>
+  here is what we mean by rounding a decimal result.
+  Given a value
 </p>
 
-<p>
-The goal  is to fit the value into the normal form
-</p>
-
-<pre><med-code>    +---------------------+
-  ± | 1 &bull; b b b b b b b b |  *  2**e
-    +---------------------+
-</med-code></pre>
-
-<p>
-if possible,
-where <code>e</code> is constrained by
-\( e_{min} \leq e \leq e_{max} \)
-given the limitations of the exponent
-range of the destination.
-We must turn to the expanded rules
-of computer arithmetic when we dpart
-from &ldquo;mere&rdquo; mathematics.
-</p>
-
-<h2>Dispatch zero</h2>
-
-<p>
-If all of the significant bits are <code>0</code>,
-then the result is zero.
-Because zero falls outside the parallelogram of
-normal values of the number system, it fits
-into the special cases of the next page.
-</p>
-
-<h2>Normalize</h2>
-
-<p>
-With the goal of fitting a nonzero result into
-the parallelogram, a first logical step is to
-normalize it.
-Shift the bit string of
-<code>b</code>s, <code>G</code>, <code>R</code>,
-and <code>S</code> left until the the leading
-bit is <code>1</code>.
-<code>0</code> bits are shifted into the
-<code>S</code> postion from the right.
-Decrement <code>k</code> for each bit position
-shifted.
-</p>
-
-<p>
-In the flavor of floating point preseneted here,
-it is
-only in <code>add()</code> and <code>sub()</code>
-that a normalization shift of more than one bit
-can arise, and in that case <code>S</code> is
-guaranteed to be zero.
-</p>
-
-<h2>A strategy</h2>
-
-<p>
-After filtering zero results and normalizing,
-we have a value of the form
-</p>
-
-<pre><med-code>    +---------------------+-------+
-  ± | 1 &bull; b b b b b b b b | G R S |  *  2**k
-    +---------------------+------ +
-</med-code></pre>
-
-<p>
-The traditional approach was to round the value down
-to eight significant bits and then check for
-<code>k</code> out of range.
-In the IEEE 754 era, we exploit the bottom
-right corner of the parallelogram of values by
-first checking for \( k < e_{min} \) and
-denormalizing if necessary.
-</p>
-
-<h2>Check for underflow</h2>
-
-<p>
-If <code>k</code> is less than the minimum normal
-exponent, we have <em>exponent underflow</em>.
-</p>
-
-<p>
-Shift the significant bits right,
-adding \( 1 \) to <code>k</code> for each bit shifted,
-until it reaches the minimum normal exponent.
-Zero bits shift in from the left and bits shifted
-off the right are logically OR-ed into <code>S</code>.
-</p>
-
-<p>
-Underflow may result in a value like this
-</p>
-
-<pre><med-code>    +---------------------+-------+
-  ± | 0 &bull; 0 0 0 0 1 b b b | G R S |  *  2**e_min
-    +---------------------+------ +
-</med-code></pre>
-
-<p>
-or in an extreme case all the signifcant bits may
-be shifted into <code>S</code>.
-</p>
-
-<pre><med-code>    +---------------------+-------+
-  ± | 0 &bull; 0 0 0 0 0 0 0 0 | 0 0 1 |  *  2**e_min
-    +---------------------+------ +
-</med-code></pre>
-
-<h2>Round</h2>
-
-<p>
-After possible denormalization,
-the value looks like this:
-</p>
-
-<pre><med-code>    +---------------------+-------+
-  ± | 1 &bull; b b b b . . . b | G R S |  *  2**k
-    +---------------------+------ +
-</med-code></pre>
-
-<p>
-In the mainframe era of the 1960s, most computers
-would simply <em>truncate</em> the result by
-treating all bits from <code>G</code> rightward
-as zero.
-Some minicomputers of the 1970s would add \( 1 \)
-to the <code>G</code> bit and truncate that result.
-Visit the
-<a class="inline" href="../dinosaur/aaadinosaur_toc.html">
-    Dinosaur Gallery</a>
-for further
-information.
-</p>
-
-<p>
-IEEE 754 ushered in a whole new era by leveraging the power of
-the new microprocessors 
-to support four different kinds
-of rounding.
-</p>
-
-<p>
-Here is what we mean by rounding.
-Given a value
-</p>
-
-<pre><med-code>    +---------------------+-------+
-  ± | b &bull; b b b b b b b b | G R S |
-    +---------------------+------ +
+<pre><med-code>    +---------------------+-----+
+  ± | d &bull; d d d . . . d d | G S |  *  10**h
+    +---------------------+-----+
 </med-code></pre>
 
 <p>
 regardless of sign, we
 <em>round up</em> (in magnitude)
 by adding \( 1 \)
-into the lowest-order <code>b</code>.
-If every <code>b</code> is a
-<code>1</code>, then there is a carry out
-of the leading <code>1</code>, so the
-sigificant bits must be right-shifted
-one place and the exponent <code>k</code>
+into the lowest-order <code>d</code>.
+If every <code>d</code> is a
+<code>9</code>, then there is a carry out
+of the leading <code>9</code>, so the
+sigificant digits must be right-shifted
+one place and the exponent <code>h</code>
 incremented.
 </p>
 
 <p>
 We <em>round down</em> by taking no action
-on the significant bits. In either case,
-we discard
-<code>G</code>, <code>R</code>, and <code>S</code>
+on the significant digits.
+</p>
+
+<p>
+In either case,
+we discard Gurard digit
+<code>G</code> and Sticky bit <code>S</code>
 after rounding.
 </p
 
 <p>
-These are the four
+The four
 types of rounding specified by
-IEEE 754.
+IEEE 754 apply unsurprisingly, in decimal.
 </p>
 
 <ul>
-  <li> Round toward Zero &ndash; this is classic mainframe trunctation,
-    where we round down
+  <li> Round toward Zero &ndash;
+   round down
   </li>
   <li>
     Round toward \( + \infty \) &ndash; if the sign is
-    \( + \) and any of
-    <code>G</code>, <code>R</code>, and <code>S</code>
+    \( + \) and either of
+    <code>G</code> or <code>S</code>
     is nonzero, then round up; otherwise, round down
   </li>
   <li>
     Round toward \( - \infty \) &ndash; if the sign is
-    \( - \) and any of
-    <code>G</code>, <code>R</code>, and <code>S</code>
+    \( - \) and either of
+    <code>G</code> or <code>S</code>
     is nonzero, then round up; otherwise round down
   </li>
   <li>
-    Round to Nearst &ndash; round up if <code>G</code>
-    is <code>1</code> and either
-    (a) <code>R</code> or <code>S</code> is <code>1</code>
-    or (b) the lowest-order <code>b</code> is <code>1</code>;
+    Round to Nearst &ndash; round up if <code>G > 5</code>,
+    or if <code>G = 5</code>
+    and either
+    (a) <code>S</code> is <code>1</code>
+    or (b) the lowest-order <code>d</code> is odd;
     otherwise, round down
   </li>
 </ul>
 
 <p>
-Despite the technical language, the concepts are simple.
-Let's think of
-<code>G</code>, <code>R</code>, and <code>S</code>
-as the <em>rounding bits</em>.
-If they're all zero, the result needs no rounding.
-</p>
-
-<p>
-If the rounding bits are nonzero, then the intermediate
-value lies between representable values in the parallelogram.
-Round toward Zero, or toward \( + \infty \),
-or toward \( - \infty \)
-chooses the represnetable value in the relevant direction.
+As with binary, if
+<code>G</code> and <code>S</code>
+are both zero, the result needs no rounding.
+Otherwise,
+the intermediate
+value lies between representable values in
+the desired decimal form.
 </p>
 
 <p>
 Round to Nearest chooses the nearer of the two adjacent
-representable values. It's helpful to list the cases:
+decimal values. It's helpful to list the cases:
 </p>
 
-<pre><med-code>  ± | b &bull; b b b b b b b b | 0 R S   round down
-  ± | b &bull; b b b b b b b b | 1 1 S   round up
-  ± | b &bull; b b b b b b b b | 1 R 1   round up
-  ± | b &bull; b b b b b b b 0 | 1 0 0   round down
-  ± | b &bull; b b b b b b b 1 | 1 0 0   round up
+<pre><med-code>  ± | d &bull; d d d . . . d  d   | 0-4  S   round down
+  ± | d &bull; d d d . . . d  d   | 6-9 S   round up
+  ± | d &bull; d d d . . . d  d   |  5  1   round up
+  ± | d &bull; d d d . . . d even |  5  0   round down
+  ± | d &bull; d d d . . . d odd  |  5  0   round up
 </med-code></pre>
 
 <p>
-The last two cases illustrate an
-intermediate result halfway between two
-representable values. The rounding is
-<em>unbiased</em> in that it rounds up
-only if the least significant bit, just
- to the left, is one.
+The last two cases illustrate 
+the decimal version of unbiased round-to-nearest.
 </p>
 
-<h2>Check for overflow</h2>
+<h2>The bigger story</h2>
 
 <p>
-After rounding, we have a value
-</p>
-
-<pre><med-code>    +---------------------+
-  ± | b &bull; b b b b b b b b |  *  2**k
-    +---------------------+
-</med-code></pre>
-
-<p>
-with <code>k</code> no less than the smallest
-normal exponent. If <code>k</code> is larger
-the the largest normal exponent, the
-<em>exponent ovderflow</em> arises.
-The magnitude is too large to represent.
+  Radix conversion is a rich topic.
+  This booklet presents the basic
+  facts about the operations.
 </p>
 
 <p>
-The IEEE 754 approach to overflow is to
-deliver \( \infty \) with the sign of the
-result, except for two circumstances.
-If the result is positive and rounding is
-toward \( -\infty \) or the result is negative
-and rounding is toward \( +\infty \),
-then deliver the largest normal number of
-the approppriate sign.
+  Farther down in this room we'll
+  look at how many decimal digits
+  it takes to distinguish binary
+  floating point values and we'll
+  consider different ways to think
+  of <em>best possible</em> conversions.
+  We will also look at how conversions
+  are carried out.
 </p>
 
 

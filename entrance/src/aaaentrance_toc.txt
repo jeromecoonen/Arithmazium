@@ -110,6 +110,13 @@
   </p>
 
   <p>
+    For something a bit off the beaten path,
+    you can read a bit about
+    <a href="../library/aaacontinued_fractions_toc.html">
+    continued fractions</a>.
+  </p>
+
+  <p>
     Arithmazium can't hope to tell the whole story.
     For that, you need the
     <a href="../library/aaaalibrary_toc.html">

@@ -54,6 +54,15 @@ from the early years of IEEE 754.
 </li>
 
 <li class="timeline">
+‘77 – Late in the year, when no one in Santa Clara is interested
+in tackling the 8087 design,
+Rafi Nave from Intel Israel accepts the challenge.
+He flies over to meet John Palmer
+and his team and speak with the 8086 CPU designers.
+In two weeks, Nave returns to Haifa to build the 8087.
+</li>
+
+<li class="timeline">
 ‘78 – At spring break, Kahan recruits visting Prof. Harold Stone and Coonen for a two-month project to write up a proposal for the IEEE.
 </li>
 

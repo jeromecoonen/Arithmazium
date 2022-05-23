@@ -3,10 +3,13 @@ Hints and Reminders for Development
 
 
 Special characters in HTML
-  &plusmn; &nbsp;=&#160; &ndash; &mdash; &and; &oplus; &not;
-  &#127849; donut &#129371; glass of milk
-  &copy; &bull;
-  &ldquo; &rsquo;
+  &plusmn; plus/minus
+  &nbsp;=&#160; &ndash; &mdash; &and; &oplus; &not;
+  &#127849; donut
+  &#129371; glass of milk
+  &copy; copyright
+  &bull;
+  &ldquo; &rsquo; (d)ouble and (s)ingle quotes
 
 Quote
   p class="quote" sets left margin

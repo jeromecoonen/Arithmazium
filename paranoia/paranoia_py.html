@@ -57,10 +57,10 @@ import math
 # ~~~~~~~ 100-initializations
 #----START CODE----
 # Number of trials in half a dozen random and sequential tests.
-NUM_TRIALS = 20
+NUM_TRIALS = 32
 # Set all three flags to False for classic Paranoia flow.
 verbose = False
-ultra_verbose = False
+ultra_verbose = True
 hasty = True   # When True, skips all user interaction
 # ~~~~~~~ 110-globals
 # Declarations of global variables other than CONSTANTS
@@ -1025,7 +1025,7 @@ def test_mult_commutivity(count):
 
 # ~~~~~~~ 430-sqrt_single_bound_test
 #=============================================
-# Tests of square root accurcacy and monotonicity.
+# Tests of square root accuracy and monotonicity.
 #=============================================
 def sqrt_single_bound_test(tlist):
 
@@ -1077,7 +1077,7 @@ def test_sqrt_int():
             if y - x >= NUM_TRIALS: break
     ulp = x * ULP_OF_ONE_PLUS    # ***TODO -- why was Py _MINUS, with others _PLUS?
     for _ in range(NUM_TRIALS):
-        x = x + ONE    # Why increment first????  TODO: Could hit next B-ade
+        x = x + ONE    # when NUM_TRIALS is size of a binade, x hits higher B**k
         if not sqrt_single_bound_test([(x, ulp, err_defect)]): break
     return
 
@@ -1094,6 +1094,7 @@ def test_sqrt_monotonicity():
     # ~~~~~~~ 435a-test_sqrt_monotonicity2
     while not (not_monot or monot):
         i = i + 1
+        # CASE: y = B
         x = sqrt(x)
         q = sqrt(y)
         z = sqrt(z)
@@ -1104,14 +1105,16 @@ def test_sqrt_monotonicity():
             q = floor(q + ONE_HALF)
             # B = q*q only if radix B is 16 or 4
             if (i <= 0) and (B != q * q):
-                monot = True
+                monot = True   # exit early unless B is 16 or 4
             # ~~~~~~~ 435c-test_sqrt_monotonicity6
             elif i <= 0:
+                # CASE: y = sqrt(B), if B = 4, 16 or other square
                 y = q
                 x = y - ULP_OF_ONE_PLUS
                 z = y + ULP_OF_ONE_PLUS
             # ~~~~~~~ 435d-test_sqrt_monotonicity8
             elif i == 1:
+                # CASE: 7 = 1/sqrt(B), if B = 4, 16, or other square
                 y = y * ONE_OVER_B
                 x = y - ULP_OF_ONE_MINUS
                 z = y + ULP_OF_ONE_MINUS

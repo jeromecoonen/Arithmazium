@@ -63,7 +63,7 @@ Part 2
             if y - x >= NUM_TRIALS: break
     ulp = x * ULP_OF_ONE_PLUS    # ***TODO -- why was Py _MINUS, with others _PLUS?
     for _ in range(NUM_TRIALS):
-        x = x + ONE    # Why increment first????  TODO: Could hit next B-ade
+        x = x + ONE    # when NUM_TRIALS is size of a binade, x hits higher B**k
         if not sqrt_single_bound_test([(x, ulp, err_defect)]): break
     return
 

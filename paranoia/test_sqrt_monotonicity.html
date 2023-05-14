@@ -68,6 +68,7 @@ Part 3
 
 <pre><code>    while not (not_monot or monot):
         i = i + 1
+        # CASE: y = B
         x = sqrt(x)
         q = sqrt(y)
         z = sqrt(z)
@@ -83,7 +84,7 @@ Part 4
             q = floor(q + ONE_HALF)
             # B = q*q only if radix B is 16 or 4
             if (i <= 0) and (B != q * q):
-                monot = True
+                monot = True   # exit early unless B is 16 or 4
 </code></pre>
 
 <p>
@@ -91,6 +92,7 @@ Part 5
 </p>
 
 <pre><code>            elif i <= 0:
+                # CASE: y = sqrt(B), if B = 4, 16 or other square
                 y = q
                 x = y - ULP_OF_ONE_PLUS
                 z = y + ULP_OF_ONE_PLUS
@@ -101,6 +103,7 @@ Part 6
 </p>
 
 <pre><code>            elif i == 1:
+                # CASE: 7 = 1/sqrt(B), if B = 4, 16, or other square
                 y = y * ONE_OVER_B
                 x = y - ULP_OF_ONE_MINUS
                 z = y + ULP_OF_ONE_MINUS

@@ -1,5 +1,6 @@
     while not (not_monot or monot):
         i = i + 1
+        # CASE: y = B
         x = sqrt(x)
         q = sqrt(y)
         z = sqrt(z)

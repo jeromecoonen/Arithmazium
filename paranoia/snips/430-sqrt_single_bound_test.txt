@@ -1,5 +1,5 @@
 #=============================================
-# Tests of square root accurcacy and monotonicity.
+# Tests of square root accuracy and monotonicity.
 #=============================================
 def sqrt_single_bound_test(tlist):
 

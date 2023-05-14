@@ -2,4 +2,4 @@
             q = floor(q + ONE_HALF)
             # B = q*q only if radix B is 16 or 4
             if (i <= 0) and (B != q * q):
-                monot = True
+                monot = True   # exit early unless B is 16 or 4

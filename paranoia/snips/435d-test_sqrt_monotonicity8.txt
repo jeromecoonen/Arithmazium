@@ -1,4 +1,5 @@
             elif i == 1:
+                # CASE: 7 = 1/sqrt(B), if B = 4, 16, or other square
                 y = y * ONE_OVER_B
                 x = y - ULP_OF_ONE_MINUS
                 z = y + ULP_OF_ONE_MINUS

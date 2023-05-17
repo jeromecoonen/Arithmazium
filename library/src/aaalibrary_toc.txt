@@ -607,7 +607,7 @@ The Library is for Everyone.
   Intel
 </a></p>
 <p class="el2"><a class="toc-link library" target="_blank"
-  href="lib/nave-implenent-transcendental-1983.pdf">
+  href="lib/nave_implenent_transcendental_algos_1983.pdf">
   Implementation of Transcendental Functions on a
   Numerics Processor
 </a></p>

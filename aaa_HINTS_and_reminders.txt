@@ -11,6 +11,9 @@ Special characters in HTML
   &bull;
   &ldquo; &rsquo; (d)ouble and (s)ingle quotes
 
+Code
+  <code> xx </code>
+
 Quote
   p class="quote" sets left margin
 
@@ -39,6 +42,11 @@ Idioms
   Should there be an index?
   * Underflow test: y <= z or z+z <= z
 
+Git
+  git add .    -- add whatever has changed
+  git commit -m "coment"
+  git push
+  
 TODO
   "pamphlet"
   ParaBas or "real" Paranoia?

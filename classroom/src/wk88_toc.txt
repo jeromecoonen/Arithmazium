@@ -1,0 +1,229 @@
+#INCLUDE para_toc_head
+
+<h1>The Floating Point Indoctrination</h1>
+
+<div class="message-box">
+<span class="big-green">E</span>
+The Indoctrination is for Enthusiasts.
+</div>
+<br>
+
+<p>
+  From May to July 1988, Prof. William Kahan of the University of California at Berkeley presented 27 lectures formally titled
+  <em>Computer System Support for Scientific and Engineering Computation</em>. 
+</p>
+
+<br>
+<p class="el1">
+  <h3>Lectures 1&ndash;27</h3>
+</p>
+
+<p class="el2-wk88">
+  Lecture 01&nbsp;
+  <a class="toc-link-wk88" target="_blank"
+  href="https://1drv.ms/v/s!AoHvMG1FObcWkZxEtn4HICWSa36qEQ?e=9rFnKE">
+  Video</a>&nbsp;
+  <a class="toc-link-wk88" target="_blank"
+  href="lib/Lecture_01_notes.pdf">
+  Notes</a>&nbsp;
+  Overview: mysteries, expectations, exceptions
+</p>
+
+<p class="el2-wk88">
+  Lecture 02&nbsp;
+  <a class="toc-link-wk88" target="_blank"
+  href="https://1drv.ms/v/s!AoHvMG1FObcWkZxGCwgnkClJAhnGxw?e=DMi1rY">
+  Video</a>&nbsp;
+  <a class="toc-link-wk88" target="_blank"
+  href="lib/Lecture_02_notes.pdf">
+  Notes</a>&nbsp;
+  Overview cont.
+</p>
+
+<p class="el2-wk88">
+  Lecture 03&nbsp;
+  <a class="toc-link-wk88" target="_blank"
+  href="https://1drv.ms/b/s!AoHvMG1FObcWkcULYw2-z3gBEJ5ukw?e=jkUHS6">
+  Video</a>&nbsp;
+  <a class="toc-link-wk88" target="_blank"
+  href="lib/Lecture_03_notes_slides.pdf">
+  Notes</a>&nbsp;
+  Integers, algebraic sign
+</p>
+
+<p class="el2-wk88">
+  Lecture 04&nbsp;
+  <a class="toc-link-wk88" target="_blank"
+  href="https://1drv.ms/v/s!AoHvMG1FObcWkZ8E4kgGPg_D2DBaRw?e=7LuGEp">
+  Video</a>&nbsp;
+  <a class="toc-link-wk88" target="_blank"
+  href="lib/Lecture_04_notes_slides.pdf">
+  Notes</a>&nbsp;
+  Exceptions, benchmarks, rational arith, symbolic calculation systems
+</p>
+
+<p class="el2-wk88">
+  Lecture 05&nbsp;
+  <a class="toc-link-wk88" target="_blank"
+  href="https://1drv.ms/v/s!AoHvMG1FObcWkZ5u9fqxIxmU9Hc-wQ?e=OOdbow">
+  Video</a>&nbsp;
+  <a class="toc-link-wk88" target="_blank"
+  href="lib/Lecture_05_notes_slides.pdf">
+  Notes</a>&nbsp;
+  Floating point formats, precision, error
+</p>
+
+<p class="el2-wk88">
+  Lecture 06&nbsp;
+  <a class="toc-link-wk88" target="_blank"
+  href="https://1drv.ms/v/s!AoHvMG1FObcWkZ8M-vsWAHL6mmFAxA?e=G1DsXD">
+  Video</a>&nbsp;
+  <a class="toc-link-wk88" target="_blank"
+  href="lib/Lecture_06_notes_slides.pdf">
+  Notes</a>&nbsp;
+  Overflow, underflow, roundoff, Horner's recurrence
+</p>
+
+<p class="el2-wk88">
+  Lecture 07&nbsp;
+  <a class="toc-link-wk88" target="_blank"
+  href="https://1drv.ms/v/s!AoHvMG1FObcWkZ8YsuRw9t_4FaVCfQ?e=dLQVvE">
+  Video</a>&nbsp;
+  <a class="toc-link-wk88" target="_blank"
+  href="lib/Lecture_07_notes_slides.pdf">
+  Notes</a>&nbsp;
+  Numerical Analysis in C, quotient, square root, gradual underflow
+</p>
+
+<p class="el2-wk88">
+  Lecture 08&nbsp;
+  <a class="toc-link-wk88" target="_blank"
+  href="https://1drv.ms/v/s!AoHvMG1FObcWkZ8NX9PZJkIiINkCzw?e=rRtHvO">
+  Video</a>&nbsp;
+  <a class="toc-link-wk88" target="_blank"
+  href="lib/Lecture_08_notes_slides.pdf">
+  Notes</a>&nbsp;
+  IEEE Standards 754/854
+</p>
+
+<p class="el2-wk88">
+  Lecture 09&nbsp;
+  <a class="toc-link-wk88" target="_blank"
+  href="https://1drv.ms/v/s!AoHvMG1FObcWkZ8T_SocC1bUMqzj1A?e=G4GWzh">
+  Video</a>&nbsp;
+  <a class="toc-link-wk88" target="_blank"
+  href="lib/Lecture_09_notes_slides.pdf">
+  Notes</a>&nbsp;
+  sgl(dbl) = sgl?, solving the quadratic
+</p>
+
+
+<p class="el1">
+  <h3>Organizational handouts</h3>
+</p>
+
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Class_An_Exercise_in_Technical_Support_A.pdf">
+  An Exercise in Technicl Support (A)
+</a></p>
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Class_An_Exercise_in_Technical_Support_B.pdf">
+  An Exercise in Technicl Support (B)
+</a></p>
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Class_Assignments_12May.pdf">
+  Assignments 12 May
+</a></p>
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Class_Attendees_23May.pdf">
+  Attendee list 23 May
+</a></p>
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Class_Attendees_29Aug.pdf">
+  Attendee list 29 August
+</a></p>
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Class_Handouts_1990_Cumulative_Contents.pdf">
+  Handouts Cumulative Contents 1990
+</a></p>
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Class_mailing_address_verification_letter.pdf">
+  Mailing address verification letter
+</a></p>
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Class_Problem_Avoid_undeserved_over_underflow_A.pdf">
+  Problem: Avoid undeserved over/underflow (A)
+</a></p>
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Class_Problem_Avoid_undeserved_over_underflow_B.pdf">
+  Problem: Avoid undeserved over/underflow (B)
+</a></p>
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Class_Projects.pdf">
+  Project suggestions
+</a></p>
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Class_Schedule_30May.pdf">
+  Schedule 30 May
+</a></p>
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Class_Schedule_14une.pdf">
+  Schedule 14 June
+</a></p>
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Class_Schedule_20une.pdf">
+  Schedule 20 June
+</a></p>
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Class_Schedule_final_2024.pdf">
+  Schedule final 2024
+</a></p>
+
+
+<p class="el1">
+  <h3>Technical handouts by author and title</h3>
+</p>
+
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Apple_Language_Specifcations_for_SANE_Pascal.pdf">
+  Apple Language Specifcations for SANE Pascal
+</a></p>
+
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Apple_Numerics_Manual_excerpts.pdf">
+  Apple Numerics Manual excerpts
+</a></p>
+
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Arioli_Demmel_Duff_Solving_Sparse_Linear_Systems.pdf">
+  Arioli, M., Demmel, J. W., Duff, I. S., Solving Sparse Linear Systems with Sparse Backward Error
+</a></p>
+
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Barnett_A_Portable_Floating_Point_Environment_A.pdf">
+  Barnett, D., A Portable Floating-Point Environment (A)
+</a></p>
+
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Barnett_A_Portable_Floating_Point_Environment_B.pdf">
+  Barnett, D., A Portable Floating-Point Environment (B)
+</a></p>
+
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Bohlender_Ullrich_vonGudenberg_New_Developments_in_PASCAL_SC.pdf">
+  Bohlender, G., Ullrich, C., von Gudenberg, J. W., New Developments in PASCALSC
+</a></p>
+
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Breed_Floating_Arithmetic_on_4_3_RT.pdf">
+  Breed, L., Floating Arithmetic on 4.3/RT
+</a></p>
+
+<p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/Breed_IBM_S370_Floating_Point_Formats.pdf">
+  Breed, L., IBM S/370 Floating Point Format
+</a></p>
+
+
+#INCLUDE page_copyright
+#INCLUDE para_toc_foot

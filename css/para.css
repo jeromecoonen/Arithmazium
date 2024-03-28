@@ -17,11 +17,21 @@ h1 {
   color: black;
 }
 
+.toc-link-wk88 {
+  text-decoration-line: underline;
+  text-decoration-color: royalblue;
+  font-family: "Trebuchet", sans-serif;
+  font-weight: normal;
+  font-size: x-small;
+  color: royalblue;
+}
+
 .toc-link.num,
 .toc-link.cf {
   font-size: x-large;
 }
 
+.toc-link.classroom,
 .toc-link.library {
   font-size: small;
 }
@@ -52,15 +62,15 @@ h1 {
   line-height: 1.0;
 }
 
+.el1 {
+  margin: 0 0 0 0;
+}
+
 .el2-note,
 .el3-note,
 .el4-note {
   line-height: 1.0;
   font-size: x-small;
-}
-
-.el1 {
-  margin: 0 0 0 0;
 }
 
 .el2 {
@@ -69,6 +79,15 @@ h1 {
 
 .el2-note {
   margin: 0 0 0 4em;
+}
+
+.el2-wk88 {
+  margin: 0 0 0 2em;
+  line-height: 1.0;
+  font-family: "Trebuchet", sans-serif;
+  font-weight: normal;
+  font-size: small;
+  color: black;
 }
 
 .el3 {

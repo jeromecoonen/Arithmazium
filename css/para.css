@@ -8,15 +8,6 @@ h1 {
   text-decoration: none;
 }
 
-/* suppress underscore for outline elements */
-.toc-link {
-  text-decoration-line: none;
-  font-family: "Trebuchet", sans-serif;
-  font-weight: normal;
-  font-size: small;
-  color: black;
-}
-
 .toc-link-wk88 {
   text-decoration-line: underline;
   text-decoration-color: royalblue;
@@ -24,6 +15,15 @@ h1 {
   font-weight: normal;
   font-size: x-small;
   color: royalblue;
+}
+
+/* suppress underscore for outline elements */
+.toc-link {
+  text-decoration-line: none;
+  font-family: "Trebuchet", sans-serif;
+  font-weight: normal;
+  font-size: small;
+  color: black;
 }
 
 .toc-link.num,

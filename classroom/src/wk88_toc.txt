@@ -19,7 +19,7 @@ The Indoctrination is for Enthusiasts.
 </p>
 
 <p class="el2-wk88">
-  Lecture 01&nbsp;
+  Lecture 01&nbsp;&nbsp;<mono-xs>May 03</mono-xs>
   <a class="toc-link-wk88" target="_blank"
   href="https://1drv.ms/v/s!AoHvMG1FObcWkZxEtn4HICWSa36qEQ?e=9rFnKE">
   Video</a>&nbsp;
@@ -30,7 +30,7 @@ The Indoctrination is for Enthusiasts.
 </p>
 
 <p class="el2-wk88">
-  Lecture 02&nbsp;
+  Lecture 02&nbsp;&nbsp;<mono-xs>May 05</mono-xs>
   <a class="toc-link-wk88" target="_blank"
   href="https://1drv.ms/v/s!AoHvMG1FObcWkZxGCwgnkClJAhnGxw?e=DMi1rY">
   Video</a>&nbsp;
@@ -41,7 +41,7 @@ The Indoctrination is for Enthusiasts.
 </p>
 
 <p class="el2-wk88">
-  Lecture 03&nbsp;
+  Lecture 03&nbsp;&nbsp;<mono-xs>May 10</mono-xs>
   <a class="toc-link-wk88" target="_blank"
   href="https://1drv.ms/b/s!AoHvMG1FObcWkcULYw2-z3gBEJ5ukw?e=jkUHS6">
   Video</a>&nbsp;
@@ -52,7 +52,7 @@ The Indoctrination is for Enthusiasts.
 </p>
 
 <p class="el2-wk88">
-  Lecture 04&nbsp;
+  Lecture 04&nbsp;&nbsp;<mono-xs>May 12</mono-xs>
   <a class="toc-link-wk88" target="_blank"
   href="https://1drv.ms/v/s!AoHvMG1FObcWkZ8E4kgGPg_D2DBaRw?e=7LuGEp">
   Video</a>&nbsp;
@@ -63,7 +63,7 @@ The Indoctrination is for Enthusiasts.
 </p>
 
 <p class="el2-wk88">
-  Lecture 05&nbsp;
+  Lecture 05&nbsp;&nbsp;<mono-xs>May 17</mono-xs>
   <a class="toc-link-wk88" target="_blank"
   href="https://1drv.ms/v/s!AoHvMG1FObcWkZ5u9fqxIxmU9Hc-wQ?e=OOdbow">
   Video</a>&nbsp;
@@ -74,7 +74,7 @@ The Indoctrination is for Enthusiasts.
 </p>
 
 <p class="el2-wk88">
-  Lecture 06&nbsp;
+  Lecture 06&nbsp;&nbsp;<mono-xs>May 19</mono-xs>
   <a class="toc-link-wk88" target="_blank"
   href="https://1drv.ms/v/s!AoHvMG1FObcWkZ8M-vsWAHL6mmFAxA?e=G1DsXD">
   Video</a>&nbsp;
@@ -85,7 +85,7 @@ The Indoctrination is for Enthusiasts.
 </p>
 
 <p class="el2-wk88">
-  Lecture 07&nbsp;
+  Lecture 07&nbsp;&nbsp;<mono-xs>May 24</mono-xs>
   <a class="toc-link-wk88" target="_blank"
   href="https://1drv.ms/v/s!AoHvMG1FObcWkZ8YsuRw9t_4FaVCfQ?e=dLQVvE">
   Video</a>&nbsp;
@@ -96,7 +96,7 @@ The Indoctrination is for Enthusiasts.
 </p>
 
 <p class="el2-wk88">
-  Lecture 08&nbsp;
+  Lecture 08&nbsp;&nbsp;<mono-xs>May 26</mono-xs>
   <a class="toc-link-wk88" target="_blank"
   href="https://1drv.ms/v/s!AoHvMG1FObcWkZ8NX9PZJkIiINkCzw?e=rRtHvO">
   Video</a>&nbsp;
@@ -107,7 +107,7 @@ The Indoctrination is for Enthusiasts.
 </p>
 
 <p class="el2-wk88">
-  Lecture 09&nbsp;
+  Lecture 09&nbsp;&nbsp;<mono-xs>Jun 02</mono-xs>
   <a class="toc-link-wk88" target="_blank"
   href="https://1drv.ms/v/s!AoHvMG1FObcWkZ8T_SocC1bUMqzj1A?e=G4GWzh">
   Video</a>&nbsp;
@@ -124,11 +124,11 @@ The Indoctrination is for Enthusiasts.
 
 <p class="el2"><a class="toc-link library" target="_blank"
   href="lib/Class_An_Exercise_in_Technical_Support_A.pdf">
-  An Exercise in Technicl Support (A)
+  An Exercise in Technical Support (A)
 </a></p>
 <p class="el2"><a class="toc-link library" target="_blank"
   href="lib/Class_An_Exercise_in_Technical_Support_B.pdf">
-  An Exercise in Technicl Support (B)
+  An Exercise in Technical Support (B)
 </a></p>
 <p class="el2"><a class="toc-link library" target="_blank"
   href="lib/Class_Assignments_12May.pdf">
@@ -211,7 +211,7 @@ The Indoctrination is for Enthusiasts.
 
 <p class="el2"><a class="toc-link library" target="_blank"
   href="lib/Bohlender_Ullrich_vonGudenberg_New_Developments_in_PASCAL_SC.pdf">
-  Bohlender, G., Ullrich, C., von Gudenberg, J. W., New Developments in PASCALSC
+  Bohlender, G., Ullrich, C., von Gudenberg, J. W., New Developments in PASCAL-SC
 </a></p>
 
 <p class="el2"><a class="toc-link library" target="_blank"

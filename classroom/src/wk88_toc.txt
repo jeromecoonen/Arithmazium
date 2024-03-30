@@ -451,6 +451,526 @@ The Indoctrination is for Enthusiasts.
   Breed, L., IBM S/370 Floating Point Format
 </a></p>
 
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Excerpts_from_HP15C_Advanced_Functions_Handbook.pdf">
+  Excerpts from HP15C Advanced Functions Handbook
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Excerpts_from_Proposed_ANSI_C_Standard.pdf">
+  Excerpts from Proposed ANSI C Standard
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Excerpts_from_System_V_Interface_Definition.pdf">
+  Excerpts from System V Interface Definition
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/FORTRAN_SC.pdf">
+  FORTRAN SC
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Ferguson_Matula_Rationally_Based_Arithmetic.pdf">
+  Ferguson Matula Rationally Based Arithmetic
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Fortran_SC_report.pdf">
+  Fortran SC report
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/GAMM_Resolution_on_Computer_Arithmetic.pdf">
+  GAMM Resolution on Computer Arithmetic
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/GAMM_Symposium_Announcement.pdf">
+  GAMM Symposium Announcement
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Goldberg_What_Every_Computer_Scientiest_SShould_Know.pdf">
+  Goldberg What Every Computer Scientiest SShould Know
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Grosse_Moler_Underflow_Can_Hurt.pdf">
+  Grosse Moler Underflow Can Hurt
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Handouts_Combined_Table_of_Contents.pdf">
+  Handouts Combined Table of Contents
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Hough_Additional_Floating_Point_Indoctrination_Exercises.pdf">
+  Hough Additional Floating Point Indoctrination Exercises
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Hough_Applications_of_the_Proposed_IEEE_754.pdf">
+  Hough Applications of the Proposed IEEE 754
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Hough_Comments_on_ANSI_C_Standard_Jan88_draft.pdf">
+  Hough Comments on ANSI C Standard Jan88 draft
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Hough_Comments_on_Proposed_ANSI_C_Standard_Ma88_draft.pdf">
+  Hough Comments on Proposed ANSI C Standard Ma88 draft
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Hough_Eleentary_Functions_Based_on_IEEE_Arithmetic.pdf">
+  Hough Eleentary Functions Based on IEEE Arithmetic
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Hough_Last_Exmple_on_Gradual_Underflow.pdf">
+  Hough Last Exmple on Gradual Underflow
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Hough_Some_current_publication_abstracts.pdf">
+  Hough Some current publication abstracts
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Hough_some_colected_abstracts.pdf">
+  Hough some colected abstracts
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Jean_Michel_Mullers_Example.pdf">
+  Jean Michel Mullers Example
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_20_Challenges_for_Com-uterized_Symbolic_Algebra_Systems.pdf">
+  Kahan, W., 20 Challenges for Com-uterized Symbolic Algebra Systems
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_7094_II_System_Support.pdf">
+  Kahan, W., 7094 II System Support
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_A_More_Complete_Interval_Arithmetic.pdf">
+  Kahan, W., A More Complete Interval Arithmetic
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_A_Survey_of_Error_Analysis.pdf">
+  Kahan, W., A Survey of Error Analysis
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Algorithms_for_floor_ceil.pdf">
+  Kahan, W., Algorithms for floor ceil
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Branch_Cuts_for_Elementry_Functions.pdf">
+  Kahan, W., Branch Cuts for Elementry Functions
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Bumps_on_the_Path_to_Floating_Point_Progres.pdf">
+  Kahan, W., Bumps on the Path to Floating Point Progres
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Calculating_Area_and_Angle_of_Needle_like+Triangle_A.pdf">
+  Kahan, W., Calculating Area and Angle of Needle like+Triangle A
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Calculating_the_Area_of_a_Needle_Liuke_Triangle_B.pdf">
+  Kahan, W., Calculating the Area of a Needle Liuke Triangle B
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Checking_Whether_Dvision_Is_Correctly_Rounded.pdf">
+  Kahan, W., Checking Whether Dvision Is Correctly Rounded
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Conserving_Confluence_Curbs_Ill_Condition.pdf">
+  Kahan, W., Conserving Confluence Curbs Ill Condition
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Coonen_The_Near_Orthogonality_of_Syntax_Semantics_and_Dignostics.pdf">
+  Kahan, W., Coonen The Near Orthogonality of Syntax Semantics and Dignostics
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Demmel_Accurate_Singular_Values_A.pdf">
+  Kahan, W., Demmel, J., Accurate Singular Values A
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Demmel_Accurate_Singular_Values_INCOMPLETE_B.pdf">
+  Kahan, W., Demmel, J., Accurate Singular Values INCOMPLETE B
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Demmel_Coonen_Proposed_Floating_Point_Environmental_Inquiries_in_FORTRAN.pdf">
+  Kahan, W., Demmel, J., Coonen Proposed Floating Point Environmental Inquiries in FORTRAN
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Doubled_Precisioion_IEEE_Standard_754.pdf">
+  Kahan, W., Doubled Precisioion IEEE Standard 754
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Elemenary_Functions_from_Kernels_A.pdf">
+  Kahan, W., Elemenary Functions from Kernels A
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Elementary_Functions_from_Kernels_B.pdf">
+  Kahan, W., Elementary Functions from Kernels B
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Elementary_Inequalities_among_Elementary_Functions_A.pdf">
+  Kahan, W., Elementary Inequalities among Elementary Functions A
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Elementary_Inequalities_among_Elementary_Functions_B.pdf">
+  Kahan, W., Elementary Inequalities among Elementary Functions B
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Errror_Analysts_Quandary.pdf">
+  Kahan, W., Errror Analysts Quandary
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Five_Frightening_Facts_A.pdf">
+  Kahan, W., Five Frightening Facts A
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Five_Frightening_Facts_B.pdf">
+  Kahan, W., Five Frightening Facts B
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Frexp_Ldexp_vs_Logb_Scalb_A.pdf">
+  Kahan, W., Frexp Ldexp vs Logb Scalb A
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Frexp_Ldexp_vs_Logb_Scalb_B.pdf">
+  Kahan, W., Frexp Ldexp vs Logb Scalb B
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Handling_Arithmetic_Exceptions.pdf">
+  Kahan, W., Handling Arithmetic Exceptions
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Hough_Implementation_of_Algorithms_pt1.pdf">
+  Kahan, W., Hough Implementation of Algorithms pt1
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Hough_Implementation_of_Algorithms_pt2.pdf">
+  Kahan, W., Hough Implementation of Algorithms pt2
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Interval_Arithmetic_Options.pdf">
+  Kahan, W., Interval Arithmetic Options
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_LeBlanc_Anomalies_in_IBM_Acrith.pdf">
+  Kahan, W., LeBlanc Anomalies in IBM Acrith
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Mathematics_Written_in_Sand.pdf">
+  Kahan, W., Mathematics Written in Sand
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Ng_SQRT.pdf">
+  Kahan, W., Ng SQRT
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_No_Period_Two_Implies_Convergence.pdf">
+  Kahan, W., No Period Two Implies Convergence
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_On_Alleged_Mathematical_Optimality_A.pdf">
+  Kahan, W., On Alleged Mathematical Optimality A
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_On_Alleged_Mathematical_Optimality_B.pdf">
+  Kahan, W., On Alleged Mathematical Optimality B
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Parlett_Can_You_Count_on_Your_Calculator.pdf">
+  Kahan, W., Parlett Can You Count on Your Calculator
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Periodic_Integrals_vs_Prohibition_of_tan.pdf">
+  Kahan, W., Periodic Integrals vs Prohibition of tan
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Presubstitution_and_Continued_Fractions.pdf">
+  Kahan, W., Presubstitution and Continued Fractions
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Rational_Arithmetic_in_Floating_Point.pdf">
+  Kahan, W., Rational Arithmetic in Floating Point
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Roundoff_in_Polynomial_Evaluation_A.pdf">
+  Kahan, W., Roundoff in Polynomial Evaluation A
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Roundoff_in_Polynomial_Evaluation_B.pdf">
+  Kahan, W., Roundoff in Polynomial Evaluation B
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Specifications_for_Exponentiation.pdf">
+  Kahan, W., Specifications for Exponentiation
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Superlinear_Convergence_of_a_Remes_Algorithm.pdf">
+  Kahan, W., Superlinear Convergence of a Remes Algorithm
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Tang_An_Experiment_with_ACRITH.pdf">
+  Kahan, W., Tang An Experiment with ACRITH
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_The_Persist4nce_of_Irrationals_in_ome_Integrals.pdf">
+  Kahan, W., The Persist4nce of Irrationals in ome Integrals
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_To_Test_Whether_Binary_Floating_Point_Multiplication.pdf">
+  Kahan, W., To Test Whether Binary Floating Point Multiplication
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Why_Do_We_Need_a_Floating_Point_Standard.pdf">
+  Kahan, W., Why Do We Need a Floating Point Standard
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kahan_Why_Must_0_to_0_be_1.pdf">
+  Kahan, W., Why Must 0 to 0 be 1
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Killian_MIPS_Floating_Point.pdf">
+  Killian MIPS Floating Point
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Killian_VAX_Floating_Point.pdf">
+  Killian VAX Floating Point
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kirchner_Kulisch_Arithmetic_for_Vector_Processors.pdf">
+  Kirchner Kulisch, U., Arithmetic for Vector Processors
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kornerup_Matula_Finite_Precision_Lexicographic_Continued_Fraction.pdf">
+  Kornerup Matula Finite Precision Lexicographic Continued Fraction
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kulisch_Letter_and_Announcement.pdf">
+  Kulisch, U., Letter and Announcement
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kulisch_Literature_on_Scientific_Computation.pdf">
+  Kulisch, U., Literature on Scientific Computation
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kulisch_Miranker_Arithmetic_of_the Digital_Computer.pdf">
+  Kulisch, U., Miranker Arithmetic of the Digital Computer
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kulisch_PascalSC_letter.pdf">
+  Kulisch, U., PascalSC letter
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Kulisch_Products_Incorporating_ACRITH.pdf">
+  Kulisch, U., Products Incorporating ACRITH
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Lajam+Tp+Sp;ve_a_Real_Cubic_Equation.pdf">
+  Lajam+Tp+Sp;ve a Real Cubic Equation
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Larry_Breeds_Experiment_A.pdf">
+  Larry Breeds Experiment A
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Larry_Breeds_Experiment_B.pdf">
+  Larry Breeds Experiment B
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Lee_Multi_Step_Gradual_rounding.pdf">
+  Lee Multi Step Gradual rounding
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Lieutier_Precision_Improvement_of_Software_Algorithms.pdf">
+  Lieutier Precision Improvement of Software Algorithms
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Matula_Kornerup_Rationally_Based_Rounding_Can_Be_Beneficial_A.pdf">
+  Matula Kornerup Rationally Based Rounding Can Be Beneficial A
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Matula_Kornerup_Rationally_Based_Rounding_Can_Be_Benefiucial_B.pdf">
+  Matula Kornerup Rationally Based Rounding Can Be Benefiucial B
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/McDonald_Algorithms_for_Extended_Transcendentls.pdf">
+  McDonald Algorithms for Extended Transcendentls
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Mueller_portable_exp_c.pdf">
+  Mueller portable exp c
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Mystery_Kahan_fragment_of_another_document.pdf">
+  Mystery Kahan fragment of another document
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/P854_Radix_Independent_Std.pdf">
+  P854 Radix Independent Std
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Rump_How_Reliable_Are_Results_of_Computers.pdf">
+  Rump How Reliable Are Results of Computers
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/SPARC_Appendix_N_IEEE_754_Implementation_Recommendations.pdf">
+  SPARC Appendix N IEEE 754 Implementation Recommendations
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Sanguinetti_Micro_Analysis_of_Titans_Operation_Pipe.pdf">
+  Sanguinetti Micro Analysis of Titans Operation Pipe
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Shampine_Review_of_Numericdal_Recipes.pdf">
+  Shampine Review of Numericdal Recipes
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Stanley_Torban_Weitek_Business.pdf">
+  Stanley Torban Weitek Business
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Sterbenz_Floating_Point_Computation.pdf">
+  Sterbenz Floating Point Computation
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/SunOS_3M_man_pages.pdf">
+  SunOS 3M man pages
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/SunOS_3_man_pages_relating_to_floating_point.pdf">
+  SunOS 3 man pages relating to floating point
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/SunOS_Fortran_man_pages_relating_to_floating_point.pdf">
+  SunOS Fortran man pages relating to floating point
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/SunOS_usr_include_files_relating_to_flaoating_point.pdf">
+  SunOS usr include files relating to flaoating point
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Taylor_Compatible_Hardware_for_Division_and_Square_Root.pdf">
+  Taylor Compatible Hardware for Division and Square Root
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Teacher_Comments_on_syllabus.pdf">
+  Teacher Comments on syllabus
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Teubner_book_announcement.pdf">
+  Teubner book announcement
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Valerio_Transcendentals_Using_CORDIC.pdf">
+  Valerio Transcendentals Using CORDIC
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Vollaro_The_Minisupercomputer_One_Users_Experience.pdf">
+  Vollaro The Minisupercomputer One Users Experience
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Yuval_Notes_on_Kahans_Ditillation_Program.pdf">
+  Yuval Notes on Kahans Ditillation Program
+</a></p>
+
 <p class="el2-wk88">
   <em>Many more to come . . .</em>
 </a></p>

@@ -28,3 +28,9 @@ diagrams:
 clean:
 	rm paranoia/img/*-auto.svg
 
+.PHONY: git
+git:
+	git add .
+	git commit -m "auto"
+	git push
+

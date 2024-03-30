@@ -369,6 +369,12 @@ The Indoctrination is for Enthusiasts.
   href="lib/Class_Attendees_29Aug.pdf">
   Attendee list August 29
 </a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Handouts_Combined_Table_of_Contents.pdf">
+  Handouts Combined Table of Contents
+</a></p>
+
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Class_Handouts_1990_Cumulative_Contents.pdf">
   Handouts Cumulative Contents 1990
@@ -423,7 +429,7 @@ The Indoctrination is for Enthusiasts.
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Arioli_Demmel_Duff_Solving_Sparse_Linear_Systems.pdf">
-  Arioli, M., Demmel, J. W., Duff, I. S., Solving Sparse Linear Systems with Sparse Backward Error
+  Arioli, M., Demmel, J., Duff, I., Solving Sparse Linear Systems with Sparse Backward Error
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
@@ -438,7 +444,7 @@ The Indoctrination is for Enthusiasts.
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Bohlender_Ullrich_vonGudenberg_New_Developments_in_PASCAL_SC.pdf">
-  Bohlender, G., Ullrich, C., von Gudenberg, J. W., New Developments in PASCAL-SC
+  Bohlender, G., Ullrich, C., von Gudenberg, J., New Developments in PASCAL-SC
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
@@ -473,7 +479,7 @@ The Indoctrination is for Enthusiasts.
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Ferguson_Matula_Rationally_Based_Arithmetic.pdf">
-  Ferguson Matula, D., Rationally Based Arithmetic
+  Ferguson W., Matula, D., Rationally Based Arithmetic
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
@@ -498,67 +504,59 @@ The Indoctrination is for Enthusiasts.
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Goldberg_What_Every_Computer_Scientiest_Should_Know.pdf">
-  Goldberg What Every Computer Scientiest Should Know
+  Goldberg, D., What Every Computer Scientiest Should Know about
+  Floating-Point Arithmetic
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Grosse_Moler_Underflow_Can_Hurt.pdf">
-  Grosse Moler Underflow Can Hurt
-</a></p>
-
-<p class="el2-wk88"><a class="toc-link library" target="_blank"
-  href="lib/Handouts_Combined_Table_of_Contents.pdf">
-  Handouts Combined Table of Contents
+  Grosse, E., Moler, C., Underflow Can Hurt
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Hough_Additional_Floating_Point_Indoctrination_Exercises.pdf">
-  Hough Additional Floating Point Indoctrination Exercises
+  Hough, D., Additional Floating Point Indoctrination Exercises
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Hough_Applications_of_the_Proposed_IEEE_754.pdf">
-  Hough Applications of the Proposed IEEE 754
+  Hough, D., Applications of the Proposed IEEE 754 Standard
+  for Floating-Point Arithmetic
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Hough_Comments_on_ANSI_C_Standard_Jan88_draft.pdf">
-  Hough Comments on ANSI C Standard Jan88 draft
+  Hough, D., Comments on Proposed ANSI C Standard, Jan 88 draft
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Hough_Comments_on_Proposed_ANSI_C_Standard_Ma88_draft.pdf">
-  Hough Comments on Proposed ANSI C Standard Ma88 draft
+  Hough, D., Comments on Proposed ANSI C Standard, Mar 88 draft
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Hough_Eleentary_Functions_Based_on_IEEE_Arithmetic.pdf">
-  Hough Eleentary Functions Based on IEEE Arithmetic
+  Hough, D., Eleentary Functions Based upon IEEE Arithmetic
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Hough_Last_Exmple_on_Gradual_Underflow.pdf">
-  Hough Last Exmple on Gradual Underflow
+  Hough, D., The Last Exmple on Gradual Underflow!
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Hough_Some_current_publication_abstracts.pdf">
-  Hough Some current publication abstracts
+  Hough, D., Some current publication abstracts
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Hough_some_colected_abstracts.pdf">
-  Hough some colected abstracts
-</a></p>
-
-<p class="el2-wk88"><a class="toc-link library" target="_blank"
-  href="lib/Jean_Michel_Mullers_Example.pdf">
-  Jean Michel Mullers Example
+  Hough, D., More current colected abstracts
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Kahan_20_Challenges_for_Com-uterized_Symbolic_Algebra_Systems.pdf">
-  Kahan, W., 20 Challenges for Com-uterized Symbolic Algebra Systems
+  Kahan, W., 20 Challenges for Computerized Symbolic Algebra Systems
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
@@ -578,7 +576,8 @@ The Indoctrination is for Enthusiasts.
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Kahan_Algorithms_for_floor_ceil.pdf">
-  Kahan, W., Algorithms for floor ceil
+  Kahan, W., Machine-independent Algorithms for
+  floor(x) and ceil(x)
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
@@ -587,28 +586,28 @@ The Indoctrination is for Enthusiasts.
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
-  href="lib/Kahan_Bumps_on_the_Path_to_Floating_Point_Progres.pdf">
-  Kahan, W., Bumps on the Path to Floating Point Progres
+  href="lib/Kahan_Bumps_on_the_Path_to_Floating_Point_Progress.pdf">
+  Kahan, W., Bumps on the Path to Floating-Point Progress
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Kahan_Calculating_Area_and_Angle_of_Needle_like+Triangle_A.pdf">
-  Kahan, W., Calculating Area and Angle of Needle like+Triangle A
+  Kahan, W., Calculating Area and Angle of Needle-like Triangle A
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Kahan_Calculating_the_Area_of_a_Needle_Liuke_Triangle_B.pdf">
-  Kahan, W., Calculating the Area of a Needle Liuke Triangle B
+  Kahan, W., Calculating Area and Angle of a Needle -like Triangle B
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Kahan_Checking_Whether_Dvision_Is_Correctly_Rounded.pdf">
-  Kahan, W., Checking Whether Dvision Is Correctly Rounded
+  Kahan, W., Checking Whether Floating-Point Dvision Is Correctly Rounded
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Kahan_Conserving_Confluence_Curbs_Ill_Condition.pdf">
-  Kahan, W., Conserving Confluence Curbs Ill Condition
+  Kahan, W., Conserving Confluence Curbs Ill-Condition
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
@@ -688,17 +687,22 @@ The Indoctrination is for Enthusiasts.
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Kahan_Hough_Implementation_of_Algorithms_pt1.pdf">
-  Kahan, W., Hough Implementation of Algorithms pt1
+  Kahan, W., Hough, D., Implementation of Algorithms pt1
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Kahan_Hough_Implementation_of_Algorithms_pt2.pdf">
-  Kahan, W., Hough Implementation of Algorithms pt2
+  Kahan, W., Hough, D., Implementation of Algorithms pt2
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"
   href="lib/Kahan_Interval_Arithmetic_Options.pdf">
   Kahan, W., Interval Arithmetic Options
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link library" target="_blank"
+  href="lib/Jean_Michel_Mullers_Example.pdf">
+  Kahan, W., Jean Michel Muller's Example
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link library" target="_blank"

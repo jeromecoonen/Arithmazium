@@ -10,7 +10,7 @@ The Classroom is for Everyone.
 
 <p class="el1"><a class="toc-link classroom wip"
   href="wk88_toc.html">
-  William Kahan's Floating Point Indoctrination Class
+  William Kahan's Floating Point Indoctrination
 </a></p>
 
 

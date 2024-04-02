@@ -10,6 +10,7 @@ Special characters in HTML
   &copy; copyright
   &bull;
   &ldquo; &rsquo; (d)ouble and (s)ingle quotes
+  &infin; infinity  &pi;  any greek letter
 
 Code
   <code> xx </code>

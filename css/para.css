@@ -10,13 +10,13 @@ mono-xs {
 }
 
 lect-wk88 {
-  font-family: Courier, monospace, "Roboto Mono";
+  font-family: "Trebuchet", sans-serif;
   font-size: medium;
   font-weight: bold;
 }
 
 date-wk88 {
-  font-family: Trebuchet, sans-serif;
+  font-family: Courier, monospace, "Roboto Mono";
   font-size: medium;
 }
 

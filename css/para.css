@@ -9,6 +9,17 @@ mono-xs {
   font-size: x-small;
 }
 
+lect-wk88 {
+  font-family: Courier, monospace, "Roboto Mono";
+  font-size: medium;
+  font-weight: bold;
+}
+
+date-wk88 {
+  font-family: Trebuchet, sans-serif;
+  font-size: medium;
+}
+
 .para-ban:hover {
   text-decoration: none;
 }
@@ -39,6 +50,10 @@ mono-xs {
 .toc-link.classroom,
 .toc-link.library {
   font-size: small;
+}
+
+.toc-link.wk88 {
+  font-size: medium;
 }
 
 .toc-link.to-do {
@@ -91,7 +106,7 @@ mono-xs {
   line-height: 1.0;
   font-family: "Trebuchet", sans-serif;
   font-weight: normal;
-  font-size: small;
+  font-size: medium;
   color: black;
 }
 

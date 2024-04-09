@@ -366,7 +366,7 @@ The Indoctrination is for Enthusiasts.
   href="https://1drv.ms/v/s!AoHvMG1FObcWkaAA-SocSdj902tJXQ?e=UaNc4E">
   Video</a>
   <a class="toc-link-wk88" target="_blank"
-  href="lib/Lecture_27_abstrct_notes_slides.pdf">
+  href="lib/Lecture_27_abstract_notes_slides.pdf">
   Notes</a>&nbsp;
   <date-wk88>Jul 28</date-wk88>&nbsp;&nbsp;
   Evening summation: Is Floating Point Arithmetic a Moral Issue?
@@ -376,11 +376,6 @@ The Indoctrination is for Enthusiasts.
 <p class="el1">
   <h3>Organizational handouts by date</h3>
 </p>
-
-<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
-  href="lib/Class_Attendees_29Aug.pdf">
-  Attendee list August 29
-</a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Class_Projects.pdf">
@@ -405,6 +400,11 @@ The Indoctrination is for Enthusiasts.
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Class_Schedule_20June.pdf">
   Schedule June 20
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
+  href="lib/Class_Attendees_29Aug.pdf">
+  Attendee list August 29
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
@@ -456,12 +456,12 @@ The Indoctrination is for Enthusiasts.
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Barnett_A_Portable_Floating_Point_Environment_A.pdf">
-  Barnett, D., A Portable Floating-Point Environment (A)
+  Barnett, D., A Portable Floating-Point Environment (May 87)
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Barnett_A_Portable_Floating_Point_Environment_B.pdf">
-  Barnett, D., A Portable Floating-Point Environment (B)
+  Barnett, D., A Portable Floating-Point Environment (Dec 87)
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
@@ -574,6 +574,12 @@ The Indoctrination is for Enthusiasts.
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Hough_Some_collected_abstracts.pdf">
   Hough, D., More current collected abstracts
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
+  href="lib/Isaacson_Review_of_Numerical_Recipes.pdf">
+  Isaacson,E., Review of <em>Numerical Recipes,
+  The Art of Scientific Computing</em>
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
@@ -753,12 +759,12 @@ The Indoctrination is for Enthusiasts.
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Class_Problem_Avoid_undeserved_over_underflow_A.pdf">
-  Kahan, W., Problem: Avoid undeserved over/underflow May 18 (A)
+  Kahan, W., ProdQuot: Avoid undeserved over/underflow May 18 (A)
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Class_Problem_Avoid_undeserved_over_underflow_B.pdf">
-  Kahan, W., Problem: Avoid undeserved over/underflow May 18 (B)
+  Kahan, W., ProdQuot: Avoid undeserved over/underflow May 18 (B)
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"

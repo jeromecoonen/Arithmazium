@@ -455,6 +455,11 @@ The Indoctrination is for Enthusiasts.
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
+  href="lib/Excerpts_from_System_V_Interface_Definition.pdf">
+  AT&T, Excerpts from System V Interface Definition
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Barnett_A_Portable_Floating_Point_Environment_A.pdf">
   Barnett, D., A Portable Floating-Point Environment (May 87)
 </a></p>
@@ -500,18 +505,8 @@ The Indoctrination is for Enthusiasts.
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
-  href="lib/Excerpts_from_HP15C_Advanced_Functions_Handbook.pdf">
-  Excerpts from HP15C Advanced Functions Handbook
-</a></p>
-
-<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Excerpts_from_Proposed_ANSI_C_Standard.pdf">
   Excerpts from Proposed ANSI C Standard
-</a></p>
-
-<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
-  href="lib/Excerpts_from_System_V_Interface_Definition.pdf">
-  Excerpts from System V Interface Definition
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
@@ -589,6 +584,11 @@ The Indoctrination is for Enthusiasts.
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Hough_Some_collected_abstracts.pdf">
   Hough, D., More current collected abstracts
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
+  href="lib/Excerpts_from_HP15C_Advanced_Functions_Handbook.pdf">
+  HP, Excerpts from HP15C Advanced Functions Handbook
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
@@ -1006,27 +1006,27 @@ The Indoctrination is for Enthusiasts.
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/SPARC_Appendix_N_IEEE_754_Implementation_Recommendations.pdf">
-  Sun Appendix N: SPARC IEEE 754 Implementation Recommendations
+  Sun, Appendix N: SPARC IEEE 754 Implementation Recommendations
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/SunOS_3_man_pages_relating_to_floating_point.pdf">
-  SunOS 3 man pages relating to floating point
+  Sun, SunOS 3 man pages relating to floating point
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/SunOS_3M_man_pages.pdf">
-  SunOS 3M Mathematical Library man pages
+  Sun, SunOS 3M Mathematical Library man pages
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/SunOS_Fortran_man_pages_relating_to_floating_point.pdf">
-  SunOS Fortran man pages relating to floating point
+  Sun, SunOS Fortran man pages relating to floating point
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/SunOS_usr_include_files_relating_to_floating_point.pdf">
-  SunOS /usr/include files relating to floating point
+  Sun, SunOS /usr/include files relating to floating point
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"

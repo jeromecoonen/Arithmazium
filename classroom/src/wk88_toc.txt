@@ -495,6 +495,11 @@ The Indoctrination is for Enthusiasts.
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
+  href="lib/Demmel_Underflow_and_the_Reliability_of_Numerical_Software.pdf">
+  Demmel, J., Underflow and the Reliability of Numerical Software
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Excerpts_from_HP15C_Advanced_Functions_Handbook.pdf">
   Excerpts from HP15C Advanced Functions Handbook
 </a></p>

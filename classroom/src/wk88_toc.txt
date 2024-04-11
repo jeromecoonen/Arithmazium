@@ -752,6 +752,11 @@ The Indoctrination is for Enthusiasts.
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
+  href="lib/Kahan_Numerical_Linear_Algebra.pdf">
+  Kahan, W., Numerical Linear Algebra
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Kahan_On_Alleged_Mathematical_Optimality_A.pdf">
   Kahan, W., On Alleged Mathematical Optimality (A)
 </a></p>

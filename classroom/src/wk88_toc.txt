@@ -65,7 +65,7 @@ The Indoctrination is for Enthusiasts.
   href="lib/Lecture_03_notes_slides.pdf">
   Notes</a>&nbsp;
   <date-wk88>May 10</date-wk88>&nbsp;&nbsp;
-  Integers, algebraic sign
+  Integers, algebraic sign, radix (or base)
 </p>
 
 <p class="el2-wk88">
@@ -125,7 +125,7 @@ The Indoctrination is for Enthusiasts.
   href="lib/Lecture_08_notes_slides.pdf">
   Notes</a>&nbsp;
   <date-wk88>May 26</date-wk88>&nbsp;&nbsp;
-  IEEE Standards 754/854
+  IEEE Standards 754/854, simulating single precision with double
 </p>
 
 <p class="el2-wk88">
@@ -266,7 +266,7 @@ The Indoctrination is for Enthusiasts.
   href="lib/Lecture_19_notes.pdf">
   Notes</a>&nbsp;
   <date-wk88>Jul 05</date-wk88>&nbsp;&nbsp;
-  Exception handling, more Gaussian elimination
+  Exception handling, Gaussian elimination
   <a class="toc-link-wk88" target="_blank"
   href="https://1drv.ms/v/s!AoHvMG1FObcWkZ8IEQ7VBa-q9IbfBw?e=ngnWaW">
   Video cont.</a>
@@ -470,6 +470,14 @@ The Indoctrination is for Enthusiasts.
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
+  href="lib/FORTRAN_SC.pdf">
+  Bleher, J., Rump, S., Kulisch, U., Metzger, M.,
+  Ullrich, C., Walter, W., FORTRAN SC: A Study of a FORTRAN
+  Extension for
+  Engineering/Scientific Computation with Access to ACRITH
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Bohlender_Ullrich_vonGudenberg_New_Developments_in_PASCAL_SC.pdf">
   Bohlender, G., Ullrich, C., von Gudenberg, J., New Developments in PASCAL-SC
 </a></p>
@@ -515,24 +523,10 @@ The Indoctrination is for Enthusiasts.
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
-  href="lib/FORTRAN_SC.pdf">
-  FORTRAN SC
-</a></p>
-
-<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
-  href="lib/Fortran_SC_report.pdf">
-  Fortran SC report
-</a></p>
-
-<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/GAMM_Resolution_on_Computer_Arithmetic.pdf">
   GAMM Resolution on Computer Arithmetic
 </a></p>
-
-<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
-  href="lib/GAMM_Symposium_Announcement.pdf">
-  GAMM Symposium Announcement
-</a></p>
+>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Goldberg_What_Every_Computer_Scientist_Should_Know.pdf">
@@ -592,6 +586,12 @@ The Indoctrination is for Enthusiasts.
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
+  href="lib/GAMM_Symposium_Announcement.pdf">
+  IMACS-GAMM International Symposium on Computer Arithmetic and
+  Self-Validating Numerical Methods
+</a></p
+
+<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Isaacson_Review_of_Numerical_Recipes.pdf">
   Isaacson,E., Review of <em>Numerical Recipes,
   The Art of Scientific Computing</em>
@@ -604,7 +604,7 @@ The Indoctrination is for Enthusiasts.
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Kahan_7094_II_System_Support.pdf">
-  Kahan, W., 7094 II System Support
+  Kahan, W., 7094 II System Support for Numerical Analysis
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
@@ -910,6 +910,11 @@ The Indoctrination is for Enthusiasts.
   href="lib/Kornerup_Matula_Finite_Precision_Lexicographic_Continued_Fraction.pdf">
   Kornerup, P., Matula, D., Finite Precision Lexicographic
   Continued Fraction Number Systems
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
+  href="lib/Fortran_SC_report.pdf">
+  Kulisch, U., FORTRAN-SC: FORTRAN for Scientific Computation
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"

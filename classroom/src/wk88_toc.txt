@@ -526,7 +526,6 @@ The Indoctrination is for Enthusiasts.
   href="lib/GAMM_Resolution_on_Computer_Arithmetic.pdf">
   GAMM Resolution on Computer Arithmetic
 </a></p>
->
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Goldberg_What_Every_Computer_Scientist_Should_Know.pdf">
@@ -589,7 +588,7 @@ The Indoctrination is for Enthusiasts.
   href="lib/GAMM_Symposium_Announcement.pdf">
   IMACS-GAMM International Symposium on Computer Arithmetic and
   Self-Validating Numerical Methods
-</a></p
+</a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Isaacson_Review_of_Numerical_Recipes.pdf">

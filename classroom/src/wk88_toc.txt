@@ -508,6 +508,11 @@ The Indoctrination is for Enthusiasts.
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
+  href="lib/Cyrix_FasMath_83D87.pdf">
+  Cyrix, FasMath 83D87 User's Manual
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Demmel_Underflow_and_the_Reliability_of_Numerical_Software.pdf">
   Demmel, J., Underflow and the Reliability of Numerical Software
 </a></p>

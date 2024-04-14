@@ -1071,6 +1071,11 @@ The Indoctrination is for Enthusiasts.
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
+  href="lib/TI_SN74ACT8800_Family_Data_Manual_1989.pdf">
+  Texas Instruments, SN74ACT8800 Family Data Manual
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Vollaro_The_Minisupercomputer_One_Users_Experience.pdf">
   Vollaro, T., The Minisupercomputer: One User's Experience
 </a></p>

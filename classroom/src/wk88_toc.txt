@@ -518,6 +518,11 @@ The Indoctrination is for Enthusiasts.
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
+  href="lib/Cyrix_EMC87_data_sheet_locked.pdf">
+  Cyrix, FasMath CX-EMC87 Coprocessor Data Sheet
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Demmel_Underflow_and_the_Reliability_of_Numerical_Software.pdf">
   Demmel, J., Underflow and the Reliability of Numerical Software
 </a></p>

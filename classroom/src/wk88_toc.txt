@@ -580,18 +580,23 @@ The Indoctrination is for Enthusiasts.
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
-  href="lib/Hough_Last_Example_on_Gradual_Underflow.pdf">
-  Hough, D., The Last Example on Gradual Underflow!
-</a></p>
-
-<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
-  href="lib/Hough_Some_current_publication_abstracts.pdf">
+  href="lib/Hough_Some_current_abstracts.pdf">
   Hough, D., Some current publication abstracts
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
-  href="lib/Hough_Some_collected_abstracts.pdf">
-  Hough, D., More current collected abstracts
+  href="lib/Hough_Some_more_current_abstracts.pdf">
+  Hough, D., Some more current publication abstracts
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
+  href="lib/Hough_Still_more_current_abstracts.pdf">
+  Hough, D., Still more current publication abstracts
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
+  href="lib/Hough_Last_Example_on_Gradual_Underflow.pdf">
+  Hough, D., The Last Example on Gradual Underflow!
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
@@ -721,6 +726,12 @@ The Indoctrination is for Enthusiasts.
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Kahan_Frexp_Ldexp_vs_Logb_Scalb_B.pdf">
   Kahan, W., Frexp/Ldexp vs. Logb/Scalb (B)
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
+  href="lib/Kahan_Gaussian_Elimination_with_Extra_Precise.pdf">
+  Kahan, W., Gaussian Elimination with Extra-Precise
+  Accumulation of Products
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"

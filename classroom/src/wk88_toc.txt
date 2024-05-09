@@ -408,13 +408,18 @@ The Indoctrination is for Enthusiasts.
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
-  href="lib/Handouts_Combined_Table_of_Contents.pdf">
+  href="lib/Class_Handouts_Combined_Table_of_Contents.pdf">
   Handouts Combined Table of Contents 1990
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Class_Handouts_1990_Cumulative_Contents.pdf">
-  Handouts Combined Updated Table of Contents Sets 14-17 1990
+  Handouts Updated Combined Table of Contents Sets 14-17 1990
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
+  href="lib/Class_Handouts_Final_Sun_Update.pdf">
+  Handouts Final Sun Internal Combined Table of Contents 1990
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
@@ -520,6 +525,11 @@ The Indoctrination is for Enthusiasts.
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Cyrix_EMC87_data_sheet.pdf">
   Cyrix, FasMath CX-EMC87 Coprocessor Data Sheet
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
+  href="lib/Demmel_The_Probability_that_a_Numerical_Analysis.pdf">
+  Demmel, J., The Probability That A Numerical Analysis Problem Is Difficult
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"

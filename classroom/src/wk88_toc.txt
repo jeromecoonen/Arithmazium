@@ -445,6 +445,11 @@ The Indoctrination is for Enthusiasts.
 <br>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
+  href="lib/Analog_Devices_ADSP_3212_Datasheet.pdf">
+  Analog Devices, ADSP-3212/ADSP-3222 Floating-Point Chipset Data Sheet
+</a></p>
+
+<p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/Apple_Language_Specifications_for_SANE_Pascal.pdf">
   Apple, Language Specifications for SANE Pascal
 </a></p>

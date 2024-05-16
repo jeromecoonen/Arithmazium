@@ -59,7 +59,7 @@ The Indoctrination is for Enthusiasts.
 <p class="el2-wk88">
   <lect-wk88>03</lect-wk88>&nbsp;
   <a class="toc-link-wk88" target="_blank"
-  href="https://1drv.ms/b/s!AoHvMG1FObcWkcULYw2-z3gBEJ5ukw?e=jkUHS6">
+  href="https://1drv.ms/v/s!AoHvMG1FObcWkZxHnalzcp2P8tsfxw?e=jA83xE">
   Video</a>
   <a class="toc-link-wk88" target="_blank"
   href="lib/Lecture_03_notes_slides.pdf">
@@ -149,7 +149,8 @@ The Indoctrination is for Enthusiasts.
   href="lib/Lecture_10_notes_slides.pdf">
   Notes</a>&nbsp;
   <date-wk88>Jun 02</date-wk88>&nbsp;&nbsp;
-  Multi-word arithmetic, nonstandard arithmetics, ACRITH
+  With Dan Zuras &ndash; multi-word arithmetic,
+  nonstandard arithmetics, ACRITH
 </p>
 
 <p class="el2-wk88">
@@ -543,7 +544,7 @@ The Indoctrination is for Enthusiasts.
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
-  href="lib/Demmel_The_Probability_that_a_Numerical_Analysis.pdf">
+  href="lib/Demmel_The_Probability_That_A_Numerical_Analysis.pdf">
   Demmel, J., The Probability That A Numerical Analysis Problem Is Difficult
 </a></p>
 

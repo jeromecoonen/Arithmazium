@@ -445,7 +445,7 @@ The Expos&#233; is for Enthusiasts.
 
 <p class="el2-wk88">
   Some documents appear twice. Form (A) has
-  typewriter formatting suitable for a dot-matrix printer.
+  typewriter formatting suitable for a dot matrix printer.
   Form (B) is typeset for a laser printer.
 </p>
 <br>

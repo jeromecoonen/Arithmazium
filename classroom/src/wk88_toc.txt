@@ -1135,7 +1135,7 @@ The Expos&#233; is for Enthusiasts.
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"
   href="lib/SunOS_usr_include_files_relating_to_floating_point.pdf">
-  SunOS /usr/include files relating to floating point
+  Sun, SunOS /usr/include files relating to floating point
 </a></p>
 
 <p class="el2-wk88"><a class="toc-link wk88" target="_blank"

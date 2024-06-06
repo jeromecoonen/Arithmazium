@@ -167,7 +167,7 @@ The Expos&#233; is for Enthusiasts.
   href="lib/Lecture_11_notes_slides.pdf">
   Notes</a>&nbsp;
   <date-wk88>Jun 07</date-wk88>&nbsp;&nbsp;
-  Ulrich Kulisch &ndash; ACRITH
+  Ulrich Kulisch &ndash; theoretical aspects of number spaces
   <a class="toc-link-wk88" target="_blank"
   href="https://1drv.ms/v/s!AoHvMG1FObcWkZ993nchTRPPa5qcZQ?e=sQQPl7">
   Video cont.</a>

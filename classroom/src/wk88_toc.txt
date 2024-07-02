@@ -299,7 +299,7 @@ The Expos&#233; is for Enthusiasts.
   href="lib/Lecture_21_notes_slides.pdf">
   Notes</a>&nbsp;
   <date-wk88>Jul 12</date-wk88>&nbsp;&nbsp;
-  Exception handling, including Pyramid, Sun
+  The orbit of Pluto, exception handling, including Pyramid, Sun
 </p>
 
 <p class="el2-wk88">

@@ -40,7 +40,7 @@
 
 <h2>Disclosure</h2>
   <p>
-    In spring 2021, this site is very much under construction.
+    In 2024, this site is very much under construction.
     So long as that is not a distraction,
     Arithmazium will remain open.
     What you see is what you get, and

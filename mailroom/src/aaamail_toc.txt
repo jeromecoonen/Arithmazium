@@ -13,49 +13,44 @@
 <text class="invite" x="450" y="30">
   If you are a human, please click the dense stack of letters below to contact us.
 </text>
-<text id="hr" class="alfa" x="430" y="90" >r</text>
-<text id="ho" class="alfa" x="430" y="90" >o</text>
+
+<text id="hg"   class="alfa" x="430" y="90" >g</text>
+<text id="ho3"  class="alfa" x="430" y="90" >o</text>
 <text id="hdot" class="alfa" x="430" y="90" >.</text>
-<text id="hi3" class="alfa" x="430" y="90" >i</text>
-<text id="hm3" class="alfa" x="430" y="90" >m</text>
-<text id="hg" class="alfa" x="430" y="90" >g</text>
-<text id="hm4" class="alfa" x="430" y="90" >m</text>
-<text id="hm2" class="alfa" x="430" y="90" >m</text>
-<text id="hl" class="alfa" x="430" y="90" >l</text>
-<text id="hu" class="alfa" x="430" y="90" >u</text>
-<text id="hi2" class="alfa" x="430" y="90" >i</text>
-<text id="hz" class="alfa" x="430" y="90" >z</text>
-<text id="ha2" class="alfa" x="430" y="90" >a</text>
-<text id="hm1" class="alfa" x="430" y="90" >m</text>
-<text id="hc" class="alfa" x="430" y="90" >c</text>
-<text id="hh" class="alfa" x="430" y="90" >h</text>
-<text id="ha3" class="alfa" x="430" y="90" >a</text>
-<text id="ht" class="alfa" x="430" y="90" >t</text>
-<text id="hat" class="alfa" x="430" y="90" >@</text>
-<text id="hi1" class="alfa" x="430" y="90" >i</text>
-<text id="ha1" class="alfa" x="430" y="90" >a</text>
-<animate xlink:href="#ha1" attributeName="x" from="430" to="30" dur="1s" begin="click" fill="freeze" id="aha1" />
-<animate xlink:href="#hr" attributeName="x" from="430" to="70" dur="1s" begin="aha1.begin + 0.1s" fill="freeze" />
-<animate xlink:href="#hi1" attributeName="x" from="430" to="110" dur="1s" begin="aha1.begin + 0.2s" fill="freeze" />
-<animate xlink:href="#ht" attributeName="x" from="430" to="150" dur="1s" begin="aha1.begin + 0.3s" fill="freeze" />
-<animate xlink:href="#hh" attributeName="x" from="430" to="190" dur="1s" begin="aha1.begin + 0.2s" fill="freeze" />
-<animate xlink:href="#hm1" attributeName="x" from="430" to="230" dur="1s" begin="aha1.begin + 0.1s" fill="freeze" />
-<animate xlink:href="#ha2" attributeName="x" from="430" to="270" dur="1s" begin="aha1.begin + 0.2s" fill="freeze" />
-<animate xlink:href="#hz" attributeName="x" from="430" to="310" dur="1s" begin="aha1.begin + 0.3s" fill="freeze" />
-<animate xlink:href="#hi2" attributeName="x" from="430" to="350" dur="1s" begin="aha1.begin + 0.2s" fill="freeze" />
-<animate xlink:href="#hu" attributeName="x" from="430" to="390" dur="1s" begin="aha1.begin + 0.1s" fill="freeze" />
-<animate xlink:href="#hm2" attributeName="x" from="430" to="430" dur="1s" begin="aha1.begin + 0.2s" fill="freeze" />
-<animate xlink:href="#hat" attributeName="x" from="430" to="470" dur="1s" begin="aha1.begin + 0.3s" fill="freeze" />
-<animate xlink:href="#hg" attributeName="x" from="430" to="510" dur="1s" begin="aha1.begin + 0.2s" fill="freeze" />
-<animate xlink:href="#hm3" attributeName="x" from="430" to="550" dur="1s" begin="aha1.begin + 0.1s" fill="freeze" />
-<animate xlink:href="#ha3" attributeName="x" from="430" to="590" dur="1s" begin="aha1.begin + 0.2s" fill="freeze" />
-<animate xlink:href="#hi3" attributeName="x" from="430" to="630" dur="1s" begin="aha1.begin + 0.3s" fill="freeze" />
-<animate xlink:href="#hl" attributeName="x" from="430" to="670" dur="1s" begin="aha1.begin + 0.2s" fill="freeze" />
-<animate xlink:href="#hdot" attributeName="x" from="430" to="710" dur="1s" begin="aha1.begin + 0.1s" fill="freeze" />
-<animate xlink:href="#hc" attributeName="x" from="430" to="750" dur="1s" begin="aha1.begin + 0.2s" fill="freeze" />
-<animate xlink:href="#ho" attributeName="x" from="430" to="790" dur="1s" begin="aha1.begin + 0.3s" fill="freeze" />
-<animate xlink:href="#hm4" attributeName="x" from="430" to="830" dur="1s" begin="aha1.begin + 0.2s" fill="freeze" />
-</g>
+<text id="hi"   class="alfa" x="430" y="90" >i</text>
+<text id="hm1"  class="alfa" x="430" y="90" >m</text>
+<text id="hm2"  class="alfa" x="430" y="90" >m</text>
+<text id="hn2"  class="alfa" x="430" y="90" >n</text>
+<text id="he"   class="alfa" x="430" y="90" >e</text>
+<text id="hl"   class="alfa" x="430" y="90" >l</text>
+<text id="ho2"  class="alfa" x="430" y="90" >o</text>
+<text id="hc2"  class="alfa" x="430" y="90" >c</text>
+<text id="hn1"  class="alfa" x="430" y="90" >n</text>
+<text id="ho1"  class="alfa" x="430" y="90" >o</text>
+<text id="hc1"  class="alfa" x="430" y="90" >c</text>
+<text id="ha"   class="alfa" x="430" y="90" >a</text>
+<text id="hat"  class="alfa" x="430" y="90" >@</text>
+<text id="hj"   class="alfa" x="430" y="90" >j</text>
+
+<animate xlink:href="#hj" attributeName="x" from="430" to="110" dur="1s" begin="click" fill="freeze" id="aha1" />
+<animate xlink:href="#hc1" attributeName="x" from="430" to="150" dur="1s" begin="aha1.begin + 0.3s" fill="freeze" />
+<animate xlink:href="#ho1" attributeName="x" from="430" to="190" dur="1s" begin="aha1.begin + 0.2s" fill="freeze" />
+<animate xlink:href="#ho2" attributeName="x" from="430" to="230" dur="1s" begin="aha1.begin + 0.1s" fill="freeze" />
+<animate xlink:href="#hn1" attributeName="x" from="430" to="270" dur="1s" begin="aha1.begin + 0.2s" fill="freeze" />
+<animate xlink:href="#he" attributeName="x" from="430" to="310" dur="1s" begin="aha1.begin + 0.3s" fill="freeze" />
+<animate xlink:href="#hn2" attributeName="x" from="430" to="350" dur="1s" begin="aha1.begin + 0.2s" fill="freeze" />
+<animate xlink:href="#hat" attributeName="x" from="430" to="390" dur="1s" begin="aha1.begin + 0.1s" fill="freeze" />
+<animate xlink:href="#hg" attributeName="x" from="430" to="430" dur="1s" begin="aha1.begin + 0.2s" fill="freeze" />
+<animate xlink:href="#hm1" attributeName="x" from="430" to="470" dur="1s" begin="aha1.begin + 0.3s" fill="freeze" />
+<animate xlink:href="#ha" attributeName="x" from="430" to="510" dur="1s" begin="aha1.begin + 0.2s" fill="freeze" />
+<animate xlink:href="#hi" attributeName="x" from="430" to="550" dur="1s" begin="aha1.begin + 0.1s" fill="freeze" />
+<animate xlink:href="#hl" attributeName="x" from="430" to="590" dur="1s" begin="aha1.begin + 0.2s" fill="freeze" />
+<animate xlink:href="#hdot" attributeName="x" from="430" to="630" dur="1s" begin="aha1.begin + 0.3s" fill="freeze" />
+<animate xlink:href="#hc2" attributeName="x" from="430" to="670" dur="1s" begin="aha1.begin + 0.2s" fill="freeze" />
+<animate xlink:href="#ho3" attributeName="x" from="430" to="710" dur="1s" begin="aha1.begin + 0.1s" fill="freeze" />
+<animate xlink:href="#hm2" attributeName="x" from="430" to="750" dur="1s" begin="aha1.begin + 0.2s" fill="freeze" />
+
+ </g>
 </svg>
 
 <h1>Frequently Asked Questions</h1>

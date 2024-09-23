@@ -6,7 +6,7 @@
 <p>
 This section discusses situtations that fall
 outside the usual model of
-<em>round a mathmetmatical reault
+<em>round a mathmetmatical result
 to fit into the destination</em>.
 </p>
 

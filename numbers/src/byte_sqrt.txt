@@ -1,4 +1,4 @@
-#INCLUDE para_head byte_div.html aaanumbers_toc.html byte_circles.html
+#INCLUDE para_head byte_div.html aaanumbers_toc.html byte_and.html
 
 
 <h1>Square root</h1>

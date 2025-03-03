@@ -44,8 +44,9 @@
 <p>
 Modern floating point systems have three
 flavors of special value. All of them have
-roots extending back to the mainframes of the
-sixties and beyond and even the pioneering computers
+roots tracing back to the
+commercial mainframes of the 1950s and 1960s,
+and even the pioneering computers
 that preceded them.
 </p>
 
@@ -63,9 +64,10 @@ The sign of zero requires special definition in the
 arithmetic, because mathematical zero has no sign.
 For signed zero to be sensible mathematically,
 \( -0 = +0 \) must be true, as must \( x \pm 0 = x \)
+for any nonzero \( x \),
 and many other identities.
 It is \( x / \pm0 \) for \( x \neq 0 \) that brings
-out the sign of zero.
+out the sign of zero, as we will now see.
 </p>
 
 <h2>Infinity</h2>
@@ -81,7 +83,7 @@ the overflow threshold.
 
 <p>
 \[ \pm \infty = \pm 1 / \pm 0 \]
-where the usual conventions for algebaric sign apply.
+where the usual conventions for algebraic sign apply.
 </p>
 
 <h2>NaN</h2>
@@ -89,11 +91,12 @@ where the usual conventions for algebaric sign apply.
 <p>
 The Not-a-Number symbol, or NaN, is the last resort, when
 no numerical value, even infinite, makes sense.
-The expression \( \pm 0 / \pm 0 \) is just one.
-At least \( \sqrt{-5} \) has a mathematical meaning,
+The expression \( \pm 0 / \pm 0 \) is just one example.
+At least \( \sqrt{-5} \) has a mathematical meaning
+in the complex plane,
 but it has no representation in a number system with just
-real values. NaNs can but be stored for missing data
-in a data set or used to initialze numerical values
+real values. NaNs can  be stored for missing data
+in a data set or used to initialize numerical values
 created while a program is running.
 </p>
 

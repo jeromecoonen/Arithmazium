@@ -76,7 +76,7 @@ binary form:
 which does not lie in the parallelogram of numbers.
 </p>
 <p>
-Normalization ensures that if a value is repreentable,
+Normalization ensures that if a value is representable,
 then there is exactly one representation for it.
 For example, two appears as
 <code>10.000000</code> in the table, and nowhere else.

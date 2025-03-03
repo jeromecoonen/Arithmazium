@@ -45,10 +45,10 @@
 Most programming environments provide the four
 <em>rational</em> functions:
 <ul>
-  <li><code>add(x, y)</code> &ndash; \( x + y \) </li>
-  <li><code>sub(x, y)</code> &ndash; \( x - y \) </li>
-  <li><code>mul(x, y)</code> &ndash; \( x \times y \) </li>
-  <li><code>div(x, y)</code> &ndash; \( x / y \) </li>
+  <li><code>add(x, y)</code> &rarr; \( x + y \) </li>
+  <li><code>sub(x, y)</code> &rarr; \( x - y \) </li>
+  <li><code>mul(x, y)</code> &rarr; \( x \times y \) </li>
+  <li><code>div(x, y)</code> &rarr; \( x / y \) </li>
 </ul>
 The functional notation simplifies discussion
 of the operations below.
@@ -65,30 +65,30 @@ Forth:</em> <code>x y *</code>.
 IEEE Standard 754 defines several less obvious, but also
 useful functions:
 <ul>
-  <li><code>sqrt(x)</code> &ndash; \( \sqrt{x} \)</li>
-  <li><code>remainder(x, y)</code> &ndash; the (exact)
+  <li><code>sqrt(x)</code> &rarr; \( \sqrt{x} \)</li>
+  <li><code>remainder(x, y)</code> &rarr; the (exact)
   remainder left when the full integer value of \( x / y \)
   is computed
   </li>
-  <li><code>nextUp(x)</code> &ndash; smallest
+  <li><code>nextUp(x)</code> &rarr; smallest
   <code>y</code> with <code>x < y</code>
   </li>
-  <li><code>nextDown(x)</code> &ndash; largest
+  <li><code>nextDown(x)</code> &rarr; largest
   <code>y</code> with <code>y < x</code>
   </li>
-  <li><code>scaleB(x, n)</code> &ndash;
+  <li><code>scaleB(x, n)</code> &rarr;
   \( x \times 2^{n} \)
   </li>
-  <li><code>logB(x)</code> &ndash; satisfies
+  <li><code>logB(x)</code> &rarr; satisfies
   <code>1.0 <= scaleB(x, -logB(x)) < 2.0</code>
   </li>
-  <li><code>copysign(x, y)</code> &ndash; value <code>y</code>
+  <li><code>copysign(x, y)</code> &rarr; value <code>y</code>
   with sign of <code>x</code>
   </li>
-  <li><code>abs(x)</code> &ndash; <code>x</code>
+  <li><code>abs(x)</code> &rarr; <code>x</code>
   with positive sign
   </li>
-  <li><code>neg(x)</code> &ndash; <code>x</code>
+  <li><code>neg(x)</code> &rarr; <code>x</code>
   with its sign reversed
   </li>
 </ul>
@@ -102,7 +102,7 @@ data types. Converting to floating point
 from an integer type falls
 right into the pattern of any arithmetic operation.
 Converting from floating point to an integer type
-requires spefication for values outside the range
+requires specification for values outside the range
 of integers, such as happens with huge values,
 \( \infty \), and NaN.
 </p>
@@ -147,29 +147,33 @@ These common functions can be implemented in the same spirit
 as the carefully-specified arithmetic
 operations. Accuracy is another matter, as we will see.
 <ul>
-  <li><code>pow(x, y)</code> &ndash; \( x^{y} \)
+  <li><code>pow(x, y)</code> &rarr; \( x^{y} \)
   </li>
-  <li><code>log(x)</code> &ndash; log base \( e \)
+  <li><code>log(x)</code> &rarr; log base \( e \)
   </li>
-  <li><code>log1p(x)</code> &ndash; \( log(1 + x) \),
+  <li><code>log1p(x)</code> &rarr; \( log(1 + x) \),
   without adding \( 1 + x \)
   </li>
-  <li><code>exp(x)</code> &ndash; \( e^{x} \)
+  <li><code>exp(x)</code> &rarr; \( e^{x} \)
   </li>
-  <li><code>expm1(x)</code> &ndash; \( e^{x} - 1 \),
+  <li><code>expm1(x)</code> &rarr; \( e^{x} - 1 \),
   without computing \( e^{x} \)
   </li>
-  <li><code>sin(x)</code>
+  <li><code>sin(x)</code> &rarr; trigonometric sine
   </li>
-  <li><code>cos(x)</code>
+  <li><code>cos(x)</code> &rarr; trigonometric cosine
   </li>
-  <li><code>tan(x)</code>
+  <li><code>tan(x)</code> &rarr; trigonometric tangent
   </li>
-  <li><code>atan(x)</code>
+  <li><code>atan(x)</code> &rarr; trigonometric arctangent
   </li>
-  <li><code>cosh(x)</code> &ndash; hyperbolic cosine
+  <li><code>sinh(x)</code> &rarr; hyperbolic sine
   </li>
-  <li><code>tanh(x)</code> &ndash; hyperbolic tangent
+  <li><code>cosh(x)</code> &rarr; hyperbolic cosine
+  </li>
+  <li><code>tanh(x)</code> &rarr; hyperbolic tangent
+  </li>
+  <li><code>atanh(x)</code> &rarr; hyperbolic arctangent
   </li>
 </ul>
 

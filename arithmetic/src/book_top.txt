@@ -10,32 +10,36 @@ values. You will see how arithmetic operations
 produce results within the number system.
 You will see how the arithmetic connects to the
 rest of the computer system.
-You will see what happens the edges, where
+You will see what happens at the edges, where
 floating point departs from everyday mathematics.
 </p>
 
 <p>
-The beauty and simplicity of floating point aritmetic
+The beauty and simplicity of floating point arithmetic
 are easily lost in a fog of mathematical notation.
-By focusing the presentation, we can hope to keep
-sight of the big ideas.
+This presentation emphasizes ideas over notation.
+You have already seen the basic concepts in
+<em>scientific notation</em> in school.
+The speed of light is 
+\(3.00 \times 10^{8} m/sec \) and you have seen the condensed form
+<code>3.00E8</code> on pocket calculators and in spreadsheets.
 </p>
 
 <p>
-First, the presentation is in binary.
+First, this presentation is in binary.
 All of the ideas apply
-directly to octal, decimal, and hexadecimal
+directly to octal (base 8), decimal, and hexadecimal (base 16)
 arithmetic.
 </p>
 
 <p>
 Second, the presentation covers just one
-data type with 8 significnt bits.
-The story is the same for quadruple
-precision, with 112 signifcant bits,
-but it's less enlightening.
-Support for multiple types falls out
-of the discussion.
+hypothetical data type with 8 significaßnt bits.
+The story is the same for standardized formats
+like <em>single</em> with 24 significant bits,
+<em>double</em> with 53, and
+<em>quadruple</em> with 112 significant bits.
+Working with 8 bits is easier on the eyes.
 </p>
 
 <p>

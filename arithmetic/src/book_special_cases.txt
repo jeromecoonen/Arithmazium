@@ -4,9 +4,9 @@
 <h1>Special cases</h1>
 
 <p>
-This section discusses situtations that fall
+This section discusses situations that fall
 outside the usual model of
-<em>round a mathmetmatical result
+<em>round a mathematical result
 to fit into the destination</em>.
 </p>
 
@@ -37,7 +37,7 @@ When zero results from
 is just the exclusive-or of the operands' signs.
 <code>neg</code> flips zero's sign and <code>abs</code>
 gives zero positive sign. <code>copysign</code>
-does what it says. The first suprise is <code>sqrt</code>,
+does what it says. The first surprise is <code>sqrt</code>,
 which preserves the sign of a zero input.
 </p>
 

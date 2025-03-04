@@ -32,7 +32,7 @@ Readers might visit the
 </a></p>
 <p class="el3"><a class="toc-link arith wip"
   href="book_coercion.html">
-  Coercion to the target range and precision
+  Projection onto the target range and precision
 </a></p>
 <p class="el3"><a class="toc-link arith wip"
   href="book_special_cases.html">

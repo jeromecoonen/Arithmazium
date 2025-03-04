@@ -15,7 +15,7 @@ numeric arguments
     as if with unbounded range and precision.
   </li>
   <li>
-    Coerce the intermediate result to fit within
+    project the intermediate result into the form of
     the destination.
   </li>
 </ol>
@@ -59,7 +59,7 @@ value.
 <p>
 <em>Guard</em> and <em>Round</em> are the next two 
 bits beyond the rightmost <code>b</code>.
-The <em>Sticky</em> bit is the logical sum of
+The <em>Sticky</em> bit is the logical <code>OR</code> of
 <span class="bold">all</span> bits
 to the right or <em>Round</em>,
 in the infinitely precise result &ndash; it
@@ -74,12 +74,12 @@ The sign and the exponent <code>k</code> of the
 scale factor \( 2^{k} \) follow from the normal
 rules of arithmetic, with no restrictions on <code>k</code>.
 During <a class="inline" href="book_coercion.html">
-coercion</a>
+projection</a>
 of the result to the destination, we'll see
 the roles these bits play.
 Zero has no algebraic sign in mathematics, but
 if the destination supports a sign of zero, those
-rules come into play during coercion.
+rules come into play during projection.
 </p>
 
 <h2><code>add()</code> and <code>sub()</code></h2>
@@ -91,7 +91,7 @@ Number Hall</a>.
 Floating point <code>add()</code> and <code>sub()</code> are
 made complicated by the shifting required to align the
 binary points of the input values, and
-then the realignment during coercion. 
+then the realignment during projection. 
 </p>
 
 <p>

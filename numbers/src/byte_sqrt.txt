@@ -91,4 +91,4 @@ to produce binary fraction bits as long as we wish, but we won't
 talk about fractions for some pages yet.
 </div>
 
-#INCLUDE para_foot byte_div.html aaanumbers_toc.html byte_circles.html
+#INCLUDE para_foot byte_div.html aaanumbers_toc.html byte_and.html

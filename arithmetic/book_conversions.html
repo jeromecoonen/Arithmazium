@@ -33,7 +33,7 @@
   </svg>
   </div>
   <div class='next-prev'>
-  <a href='book_exceptions.html' class='next round'>Next</a>
+  <a href='aaaarithmetic_toc.html' class='next round'>Next</a>
   <a href='aaaarithmetic_toc.html' class='tree round'>Home</a>
   <a href='book_special_cases.html' class='previous round'>Previous</a>
   </div>
@@ -44,18 +44,22 @@
 <p>
 Since the emergence of IEEE Standard 754,
 most floating point arithmetic
-in binary. This means that systems must
+is binary.
+Such a system must
 support conversion between
-human-readable decimal numbers
+more familiar decimal numbers
 and the internal binary formats.
 </p>
 
 <p>
 Programmable calculators and some
-specialized systems offer decimal floating
-point arithmetic, where the conversion
-is far simpler, but still requires
-coercion to the target.
+hardware and software systems 
+offer decimal floating
+point arithmetic for accounting and other
+business applications.
+Even these systems require careful attention
+to map arbitrary decimal input into
+the supported decimalformats.
 </p>
 
 <p>
@@ -72,31 +76,49 @@ a decimal value is either zero or a
 value of the form
 </p>
 
-<pre><med-code>  ± d &bull; d d d d ...  *  10**h
+<pre><med-code>  ± d d ... d &bull; d ... d d
 </med-code></pre>
 
 <p>
-where the <code>d</code>s are decimal digits,
-with the leading <code>d</code> is nonzero.
+or perhaps
+</p>
+
+<pre><med-code>  ± d d ... d &bull; d ... d d E ± n n
+</med-code></pre>
+
+<p>
+where the <code>d</code> are decimal digits,
+and the <code>E</code> introduces a factor
+\( 10 ^{\pm nn} \).
 </p>
 
 <p>
-The zero case is easy, with the algebraic sign passing
-through to the binary result, if needed.
-Otherwise, the decimal number can be converted to
+If all of the <code>d</code> are zero, 
+the value converts to zero,
+with the algebraic sign passing
+through to the binary result, if the format supports
+a sign on zero.
+Otherwise, the value
+can be rearranged to the mathematically equivalent form
+</p>
+
+<pre><med-code>  ± d &bull; d d ... d * 10 ** h
+</med-code></pre>
+
+<p>
+where the leading <code>d</code> is nonzero.
+This decimal number can be converted to
 the unique binary value
 </p>
 
-<pre><med-code>    +---------------------+-----+
-  ± | 1 &bull; b b b b b b b b | G S |  *  2**k
-    +---------------------+-----+
+<pre><med-code>    +---------------------+-------+
+  ± | 1 &bull; b b b b b b b b | G R S |  *  2**k
+    +---------------------+-------+
 </med-code></pre>
 
 <p>
-where the sticky bit <code>S</code> is the logical sum
-of all bits to the right of <code>G</code>.
-(There is no need for a round bit <code>R</code> because
-there is no normalization shift required.)
+where the sticky bit <code>S</code> is the logical
+<code>OR</code> of all bits to the right of <code>R</code>.
 </p>
 
 <p>
@@ -127,7 +149,8 @@ Conversion to fixed format is a matter of
 scaling by a suitable power of \( 10 \) and
 rounding to an integer. Then it's a matter
 of integer conversion and formatting the
-result with sign and decimal point.
+result with sign and decimal point
+inserted appropriately.
 </p>
 
 <p>
@@ -165,12 +188,15 @@ and the leading <code>d</code> is nonzero.
 and <code>S</code> is a sticky bit, which
 is nonzero only if some digit beyond <code>G</code>
 is nonzero, in the exact representation.
-This is analogous to coercion to binary.
+This is analogous to binary projection.
+There is no need for a <em>Round</em> digit
+because the value is normalized and will never require
+a one-digit left shift.
 </p>
 
 <p>
-Coercion to the decimal result is simpler than
-coercion to binary form, becuase typically exponent
+Projection onto decimal is simpler than
+projection onto binary, becuase typically exponent
 overflow and underflow are not an issue on output.
 The only challenge is rounding.
 </p>
@@ -181,7 +207,7 @@ The only challenge is rounding.
 <p>
   Using the language of
   <a class="inline" href="book_coercion.html">
-    Coercion</a>
+    Projection</a>
   here is what we mean by rounding a decimal result.
   Given a value
 </p>
@@ -196,10 +222,10 @@ regardless of sign, we
 <em>round up</em> (in magnitude)
 by adding \( 1 \)
 into the lowest-order <code>d</code>.
-If every <code>d</code> is a
+If every <code>d</code> is
 <code>9</code>, then there is a carry out
 of the leading <code>9</code>, so the
-sigificant digits must be right-shifted
+significant digits must be right-shifted
 one place and the exponent <code>h</code>
 incremented.
 </p>
@@ -211,7 +237,7 @@ on the significant digits.
 
 <p>
 In either case,
-we discard Gurard digit
+we discard Guard digit
 <code>G</code> and Sticky bit <code>S</code>
 after rounding.
 </p
@@ -239,7 +265,7 @@ IEEE 754 apply unsurprisingly, in decimal.
     is nonzero, then round up; otherwise round down
   </li>
   <li>
-    Round to Nearst &ndash; round up if <code>G > 5</code>,
+    Round to Nearest &ndash; round up if <code>G > 5</code>,
     or if <code>G = 5</code>
     and either
     (a) <code>S</code> is <code>1</code>
@@ -296,7 +322,7 @@ the decimal version of unbiased round-to-nearest.
 
 
 <div class='next-prev'>
-<a href='book_exceptions.html' class='next round'>Next</a>
+<a href='aaaarithmetic_toc.html' class='next round'>Next</a>
 <a href='aaaarithmetic_toc.html' class='tree round'>Home</a>
 <a href='book_special_cases.html' class='previous round'>Previous</a>
 </div>

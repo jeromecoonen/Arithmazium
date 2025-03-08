@@ -28,7 +28,7 @@ starting to multiply.
 </p>
 
 <p>
-It's one thing to home in anomalies like a value that changes
+It's one thing to home in on anomalies like a value that changes
 slightly when multiplied by \( 1.0 \) or a value that behaves
 like zero despite comparing not equal to zero. Programmers find these
 problems and fix them, or they discover strategies to just avoid
@@ -62,7 +62,7 @@ We use <em>scientific notation</em> in school to represent Avogadro's Number
 \(6.02252 \times 10^{23} \) and we see the condensed form
 <code>6.02252E23</code> on pocket calculators.
 This is a decimal representation, convenient for human use.
-Computers may use bninary <code>0..1</code>,
+Computers may use binary <code>0..1</code>,
 octal <code>0..7</code>, or
 hexadecimal <code>0..9A..F</code>
 digits, scaled by
@@ -93,14 +93,14 @@ Here is a list of some of the questions explored:
       rounded off, or something else?
     </li>
     <li>
-      What is the largest finite number? The smallest number?
+      What is the largest finite number? The smallest nonzero number?
       Do the extreme values have any unusual behaviors in arithmetic?
     </li>
     <li>
       How accurate are \( \sqrt{x} \) and \( y ^ {z} \)?
     </li>
     <li>
-      Does the arithmetic behave according the then-emerging
+      Does the arithmetic behave according to the then-emerging
       IEEE floating point standard?
     </li>
   </ul>
@@ -108,8 +108,10 @@ Here is a list of some of the questions explored:
 
 <p>
 The final question refers to
-IEEE Standard 754 for Floating Point
-Arithmetic. The standard was formally approved in 1984, after Paranoia's
+<a class="inline" target="_blank"
+  href="../library/lib/ieee754-1985.pdf">
+  IEEE Standard 754 for Binary Floating-Point Arithmetic</a>.
+The standard was formally approved in 1985, years after Paranoia's
 introduction, but its development dated from 1978.
 Paranoia arrived just as the world was about to improve dramatically
 for numerical programmers.

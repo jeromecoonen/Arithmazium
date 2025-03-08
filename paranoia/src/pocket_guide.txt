@@ -42,8 +42,9 @@ you're likely to have IEEE Standard 754 64-bit
 <code>double</code> values. You can find
 intimate details of IEEE 754 arithmetic
 in the
-<a class="inline" href="../essentials/aaaessentials_toc.html">
-Essentials</a> room.
+<a class="inline
+    href="../arithmetic/aaaarithmetic_toc.html">
+    Arithmetic</a> room.
 </p>
 
 <p>

@@ -50,7 +50,7 @@ The Library is for Everyone.
 
 <p class="el2"><a class="toc-link library" target="_blank"
   href="lib/jerome_coonen_phd_thesis.pdf">
-  Contributions to a Propsed Standard for Binary
+  Contributions to a Proposed Standard for Binary
   Floating-Point Arithmetic
 </a></p>
 <p class="el2-note">

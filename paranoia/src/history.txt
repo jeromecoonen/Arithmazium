@@ -6,7 +6,7 @@
 Page four of the introduction summarizes user expectations, with
 a reference to William J. Cody's Fortran
 <code>MACHAR</code> routine.
-In it's time,
+In its time,
 <em>Software Manual for the Elementary Functions</em>
 was an excellent reference for implementing, and especially testing,
 elementary functions.

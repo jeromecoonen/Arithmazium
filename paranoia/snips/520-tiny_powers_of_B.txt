@@ -1,6 +1,6 @@
-#=============================================
+# =============================================
 # Tests for underflow behavior.
-#=============================================
+# =============================================
 def tiny_powers_of_B(c):
     """Return tiny values, stepping toward zero by factors of radix or 2.
 

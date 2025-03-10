@@ -1,14 +1,14 @@
-milestone = 70   #==============================
+milestone = 70  # ==============================
 print("\nRunning test of square root(x).")
 test_cond(err_failure, (ZERO == sqrt(ZERO))
-       and (- ZERO == sqrt(- ZERO))
-       and (ONE == sqrt(ONE)), "Square root of 0.0, -0.0 or 1.0 wrong")
-min_sqrt_error = ZERO   # the global sqrt err bounds
+          and (- ZERO == sqrt(- ZERO))
+          and (ONE == sqrt(ONE)), "Square root of 0.0, -0.0 or 1.0 wrong")
+min_sqrt_error = ZERO  # the global sqrt err bounds
 max_sqrt_error = ZERO
 ok = sqrt_single_bound_test([
     (B, ULP_OF_ONE_PLUS, err_serious),
     (ONE_OVER_B, ONE_OVER_B * ULP_OF_ONE_MINUS, err_serious),
-    (BIG_B_NTH, ONE, err_serious),    # BUG: Missing from C
+    (BIG_B_NTH, ONE, err_serious),  # BUG: Missing from C
     (ULP_OF_ONE_MINUS, ULP_OF_ONE_MINUS * ULP_OF_ONE_MINUS, err_serious),
 ])
 if not ok:

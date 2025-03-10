@@ -52,7 +52,7 @@ Part 1
 Part 2
 </p>
 
-<pre><code>milestone = 90   #==============================
+<pre><code>milestone = 90  # ==============================
 pause()
 print("Testing powers z^i for small Integers z and i.")
 pow_err_cnt = 0
@@ -68,7 +68,7 @@ print_if_err_cnt_positive()
 save_pow_err_cnt = pow_err_cnt
 pow_err_cnt = 0
 m = int(floor(TWO * log(BIG_B_NTH) / log(A)))
-for z in [A, ONE_OVER_A]:   # Executes 2x if A = 1/A = 1
+for z in [A, ONE_OVER_A]:  # Executes 2x if A = 1/A = 1
     test_integer_powers(z, z, 1, m)
 
 </code></pre>

@@ -8,6 +8,7 @@
             print("\twhich compared unequal to correct {:0.17e} ;"
                   .format(x))
             print("\t\tthey differ by {:0.17e} .".format(y - x))
-        pow_err_cnt += 1   # ... count discrepancies.
+        pow_err_cnt += 1  # ... count discrepancies.
     return
+
 

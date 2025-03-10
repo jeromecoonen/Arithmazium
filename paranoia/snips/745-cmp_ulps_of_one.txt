@@ -1,10 +1,10 @@
-milestone = 20   #==============================
+milestone = 20  # ==============================
 test_cond(err_failure, ONE_MINUS_ULP - ONE_HALF < ONE_HALF,
-       "(1-ULP_OF_ONE_MINUS)-1/2 < 1/2 is FALSE, prog. fails?")
+          "(1-ULP_OF_ONE_MINUS)-1/2 < 1/2 is FALSE, prog. fails?")
 
 # BUG in C version. The point is to try two cases of x.
 for x in [ONE_MINUS_ULP, ONE + ULP_OF_ONE_PLUS]:
     y = x - ONE_HALF
     z = y - ONE_HALF
     test_cond(err_failure, (x != ONE)
-           or (z == ZERO), "Comparison is fuzzy,x=1 but x-1/2-1/2 != 0")
+              or (z == ZERO), "Comparison is fuzzy,x=1 but x-1/2-1/2 != 0")

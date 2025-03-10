@@ -1,6 +1,6 @@
-#=============================================
+# =============================================
 # Test for extra precison.
-#=============================================
+# =============================================
 def test_for_extra_precise_subepressions():
     """Print messages if wider intermediate values detected.
 

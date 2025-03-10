@@ -6,3 +6,4 @@ def compute_H_and_inverse():
         h_inv = B
     return ONE / h_inv, h_inv
 
+

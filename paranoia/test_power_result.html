@@ -52,9 +52,9 @@ Part 1
 Part 2
 </p>
 
-<pre><code>#=============================================
+<pre><code># =============================================
 # Tests of X**K for integer X and K.
-#=============================================
+# =============================================
 def test_power_result(x, z, q):
     """Check that x equals z**q, usually for exact integer cases."""
     global pow_err_cnt
@@ -78,8 +78,9 @@ Part 3
             print("\twhich compared unequal to correct {:0.17e} ;"
                   .format(x))
             print("\t\tthey differ by {:0.17e} .".format(y - x))
-        pow_err_cnt += 1   # ... count discrepancies.
+        pow_err_cnt += 1  # ... count discrepancies.
     return
+
 
 </code></pre>
 

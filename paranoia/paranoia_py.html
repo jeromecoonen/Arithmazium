@@ -22,9 +22,10 @@
 <pre class="src">#! /usr/bin/python3
 # File paranoia.py drives the Paranoia test. Execute this fie.
 
-from __future__ import division      # use // for integer division
+from __future__ import division  # use // for integer division
 
 import math
+
 # ~~~~~~~ 095-open_comment
 #
 # William Kahan's Floating Point Test "Paranoia" recast in Python
@@ -55,26 +56,26 @@ import math
 #   Jerome Coonen at jcoonen@gmail.com
 #
 # ~~~~~~~ 100-initializations
-#----START CODE----
+# ----START CODE----
 # Number of trials in half a dozen random and sequential tests.
 NUM_TRIALS = 32
 # Set all three flags to False for classic Paranoia flow.
 verbose = False
 ultra_verbose = True
-hasty = True   # When True, skips all user interaction
+hasty = True  # When True, skips all user interaction
 # ~~~~~~~ 110-globals
 # Declarations of global variables other than CONSTANTS
-err_failure = 0   # Indexes into the count and type lists below
+err_failure = 0  # Indexes into the count and type lists below
 err_serious = 1
 err_defect = 2
 err_flaw = 3
 error_count = [0, 0, 0, 0]
 error_type = ["Failure", "Serious", "Defect", "Flaw"]
-fpecount = 0   # int count of exceptioins detected
-milestone = 0   # int progress through the code
-page_num = 1   # int vestige of glass tty pages
-pow_err_cnt = 0   # int for testing x**y
-save_pow_err_cnt = 0   # int for testing x**y
+fpecount = 0  # int count of exceptioins detected
+milestone = 0  # int progress through the code
+page_num = 1  # int vestige of glass tty pages
+pow_err_cnt = 0  # int for testing x**y
+save_pow_err_cnt = 0  # int for testing x**y
 min_sqrt_error = math.nan
 max_sqrt_error = math.nan
 rand_seed = math.nan
@@ -84,13 +85,15 @@ flags = {
     "mult_guard_digit": False,
     "div_guard_digit": False,
     "add_sub_guard_digit": False,
-    "mult_rounding": "other",   # rounded and chopped are the alternatives
+    "mult_rounding": "other",  # rounded and chopped are the alternatives
     "div_rounding": "other",
     "add_sub_rounding": "other",
     "sqrt_rounding": "other",
     "uses_sticky_bit": False,
     "IEEE": False
 }
+
+
 # ~~~~~~~ 150-print_msgs
 # Opening messages -- printed as execution begins.
 def print_msgs(s):
@@ -98,6 +101,7 @@ def print_msgs(s):
     for m in s:
         print(m)
     return
+
 
 # ~~~~~~~ 155-instructions
 def instructions():
@@ -116,6 +120,7 @@ def instructions():
     print_msgs(instr)
     return
 
+
 # ~~~~~~~ 160-heading
 def heading():
     """Gives user a place to report issues."""
@@ -130,6 +135,7 @@ def heading():
     ]
     print_msgs(head)
     return
+
 
 # ~~~~~~~ 165-charcteristics
 def characteristics():
@@ -156,9 +162,10 @@ def characteristics():
         "     Sqrt is tested.  Y^X is tested for integer X.",
         "     Extra-precise subexpressions are revealed but NOT YET tested.",
         "     Decimal-Binary conversion is NOT YET tested for accuracy."
-     ]
+    ]
     print_msgs(chars)
     return
+
 
 # ~~~~~~~ 170-history
 def history():
@@ -183,31 +190,38 @@ def history():
     print_msgs(hist)
     return
 
+
 # ~~~~~~~ 200-utilities
-#----START UTILITIES----
+# ----START UTILITIES----
 def notify(s):
     """When the impossible happens, send up a flare."""
     print("{:s} test appears to be inconsistent...".format(s))
     print("   PLEASE NOTIFY THE AUTHOR!\n")
     return
 
+
 # ~~~~~~~ 210-maths
 def fabs(x):
     return math.fabs(x)
 
+
 def floor(x):
     return math.floor(x)
+
 
 def log(x):
     """Return the natural log of the argument."""
     return math.log(x)
 
-def pow(x,y):
+
+def pow(x, y):
     """Return x**y."""
-    return math.pow(x,y)
+    return math.pow(x, y)
+
 
 def sqrt(x):
     return math.sqrt(x)
+
 
 # ~~~~~~~ 220-alt_input
 def alt_input(s):
@@ -219,6 +233,7 @@ def alt_input(s):
         reply = input(s)
     return reply
 
+
 # ~~~~~~~ 222-pause
 def pause():
     """Wait until the user hits RETURN."""
@@ -226,26 +241,29 @@ def pause():
     s = alt_input("\nTo continue, press RETURN ")
     print("\nDiagnosis resumes after milestone Number ", milestone,
           "          Page: ", page_num, "\n")
-    milestone += 1   # the only incremental change to milestone
+    milestone += 1  # the only incremental change to milestone
     page_num += 1
     return
+
 
 # ~~~~~~~ 225-test_cond
 def test_cond(k, v, t):
     """Respond to test v of severity k, with error message t."""
     if not v:
-        bad_cond(k,t)
+        bad_cond(k, t)
         print(".\n")
     return
+
 
 # ~~~~~~~ 230-bad_cond
 def bad_cond(k, t):
     """Record and report error t of severity k.
     Basic 920, for example.
     """
-    error_count[K] += 1
-    print(error_type[K] + ":  " + t, end="")
+    error_count[k] += 1
+    print(error_type[k] + ":  " + t, end="")
     return
+
 
 # ~~~~~~~ 235-rand_frac
 def rand_frac():
@@ -266,6 +284,7 @@ def rand_frac():
     rand_next = y + x * 0.000005
     return rand_next
 
+
 # ~~~~~~~ 240-print_if_err_cnt_positive
 def print_if_err_cnt_positive():
     '''Print an error message from a global count.'''
@@ -275,10 +294,11 @@ def print_if_err_cnt_positive():
               .format(pow_err_cnt))
     return
 
+
 # ~~~~~~~ 250-find_big_two_to_the_nth
-#=============================================
+# =============================================
 # Computations of fundamental system constants like radix and precisioon.
-#=============================================
+# =============================================
 def find_big_2_to_nth():
     """Compute 2**n satisfying |((2**n + 1)-2**n)-1| >= 1."""
     x = ONE
@@ -290,7 +310,6 @@ def find_big_2_to_nth():
         if MINUS_ONE + fabs(y) >= ZERO: break
     # ... now x is just big enough that |((x+1)-x)-1| >= 1 ...
     return x
-
 
 
 # ~~~~~~~ 255-find_radix_from_2_nth
@@ -311,6 +330,7 @@ def find_radix_from_big_2_to_nth(big):
         b = b - big
         if b != ZERO: break
     return b
+
 
 # ~~~~~~~ 260-find_precision_big_B_to_nth
 def find_precision_big_B_to_nth(b):
@@ -334,14 +354,15 @@ def find_precision_big_B_to_nth(b):
         if y - big_b != ONE: break
     return precision, big_b
 
+
 # ~~~~~~~ 265-find_ulp_of_one_plus
 def find_ulp_of_one_plus(guess):
     """Compute u such at 1+u is the next larger value than 1."""
-    x = FOUR / THREE    # rounds in ulps of 1
+    x = FOUR / THREE  # rounds in ulps of 1
     third = x - ONE
     sixth = ONE_HALF - third
     x = sixth + sixth
-    x = fabs(x - third)   # sums two rounding errors
+    x = fabs(x - third)  # sums two rounding errors
     if x < guess:
         x = guess
     # Now x = (unknown no.) ulps of 1+.
@@ -353,6 +374,7 @@ def find_ulp_of_one_plus(guess):
         x = x - ONE
         if u <= x or x <= ZERO: break
     return u
+
 
 # ~~~~~~~ 270-find_ulp_of_one_minus
 def find_ulp_of_one_minus(guess):
@@ -376,6 +398,7 @@ def find_ulp_of_one_minus(guess):
         if u <= x or x <= ZERO: break
     return u
 
+
 # ~~~~~~~ 275-compute_A_and_inverse
 def compute_A_and_inverse(radix):
     """Return value for constants A and ONE_OVER_A, based on radix.
@@ -391,15 +414,15 @@ def compute_A_and_inverse(radix):
         a, 1 / a
     """
     # ~~~~~~~ 277-compute_A_and_inverse2
-    a = max(TWO, radix)   # Default, picking up log radix=1
-    for z in [TWO, NINE+ONE]:
+    a = max(TWO, radix)  # Default, picking up log radix=1
+    for z in [TWO, NINE + ONE]:
         y = radix
         while True:
             x = y
             y = y / z
             if floor(y) != y: break
         if x == ONE:
-            a = z   # Have found a power of 2 or 10
+            a = z  # Have found a power of 2 or 10
             break
     # ~~~~~~~ 279-compute_A_and_inverse3
     one_over_a = ONE / a
@@ -409,6 +432,7 @@ def compute_A_and_inverse(radix):
         z = x * y - ONE_HALF
         test_cond(err_failure, z == ONE_HALF, "x * (1/x) differs from 1")
     return a, one_over_a
+
 
 # ~~~~~~~ 280-compute_C_and_inverse
 def compute_C_and_inverse():
@@ -426,7 +450,7 @@ def compute_C_and_inverse():
     Basic 4370-4400
     """
     # ~~~~~~~ 282-compute_C_and_inverse2
-    d = ULP_OF_ONE_MINUS   # default value for integer precision
+    d = ULP_OF_ONE_MINUS  # default value for integer precision
     if PRECISION != floor(PRECISION):
         # Compute 1 / B**ceiling(PRECISION)
         d = ONE_OVER_B
@@ -457,6 +481,7 @@ def compute_C_and_inverse():
         if y <= z or z + z <= z: break
     return c, ONE / c
 
+
 # ~~~~~~~ 285-compute_safe_ulps_of_one
 def compute_safe_ulps_of_one():
     """Return a value useful in underflow and square root testing.
@@ -473,7 +498,7 @@ def compute_safe_ulps_of_one():
     Basic: 4450-4460
     """
     # ~~~~~~~ 287-compute_safe_ulps_of_one2
-    x= ULP_OF_ONE_PLUS
+    x = ULP_OF_ONE_PLUS
     s = ONE + x
     d = C * s
     if d <= C:
@@ -481,6 +506,7 @@ def compute_safe_ulps_of_one():
         # whether multiplication is just too awful.
         x = B * ULP_OF_ONE_PLUS
     return x
+
 
 # ~~~~~~~ 290-compute_H_and_inverse
 def compute_H_and_inverse():
@@ -490,6 +516,7 @@ def compute_H_and_inverse():
     else:
         h_inv = B
     return ONE / h_inv, h_inv
+
 
 # ~~~~~~~ 295-standardize_fractional_precision
 def standardize_fractional_precision(ulp, b):
@@ -522,10 +549,11 @@ def standardize_fractional_precision(ulp, b):
         p = y
     return p
 
+
 # ~~~~~~~ 300-test_for_extra_precise_subepressions
-#=============================================
+# =============================================
 # Test for extra precison.
-#=============================================
+# =============================================
 def test_for_extra_precise_subepressions():
     """Print messages if wider intermediate values detected.
 
@@ -540,7 +568,7 @@ def test_for_extra_precise_subepressions():
     while doit:
         z2 = x
         x = (ONE + (ONE_HALF * z2 + THIRTY_TWO * z2 * z2)) - ONE
-        doit =  (z2 > x) and (x > ZERO)
+        doit = (z2 > x) and (x > ZERO)
     # ~~~~~~~ 304-test_for_extra_precise_subepressions4
     # Now look at ulps of 1- by starting with rounding noise in 3/4.
     # x, y, and z are used in the three following loops.
@@ -561,13 +589,13 @@ def test_for_extra_precise_subepressions():
         y = (ONE_HALF - ((ONE_HALF - (ONE_HALF * y1 + THIRTY_TWO * y1 * y1))
                          + ONE_HALF)) + ONE_HALF
         print("1730: y1 = {:.17e} y = {:.17e}".format(y1, y))
-        if  y1 <= y or y <= ZERO: break
+        if y1 <= y or y <= ZERO: break
     while True:
         x1 = x
         x = ((ONE_HALF * x1 + THIRTY_TWO * x1 * x1)
-             - ONE_MINUS_ULP)+ ONE_MINUS_ULP
+             - ONE_MINUS_ULP) + ONE_MINUS_ULP
         print("1740: x1 = {:.17e} x = {:.17e}".format(x1, x))
-        if  x1 <= x or x <= ZERO: break
+        if x1 <= x or x <= ZERO: break
     # ~~~~~~~ 308-test_for_extra_precise_subepressions8
     if x1 != y1 or x1 != z1:
         bad_cond(err_serious, "Disagreements among the values x1, y1, z1,")
@@ -583,8 +611,10 @@ def test_for_extra_precise_subepressions():
         if z1 >= ULP_OF_ONE_MINUS or z2 >= ULP_OF_ONE_PLUS:
             bad_cond(err_failure, "")
             notify("PRECISION")
-            print("\tULP_OF_ONE_MINUS = {:0.7e}, z1 - ULP_OF_ONE_MINUS = {:0.7e}".format(ULP_OF_ONE_MINUS,z1-ULP_OF_ONE_MINUS))
-            print("\tULP_OF_ONE_PLUS = {:0.7e}, z2 - ULP_OF_ONE_PLUS = {:0.7e}".format(ULP_OF_ONE_PLUS,z2-ULP_OF_ONE_PLUS))
+            print("\tULP_OF_ONE_MINUS = {:0.7e}, z1 - ULP_OF_ONE_MINUS = {:0.7e}".format(ULP_OF_ONE_MINUS,
+                                                                                         z1 - ULP_OF_ONE_MINUS))
+            print("\tULP_OF_ONE_PLUS = {:0.7e}, z2 - ULP_OF_ONE_PLUS = {:0.7e}".format(ULP_OF_ONE_PLUS,
+                                                                                       z2 - ULP_OF_ONE_PLUS))
         # ~~~~~~~ 312-test_for_extra_precise_subepressions12
         else:
             if (z1 <= ZERO or z2 <= ZERO):
@@ -601,15 +631,16 @@ def test_for_extra_precise_subepressions():
                 q = - log(x)
                 print("Some subexpressions appear to be calculated extra")
                 print("precisely with about {:.g} extra B-digits, i.e.",
-                    (q / log(B)))
+                      (q / log(B)))
                 print("roughly {:.g} extra significant decimals."
-                    .format(q / log(10.)))
+                      .format(q / log(10.)))
             print("That feature is not tested further by this program.")
 
+
 # ~~~~~~~ 320-test_normalized_subtraction
-#=============================================
+# =============================================
 # Tests for normalization, guard digit, rounding, use of a sticky bit.
-#=============================================
+# =============================================
 def test_normalized_subtraction():
     """Test for renormalization on magnitude subtraction.
 
@@ -628,8 +659,9 @@ def test_normalized_subtraction():
             print("Subtraction appears to be normalized, as it should be.")
         else:
             test_cond(err_failure, False,
-                    "Subtraction is not normalized x=y,x+z != y+z!")
+                      "Subtraction is not normalized x=y,x+z != y+z!")
         return
+
 
 # ~~~~~~~ 325-does_mult_have_guard_digit
 def does_mult_have_guard_digit():
@@ -662,6 +694,7 @@ def does_mult_have_guard_digit():
     test_cond(err_serious, gmult, "* lacks a Guard Digit, so 1*x != x")
     return gmult
 
+
 # ~~~~~~~ 330-test_mult_low_digits
 def test_mult_low_digits():
     """Try two tests of the form (1 + tiny)**2."""
@@ -672,7 +705,8 @@ def test_mult_low_digits():
     x = ONE - ULP_OF_ONE_PLUS
     z = fabs((x - ULP_OF_ONE_PLUS) - x * x) - ULP_OF_ONE_MINUS
     test_cond(err_failure, y <= ZERO and z <= ZERO,
-            "* gets too many final digits wrong.\n")
+              "* gets too many final digits wrong.\n")
+
 
 # ~~~~~~~ 335-does_div_have_guard_digit
 def does_div_have_guard_digit():
@@ -694,8 +728,8 @@ def does_div_have_guard_digit():
     z = z - t
     gdiv = (x == ZERO) and (y == ZERO) and (z == ZERO)
     test_cond(err_defect, gdiv,
-            "Division lacks a Guard Digit, so error can exceed 1 ulp\n"
-            + "or  1/3  and  3/9  and  9/27 may disagree")
+              "Division lacks a Guard Digit, so error can exceed 1 ulp\n"
+              + "or  1/3  and  3/9  and  9/27 may disagree")
     # ~~~~~~~ 341-does_div_have_guard_digit6
     y = ONE_MINUS_ULP / ONE
     x = ONE_MINUS_ULP - ONE_HALF
@@ -708,6 +742,7 @@ def does_div_have_guard_digit():
     gdiv &= (x == ZERO) and (y == ZERO)
     test_cond(err_serious, gdiv, "Division lacks a Guard Digit, so x/1 != x")
     return gdiv
+
 
 # ~~~~~~~ 345-does_add_sub_have_guard_digit
 def does_add_sub_have_guard_digit():
@@ -729,7 +764,7 @@ def does_add_sub_have_guard_digit():
     x = r - x
     y = s - y
     test_cond(err_failure, x == ZERO and y == ZERO,
-            "* and/or / gets too many last digits wrong")
+              "* and/or / gets too many last digits wrong")
     # ~~~~~~~ 349-does_add_sub_have_guard_digit3
     y = ONE - ULP_OF_ONE_MINUS
     x = ONE - ONE_MINUS_ULP
@@ -740,8 +775,9 @@ def does_add_sub_have_guard_digit():
     gaddsub = ((x == ULP_OF_ONE_MINUS) and (y == ULP_OF_ONE_MINUS)
                and (z == ULP_OF_ONE_PLUS) and (t == ULP_OF_ONE_PLUS))
     test_cond(err_serious, gaddsub,
-            "- lacks Guard Digit, so cancellation is obscured")
+              "- lacks Guard Digit, so cancellation is obscured")
     return gaddsub
+
 
 # ~~~~~~~ 350-how_does_mult_round
 def how_does_mult_round():
@@ -785,15 +821,15 @@ def how_does_mult_round():
         y1 = y1 - ONE_HALF
         # ~~~~~~~ 362-how_does_mult_round12
         if ((x == ZERO) and (y == ZERO) and (z == ZERO) and (t == ZERO)
-            and ( s1 == ZERO) and (y1 == ONE_HALF)):
+                and (s1 == ZERO) and (y1 == ONE_HALF)):
             rmult = "rounded"
             print("Multiplication appears to round correctly. ")
         # ~~~~~~~ 364-how_does_mult_round14
         elif ((x + ULP_OF_ONE_PLUS == ZERO) and (y < ZERO) and (z + ULP_OF_ONE_PLUS == ZERO)
-                and (t < ZERO) and (s1 + ULP_OF_ONE_PLUS == ZERO)
-                and (y1 < ONE_HALF)):
-                rmult = "chopped"
-                print("Multiplication appears to chop. ")
+              and (t < ZERO) and (s1 + ULP_OF_ONE_PLUS == ZERO)
+              and (y1 < ONE_HALF)):
+            rmult = "chopped"
+            print("Multiplication appears to chop. ")
         # ~~~~~~~ 366-how_does_mult_round16
         else:
             print("* is neither chopped nor correctly rounded. ")
@@ -804,6 +840,7 @@ def how_does_mult_round():
     else:
         print("* is neither chopped nor correctly rounded. ")
     return rmult
+
 
 # ~~~~~~~ 370-how_does_div_round
 def how_does_div_round():
@@ -861,6 +898,7 @@ def how_does_div_round():
         print("/ is neither chopped nor correctly rounded. ")
     return rdiv
 
+
 # ~~~~~~~ 385-how_does_add_sub_round
 def how_does_add_sub_round():
     """Check rounding on add/subtract.
@@ -880,7 +918,7 @@ def how_does_add_sub_round():
         round_add_sub = "chopped"
         print("Add/Subtract appears to be chopped. ")
     # ~~~~~~~ 391-how_does_add_sub_round6
-    while flags["add_sub_guard_digit"]:    # JTC TODO jibe with Basic
+    while flags["add_sub_guard_digit"]:  # JTC TODO jibe with Basic
         x = (ONE_HALF + ULP_OF_ONE_PLUS) * ULP_OF_ONE_PLUS
         y = (ONE_HALF - ULP_OF_ONE_PLUS) * ULP_OF_ONE_PLUS
         x = ONE + x
@@ -908,11 +946,12 @@ def how_does_add_sub_round():
         if not flags["add_sub_guard_digit"]:
             # ***JTC: BUG, annot happen, guard digit is checked above.
             notify("Add/Subtract")
-        break   # Execute this block just once, with early exit possible.
+        break  # Execute this block just once, with early exit possible.
     # ~~~~~~~ 399-how_does_add_sub_round14
     if round_add_sub == "other":  # pick up all the odd cases
         print("Addition/Subtraction neither rounds nor chops.")
     return round_add_sub
+
 
 # ~~~~~~~ 400-rounding_symmetry_test
 def rounding_symmetry_test():
@@ -932,6 +971,7 @@ def rounding_symmetry_test():
         verdict = False
         bad_cond(err_flaw, "(x - y) + (y - x) is non zero!\n")
     return verdict
+
 
 # ~~~~~~~ 405-has_sticky_bit
 def has_sticky_bit():
@@ -981,6 +1021,7 @@ def has_sticky_bit():
     # ~~~~~~~ 419-has_sticky_bit14
     return verdict
 
+
 # ~~~~~~~ 425-test_mult_commutivity
 def test_mult_commutivity(count):
     """Run some random tests to check that x*y = y*x. """
@@ -1015,20 +1056,19 @@ def test_mult_commutivity(count):
     # xyyx is the final arbiter of success.
     if xyyx != ZERO:
         print("x * y == y * x fails for x = {:0.17e}  y = {:0.17e}"
-              .format(x ,y))
+              .format(x, y))
         print("    x * y = {:0.17e}  y * x = {:0.17e}".format(xy, yx))
         print("    and x * y - y * x = {:0.17e}".format(xyyx))
         bad_cond(err_defect, "x * y == y * x trial fails.")
     else:
-        print("     No failures found in {:d} integer pairs.".format(count+1))
+        print("     No failures found in {:d} integer pairs.".format(count + 1))
 
 
 # ~~~~~~~ 430-sqrt_single_bound_test
-#=============================================
+# =============================================
 # Tests of square root accuracy and monotonicity.
-#=============================================
+# =============================================
 def sqrt_single_bound_test(tlist):
-
     """Test x = sqrt(x*x), raise error if not, and track max and min
     signed error in units of ulp.
 
@@ -1065,19 +1105,20 @@ def sqrt_single_bound_test(tlist):
             print("\tinstead of correct value 0 .")
     return success
 
+
 # ~~~~~~~ 433-test_sqrt_int
 def test_sqrt_int():
     """Test sqrt(x**2) for consecutive integer  in a B-ade."""
-    x = TWO   # Default start point for log arithmetic
+    x = TWO  # Default start point for log arithmetic
     y = B
-    if B != ONE:    # ***TODO: log arithmetic issue
+    if B != ONE:  # ***TODO: log arithmetic issue
         while True:
             x = y
             y = B * y
             if y - x >= NUM_TRIALS: break
-    ulp = x * ULP_OF_ONE_PLUS    # ***TODO -- why was Py _MINUS, with others _PLUS?
+    ulp = x * ULP_OF_ONE_PLUS  # ***TODO -- why was Py _MINUS, with others _PLUS?
     for _ in range(NUM_TRIALS):
-        x = x + ONE    # when NUM_TRIALS is size of a binade, x hits higher B**k
+        x = x + ONE  # when NUM_TRIALS is size of a binade, x hits higher B**k
         if not sqrt_single_bound_test([(x, ulp, err_defect)]): break
     return
 
@@ -1088,7 +1129,7 @@ def test_sqrt_monotonicity():
     i = - 1
     x = B_MINUS_ULP
     y = B
-    z = B + B * ULP_OF_ONE_PLUS   # B plus 1 ulp
+    z = B + B * ULP_OF_ONE_PLUS  # B plus 1 ulp
     not_monot = False
     monot = False
     # ~~~~~~~ 435a-test_sqrt_monotonicity2
@@ -1105,7 +1146,7 @@ def test_sqrt_monotonicity():
             q = floor(q + ONE_HALF)
             # B = q*q only if radix B is 16 or 4
             if (i <= 0) and (B != q * q):
-                monot = True   # exit early unless B is 16 or 4
+                monot = True  # exit early unless B is 16 or 4
             # ~~~~~~~ 435c-test_sqrt_monotonicity6
             elif i <= 0:
                 # CASE: y = sqrt(B), if B = 4, 16 or other square
@@ -1128,6 +1169,7 @@ def test_sqrt_monotonicity():
         bad_cond(err_defect, "")
         print("sqrt(x) is non-monotonic for x near {:0.7e} .".format(y))
 
+
 # ~~~~~~~ 440-update_sqrt_errors
 def update_sqrt_errors(down, up):
     """Update the sqrt global min and max errors."""
@@ -1137,6 +1179,7 @@ def update_sqrt_errors(down, up):
     if down < min_sqrt_error:
         min_sqrt_error = down
     return
+
 
 # ~~~~~~~ 446-num_theory_sqrt_test
 def num_theory_sqrt_test(x, D, y, z2):
@@ -1168,6 +1211,7 @@ def num_theory_sqrt_test(x, D, y, z2):
         print("\thasty exit from num_theory_sqrt_test()")
     return test
 
+
 # ~~~~~~~ 448-num_theory_sqrt_value
 def num_theory_sqrt_value(x, D, Q, z, z1):
     """Test utility."""
@@ -1189,9 +1233,9 @@ def num_theory_sqrt_value(x, D, Q, z, z1):
 
 
 # ~~~~~~~ 450-test_power_result
-#=============================================
+# =============================================
 # Tests of X**K for integer X and K.
-#=============================================
+# =============================================
 def test_power_result(x, z, q):
     """Check that x equals z**q, usually for exact integer cases."""
     global pow_err_cnt
@@ -1210,8 +1254,9 @@ def test_power_result(x, z, q):
             print("\twhich compared unequal to correct {:0.17e} ;"
                   .format(x))
             print("\t\tthey differ by {:0.17e} .".format(y - x))
-        pow_err_cnt += 1   # ... count discrepancies.
+        pow_err_cnt += 1  # ... count discrepancies.
     return
+
 
 # ~~~~~~~ 455-test_integer_powers
 def test_integer_powers(x, z, i, max_i):
@@ -1229,10 +1274,11 @@ def test_integer_powers(x, z, i, max_i):
         if x >= BIG_B_NTH or i > max_i: break
     return
 
+
 # ~~~~~~~ 520-tiny_powers_of_B
-#=============================================
+# =============================================
 # Tests for underflow behavior.
-#=============================================
+# =============================================
 def tiny_powers_of_B(c):
     """Return tiny values, stepping toward zero by factors of radix or 2.
 
@@ -1300,7 +1346,7 @@ def tiny_values_and_difference(one_plus):
     if d <= C:
         # But if not, we punt with default values.
         bad_cond(err_failure,
-                "multiplication gets too many last digits wrong.")
+                 "multiplication gets too many last digits wrong.")
         pause()
         return 0, tiny_B, too_tiny_B, tiny_B, 0, 0, 0
     # ~~~~~~~ 525-tiny_values_and_difference4
@@ -1322,7 +1368,7 @@ def tiny_values_and_difference(one_plus):
                     print("\tUnderflow loop: within if, tinier = {:.7e}"
                           .format(tinier))
                 save_tiny2 = tinier * ONE_OVER_H
-                tiny_delta = fabs(tiny - save_tiny2)   # may underflow to 0
+                tiny_delta = fabs(tiny - save_tiny2)  # may underflow to 0
                 save_tiny1 = tiny
                 if (u_threshold == ZERO) and (tiny != save_tiny2):
                     # Test for 0 captures first time through, in case
@@ -1360,7 +1406,7 @@ def does_tiny_value_misbehave(z):
     """
     # ~~~~~~~ 527-does_tiny_value_misbehave2
     reply = False
-    if z == ZERO:   # nothing complex to test in the easy case
+    if z == ZERO:  # nothing complex to test in the easy case
         return reply
     print("Since comparison denies z = 0, evaluating ", end="")
     print("(z + z) / z should be safe.")
@@ -1468,7 +1514,7 @@ def test_tiny_differences():
         r = sqrt(base_tiny / underflow_threshold)
     except ZeroDivisionError:
         print("base_tiny / underflow_threshold failed!")
-        r = H + H   # fall through to else case below
+        r = H + H  # fall through to else case below
     if r <= H:
         z = r * underflow_threshold
         x = z * (ONE + r * H * (ONE + H))
@@ -1583,7 +1629,7 @@ def test_for_pseudo_zero(pseudo):
     # These are the loop termination tests in tiny_values_and_difference().
     if (pseudo <= ZERO):
         bad_cond(err_failure, "Positive expressions can underflow to an " +
-                "allegedly negative value\n")
+                 "allegedly negative value\n")
         print("pseudo that prints out as: {:g} .".format(pseudo))
         x = -pseudo
         if x <= ZERO:
@@ -1599,6 +1645,7 @@ def test_for_pseudo_zero(pseudo):
     # The test is made just for the side-effects, not the reulst value.
     discard = does_tiny_value_misbehave(pseudo)
     return
+
 
 # ~~~~~~~ 548-e_squared
 def e_squared():
@@ -1656,14 +1703,14 @@ def test_x_to_xp1_over_xm1(e2):
     """
     print("Testing x^((x + 1) / (x - 1)) vs. " +
           "exp(2) = {:0.12f} as x -> 1.".format(exp2))
-          # BUG: x runs away from 1, perhaps "x near 1"?
+    # BUG: x runs away from 1, perhaps "x near 1"?
     # Run tests below 1, then above 1, with a start value
     # and a next value one ulp away.
     if verbose:
         print("Looping on values just below and just above 1.")
     for x, next_x in [(ONE_MINUS_ULP, ONE_MINUS_ULP - ULP_OF_ONE_MINUS),
-                 (ONE + ULP_OF_ONE_PLUS,
-                  ONE + ULP_OF_ONE_PLUS + ULP_OF_ONE_PLUS)]:
+                      (ONE + ULP_OF_ONE_PLUS,
+                       ONE + ULP_OF_ONE_PLUS + ULP_OF_ONE_PLUS)]:
         # ~~~~~~~ 554a-test_x_to_xp1_over_xm12
         test_cnt = 1
         while True:
@@ -1677,7 +1724,7 @@ def test_x_to_xp1_over_xm1(e2):
             if (fabs(dev) > TWOFORTY * ULP_OF_ONE_PLUS):
                 delta_x = (x - ONE_OVER_B) - (ONE - ONE_OVER_B)
                 bad_cond(err_defect, "Calculated")
-                print(" {:0.17e} for".format(pow(x,z)))
+                print(" {:0.17e} for".format(pow(x, z)))
                 print("\t(1 + ({:0.17e}) ^ ({:0.17e});".format(delta_x, z))
                 print("\tdiffers from correct value by {:0.17e} ."
                       .format(dev))
@@ -1694,12 +1741,13 @@ def test_x_to_xp1_over_xm1(e2):
                 # *** BUG: P has (z > ONE), which means test done once only.
                 # Keep testing until too close to 1 or count too big.
                 if (z <= ONE) and (test_cnt < NUM_TRIALS):
-                        test_cnt += 1
+                    test_cnt += 1
                 else:
                     break
     # BUG: removed unneeded error flag if N == 0:
     print("Accuracy seems adequate.")
     return
+
 
 # ~~~~~~~ 556-extreme_z_to_q
 def extreme_z_to_q():
@@ -1711,11 +1759,11 @@ def extreme_z_to_q():
     Basic 5460-5490
     """
 
-    global pow_err_cnt   # var used by power tests
+    global pow_err_cnt  # var used by power tests
     print("Testing powers z^q at four nearly extreme values.")
-    pow_err_cnt = 0   # this test resets the global value to 0 without restore.
+    pow_err_cnt = 0  # this test resets the global value to 0 without restore.
     # ~~~~~~~ 556a-test_x_to_xp1_over_xm14
-    q = floor(ONE_HALF - log(C) / log(A))   # C is a power of B and thus A
+    q = floor(ONE_HALF - log(C) / log(A))  # C is a power of B and thus A
     for z in [A, ONE_OVER_A]:
         x = ONE_OVER_C
         test_power_result(x, z, q)
@@ -1726,6 +1774,7 @@ def extreme_z_to_q():
     if pow_err_cnt == 0:
         print(" ... no discrepancies found.")
     return
+
 
 # ~~~~~~~ 560-big_powers_of_B
 def big_powers_of_B():
@@ -1758,13 +1807,14 @@ def big_powers_of_B():
             if verbose:
                 print("\tbigger = {:.12e} big = {:.12e}"
                       .format(bigger, big))
-            if bigger >= big: break   # remember, these values < 0
-    except OverflowError:   # Python does not catch floating point overflow
+            if bigger >= big: break  # remember, these values < 0
+    except OverflowError:  # Python does not catch floating point overflow
         no_except = False
         bigger = big
         if verbose:
             print("\tEncountered overflow exception.")
     return bigger, big, less_big, no_except
+
 
 # ~~~~~~~ 564-no_trap_overflow_threshold
 def no_trap_overflow_threshold(big, less_big):
@@ -1785,7 +1835,7 @@ def no_trap_overflow_threshold(big, less_big):
     """
 
     # ~~~~~~~ 564a-no_trap_overflow_threshold2
-    oflo = -less_big   # default start
+    oflo = -less_big  # default start
     pos_big = -big
     y = less_big * (ONE_OVER_H * ULP_OF_ONE_PLUS - ONE_OVER_H)
     z = y + ((ONE - ONE_OVER_H) * ULP_OF_ONE_PLUS) * less_big
@@ -1802,6 +1852,7 @@ def no_trap_overflow_threshold(big, less_big):
         if verbose:
             print("Finite saturating power of B overflow threshold.")
     return oflo
+
 
 # ~~~~~~~ 568-trap_overflow_threshold
 def trap_overflow_threshold(big):
@@ -1822,6 +1873,7 @@ def trap_overflow_threshold(big):
     oflo = oflo + ((ONE - ONE_OVER_H) * ULP_OF_ONE_PLUS) * big
     return oflo
 
+
 # ~~~~~~~ 572-test_sqrt_tiny
 def test_sqrt_tiny(tlist):
     """Check sqrt(x)**2 for values near the underflow threshold."""
@@ -1840,6 +1892,7 @@ def test_sqrt_tiny(tlist):
                 print(" is too far from sqrt(z) ^ 2 = {:0.17e} .".format(y))
     return
 
+
 # ~~~~~~~ 576-test_sqrt_big
 def test_sqrt_big(tlist):
     """Check sqrt(x)**2 for values near the overflow threshold."""
@@ -1854,6 +1907,7 @@ def test_sqrt_big(tlist):
                 bad_cond(err_defect, "")
             print("Comparison alleges that z = {:0.17e}".format(z))
             print(" is too far from sqrt(z) ^ 2 ({:0.17e}) .".format(y))
+
 
 # ~~~~~~~ 580-check_range_balance
 def check_range_balance():
@@ -1894,6 +1948,7 @@ def test_unit_ratios(tlist):
             print("  instead, x / x - 1/2 - 1/2 = {:0.17e} .", diff)
     return
 
+
 # ~~~~~~~ 588-test_div_by_zero
 def test_div_by_zero():
     """Try 1/0 and 0/0."""
@@ -1926,7 +1981,7 @@ def test_div_by_zero():
 
 # ~~~~~~~ 700-start_execution
 # PARANOIA EXECUTION BEGINS
-verbose |= ultra_verbose   # if it's ultra, it's verbose, too
+verbose |= ultra_verbose  # if it's ultra, it's verbose, too
 # Small floating point constants built from coerced integers.
 ZERO = float(0)
 ONE = float(1)
@@ -1943,7 +1998,7 @@ MINUS_ONE = -ONE
 ONE_HALF = ONE / TWO
 ONE_AND_HALF = ONE + ONE_HALF
 # ~~~~~~~ 710-start_messages
-milestone = 0   #==============================
+milestone = 0  # ==============================
 instructions()
 pause()
 heading()
@@ -1953,14 +2008,14 @@ pause()
 history()
 pause()
 # ~~~~~~~ 715-zero_one
-milestone = 7   #==============================
+milestone = 7  # ==============================
 # Basic 880-950
 print("Program is now RUNNING tests on small integers:")
 test_cond(err_failure, (ZERO + ZERO == ZERO)
-        and (ONE - ONE == ZERO)
-        and (ONE > ZERO)
-        and (ONE + ONE == TWO),
-        "0+0 != 0, 1-1 != 0, 1 <= 0, or 1+1 != 2")
+          and (ONE - ONE == ZERO)
+          and (ONE > ZERO)
+          and (ONE + ONE == TWO),
+          "0+0 != 0, 1-1 != 0, 1 <= 0, or 1+1 != 2")
 # ~~~~~~~ 717-zero_one2
 z = -ZERO
 if (z != 0.0):
@@ -1973,31 +2028,32 @@ if (z != 0.0):
     discard = does_tiny_value_misbehave(z)
 # ~~~~~~~ 720-small_ints
 test_cond(err_failure, (THREE == TWO + ONE)
-        and (FOUR == THREE + ONE)
-        and (FOUR + TWO * (-TWO) == ZERO)
-        and (FOUR - THREE - ONE == ZERO),
-        "3 != 2+1, 4 != 3+1, 4+2*(-2) != 0, or 4-3-1 != 0")
+          and (FOUR == THREE + ONE)
+          and (FOUR + TWO * (-TWO) == ZERO)
+          and (FOUR - THREE - ONE == ZERO),
+          "3 != 2+1, 4 != 3+1, 4+2*(-2) != 0, or 4-3-1 != 0")
 test_cond(err_failure, (MINUS_ONE == (0 - ONE))
-        and (MINUS_ONE + ONE == ZERO)
-        and (ONE + MINUS_ONE == ZERO)
-        and (MINUS_ONE + fabs(ONE) == ZERO)
-        and (MINUS_ONE + MINUS_ONE * MINUS_ONE == ZERO),
-        "-1+1 != 0, (-1)+abs(1) != 0, or -1+(-1)*(-1) != 0")
+          and (MINUS_ONE + ONE == ZERO)
+          and (ONE + MINUS_ONE == ZERO)
+          and (MINUS_ONE + fabs(MINUS_ONE) == ZERO)
+          and (MINUS_ONE + MINUS_ONE * MINUS_ONE == ZERO),
+          "-1 != 0-1, -1+1 != 0, 1+(-1) != 0, "
+          + "(-1)+abs(-1) != 0, or -1+(-1)*(-1) != 0")
 test_cond(err_failure, ONE_HALF + MINUS_ONE + ONE_HALF == ZERO,
-        "1/2 + (-1) + 1/2 != 0")
+          "1/2 + (-1) + 1/2 != 0")
 # ~~~~~~~ 725-med_ints
-milestone = 10   #==============================
+milestone = 10  # ==============================
 test_cond(err_failure, (NINE == THREE * THREE)
-         and (TWENTY_SEVEN == NINE * THREE) and (EIGHT == FOUR + FOUR)
-         and (THIRTY_TWO == EIGHT * FOUR)
-         and (THIRTY_TWO - TWENTY_SEVEN - FOUR - ONE == ZERO),
-         "9 != 3*3, 27 != 9*3, 32 != 8*4, or 32-27-4-1 != 0")
+          and (TWENTY_SEVEN == NINE * THREE) and (EIGHT == FOUR + FOUR)
+          and (THIRTY_TWO == EIGHT * FOUR)
+          and (THIRTY_TWO - TWENTY_SEVEN - FOUR - ONE == ZERO),
+          "9 != 3*3, 27 != 9*3, 32 != 8*4, or 32-27-4-1 != 0")
 test_cond(err_failure, (FIVE == FOUR + ONE)
-         and (TWOFORTY == FOUR * FIVE * THREE * FOUR)
-         and (TWOFORTY / THREE - FOUR * FOUR * FIVE == ZERO)
-         and ( TWOFORTY / FOUR - FIVE * THREE * FOUR == ZERO)
-         and ( TWOFORTY / FIVE - FOUR * THREE * FOUR == ZERO),
-         "5 != 4+1, 240/3 != 80, 240/4 != 60, or 240/5 != 48")
+          and (TWOFORTY == FOUR * FIVE * THREE * FOUR)
+          and (TWOFORTY / THREE - FOUR * FOUR * FIVE == ZERO)
+          and (TWOFORTY / FOUR - FIVE * THREE * FOUR == ZERO)
+          and (TWOFORTY / FIVE - FOUR * THREE * FOUR == ZERO),
+          "5 != 4+1, 240 != 4*5*3*4, 240/3 != 80, 240/4 != 60, or 240/5 != 48")
 if (error_count[err_failure] == 0):
     print("-1, 0, 1/2, 1, 2, 3, 4, 5, 9, 27, 32 & 240 are O.K.")
 # ~~~~~~~ 730-radix
@@ -2005,14 +2061,14 @@ if (error_count[err_failure] == 0):
 print("Searching for radix B and PRECISION.")
 big_2_to_nth = find_big_2_to_nth()
 B = find_radix_from_big_2_to_nth(big_2_to_nth)
-if B < TWO:   # TODO: log case
+if B < TWO:  # TODO: log case
     B = ONE
 print("B = {:0.4f} .\n".format(B))
 # ~~~~~~~ 735-precision
 # Compute PRECISION and BIG_B_NTH = B**PRECISION barely too big
 # to satisfy (BIG_B_NTH + 1) - BIG_B_NTH == 1 .
 # Basic 1240-1270
-if B == ONE:   # defer to the secondary calculation below
+if B == ONE:  # defer to the secondary calculation below
     PRECISION = ZERO
     BIG_B_NTH = big_2_nth
 else:
@@ -2043,32 +2099,32 @@ if (B == save_b):
 else:
     print("MYSTERY: recalculated B = {:0.7e} .".format(B))
 test_cond(err_defect, B <= EIGHT + EIGHT,
-       "B is too big: roundoff problems")
+          "B is too big: roundoff problems")
 test_cond(err_flaw, (B == TWO) or (B == 10)
-       or (B == ONE), "B is not as good as 2 or 10")
+          or (B == ONE), "B is not as good as 2 or 10")
 # ~~~~~~~ 745-cmp_ulps_of_one
-milestone = 20   #==============================
+milestone = 20  # ==============================
 test_cond(err_failure, ONE_MINUS_ULP - ONE_HALF < ONE_HALF,
-       "(1-ULP_OF_ONE_MINUS)-1/2 < 1/2 is FALSE, prog. fails?")
+          "(1-ULP_OF_ONE_MINUS)-1/2 < 1/2 is FALSE, prog. fails?")
 
 # BUG in C version. The point is to try two cases of x.
 for x in [ONE_MINUS_ULP, ONE + ULP_OF_ONE_PLUS]:
     y = x - ONE_HALF
     z = y - ONE_HALF
     test_cond(err_failure, (x != ONE)
-           or (z == ZERO), "Comparison is fuzzy,x=1 but x-1/2-1/2 != 0")
+              or (z == ZERO), "Comparison is fuzzy,x=1 but x-1/2-1/2 != 0")
 # ~~~~~~~ 750-the_constants
-milestone = 25   #==============================
+milestone = 25  # ==============================
 # ... B_MINUS_ULP = nextafter(B, 0)
 B_MINUS_ULP = B - ONE
 B_MINUS_ULP = (B_MINUS_ULP - ULP_OF_ONE_PLUS) + ONE
 # A = 2 if B = 2**k or arithmetic is logarithmic; it's 10 if B=10
-# C = 1/B**K not too close to underflow, useful for over/underflow analysis.
+# C = 1/B**k not too close to underflow, useful for over/underflow analysis.
 # H = min(1/B, 1/2).
 A, ONE_OVER_A = compute_A_and_inverse(B)
 C, ONE_OVER_C = compute_C_and_inverse()
 H, ONE_OVER_H = compute_H_and_inverse()
-SAFE_ULPS_OF_ONE = compute_safe_ulps_of_one()   # 1 or B ulps of one
+SAFE_ULPS_OF_ONE = compute_safe_ulps_of_one()  # 1 or B ulps of one
 # ~~~~~~~ 755-frac_prec
 # Purify Integers was the original comment. The following test assumes
 # B=1 for log arithmetic, before any fractional part of the precision
@@ -2082,18 +2138,18 @@ if (PRECISION != floor(PRECISION)) or (B == ONE):
 
 if B == ONE:
     print("logarithmic encoding has precision characterized solely "
-          +"by ULP_OF_ONE_MINUS.")
+          + "by ULP_OF_ONE_MINUS.")
 else:
     print("The number of significant digits of the B is {:0.4f} ."
           .format(PRECISION))
 # ~~~~~~~ 760-check_prec
 test_cond(err_serious, ULP_OF_ONE_PLUS * NINE * NINE * TWOFORTY < ONE,
-       "PRECISION worse than 5 decimal figures  ")
+          "PRECISION worse than 5 decimal figures  ")
 # ~~~~~~~ 765-first_prec_tests
-milestone = 30   #==============================
+milestone = 30  # ==============================
 test_for_extra_precise_subepressions()
 pause()
-milestone = 35   #==============================
+milestone = 35  # ==============================
 test_normalized_subtraction()
 # ~~~~~~~ 770-guard_digit
 flags["mult_guard_digit"] = does_mult_have_guard_digit()
@@ -2113,21 +2169,21 @@ if flags["div_guard_digit"]:
     print("    / appears to have a guard digit, as it should.")
 if flags["add_sub_guard_digit"]:
     print("    - appears to have a guard digit, as it should.")
-milestone = 40   #==============================
+milestone = 40  # ==============================
 pause()
 # ~~~~~~~ 775-rounding
 print("Checking rounding on multiply, divide and add/subtract. ")
 flags["mult_rounding"] = how_does_mult_round()
-milestone = 45   #==============================
+milestone = 45  # ==============================
 flags["div_rounding"] = how_does_div_round()
 # ~~~~~~~ 777-rounding2
 test_cond(err_failure, ONE_OVER_B * B - ONE_HALF == ONE_HALF,
-       "B * ( 1 / B ) differs from 1")
+          "B * ( 1 / B ) differs from 1")
 # ~~~~~~~ 779-rounding3
-milestone = 50   #==============================
+milestone = 50  # ==============================
 test_cond(err_failure, (ONE_MINUS_ULP + ULP_OF_ONE_MINUS) - ONE_HALF == ONE_HALF
-       and (B_MINUS_ULP + ULP_OF_ONE_PLUS ) - ONE == B - ONE,
-       "Incomplete carry-propagation in Addition")
+          and (B_MINUS_ULP + ULP_OF_ONE_PLUS) - ONE == B - ONE,
+          "Incomplete carry-propagation in Addition")
 # ~~~~~~~ 782-rounding4
 flags["add_sub_rounding"] = how_does_add_sub_round()
 # ~~~~~~~ 785-sticky
@@ -2150,31 +2206,31 @@ if flags["uses_sticky_bit"]:
 else:
     print("Sticky bit used incorrectly or not at all.")
 test_cond(err_flaw, (flags["mult_guard_digit"]
-               and flags["div_guard_digit"]
-               and flags["add_sub_guard_digit"]
-               and flags["mult_rounding"] != "other"
-               and flags["div_rounding"] != "other"
-               and flags["add_sub_rounding"] != "other"),
-        "lack(s) of guard digits or failure(s) to correctly round or chop\n"
-        + "(noted above) count as one flaw in the final tally below")
+                     and flags["div_guard_digit"]
+                     and flags["add_sub_guard_digit"]
+                     and flags["mult_rounding"] != "other"
+                     and flags["div_rounding"] != "other"
+                     and flags["add_sub_rounding"] != "other"),
+          "lack(s) of guard digits or failure(s) to correctly round or chop\n"
+          + "(noted above) count as one flaw in the final tally below")
 # ~~~~~~~ 800-mul_cmmute
-milestone = 60   #==============================
+milestone = 60  # ==============================
 print("")
 print("Does Multiplication commute?  ", end="")
 print("Testing on {:d} random pairs.".format(NUM_TRIALS))
 test_mult_commutivity(NUM_TRIALS)
 # ~~~~~~~ 805-sqrt
-milestone = 70   #==============================
+milestone = 70  # ==============================
 print("\nRunning test of square root(x).")
 test_cond(err_failure, (ZERO == sqrt(ZERO))
-       and (- ZERO == sqrt(- ZERO))
-       and (ONE == sqrt(ONE)), "Square root of 0.0, -0.0 or 1.0 wrong")
-min_sqrt_error = ZERO   # the global sqrt err bounds
+          and (- ZERO == sqrt(- ZERO))
+          and (ONE == sqrt(ONE)), "Square root of 0.0, -0.0 or 1.0 wrong")
+min_sqrt_error = ZERO  # the global sqrt err bounds
 max_sqrt_error = ZERO
 ok = sqrt_single_bound_test([
     (B, ULP_OF_ONE_PLUS, err_serious),
     (ONE_OVER_B, ONE_OVER_B * ULP_OF_ONE_MINUS, err_serious),
-    (BIG_B_NTH, ONE, err_serious),    # BUG: Missing from C
+    (BIG_B_NTH, ONE, err_serious),  # BUG: Missing from C
     (ULP_OF_ONE_MINUS, ULP_OF_ONE_MINUS * ULP_OF_ONE_MINUS, err_serious),
 ])
 if not ok:
@@ -2185,7 +2241,7 @@ print("Testing if sqrt(x * x) == x for {:d} Integers x.".format(NUM_TRIALS))
 test_sqrt_int()
 print("Test for sqrt monotonicity.")
 test_sqrt_monotonicity()
-milestone = 80   #==============================
+milestone = 80  # ==============================
 if verbose:
     print("\tAfter monotonicity test:")
     print("\t\tmin_sqrt_error = {:0.6e}".format(min_sqrt_error))
@@ -2238,7 +2294,7 @@ if verbose:
     print("\t\tmax_sqrt_error = {:0.17e}".format(max_sqrt_error))
 
 # ~~~~~~~ 815-sqrt_num_theory
-milestone = 85   #==============================
+milestone = 85  # ==============================
 sqrt_rnd_odd = False
 sqrt_anomalous_int = False
 tests = 0
@@ -2342,7 +2398,7 @@ while B != ONE:
     y = (ONE + z) * ONE_HALF
     x = Q
     tests += num_theory_sqrt_test(x, D, y, z2)
-    break   # exit ficttitious loop in one pass
+    break  # exit ficttitious loop in one pass
 
 # ~~~~~~~ 815u-sqrt_num_theory22
 if verbose:
@@ -2358,10 +2414,10 @@ else:
     if min_sqrt_error >= ZERO and max_sqrt_error <= ZERO:
         flags["sqrt_rounding"] = "rounded"
         print("Square root appears to be correctly rounded.")
-    else :
+    else:
         if (max_sqrt_error + ULP_OF_ONE_PLUS > ULP_OF_ONE_PLUS - ONE_HALF
-            or min_sqrt_error > ONE_HALF
-            or min_sqrt_error + B < ONE_HALF):
+                or min_sqrt_error > ONE_HALF
+                or min_sqrt_error + B < ONE_HALF):
             sqrt_rnd_odd = True
         else:
             flags["sqrt_rounding"] = "chopped"
@@ -2374,10 +2430,10 @@ if sqrt_rnd_odd:
           .format(min_sqrt_error - ONE_HALF), end="")
     print("to {:0.7e} ulps.".format(ONE_HALF + max_sqrt_error))
     test_cond(err_serious, max_sqrt_error - min_sqrt_error < B * B,
-        "sqrt gets too many last digits wrong")
+              "sqrt gets too many last digits wrong")
 
 # ~~~~~~~ 820-pow_small_int
-milestone = 90   #==============================
+milestone = 90  # ==============================
 pause()
 print("Testing powers z^i for small Integers z and i.")
 pow_err_cnt = 0
@@ -2393,11 +2449,11 @@ print_if_err_cnt_positive()
 save_pow_err_cnt = pow_err_cnt
 pow_err_cnt = 0
 m = int(floor(TWO * log(BIG_B_NTH) / log(A)))
-for z in [A, ONE_OVER_A]:   # Executes 2x if A = 1/A = 1
+for z in [A, ONE_OVER_A]:  # Executes 2x if A = 1/A = 1
     test_integer_powers(z, z, 1, m)
 
 # ~~~~~~~ 825-pow_primes
-milestone = 100   #==============================
+milestone = 100  # ==============================
 # Powers of B have been tested, sonext try a few primes.
 # The simpler loop skips the trick of stepping by 2 through the odd
 # numbers from 3, filtering the further multiples of 3.
@@ -2417,7 +2473,7 @@ if pow_err_cnt > 0:
 else:
     print("")
 # ~~~~~~~ 900-uflow1
-milestone = 110   #==============================
+milestone = 110  # ==============================
 # UNDERFLOW AND THE BEHAVIOR OF TINY VALUES
 # Starts at Basic 4330
 print("Seeking three values related to Underflow:")
@@ -2461,7 +2517,7 @@ print("***underflow_threshold, add_sub_tiny, add_sub_hi = {:.7e} {:.7e} {:.7e}"
 #       add_sub_tiny <- |(x*H)/H - x| > 0 else add_sub_hi = less_tiny_x
 test_for_pseudo_zero(too_tiny_x)
 # ~~~~~~~ 903-uflow3
-milestone = 120   #==============================
+milestone = 120  # ==============================
 # less_tiny_B and less_tiny_x result from similar loops, one starting
 # with C, the other with (1 + SAFE_ULPS_OF_ONE) * C.
 # Check to see who is the tiniest of them all, but scale up
@@ -2485,7 +2541,7 @@ if (add_sub_tiny != ZERO) and (add_sub_tiny != min_positive):
     if (add_sub_tiny < min_positive):
         print("Products underflow at a higher", end="")
         print(" threshold than differences.")
-        if too_tiny_x == ZERO:   # Only if there are NO pseudo-zeros.
+        if too_tiny_x == ZERO:  # Only if there are NO pseudo-zeros.
             # Don't admit add_sub_tiny if it could be a pseudo-zero.
             min_positive = add_sub_tiny
     else:
@@ -2499,7 +2555,7 @@ print("Smallest strictly positive number found is min_positive = {:g} ."
 # This defines base_tiny, which may be needed as a final result in some
 # anomalous arithmetics.
 if does_tiny_value_misbehave(min_positive):
-    base_tiny = less_tiny_B   # Back up by a factor of 1/H, for CDC 7600
+    base_tiny = less_tiny_B  # Back up by a factor of 1/H, for CDC 7600
 else:
     base_tiny = min_positive
 # ~~~~~~~ 906-uflow6
@@ -2530,12 +2586,12 @@ if add_sub_tiny and underflow_threshold:
 # ~~~~~~~ 908-uflow8
 else:
     # BASIC cases 1-3. Case 3 falls through to a final test.
-    if underflow_threshold == ZERO:   # Cases 1-2
+    if underflow_threshold == ZERO:  # Cases 1-2
         if add_sub_tiny:
             # Case 2
-            underflow_threshold = add_sub_hi   # last good behavior
+            underflow_threshold = add_sub_hi  # last good behavior
             bad_cond(err_failure,
-                    "Underflow confuses Comparison, which alleges that")
+                     "Underflow confuses Comparison, which alleges that")
             print("add_sub_hi == add_sub_lo while denying that |add_sub_hi"
                   + " - add_sub_lo| == 0; these values")
             print("print out as add_sub_hi = {:0.17e}, "
@@ -2545,10 +2601,10 @@ else:
             # BUG: C lacks the following message.
             print("and add_sub_hi / add_sub_lo| = 1.0 + {:0.17e} ."
                   .format((add_sub_hi / add_sub_lo - ONE_HALF) - ONE_HALF))
-# ~~~~~~~ 909-uflow9
+        # ~~~~~~~ 909-uflow9
         else:
             # Case 1
-            underflow_threshold = base_tiny   # Safe value computed above
+            underflow_threshold = base_tiny  # Safe value computed above
             # A sanity check determines that the result from
             # tiny_x_and_difference() matches expectation, based on the
             # loop on powers of B. The factor one_plus_safe accounts for
@@ -2561,7 +2617,7 @@ else:
                     != ((ONE_OVER_C * less_tiny_B) * one_plus_safe * h_fact)):
                 underflow_threshold = less_tiny_B
                 bad_cond(err_failure,
-                        "Either accuracy deteriorates as numbers\n")
+                         "Either accuracy deteriorates as numbers\n")
                 print("approach a threshold = {:0.17e}"
                       .format(underflow_threshold))
                 print(" coming down from {:0.17e}".format(C))
@@ -2576,29 +2632,29 @@ print("The Underflow threshold is {:0.17e}, below which"
 print("calculation may suffer larger Relative error than ", end="")
 print("merely roundoff.")
 test_for_narrow_range()
-milestone = 130   #==============================
+milestone = 130  # ==============================
 test_extreme_underflow(underflow_threshold)
 # ~~~~~~~ 930-exp2
-milestone = 140   #==============================
+milestone = 140  # ==============================
 print("")
 # ...calculate exp2 == exp(2) == 7.389056099...
 exp2 = e_squared()
 test_x_to_xp1_over_xm1(exp2)
 
 # ~~~~~~~ 932-z_to_q
-milestone = 150   #==============================
+milestone = 150  # ==============================
 # Test z^q at 4 nearly extreme values.
 extreme_z_to_q()
 print("")
 
 # ~~~~~~~ 934-oflow1
-milestone = 160   #==============================
+milestone = 160  # ==============================
 pause()
 print("Searching for Overflow threshold:")
 print("This may generate an error.")
 bigger_B, big_B, less_big_B, no_oflow_except = big_powers_of_B()
 # In a system that saturates at INFINITY, only less_big_B will be finite.
-overflow_threshold = less_big_B   # first approxomation, to be refined
+overflow_threshold = less_big_B  # first approxomation, to be refined
 
 print("Can  z = -y  overflow?")
 print("Trying it on big_B = {:0.17e} .".format(big_B))
@@ -2638,7 +2694,7 @@ print("{:0.17e} .".format(v))
 print("Any overflow signal during this watch is a DEFECT.")
 print("----End of overflow watch.---")
 # ~~~~~~~ 938-oflow_comparisions
-milestone = 170   #==============================
+milestone = 170  # ==============================
 if not (-overflow_threshold < overflow_threshold and
         -pos_big_B < pos_big_B and
         -underflow_threshold < overflow_threshold and
@@ -2648,11 +2704,11 @@ if not (-overflow_threshold < overflow_threshold and
           .format(overflow_threshold, pos_big_B, underflow_threshold))
 
 # ~~~~~~~ 942-tiny_sqrt_tests
-milestone = 175   #==============================
+milestone = 175  # ==============================
 print("")
 test_sqrt_tiny([underflow_threshold, min_positive, too_tiny_x])
 
-milestone = 180   #==============================
+milestone = 180  # ==============================
 # Peel off historical case from the more typical else clause.
 if B == 2 and PRECISION == 56 and too_tiny_B != ZERO and -ZERO != ZERO:
     print("FAILURE: Attempts to evaluate  SQR(overflow_threshold)")
@@ -2662,32 +2718,32 @@ else:
     test_sqrt_big([overflow_threshold, pos_big_B])
 
 # ~~~~~~~ 950-range_unit_div_zero
-milestone = 190   #==============================
+milestone = 190  # ==============================
 pause()
 print("Checking balance of over/underflow thresholds.")
 check_range_balance()
 
-milestone = 200   #==============================
+milestone = 200  # ==============================
 print("Checking x/x for various x, some extreme.")
 test_unit_ratios([ONE_MINUS_ULP,
-                ONE + ULP_OF_ONE_PLUS,
-                overflow_threshold,
-                underflow_threshold,
-                B])
+                  ONE + ULP_OF_ONE_PLUS,
+                  overflow_threshold,
+                  underflow_threshold,
+                  B])
 
-milestone = 210   #==============================
+milestone = 210  # ==============================
 test_div_by_zero()
 
 # ~~~~~~~ 960-final_report
-milestone = 220   #==============================
+milestone = 220  # ==============================
 pause()
 print("")
 msg = ["FAILUREs  encountered =",
-        "SERIOUS DEFECTs  discovered =",
-        "DEFECTs  discovered =",
-        "FLAWs  discovered ="
+       "SERIOUS DEFECTs  discovered =",
+       "DEFECTs  discovered =",
+       "FLAWs  discovered ="
        ]
-for i in range(0,4):
+for i in range(0, 4):
     if error_count[i]:
         print("The number of  {:>29s} {:d}.".format(msg[i], error_count[i]))
 
@@ -2731,9 +2787,9 @@ else:
             print("Rounding appears to conform to ", end="")
             print("IEEE standard ", end="")
             if ((B == TWO) and
-                 ((PRECISION - FOUR * THREE * TWO)
-                  * ( PRECISION - TWENTY_SEVEN
-                    - TWENTY_SEVEN + ONE) == ZERO)):
+                    ((PRECISION - FOUR * THREE * TWO)
+                     * (PRECISION - TWENTY_SEVEN
+                        - TWENTY_SEVEN + ONE) == ZERO)):
                 print("754", end="")
             else:
                 print("854", end="")

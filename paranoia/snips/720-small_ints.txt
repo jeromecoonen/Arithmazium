@@ -1,13 +1,14 @@
 test_cond(err_failure, (THREE == TWO + ONE)
-        and (FOUR == THREE + ONE)
-        and (FOUR + TWO * (-TWO) == ZERO)
-        and (FOUR - THREE - ONE == ZERO),
-        "3 != 2+1, 4 != 3+1, 4+2*(-2) != 0, or 4-3-1 != 0")
+          and (FOUR == THREE + ONE)
+          and (FOUR + TWO * (-TWO) == ZERO)
+          and (FOUR - THREE - ONE == ZERO),
+          "3 != 2+1, 4 != 3+1, 4+2*(-2) != 0, or 4-3-1 != 0")
 test_cond(err_failure, (MINUS_ONE == (0 - ONE))
-        and (MINUS_ONE + ONE == ZERO)
-        and (ONE + MINUS_ONE == ZERO)
-        and (MINUS_ONE + fabs(ONE) == ZERO)
-        and (MINUS_ONE + MINUS_ONE * MINUS_ONE == ZERO),
-        "-1+1 != 0, (-1)+abs(1) != 0, or -1+(-1)*(-1) != 0")
+          and (MINUS_ONE + ONE == ZERO)
+          and (ONE + MINUS_ONE == ZERO)
+          and (MINUS_ONE + fabs(MINUS_ONE) == ZERO)
+          and (MINUS_ONE + MINUS_ONE * MINUS_ONE == ZERO),
+          "-1 != 0-1, -1+1 != 0, 1+(-1) != 0, "
+          + "(-1)+abs(-1) != 0, or -1+(-1)*(-1) != 0")
 test_cond(err_failure, ONE_HALF + MINUS_ONE + ONE_HALF == ZERO,
-        "1/2 + (-1) + 1/2 != 0")
+          "1/2 + (-1) + 1/2 != 0")

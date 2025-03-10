@@ -1,4 +1,4 @@
-    x= ULP_OF_ONE_PLUS
+    x = ULP_OF_ONE_PLUS
     s = ONE + x
     d = C * s
     if d <= C:
@@ -6,4 +6,5 @@
         # whether multiplication is just too awful.
         x = B * ULP_OF_ONE_PLUS
     return x
+
 

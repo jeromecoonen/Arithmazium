@@ -57,13 +57,13 @@ Part 2
 else:
     print("Sticky bit used incorrectly or not at all.")
 test_cond(err_flaw, (flags["mult_guard_digit"]
-               and flags["div_guard_digit"]
-               and flags["add_sub_guard_digit"]
-               and flags["mult_rounding"] != "other"
-               and flags["div_rounding"] != "other"
-               and flags["add_sub_rounding"] != "other"),
-        "lack(s) of guard digits or failure(s) to correctly round or chop\n"
-        + "(noted above) count as one flaw in the final tally below")
+                     and flags["div_guard_digit"]
+                     and flags["add_sub_guard_digit"]
+                     and flags["mult_rounding"] != "other"
+                     and flags["div_rounding"] != "other"
+                     and flags["add_sub_rounding"] != "other"),
+          "lack(s) of guard digits or failure(s) to correctly round or chop\n"
+          + "(noted above) count as one flaw in the final tally below")
 </code></pre>
 
 <p>

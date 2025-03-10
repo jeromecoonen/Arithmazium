@@ -6,3 +6,4 @@
         if b != ZERO: break
     return b
 
+

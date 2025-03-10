@@ -1,17 +1,22 @@
 def fabs(x):
     return math.fabs(x)
 
+
 def floor(x):
     return math.floor(x)
+
 
 def log(x):
     """Return the natural log of the argument."""
     return math.log(x)
 
-def pow(x,y):
+
+def pow(x, y):
     """Return x**y."""
-    return math.pow(x,y)
+    return math.pow(x, y)
+
 
 def sqrt(x):
     return math.sqrt(x)
+
 

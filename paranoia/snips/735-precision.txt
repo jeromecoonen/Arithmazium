@@ -1,7 +1,7 @@
 # Compute PRECISION and BIG_B_NTH = B**PRECISION barely too big
 # to satisfy (BIG_B_NTH + 1) - BIG_B_NTH == 1 .
 # Basic 1240-1270
-if B == ONE:   # defer to the secondary calculation below
+if B == ONE:  # defer to the secondary calculation below
     PRECISION = ZERO
     BIG_B_NTH = big_2_nth
 else:

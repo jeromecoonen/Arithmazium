@@ -3,6 +3,6 @@ def test_sqrt_monotonicity():
     i = - 1
     x = B_MINUS_ULP
     y = B
-    z = B + B * ULP_OF_ONE_PLUS   # B plus 1 ulp
+    z = B + B * ULP_OF_ONE_PLUS  # B plus 1 ulp
     not_monot = False
     monot = False

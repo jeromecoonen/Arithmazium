@@ -75,15 +75,15 @@ the outset. See, for example,
 
 </p>
 
-<pre><code>    a = max(TWO, radix)   # Default, picking up log radix=1
-    for z in [TWO, NINE+ONE]:
+<pre><code>    a = max(TWO, radix)  # Default, picking up log radix=1
+    for z in [TWO, NINE + ONE]:
         y = radix
         while True:
             x = y
             y = y / z
             if floor(y) != y: break
         if x == ONE:
-            a = z   # Have found a power of 2 or 10
+            a = z  # Have found a power of 2 or 10
             break
 </code></pre>
 
@@ -99,6 +99,7 @@ Finally, check that for <code>a</code> and
         z = x * y - ONE_HALF
         test_cond(err_failure, z == ONE_HALF, "x * (1/x) differs from 1")
     return a, one_over_a
+
 
 </code></pre>
 

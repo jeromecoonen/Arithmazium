@@ -1,4 +1,4 @@
-milestone = 60   #==============================
+milestone = 60  # ==============================
 print("")
 print("Does Multiplication commute?  ", end="")
 print("Testing on {:d} random pairs.".format(NUM_TRIALS))

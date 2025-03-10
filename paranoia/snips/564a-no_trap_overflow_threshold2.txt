@@ -1,4 +1,4 @@
-    oflo = -less_big   # default start
+    oflo = -less_big  # default start
     pos_big = -big
     y = less_big * (ONE_OVER_H * ULP_OF_ONE_PLUS - ONE_OVER_H)
     z = y + ((ONE - ONE_OVER_H) * ULP_OF_ONE_PLUS) * less_big
@@ -15,4 +15,5 @@
         if verbose:
             print("Finite saturating power of B overflow threshold.")
     return oflo
+
 

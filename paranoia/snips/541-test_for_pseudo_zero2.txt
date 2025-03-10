@@ -6,7 +6,7 @@
     # These are the loop termination tests in tiny_values_and_difference().
     if (pseudo <= ZERO):
         bad_cond(err_failure, "Positive expressions can underflow to an " +
-                "allegedly negative value\n")
+                 "allegedly negative value\n")
         print("pseudo that prints out as: {:g} .".format(pseudo))
         x = -pseudo
         if x <= ZERO:

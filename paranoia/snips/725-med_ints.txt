@@ -1,14 +1,14 @@
-milestone = 10   #==============================
+milestone = 10  # ==============================
 test_cond(err_failure, (NINE == THREE * THREE)
-         and (TWENTY_SEVEN == NINE * THREE) and (EIGHT == FOUR + FOUR)
-         and (THIRTY_TWO == EIGHT * FOUR)
-         and (THIRTY_TWO - TWENTY_SEVEN - FOUR - ONE == ZERO),
-         "9 != 3*3, 27 != 9*3, 32 != 8*4, or 32-27-4-1 != 0")
+          and (TWENTY_SEVEN == NINE * THREE) and (EIGHT == FOUR + FOUR)
+          and (THIRTY_TWO == EIGHT * FOUR)
+          and (THIRTY_TWO - TWENTY_SEVEN - FOUR - ONE == ZERO),
+          "9 != 3*3, 27 != 9*3, 32 != 8*4, or 32-27-4-1 != 0")
 test_cond(err_failure, (FIVE == FOUR + ONE)
-         and (TWOFORTY == FOUR * FIVE * THREE * FOUR)
-         and (TWOFORTY / THREE - FOUR * FOUR * FIVE == ZERO)
-         and ( TWOFORTY / FOUR - FIVE * THREE * FOUR == ZERO)
-         and ( TWOFORTY / FIVE - FOUR * THREE * FOUR == ZERO),
-         "5 != 4+1, 240/3 != 80, 240/4 != 60, or 240/5 != 48")
+          and (TWOFORTY == FOUR * FIVE * THREE * FOUR)
+          and (TWOFORTY / THREE - FOUR * FOUR * FIVE == ZERO)
+          and (TWOFORTY / FOUR - FIVE * THREE * FOUR == ZERO)
+          and (TWOFORTY / FIVE - FOUR * THREE * FOUR == ZERO),
+          "5 != 4+1, 240 != 4*5*3*4, 240/3 != 80, 240/4 != 60, or 240/5 != 48")
 if (error_count[err_failure] == 0):
     print("-1, 0, 1/2, 1, 2, 3, 4, 5, 9, 27, 32 & 240 are O.K.")

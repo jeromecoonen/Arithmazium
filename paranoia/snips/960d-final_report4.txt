@@ -11,9 +11,9 @@ else:
             print("Rounding appears to conform to ", end="")
             print("IEEE standard ", end="")
             if ((B == TWO) and
-                 ((PRECISION - FOUR * THREE * TWO)
-                  * ( PRECISION - TWENTY_SEVEN
-                    - TWENTY_SEVEN + ONE) == ZERO)):
+                    ((PRECISION - FOUR * THREE * TWO)
+                     * (PRECISION - TWENTY_SEVEN
+                        - TWENTY_SEVEN + ONE) == ZERO)):
                 print("754", end="")
             else:
                 print("854", end="")

@@ -7,4 +7,4 @@
     while doit:
         z2 = x
         x = (ONE + (ONE_HALF * z2 + THIRTY_TWO * z2 * z2)) - ONE
-        doit =  (z2 > x) and (x > ZERO)
+        doit = (z2 > x) and (x > ZERO)

@@ -1,6 +1,6 @@
-#=============================================
+# =============================================
 # Computations of fundamental system constants like radix and precisioon.
-#=============================================
+# =============================================
 def find_big_2_to_nth():
     """Compute 2**n satisfying |((2**n + 1)-2**n)-1| >= 1."""
     x = ONE
@@ -12,6 +12,5 @@ def find_big_2_to_nth():
         if MINUS_ONE + fabs(y) >= ZERO: break
     # ... now x is just big enough that |((x+1)-x)-1| >= 1 ...
     return x
-
 
 

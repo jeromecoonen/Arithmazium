@@ -6,8 +6,9 @@
                 q = - log(x)
                 print("Some subexpressions appear to be calculated extra")
                 print("precisely with about {:.g} extra B-digits, i.e.",
-                    (q / log(B)))
+                      (q / log(B)))
                 print("roughly {:.g} extra significant decimals."
-                    .format(q / log(10.)))
+                      .format(q / log(10.)))
             print("That feature is not tested further by this program.")
+
 

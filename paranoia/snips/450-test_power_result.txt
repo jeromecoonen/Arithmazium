@@ -1,6 +1,6 @@
-#=============================================
+# =============================================
 # Tests of X**K for integer X and K.
-#=============================================
+# =============================================
 def test_power_result(x, z, q):
     """Check that x equals z**q, usually for exact integer cases."""
     global pow_err_cnt

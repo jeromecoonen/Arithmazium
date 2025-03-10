@@ -52,9 +52,9 @@ Part 1
 Part 2
 </p>
 
-<pre><code>#=============================================
+<pre><code># =============================================
 # Tests for normalization, guard digit, rounding, use of a sticky bit.
-#=============================================
+# =============================================
 def test_normalized_subtraction():
     """Test for renormalization on magnitude subtraction.
 
@@ -78,8 +78,9 @@ Part 3
             print("Subtraction appears to be normalized, as it should be.")
         else:
             test_cond(err_failure, False,
-                    "Subtraction is not normalized x=y,x+z != y+z!")
+                      "Subtraction is not normalized x=y,x+z != y+z!")
         return
+
 
 </code></pre>
 

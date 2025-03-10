@@ -7,10 +7,11 @@
                 # *** BUG: P has (z > ONE), which means test done once only.
                 # Keep testing until too close to 1 or count too big.
                 if (z <= ONE) and (test_cnt < NUM_TRIALS):
-                        test_cnt += 1
+                    test_cnt += 1
                 else:
                     break
     # BUG: removed unneeded error flag if N == 0:
     print("Accuracy seems adequate.")
     return
+
 

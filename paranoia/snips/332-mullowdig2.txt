@@ -1,5 +1,6 @@
     x = ONE - ULP_OF_ONE_PLUS
     z = fabs((x - ULP_OF_ONE_PLUS) - x * x) - ULP_OF_ONE_MINUS
     test_cond(err_failure, y <= ZERO and z <= ZERO,
-            "* gets too many final digits wrong.\n")
+              "* gets too many final digits wrong.\n")
+
 

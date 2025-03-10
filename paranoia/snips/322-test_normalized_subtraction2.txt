@@ -8,6 +8,7 @@
             print("Subtraction appears to be normalized, as it should be.")
         else:
             test_cond(err_failure, False,
-                    "Subtraction is not normalized x=y,x+z != y+z!")
+                      "Subtraction is not normalized x=y,x+z != y+z!")
         return
+
 

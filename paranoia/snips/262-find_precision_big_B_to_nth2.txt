@@ -7,3 +7,4 @@
         if y - big_b != ONE: break
     return precision, big_b
 
+

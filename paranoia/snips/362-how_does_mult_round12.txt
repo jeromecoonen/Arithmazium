@@ -1,4 +1,4 @@
         if ((x == ZERO) and (y == ZERO) and (z == ZERO) and (t == ZERO)
-            and ( s1 == ZERO) and (y1 == ONE_HALF)):
+                and (s1 == ZERO) and (y1 == ONE_HALF)):
             rmult = "rounded"
             print("Multiplication appears to round correctly. ")

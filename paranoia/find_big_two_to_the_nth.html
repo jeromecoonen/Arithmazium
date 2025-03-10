@@ -96,9 +96,9 @@ less likely to be anomalous, hence a preference for such comparisons
 throughout Paranoia.
 </p>
 
-<pre><code>#=============================================
+<pre><code># =============================================
 # Computations of fundamental system constants like radix and precisioon.
-#=============================================
+# =============================================
 def find_big_2_to_nth():
     """Compute 2**n satisfying |((2**n + 1)-2**n)-1| >= 1."""
     x = ONE
@@ -112,23 +112,20 @@ def find_big_2_to_nth():
     return x
 
 
-
 </code></pre>
 
 <p>
 A more subtle issue that can arise in octal or hexadecimal arithmetic is
 <em>fractional precision</em>, which we'll see again.
 For example, a hex system with 26 bits
-available for precision would have what we call 4.5 significant digits,
-where the low-order half-digit takes just the values
-<code>8</code>,
-<code>9</code>,
-<code>A</code>,
-<code>B</code>,
-<code>C</code>,
-<code>D</code>,
-<code>E8</code>, or
-<code>F</code>.
+available for precision would have what we call 4.5 significant hex digits,
+where the low-order half-digit may be thought of as a full hex digit
+taking just the values
+<code>0</code>,
+<code>4</code>,
+<code>8</code>, or
+<code>C</code>.
+That is, the low-order two bits are always zero.
 The analysis above applies here, too.
 </p>
 

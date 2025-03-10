@@ -57,7 +57,7 @@ Part 2
     i = - 1
     x = B_MINUS_ULP
     y = B
-    z = B + B * ULP_OF_ONE_PLUS   # B plus 1 ulp
+    z = B + B * ULP_OF_ONE_PLUS  # B plus 1 ulp
     not_monot = False
     monot = False
 </code></pre>
@@ -84,7 +84,7 @@ Part 4
             q = floor(q + ONE_HALF)
             # B = q*q only if radix B is 16 or 4
             if (i <= 0) and (B != q * q):
-                monot = True   # exit early unless B is 16 or 4
+                monot = True  # exit early unless B is 16 or 4
 </code></pre>
 
 <p>
@@ -121,6 +121,7 @@ Part 7
     else:
         bad_cond(err_defect, "")
         print("sqrt(x) is non-monotonic for x near {:0.7e} .".format(y))
+
 
 </code></pre>
 

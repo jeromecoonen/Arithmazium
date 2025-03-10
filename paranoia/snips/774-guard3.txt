@@ -4,5 +4,5 @@ if flags["div_guard_digit"]:
     print("    / appears to have a guard digit, as it should.")
 if flags["add_sub_guard_digit"]:
     print("    - appears to have a guard digit, as it should.")
-milestone = 40   #==============================
+milestone = 40  # ==============================
 pause()

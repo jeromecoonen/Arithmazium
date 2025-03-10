@@ -56,7 +56,7 @@ Will the trailing 1 round off or up to 2?
 CNC10
   = x + TWO   # rounded up
 b jjj10jj...j010 p14
-In the unlikely event of rounding up|he trailing 1 is in the 2's place
+In the unlikely event of rounding up|the trailing 1 is in the 2's place
 FEND
 
 FILE big_2_nth_oct

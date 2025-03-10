@@ -80,7 +80,7 @@ The value just computed is an ulp of numbers just less than
 \( 1 \) in six hex digits.
 </p>
 
-<pre><code>    d = ULP_OF_ONE_MINUS   # default value for integer precision
+<pre><code>    d = ULP_OF_ONE_MINUS  # default value for integer precision
     if PRECISION != floor(PRECISION):
         # Compute 1 / B**ceiling(PRECISION)
         d = ONE_OVER_B
@@ -156,6 +156,7 @@ In any case, <code>c</code> is tiny and normal.
         z = y * d
         if y <= z or z + z <= z: break
     return c, ONE / c
+
 
 </code></pre>
 

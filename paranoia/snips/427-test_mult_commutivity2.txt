@@ -2,11 +2,11 @@
     # xyyx is the final arbiter of success.
     if xyyx != ZERO:
         print("x * y == y * x fails for x = {:0.17e}  y = {:0.17e}"
-              .format(x ,y))
+              .format(x, y))
         print("    x * y = {:0.17e}  y * x = {:0.17e}".format(xy, yx))
         print("    and x * y - y * x = {:0.17e}".format(xyyx))
         bad_cond(err_defect, "x * y == y * x trial fails.")
     else:
-        print("     No failures found in {:d} integer pairs.".format(count+1))
+        print("     No failures found in {:d} integer pairs.".format(count + 1))
 
 

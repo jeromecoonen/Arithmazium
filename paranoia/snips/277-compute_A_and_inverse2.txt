@@ -1,10 +1,10 @@
-    a = max(TWO, radix)   # Default, picking up log radix=1
-    for z in [TWO, NINE+ONE]:
+    a = max(TWO, radix)  # Default, picking up log radix=1
+    for z in [TWO, NINE + ONE]:
         y = radix
         while True:
             x = y
             y = y / z
             if floor(y) != y: break
         if x == ONE:
-            a = z   # Have found a power of 2 or 10
+            a = z  # Have found a power of 2 or 10
             break

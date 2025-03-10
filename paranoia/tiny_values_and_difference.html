@@ -117,7 +117,7 @@
     if d <= C:
         # But if not, we punt with default values.
         bad_cond(err_failure,
-                "multiplication gets too many last digits wrong.")
+                 "multiplication gets too many last digits wrong.")
         pause()
         return 0, tiny_B, too_tiny_B, tiny_B, 0, 0, 0
 </code></pre>
@@ -150,7 +150,7 @@
                     print("\tUnderflow loop: within if, tinier = {:.7e}"
                           .format(tinier))
                 save_tiny2 = tinier * ONE_OVER_H
-                tiny_delta = fabs(tiny - save_tiny2)   # may underflow to 0
+                tiny_delta = fabs(tiny - save_tiny2)  # may underflow to 0
                 save_tiny1 = tiny
                 if (u_threshold == ZERO) and (tiny != save_tiny2):
                     # Test for 0 captures first time through, in case

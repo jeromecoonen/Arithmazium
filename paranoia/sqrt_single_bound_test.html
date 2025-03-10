@@ -52,11 +52,10 @@ Part 1
 Part 2
 </p>
 
-<pre><code>#=============================================
+<pre><code># =============================================
 # Tests of square root accuracy and monotonicity.
-#=============================================
+# =============================================
 def sqrt_single_bound_test(tlist):
-
     """Test x = sqrt(x*x), raise error if not, and track max and min
     signed error in units of ulp.
 
@@ -102,6 +101,7 @@ Part 4
             print("sqrt( {:0.17e}) - {:0.17e}  = {:0.17e}".format(x * x, x, ulp * err))
             print("\tinstead of correct value 0 .")
     return success
+
 
 </code></pre>
 

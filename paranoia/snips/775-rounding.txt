@@ -1,4 +1,4 @@
 print("Checking rounding on multiply, divide and add/subtract. ")
 flags["mult_rounding"] = how_does_mult_round()
-milestone = 45   #==============================
+milestone = 45  # ==============================
 flags["div_rounding"] = how_does_div_round()

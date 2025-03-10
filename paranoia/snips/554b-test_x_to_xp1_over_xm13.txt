@@ -1,7 +1,7 @@
             if (fabs(dev) > TWOFORTY * ULP_OF_ONE_PLUS):
                 delta_x = (x - ONE_OVER_B) - (ONE - ONE_OVER_B)
                 bad_cond(err_defect, "Calculated")
-                print(" {:0.17e} for".format(pow(x,z)))
+                print(" {:0.17e} for".format(pow(x, z)))
                 print("\t(1 + ({:0.17e}) ^ ({:0.17e});".format(delta_x, z))
                 print("\tdiffers from correct value by {:0.17e} ."
                       .format(dev))

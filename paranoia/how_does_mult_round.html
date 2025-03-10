@@ -123,7 +123,7 @@ Part 8
 </p>
 
 <pre><code>        if ((x == ZERO) and (y == ZERO) and (z == ZERO) and (t == ZERO)
-            and ( s1 == ZERO) and (y1 == ONE_HALF)):
+                and (s1 == ZERO) and (y1 == ONE_HALF)):
             rmult = "rounded"
             print("Multiplication appears to round correctly. ")
 </code></pre>
@@ -133,10 +133,10 @@ Part 9
 </p>
 
 <pre><code>        elif ((x + ULP_OF_ONE_PLUS == ZERO) and (y < ZERO) and (z + ULP_OF_ONE_PLUS == ZERO)
-                and (t < ZERO) and (s1 + ULP_OF_ONE_PLUS == ZERO)
-                and (y1 < ONE_HALF)):
-                rmult = "chopped"
-                print("Multiplication appears to chop. ")
+              and (t < ZERO) and (s1 + ULP_OF_ONE_PLUS == ZERO)
+              and (y1 < ONE_HALF)):
+            rmult = "chopped"
+            print("Multiplication appears to chop. ")
 </code></pre>
 
 <p>
@@ -157,6 +157,7 @@ Part 11
 <pre><code>    else:
         print("* is neither chopped nor correctly rounded. ")
     return rmult
+
 
 </code></pre>
 

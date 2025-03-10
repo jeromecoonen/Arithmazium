@@ -7,3 +7,4 @@ def update_sqrt_errors(down, up):
         min_sqrt_error = down
     return
 
+

@@ -76,7 +76,7 @@ Part 3
     x = r - x
     y = s - y
     test_cond(err_failure, x == ZERO and y == ZERO,
-            "* and/or / gets too many last digits wrong")
+              "* and/or / gets too many last digits wrong")
 </code></pre>
 
 <p>
@@ -92,8 +92,9 @@ Part 4
     gaddsub = ((x == ULP_OF_ONE_MINUS) and (y == ULP_OF_ONE_MINUS)
                and (z == ULP_OF_ONE_PLUS) and (t == ULP_OF_ONE_PLUS))
     test_cond(err_serious, gaddsub,
-            "- lacks Guard Digit, so cancellation is obscured")
+              "- lacks Guard Digit, so cancellation is obscured")
     return gaddsub
+
 
 </code></pre>
 

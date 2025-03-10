@@ -11,10 +11,10 @@ else:
     if min_sqrt_error >= ZERO and max_sqrt_error <= ZERO:
         flags["sqrt_rounding"] = "rounded"
         print("Square root appears to be correctly rounded.")
-    else :
+    else:
         if (max_sqrt_error + ULP_OF_ONE_PLUS > ULP_OF_ONE_PLUS - ONE_HALF
-            or min_sqrt_error > ONE_HALF
-            or min_sqrt_error + B < ONE_HALF):
+                or min_sqrt_error > ONE_HALF
+                or min_sqrt_error + B < ONE_HALF):
             sqrt_rnd_odd = True
         else:
             flags["sqrt_rounding"] = "chopped"

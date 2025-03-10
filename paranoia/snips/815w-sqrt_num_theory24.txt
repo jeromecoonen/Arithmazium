@@ -4,5 +4,5 @@ if sqrt_rnd_odd:
           .format(min_sqrt_error - ONE_HALF), end="")
     print("to {:0.7e} ulps.".format(ONE_HALF + max_sqrt_error))
     test_cond(err_serious, max_sqrt_error - min_sqrt_error < B * B,
-        "sqrt gets too many last digits wrong")
+              "sqrt gets too many last digits wrong")
 

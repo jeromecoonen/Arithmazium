@@ -1,4 +1,4 @@
-    d = ULP_OF_ONE_MINUS   # default value for integer precision
+    d = ULP_OF_ONE_MINUS  # default value for integer precision
     if PRECISION != floor(PRECISION):
         # Compute 1 / B**ceiling(PRECISION)
         d = ONE_OVER_B

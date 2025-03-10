@@ -3,6 +3,6 @@
 # This defines base_tiny, which may be needed as a final result in some
 # anomalous arithmetics.
 if does_tiny_value_misbehave(min_positive):
-    base_tiny = less_tiny_B   # Back up by a factor of 1/H, for CDC 7600
+    base_tiny = less_tiny_B  # Back up by a factor of 1/H, for CDC 7600
 else:
     base_tiny = min_positive

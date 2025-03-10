@@ -10,7 +10,7 @@ if (PRECISION != floor(PRECISION)) or (B == ONE):
 
 if B == ONE:
     print("logarithmic encoding has precision characterized solely "
-          +"by ULP_OF_ONE_MINUS.")
+          + "by ULP_OF_ONE_MINUS.")
 else:
     print("The number of significant digits of the B is {:0.4f} ."
           .format(PRECISION))

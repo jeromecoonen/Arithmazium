@@ -85,7 +85,7 @@ Part 4
 Part 5
 </p>
 
-<pre><code>    while flags["add_sub_guard_digit"]:    # JTC TODO jibe with Basic
+<pre><code>    while flags["add_sub_guard_digit"]:  # JTC TODO jibe with Basic
         x = (ONE_HALF + ULP_OF_ONE_PLUS) * ULP_OF_ONE_PLUS
         y = (ONE_HALF - ULP_OF_ONE_PLUS) * ULP_OF_ONE_PLUS
         x = ONE + x
@@ -128,7 +128,7 @@ Part 8
 <pre><code>        if not flags["add_sub_guard_digit"]:
             # ***JTC: BUG, annot happen, guard digit is checked above.
             notify("Add/Subtract")
-        break   # Execute this block just once, with early exit possible.
+        break  # Execute this block just once, with early exit possible.
 </code></pre>
 
 <p>
@@ -138,6 +138,7 @@ Part 9
 <pre><code>    if round_add_sub == "other":  # pick up all the odd cases
         print("Addition/Subtraction neither rounds nor chops.")
     return round_add_sub
+
 
 </code></pre>
 

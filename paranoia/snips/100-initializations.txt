@@ -1,7 +1,7 @@
-#----START CODE----
+# ----START CODE----
 # Number of trials in half a dozen random and sequential tests.
 NUM_TRIALS = 32
 # Set all three flags to False for classic Paranoia flow.
 verbose = False
 ultra_verbose = True
-hasty = True   # When True, skips all user interaction
+hasty = True  # When True, skips all user interaction

@@ -9,11 +9,12 @@
             if verbose:
                 print("\tbigger = {:.12e} big = {:.12e}"
                       .format(bigger, big))
-            if bigger >= big: break   # remember, these values < 0
-    except OverflowError:   # Python does not catch floating point overflow
+            if bigger >= big: break  # remember, these values < 0
+    except OverflowError:  # Python does not catch floating point overflow
         no_except = False
         bigger = big
         if verbose:
             print("\tEncountered overflow exception.")
     return bigger, big, less_big, no_except
+
 

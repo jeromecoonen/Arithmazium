@@ -61,14 +61,14 @@ Part 2
     """
     print("Testing x^((x + 1) / (x - 1)) vs. " +
           "exp(2) = {:0.12f} as x -> 1.".format(exp2))
-          # BUG: x runs away from 1, perhaps "x near 1"?
+    # BUG: x runs away from 1, perhaps "x near 1"?
     # Run tests below 1, then above 1, with a start value
     # and a next value one ulp away.
     if verbose:
         print("Looping on values just below and just above 1.")
     for x, next_x in [(ONE_MINUS_ULP, ONE_MINUS_ULP - ULP_OF_ONE_MINUS),
-                 (ONE + ULP_OF_ONE_PLUS,
-                  ONE + ULP_OF_ONE_PLUS + ULP_OF_ONE_PLUS)]:
+                      (ONE + ULP_OF_ONE_PLUS,
+                       ONE + ULP_OF_ONE_PLUS + ULP_OF_ONE_PLUS)]:
 </code></pre>
 
 <p>
@@ -92,7 +92,7 @@ Part 4
 <pre><code>            if (fabs(dev) > TWOFORTY * ULP_OF_ONE_PLUS):
                 delta_x = (x - ONE_OVER_B) - (ONE - ONE_OVER_B)
                 bad_cond(err_defect, "Calculated")
-                print(" {:0.17e} for".format(pow(x,z)))
+                print(" {:0.17e} for".format(pow(x, z)))
                 print("\t(1 + ({:0.17e}) ^ ({:0.17e});".format(delta_x, z))
                 print("\tdiffers from correct value by {:0.17e} ."
                       .format(dev))
@@ -114,12 +114,13 @@ Part 5
                 # *** BUG: P has (z > ONE), which means test done once only.
                 # Keep testing until too close to 1 or count too big.
                 if (z <= ONE) and (test_cnt < NUM_TRIALS):
-                        test_cnt += 1
+                    test_cnt += 1
                 else:
                     break
     # BUG: removed unneeded error flag if N == 0:
     print("Accuracy seems adequate.")
     return
+
 
 </code></pre>
 

@@ -88,7 +88,7 @@ Will the trailing 1 round off or up to 2?
 <rect class="diag-rem-rect" width="482" height="70" />
 <text class="diag-rem" x="10" y="20">
 <tspan>In the unlikely event of rounding up</tspan>
-<tspan x="25" dy="1.2em">he trailing 1 is in the 2's place</tspan>
+<tspan x="25" dy="1.2em">the trailing 1 is in the 2's place</tspan>
 </text>
 </g>
 </svg>

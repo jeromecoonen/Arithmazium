@@ -53,7 +53,7 @@
 
 <pre><code>        else:
             # Case 1
-            underflow_threshold = base_tiny   # Safe value computed above
+            underflow_threshold = base_tiny  # Safe value computed above
             # A sanity check determines that the result from
             # tiny_x_and_difference() matches expectation, based on the
             # loop on powers of B. The factor one_plus_safe accounts for
@@ -66,7 +66,7 @@
                     != ((ONE_OVER_C * less_tiny_B) * one_plus_safe * h_fact)):
                 underflow_threshold = less_tiny_B
                 bad_cond(err_failure,
-                        "Either accuracy deteriorates as numbers\n")
+                         "Either accuracy deteriorates as numbers\n")
                 print("approach a threshold = {:0.17e}"
                       .format(underflow_threshold))
                 print(" coming down from {:0.17e}".format(C))

@@ -1,4 +1,4 @@
-    while flags["add_sub_guard_digit"]:    # JTC TODO jibe with Basic
+    while flags["add_sub_guard_digit"]:  # JTC TODO jibe with Basic
         x = (ONE_HALF + ULP_OF_ONE_PLUS) * ULP_OF_ONE_PLUS
         y = (ONE_HALF - ULP_OF_ONE_PLUS) * ULP_OF_ONE_PLUS
         x = ONE + x

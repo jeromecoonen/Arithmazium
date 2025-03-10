@@ -6,3 +6,4 @@
         test_cond(err_failure, z == ONE_HALF, "x * (1/x) differs from 1")
     return a, one_over_a
 
+

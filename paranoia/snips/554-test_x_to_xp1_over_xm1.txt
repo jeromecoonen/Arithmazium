@@ -7,11 +7,11 @@ def test_x_to_xp1_over_xm1(e2):
     """
     print("Testing x^((x + 1) / (x - 1)) vs. " +
           "exp(2) = {:0.12f} as x -> 1.".format(exp2))
-          # BUG: x runs away from 1, perhaps "x near 1"?
+    # BUG: x runs away from 1, perhaps "x near 1"?
     # Run tests below 1, then above 1, with a start value
     # and a next value one ulp away.
     if verbose:
         print("Looping on values just below and just above 1.")
     for x, next_x in [(ONE_MINUS_ULP, ONE_MINUS_ULP - ULP_OF_ONE_MINUS),
-                 (ONE + ULP_OF_ONE_PLUS,
-                  ONE + ULP_OF_ONE_PLUS + ULP_OF_ONE_PLUS)]:
+                      (ONE + ULP_OF_ONE_PLUS,
+                       ONE + ULP_OF_ONE_PLUS + ULP_OF_ONE_PLUS)]:

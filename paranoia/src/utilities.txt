@@ -3,7 +3,7 @@
 <h1>Utilities</h1>
 
 <p>
-Aside from all it's numerical computation,
+Aside from all its numerical computation,
 Paranoia employs a modest number of utility functions
 pertaining to user interaction and some handy
 mathematical functions.

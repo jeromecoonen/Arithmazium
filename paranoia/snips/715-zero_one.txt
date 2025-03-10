@@ -1,8 +1,8 @@
-milestone = 7   #==============================
+milestone = 7  # ==============================
 # Basic 880-950
 print("Program is now RUNNING tests on small integers:")
 test_cond(err_failure, (ZERO + ZERO == ZERO)
-        and (ONE - ONE == ZERO)
-        and (ONE > ZERO)
-        and (ONE + ONE == TWO),
-        "0+0 != 0, 1-1 != 0, 1 <= 0, or 1+1 != 2")
+          and (ONE - ONE == ZERO)
+          and (ONE > ZERO)
+          and (ONE + ONE == TWO),
+          "0+0 != 0, 1-1 != 0, 1 <= 0, or 1+1 != 2")

@@ -79,7 +79,7 @@ still doesn't leave a nonzero low-order residue,
 that fact will be caught down the road.
 </p>
 
-<pre><code>    x= ULP_OF_ONE_PLUS
+<pre><code>    x = ULP_OF_ONE_PLUS
     s = ONE + x
     d = C * s
     if d <= C:
@@ -87,6 +87,7 @@ that fact will be caught down the road.
         # whether multiplication is just too awful.
         x = B * ULP_OF_ONE_PLUS
     return x
+
 
 </code></pre>
 

@@ -7,4 +7,4 @@
     x = r - x
     y = s - y
     test_cond(err_failure, x == ZERO and y == ZERO,
-            "* and/or / gets too many last digits wrong")
+              "* and/or / gets too many last digits wrong")

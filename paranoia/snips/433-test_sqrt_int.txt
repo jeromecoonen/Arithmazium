@@ -1,15 +1,15 @@
 def test_sqrt_int():
     """Test sqrt(x**2) for consecutive integer  in a B-ade."""
-    x = TWO   # Default start point for log arithmetic
+    x = TWO  # Default start point for log arithmetic
     y = B
-    if B != ONE:    # ***TODO: log arithmetic issue
+    if B != ONE:  # ***TODO: log arithmetic issue
         while True:
             x = y
             y = B * y
             if y - x >= NUM_TRIALS: break
-    ulp = x * ULP_OF_ONE_PLUS    # ***TODO -- why was Py _MINUS, with others _PLUS?
+    ulp = x * ULP_OF_ONE_PLUS  # ***TODO -- why was Py _MINUS, with others _PLUS?
     for _ in range(NUM_TRIALS):
-        x = x + ONE    # when NUM_TRIALS is size of a binade, x hits higher B**k
+        x = x + ONE  # when NUM_TRIALS is size of a binade, x hits higher B**k
         if not sqrt_single_bound_test([(x, ulp, err_defect)]): break
     return
 

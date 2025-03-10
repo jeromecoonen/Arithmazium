@@ -9,6 +9,6 @@ if (B == save_b):
 else:
     print("MYSTERY: recalculated B = {:0.7e} .".format(B))
 test_cond(err_defect, B <= EIGHT + EIGHT,
-       "B is too big: roundoff problems")
+          "B is too big: roundoff problems")
 test_cond(err_flaw, (B == TWO) or (B == 10)
-       or (B == ONE), "B is not as good as 2 or 10")
+          or (B == ONE), "B is not as good as 2 or 10")

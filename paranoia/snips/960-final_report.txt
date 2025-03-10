@@ -1,12 +1,12 @@
-milestone = 220   #==============================
+milestone = 220  # ==============================
 pause()
 print("")
 msg = ["FAILUREs  encountered =",
-        "SERIOUS DEFECTs  discovered =",
-        "DEFECTs  discovered =",
-        "FLAWs  discovered ="
+       "SERIOUS DEFECTs  discovered =",
+       "DEFECTs  discovered =",
+       "FLAWs  discovered ="
        ]
-for i in range(0,4):
+for i in range(0, 4):
     if error_count[i]:
         print("The number of  {:>29s} {:d}.".format(msg[i], error_count[i]))
 

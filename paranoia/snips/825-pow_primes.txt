@@ -1,4 +1,4 @@
-milestone = 100   #==============================
+milestone = 100  # ==============================
 # Powers of B have been tested, sonext try a few primes.
 # The simpler loop skips the trick of stepping by 2 through the odd
 # numbers from 3, filtering the further multiples of 3.

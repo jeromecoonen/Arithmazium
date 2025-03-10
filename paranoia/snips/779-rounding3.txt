@@ -1,4 +1,4 @@
-milestone = 50   #==============================
+milestone = 50  # ==============================
 test_cond(err_failure, (ONE_MINUS_ULP + ULP_OF_ONE_MINUS) - ONE_HALF == ONE_HALF
-       and (B_MINUS_ULP + ULP_OF_ONE_PLUS ) - ONE == B - ONE,
-       "Incomplete carry-propagation in Addition")
+          and (B_MINUS_ULP + ULP_OF_ONE_PLUS) - ONE == B - ONE,
+          "Incomplete carry-propagation in Addition")

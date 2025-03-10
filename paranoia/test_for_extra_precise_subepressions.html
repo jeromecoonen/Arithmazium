@@ -52,9 +52,9 @@ Part 1
 Part 2
 </p>
 
-<pre><code>#=============================================
+<pre><code># =============================================
 # Test for extra precison.
-#=============================================
+# =============================================
 def test_for_extra_precise_subepressions():
     """Print messages if wider intermediate values detected.
 
@@ -74,7 +74,7 @@ Part 3
     while doit:
         z2 = x
         x = (ONE + (ONE_HALF * z2 + THIRTY_TWO * z2 * z2)) - ONE
-        doit =  (z2 > x) and (x > ZERO)
+        doit = (z2 > x) and (x > ZERO)
 </code></pre>
 
 <p>
@@ -105,13 +105,13 @@ Part 5
         y = (ONE_HALF - ((ONE_HALF - (ONE_HALF * y1 + THIRTY_TWO * y1 * y1))
                          + ONE_HALF)) + ONE_HALF
         print("1730: y1 = {:.17e} y = {:.17e}".format(y1, y))
-        if  y1 <= y or y <= ZERO: break
+        if y1 <= y or y <= ZERO: break
     while True:
         x1 = x
         x = ((ONE_HALF * x1 + THIRTY_TWO * x1 * x1)
-             - ONE_MINUS_ULP)+ ONE_MINUS_ULP
+             - ONE_MINUS_ULP) + ONE_MINUS_ULP
         print("1740: x1 = {:.17e} x = {:.17e}".format(x1, x))
-        if  x1 <= x or x <= ZERO: break
+        if x1 <= x or x <= ZERO: break
 </code></pre>
 
 <p>
@@ -137,8 +137,10 @@ Part 7
         if z1 >= ULP_OF_ONE_MINUS or z2 >= ULP_OF_ONE_PLUS:
             bad_cond(err_failure, "")
             notify("PRECISION")
-            print("\tULP_OF_ONE_MINUS = {:0.7e}, z1 - ULP_OF_ONE_MINUS = {:0.7e}".format(ULP_OF_ONE_MINUS,z1-ULP_OF_ONE_MINUS))
-            print("\tULP_OF_ONE_PLUS = {:0.7e}, z2 - ULP_OF_ONE_PLUS = {:0.7e}".format(ULP_OF_ONE_PLUS,z2-ULP_OF_ONE_PLUS))
+            print("\tULP_OF_ONE_MINUS = {:0.7e}, z1 - ULP_OF_ONE_MINUS = {:0.7e}".format(ULP_OF_ONE_MINUS,
+                                                                                         z1 - ULP_OF_ONE_MINUS))
+            print("\tULP_OF_ONE_PLUS = {:0.7e}, z2 - ULP_OF_ONE_PLUS = {:0.7e}".format(ULP_OF_ONE_PLUS,
+                                                                                       z2 - ULP_OF_ONE_PLUS))
 </code></pre>
 
 <p>
@@ -165,10 +167,11 @@ Part 9
                 q = - log(x)
                 print("Some subexpressions appear to be calculated extra")
                 print("precisely with about {:.g} extra B-digits, i.e.",
-                    (q / log(B)))
+                      (q / log(B)))
                 print("roughly {:.g} extra significant decimals."
-                    .format(q / log(10.)))
+                      .format(q / log(10.)))
             print("That feature is not tested further by this program.")
+
 
 </code></pre>
 

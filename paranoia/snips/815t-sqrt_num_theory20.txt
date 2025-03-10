@@ -4,5 +4,5 @@
     y = (ONE + z) * ONE_HALF
     x = Q
     tests += num_theory_sqrt_test(x, D, y, z2)
-    break   # exit ficttitious loop in one pass
+    break  # exit ficttitious loop in one pass
 

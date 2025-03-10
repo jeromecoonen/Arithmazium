@@ -4,7 +4,8 @@ def pause():
     s = alt_input("\nTo continue, press RETURN ")
     print("\nDiagnosis resumes after milestone Number ", milestone,
           "          Page: ", page_num, "\n")
-    milestone += 1   # the only incremental change to milestone
+    milestone += 1  # the only incremental change to milestone
     page_num += 1
     return
+
 

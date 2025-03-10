@@ -52,20 +52,20 @@ Part 1
 Part 2
 </p>
 
-<pre><code>milestone = 190   #==============================
+<pre><code>milestone = 190  # ==============================
 pause()
 print("Checking balance of over/underflow thresholds.")
 check_range_balance()
 
-milestone = 200   #==============================
+milestone = 200  # ==============================
 print("Checking x/x for various x, some extreme.")
 test_unit_ratios([ONE_MINUS_ULP,
-                ONE + ULP_OF_ONE_PLUS,
-                overflow_threshold,
-                underflow_threshold,
-                B])
+                  ONE + ULP_OF_ONE_PLUS,
+                  overflow_threshold,
+                  underflow_threshold,
+                  B])
 
-milestone = 210   #==============================
+milestone = 210  # ==============================
 test_div_by_zero()
 
 </code></pre>

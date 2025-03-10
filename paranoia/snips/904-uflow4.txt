@@ -6,7 +6,7 @@ if (add_sub_tiny != ZERO) and (add_sub_tiny != min_positive):
     if (add_sub_tiny < min_positive):
         print("Products underflow at a higher", end="")
         print(" threshold than differences.")
-        if too_tiny_x == ZERO:   # Only if there are NO pseudo-zeros.
+        if too_tiny_x == ZERO:  # Only if there are NO pseudo-zeros.
             # Don't admit add_sub_tiny if it could be a pseudo-zero.
             min_positive = add_sub_tiny
     else:

@@ -70,8 +70,8 @@ date-wk88 {
   color: blue;
 }
 
-/* for indenting text outline elemets */
-/* default margin: t-1 r-0 b-1 l-0 */
+/* For indenting text outline elemets,
+   notably in the Library. */
 .el1,
 .el2,
 .el3,
@@ -113,6 +113,8 @@ date-wk88 {
   margin-left: 4em;
 }
 
+/* Variant of el2 for the Floating Point Expose
+   in the Classroom. */
 .el2-wk88 {
   margin: 0 0 0 2em;
   line-height: 1.2;

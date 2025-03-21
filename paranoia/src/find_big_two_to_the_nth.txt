@@ -23,7 +23,7 @@ right of the digit block.
 </p>
 
 <p class="robo-med">
-Test 00005
+Test 00007
 </p>
 
 <object type="image/svg+xml" data="img/big_2_nth_bin-auto.svg">

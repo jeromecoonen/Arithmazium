@@ -9,6 +9,11 @@ mono-xs {
   font-size: x-small;
 }
 
+.robo-med {
+  font-family: "Roboto Mono", monospace, Courier;
+  font-size: medium;
+}
+
 lect-wk88 {
   font-family: "Trebuchet", sans-serif;
   font-size: medium;

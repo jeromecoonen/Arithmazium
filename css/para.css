@@ -70,7 +70,7 @@ date-wk88 {
   color: blue;
 }
 
-/* For indenting text outline elemets,
+/* For indenting text outline elements,
    notably in the Library. */
 .el1,
 .el2,
@@ -82,6 +82,7 @@ date-wk88 {
   line-height: 1.0;
   margin-top: 0;
 }
+
 .el1,
 .el2,
 .el3,
@@ -114,7 +115,8 @@ date-wk88 {
 }
 
 /* Variant of el2 for the Floating Point Expose
-   in the Classroom. */
+   in the Classroom. After much tuning, most
+   connection to el2 was lost. */
 .el2-wk88 {
   margin: 0 0 0 2em;
   line-height: 1.2;

@@ -26,9 +26,7 @@ right of the digit block.
 Test 00007
 </p>
 
-<object type="image/svg+xml" data="img/big_2_nth_bin-auto.svg">
-  ------Image------
-</object>
+#SVG big_2_nth_bin-auto
 
 <p>
 Octal and hexadecimal arithmetic behave very much the same way.
@@ -36,9 +34,7 @@ Here are the values the step before \( 2^{n} + 1 \) must be rounded.
 Italic values are octal. Bold italic values are hex.
 </p>
 
-<object type="image/svg+xml" data="img/big_2_nth_oct-auto.svg">
-  ------Image------
-</object>
+#SVG big_2_nth_oct-auto.svg
 
 <p>
 Our technique works in decimal, or radix 36 or 100, too. As in the

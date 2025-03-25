@@ -45,9 +45,7 @@ Here is what happens with 5 significant
 decimal digits.
 </p>
 
-<object type="image/svg+xml" data="img/big_2_nth_dec-auto.svg">
-  ------Image------
-</object>
+#SVG big_2_nth_dec-auto
 
 <p>
 You may notice that while the mathematical description of
@@ -88,8 +86,6 @@ of which only the top two bits can hold final values.
 </p>
 </div>
 
-<object type="image/svg+xml" data="img/big_2_nth_hexfrac-auto.svg">
-  ------Image------
-</object>
+#SVG big_2_nth_hexfrac-auto
 
 #INCLUDE para_foot radix.html aaapara_toc.html find_radix_from_2_nth.html

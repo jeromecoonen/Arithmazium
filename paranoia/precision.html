@@ -51,9 +51,100 @@ The diagram looks the same in any radix. It's shown here
 in binary.
 </p>
 
-<object type="image/svg+xml" data="img/precision_a-auto.svg">
-  ------Image------
-</object>
+<svg viewBox="0 0 1200 210" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<style>
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: darkgray; }
+.diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: Courier, monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
+</style>
+<!-- LINE 0 -->
+<g transform="translate(0,0)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+# in loop: big_b + 1.0
+</text>
+</g>
+<g transform="translate(360,0)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="245.2" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;010&#160;...&#160;01
+</text>
+</g>
+<g transform="translate(718,0)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+large power of B to which 1 can be added
+</text>
+</g>
+<!-- LINE 1 -->
+<g transform="translate(0,70)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+# next big_b + 1.0
+</text>
+</g>
+<g transform="translate(360,70)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="245.2" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;100&#160;...&#160;01
+</text>
+</g>
+<g transform="translate(718,70)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+largest power of B to which 1 can be added
+</text>
+</g>
+<!-- LINE 2 -->
+<g transform="translate(0,140)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+# final big_b + 1.0
+</text>
+</g>
+<g transform="translate(360,140)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="245.2" cy="44" r="3.0" />
+<ellipse class="diag-num-elps" cx="218.0" cy="30" rx="12" ry="20" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;1000&#160;...&#160;?0
+</text>
+</g>
+<g transform="translate(718,140)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="20">
+<tspan>the added 1 rounds off on most machines,</tspan>
+<tspan x="25" dy="1.2em">binary VAX with add-half-and-chop will round up</tspan>
+</text>
+</g>
+</svg>
 
 <p>
 The rounding arises when <code>B</code> is raised to the power that is the
@@ -84,9 +175,98 @@ This means that \(B ^ {-(N-1)}\) should be an ulp of <code>1.0</code>, and
 \(B ^ {-N}\) should be an ulp of numbers just less than <code>1.0</code>.
 </p>
 
-<object type="image/svg+xml" data="img/precision_b-auto.svg">
-  ------Image------
-</object>
+<svg viewBox="0 0 1200 210" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<style>
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: darkgray; }
+.diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: Courier, monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
+</style>
+<!-- LINE 0 -->
+<g transform="translate(0,0)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+BIG_B_NTH = ...
+</text>
+</g>
+<g transform="translate(360,0)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="245.2" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;1000&#160;...&#160;00
+</text>
+</g>
+<g transform="translate(718,0)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+power of B such that added 1 rounds off
+</text>
+</g>
+<!-- LINE 1 -->
+<g transform="translate(0,70)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+ONE / BIG_B_NTH
+</text>
+</g>
+<g transform="translate(360,70)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;000&#160;...&#160;001
+</text>
+</g>
+<g transform="translate(718,70)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+1/B of a unit in the last place of 1
+</text>
+</g>
+<!-- LINE 2 -->
+<g transform="translate(0,140)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+(ONE / BIG_B_NTH) * B
+</text>
+</g>
+<g transform="translate(360,140)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;000&#160;...&#160;01
+</text>
+</g>
+<g transform="translate(718,140)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+a unit in the last place of 1
+</text>
+</g>
+</svg>
 
 <p>
 We record these guesses for now and move on to further refinement.

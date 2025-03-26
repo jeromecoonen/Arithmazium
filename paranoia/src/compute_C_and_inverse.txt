@@ -19,9 +19,7 @@ fractional, we <em>expand</em> the last digit to full size.
 Here is the case for 22 bits in hexadecimal.
 </p>
 
-<object type="image/svg+xml" data="img/c_and_inverse_a-auto.svg">
-  ------Image------
-</object>
+#SVG c_and_inverse_a-auto
 
 <p>
 The value just computed is an ulp of numbers just less than

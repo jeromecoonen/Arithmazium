@@ -51,18 +51,14 @@ than <code>1.0</code>. It illustrates the computation of
 \( 1 - \delta \)
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_minus_e-auto.svg">
-  ------Image------
-</object>
+#SVG ulp_one_minus_e-auto
 
 <p>
 Next, we subtract from <code>1.0</code>in two steps to isolate
 the difference.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_minus_f-auto.svg">
-  ------Image------
-</object>
+#SVG ulp_one_minus_f-auto
 
 <p>
 As in the parallel case, the loop terminates when the halved value
@@ -85,9 +81,7 @@ one ulp of <code>1.0</code>.
 starts the iteration in 6-digit rounded decimal arithmetic.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_minus_g-auto.svg">
-  ------Image------
-</object>
+#SVG ulp_one_minus_g-auto
 
 <p>
 Continue the loop to find one ulp of <code>1.0</code>.
@@ -98,8 +92,6 @@ Continue the loop to find one ulp of <code>1.0</code>.
 in 6-digit chopped octal arithmetic.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_minus_h-auto.svg">
-  ------Image------
-</object>
+#SVG ulp_one_minus_h-auto
 
 #INCLUDE para_foot find_ulp_of_one_minus.html aaapara_toc.html recalc_radix2.html

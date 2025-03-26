@@ -48,9 +48,55 @@ The task is simple enough. In a six-digit decimal system, the value of
 the an ulp of <code>1.0</code> is just \(10 ^ {-5}\).
 </p>
 
-<object type="image/svg+xml" data="img/6_digit_ulp-auto.svg">
-  ------Image------
-</object>
+<svg viewBox="0 0 1200 70" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<style>
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: darkgray; }
+.diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: Courier, monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
+</style>
+<!-- LINE 0 -->
+<g transform="translate(0,0)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+1.0 + ulp
+</text>
+</g>
+<g transform="translate(360,0)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<ellipse class="diag-num-elps" cx="165.8" cy="30" rx="12" ry="20" />
+<text class="diag-num-dec" x="20" y="33">
+&#160;&#160;&#160;100001
+</text>
+</g>
+<g transform="translate(649,0)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+an ulp of 1 is 10^-5 in 6 decimal digits
+</text>
+</g>
+</svg>
 
 <p>
 The value is easily obtained by a look at the specification of the
@@ -59,9 +105,55 @@ bits, an ulp of one is \(2 ^ {-23}\).
 </p>
 
 
-<object type="image/svg+xml" data="img/24_bit_ulp-auto.svg">
-  ------Image------
-</object>
+<svg viewBox="0 0 1200 70" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<style>
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: darkgray; }
+.diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: Courier, monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
+</style>
+<!-- LINE 0 -->
+<g transform="translate(0,0)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+1.0 + ulp
+</text>
+</g>
+<g transform="translate(360,0)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<ellipse class="diag-num-elps" cx="235.4" cy="30" rx="12" ry="20" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;1000...001
+</text>
+</g>
+<g transform="translate(718,0)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+an ulp of 1 is 2**-23 in 24 bits
+</text>
+</g>
+</svg>
 <p class="quote">
 
 <p>
@@ -89,9 +181,106 @@ of <code>1.0</code>, perhaps plus one or more further ulps of
 is especially sloppy. To see this, look at the decimal number line:
 </p>
 
-<object type="image/svg+xml" data="img/4_3_round_d-auto.svg">
-  ------Image------
-</object>
+<svg viewBox="0 0 1200 140" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<style>
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: darkgray; }
+.diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: Courier, monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
+</style>
+<!-- TIC LINE -->
+<g transform="translate(80,0)">
+<rect class="tic-rect" width="1040" height="140" />
+<line class="tic-line" x1="0" y1="70" x2="1040" y2="70" />
+<line class="tic-small" x1="121" y1="85" x2="121" y2="45" />
+<line class="tic-small" x1="166" y1="85" x2="166" y2="45" />
+<line class="tic-small" x1="211" y1="85" x2="211" y2="45" />
+<line class="tic-small" x1="256" y1="85" x2="256" y2="45" />
+<line class="tic-small" x1="301" y1="85" x2="301" y2="45" />
+<line class="tic-small" x1="346" y1="85" x2="346" y2="45" />
+<line class="tic-small" x1="391" y1="85" x2="391" y2="45" />
+<line class="tic-small" x1="436" y1="85" x2="436" y2="45" />
+<line class="tic-small" x1="481" y1="85" x2="481" y2="45" />
+<line class="tic-small" x1="526" y1="85" x2="526" y2="45" />
+<line class="tic-small" x1="571" y1="85" x2="571" y2="45" />
+<line class="tic-small" x1="616" y1="85" x2="616" y2="45" />
+<line class="tic-small" x1="661" y1="85" x2="661" y2="45" />
+<line class="tic-small" x1="706" y1="85" x2="706" y2="45" />
+<line class="tic-small" x1="751" y1="85" x2="751" y2="45" />
+<line class="tic-small" x1="796" y1="85" x2="796" y2="45" />
+<line class="tic-small" x1="841" y1="85" x2="841" y2="45" />
+<line class="tic-small" x1="886" y1="85" x2="886" y2="45" />
+<line class="tic-small" x1="121" y1="85" x2="121" y2="45" />
+<line class="tic-small" x1="117" y1="85" x2="117" y2="45" />
+<line class="tic-small" x1="112" y1="85" x2="112" y2="45" />
+<line class="tic-small" x1="108" y1="85" x2="108" y2="45" />
+<line class="tic-small" x1="103" y1="85" x2="103" y2="45" />
+<line class="tic-small" x1="99" y1="85" x2="99" y2="45" />
+<line class="tic-small" x1="94" y1="85" x2="94" y2="45" />
+<line class="tic-small" x1="90" y1="85" x2="90" y2="45" />
+<line class="tic-small" x1="85" y1="85" x2="85" y2="45" />
+<line class="tic-small" x1="81" y1="85" x2="81" y2="45" />
+<line class="tic-small" x1="76" y1="85" x2="76" y2="45" />
+<line class="tic-small" x1="72" y1="85" x2="72" y2="45" />
+<line class="tic-small" x1="67" y1="85" x2="67" y2="45" />
+<line class="tic-small" x1="63" y1="85" x2="63" y2="45" />
+<line class="tic-small" x1="58" y1="85" x2="58" y2="45" />
+<line class="tic-small" x1="54" y1="85" x2="54" y2="45" />
+<line class="tic-small" x1="49" y1="85" x2="49" y2="45" />
+<line class="tic-small" x1="45" y1="85" x2="45" y2="45" />
+<line class="tic-small" x1="40" y1="85" x2="40" y2="45" />
+<line class="tic-small" x1="40" y1="85" x2="40" y2="45" />
+<line class="tic-small" x1="40" y1="85" x2="40" y2="45" />
+<line class="tic-small" x1="39" y1="85" x2="39" y2="45" />
+<line class="tic-small" x1="39" y1="85" x2="39" y2="45" />
+<line class="tic-small" x1="38" y1="85" x2="38" y2="45" />
+<line class="tic-small" x1="38" y1="85" x2="38" y2="45" />
+<line class="tic-small" x1="37" y1="85" x2="37" y2="45" />
+<line class="tic-small" x1="37" y1="85" x2="37" y2="45" />
+<line class="tic-small" x1="36" y1="85" x2="36" y2="45" />
+<line class="tic-small" x1="36" y1="85" x2="36" y2="45" />
+<line class="tic-small" x1="36" y1="85" x2="36" y2="45" />
+<line class="tic-small" x1="35" y1="85" x2="35" y2="45" />
+<line class="tic-small" x1="35" y1="85" x2="35" y2="45" />
+<line class="tic-small" x1="34" y1="85" x2="34" y2="45" />
+<line class="tic-small" x1="34" y1="85" x2="34" y2="45" />
+<line class="tic-small" x1="33" y1="85" x2="33" y2="45" />
+<line class="tic-small" x1="33" y1="85" x2="33" y2="45" />
+<line class="tic-big" x1="32" y1="90" x2="32" y2="30" />
+<line class="tic-big" x1="32" y1="90" x2="32" y2="30" />
+<line class="tic-big" x1="40" y1="90" x2="40" y2="30" />
+<line class="tic-big" x1="121" y1="90" x2="121" y2="30" />
+<line class="tic-big" x1="931" y1="90" x2="931" y2="30" />
+<text class="tic-lab" x="85" y="110">
+1.0
+</text>
+<text class="tic-lab" x="895" y="110">
+10.0
+</text>
+<line class="tic-bnum" x1="151" y1="95" x2="151" y2="20" />
+<text class="tic-num" x="115" y="110">
+
+</text>
+</g>
+</svg>
 
 <p>
 The tick marks signify the (highly magnified)
@@ -105,9 +294,99 @@ ulp of <code>1.0</code>, depending on which representable
 value is computed.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_plus_4_3_d-auto.svg">
-  4/3 rounded in decimal
-</object>
+<svg viewBox="0 0 1200 210" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<style>
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: darkgray; }
+.diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: Courier, monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
+</style>
+<!-- LINE 0 -->
+<g transform="translate(0,0)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+4.0 / 3.0
+</text>
+</g>
+<g transform="translate(360,0)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<ellipse class="diag-num-elps" cx="252.8" cy="30" rx="12" ry="20" />
+<text class="diag-num-dec" x="20" y="33">
+&#160;&#160;&#160;1333...3333333
+</text>
+</g>
+<g transform="translate(718,0)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+4/3 in decimal, highlighted digits to be rounded
+</text>
+</g>
+<!-- LINE 1 -->
+<g transform="translate(0,70)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+# rounded down, to nearest
+</text>
+</g>
+<g transform="translate(360,70)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-dec" x="20" y="33">
+&#160;&#160;&#160;1333...333
+</text>
+</g>
+<g transform="translate(718,70)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+-1/3 ulp of 1.0 error
+</text>
+</g>
+<!-- LINE 2 -->
+<g transform="translate(0,140)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+# rounded up, to next larger
+</text>
+</g>
+<g transform="translate(360,140)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-dec" x="20" y="33">
+&#160;&#160;&#160;1333...334
+</text>
+</g>
+<g transform="translate(718,140)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
++2/3 ulp of 1.0 error
+</text>
+</g>
+</svg>
 
 <p>
 Any addtional error is in whole ulps.
@@ -162,9 +441,167 @@ The lowest-order bits of values are not shown as the subtractions proceed.
 They're all zero, by design, in this isolation of the ulps of <code>1.0</code>.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_plus-auto.svg">
-  ------Image------
-</object>
+<svg viewBox="0 0 1200 420" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<style>
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: darkgray; }
+.diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: Courier, monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
+</style>
+<!-- LINE 0 -->
+<g transform="translate(0,0)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+FOUR / THREE
+</text>
+</g>
+<g transform="translate(360,0)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<ellipse class="diag-num-elps" cx="252.8" cy="30" rx="12" ry="20" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;1010...0101010
+</text>
+</g>
+<g transform="translate(718,0)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="20">
+<tspan>bits from the highlighted bit rightward</tspan>
+<tspan x="25" dy="1.2em">are rounded orff</tspan>
+</text>
+</g>
+<!-- LINE 1 -->
+<g transform="translate(0,70)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+x = FOUR / THREE   # rounded
+</text>
+</g>
+<g transform="translate(360,70)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<ellipse class="diag-num-elps" cx="235.4" cy="30" rx="12" ry="20" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;1010...011
+</text>
+</g>
+<g transform="translate(718,70)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+after rounding up by 1/3 ulp of 1.0
+</text>
+</g>
+<!-- LINE 2 -->
+<g transform="translate(0,140)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+third = x - ONE
+</text>
+</g>
+<g transform="translate(360,140)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;0010...011
+</text>
+</g>
+<g transform="translate(718,140)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+subtraction is exact, preserving the rounding error
+</text>
+</g>
+<!-- LINE 3 -->
+<g transform="translate(0,210)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+sixth = ONE_HALF - third
+</text>
+</g>
+<g transform="translate(360,210)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;0001...101
+</text>
+</g>
+<g transform="translate(718,210)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+1/6 is rounded down by 1/3 ulp of 1.0
+</text>
+</g>
+<!-- LINE 4 -->
+<g transform="translate(0,280)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+x = sixth + sixth
+</text>
+</g>
+<g transform="translate(360,280)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;0010...010
+</text>
+</g>
+<g transform="translate(718,280)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+differs from third by an ulp of 1.0
+</text>
+</g>
+<!-- LINE 5 -->
+<g transform="translate(0,350)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+x - third
+</text>
+</g>
+<g transform="translate(360,350)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;-0000...001
+</text>
+</g>
+<g transform="translate(718,350)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+absolute value is an ulp of 1.0
+</text>
+</g>
+</svg>
 
 <div class="math">
 <p>
@@ -235,9 +672,99 @@ it also proudces an ulp of <code>1.0</code>.
 starts the computation in 6-digit decimal arithmetic.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_plus_c-auto.svg">
-  ------Image------
-</object>
+<svg viewBox="0 0 1200 210" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<style>
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: darkgray; }
+.diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: Courier, monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
+</style>
+<!-- LINE 0 -->
+<g transform="translate(0,0)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+x = FOUR / THREE
+</text>
+</g>
+<g transform="translate(360,0)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<ellipse class="diag-num-elps" cx="183.2" cy="30" rx="12" ry="20" />
+<text class="diag-num-dec" x="20" y="33">
+&#160;&#160;&#160;133333333
+</text>
+</g>
+<g transform="translate(649,0)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+the low-order 3s will round off
+</text>
+</g>
+<!-- LINE 1 -->
+<g transform="translate(0,70)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+third = x - ONE
+</text>
+</g>
+<g transform="translate(360,70)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-dec" x="20" y="33">
+&#160;&#160;&#160;033333
+</text>
+</g>
+<g transform="translate(649,70)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+1/3 is rounded down in the low digit of 1.0
+</text>
+</g>
+<!-- LINE 2 -->
+<g transform="translate(0,140)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+sixth = ONE_HALF - third
+</text>
+</g>
+<g transform="translate(360,140)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-dec" x="20" y="33">
+&#160;&#160;&#160;016667
+</text>
+</g>
+<g transform="translate(649,140)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+1/6 is rounded up
+</text>
+</g>
+</svg>
 
 <p>
 Can you complete the computation of <code>x</code>?
@@ -250,9 +777,144 @@ in 6-digit octal arithmetic. We assume chopped arithmetic,
 as found on Burroughs computers of the 1960s.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_plus_d-auto.svg">
-  ------Image------
-</object>
+<svg viewBox="0 0 1200 350" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<style>
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: darkgray; }
+.diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: Courier, monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
+</style>
+<!-- LINE 0 -->
+<g transform="translate(0,0)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+x = FOUR / THREE
+</text>
+</g>
+<g transform="translate(360,0)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<ellipse class="diag-num-elps" cx="183.2" cy="30" rx="12" ry="20" />
+<text class="diag-num-oct" x="20" y="33">
+&#160;&#160;&#160;125252525
+</text>
+</g>
+<g transform="translate(649,0)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+the low-order digits will be chopped
+</text>
+</g>
+<!-- LINE 1 -->
+<g transform="translate(0,70)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+third = x - ONE
+</text>
+</g>
+<g transform="translate(360,70)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-oct" x="20" y="33">
+&#160;&#160;&#160;025252
+</text>
+</g>
+<g transform="translate(649,70)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+1/3 is chopped in the low digit of 1.0
+</text>
+</g>
+<!-- LINE 2 -->
+<g transform="translate(0,140)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+sixth = ONE_HALF - third
+</text>
+</g>
+<g transform="translate(360,140)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-oct" x="20" y="33">
+&#160;&#160;&#160;012526
+</text>
+</g>
+<g transform="translate(649,140)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="20">
+<tspan>because of the subtraction</tspan>
+<tspan x="25" dy="1.2em">1/6 is rounded up</tspan>
+</text>
+</g>
+<!-- LINE 3 -->
+<g transform="translate(0,210)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+x = sixth + sixth
+</text>
+</g>
+<g transform="translate(360,210)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-oct" x="20" y="33">
+&#160;&#160;&#160;025254
+</text>
+</g>
+<g transform="translate(649,210)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+larger than 1/3 by
+</text>
+</g>
+<!-- LINE 4 -->
+<g transform="translate(0,280)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+x - third
+</text>
+</g>
+<g transform="translate(360,280)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-oct" x="20" y="33">
+&#160;&#160;-000002
+</text>
+</g>
+<g transform="translate(649,280)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+two ulps of 1
+</text>
+</g>
+</svg>
 
 <p>
 Now rerun the computation in 7-digit octal.

@@ -87,18 +87,218 @@ than <code>1.0</code>. It illustrates the computation of
 \( 1 - \delta \)
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_minus_e-auto.svg">
-  ------Image------
-</object>
+<svg viewBox="0 0 1200 350" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<style>
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: darkgray; }
+.diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: Courier, monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
+</style>
+<!-- LINE 0 -->
+<g transform="translate(0,0)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+ONE
+</text>
+</g>
+<g transform="translate(360,0)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;100&#160;...&#160;00
+</text>
+</g>
+<g transform="translate(718,0)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+1.0, showing binary point alignment
+</text>
+</g>
+<!-- LINE 1 -->
+<g transform="translate(0,70)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+u = ...
+</text>
+</g>
+<g transform="translate(360,70)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;000&#160;...&#160;011
+</text>
+</g>
+<g transform="translate(718,70)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+suppose u is 3 ulps of 1.0-
+</text>
+</g>
+<!-- LINE 2 -->
+<g transform="translate(0,140)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+y = ONE_HALF * u + ...
+</text>
+</g>
+<g transform="translate(360,140)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;000&#160;...&#160;00110...
+</text>
+</g>
+<g transform="translate(718,140)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+y is half u, with nonzero low bits
+</text>
+</g>
+<!-- LINE 3 -->
+<g transform="translate(0,210)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+y = ONE_HALF - y
+</text>
+</g>
+<g transform="translate(360,210)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;001&#160;...&#160;1??
+</text>
+</g>
+<g transform="translate(718,210)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+does not yet round back to 1/2
+</text>
+</g>
+<!-- LINE 4 -->
+<g transform="translate(0,280)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+x = ONE_HALF + y
+</text>
+</g>
+<g transform="translate(360,280)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;011&#160;...&#160;1??
+</text>
+</g>
+<g transform="translate(718,280)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+a value just less than 1
+</text>
+</g>
+</svg>
 
 <p>
 Next, we subtract from <code>1.0</code>in two steps to isolate
 the difference.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_minus_f-auto.svg">
-  ------Image------
-</object>
+<svg viewBox="0 0 1200 140" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<style>
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: darkgray; }
+.diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: Courier, monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
+</style>
+<!-- LINE 0 -->
+<g transform="translate(0,0)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+y = ONE_HALF - x
+</text>
+</g>
+<g transform="translate(360,0)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;-001&#160;...&#160;1??
+</text>
+</g>
+<g transform="translate(718,0)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+strips the leading bit and flips sign
+</text>
+</g>
+<!-- LINE 1 -->
+<g transform="translate(0,70)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+x = ONE_HALF + y
+</text>
+</g>
+<g transform="translate(360,70)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;000&#160;...&#160;0??
+</text>
+</g>
+<g transform="translate(718,70)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+magnitude subtract, leaving just low bits
+</text>
+</g>
+</svg>
 
 <p>
 As in the parallel case, the loop terminates when the halved value
@@ -132,9 +332,187 @@ one ulp of <code>1.0</code>.
 starts the iteration in 6-digit rounded decimal arithmetic.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_minus_g-auto.svg">
-  ------Image------
-</object>
+<svg viewBox="0 0 1200 490" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<style>
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: darkgray; }
+.diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: Courier, monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
+</style>
+<!-- LINE 0 -->
+<g transform="translate(0,0)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+ONE
+</text>
+</g>
+<g transform="translate(360,0)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-dec" x="20" y="33">
+&#160;&#160;&#160;100000
+</text>
+</g>
+<g transform="translate(649,0)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+1.0, showing decimal point alignment
+</text>
+</g>
+<!-- LINE 1 -->
+<g transform="translate(0,70)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+u = ...
+</text>
+</g>
+<g transform="translate(360,70)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-dec" x="20" y="33">
+&#160;&#160;&#160;0000005
+</text>
+</g>
+<g transform="translate(649,70)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+suppose u is 5 ulps of 1.0-
+</text>
+</g>
+<!-- LINE 2 -->
+<g transform="translate(0,140)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+y = ONE_HALF * u + ...
+</text>
+</g>
+<g transform="translate(360,140)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<ellipse class="diag-num-elps" cx="183.2" cy="30" rx="12" ry="20" />
+<text class="diag-num-dec" x="20" y="33">
+&#160;&#160;&#160;00000025
+</text>
+</g>
+<g transform="translate(649,140)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+the trailing 5 is half an ulp of 1-
+</text>
+</g>
+<!-- LINE 3 -->
+<g transform="translate(0,210)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+y = ONE_HALF - y
+</text>
+</g>
+<g transform="translate(360,210)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-dec" x="20" y="33">
+&#160;&#160;&#160;0499998
+</text>
+</g>
+<g transform="translate(649,210)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+value 0.4999975 rounded up
+</text>
+</g>
+<!-- LINE 4 -->
+<g transform="translate(0,280)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+x = ONE_HALF + y
+</text>
+</g>
+<g transform="translate(360,280)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-dec" x="20" y="33">
+&#160;&#160;&#160;0999998
+</text>
+</g>
+<g transform="translate(649,280)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+1 less two ulps of 1-
+</text>
+</g>
+<!-- LINE 5 -->
+<g transform="translate(0,350)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+y = ONE_HALF - x
+</text>
+</g>
+<g transform="translate(360,350)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-dec" x="20" y="33">
+&#160;&#160;-0499998
+</text>
+</g>
+<g transform="translate(649,350)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+exact
+</text>
+</g>
+<!-- LINE 6 -->
+<g transform="translate(0,420)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+x = ONE_HALF + y
+</text>
+</g>
+<g transform="translate(360,420)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-dec" x="20" y="33">
+&#160;&#160;&#160;0000002
+</text>
+</g>
+<g transform="translate(649,420)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+down to two ulps of 1-
+</text>
+</g>
+</svg>
 
 <p>
 Continue the loop to find one ulp of <code>1.0</code>.
@@ -145,9 +523,166 @@ Continue the loop to find one ulp of <code>1.0</code>.
 in 6-digit chopped octal arithmetic.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_minus_h-auto.svg">
-  ------Image------
-</object>
+<svg viewBox="0 0 1200 420" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<style>
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: darkgray; }
+.diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: Courier, monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
+</style>
+<!-- LINE 0 -->
+<g transform="translate(0,0)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+u = ...
+</text>
+</g>
+<g transform="translate(360,0)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-oct" x="20" y="33">
+&#160;&#160;&#160;000005
+</text>
+</g>
+<g transform="translate(649,0)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+suppose u is 5 ulps of 1.0 in octal
+</text>
+</g>
+<!-- LINE 1 -->
+<g transform="translate(0,70)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+y = ONE_HALF * u + ...
+</text>
+</g>
+<g transform="translate(360,70)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<ellipse class="diag-num-elps" cx="183.2" cy="30" rx="12" ry="20" />
+<text class="diag-num-oct" x="20" y="33">
+&#160;&#160;&#160;0000024
+</text>
+</g>
+<g transform="translate(649,70)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+the 4 is half an ulp of 1-
+</text>
+</g>
+<!-- LINE 2 -->
+<g transform="translate(0,140)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+y = ONE_HALF - y
+</text>
+</g>
+<g transform="translate(360,140)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<ellipse class="diag-num-elps" cx="183.2" cy="30" rx="12" ry="20" />
+<text class="diag-num-oct" x="20" y="33">
+&#160;&#160;&#160;03777754
+</text>
+</g>
+<g transform="translate(649,140)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+the trailing 4 chops off
+</text>
+</g>
+<!-- LINE 3 -->
+<g transform="translate(0,210)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+x = ONE_HALF + y
+</text>
+</g>
+<g transform="translate(360,210)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-oct" x="20" y="33">
+&#160;&#160;&#160;0777775
+</text>
+</g>
+<g transform="translate(649,210)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+exact
+</text>
+</g>
+<!-- LINE 4 -->
+<g transform="translate(0,280)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+y = ONE_HALF - x
+</text>
+</g>
+<g transform="translate(360,280)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-oct" x="20" y="33">
+&#160;&#160;-0377775
+</text>
+</g>
+<g transform="translate(649,280)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+exact
+</text>
+</g>
+<!-- LINE 5 -->
+<g transform="translate(0,350)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+x = ONE_HALF + y
+</text>
+</g>
+<g transform="translate(360,350)">
+<rect class="diag-num-rect" width="289" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="250.4" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 176.4 50 L 176.4 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-oct" x="20" y="33">
+&#160;&#160;&#160;0000003
+</text>
+</g>
+<g transform="translate(649,350)">
+<rect class="diag-rem-rect" width="551" height="70" />
+<text class="diag-rem" x="10" y="35">
+one more step toward an ulp of 1-
+</text>
+</g>
+</svg>
 
 <div class='next-prev'>
 <a href='recalc_radix2.html' class='next round'>Next</a>

@@ -16,9 +16,7 @@ so it lies in the exponent range just below <code>1.0</code>
 in any of radix 2, 8, 10, or 16.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_minus_2_3_d-auto.svg">
-  Value 2/3 on a number line
-</object>
+#SVG ulp_one_minus_2_3_d-auto
 
 
 <p>
@@ -49,9 +47,7 @@ it simplifies to \( | 3 \epsilon |\).
 Here is a binary diagram showing the case of odd precision.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_minus-auto.svg">
-  ------Image------
-</object>
+#SVG ulp_one_minus-auto
 
 <p>
 The value \(1 / 6\) is subtracted out, leaving a whole number
@@ -74,9 +70,7 @@ it also proudces an ulp of <code>1.0</code>.
 starts the computation in 6-digit decimal arithmetic.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_minus_c-auto.svg">
-  ------Image------
-</object>
+#SVG ulp_one_minus_c-auto
 
 <p>
 Can you complete the computation of <code>x</code>?
@@ -89,9 +83,7 @@ in 6-digit octal arithmetic. We assume chopped arithmetic,
 as found on Burroughs computers of the 1960s.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_minus_d-auto.svg">
-  ------Image------
-</object>
+#SVG ulp_one_minus_d-auto
 
 <p>
 Now rerun the computation in 7-digit octal.

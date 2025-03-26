@@ -6,9 +6,7 @@
 The docstring in the code sets the stage. We're looking for a value like this:
 </p>
 
-<object type="image/svg+xml" data="img/precision_c-auto.svg">
-  ------Image------
-</object>
+#SVG precision_c-auto
 
 <p>
 This calculation works on most machines, where the precision is
@@ -26,9 +24,7 @@ The loop proceeds until the added <code>1.0</code> rounds off
 or rounds up into the <code>B</code>'s place of <code>y</code>.
 </p>
 
-<object type="image/svg+xml" data="img/precision_d-auto.svg">
-  ------Image------
-</object>
+#SVG precision_d-auto
 
 <div class="wrong">
 <h2>What could go wrong?</h2>
@@ -55,8 +51,6 @@ the <code>1</code> added to a hex digit that has a hard-wired <code>0</code>
 there. What is the computed precision?
 </p>
 
-<object type="image/svg+xml" data="img/precision_e-auto.svg">
-  ------Image------
-</object>
+#SVG precision_e-auto
 
 #INCLUDE para_foot precision.html aaapara_toc.html recalc_radix.html

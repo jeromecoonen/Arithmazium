@@ -22,10 +22,6 @@ the binary point is aligned to put the 1's place to the
 right of the digit block.
 </p>
 
-<p class="robo-med">
-Test 00007
-</p>
-
 #SVG big_2_nth_bin-auto
 
 <p>

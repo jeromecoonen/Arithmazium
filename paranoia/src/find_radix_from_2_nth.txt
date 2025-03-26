@@ -20,9 +20,7 @@ In binary, this will happen on the first or second step, but
 the result is the same.
 </p>
 
-<object type="image/svg+xml" data="img/find_radix_bin-auto.svg">
-  ------Image------
-</object>
+#SVG find_radix_bin-auto
 
 <p>
 In decimal, the low order digit will change when <code>y</code>
@@ -30,9 +28,7 @@ is 8 or 16, depending on whether the arithmetic is
 rounded or chopped.
 </p>
 
-<object type="image/svg+xml" data="img/find_radix_dec-auto.svg">
-  ------Image------
-</object>
+#SVG find_radix_dec-auto
 
 <p>
 The digits <code>x</code> and <code>z</code> depend

@@ -41,9 +41,7 @@ is computed if the input <code>radix</code> is \( 60 \),
 as preferred by the Baylonians? Same question for \( 100 \)?
 </p>
 
-<object type="image/svg+xml" data="img/the_constants_b-auto.svg">
-  ------Image------
-</object>
+#SVG the_constants_b-auto
 
 #INCLUDE para_foot the_constants.html aaapara_toc.html compute_C_and_inverse.html
 

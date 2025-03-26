@@ -36,45 +36,35 @@ surprising properties on different machines.
 in 6-digit decimal.
 </p>
 
-<object type="image/svg+xml" data="img/cmp_ulps_1_a-auto.svg">
-  ------Image------
-</object>
+#SVG cmp_ulps_1_a-auto
 
 <p>
 <span class="exer">Exercise:</span> Verify the comparison
 in binary.
 </p>
 
-<object type="image/svg+xml" data="img/cmp_ulps_1_c-auto.svg">
-  ------Image------
-</object>
+#SVG cmp_ulps_1_c-auto
 
 <p>
 <span class="exer">Exercise:</span> Carry out the subtraction in
 6-digit octal.
 </p>
 
-<object type="image/svg+xml" data="img/cmp_ulps_1_e-auto.svg">
-  ------Image------
-</object>
+#SVG cmp_ulps_1_e-auto
 
 <p>
 <span class="exer">Exercise:</span> Carry out the subtraction
 for <code>1.0</code> plus an ulp in decimal.
 </p>
 
-<object type="image/svg+xml" data="img/cmp_ulps_1_g-auto.svg">
-  ------Image------
-</object>
+#SVG cmp_ulps_1_g-auto
 
 <p>
 <span class="exer">Exercise:</span> Carry out the subtraction
 for <code>1.0</code> plus an ulp in binary.
 </p>
 
-<object type="image/svg+xml" data="img/cmp_ulps_1_i-auto.svg">
-  ------Image------
-</object>
+#SVG cmp_ulps_1_i-auto
 
 #INCLUDE para_foot recalc_radix2.html aaapara_toc.html the_constants.html
 

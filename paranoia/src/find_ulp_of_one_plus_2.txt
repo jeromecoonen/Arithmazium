@@ -27,9 +27,7 @@ The factor <code>THIRTY_TWO</code> shifts those bits well back into
 <code>u</code> in radix 2, 8, or 16. The diagram continues the binary tale.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_plus_b-auto.svg">
-  ------Image------
-</object>
+#SVG ulp_one_plus_b-auto
 
 </p>
 In decimal, the factor <code>THIRTY_TWO</code> ensures some
@@ -58,9 +56,7 @@ one ulp of <code>1.0</code>.
 starts the iteration in 6-digit rounded decimal arithmetic.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_plus_e-auto.svg">
-  ------Image------
-</object>
+#SVG ulp_one_plus_e-auto
 
 <p>
 Continue the loop to find one ulp of <code>1.0</code>.
@@ -71,8 +67,6 @@ Continue the loop to find one ulp of <code>1.0</code>.
 computation in 6-digit chopped octal arithmetic.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_plus_f-auto.svg">
-  ------Image------
-</object>
+#SVG ulp_one_plus_f-auto
 
 #INCLUDE para_foot find_ulp_of_one_plus.html aaapara_toc.html find_ulp_of_one_minus.html

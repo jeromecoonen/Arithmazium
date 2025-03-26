@@ -68,10 +68,7 @@ This is an example showing
 three constants in <span class="p">ParaPy</span>:
 </p>
 
-<object type="image/svg+xml"
-  data="img/semilit_samp_a-auto.svg">
-  Image of 1.0, the number next larger, and an ulp.
-</object>
+#SVG semilit_samp_a-auto
 
 <p>
 Digit diagrams have no connection to the internal representation of
@@ -117,10 +114,7 @@ Consider what happens when subtracting an <em>ULP</em>
 of <code>1.0</code> in any radix:
 </p>
 
-<object type="image/svg+xml"
-  data="img/semilit_samp_b-auto.svg">
-  Values just less than 1.0, in radix 2, 10, 8, 16.
-</object>
+#SVG semilit_samp_b-auto
 
 <p>
 The lowest-order significant digit is now one place to the right,
@@ -153,10 +147,7 @@ at intervals of \(0.5\), so there isn't room to label the values
 of interest.
 </p>
 
-<object type="image/svg+xml"
-  data="img/semilit_4_3_d-auto.svg">
-  Decimal number line.
-</object>
+#SVG semilit_4_3_d-auto
 
 <p>
 Note how the relative spacing changes by a factor of \(10\) across
@@ -173,10 +164,7 @@ changes by just a facctor of \(2\) across each binade (sounds like
 It's easier to see \(4/3\) and \(3/2\).
 </p>
 
-<object type="image/svg+xml"
-  data="img/semilit_4_3_b-auto.svg">
-  Binary number line.
-</object>
+#SVG semilit_4_3_b-auto
 
 <p>
 The gentle factor of two across binades is what makes

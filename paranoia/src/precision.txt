@@ -15,9 +15,7 @@ The diagram looks the same in any radix. It's shown here
 in binary.
 </p>
 
-<object type="image/svg+xml" data="img/precision_a-auto.svg">
-  ------Image------
-</object>
+#SVG precision_a-auto
 
 <p>
 The rounding arises when <code>B</code> is raised to the power that is the
@@ -40,9 +38,7 @@ This means that \(B ^ {-(N-1)}\) should be an ulp of <code>1.0</code>, and
 \(B ^ {-N}\) should be an ulp of numbers just less than <code>1.0</code>.
 </p>
 
-<object type="image/svg+xml" data="img/precision_b-auto.svg">
-  ------Image------
-</object>
+#SVG precision_b-auto
 
 <p>
 We record these guesses for now and move on to further refinement.

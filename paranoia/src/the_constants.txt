@@ -15,9 +15,7 @@ It should be exact on any machine that survives the tests
 that follow.
 </p>
 
-<object type="image/svg+xml" data="img/the_constants_a-auto.svg">
-  ------Image------
-</object>
+#SVG the_constants_a-auto
 
 <p>
 Value <code>C</code> is a tiny value at least a factor of
@@ -35,9 +33,7 @@ color.
 in binary arithmetic, given the helpful start.
 </p>
 
-<object type="image/svg+xml" data="img/the_constants_b-auto.svg">
-  ------Image------
-</object>
+#SVG the_constants_b-auto
 
 #INCLUDE para_foot cmp_ulps_of_one.html aaapara_toc.html compute_A_and_inverse.html
 

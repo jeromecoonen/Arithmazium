@@ -12,9 +12,7 @@ The task is simple enough. In a six-digit decimal system, the value of
 the an ulp of <code>1.0</code> is just \(10 ^ {-5}\).
 </p>
 
-<object type="image/svg+xml" data="img/6_digit_ulp-auto.svg">
-  ------Image------
-</object>
+#SVG 6_digit_ulp-auto
 
 <p>
 The value is easily obtained by a look at the specification of the
@@ -23,9 +21,7 @@ bits, an ulp of one is \(2 ^ {-23}\).
 </p>
 
 
-<object type="image/svg+xml" data="img/24_bit_ulp-auto.svg">
-  ------Image------
-</object>
+#SVG 24_bit_ulp-auto
 <p class="quote">
 
 <p>
@@ -53,9 +49,7 @@ of <code>1.0</code>, perhaps plus one or more further ulps of
 is especially sloppy. To see this, look at the decimal number line:
 </p>
 
-<object type="image/svg+xml" data="img/4_3_round_d-auto.svg">
-  ------Image------
-</object>
+#SVG 4_3_round_d-auto
 
 <p>
 The tick marks signify the (highly magnified)
@@ -69,9 +63,7 @@ ulp of <code>1.0</code>, depending on which representable
 value is computed.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_plus_4_3_d-auto.svg">
-  4/3 rounded in decimal
-</object>
+#SVG ulp_one_plus_4_3_d-auto
 
 <p>
 Any addtional error is in whole ulps.
@@ -126,9 +118,7 @@ The lowest-order bits of values are not shown as the subtractions proceed.
 They're all zero, by design, in this isolation of the ulps of <code>1.0</code>.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_plus-auto.svg">
-  ------Image------
-</object>
+#SVG ulp_one_plus-auto
 
 <div class="math">
 <p>
@@ -189,9 +179,7 @@ it also proudces an ulp of <code>1.0</code>.
 starts the computation in 6-digit decimal arithmetic.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_plus_c-auto.svg">
-  ------Image------
-</object>
+#SVG ulp_one_plus_c-auto
 
 <p>
 Can you complete the computation of <code>x</code>?
@@ -204,9 +192,7 @@ in 6-digit octal arithmetic. We assume chopped arithmetic,
 as found on Burroughs computers of the 1960s.
 </p>
 
-<object type="image/svg+xml" data="img/ulp_one_plus_d-auto.svg">
-  ------Image------
-</object>
+#SVG ulp_one_plus_d-auto
 
 <p>
 Now rerun the computation in 7-digit octal.

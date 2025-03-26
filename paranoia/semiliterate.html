@@ -104,10 +104,100 @@ This is an example showing
 three constants in <span class="p">ParaPy</span>:
 </p>
 
-<object type="image/svg+xml"
-  data="img/semilit_samp_a-auto.svg">
-  Image of 1.0, the number next larger, and an ulp.
-</object>
+<svg viewBox="0 0 1200 210" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<style>
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: darkgray; }
+.diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: Courier, monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
+</style>
+<!-- LINE 0 -->
+<g transform="translate(0,0)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+ONE = 1.0
+</text>
+</g>
+<g transform="translate(360,0)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;100&#160;...&#160;00
+</text>
+</g>
+<g transform="translate(718,0)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+The constant value one
+</text>
+</g>
+<!-- LINE 1 -->
+<g transform="translate(0,70)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+ONE_PLUS_ULP = ...
+</text>
+</g>
+<g transform="translate(360,70)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;100&#160;...&#160;01
+</text>
+</g>
+<g transform="translate(718,70)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+The next number larger than one
+</text>
+</g>
+<!-- LINE 2 -->
+<g transform="translate(0,140)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+ULP_OF_ONE_PLUS = ...
+</text>
+</g>
+<g transform="translate(360,140)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<ellipse class="diag-num-elps" cx="78.8" cy="30" rx="12" ry="20" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;000&#160;...&#160;01
+</text>
+</g>
+<g transform="translate(718,140)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="20">
+<tspan>A unit in the last place of one;</tspan>
+<tspan x="25" dy="1.2em">ote the value 1 is subtracted off</tspan>
+</text>
+</g>
+</svg>
 
 <p>
 Digit diagrams have no connection to the internal representation of
@@ -153,10 +243,122 @@ Consider what happens when subtracting an <em>ULP</em>
 of <code>1.0</code> in any radix:
 </p>
 
-<object type="image/svg+xml"
-  data="img/semilit_samp_b-auto.svg">
-  Values just less than 1.0, in radix 2, 10, 8, 16.
-</object>
+<svg viewBox="0 0 1200 280" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<style>
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: darkgray; }
+.diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: Courier, monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
+</style>
+<!-- LINE 0 -->
+<g transform="translate(0,0)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+ONE_MINUS_ULP = ...
+</text>
+</g>
+<g transform="translate(360,0)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<ellipse class="diag-num-elps" cx="252.8" cy="30" rx="12" ry="20" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;011&#160;...&#160;111
+</text>
+</g>
+<g transform="translate(718,0)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="20">
+<tspan>Next number smaller than one, in binary;</tspan>
+<tspan x="25" dy="1.2em">note the new digit position</tspan>
+</text>
+</g>
+<!-- LINE 1 -->
+<g transform="translate(0,70)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+# ...in decimal
+</text>
+</g>
+<g transform="translate(360,70)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-dec" x="20" y="33">
+&#160;&#160;&#160;099&#160;...&#160;999
+</text>
+</g>
+<g transform="translate(718,70)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+Bold digits
+</text>
+</g>
+<!-- LINE 2 -->
+<g transform="translate(0,140)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+# ...in octal
+</text>
+</g>
+<g transform="translate(360,140)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-oct" x="20" y="33">
+&#160;&#160;&#160;077&#160;...&#160;777
+</text>
+</g>
+<g transform="translate(718,140)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+Italic digits
+</text>
+</g>
+<!-- LINE 3 -->
+<g transform="translate(0,210)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+# ...in hexadecimal
+</text>
+</g>
+<g transform="translate(360,210)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-hex" x="20" y="33">
+&#160;&#160;&#160;0ff&#160;...&#160;fff
+</text>
+</g>
+<g transform="translate(718,210)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+Bold italic digits
+</text>
+</g>
+</svg>
 
 <p>
 The lowest-order significant digit is now one place to the right,
@@ -189,10 +391,110 @@ at intervals of \(0.5\), so there isn't room to label the values
 of interest.
 </p>
 
-<object type="image/svg+xml"
-  data="img/semilit_4_3_d-auto.svg">
-  Decimal number line.
-</object>
+<svg viewBox="0 0 1200 140" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<style>
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: darkgray; }
+.diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: Courier, monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
+</style>
+<!-- TIC LINE -->
+<g transform="translate(80,0)">
+<rect class="tic-rect" width="1040" height="140" />
+<line class="tic-line" x1="0" y1="70" x2="1040" y2="70" />
+<line class="tic-small" x1="121" y1="85" x2="121" y2="45" />
+<line class="tic-small" x1="166" y1="85" x2="166" y2="45" />
+<line class="tic-small" x1="211" y1="85" x2="211" y2="45" />
+<line class="tic-small" x1="256" y1="85" x2="256" y2="45" />
+<line class="tic-small" x1="301" y1="85" x2="301" y2="45" />
+<line class="tic-small" x1="346" y1="85" x2="346" y2="45" />
+<line class="tic-small" x1="391" y1="85" x2="391" y2="45" />
+<line class="tic-small" x1="436" y1="85" x2="436" y2="45" />
+<line class="tic-small" x1="481" y1="85" x2="481" y2="45" />
+<line class="tic-small" x1="526" y1="85" x2="526" y2="45" />
+<line class="tic-small" x1="571" y1="85" x2="571" y2="45" />
+<line class="tic-small" x1="616" y1="85" x2="616" y2="45" />
+<line class="tic-small" x1="661" y1="85" x2="661" y2="45" />
+<line class="tic-small" x1="706" y1="85" x2="706" y2="45" />
+<line class="tic-small" x1="751" y1="85" x2="751" y2="45" />
+<line class="tic-small" x1="796" y1="85" x2="796" y2="45" />
+<line class="tic-small" x1="841" y1="85" x2="841" y2="45" />
+<line class="tic-small" x1="886" y1="85" x2="886" y2="45" />
+<line class="tic-small" x1="121" y1="85" x2="121" y2="45" />
+<line class="tic-small" x1="117" y1="85" x2="117" y2="45" />
+<line class="tic-small" x1="112" y1="85" x2="112" y2="45" />
+<line class="tic-small" x1="108" y1="85" x2="108" y2="45" />
+<line class="tic-small" x1="103" y1="85" x2="103" y2="45" />
+<line class="tic-small" x1="99" y1="85" x2="99" y2="45" />
+<line class="tic-small" x1="94" y1="85" x2="94" y2="45" />
+<line class="tic-small" x1="90" y1="85" x2="90" y2="45" />
+<line class="tic-small" x1="85" y1="85" x2="85" y2="45" />
+<line class="tic-small" x1="81" y1="85" x2="81" y2="45" />
+<line class="tic-small" x1="76" y1="85" x2="76" y2="45" />
+<line class="tic-small" x1="72" y1="85" x2="72" y2="45" />
+<line class="tic-small" x1="67" y1="85" x2="67" y2="45" />
+<line class="tic-small" x1="63" y1="85" x2="63" y2="45" />
+<line class="tic-small" x1="58" y1="85" x2="58" y2="45" />
+<line class="tic-small" x1="54" y1="85" x2="54" y2="45" />
+<line class="tic-small" x1="49" y1="85" x2="49" y2="45" />
+<line class="tic-small" x1="45" y1="85" x2="45" y2="45" />
+<line class="tic-small" x1="40" y1="85" x2="40" y2="45" />
+<line class="tic-small" x1="40" y1="85" x2="40" y2="45" />
+<line class="tic-small" x1="40" y1="85" x2="40" y2="45" />
+<line class="tic-small" x1="39" y1="85" x2="39" y2="45" />
+<line class="tic-small" x1="39" y1="85" x2="39" y2="45" />
+<line class="tic-small" x1="38" y1="85" x2="38" y2="45" />
+<line class="tic-small" x1="38" y1="85" x2="38" y2="45" />
+<line class="tic-small" x1="37" y1="85" x2="37" y2="45" />
+<line class="tic-small" x1="37" y1="85" x2="37" y2="45" />
+<line class="tic-small" x1="36" y1="85" x2="36" y2="45" />
+<line class="tic-small" x1="36" y1="85" x2="36" y2="45" />
+<line class="tic-small" x1="36" y1="85" x2="36" y2="45" />
+<line class="tic-small" x1="35" y1="85" x2="35" y2="45" />
+<line class="tic-small" x1="35" y1="85" x2="35" y2="45" />
+<line class="tic-small" x1="34" y1="85" x2="34" y2="45" />
+<line class="tic-small" x1="34" y1="85" x2="34" y2="45" />
+<line class="tic-small" x1="33" y1="85" x2="33" y2="45" />
+<line class="tic-small" x1="33" y1="85" x2="33" y2="45" />
+<line class="tic-big" x1="32" y1="90" x2="32" y2="30" />
+<line class="tic-big" x1="32" y1="90" x2="32" y2="30" />
+<line class="tic-big" x1="40" y1="90" x2="40" y2="30" />
+<line class="tic-big" x1="121" y1="90" x2="121" y2="30" />
+<line class="tic-big" x1="931" y1="90" x2="931" y2="30" />
+<text class="tic-lab" x="85" y="110">
+1.0
+</text>
+<text class="tic-lab" x="895" y="110">
+10.0
+</text>
+<line class="tic-mnum" x1="151" y1="95" x2="151" y2="20" />
+<text class="tic-num" x="115" y="110">
+
+</text>
+<line class="tic-bnum" x1="166" y1="95" x2="166" y2="20" />
+<text class="tic-num" x="130" y="110">
+
+</text>
+</g>
+</svg>
 
 <p>
 Note how the relative spacing changes by a factor of \(10\) across
@@ -209,10 +511,94 @@ changes by just a facctor of \(2\) across each binade (sounds like
 It's easier to see \(4/3\) and \(3/2\).
 </p>
 
-<object type="image/svg+xml"
-  data="img/semilit_4_3_b-auto.svg">
-  Binary number line.
-</object>
+<svg viewBox="0 0 1200 140" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<style>
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: darkgray; }
+.diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: Courier, monospace; font-size: 1em; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 1.2em; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 1.2em; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 1.2em; font-style: italic; font-weight: bolder; letter-spacing: 0.13em; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 1em; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
+</style>
+<!-- TIC LINE -->
+<g transform="translate(58,0)">
+<rect class="tic-rect" width="1084" height="140" />
+<line class="tic-line" x1="0" y1="70" x2="1084" y2="70" />
+<line class="tic-small" x1="286" y1="85" x2="286" y2="45" />
+<line class="tic-small" x1="318" y1="85" x2="318" y2="45" />
+<line class="tic-small" x1="350" y1="85" x2="350" y2="45" />
+<line class="tic-small" x1="382" y1="85" x2="382" y2="45" />
+<line class="tic-small" x1="414" y1="85" x2="414" y2="45" />
+<line class="tic-small" x1="446" y1="85" x2="446" y2="45" />
+<line class="tic-small" x1="478" y1="85" x2="478" y2="45" />
+<line class="tic-small" x1="510" y1="85" x2="510" y2="45" />
+<line class="tic-small" x1="542" y1="85" x2="542" y2="45" />
+<line class="tic-small" x1="574" y1="85" x2="574" y2="45" />
+<line class="tic-small" x1="606" y1="85" x2="606" y2="45" />
+<line class="tic-small" x1="638" y1="85" x2="638" y2="45" />
+<line class="tic-small" x1="670" y1="85" x2="670" y2="45" />
+<line class="tic-small" x1="702" y1="85" x2="702" y2="45" />
+<line class="tic-small" x1="734" y1="85" x2="734" y2="45" />
+<line class="tic-small" x1="766" y1="85" x2="766" y2="45" />
+<line class="tic-small" x1="286" y1="85" x2="286" y2="45" />
+<line class="tic-small" x1="270" y1="85" x2="270" y2="45" />
+<line class="tic-small" x1="254" y1="85" x2="254" y2="45" />
+<line class="tic-small" x1="238" y1="85" x2="238" y2="45" />
+<line class="tic-small" x1="222" y1="85" x2="222" y2="45" />
+<line class="tic-small" x1="206" y1="85" x2="206" y2="45" />
+<line class="tic-small" x1="190" y1="85" x2="190" y2="45" />
+<line class="tic-small" x1="174" y1="85" x2="174" y2="45" />
+<line class="tic-small" x1="158" y1="85" x2="158" y2="45" />
+<line class="tic-small" x1="142" y1="85" x2="142" y2="45" />
+<line class="tic-small" x1="126" y1="85" x2="126" y2="45" />
+<line class="tic-small" x1="110" y1="85" x2="110" y2="45" />
+<line class="tic-small" x1="94" y1="85" x2="94" y2="45" />
+<line class="tic-small" x1="78" y1="85" x2="78" y2="45" />
+<line class="tic-small" x1="62" y1="85" x2="62" y2="45" />
+<line class="tic-small" x1="46" y1="85" x2="46" y2="45" />
+<line class="tic-small" x1="30" y1="85" x2="30" y2="45" />
+<line class="tic-small" x1="22" y1="85" x2="22" y2="45" />
+<line class="tic-small" x1="14" y1="85" x2="14" y2="45" />
+<line class="tic-small" x1="6" y1="85" x2="6" y2="45" />
+<line class="tic-small" x1="858" y1="85" x2="858" y2="45" />
+<line class="tic-small" x1="922" y1="85" x2="922" y2="45" />
+<line class="tic-small" x1="986" y1="85" x2="986" y2="45" />
+<line class="tic-small" x1="1050" y1="85" x2="1050" y2="45" />
+<line class="tic-big" x1="30" y1="90" x2="30" y2="30" />
+<line class="tic-big" x1="286" y1="90" x2="286" y2="30" />
+<line class="tic-big" x1="798" y1="90" x2="798" y2="30" />
+<text class="tic-lab" x="250" y="110">
+1.0
+</text>
+<text class="tic-lab" x="762" y="110">
+2.0
+</text>
+<line class="tic-mnum" x1="427" y1="95" x2="427" y2="20" />
+<text class="tic-num" x="391" y="110">
+4/3
+</text>
+<line class="tic-bnum" x1="542" y1="95" x2="542" y2="20" />
+<text class="tic-num" x="506" y="110">
+3/2
+</text>
+</g>
+</svg>
 
 <p>
 The gentle factor of two across binades is what makes

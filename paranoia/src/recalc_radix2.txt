@@ -14,9 +14,7 @@ some constants used throughout the remainder of the code.
 than the longest string of <code>B-1</code> digits.
 </p>
 
-<object type="image/svg+xml" data="img/recalc_radix_a-auto.svg">
-  ------Image------
-</object>
+#SVG recalc_radix_a-auto
 
 <p>
 We can determine <code>B</code>
@@ -26,9 +24,7 @@ decimal, the number pattern would be the same in
 any radix.
 </p>
 
-<object type="image/svg+xml" data="img/recalc_radix_b-auto.svg">
-  ------Image------
-</object>
+#SVG recalc_radix_b-auto
 
 <p>
 The ratio of the ulp values should be exactly <code>B</code>, but
@@ -56,8 +52,6 @@ of <code>BIG_B_NTH</code> in binary, and look at the value
 \( 1 \) less.
 </p>
 
-<object type="image/svg+xml" data="img/recalc_radix_d-auto.svg">
-  ------Image------
-</object>
+#SVG recalc_radix_d-auto
 
 #INCLUDE para_foot find_ulp_of_one_minus_2.html aaapara_toc.html cmp_ulps_of_one.html

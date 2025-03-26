@@ -6,9 +6,7 @@
 Part 1
 </p>
 
-<object type="image/svg+xml" data="img/tiny_B_a.svg">
-  ------Image------
-</object>
+#SVG tiny_b_a
 
 <p>
 Part 2

@@ -57,7 +57,7 @@ point arithmetic for accounting and other
 business applications.
 Even these systems require careful attention
 to map arbitrary decimal input into
-the supported decimalformats.
+the supported decimal formats.
 </p>
 
 <p>
@@ -166,7 +166,8 @@ normalized form as
 
 <p>
 whether or not the value was denormalized
-in the encoding.
+in the encoding. In this intermediate form, there is
+no limit on the range of <code>k</code>.
 </p>
 
 <p>
@@ -194,7 +195,7 @@ a one-digit left shift.
 
 <p>
 Projection onto decimal is simpler than
-projection onto binary, becuase typically exponent
+projection onto binary, because typically exponent
 overflow and underflow are not an issue on output.
 The only challenge is rounding.
 </p>
@@ -308,14 +309,12 @@ the decimal version of unbiased round-to-nearest.
 </p>
 
 <p>
-  Farther down in this room we'll
+  In pages yet to appear, we will
   look at how many decimal digits
   it takes to distinguish binary
   floating point values and we'll
   consider different ways to think
   of <em>best possible</em> conversions.
-  We will also look at how conversions
-  are carried out.
 </p>
 
 

@@ -15,7 +15,7 @@ Most programming environments provide the four
 The functional notation simplifies discussion
 of the operations below.
 It's common to program using
-<em>infix</em> epxressions
+<em>infix</em> expressions
 like <code>x * y</code>.
 One powerful alternative is the <em>s-expression</em>
 form <code>(* x y)</code> of Scheme and Lisp.
@@ -74,7 +74,7 @@ Converting between floating point and string formats
 depends on the environment. One of the attractions of
 decimal floating point is the lack of surprise converting
 between everyday decimal and internal decimal forms. Some
-environents support display in a radix other than
+environments support display in a radix other than
 decimal. These conversions usually appear in software
 that can handle the subtleties of formatting.
 </p>
@@ -111,15 +111,15 @@ operations. Accuracy is another matter, as we will see.
 <ul>
   <li><code>pow(x, y)</code> &rarr; \( x^{y} \)
   </li>
-  <li><code>log(x)</code> &rarr; log base \( e \)
+  <li><code>log(x)</code> &rarr; natural logarithm, or log base \( e \)
   </li>
   <li><code>log1p(x)</code> &rarr; \( log(1 + x) \),
-  without adding \( 1 + x \)
+  without explicitly adding \( 1 + x \)
   </li>
   <li><code>exp(x)</code> &rarr; \( e^{x} \)
   </li>
   <li><code>expm1(x)</code> &rarr; \( e^{x} - 1 \),
-  without computing \( e^{x} \)
+  without explicitly computing \( e^{x} \)
   </li>
   <li><code>sin(x)</code> &rarr; trigonometric sine
   </li>

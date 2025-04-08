@@ -51,7 +51,7 @@ numeric arguments
     as if with unbounded range and precision.
   </li>
   <li>
-    project the intermediate result into the form of
+    Project the intermediate result into the form of
     the destination.
   </li>
 </ol>
@@ -74,9 +74,9 @@ This diagram illustrates one form of intermediate
 result in the 8-bit sample system.
 </p>
 
-<pre><med-code>    +---------------------+-------+
-  ± | b &bull; b b b b b b b b | G R S |  *  2**k
-    +---------------------+------ +
+<pre><med-code>    +-------------------+-------+
+  ± | b &bull; b b b b b b b | G R S |  *  2**k
+    +-------------------+------ +
 </med-code></pre>
 
 <p>
@@ -97,7 +97,7 @@ value.
 bits beyond the rightmost <code>b</code>.
 The <em>Sticky</em> bit is the logical <code>OR</code> of
 <span class="bold">all</span> bits
-to the right or <em>Round</em>,
+to the right of <em>Round</em>,
 in the infinitely precise result &ndash; it
 provides the sense of
 unbounded precision.
@@ -118,7 +118,7 @@ if the destination supports a sign of zero, those
 rules come into play during projection.
 </p>
 
-<h2><code>add()</code> and <code>sub()</code></h2>
+<h2><code>add(x, y)</code> and <code>sub(x, y)</code></h2>
 
 <p>
 You can read about arithmetic on bytes in the
@@ -166,9 +166,10 @@ later, when the value is rounded.
 </med-code></pre>
 
 <p>
-To see how cancellation works,
-let's look at \( 1 - ( 1 - 2^{-8} ) \).
-These are adjacent values in our 8-bit
+<em>Cancellation</em> is the word used to describe
+the effect of subtracting two nearly equal magnitudes.
+Consider the difference \( 1 - ( 1 - 2^{-8} ) \) of
+two adjacent values in our 8-bit
 number system.
 </p>
 
@@ -182,18 +183,66 @@ number system.
 
 <p>
 The result requires an 8-bit left shift to be
-normalized. Magnitude
+normalized. The left shift during cancellation
+sometimes magnifies tiny rounding errors,
+compromising a calculation. So he possible hazards
+ of cancellation must be considered in any analysis
+ of a numerical algorithm.
+ </p>
+
+<p>
+Magnitude
 subtraction of normalized numbers with the
 same precision has interesting special cases.
 Can you see that if the input values are more
-than one bit out of alignment, the left
+than one bit out of alignment, then the left
 shift to renormalize is either zero or one bit?
-Can you also see that when a when a larger shift
+</p>
+
+<p>
+Answer: Here is the worst-case example of the
+smallest normalized magnitude minus the largest
+magnitude shifted right two bits. The result requires just
+a one-bit left shift before rounding.
+</p>
+
+<pre><med-code>        1 &bull; 0 0 0 0 0 0 0
+      - 0 &bull; 0 1 1 1 1 1 1 1 1
+      -----------------------
+      +-------------------+-------+
+      | 0 &bull; 1 0 0 0 0 0 0 | 0 1 0 |
+      +-------------------+------ +
+</med-code></pre>
+
+<p>
+Can you also see that when a larger shift
 is required, that the result will require no
 rounding? All of its rightmost bits are zero.
 </p>
 
-<h2><code>mul()</code></h2>
+<p>
+Answer: When the two magnitudes align, the
+<em>Guard</em>, <em>Round</em>, and <em>Sticky</em>
+bits are all zero &mdash; there is nothing to round.
+When the two magnitudes are aligned by a one-bit
+shift, normalization is required if there is a borrow
+from the leftmost bit.
+</p>
+
+<pre><med-code>        1 &bull; a a a a a a a
+      - 0 &bull; 1 b b b b b b b
+      ---------------------
+      +-------------------+-------+
+      | 0 &bull; c c c c c c c | c 0 0 |
+      +-------------------+------ +
+</med-code></pre>
+
+<p>
+In this case, the normalization will leave the
+ <em>Guard</em> bit zero, so again the result is exact.
+ </p>
+
+<h2><code>mul(x, y)</code></h2>
 
 <p>
 Floating point multiplication is a matter of computing
@@ -217,7 +266,7 @@ where the tiny third term is collected into <em>Sticky</em>.
         0 0 &bull; 0 0 0 0 0 0 1 0 0 0 0 0 0 1
              ...lines of zeros...
       + 0 1 &bull; 0 0 0 0 0 0 1
-      ---------------------------------
+      -----------------------------------
         0 1 &bull; 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
       +-------------------+-------+
       | 0 &bull; 1 0 0 0 0 0 1 | 0 0 1 |  *  2
@@ -225,26 +274,37 @@ where the tiny third term is collected into <em>Sticky</em>.
 </med-code></pre>
 
 <p>
-One detail here is that
-the double-wide product is usually arranged with
-the binary point after the most significant bit,
-introducing an extra factor of \( 2 \), which can
+The double-wide product may need to be shifted right
+one bit to alight
+the binary point after the most significant bit.
+This introduces an extra factor of \( 2 \), which can
 be added into the exponent <code>k</code>.
 </p>
 
 <p>
-If this is new to you, try a case like
-\( ( 2 - 2^{-7} ) * ( 2 - 2^{-7} ) \).
-As a big hint, here is the intermediate
-result.
+This case fills out the parallelogram with 1 bits, but
+it is tedious to carry out by hand.
 </p>
 
-<pre><med-code>      +-------------------+-------+
+<pre><med-code>          1 &bull; 1 1 1 1 1 1 1
+      *   1 &bull; 1 1 1 1 1 1 1
+      -----------------------------------
+        1 1 &bull; 1 1 1 1 1 0 0 0 0 0 0 0 0 1
+      +-------------------+-------+
       | 1 &bull; 1 1 1 1 1 1 0 | 0 0 1 |  *  2
       +-------------------+------ +
 </med-code></pre>
 
-<h2><code>div()</code></h2>
+<p>
+It's easier to see in mathematical form
+\( ( 2 - 2^{-7} ) * ( 2 - 2^{-7} ) \),
+where it simplifies to
+\( 4 - 2^{-5} + 2^{-14} \),
+and then normalizes to
+\( (2 - 2^{-6} + 2^{-15}) \times 2 \).
+</p>
+
+<h2><code>div(x, y)</code></h2>
 
 <p>
 Floating point division can likewise be carried
@@ -293,7 +353,7 @@ ideal result appears as
       +-------------------+------ +
 </med-code></pre>
 
-<h2><code>sqrt()</code> and <code>remainder()</code></h2>
+<h2><code>sqrt(x)</code> and <code>remainder(x, y)</code></h2>
 
 <p>
 The pencil-and-paper technique for extracting
@@ -317,7 +377,7 @@ to arrive at the remainder may be huge.
 </p>
 
 
-<h2>Logs, exponentials, trig functions</h2>
+<h2>Logarithms, exponentials, trigonometric functions</h2>
 
 <p>
 The previous sections have shown how the computational

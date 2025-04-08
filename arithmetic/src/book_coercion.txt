@@ -43,6 +43,7 @@ from everyday mathematics.
 
 <p>
 If all of the significant bits are <code>0</code>,
+including <code>G</code>, <code>R</code>, and <code>S</code>,
 then the result is zero.
 Because zero falls outside the parallelogram of
 normal values of the number system, it fits
@@ -135,6 +136,7 @@ Underflow may result in a value like this
 <p>
 or in an extreme case all the significant bits may
 be shifted into <code>S</code>.
+The rounding rules still apply.
 </p>
 
 <pre><med-code>    +-------------------+-------+
@@ -164,8 +166,7 @@ to the <code>G</code> bit and truncate that result.
 Visit the
 <a class="inline" href="../dinosaur/aaadinosaur_toc.html">
     Dinosaur Gallery</a>
-for further
-information.
+for further information (when it appears).
 </p>
 
 <p>
@@ -207,7 +208,7 @@ after rounding.
 </p
 
 <p>
-These are the four
+There are the four
 types of rounding specified by
 IEEE 754.
 </p>
@@ -255,7 +256,13 @@ chooses the representable value in the relevant direction.
 
 <p>
 Round to Nearest chooses the nearer of the two adjacent
-representable values. It's helpful to list the cases:
+representable values. We say this rounding is <em>unbiased</em>
+because it breaks ties on the basis of the bit just left
+of <code>G</code>. It's reasonable to expect that bit to be
+<code>0</code> or <code>1</code> with equal probability.
+
+<p>
+It's helpful to list the cases:
 </p>
 
 <pre><med-code>  ± | b &bull; b b b b b b b | 0 R S   round down
@@ -289,20 +296,37 @@ After rounding, we have a value
 with <code>k</code> no less than the smallest
 normal exponent. If <code>k</code> is larger
 than the largest normal exponent, the
-<em>exponent ovderflow</em> arises.
+<em>exponent overflow</em> arises.
 The magnitude is too large to represent.
 </p>
 
 <p>
+Overflow is an extraordinary circumstance,
+in which the delivered result provides no more
+than an upper or lower bound on the magnitude
+of the mathematical result.
 The IEEE 754 approach to overflow is to
-deliver \( \infty \) with the sign of the
-result, except for two circumstances.
-If the result is positive and rounding is
-toward \( -\infty \) or the result is negative
-and rounding is toward \( +\infty \),
-then deliver the largest normal number of
-the approppriate sign.
+deliver either \( \infty \) or the maximum normal
+number, with the sign of the
+result, depending on the rounding mode and sign of the
+result.
 </p>
+
+<ul>
+  <li>
+    Signed \( + \infty \) &ndash; when rounding to nearest,
+    rounding toward \( + \infty \) with a positive result, or
+    rounding toward \( - \infty \) with a negative result,
+    then deliver \( \infty \) with appropriate sign.
+  </li>
+  <li>
+    Largest normal number &ndash; otherwise, 
+    when rounding toward zero,
+    rounding toward \( + \infty \) with a negative result, or
+    rounding toward \( - \infty \) with a positive result,
+    then deliver the largest normal number with appropriate sign.
+  </li>
+</ul>
 
 
 #INCLUDE para_foot book_ideal_result.html aaaarithmetic_toc.html book_special_cases.html

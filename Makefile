@@ -22,7 +22,9 @@ site: diagrams
 .PHONY: diagrams
 diagrams:
 	rm -f paranoia/img/*-auto.svg
-	python3 $(svg_builder)
+	rm -f classroom/img/*-auto.svg
+	python3 $(svg_builder) paranoia
+	python3 $(svg_builder) classroom
 
 .PHONY: clean
 clean:

@@ -649,6 +649,17 @@ The Library is for Everyone.
   Intel
 </a></p>
 <p class="el2"><a class="toc-link library" target="_blank"
+  href="lib/palmer_intel_standard_nov1977.pdf">
+  The Intel Standard for Floating-Point Arithmetic
+</a></p>
+<p class="el2-note">
+ John Palmer, mathematical architect of the 8087 math coprocessor,
+ sets the stage for Intel's role in a microrprocessor 
+ floating point standards
+ effort just starting, based on initial work toward a chip
+ that would arrive 3 years after this paper.
+</p>
+<p class="el2"><a class="toc-link library" target="_blank"
   href="lib/nave_implenent_transcendental_algos_1983.pdf">
   Implementation of Transcendental Functions on a
   Numerics Processor

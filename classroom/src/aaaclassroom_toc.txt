@@ -12,6 +12,10 @@ The Classroom is for Everyone.
   href="wk88_toc.html">
   William Kahan's Floating Point Expos&#233;
 </a></p>
+<p class="el1"><a class="toc-link classroom wip"
+  href="extras.html">
+  Extras
+</a></p>
 
 
 #INCLUDE page_copyright

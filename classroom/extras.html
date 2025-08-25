@@ -1,0 +1,170 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>Arithmazium</title>
+  <meta name="description" content="/Users/jeromecoonen/amaze/Arithmazium/classroom/extras.html">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" 
+    href="https://fonts.googleapis.com/css?family=Days+One|Roboto+Mono|Fira+Code|Work+Sans:bold,400,600,700,800" >
+  <meta name='theme-color' content='#fafafa'>
+  <link rel='stylesheet' href='../css/normalize.css'>
+  <link rel='stylesheet' href='../css/main.css'>
+  <link rel='stylesheet' href='../css/para.css'>
+  <link rel='stylesheet' href='../css/numbers.css'>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_SVG">
+  </script>
+</head>
+<body>
+  <div>
+  <svg viewbox='0 0 1000 80' xmlns='http://www.w3.org/2000/svg'>
+  <a class="para-ban" href='../index.html'>
+  <rect x=0 y=0 width=1000 height=80 class='arith-ban-box'/>
+  <text x=10 y=68 class='arith-ban-back'>
+  <tspan>11.001001000011111101101010100010001000</tspan>
+  </text>
+  <text x='60' y='55' class='arith-ban-front'>
+  <tspan>Arithmazium</tspan>
+  </text>
+  </a>
+  </svg>
+  </div>
+  <div class='next-prev'>
+  <a href='aaaclassroom_toc.html' class='next round'>Next</a>
+  <a href='aaaclassroom_toc.html' class='tree round'>Home</a>
+  <a href='aaaclassroom_toc.html' class='previous round'>Previous</a>
+  </div>
+
+<h1>Test page</h1>
+
+<p>
+Experiments conducted in site context.
+</p>
+
+<h2>Hard-wired SVG</h2>
+
+<p>
+This graphic is created directly, not compiled by Python.
+</p>
+
+<svg viewBox="0 0 1200 210" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<style>
+.diag-py-rect {fill: rgba(241, 228, 194, 1.0); stroke: none;}
+.diag-num-rect { fill: none; stroke: none; }
+.diag-rem-rect { fill: none; stroke: none; }
+.diag-num-line { stroke-width: 2; stroke: darkgray; }
+.diag-num-path { stroke-width: 2; stroke: blue; fill: none; }
+.diag-num-dot { stroke-width: 1; stroke: blue; fill: blue; }
+.diag-num-elps { stroke-width: 3; stroke: red; fill: none; }
+.diag-py { font-family: Courier, monospace; font-size: 12; white-space: pre; dominant-baseline: middle; fill: black; }
+.diag-num-bin { font-family: "Roboto Mono"; font-size: 12; letter-spacing: 1.5; dominant-baseline: middle; fill: black; }
+.diag-num-oct { font-family: "Roboto Mono"; font-size: 22em; font-style: italic; letter-spacing: 1; dominant-baseline: middle; fill: black; }
+.diag-num-dec { font-family: "Roboto Mono"; font-size: 12; font-weight: bolder; letter-spacing: 1; dominant-baseline: middle; fill: black; }
+.diag-num-hex { font-family: "Roboto Mono"; font-size: 12; font-style: italic; font-weight: bolder; letter-spacing: 1; dominant-baseline: middle; fill: black; }
+.diag-rem { font-family: Arial; font-size: 11; dominant-baseline: middle; fill: darkslategray; }
+.tic-rect { fill: lightgray; stroke: none; }
+.tic-line { stroke-width: 3; stroke: dimgray; }
+.tic-big { stroke-width: 3; stroke: dimgray; }
+.tic-small { stroke-width: 2; stroke: darkgray; }
+.tic-hnum { stroke-width: 1; stroke: blue; }
+.tic-mnum { stroke-width: 2; stroke: blue; }
+.tic-bnum { stroke-width: 3; stroke: blue; }
+.tic-lab { font-family: "Roboto Mono", monospace; font-size: 1.2em; white-space: pre; dominant-baseline: middle; fill: black; }
+.tic-num { font-family: "Roboto Mono", monospace; font-size: 1.2em; font-weight: bolder;white-space: pre; dominant-baseline: middle; fill: blue; }
+</style>
+<!-- LINE 0 -->
+<g transform="translate(0,0)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+ONE = 1.0
+</text>
+</g>
+<g transform="translate(360,0)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;100&#160;...&#160;00
+</text>
+</g>
+<g transform="translate(718,0)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+The constant value one
+</text>
+</g>
+<!-- LINE 1 -->
+<g transform="translate(0,70)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+ONE_PLUS_ULP = ...
+</text>
+</g>
+<g transform="translate(360,70)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;100&#160;...&#160;01
+</text>
+</g>
+<g transform="translate(718,70)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="35">
+The next number larger than one
+</text>
+</g>
+<!-- LINE 2 -->
+<g transform="translate(0,140)">
+<rect class="diag-py-rect" width="360" height="70" />
+<text class="diag-py" x="10" y="35">
+ULP_OF_ONE_PLUS = ...
+</text>
+</g>
+<g transform="translate(360,140)">
+<rect class="diag-num-rect" width="358" height="70" />
+<line class="diag-num-line" x1="15" y1="50" x2="320.0" y2="50" />
+<path class="diag-num-path" d="M 72 10 L 72 50 L 246.0 50 L 246.0 10" />
+<circle class="diag-num-dot" cx="88.6" cy="44" r="3.0" />
+<ellipse class="diag-num-elps" cx="78.8" cy="30" rx="12" ry="20" />
+<text class="diag-num-bin" x="20" y="33">
+&#160;&#160;&#160;000&#160;...&#160;01
+</text>
+</g>
+<g transform="translate(718,140)">
+<rect class="diag-rem-rect" width="482" height="70" />
+<text class="diag-rem" x="10" y="20">
+<tspan>A unit in the last place of one;</tspan>
+<tspan x="25" dy="1.2em">ote the value 1 is subtracted off</tspan>
+</text>
+</g>
+</svg>
+
+<h2>Compiled SVG</h2>
+
+<p>
+TBD
+</p>
+
+
+<div class='next-prev'>
+<a href='aaaclassroom_toc.html' class='next round'>Next</a>
+<a href='aaaclassroom_toc.html' class='tree round'>Home</a>
+<a href='aaaclassroom_toc.html' class='previous round'>Previous</a>
+</div>
+<script src="../js/vendor/jquery.js"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  ga('create', 'UA-165469376-1', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+</<body>
+
+</html>

@@ -1,0 +1,24 @@
+#INCLUDE para_head aaaclassroom_toc.html aaaclassroom_toc.html aaaclassroom_toc.html
+
+<h1>Test page</h1>
+
+<p>
+Experiments conducted in site context.
+</p>
+
+<h2>Hard-wired SVG</h2>
+
+<p>
+This graphic is created directly, not compiled by Python.
+</p>
+
+#SVG raw_1
+
+<h2>Compiled SVG</h2>
+
+<p>
+TBD
+</p>
+
+
+#INCLUDE para_foot aaaclassroom_toc.html aaaclassroom_toc.html aaaclassroom_toc.html

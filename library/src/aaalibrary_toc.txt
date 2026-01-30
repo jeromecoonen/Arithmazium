@@ -550,6 +550,18 @@ The Library is for Everyone.
 </p>
 
 <p class="el3"><a class="toc-link library" target="_blank"
+  href="lib/wk_haugeland_notes_70.pdf">
+  1970 class notes
+</a></p>
+<p class="el3-note">
+  Detailed handwritten notes by W.S. Haugeland
+  on W. Kahan's lectures in fall 1970. D. Hough
+  combined these with his notes in 1972 to produce
+  the Implementation of Algorithms technical report.
+
+</p>
+
+<p class="el3"><a class="toc-link library" target="_blank"
   href="lib/wk_table_makers_dilemma_paper_aug71.pdf">
   The Table-Makers' Dilemma (paper)
 </a></p>

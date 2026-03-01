@@ -195,7 +195,7 @@ The Library is for Everyone.
 
 <p class="el3"><a class="toc-link library" target="_blank"
   href="lib/wk_pseudo_division_mar89.pdf">
-  Pseudo-Divison Algorithms for Floating-Point
+  Pseudo-Division Algorithms for Floating-Point
   Logarithms and Exponentials
 </a></p>
 <p class="el3-note">
@@ -204,7 +204,7 @@ The Library is for Everyone.
 </p>
 <p class="el3"><a class="toc-link library" target="_blank"
   href="lib/wk_pseudo_division_log_exp_may01.pdf">
-  Pseudo-Divison Algorithms for Floating-Point
+  Pseudo-Division Algorithms for Floating-Point
   Logarithms and Exponentials (Revised)
 </a></p>
 <p class="el3-note">
